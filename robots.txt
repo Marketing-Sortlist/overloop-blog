@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /blog/
+Allow: /tools/
+Allow: /playbooks/
+Allow: /templates/
+Disallow: /assets/
+Disallow: /redirects/
+
+Sitemap: https://overloop.com/sitemap.xml

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}} | Overloop</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="https://overloop.com/blog/{{SLUG}}">
+
+    <!-- Hreflang (only if equivalent exists in other languages) -->
+    <!-- <link rel="alternate" hreflang="en" href="https://overloop.com/blog/{{SLUG}}"> -->
+    <!-- <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/{{SLUG_DE}}"> -->
+    <!-- <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/{{SLUG_FR}}"> -->
+    <!-- <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/{{SLUG_ES}}"> -->
+    <!-- <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/{{SLUG}}"> -->
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="https://overloop.com/assets/images/{{OG_IMAGE}}">
+    <meta property="og:url" content="https://overloop.com/blog/{{SLUG}}">
+    <meta property="og:type" content="article">
+
+    <!-- Preload font -->
+    <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Inline CSS (keep under 20KB) -->
+    <style>
+        /* Base styles — customize for Overloop brand */
+        :root {
+            --color-primary: #4F46E5;
+            --color-text: #1a1a1a;
+            --color-muted: #6b7280;
+            --color-bg: #ffffff;
+            --color-surface: #f9fafb;
+            --max-width: 720px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem; }
+        /* Article header */
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.75rem; }
+        .article-meta { color: var(--color-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta a { color: var(--color-primary); text-decoration: none; }
+        /* Content */
+        .article-content h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .article-content h3 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .article-content p { margin-bottom: 1.25rem; }
+        .article-content a { color: var(--color-primary); }
+        .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0; }
+        .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content blockquote {
+            border-left: 3px solid var(--color-primary);
+            padding-left: 1rem;
+            color: var(--color-muted);
+            margin: 1.5rem 0;
+        }
+        .article-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+        .article-content th, .article-content td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .article-content th { font-weight: 600; background: var(--color-surface); }
+        /* CTA */
+        .cta-box {
+            background: var(--color-surface);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .cta-box h3 { margin-bottom: 0.75rem; }
+        .cta-button {
+            display: inline-block;
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        /* Author bio (E-E-A-T) */
+        .author-bio {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: 8px;
+            margin-top: 2.5rem;
+        }
+        .author-bio img { width: 56px; height: 56px; border-radius: 50%; }
+        .author-bio .name { font-weight: 600; }
+        .author-bio .role { color: var(--color-muted); font-size: 0.9rem; }
+        /* Breadcrumb */
+        .breadcrumb { font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--color-primary); }
+        /* Internal links section */
+        .related-posts { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+        .related-posts h3 { margin-bottom: 1rem; }
+        .related-posts a { display: block; color: var(--color-primary); margin-bottom: 0.5rem; }
+        /* Print */
+        @media print { .cta-box, .related-posts { display: none; } }
+    </style>
+
+    <!-- Schema: BlogPosting (E-E-A-T) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{TITLE}}",
+        "description": "{{META_DESCRIPTION}}",
+        "image": "https://overloop.com/assets/images/{{OG_IMAGE}}",
+        "author": {
+            "@type": "Person",
+            "name": "{{AUTHOR_NAME}}",
+            "url": "{{AUTHOR_LINKEDIN_URL}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Overloop",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://overloop.com/assets/images/overloop-logo.png"
+            }
+        },
+        "datePublished": "{{DATE_PUBLISHED}}",
+        "dateModified": "{{DATE_MODIFIED}}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://overloop.com/blog/{{SLUG}}"
+        }
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/blog"},
+            {"@type": "ListItem", "position": 2, "name": "{{TITLE}}", "item": "https://overloop.com/blog/{{SLUG}}"}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="https://overloop.com">Overloop</a> &rsaquo;
+            <a href="https://overloop.com/blog">Blog</a> &rsaquo;
+            {{TITLE}}
+        </nav>
+
+        <!-- Article Header -->
+        <header class="article-header">
+            <h1>{{H1}}</h1>
+            <div class="article-meta">
+                By <a href="{{AUTHOR_LINKEDIN_URL}}">{{AUTHOR_NAME}}</a> &middot;
+                Published {{DATE_PUBLISHED}} &middot;
+                Updated {{DATE_MODIFIED}}
+            </div>
+        </header>
+
+        <!-- Article Content -->
+        <article class="article-content">
+            {{CONTENT}}
+        </article>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h3>{{CTA_HEADLINE}}</h3>
+            <p>{{CTA_DESCRIPTION}}</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-button">Try Overloop Free</a>
+        </div>
+
+        <!-- Author Bio (E-E-A-T) -->
+        <div class="author-bio">
+            <img src="/assets/images/{{AUTHOR_IMAGE}}" alt="{{AUTHOR_NAME}}" width="56" height="56" loading="lazy">
+            <div>
+                <div class="name">{{AUTHOR_NAME}}</div>
+                <div class="role">{{AUTHOR_ROLE}} at Overloop</div>
+                <div class="role">{{AUTHOR_CREDENTIALS}}</div>
+            </div>
+        </div>
+
+        <!-- Related Posts (internal links) -->
+        <div class="related-posts">
+            <h3>Related articles</h3>
+            <!-- Link to 2-3 cluster siblings + 1 cross-cluster page -->
+            {{RELATED_LINKS}}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+action,current_url,target_url,cluster,slug_keyword,kw_volume,gsc_impressions_3m,gsc_keywords,backlink_domains,note
+REWRITE,/blog/how-to-find-someone-email-address-efficiently,KEEP URL,Pillar 1: Cold Email,how to find someone's email address,1500,98828,2221,0,"#1 priority. 98K impressions, 2221 keywords, #1 for 'find someone's email address'. Rewrite as definitive guide. E-E-A-T: author bio, Overloop data, screenshots."
+REWRITE,/blog/get-email-from-linkedin-profile,KEEP URL,Pillar 1: Cold Email,get email from linkedin profile,150,31042,840,2,"60 clicks/3m, explosive growth. Core Overloop use case. Add step-by-step with Overloop screenshots."
+REWRITE,/blog/455-email-spam-trigger-words-avoid-2018,KEEP URL — do NOT change slug,Pillar 1: Cold Email,email spam trigger words,1000,8259,92,20,"BACKLINK TREASURE: GoDaddy DR93, Etsy DR94, CampaignMonitor DR90, Kajabi DR86. Keep URL for backlinks. Rewrite title: 'Email Spam Trigger Words to Avoid (2026 Updated List)'. Content = fresh, URL = untouched."
+REWRITE,/blog/500-trigger-words,KEEP URL,Pillar 1: Cold Email,trigger words,1800,6571,471,1,"REFRAME for cold email: 'Cold Email Power Words: 500+ Words That Get Replies in Outbound'. Keep keyword match, fix topical alignment. Vol 1800, KD 3, pos 6."
+REWRITE,/blog/whats-the-best-email-length-for-sales-outreach,KEEP URL,Pillar 1: Cold Email,cold email length,200,5511,204,20,"ZENDESK BACKLINKS: 10+ Zendesk pages DR93, Beehiiv DR91, Instantly DR78. Update with 2026 data from Overloop sends."
+REWRITE,/blog/cold-email-illegal,KEEP URL,Pillar 1: Cold Email,is cold email illegal,400,0,0,20,"GitHub DR97, SEMrush DR92, IndieHackers DR80. Rewrite as country-by-country legal guide (US CAN-SPAM, EU GDPR, UK). Evergreen topic."
+REWRITE,/blog/cold-email-stats-2018,KEEP URL — do NOT change slug,Pillar 1: Cold Email,cold email statistics,300,0,0,20,"GoDaddy DR93, OptinMonster DR88, SingleGrain DR79. Keep URL for backlinks. Title: 'Cold Email Statistics (2026): Open Rates, Reply Rates & Benchmarks'. Fresh data from Overloop."
+REWRITE,/blog/cold-emailing-link-building,KEEP URL,Pillar 1: Cold Email,cold email link building,200,12425,65,9,12.4K impressions in 2025 GSC. Shoptet DR91 backlink. Rewrite with real outreach case study using Overloop.
+MIGRATE,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,KEEP URL,Pillar 1: Cold Email,cold email marketing strategy,150,3183,82,0,"3.2K impressions. Absorbs all 'cold email tips/rules/checklist' 301s. Light refresh, add internal links to cluster."
+MIGRATE,/blog/best-practices-for-links-in-your-emails,KEEP URL,Pillar 1: Cold Email,links in emails,100,814,128,0,"6 clicks, pos 8.5, good CTR. Niche but on-topic. Migrate as-is, add internal links."
+MIGRATE,/blog/7-reasons-emails-bounce,KEEP URL,Pillar 1: Cold Email,why emails bounce,200,0,0,3,"3 backlink domains, on-topic for deliverability. Light refresh."
+CREATE,/blog/best-ai-sales-tools,NEW PAGE,Pillar 2: AI Tools — HUB,best ai sales tools,700,0,0,0,"NEW HUB PAGE. Targets 'best ai sales tools' (vol 700). Links to 3 spokes + competitor reviews. Comprehensive buyer's guide format, not listicle."
+REWRITE,/blog/11-best-ai-bdr-tools,KEEP URL,Pillar 2: AI Tools — Spoke BDR,ai bdr tools,600,5196,181,0,"SPOKE 3: AI BDR. KD 2, already pos 2.4 for 'ai bdr tools' in GSC. Absorb content from ai-agent-tools + ai-sales-assistant. Genuine testing, screenshots, honest comparison."
+REWRITE,/blog/9-best-ai-email-outreach-tools,KEEP URL,Pillar 2: AI Tools — Spoke Email,ai email outreach tools,300,4925,314,0,SPOKE 1: Email Outreach. Absorb multichannel content. 4.9K impressions. Position 19.6 = one strong rewrite from page 1.
+REWRITE,/blog/8-best-ai-linkedin-outreach-tools,KEEP URL,Pillar 2: AI Tools — Spoke LinkedIn,ai linkedin outreach tools,500,4634,260,0,SPOKE 2: LinkedIn. 4.6K impressions. Different enough channel to stay standalone.
+REWRITE,/blog/apollo-alternatives,KEEP URL,Pillar 2: AI Tools,apollo alternatives,300,7660,256,0,"7.7K impressions, pos 9.8. Almost page 1. Competitor comparison = high purchase intent."
+REWRITE,/blog/linkedin-helper-review,KEEP URL,Pillar 2: AI Tools,linkedin helper,500,0,0,0,"Vol 500, KD 5, pos 12. Add disclosure: 'We're Overloop, a competitor.' Honest pros/cons with real screenshots. E-E-A-T compliant."
+REWRITE,/blog/la-growth-machine-review,KEEP URL,Pillar 2: AI Tools,la growth machine,500,0,0,0,"Vol 500, KD 6, pos 14. Same honest review approach. First-person experience: 'We tested LGM for 30 days.'"
+MIGRATE,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,KEEP URL,Pillar 2: AI Tools,linkedin automation guide,200,4469,241,0,"4.5K impressions, 241 keywords. Solid guide. Links to LinkedIn spoke + linkedin-helper-review."
+MIGRATE,/blog/know-prospect-find,KEEP URL,General,find prospects,60,0,0,4,"Pos 4 Ahrefs, 4 ref domains. Low volume but ranks well. Keep."
+MIGRATE,/blog/top-8-sales-prospecting-tools-for-small-business-teams,KEEP URL,General,sales prospecting tools,300,3550,219,0,3.6K impressions. Absorbs 301 from 7-ai-sales-prospecting-tools. On-topic.
+301-CONSOLIDATE,/blog/9-best-ai-agent-tools-for-sales,/blog/11-best-ai-bdr-tools,Listicle merge,ai agent tools for sales,700,14896,607,0,"14.9K impressions but cannibalizes BDR spoke. 'AI agent' = 'AI BDR' in 2026. Merge content into bdr-tools page, then 301."
+301-CONSOLIDATE,/blog/10-best-ai-sales-assistant-tools,/blog/best-ai-sales-tools,Listicle merge,best ai sales tools,700,5855,294,0,Becomes the hub URL's feeder. 5.9K impressions flow to new hub page.
+301-CONSOLIDATE,/blog/9-best-ai-multichannel-outreach-tools,/blog/9-best-ai-email-outreach-tools,Listicle merge,multichannel outreach tool,200,5684,381,0,5.7K impressions. Multichannel ≈ email + LinkedIn. Content absorbed into email spoke.
+301-CONSOLIDATE,/blog/7-ai-sales-prospecting-tools-that-boost-lead-generation,/blog/top-8-sales-prospecting-tools-for-small-business-teams,Listicle merge,ai sales prospecting tools,200,2259,215,0,Cannibalizes with top-8-prospecting-tools. Merge.
+301-KILL,/blog/overloop-vs-reply,/blog/apollo-alternatives,Dead,overloop vs reply,0,0,0,0,Zero traction. Nobody searches 'overloop vs Reply'. 301 to alternatives page.
+301-KILL,/blog/overloop-vs-saleshandy,/blog/apollo-alternatives,Dead,overloop vs saleshandy,0,0,0,0,Zero traction. Nobody searches 'overloop vs Saleshandy'. 301 to alternatives page.
+301-KILL,/blog/overloop-vs-hubspot,/blog/apollo-alternatives,Dead,overloop vs hubspot,0,0,0,0,Zero traction. Nobody searches 'overloop vs HubSpot'. 301 to alternatives page.
+301-KILL,/blog/overloop-vs-instantly,/blog/apollo-alternatives,Dead,overloop vs instantly,0,0,0,0,Zero traction. Nobody searches 'overloop vs Instantly'. 301 to alternatives page.
+301-KILL,/blog/overloop-vs-apollo,/blog/apollo-alternatives,Dead,overloop vs apollo,0,0,0,0,Zero traction. Nobody searches 'overloop vs Apollo'. 301 to alternatives page.
+301-KILL,/blog/overloop-vs-cleverly,/blog/apollo-alternatives,Dead,overloop vs cleverly,0,0,0,0,Zero traction. Nobody searches 'overloop vs Cleverly'. 301 to alternatives page.
+301-KILL,/blog/overloop-joins-sortlist,/blog,Dead,,0,0,0,0,Company news. No SEO value. 301 → blog index.
+301-KILL,/blog/overloop-reshapes-outbound-workflows-with-a-simpler-more-flexible-platform-update,/blog,Dead,,0,0,0,0,Product update. No SEO value. 301 → blog index.
+301-KILL,/blog/overloop-ai-the-future-of-sales,/blog,Dead,,0,0,0,0,Fluff content. No SEO value. 301 → blog index.
+301-KILL,/blog/field-mapping-between-overloop-and-sf,/blog,Dead,,0,0,0,0,Support article — move to docs. No SEO value. 301 → blog index.
+301-KILL,/blog/calendly-integration,/blog,Dead,,0,0,0,0,Product feature. No SEO value. 301 → blog index.
+301-KILL,/blog/multiple-events,/blog,Dead,,0,0,0,0,Product feature. No SEO value. 301 → blog index.
+301-KILL,/blog/click-on-phone-numbers-to-start-a-call,/blog,Dead,,0,0,0,0,Product feature. No SEO value. 301 → blog index.
+301-KILL,/blog/how-to-master-sales-prospecting-with-overloop-s-automation-tools,/blog/top-8-sales-prospecting-tools-for-small-business-teams,Dead,,0,0,0,0,Brand-centric slug. 301 to prospecting tools.
+301-KILL,/blog/how-to-master-lead-generation-with-ai-for-saas-sales-success,/blog/best-ai-sales-tools,Dead,,0,0,0,0,Thin content (485 words — just blog index). 301 to AI tools hub.
+301-KILL,/blog/how-ai-email-writer-technology-transforms-cold-outreach-a-case-study-on-overloop,/blog/9-best-ai-email-outreach-tools,Dead,,0,0,0,0,Brand-centric slug. 301 to email outreach spoke.
+301-KILL,/blog/cold-email-software,/blog/9-best-ai-email-outreach-tools,Consolidate,cold email software,300,0,0,0,Good slug keyword (vol 300) but ZERO traction. Cannibalizes email spoke. 301 there.
+301-KILL,/blog/best-cold-email-software,/blog/9-best-ai-email-outreach-tools,Consolidate,best cold email software,250,0,0,0,Duplicate of cold-email-software. 301 to email spoke.
+301-KILL,/blog/ultimate-cold-email-checklist,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,cold email checklist,150,0,0,0,Consolidate into cold email strategy page.
+301-KILL,/blog/6-cold-email-rules,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,,0,0,0,0,Consolidate into cold email strategy page.
+301-KILL,/blog/write-cold-email-make-hot,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,,0,0,0,0,Consolidate.
+301-KILL,/blog/5-deadly-email-prospecting-mistakes,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,,0,0,0,0,Consolidate.
+301-KILL,/blog/ab-testing-email-drip-campaigns,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,,0,0,0,0,Consolidate.
+301-KILL,/blog/how-to-write-a-successful-follow-up-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,follow up email,200,3366,82,0,Good slug but pos 82.5. Too deep to recover. Consolidate.
+301-KILL,/blog/perfect-follow-up-email-campaign,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,Consolidate,,0,0,0,0,Same topic. Consolidate.
+301-KILL,/blog/7-cold-email-subject-lines,/blog/500-trigger-words,Consolidate,cold email subject lines,200,1106,48,0,Related topic. Pos 81. 301 to reframed trigger words page.
+301-KILL,/blog/17-sentences-never-use-sales-email,/blog/500-trigger-words,Consolidate,,0,805,48,0,Related copywriting topic. 301 to trigger words.
+301-KILL,/blog/10-pro-tips-avoid-spam-folder,/blog/455-email-spam-trigger-words-avoid-2018,Consolidate,avoid spam folder,150,5817,150,0,5.8K impressions but pos 76. Related to spam. 301 to spam trigger words page.
+301-KILL,/blog/9-reasons-never-buy-email-lists,/blog/cold-email-illegal,Consolidate,,0,0,0,0,Related to email legality. 301 to cold-email-illegal.
+301-KILL,/blog/linkedin-outreach,/blog/8-best-ai-linkedin-outreach-tools,Consolidate,linkedin outreach,300,0,0,0,Good slug (vol 300) but zero traction. Cannibalizes LinkedIn spoke. 301 there.
+301-KILL,/blog/linkedin-outreach-strategy,/blog/8-best-ai-linkedin-outreach-tools,Consolidate,,0,0,0,0,Dead page (timeout). 301 to LinkedIn spoke.
+301-KILL,/blog/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,Consolidate,linkedin automation tools,300,0,0,0,Ugly hash slug. Cannibalizes with LinkedIn automation guide. 301 there.
+301-KILL,/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach,/blog/8-best-ai-linkedin-outreach-tools,Consolidate,linkedin vs email,100,0,0,0,301 to LinkedIn spoke.
+301-KILL,/blog/Heyreach-Review,/blog/8-best-ai-linkedin-outreach-tools,Consolidate,heyreach review,100,0,0,0,Uppercase URL (bad). Heyreach covered in LinkedIn spoke. 301 there.
+301-KILL,/blog/apollo-vs-lemlist-which-prospecting-tool-wins-for-b2b-sales-teams-95e78,/blog/apollo-alternatives,Consolidate,apollo vs lemlist,200,349,17,0,Ugly slug with hash. 301 to apollo-alternatives which covers this comparison.
+301-KILL,/blog/how-to-write-good-emails,/blog/whats-the-best-email-length-for-sales-outreach,Consolidate,how to write good emails,200,0,0,0,Too generic. KD 40. 301 to email length page (Zendesk backlinks).
+301-KILL,/blog/10-favourite-sales-movies,/blog,Off-topic,sales movies,200,1078,88,0,OFF-TOPIC per all 4 experts. Sales movies ≠ outbound sales automation. 301 to blog index.
+301-KILL,/blog/team-retreat-important,/blog,Off-topic,,0,0,0,0,OFF-TOPIC. Team culture. 301 to blog index.
+301-KILL,/blog/unique-selling-proposition,/blog,Off-topic,unique selling proposition,300,0,0,0,Good keyword (vol 300) but generic business concept. Not Overloop's lane. 301 to blog index.
+301-KILL,/blog/inside-sales-outside-sales,/blog,Off-topic,inside vs outside sales,450,0,0,0,Vol 450 KD 5 but off-topic for outbound automation. Not worth rewriting.
+301-KILL,/blog/10-best-practices-for-multi-channel-sales-campaigns,/blog/9-best-ai-email-outreach-tools,Consolidate,,0,0,0,0,Cannibalizes with email spoke (which absorbed multichannel). 301 there.
+301-KILL,/blog/manage-sales-pipeline,/blog,Dead,manage sales pipeline,150,0,0,0,Not core product. 301 to blog.
+301-KILL,/blog/sales-appointment-setting,/blog/top-8-sales-prospecting-tools-for-small-business-teams,Dead,sales appointment setting,100,0,0,0,Related to prospecting. 301 to prospecting tools.
+301-KILL,/blog/6-reasons-sales-process-broken,/blog,Dead,,0,0,0,0,Generic sales content. 301 to blog.
+301-KILL,/blog/3-sales-kpi,/blog,Dead,,0,0,0,0,Generic. 301 to blog.
+301-KILL,/blog/increase-saas-sales-growth-system,/blog,Dead,increase saas sales,50,0,0,0,"Low volume, zero traction. 301 to blog."
+301-KILL,/blog/the-ultimate-guide-to-b2b-sales-automation-solutions-in-2025,/blog/best-ai-sales-tools,Dead,b2b sales automation,300,0,0,0,Good slug keyword but no traction. 301 to AI tools hub.
+301-KILL,/blog/boost-sales-motivation,/blog,Dead,,0,192,20,0,Ranked for person name 'carson heady'. Not a real topic. 301 to blog.
+301-KILL,/blog/kickstart-sales-career-2,/blog,Dead,,0,175,12,0,Person name ranking. Not a topic. 301 to blog.
+301-KILL,/blog/pre-call-planning,/blog,Dead,sales call planning,100,4806,87,0,4.8K impressions but pos 49 and off-topic for outbound automation. 301 to blog.
+301-KILL,/blog/best-ai-sales-tools,/blog/best-ai-sales-tools,Redirect,,0,14742,138,0,"Old URL if it exists. 301 to the new hub. If this IS the hub URL, skip this redirect."
+301-KILL,/blog/automations,/blog,Dead,,0,0,0,0,Product feature page. 301 to blog.
+301-KILL,/blog/ethics-of-ai-in-sales-key-challenges,/blog/best-ai-sales-tools,Dead,,0,0,0,0,Has Substack DR93 backlink but zero traction. Off-topic. 301 to AI tools hub to capture backlink juice.
+301-KILL-INTL,/fr/blog/trouver-adresse-email-quelquun,/blog/how-to-find-someone-email-address-efficiently,International (FR),,0,0,0,0,"Vol 500 for FR keyword. 4 clicks, 202 GSC keywords. Best intl page. 301 to EN. Reconsider IF investing in FR."
+301-KILL-INTL,/fr/blog/obtenir-emails-linkedin,/blog/get-email-from-linkedin-profile,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/mots-declencheurs-copywriting-email,/blog/500-trigger-words,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/meilleur-logiciel-cold-email,/blog/9-best-ai-email-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/meilleurs-outils-ia-bdr,/blog/11-best-ai-bdr-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/meilleurs-outils-automatisation-linkedin-b2b,/blog/8-best-ai-linkedin-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/avis-la-growth-machine,/blog/la-growth-machine-review,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/heyreach-avis,/blog/8-best-ai-linkedin-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/linkedin-helper-review,/blog/linkedin-helper-review,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/alternatives-apollo-prospection-b2b,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/overloop-vs-hubspot,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/overloop-vs-reply,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/overloop-ou-saleshandy,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/overloop-vs-instantly,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/overloop-vs-apollo,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/proposition-vente-unique-usp,/blog,International (FR),,0,0,0,0,Off-topic
+301-KILL-INTL,/fr/blog/films-vente-favoris-commerciaux,/blog,International (FR),,0,0,0,0,Off-topic
+301-KILL-INTL,/fr/blog/importance-seminaire-equipe,/blog,International (FR),,0,0,0,0,Off-topic
+301-KILL-INTL,/fr/blog/overloop-ai-avenir-ventes,/blog,International (FR),,0,0,0,0,Product news
+301-KILL-INTL,/fr/blog/overloop-rejoint-sortlist,/blog,International (FR),,0,0,0,0,Company news
+301-KILL-INTL,/fr/blog/augmenter-ventes-saas-croissance,/blog,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/prendre-rendez-vous-vente,/blog,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/identifier-prospects-cibles,/blog/know-prospect-find,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/sequence-emails-suivi-parfaite,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/email-suivi-reussi-etapes,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/checklist-email-froid,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/regles-cold-email-efficaces,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/raisons-rebond-emails-comment-eviter,/blog/7-reasons-emails-bounce,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/prospection-linkedin-obtenir-reponses,/blog/8-best-ai-linkedin-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/linkedin-vs-email-prospection-b2b,/blog/8-best-ai-linkedin-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/indicateurs-cles-performance-vente,/blog,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/raisons-processus-vente-defaillant,/blog,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/phrases-eviter-email-vente,/blog/500-trigger-words,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/mots-spam-eviter-emails,/blog/455-email-spam-trigger-words-avoid-2018,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/erreurs-prospection-email-eviter,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/lignes-objet-cold-email-performantes,/blog/500-trigger-words,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/pourquoi-ne-pas-acheter-listes-emails,/blog/cold-email-illegal,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/meilleurs-agents-ia-ventes,/blog/11-best-ai-bdr-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/apollo-vs-lemlist-comparatif-prospection,/blog/apollo-alternatives,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/gerer-pipeline-ventes,/blog,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/maitriser-prospection-commerciale-automatisation,/blog/top-8-sales-prospecting-tools-for-small-business-teams,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/automatisation-ventes-b2b,/blog/best-ai-sales-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/ia-redaction-emails-cold-outreach,/blog/9-best-ai-email-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/cold-email-est-il-illegal,/blog/cold-email-illegal,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/copywriting-cold-email-conseils,/blog/500-trigger-words,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/statistiques-cold-email,/blog/cold-email-stats-2018,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/cold-email-link-building,/blog/cold-emailing-link-building,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/integration-calendly,/blog,International (FR),,0,0,0,0,Product feature
+301-KILL-INTL,/fr/blog/longueur-cold-email,/blog/whats-the-best-email-length-for-sales-outreach,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/meilleures-pratiques-campagnes-vente-multicanal,/blog/9-best-ai-email-outreach-tools,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/conseils-eviter-dossier-spam,/blog/455-email-spam-trigger-words-avoid-2018,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/rediger-bons-emails,/blog/whats-the-best-email-length-for-sales-outreach,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/bonnes-pratiques-liens-emails,/blog/best-practices-for-links-in-your-emails,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/test-ab-campagnes-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (FR),,0,0,0,0,Auto-translated FR page. 301 to EN equivalent.
+301-KILL-INTL,/fr/blog/multiple-events,/blog,International (FR),,0,0,0,0,Product feature
+301-KILL-INTL,/fr/blog,/blog,International (FR),,0,0,0,0,Blog index
+301-KILL-INTL,/es/blog/encontrar-correo-electronico,/blog/how-to-find-someone-email-address-efficiently,International (ES),,0,0,0,0,"17 clicks, 227 GSC keywords. Best ES page. 301 to EN."
+301-KILL-INTL,/es/blog/correos-perfil-linkedin,/blog/get-email-from-linkedin-profile,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/500-palabras-detonantes,/blog/500-trigger-words,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/peliculas-ventas-favoritas-vendedores,/blog,International (ES),,0,0,0,0,Off-topic
+301-KILL-INTL,/es/blog/mejor-software-correo-frio,/blog/9-best-ai-email-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/mejores-herramientas-ia-bdr,/blog/11-best-ai-bdr-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/mejores-herramientas-automatizacion-linkedin,/blog/8-best-ai-linkedin-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/alternativas-apollo,/blog/apollo-alternatives,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/resena-la-growth-machine,/blog/la-growth-machine-review,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/resena-linkedin-helper,/blog/linkedin-helper-review,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/linkedin-helper-review,/blog/linkedin-helper-review,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/overloop-vs-saleshandy,/blog/apollo-alternatives,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/overloop-se-une-sortlist,/blog,International (ES),,0,0,0,0,Company news
+301-KILL-INTL,/es/blog/overloop-nueva-plataforma-workflows-salientes,/blog,International (ES),,0,0,0,0,Product news
+301-KILL-INTL,/es/blog/overloop-ai-ventas,/blog,International (ES),,0,0,0,0,Product news
+301-KILL-INTL,/es/blog/overloop-vs-apollo-comparativa,/blog/apollo-alternatives,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/overloop-vs-instantly-comparativa,/blog/apollo-alternatives,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/propuesta-unica-de-venta,/blog,International (ES),,0,0,0,0,Off-topic
+301-KILL-INTL,/es/blog/correo-seguimiento,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/perfect-follow-up-email-campaign,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/secuencia-correos-seguimiento,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/software-prospeccion-email,/blog/9-best-ai-email-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/errores-prospeccion-email-frio,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/prospectar-clientes,/blog/know-prospect-find,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/citas-de-ventas,/blog,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/canal-de-ventas,/blog,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/metricas-ventas-imprescindibles,/blog,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/retiro-equipo-importancia,/blog,International (ES),,0,0,0,0,Off-topic
+301-KILL-INTL,/es/blog/razones-rebote-emails-como-evitarlo,/blog/7-reasons-emails-bounce,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/guia-completa-heyreach,/blog/8-best-ai-linkedin-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/apollo-vs-lemlist-comparativa,/blog/apollo-alternatives,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/mejores-herramientas-agentes-ia-ventas,/blog/11-best-ai-bdr-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/guia-automatizacion-linkedin-2025,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/prospeccion-ventas-ia,/blog/top-8-sales-prospecting-tools-for-small-business-teams,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/ia-correo-electronico-divulgacion-fria,/blog/9-best-ai-email-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/guia-automatizacion-ventas-b2b-2025,/blog/best-ai-sales-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/calendly-integration,/blog,International (ES),,0,0,0,0,Product feature
+301-KILL-INTL,/es/blog/reglas-correo-frio,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/email-frio-es-ilegal,/blog/cold-email-illegal,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/frases-prohibidas-email-ventas,/blog/500-trigger-words,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/mejores-practicas-campanas-ventas-multicanal,/blog/9-best-ai-email-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/lineas-asunto-correo-frio,/blog/500-trigger-words,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/palabras-spam-evitar-email,/blog/455-email-spam-trigger-words-avoid-2018,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/proceso-ventas-roto-razones,/blog,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/comprar-listas-de-correo-electronico,/blog/cold-email-illegal,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/linkedin-vs-email-comparativa-outreach-b2b,/blog/8-best-ai-linkedin-outreach-tools,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/consejos-evitar-carpeta-spam,/blog/455-email-spam-trigger-words-avoid-2018,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/copywriting-email-frio-consejos,/blog/500-trigger-words,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/checklist-email-frio,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/email-frio-link-building-caso-estudio,/blog/cold-emailing-link-building,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/estadisticas-cold-email,/blog/cold-email-stats-2018,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/longitud-ideal-email-frio,/blog/whats-the-best-email-length-for-sales-outreach,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/enlaces-correos-electronicos,/blog/best-practices-for-links-in-your-emails,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/escribir-correos-electronicos,/blog/whats-the-best-email-length-for-sales-outreach,International (ES),,0,0,0,0,Auto-translated ES page. 301 to EN equivalent.
+301-KILL-INTL,/es/blog/seguimiento-multiples-eventos,/blog,International (ES),,0,0,0,0,Product feature
+301-KILL-INTL,/es/blog,/blog,International (ES),,0,0,0,0,Blog index
+301-KILL-INTL,/it/blog/trovare-email-di-qualcuno,/blog/how-to-find-someone-email-address-efficiently,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/ottenere-email-da-linkedin,/blog/get-email-from-linkedin-profile,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/parole-trigger-copywriting,/blog/500-trigger-words,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/software-cold-email-b2b,/blog/9-best-ai-email-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/miglior-software-cold-email,/blog/9-best-ai-email-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/strumenti-ai-bdr,/blog/11-best-ai-bdr-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/strumenti-ai-agent-vendite,/blog/11-best-ai-bdr-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/strumenti-automazione-linkedin,/blog/8-best-ai-linkedin-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/la-growth-machine-recensione,/blog/la-growth-machine-review,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/linkedin-helper-recensione,/blog/linkedin-helper-review,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/heyreach-recensione-linkedin,/blog/8-best-ai-linkedin-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/alternative-apollo-vendite,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/apollo-vs-lemlist,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/overloop-vs-hubspot,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/overloop-vs-saleshandy,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/overloop-vs-instantly,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/overloop-vs-apollo,/blog/apollo-alternatives,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/overloop-sortlist,/blog,International (IT),,0,0,0,0,Company news
+301-KILL-INTL,/it/blog/aggiornamento-piattaforma-overloop,/blog,International (IT),,0,0,0,0,Product news
+301-KILL-INTL,/it/blog/overloop-ai-futuro-vendite,/blog,International (IT),,0,0,0,0,Product news
+301-KILL-INTL,/it/blog/proposta-di-valore-unica,/blog,International (IT),,0,0,0,0,Off-topic
+301-KILL-INTL,/it/blog/film-sulla-vendita,/blog,International (IT),,0,0,0,0,Off-topic
+301-KILL-INTL,/it/blog/importanza-ritiro-di-team,/blog,International (IT),,0,0,0,0,Off-topic
+301-KILL-INTL,/it/blog/metriche-vendite-chiave,/blog,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/appuntamenti-commerciali,/blog,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/problemi-processo-vendita,/blog,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/come-trovare-prospect,/blog/know-prospect-find,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/gestire-pipeline-vendite,/blog,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/perche-rimbalzano-email,/blog/7-reasons-emails-bounce,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/perche-non-comprare-liste-email,/blog/cold-email-illegal,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/cold-email-legale,/blog/cold-email-illegal,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/errori-prospezione-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/follow-up-email-passo-passo,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/sequenza-follow-up-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/regole-cold-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/checklist-cold-email,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/oggetto-email-vendita-efficace,/blog/500-trigger-words,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/frasi-da-evitare-email-vendita,/blog/500-trigger-words,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/parole-spam-da-evitare,/blog/455-email-spam-trigger-words-avoid-2018,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/evitare-cartella-spam,/blog/455-email-spam-trigger-words-avoid-2018,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/outreach-linkedin-risposte,/blog/8-best-ai-linkedin-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/guida-automazione-linkedin,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/linkedin-vs-email-b2b,/blog/8-best-ai-linkedin-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/prospezione-vendite-automazione,/blog/top-8-sales-prospecting-tools-for-small-business-teams,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/automazione-vendite-b2b,/blog/best-ai-sales-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/ai-email-writer-cold-outreach-caso-studio,/blog/9-best-ai-email-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/campagne-vendita-multicanale,/blog/9-best-ai-email-outreach-tools,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/copywriting-cold-email,/blog/500-trigger-words,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/link-nelle-email,/blog/best-practices-for-links-in-your-emails,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/scrivere-email-efficaci,/blog/whats-the-best-email-length-for-sales-outreach,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/cold-email-link-building,/blog/cold-emailing-link-building,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/statistiche-cold-email,/blog/cold-email-stats-2018,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/lunghezza-cold-email-ideale,/blog/whats-the-best-email-length-for-sales-outreach,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/ab-test-email-drip,/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy,International (IT),,0,0,0,0,Auto-translated IT page. 301 to EN equivalent.
+301-KILL-INTL,/it/blog/tracciamento-eventi-multipli,/blog,International (IT),,0,0,0,0,Product feature
+301-KILL-INTL,/it/blog/integrazione-calendly,/blog,International (IT),,0,0,0,0,Product feature
+301-KILL-INTL,/it/blog,/blog,International (IT),,0,0,0,0,Blog index
+301-KILL-INTL,/de/blog/apollo-alternativen,/blog/apollo-alternatives,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/overloop-vs-apollo-vergleich,/blog/apollo-alternatives,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/overloop-ai-zukunft-vertrieb,/blog,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/overloop-calendly-integration,/blog,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/linkedin-outreach,/blog/8-best-ai-linkedin-outreach-tools,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/linkedin-vs-e-mail-b2b-outreach,/blog/8-best-ai-linkedin-outreach-tools,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/linkedin-helper-review,/blog/linkedin-helper-review,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/linkedin-automatisierung-leitfaden,/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/verkaufsprospektion-automatisierung,/blog/top-8-sales-prospecting-tools-for-small-business-teams,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/e-mails-linkedin-profil-finden,/blog/get-email-from-linkedin-profile,International (DE),,0,0,0,0,Dead (timeout)
+301-KILL-INTL,/de/blog/richtige-interessenten-finden,/blog/know-prospect-find,International (DE),,0,0,0,0,Dead (timeout)
