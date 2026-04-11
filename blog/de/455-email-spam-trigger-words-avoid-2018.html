@@ -167,7 +167,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <p>Spam-Filter erkennen Dringlichkeitssprache, weil Betr&uuml;ger sie nutzen, um schnelle Entscheidungen zu erzwingen.</p>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Jetzt handeln</td><td>Hoch</td><td>Wenn es passt</td></tr>
                 <tr><td>Dringend</td><td>Hoch</td><td>Zeitnah</td></tr>
@@ -199,7 +199,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <p>Finanzielle Spam-W&ouml;rter geh&ouml;ren zu den riskantesten. Spam-Filter verbinden sie mit Phishing und Betrug.</p>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Geld verdienen</td><td>Hoch</td><td>Umsatz steigern</td></tr>
                 <tr><td>Zusatzverdienst</td><td>Hoch</td><td>Zus&auml;tzliche Einnahmen</td></tr>
@@ -228,7 +228,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <p>"Gratis" und "kostenlos" sind die am h&auml;ufigsten gefilterten W&ouml;rter im deutschen Sprachraum. Besonders in Betreffzeilen.</p>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Gratis</td><td>Hoch</td><td>Ohne Aufpreis / Inklusive</td></tr>
                 <tr><td>Kostenlose Testversion</td><td>Mittel</td><td>Ausprobieren / Testen</td></tr>
@@ -256,7 +256,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <p>&Uuml;bertreibungen signalisieren Spam-Filtern Marketingmaterial. Je sensationeller die Sprache, desto unglaubw&uuml;rdiger wirkt die E-Mail.</p>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Unglaublich</td><td>Mittel</td><td>Bemerkenswert</td></tr>
                 <tr><td>Sensationell</td><td>Mittel</td><td>Beachtlich</td></tr>
@@ -281,7 +281,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>5. Druck- und Manipulationsw&ouml;rter</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Nicht l&ouml;schen</td><td>Hoch</td><td>Einen Blick wert</td></tr>
                 <tr><td>Dies ist kein Spam</td><td>Hoch</td><td>Komplett entfernen</td></tr>
@@ -302,7 +302,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>6. Gesundheits- und Di&auml;tw&ouml;rter</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Abnehmen</td><td>Hoch</td><td>Ziele erreichen</td></tr>
                 <tr><td>Gewicht verlieren</td><td>Hoch</td><td>Wohlbefinden steigern</td></tr>
@@ -322,7 +322,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>7. Betrugs- und Phishing-W&ouml;rter</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>&Uuml;berweisung</td><td>Hoch</td><td>Zahlung</td></tr>
                 <tr><td>Erbschaft</td><td>Hoch</td><td>Vermeiden</td></tr>
@@ -344,7 +344,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>8. Formatierungs- und technische Trigger</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Muster</th><th>Risiko</th><th>L&ouml;sung</th></tr>
                 <tr><td>GROSSBUCHSTABEN in Betreffzeile</td><td>Hoch</td><td>Normale Schreibweise</td></tr>
                 <tr><td>&Uuml;berm&auml;&szlig;ig viele Ausrufezeichen (!!!)</td><td>Hoch</td><td>Maximal eines</td></tr>
@@ -360,7 +360,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>9. Marketing- und Vertriebsfloskeln</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Spam-Wort</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>Kaufen</td><td>Mittel</td><td>Ausprobieren</td></tr>
                 <tr><td>Schlussverkauf</td><td>Hoch</td><td>Sonderpreise</td></tr>
@@ -379,7 +379,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
             <h2>10. Betreffzeilen-spezifische Trigger</h2>
 
-            <table>
+            <table class="table-keep">
                 <tr><th>Betreffzeilen-Trigger</th><th>Risiko</th><th>Alternative</th></tr>
                 <tr><td>AW: (gef&auml;lschte Antwort)</td><td>Hoch</td><td>Echte Betreffzeile schreiben</td></tr>
                 <tr><td>WG: (gef&auml;lschte Weiterleitung)</td><td>Hoch</td><td>Echte Betreffzeile schreiben</td></tr>
