@@ -222,8 +222,91 @@
 
             <h2>What LinkedIn Helper Does</h2>
 
-            <!-- TODO: Screenshot: LinkedIn Helper 2 main dashboard showing campaign list and sidebar navigation -->
-            <img src="/assets/images/linkedin-helper-dashboard.png" alt="LinkedIn Helper 2 main dashboard with campaign list and navigation sidebar" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">LinkedIn Helper 2 &mdash; Dashboard</span>
+                </div>
+                <div style="display: flex; min-height: 340px;">
+                    <!-- Sidebar -->
+                    <div style="width: 200px; background: #1e293b; padding: 16px 0; flex-shrink: 0;">
+                        <div style="padding: 0 16px 16px 16px; border-bottom: 1px solid #334155;">
+                            <div style="color: #60a5fa; font-weight: 700; font-size: 14px;">LH</div>
+                            <div style="color: #94a3b8; font-size: 11px; margin-top: 2px;">Linked Helper 2</div>
+                        </div>
+                        <div style="padding: 12px 16px; color: #ffffff; background: #334155; margin-top: 4px; font-size: 12px; font-weight: 600;">Campaigns</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">Queue</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">Profiles</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">Messages</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">CRM</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">Email Finder</div>
+                        <div style="padding: 10px 16px; color: #94a3b8; font-size: 12px;">Settings</div>
+                    </div>
+                    <!-- Main content -->
+                    <div style="flex: 1; background: #ffffff; padding: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="font-weight: 700; font-size: 16px; color: #1e293b;">My Campaigns</span>
+                            <span style="background: #3b82f6; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: default;">+ New Campaign</span>
+                        </div>
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                            <thead>
+                                <tr style="background: #f8fafc; text-align: left;">
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Campaign Name</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Status</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Profiles</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Sent</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Accepted</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600;">Replied</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">SaaS CMO Outreach Q2</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;">Running</span></td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">1,247</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">834</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">312</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">47</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Series A Founders - EU</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><span style="background: #dcfce7; color: #16a34a; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;">Running</span></td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">863</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">521</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">198</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">31</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Agency Owners - US West</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><span style="background: #fef9c3; color: #a16207; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;">Paused</span></td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">445</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">290</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">104</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">18</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; font-weight: 500;">Event Follow-up - SaaStr</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9;"><span style="background: #e2e8f0; color: #475569; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;">Completed</span></td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">328</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">328</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">156</td>
+                                    <td style="padding: 10px; border-bottom: 1px solid #f1f5f9; color: #475569;">29</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 10px; font-weight: 500;">VP Sales - Fintech UK</td>
+                                    <td style="padding: 10px;"><span style="background: #fee2e2; color: #dc2626; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;">Draft</span></td>
+                                    <td style="padding: 10px; color: #475569;">0</td>
+                                    <td style="padding: 10px; color: #475569;">0</td>
+                                    <td style="padding: 10px; color: #475569;">0</td>
+                                    <td style="padding: 10px; color: #475569;">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
             <p>LinkedIn Helper is a desktop application (not a browser extension, despite what some people think) that automates LinkedIn actions. You download it to your computer, connect your LinkedIn account, and it runs campaigns from your machine.</p>
 
@@ -245,8 +328,59 @@
 
             <p>LinkedIn Helper uses a license-based model. No subscriptions. You buy a license for a fixed period, and when it expires, you buy a new one manually. No auto-billing.</p>
 
-            <!-- TODO: Screenshot: LinkedIn Helper pricing page showing Standard and Pro plans side by side -->
-            <img src="/assets/images/linkedin-helper-pricing-page.png" alt="LinkedIn Helper pricing page showing Standard at $15/mo and Pro at $45/mo" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">linkedhelper.com/pricing</span>
+                </div>
+                <div style="background: #f0f4ff; padding: 30px 20px; text-align: center;">
+                    <div style="font-size: 20px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">Choose Your Plan</div>
+                    <div style="font-size: 13px; color: #64748b; margin-bottom: 24px;">14-day free trial. No credit card required.</div>
+                    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <!-- Standard Card -->
+                        <div style="background: #ffffff; border: 2px solid #e2e8f0; border-radius: 12px; padding: 24px; width: 260px; text-align: left;">
+                            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #3b82f6; margin-bottom: 8px;">Standard</div>
+                            <div style="font-size: 32px; font-weight: 800; color: #1e293b;">$15<span style="font-size: 14px; font-weight: 400; color: #64748b;">/mo</span></div>
+                            <div style="font-size: 11px; color: #94a3b8; margin-bottom: 16px;">or $8.25/mo billed annually</div>
+                            <div style="border-top: 1px solid #f1f5f9; padding-top: 14px; font-size: 12px; color: #475569;">
+                                <div style="padding: 4px 0;">&#10003; 20 invites/day</div>
+                                <div style="padding: 4px 0;">&#10003; 20 messages/day</div>
+                                <div style="padding: 4px 0;">&#10003; 20 likes/day</div>
+                                <div style="padding: 4px 0;">&#10003; 620 email finder credits/mo</div>
+                                <div style="padding: 4px 0;">&#10003; CSV export</div>
+                                <div style="padding: 4px 0; color: #cbd5e1;">&#10007; Smart sequences</div>
+                                <div style="padding: 4px 0; color: #cbd5e1;">&#10007; CRM features</div>
+                                <div style="padding: 4px 0; color: #cbd5e1;">&#10007; Priority support</div>
+                            </div>
+                            <div style="margin-top: 16px; text-align: center;">
+                                <span style="display: inline-block; background: #e2e8f0; color: #475569; padding: 8px 28px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start Trial</span>
+                            </div>
+                        </div>
+                        <!-- Pro Card -->
+                        <div style="background: #ffffff; border: 2px solid #3b82f6; border-radius: 12px; padding: 24px; width: 260px; text-align: left; position: relative;">
+                            <div style="position: absolute; top: -10px; right: 16px; background: #3b82f6; color: #fff; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Most Popular</div>
+                            <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #3b82f6; margin-bottom: 8px;">Pro</div>
+                            <div style="font-size: 32px; font-weight: 800; color: #1e293b;">$45<span style="font-size: 14px; font-weight: 400; color: #64748b;">/mo</span></div>
+                            <div style="font-size: 11px; color: #94a3b8; margin-bottom: 16px;">or $24.75/mo billed annually</div>
+                            <div style="border-top: 1px solid #f1f5f9; padding-top: 14px; font-size: 12px; color: #475569;">
+                                <div style="padding: 4px 0;">&#10003; Unlimited daily actions</div>
+                                <div style="padding: 4px 0;">&#10003; 3,100 email finder credits/mo</div>
+                                <div style="padding: 4px 0;">&#10003; Smart sequences</div>
+                                <div style="padding: 4px 0;">&#10003; Conditional branching</div>
+                                <div style="padding: 4px 0;">&#10003; Built-in CRM</div>
+                                <div style="padding: 4px 0;">&#10003; Webhook integrations</div>
+                                <div style="padding: 4px 0;">&#10003; Priority support (20 min)</div>
+                                <div style="padding: 4px 0;">&#10003; AI messages (30/day)</div>
+                            </div>
+                            <div style="margin-top: 16px; text-align: center;">
+                                <span style="display: inline-block; background: #3b82f6; color: #fff; padding: 8px 28px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start Trial</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <table>
                 <thead>
@@ -294,8 +428,57 @@
 
             <p>Installation is straightforward. Download the app, log in, connect LinkedIn. The whole process took about 10 minutes.</p>
 
-            <!-- TODO: Screenshot: LinkedIn Helper campaign template selection screen showing available sequence templates -->
-            <img src="/assets/images/linkedin-helper-campaign-templates.png" alt="LinkedIn Helper campaign template selection screen with sequence options" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">LinkedIn Helper 2 &mdash; New Campaign</span>
+                </div>
+                <div style="background: #ffffff; padding: 24px;">
+                    <div style="font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">Choose a Campaign Template</div>
+                    <div style="font-size: 12px; color: #64748b; margin-bottom: 20px;">Select a template to get started, or create a blank campaign.</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px;">
+                        <!-- Template 1 -->
+                        <div style="border: 2px solid #3b82f6; border-radius: 10px; padding: 16px; background: #f0f7ff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#128101;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Connection Request</div>
+                            <div style="font-size: 11px; color: #64748b;">Send personalized invites with auto follow-up on acceptance.</div>
+                            <div style="margin-top: 10px; font-size: 11px; color: #3b82f6; font-weight: 600;">Popular</div>
+                        </div>
+                        <!-- Template 2 -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#128172;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Follow-up Sequence</div>
+                            <div style="font-size: 11px; color: #64748b;">Multi-step message chain for existing connections.</div>
+                        </div>
+                        <!-- Template 3 -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#128065;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Profile Visit + Invite</div>
+                            <div style="font-size: 11px; color: #64748b;">Visit profile first, wait, then send connection request.</div>
+                        </div>
+                        <!-- Template 4 -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#128188;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Group Outreach</div>
+                            <div style="font-size: 11px; color: #64748b;">Message LinkedIn group members with shared context.</div>
+                        </div>
+                        <!-- Template 5 -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#127915;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Event Attendees</div>
+                            <div style="font-size: 11px; color: #64748b;">Connect with event attendees using event-specific messages.</div>
+                        </div>
+                        <!-- Template 6 -->
+                        <div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fff;">
+                            <div style="font-size: 22px; margin-bottom: 8px;">&#128203;</div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e293b; margin-bottom: 4px;">Data Scraper</div>
+                            <div style="font-size: 11px; color: #64748b;">Collect profiles and export to CSV without messaging.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <p>Here's how a typical first campaign works:</p>
 
@@ -313,8 +496,58 @@
 
             <h2>How the Automation Works</h2>
 
-            <!-- TODO: Screenshot: LinkedIn Helper smart sequence builder showing conditional branches and action chain -->
-            <img src="/assets/images/linkedin-helper-smart-sequence.png" alt="LinkedIn Helper smart sequence builder with conditional logic branches" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">LinkedIn Helper 2 &mdash; Smart Sequence Builder</span>
+                </div>
+                <div style="background: #f8fafc; padding: 24px; text-align: center;">
+                    <div style="font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 20px; text-align: left;">Smart Sequence: SaaS CMO Outreach Q2</div>
+                    <!-- Flowchart -->
+                    <div style="display: inline-block; text-align: center;">
+                        <!-- Step 1 -->
+                        <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 8px; padding: 10px 24px; display: inline-block; font-weight: 600; color: #1e40af; font-size: 12px;">&#128065; Visit Profile</div>
+                        <div style="margin: 4px 0; color: #94a3b8; font-size: 18px;">&#8595;</div>
+                        <div style="color: #64748b; font-size: 11px; margin-bottom: 4px;">Wait 1 day</div>
+                        <div style="margin: 4px 0; color: #94a3b8; font-size: 18px;">&#8595;</div>
+                        <!-- Step 2 -->
+                        <div style="background: #dbeafe; border: 2px solid #3b82f6; border-radius: 8px; padding: 10px 24px; display: inline-block; font-weight: 600; color: #1e40af; font-size: 12px;">&#128101; Send Connection Request</div>
+                        <div style="margin: 4px 0; color: #94a3b8; font-size: 18px;">&#8595;</div>
+                        <!-- Condition -->
+                        <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 10px 20px; display: inline-block; font-weight: 600; color: #92400e; font-size: 12px; transform: rotate(0deg);">&#9670; If Accepted?</div>
+                        <div style="display: flex; justify-content: center; gap: 60px; margin-top: 8px;">
+                            <!-- Yes Branch -->
+                            <div style="text-align: center;">
+                                <div style="color: #16a34a; font-size: 11px; font-weight: 700; margin-bottom: 6px;">&#10003; Yes</div>
+                                <div style="color: #64748b; font-size: 11px; margin-bottom: 6px;">Wait 2 days</div>
+                                <div style="background: #dcfce7; border: 2px solid #22c55e; border-radius: 8px; padding: 10px 18px; font-weight: 600; color: #166534; font-size: 12px;">&#128172; Send Follow-up</div>
+                                <div style="margin: 4px 0; color: #94a3b8; font-size: 18px;">&#8595;</div>
+                                <div style="background: #fef3c7; border: 2px solid #f59e0b; border-radius: 8px; padding: 8px 14px; font-weight: 600; color: #92400e; font-size: 11px;">&#9670; Replied?</div>
+                                <div style="display: flex; justify-content: center; gap: 24px; margin-top: 6px;">
+                                    <div style="text-align: center;">
+                                        <div style="color: #16a34a; font-size: 10px; font-weight: 700;">&#10003; Yes</div>
+                                        <div style="background: #ede9fe; border: 1px solid #8b5cf6; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #5b21b6; font-weight: 600; margin-top: 4px;">&#9989; Done</div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="color: #dc2626; font-size: 10px; font-weight: 700;">&#10007; No</div>
+                                        <div style="color: #64748b; font-size: 10px; margin-top: 2px;">Wait 5d</div>
+                                        <div style="background: #dcfce7; border: 1px solid #22c55e; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #166534; font-weight: 600; margin-top: 4px;">&#128172; Nudge</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- No Branch -->
+                            <div style="text-align: center;">
+                                <div style="color: #dc2626; font-size: 11px; font-weight: 700; margin-bottom: 6px;">&#10007; No (5 days)</div>
+                                <div style="background: #fef2f2; border: 2px solid #ef4444; border-radius: 8px; padding: 10px 18px; font-weight: 600; color: #991b1b; font-size: 12px;">&#9993; Send InMail</div>
+                                <div style="margin: 4px 0; color: #94a3b8; font-size: 18px;">&#8595;</div>
+                                <div style="background: #ede9fe; border: 1px solid #8b5cf6; border-radius: 6px; padding: 6px 10px; font-size: 11px; color: #5b21b6; font-weight: 600;">&#9989; End Sequence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <p>LinkedIn Helper runs campaigns as "smart sequences" (Pro plan). You define a chain of actions: visit profile, wait 1 day, send connection request, wait for acceptance, send follow-up message, and so on.</p>
 
@@ -336,8 +569,86 @@
                 <li>Company employee pages</li>
             </ul>
 
-            <!-- TODO: Screenshot: LinkedIn Helper data export/CSV preview showing scraped profile fields -->
-            <img src="/assets/images/linkedin-helper-data-export.png" alt="LinkedIn Helper CSV export with scraped profile data fields" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">LinkedIn Helper 2 &mdash; Data Export Preview</span>
+                </div>
+                <div style="background: #ffffff; padding: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                        <div>
+                            <span style="font-weight: 700; font-size: 14px; color: #1e293b;">Export Preview</span>
+                            <span style="font-size: 12px; color: #64748b; margin-left: 8px;">1,247 profiles scraped</span>
+                        </div>
+                        <span style="background: #22c55e; color: #fff; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600;">&#8595; Download CSV</span>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 11px; white-space: nowrap;">
+                            <thead>
+                                <tr style="background: #f8fafc;">
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">First Name</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">Last Name</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">Title</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">Company</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">Location</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">Email</th>
+                                    <th style="padding: 8px 10px; border-bottom: 2px solid #e2e8f0; color: #64748b; font-weight: 600; text-align: left;">LinkedIn URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Sarah</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Chen</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">CMO</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">DataStack</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">San Francisco, CA</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">s.chen@datastack.io</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">linkedin.com/in/sarachen</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Marcus</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Rivera</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">VP Marketing</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">CloudSync</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Austin, TX</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">m.rivera@cloudsync.com</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">linkedin.com/in/mrivera</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Anna</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Bergmann</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Head of Growth</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Finova</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Berlin, DE</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #94a3b8; font-style: italic;">not found</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">linkedin.com/in/abergmann</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">James</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Okafor</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">Director of Demand Gen</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">ScaleUp HQ</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9;">London, UK</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">j.okafor@scaleuphq.co</td>
+                                    <td style="padding: 7px 10px; border-bottom: 1px solid #f1f5f9; color: #3b82f6;">linkedin.com/in/jokafor</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 7px 10px;">Priya</td>
+                                    <td style="padding: 7px 10px;">Sharma</td>
+                                    <td style="padding: 7px 10px;">CMO</td>
+                                    <td style="padding: 7px 10px;">NexaPay</td>
+                                    <td style="padding: 7px 10px;">Mumbai, IN</td>
+                                    <td style="padding: 7px 10px; color: #3b82f6;">p.sharma@nexapay.in</td>
+                                    <td style="padding: 7px 10px; color: #3b82f6;">linkedin.com/in/priyasharma</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 11px; color: #94a3b8; text-align: right;">Showing 5 of 1,247 &middot; Email match rate: 78%</div>
+                </div>
+            </div>
 
             <p>The export gives you structured CSV files with name, title, company, location, LinkedIn URL, and (with Pro) email addresses. The email finder uses a credit system: 620 credits/month on Standard, 3,100 on Pro. For teams that need to build lead lists from LinkedIn, this scraping alone might justify the $15/month.</p>
 
@@ -398,8 +709,76 @@
 
             <p>Here's where we stop pretending to be neutral. We're biased. But we'll try to be fair about it.</p>
 
-            <!-- TODO: Screenshot: Split-screen showing LinkedIn Helper interface on left, Overloop dashboard on right -->
-            <img src="/assets/images/linkedin-helper-vs-overloop.png" alt="Side-by-side comparison of LinkedIn Helper and Overloop interfaces" width="700" height="400" loading="lazy">
+            <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
+                <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+                    <span style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+                    <span style="margin-left: 12px; color: #6b7280; font-size: 12px;">LinkedIn Helper vs Overloop &mdash; Side by Side</span>
+                </div>
+                <div style="display: flex; min-height: 320px;">
+                    <!-- LinkedIn Helper Side -->
+                    <div style="flex: 1; border-right: 2px solid #e5e7eb;">
+                        <div style="background: #1e293b; color: #fff; padding: 10px 16px; font-weight: 700; font-size: 13px; text-align: center;">LinkedIn Helper</div>
+                        <div style="padding: 16px; background: #f8fafc;">
+                            <div style="background: #1e293b; border-radius: 6px; padding: 8px 12px; margin-bottom: 12px;">
+                                <div style="font-size: 10px; color: #94a3b8; margin-bottom: 4px;">Deployment</div>
+                                <div style="color: #fbbf24; font-size: 12px; font-weight: 600;">Desktop App (must be running)</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">Channels</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #1e293b;">LinkedIn only</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">AI Writing</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #1e293b;">Basic (30 msg/day cap)</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">Lead Database</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #1e293b;">Scraping only</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">CRM Sync</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #1e293b;">Webhooks (Pro)</div>
+                            </div>
+                            <div style="text-align: center; margin-top: 12px;">
+                                <span style="font-size: 20px; font-weight: 800; color: #1e293b;">$15</span>
+                                <span style="font-size: 12px; color: #64748b;">/mo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Overloop Side -->
+                    <div style="flex: 1;">
+                        <div style="background: #4F46E5; color: #fff; padding: 10px 16px; font-weight: 700; font-size: 13px; text-align: center;">Overloop</div>
+                        <div style="padding: 16px; background: #f5f3ff;">
+                            <div style="background: #4F46E5; border-radius: 6px; padding: 8px 12px; margin-bottom: 12px;">
+                                <div style="font-size: 10px; color: #c4b5fd; margin-bottom: 4px;">Deployment</div>
+                                <div style="color: #ffffff; font-size: 12px; font-weight: 600;">Cloud-based (runs 24/7)</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">Channels</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #4F46E5;">LinkedIn + Email + AI</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">AI Writing</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #4F46E5;">AI-native, unlimited</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">Lead Database</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #4F46E5;">Built-in 200M+ B2B</div>
+                            </div>
+                            <div style="background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 8px;">
+                                <div style="font-size: 10px; color: #64748b; margin-bottom: 2px;">CRM Sync</div>
+                                <div style="font-size: 12px; font-weight: 600; color: #4F46E5;">HubSpot, Salesforce, Pipedrive</div>
+                            </div>
+                            <div style="text-align: center; margin-top: 12px;">
+                                <span style="font-size: 20px; font-weight: 800; color: #4F46E5;">$49</span>
+                                <span style="font-size: 12px; color: #64748b;">/mo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <table>
                 <thead>

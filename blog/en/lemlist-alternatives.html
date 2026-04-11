@@ -224,8 +224,67 @@
 
             <h2>Quick Comparison Table</h2>
 
-            <!-- TODO: Add visual comparison infographic of all 9 tools -->
-            <img src="/assets/images/lemlist-alternatives-comparison-chart-placeholder.png" alt="Comparison chart of 9 Lemlist alternatives with pricing and features side by side" loading="lazy">
+            <div style="margin: 1.5rem 0; overflow-x: auto;">
+                <svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pricing comparison of 9 Lemlist alternatives showing monthly starting prices">
+                    <rect width="720" height="400" fill="#f9fafb" rx="8"/>
+                    <text x="360" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Monthly Starting Price Comparison (USD)</text>
+                    <!-- Y-axis labels -->
+                    <text x="58" y="68" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$100</text>
+                    <line x1="62" y1="65" x2="700" y2="65" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="128" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$80</text>
+                    <line x1="62" y1="125" x2="700" y2="125" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="188" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$60</text>
+                    <line x1="62" y1="185" x2="700" y2="185" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="248" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$40</text>
+                    <line x1="62" y1="245" x2="700" y2="245" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="308" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$20</text>
+                    <line x1="62" y1="305" x2="700" y2="305" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Baseline -->
+                    <line x1="62" y1="365" x2="700" y2="365" stroke="#E5E7EB" stroke-width="1"/>
+                    <!-- Bars: baseline at y=365, scale: $100=65, so 1$ = 3px -->
+                    <!-- Overloop $49 = 147px -->
+                    <rect x="75" y="218" width="55" height="147" fill="#4F46E5" rx="4"/>
+                    <text x="102" y="212" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">$49</text>
+                    <text x="102" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Overloop</text>
+                    <!-- Apollo $49 -->
+                    <rect x="145" y="218" width="55" height="147" fill="#9CA3AF" rx="4"/>
+                    <text x="172" y="212" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$49</text>
+                    <text x="172" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Apollo</text>
+                    <!-- Instantly $38 = 114px -->
+                    <rect x="215" y="251" width="55" height="114" fill="#9CA3AF" rx="4"/>
+                    <text x="242" y="245" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$38</text>
+                    <text x="242" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Instantly</text>
+                    <!-- Reply.io $49 -->
+                    <rect x="285" y="218" width="55" height="147" fill="#9CA3AF" rx="4"/>
+                    <text x="312" y="212" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$49</text>
+                    <text x="312" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Reply.io</text>
+                    <!-- Saleshandy $25 = 75px -->
+                    <rect x="355" y="290" width="55" height="75" fill="#9CA3AF" rx="4"/>
+                    <text x="382" y="284" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$25</text>
+                    <text x="382" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Saleshandy</text>
+                    <!-- Smartlead $39 = 117px -->
+                    <rect x="425" y="248" width="55" height="117" fill="#9CA3AF" rx="4"/>
+                    <text x="452" y="242" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$39</text>
+                    <text x="452" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Smartlead</text>
+                    <!-- Woodpecker $29 = 87px -->
+                    <rect x="495" y="278" width="55" height="87" fill="#9CA3AF" rx="4"/>
+                    <text x="522" y="272" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$29</text>
+                    <text x="522" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Woodpecker</text>
+                    <!-- Klenty $50 = 150px -->
+                    <rect x="565" y="215" width="55" height="150" fill="#9CA3AF" rx="4"/>
+                    <text x="592" y="209" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$50</text>
+                    <text x="592" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Klenty</text>
+                    <!-- Mailshake $29 = 87px -->
+                    <rect x="635" y="278" width="55" height="87" fill="#9CA3AF" rx="4"/>
+                    <text x="662" y="272" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$29</text>
+                    <text x="662" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Mailshake</text>
+                    <!-- Legend -->
+                    <rect x="240" y="44" width="10" height="10" fill="#4F46E5" rx="2"/>
+                    <text x="255" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Overloop (multichannel included)</text>
+                    <rect x="435" y="44" width="10" height="10" fill="#9CA3AF" rx="2"/>
+                    <text x="450" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Competitors</text>
+                </svg>
+            </div>
 
             <table>
                 <thead>
@@ -330,8 +389,50 @@
                 <li>Built-in email warm-up and deliverability tools</li>
             </ul>
 
-            <!-- TODO: Add screenshot of Overloop sequence builder with AI generation -->
-            <img src="/assets/images/overloop-sequence-builder-placeholder.png" alt="Overloop AI sequence builder generating a multichannel outreach sequence" loading="lazy">
+            <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
+                <!-- Window chrome -->
+                <div style="background: #f3f4f6; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E5E7EB;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                    <span style="margin-left: 12px; font-size: 12px; color: #6b7280;">Overloop - AI Sequence Builder</span>
+                </div>
+                <!-- App UI -->
+                <div style="background: #ffffff; padding: 24px;">
+                    <div style="display: flex; gap: 16px; margin-bottom: 16px; align-items: center;">
+                        <div style="background: #4F46E5; color: white; padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600;">New AI Campaign</div>
+                        <span style="font-size: 12px; color: #6b7280;">Prospect: Sarah Chen, VP Sales at Acme Corp</span>
+                    </div>
+                    <!-- Sequence steps -->
+                    <div style="border-left: 2px solid #E5E7EB; margin-left: 16px; padding-left: 20px;">
+                        <!-- Step 1 -->
+                        <div style="position: relative; margin-bottom: 20px;">
+                            <div style="position: absolute; left: -27px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #4F46E5;"></div>
+                            <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 12px 16px;">
+                                <div style="font-size: 11px; color: #4F46E5; font-weight: 600; margin-bottom: 4px;">DAY 1 - EMAIL</div>
+                                <div style="font-size: 13px; color: #1a1a1a; line-height: 1.5;">Hi Sarah, saw Acme just expanded into EMEA. Scaling outbound across regions is where we help...</div>
+                                <div style="font-size: 10px; color: #22c55e; margin-top: 6px;">AI-generated from LinkedIn profile + company signals</div>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div style="position: relative; margin-bottom: 20px;">
+                            <div style="position: absolute; left: -27px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #6366F1;"></div>
+                            <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 12px 16px;">
+                                <div style="font-size: 11px; color: #6366F1; font-weight: 600; margin-bottom: 4px;">DAY 3 - LINKEDIN</div>
+                                <div style="font-size: 13px; color: #1a1a1a; line-height: 1.5;">Connection request + personalized note referencing her recent post about sales automation...</div>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div style="position: relative;">
+                            <div style="position: absolute; left: -27px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #4F46E5;"></div>
+                            <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 12px 16px;">
+                                <div style="font-size: 11px; color: #4F46E5; font-weight: 600; margin-bottom: 4px;">DAY 5 - FOLLOW-UP EMAIL</div>
+                                <div style="font-size: 13px; color: #1a1a1a; line-height: 1.5;">Quick follow-up with a relevant case study from a similar SaaS company...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>2. Apollo.io</h2>
 
@@ -371,8 +472,48 @@
 
             <p>Like Instantly, Smartlead is email-only. The real draw is the warmup infrastructure and inbox rotation across unlimited mailboxes. The advertised price undersells the actual cost: once you add domains, mailboxes, and verification, serious users report $150-250/month. But for agencies running outreach across 10+ client accounts, the per-client math is competitive.</p>
 
-            <!-- TODO: Add screenshot of Smartlead dashboard showing inbox rotation -->
-            <img src="/assets/images/smartlead-dashboard-placeholder.png" alt="Smartlead dashboard with inbox rotation and warmup stats" loading="lazy">
+            <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
+                <!-- Window chrome -->
+                <div style="background: #f3f4f6; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E5E7EB;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                    <span style="margin-left: 12px; font-size: 12px; color: #6b7280;">Smartlead - Inbox Rotation Dashboard</span>
+                </div>
+                <div style="background: #ffffff; padding: 24px;">
+                    <!-- Stats row -->
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
+                        <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px; text-align: center;">
+                            <div style="font-size: 22px; font-weight: 700; color: #1a1a1a;">24</div>
+                            <div style="font-size: 11px; color: #6b7280;">Active Mailboxes</div>
+                        </div>
+                        <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px; text-align: center;">
+                            <div style="font-size: 22px; font-weight: 700; color: #22c55e;">98.2%</div>
+                            <div style="font-size: 11px; color: #6b7280;">Warmup Score</div>
+                        </div>
+                        <div style="background: #f9fafb; border: 1px solid #E5E7EB; border-radius: 8px; padding: 14px; text-align: center;">
+                            <div style="font-size: 22px; font-weight: 700; color: #1a1a1a;">4,812</div>
+                            <div style="font-size: 11px; color: #6b7280;">Emails Sent Today</div>
+                        </div>
+                    </div>
+                    <!-- Mailbox rotation list -->
+                    <div style="font-size: 12px; font-weight: 600; color: #1a1a1a; margin-bottom: 8px;">Inbox Rotation Queue</div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: #f0fdf4; border-radius: 6px; font-size: 12px;">
+                            <span style="color: #1a1a1a;">outreach-01@domain.com</span>
+                            <span style="color: #22c55e; font-weight: 600;">Active - 42 sent</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: #f0fdf4; border-radius: 6px; font-size: 12px;">
+                            <span style="color: #1a1a1a;">outreach-02@domain.com</span>
+                            <span style="color: #22c55e; font-weight: 600;">Active - 38 sent</span>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; background: #fffbeb; border-radius: 6px; font-size: 12px;">
+                            <span style="color: #1a1a1a;">outreach-03@domain.com</span>
+                            <span style="color: #f59e0b; font-weight: 600;">Warming up - 89%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>7. Woodpecker</h2>
 

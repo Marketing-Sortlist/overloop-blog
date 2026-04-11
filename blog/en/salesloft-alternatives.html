@@ -227,8 +227,66 @@
 
             <h2>Feature Comparison Table</h2>
 
-            <!-- TODO: Add visual chart comparing Salesloft pricing vs alternatives -->
-            <img src="/assets/images/salesloft-alternatives-pricing-chart-placeholder.png" alt="Pricing comparison chart of Salesloft alternatives after the Clari merger" loading="lazy">
+            <div style="margin: 1.5rem 0; overflow-x: auto;">
+                <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pricing comparison of Salesloft alternatives after the Clari merger">
+                    <rect width="720" height="420" fill="#f9fafb" rx="8"/>
+                    <text x="360" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Monthly Starting Price (USD) - Salesloft vs Alternatives</text>
+                    <!-- Y-axis -->
+                    <text x="58" y="78" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$160</text>
+                    <line x1="62" y1="75" x2="690" y2="75" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="128" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$120</text>
+                    <line x1="62" y1="125" x2="690" y2="125" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="178" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$80</text>
+                    <line x1="62" y1="175" x2="690" y2="175" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="228" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$40</text>
+                    <line x1="62" y1="225" x2="690" y2="225" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Baseline -->
+                    <line x1="62" y1="375" x2="690" y2="375" stroke="#E5E7EB" stroke-width="1"/>
+                    <!-- Scale: $160 = 300px, 1$ = 1.875px. Baseline y=375 -->
+                    <defs>
+                        <pattern id="hatch-salesloft" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+                            <line x1="0" y1="0" x2="0" y2="6" stroke="#d1d5db" stroke-width="1.5"/>
+                        </pattern>
+                    </defs>
+                    <!-- Salesloft ~$125 = 234px -->
+                    <rect x="75" y="141" width="70" height="234" fill="#E5E7EB" rx="4"/>
+                    <rect x="75" y="141" width="70" height="234" fill="url(#hatch-salesloft)" rx="4"/>
+                    <text x="110" y="135" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">~$125*</text>
+                    <text x="110" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Salesloft</text>
+                    <!-- Overloop $49 = 92px -->
+                    <rect x="160" y="283" width="70" height="92" fill="#4F46E5" rx="4"/>
+                    <text x="195" y="277" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">$49</text>
+                    <text x="195" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Overloop</text>
+                    <!-- Outreach ~$130 = 244px -->
+                    <rect x="245" y="131" width="70" height="244" fill="#E5E7EB" rx="4"/>
+                    <rect x="245" y="131" width="70" height="244" fill="url(#hatch-salesloft)" rx="4"/>
+                    <text x="280" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">~$130*</text>
+                    <text x="280" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Outreach</text>
+                    <!-- Apollo $49 -->
+                    <rect x="330" y="283" width="70" height="92" fill="#9CA3AF" rx="4"/>
+                    <text x="365" y="277" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$49</text>
+                    <text x="365" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Apollo</text>
+                    <!-- Reply.io $49 = 92px -->
+                    <rect x="415" y="283" width="70" height="92" fill="#9CA3AF" rx="4"/>
+                    <text x="450" y="277" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$49</text>
+                    <text x="450" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Reply.io</text>
+                    <!-- Lemlist $55 = 103px -->
+                    <rect x="500" y="272" width="70" height="103" fill="#9CA3AF" rx="4"/>
+                    <text x="535" y="266" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$55</text>
+                    <text x="535" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Lemlist</text>
+                    <!-- Instantly $38 = 71px -->
+                    <rect x="585" y="304" width="70" height="71" fill="#9CA3AF" rx="4"/>
+                    <text x="620" y="298" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$38</text>
+                    <text x="620" y="393" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Instantly</text>
+                    <!-- Legend -->
+                    <rect x="170" y="50" width="10" height="10" fill="#4F46E5" rx="2"/>
+                    <text x="185" y="59" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Overloop</text>
+                    <rect x="250" y="50" width="10" height="10" fill="#9CA3AF" rx="2"/>
+                    <text x="265" y="59" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Public pricing</text>
+                    <rect x="355" y="50" width="10" height="10" fill="#E5E7EB" rx="2"/>
+                    <text x="370" y="59" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Hidden pricing (*estimate)</text>
+                </svg>
+            </div>
 
             <table>
                 <thead>
@@ -332,8 +390,85 @@
                 <li>Live in hours, not weeks</li>
             </ul>
 
-            <!-- TODO: Add screenshot comparing Overloop vs Salesloft pricing side-by-side -->
-            <img src="/assets/images/overloop-vs-salesloft-pricing-placeholder.png" alt="Overloop vs Salesloft pricing comparison showing transparent vs custom quotes" loading="lazy">
+            <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
+                <div style="background: #f3f4f6; padding: 12px 16px; text-align: center; border-bottom: 1px solid #E5E7EB;">
+                    <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">Overloop vs Salesloft: Pricing Side-by-Side</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
+                    <!-- Overloop side -->
+                    <div style="padding: 20px; border-right: 1px solid #E5E7EB;">
+                        <div style="text-align: center; margin-bottom: 16px;">
+                            <div style="font-size: 16px; font-weight: 700; color: #4F46E5;">Overloop</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Starting price</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">$49/mo</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Public pricing?</span>
+                                <span style="font-weight: 600; color: #22c55e;">Yes</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Min seats</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">1</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Contract</span>
+                                <span style="font-weight: 600; color: #22c55e;">Monthly</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Setup time</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">Hours</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Multichannel</span>
+                                <span style="font-weight: 600; color: #22c55e;">All plans</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                                <span style="color: #6b7280;">5-user annual cost</span>
+                                <span style="font-weight: 700; color: #4F46E5;">~$2,940</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Salesloft side -->
+                    <div style="padding: 20px;">
+                        <div style="text-align: center; margin-bottom: 16px;">
+                            <div style="font-size: 16px; font-weight: 700; color: #6b7280;">Salesloft</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12px;">
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Starting price</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">~$125/user/mo</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Public pricing?</span>
+                                <span style="font-weight: 600; color: #ef4444;">No</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Min seats</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">10-15</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Contract</span>
+                                <span style="font-weight: 600; color: #ef4444;">Annual only</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Setup time</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">Weeks</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6;">
+                                <span style="color: #6b7280;">Multichannel</span>
+                                <span style="font-weight: 600; color: #1a1a1a;">Included</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                                <span style="color: #6b7280;">5-user annual cost</span>
+                                <span style="font-weight: 700; color: #6b7280;">~$7,500+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>2. Outreach.io</h2>
 

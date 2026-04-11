@@ -223,8 +223,73 @@
 
             <h2>Feature Comparison Table</h2>
 
-            <!-- TODO: Add visual pricing comparison chart showing Outreach vs alternatives -->
-            <img src="/assets/images/outreach-alternatives-pricing-chart-placeholder.png" alt="Pricing comparison chart of Outreach.io alternatives showing transparent vs hidden pricing" loading="lazy">
+            <div style="margin: 1.5rem 0; overflow-x: auto;">
+                <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pricing comparison of Outreach.io alternatives showing transparent vs hidden pricing">
+                    <rect width="720" height="420" fill="#f9fafb" rx="8"/>
+                    <text x="360" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Monthly Starting Price per User (USD)</text>
+                    <!-- Y-axis -->
+                    <text x="58" y="68" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$160</text>
+                    <line x1="62" y1="65" x2="690" y2="65" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="118" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$120</text>
+                    <line x1="62" y1="115" x2="690" y2="115" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="168" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$80</text>
+                    <line x1="62" y1="165" x2="690" y2="165" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <text x="58" y="218" text-anchor="end" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">$40</text>
+                    <line x1="62" y1="215" x2="690" y2="215" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <line x1="62" y1="265" x2="690" y2="265" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Baseline -->
+                    <line x1="62" y1="365" x2="690" y2="365" stroke="#E5E7EB" stroke-width="1"/>
+                    <!-- Scale: $160 = 300px height, so 1$ = 1.875px. Baseline y=365 -->
+                    <!-- Outreach ~$130 = 244px, hatched to indicate "hidden pricing" -->
+                    <rect x="80" y="121" width="65" height="244" fill="#E5E7EB" rx="4"/>
+                    <rect x="80" y="121" width="65" height="244" fill="url(#hatch-outreach)" rx="4"/>
+                    <text x="112" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">~$130*</text>
+                    <text x="112" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Outreach</text>
+                    <text x="112" y="395" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="8" fill="#ef4444">*Hidden pricing</text>
+                    <!-- Overloop $49 = 92px -->
+                    <rect x="160" y="273" width="65" height="92" fill="#4F46E5" rx="4"/>
+                    <text x="192" y="267" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">$49</text>
+                    <text x="192" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Overloop</text>
+                    <!-- Salesloft ~$125 = 234px -->
+                    <rect x="240" y="131" width="65" height="234" fill="#E5E7EB" rx="4"/>
+                    <rect x="240" y="131" width="65" height="234" fill="url(#hatch-outreach)" rx="4"/>
+                    <text x="272" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">~$125*</text>
+                    <text x="272" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Salesloft</text>
+                    <!-- Apollo $49 -->
+                    <rect x="320" y="273" width="65" height="92" fill="#9CA3AF" rx="4"/>
+                    <text x="352" y="267" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$49</text>
+                    <text x="352" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Apollo</text>
+                    <!-- Reply.io $89 = 167px -->
+                    <rect x="400" y="198" width="65" height="167" fill="#9CA3AF" rx="4"/>
+                    <text x="432" y="192" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$89</text>
+                    <text x="432" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Reply.io</text>
+                    <!-- Lemlist $55 = 103px -->
+                    <rect x="480" y="262" width="65" height="103" fill="#9CA3AF" rx="4"/>
+                    <text x="512" y="256" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$55</text>
+                    <text x="512" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Lemlist</text>
+                    <!-- HubSpot $20 = 38px -->
+                    <rect x="560" y="327" width="65" height="38" fill="#9CA3AF" rx="4"/>
+                    <text x="592" y="321" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$20</text>
+                    <text x="592" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">HubSpot</text>
+                    <!-- Instantly $38 = 71px -->
+                    <rect x="640" y="294" width="55" height="71" fill="#9CA3AF" rx="4"/>
+                    <text x="667" y="288" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="600" fill="#6b7280">$38</text>
+                    <text x="667" y="383" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#1a1a1a">Instantly</text>
+                    <!-- Hatch pattern for hidden pricing -->
+                    <defs>
+                        <pattern id="hatch-outreach" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+                            <line x1="0" y1="0" x2="0" y2="6" stroke="#d1d5db" stroke-width="1.5"/>
+                        </pattern>
+                    </defs>
+                    <!-- Legend -->
+                    <rect x="180" y="44" width="10" height="10" fill="#4F46E5" rx="2"/>
+                    <text x="195" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Overloop</text>
+                    <rect x="260" y="44" width="10" height="10" fill="#9CA3AF" rx="2"/>
+                    <text x="275" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Public pricing</text>
+                    <rect x="365" y="44" width="10" height="10" fill="#E5E7EB" rx="2"/>
+                    <text x="380" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Hidden pricing (estimates)</text>
+                </svg>
+            </div>
 
             <table>
                 <thead>
@@ -319,8 +384,63 @@
                 <li>Setup in hours, not weeks</li>
             </ul>
 
-            <!-- TODO: Add screenshot of Overloop pricing page showing transparent pricing -->
-            <img src="/assets/images/overloop-pricing-transparent-placeholder.png" alt="Overloop pricing page showing all plans with public pricing" loading="lazy">
+            <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
+                <!-- Window chrome -->
+                <div style="background: #f3f4f6; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #E5E7EB;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b;"></div>
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: #22c55e;"></div>
+                    <span style="margin-left: 12px; font-size: 12px; color: #6b7280;">overloop.com/pricing</span>
+                </div>
+                <div style="background: #ffffff; padding: 24px;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <div style="font-size: 16px; font-weight: 700; color: #1a1a1a;">Simple, transparent pricing</div>
+                        <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">All channels included. No hidden fees. No sales call required.</div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                        <!-- Starter -->
+                        <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">Starter</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 8px 0 4px;">$49</div>
+                            <div style="font-size: 11px; color: #6b7280; margin-bottom: 12px;">/month</div>
+                            <div style="font-size: 11px; color: #1a1a1a; line-height: 1.8; text-align: left;">
+                                <div>Email sequences</div>
+                                <div>LinkedIn automation</div>
+                                <div>Calling</div>
+                                <div>AI writing</div>
+                                <div>Email warm-up</div>
+                            </div>
+                        </div>
+                        <!-- Growth (highlighted) -->
+                        <div style="border: 2px solid #4F46E5; border-radius: 8px; padding: 16px; text-align: center; position: relative;">
+                            <div style="position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #4F46E5; color: white; font-size: 10px; font-weight: 600; padding: 2px 10px; border-radius: 10px;">POPULAR</div>
+                            <div style="font-size: 12px; font-weight: 600; color: #4F46E5; text-transform: uppercase; letter-spacing: 0.5px;">Growth</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 8px 0 4px;">$99</div>
+                            <div style="font-size: 11px; color: #6b7280; margin-bottom: 12px;">/month</div>
+                            <div style="font-size: 11px; color: #1a1a1a; line-height: 1.8; text-align: left;">
+                                <div>Everything in Starter</div>
+                                <div>Unlimited sequences</div>
+                                <div>Advanced AI</div>
+                                <div>CRM integrations</div>
+                                <div>Priority support</div>
+                            </div>
+                        </div>
+                        <!-- Enterprise -->
+                        <div style="border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 12px; font-weight: 600; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">Enterprise</div>
+                            <div style="font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 8px 0 4px;">Custom</div>
+                            <div style="font-size: 11px; color: #6b7280; margin-bottom: 12px;">Talk to us</div>
+                            <div style="font-size: 11px; color: #1a1a1a; line-height: 1.8; text-align: left;">
+                                <div>Everything in Growth</div>
+                                <div>Dedicated account mgr</div>
+                                <div>Custom integrations</div>
+                                <div>SSO / SAML</div>
+                                <div>SLA guarantee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>2. Salesloft</h2>
 

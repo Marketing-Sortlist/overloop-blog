@@ -706,7 +706,91 @@
 
             <p>Use this framework before sending any cold email campaign to a new market. Walk through it for each recipient country.</p>
 
-            <!-- [IMAGE PLACEHOLDER: Flowchart diagram — "Can I Send This Cold Email?" decision tree with nodes for: 1) Identify recipient country → 2) B2B or B2C? → 3) Country consent model (opt-in/opt-out/legitimate interest) → 4) Do you have required consent/basis? → 5) Compliance checklist complete? → SEND or DO NOT SEND] -->
+            <figure style="margin: 2rem 0;">
+                <svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 720px; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; background: #fafafa;" role="img" aria-label="Decision flowchart: Can You Send This Cold Email?">
+                    <text x="360" y="30" text-anchor="middle" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1a1a1a">Can You Send This Cold Email?</text>
+
+                    <!-- Start node -->
+                    <rect x="275" y="50" width="170" height="40" rx="20" fill="#4F46E5"/>
+                    <text x="360" y="75" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#fff">START: New campaign</text>
+
+                    <!-- Arrow down -->
+                    <line x1="360" y1="90" x2="360" y2="110" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowCE)"/>
+
+                    <!-- Decision 1: B2B or B2C? -->
+                    <polygon points="360,110 480,150 360,190 240,150" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
+                    <text x="360" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#4F46E5">B2B or B2C?</text>
+                    <text x="360" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">(recipient type)</text>
+
+                    <!-- B2C branch (right) -->
+                    <line x1="480" y1="150" x2="580" y2="150" stroke="#EF4444" stroke-width="1.5"/>
+                    <text x="530" y="143" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EF4444">B2C</text>
+                    <rect x="580" y="130" width="120" height="40" rx="6" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+                    <text x="640" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EF4444">Need explicit</text>
+                    <text x="640" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#EF4444">consent first</text>
+
+                    <!-- B2B branch (down) -->
+                    <line x1="360" y1="190" x2="360" y2="220" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowCE)"/>
+                    <text x="370" y="210" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">B2B</text>
+
+                    <!-- Decision 2: What consent model? -->
+                    <polygon points="360,220 510,265 360,310 210,265" fill="#EEF2FF" stroke="#4F46E5" stroke-width="1.5"/>
+                    <text x="360" y="260" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#4F46E5">Recipient country</text>
+                    <text x="360" y="274" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">consent model?</text>
+
+                    <!-- Left branch: Opt-out (US, Singapore) -->
+                    <line x1="210" y1="265" x2="80" y2="265" stroke="#10B981" stroke-width="1.5"/>
+                    <line x1="80" y1="265" x2="80" y2="340" stroke="#10B981" stroke-width="1.5" marker-end="url(#arrowCE)"/>
+                    <text x="145" y="255" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#10B981">Opt-out</text>
+                    <text x="145" y="267" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">(US, Singapore)</text>
+
+                    <rect x="15" y="340" width="130" height="70" rx="8" fill="#F0FDF4" stroke="#10B981" stroke-width="1.5"/>
+                    <text x="80" y="362" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#10B981">SEND FREELY</text>
+                    <text x="80" y="378" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">Include unsubscribe</text>
+                    <text x="80" y="390" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">+ physical address</text>
+                    <text x="80" y="402" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">+ honest sender ID</text>
+
+                    <!-- Middle branch: Legitimate interest (GDPR B2B) -->
+                    <line x1="360" y1="310" x2="360" y2="340" stroke="#6366F1" stroke-width="1.5" marker-end="url(#arrowCE)"/>
+                    <text x="372" y="330" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#6366F1">Legitimate interest</text>
+
+                    <rect x="280" y="340" width="160" height="70" rx="8" fill="#EEF2FF" stroke="#6366F1" stroke-width="1.5"/>
+                    <text x="360" y="360" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#4F46E5">SEND WITH CARE</text>
+                    <text x="360" y="376" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">GDPR B2B: FR, NL, IE, SE, UK</text>
+                    <text x="360" y="388" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">Document legitimate interest</text>
+                    <text x="360" y="400" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">+ opt-out in every email</text>
+
+                    <!-- Right branch: Opt-in required -->
+                    <line x1="510" y1="265" x2="620" y2="265" stroke="#EF4444" stroke-width="1.5"/>
+                    <line x1="620" y1="265" x2="620" y2="340" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowCE)"/>
+                    <text x="565" y="255" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#EF4444">Opt-in required</text>
+                    <text x="565" y="267" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">(DE, ES, IT, JP, KR)</text>
+
+                    <rect x="545" y="340" width="150" height="70" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="1.5"/>
+                    <text x="620" y="360" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#EF4444">NEED CONSENT</text>
+                    <text x="620" y="376" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">Get explicit permission</text>
+                    <text x="620" y="388" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">before sending any email.</text>
+                    <text x="620" y="400" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" fill="#6b7280">No cold email allowed.</text>
+
+                    <!-- Bottom note -->
+                    <rect x="140" y="440" width="440" height="50" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+                    <text x="360" y="460" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#1a1a1a">When in doubt, default to the strictest standard.</text>
+                    <text x="360" y="476" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6b7280">Build every campaign to meet GDPR + Germany/CASL standards. That covers you everywhere.</text>
+
+                    <line x1="80" y1="410" x2="80" y2="440" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="360" y1="410" x2="360" y2="440" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+                    <line x1="620" y1="410" x2="620" y2="440" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+
+                    <text x="360" y="510" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">overloop.com/blog/cold-email-illegal</text>
+
+                    <defs>
+                        <marker id="arrowCE" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5"/>
+                        </marker>
+                    </defs>
+                </svg>
+                <figcaption style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; text-align: center;">Decision flowchart: walk through this for each recipient country before launching a cold email campaign.</figcaption>
+            </figure>
 
             <ol>
                 <li><strong>Identify the recipient's country.</strong> The law that applies is based on where the recipient is located, not where your company is based.</li>

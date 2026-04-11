@@ -223,8 +223,75 @@
 
             <h2>Feature Comparison Table</h2>
 
-            <!-- TODO: Add visual chart showing email-only vs multichannel alternatives -->
-            <img src="/assets/images/instantly-alternatives-channel-comparison-placeholder.png" alt="Channel comparison chart showing Instantly email-only vs multichannel alternatives" loading="lazy">
+            <div style="margin: 1.5rem 0; overflow-x: auto;">
+                <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Channel comparison: email-only vs multichannel alternatives to Instantly">
+                    <rect width="720" height="380" fill="#f9fafb" rx="8"/>
+                    <text x="360" y="28" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Channel Coverage: Email-Only vs Multichannel</text>
+                    <!-- Legend -->
+                    <circle cx="200" cy="50" r="6" fill="#22c55e"/>
+                    <text x="212" y="54" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Included</text>
+                    <circle cx="280" cy="50" r="6" fill="#f59e0b"/>
+                    <text x="292" y="54" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Add-on</text>
+                    <circle cx="350" cy="50" r="6" fill="#ef4444"/>
+                    <text x="362" y="54" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Not available</text>
+                    <rect x="440" y="44" width="10" height="10" fill="#4F46E5" rx="2"/>
+                    <text x="455" y="53" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#6b7280">Overloop (recommended)</text>
+                    <!-- Column headers -->
+                    <text x="350" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#6b7280">Email</text>
+                    <text x="440" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#6b7280">LinkedIn</text>
+                    <text x="530" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#6b7280">Calling</text>
+                    <text x="620" y="85" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="600" fill="#6b7280">AI Writing</text>
+                    <line x1="60" y1="95" x2="690" y2="95" stroke="#E5E7EB" stroke-width="1"/>
+                    <!-- Overloop row (highlighted) -->
+                    <rect x="55" y="100" width="640" height="36" fill="#EEF2FF" rx="4"/>
+                    <text x="70" y="123" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#4F46E5">Overloop ($49/mo)</text>
+                    <circle cx="350" cy="118" r="8" fill="#22c55e"/><text x="350" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="118" r="8" fill="#22c55e"/><text x="440" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="530" cy="118" r="8" fill="#22c55e"/><text x="530" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="620" cy="118" r="8" fill="#22c55e"/><text x="620" y="122" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <!-- Lemlist -->
+                    <text x="70" y="160" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Lemlist ($55/user/mo)</text>
+                    <circle cx="350" cy="156" r="8" fill="#22c55e"/><text x="350" y="160" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="156" r="8" fill="#f59e0b"/>
+                    <circle cx="530" cy="156" r="8" fill="#f59e0b"/>
+                    <circle cx="620" cy="156" r="8" fill="#22c55e"/><text x="620" y="160" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <line x1="60" y1="175" x2="690" y2="175" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Reply.io -->
+                    <text x="70" y="197" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Reply.io ($49/mo)</text>
+                    <circle cx="350" cy="193" r="8" fill="#22c55e"/><text x="350" y="197" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="193" r="8" fill="#f59e0b"/>
+                    <circle cx="530" cy="193" r="8" fill="#f59e0b"/>
+                    <circle cx="620" cy="193" r="8" fill="#22c55e"/><text x="620" y="197" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <line x1="60" y1="212" x2="690" y2="212" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Saleshandy -->
+                    <text x="70" y="234" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Saleshandy ($25/mo)</text>
+                    <circle cx="350" cy="230" r="8" fill="#22c55e"/><text x="350" y="234" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="230" r="8" fill="#ef4444"/>
+                    <circle cx="530" cy="230" r="8" fill="#ef4444"/>
+                    <circle cx="620" cy="230" r="8" fill="#f59e0b"/>
+                    <line x1="60" y1="249" x2="690" y2="249" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Woodpecker -->
+                    <text x="70" y="271" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Woodpecker ($29/mo)</text>
+                    <circle cx="350" cy="267" r="8" fill="#22c55e"/><text x="350" y="271" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="267" r="8" fill="#f59e0b"/>
+                    <circle cx="530" cy="267" r="8" fill="#ef4444"/>
+                    <circle cx="620" cy="267" r="8" fill="#ef4444"/>
+                    <line x1="60" y1="286" x2="690" y2="286" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Smartlead -->
+                    <text x="70" y="308" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Smartlead ($39/mo)</text>
+                    <circle cx="350" cy="304" r="8" fill="#22c55e"/><text x="350" y="308" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="304" r="8" fill="#ef4444"/>
+                    <circle cx="530" cy="304" r="8" fill="#ef4444"/>
+                    <circle cx="620" cy="304" r="8" fill="#ef4444"/>
+                    <line x1="60" y1="323" x2="690" y2="323" stroke="#E5E7EB" stroke-width="0.5"/>
+                    <!-- Apollo -->
+                    <text x="70" y="345" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#1a1a1a">Apollo ($49/user/mo)</text>
+                    <circle cx="350" cy="341" r="8" fill="#22c55e"/><text x="350" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="440" cy="341" r="8" fill="#22c55e"/><text x="440" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="530" cy="341" r="8" fill="#22c55e"/><text x="530" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                    <circle cx="620" cy="341" r="8" fill="#22c55e"/><text x="620" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="white" font-weight="700">&#10003;</text>
+                </svg>
+            </div>
 
             <table>
                 <thead>
@@ -359,8 +426,70 @@
 
             <p>Like Instantly, Smartlead is email-only. The differentiator is the multi-client infrastructure. Agencies managing 10+ accounts report that Smartlead's client management is more polished than Instantly's. The real cost is higher than advertised (expect $150-250/month once you add domains, mailboxes, and verification), but the per-client math works for agencies. If you're a solo sender or small team, the price advantage over Instantly is minimal.</p>
 
-            <!-- TODO: Add screenshot comparing Smartlead vs Instantly pricing tiers -->
-            <img src="/assets/images/smartlead-vs-instantly-comparison-placeholder.png" alt="Smartlead vs Instantly feature comparison for cold email agencies" loading="lazy">
+            <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
+                <div style="background: #f3f4f6; padding: 12px 16px; text-align: center; border-bottom: 1px solid #E5E7EB;">
+                    <span style="font-size: 14px; font-weight: 600; color: #1a1a1a;">Smartlead vs Instantly: Head-to-Head for Cold Email</span>
+                </div>
+                <div style="background: #ffffff; padding: 0;">
+                    <!-- Header row -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #E5E7EB;">
+                        <div style="padding: 12px 16px; font-size: 12px; font-weight: 600; color: #6b7280; background: #f9fafb;">Feature</div>
+                        <div style="padding: 12px 16px; font-size: 12px; font-weight: 600; color: #1a1a1a; text-align: center; background: #f9fafb;">Smartlead</div>
+                        <div style="padding: 12px 16px; font-size: 12px; font-weight: 600; color: #1a1a1a; text-align: center; background: #f9fafb;">Instantly</div>
+                    </div>
+                    <!-- Row: Starting price -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Starting price</div>
+                        <div style="padding: 10px 16px; font-size: 12px; color: #1a1a1a; text-align: center; font-weight: 600;">$39/mo</div>
+                        <div style="padding: 10px 16px; font-size: 12px; color: #1a1a1a; text-align: center; font-weight: 600;">$37.60/mo</div>
+                    </div>
+                    <!-- Row: Unlimited mailboxes -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Unlimited mailboxes</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #22c55e; font-weight: 600;">Yes</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #22c55e; font-weight: 600;">Yes</div>
+                    </div>
+                    <!-- Row: Unlimited warmup -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Unlimited warmup</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #22c55e; font-weight: 600;">Yes</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #22c55e; font-weight: 600;">Yes</div>
+                    </div>
+                    <!-- Row: Client management -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Agency client mgmt</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #22c55e; font-weight: 600;">Strong</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #f59e0b; font-weight: 600;">Basic</div>
+                    </div>
+                    <!-- Row: API access -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">API access</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #1a1a1a;">$94/mo plan</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #1a1a1a;">$77.60/mo plan</div>
+                    </div>
+                    <!-- Row: LinkedIn -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">LinkedIn automation</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #ef4444; font-weight: 600;">No</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #ef4444; font-weight: 600;">No</div>
+                    </div>
+                    <!-- Row: Calling -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #f3f4f6;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Calling</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #ef4444; font-weight: 600;">No</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #ef4444; font-weight: 600;">No</div>
+                    </div>
+                    <!-- Row: Real cost -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                        <div style="padding: 10px 16px; font-size: 12px; color: #6b7280;">Real monthly cost</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #1a1a1a; font-weight: 600;">$150-250</div>
+                        <div style="padding: 10px 16px; font-size: 12px; text-align: center; color: #1a1a1a; font-weight: 600;">$150-400</div>
+                    </div>
+                </div>
+                <div style="background: #f9fafb; padding: 10px 16px; text-align: center; border-top: 1px solid #E5E7EB;">
+                    <span style="font-size: 11px; color: #6b7280;">Both are email-only. For multichannel (email + LinkedIn + calls), see <a href="#" style="color: #4F46E5;">Overloop</a>.</span>
+                </div>
+            </div>
 
             <h2>7. Apollo.io</h2>
 

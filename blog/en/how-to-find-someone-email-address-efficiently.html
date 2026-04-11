@@ -245,8 +245,52 @@
 
             <p>This guide covers every method I have personally used or tested to find professional email addresses. Some are free. Some cost money. All of them work if you use them correctly.</p>
 
-            <!-- TODO: Create/screenshot: Hero image showing the email finder workflow - name + company goes in, verified email comes out -->
-            <img src="/assets/images/email-finder-workflow-hero.png" alt="Diagram showing the email finder workflow: input a person name and company, get a verified email address" width="700" height="400" loading="lazy">
+            <svg width="100%" viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Workflow diagram: name and company goes into email finder, verified email comes out">
+                <rect width="700" height="300" fill="#f9fafb" rx="8"/>
+                <!-- Step 1: Input -->
+                <rect x="40" y="80" width="160" height="140" rx="12" fill="#ffffff" stroke="#E5E7EB" stroke-width="2"/>
+                <text x="120" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1a1a1a">YOUR INPUT</text>
+                <line x1="60" y1="130" x2="180" y2="130" stroke="#E5E7EB" stroke-width="1"/>
+                <text x="120" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-size="20">&#128100;</text>
+                <text x="120" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">First name, Last name</text>
+                <text x="120" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">+ Company domain</text>
+                <!-- Arrow 1 -->
+                <line x1="210" y1="150" x2="260" y2="150" stroke="#4F46E5" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#4F46E5"/>
+                    </marker>
+                </defs>
+                <!-- Step 2: Email Finder -->
+                <rect x="270" y="60" width="160" height="180" rx="12" fill="#4F46E5" stroke="#4F46E5" stroke-width="2"/>
+                <text x="350" y="100" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#ffffff">EMAIL FINDER</text>
+                <line x1="290" y1="112" x2="410" y2="112" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                <text x="350" y="142" text-anchor="middle" font-family="Inter, sans-serif" font-size="24">&#128269;</text>
+                <text x="350" y="168" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">450M+ contacts</text>
+                <text x="350" y="186" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Pattern matching</text>
+                <text x="350" y="204" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">SMTP verification</text>
+                <text x="350" y="222" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">Catch-all detection</text>
+                <!-- Arrow 2 -->
+                <line x1="440" y1="150" x2="490" y2="150" stroke="#10B981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+                <defs>
+                    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#10B981"/>
+                    </marker>
+                </defs>
+                <!-- Step 3: Output -->
+                <rect x="500" y="80" width="160" height="140" rx="12" fill="#ffffff" stroke="#10B981" stroke-width="2"/>
+                <text x="580" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#10B981">VERIFIED RESULT</text>
+                <line x1="520" y1="130" x2="640" y2="130" stroke="#d1fae5" stroke-width="1"/>
+                <text x="580" y="156" text-anchor="middle" font-family="Inter, sans-serif" font-size="20">&#9989;</text>
+                <text x="580" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#1a1a1a">sarah.j@acme.com</text>
+                <text x="580" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#10B981">93%+ accuracy</text>
+                <!-- Title -->
+                <text x="350" y="36" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1a1a1a">How Email Finding Works</text>
+                <!-- Bottom labels -->
+                <text x="120" y="276" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">Step 1: You provide info</text>
+                <text x="350" y="276" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">Step 2: Tool searches &amp; verifies</text>
+                <text x="580" y="276" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#9ca3af">Step 3: Verified email returned</text>
+            </svg>
 
             <h2>The Quick Version: Which Method Should You Use?</h2>
 
@@ -407,8 +451,65 @@
                 <li><strong>Large enterprises (1,000+ employees)</strong> typically use firstname.lastname@ (48-56%)</li>
             </ul>
 
-            <!-- TODO: Create/screenshot: Visual chart showing email pattern distribution by company size -->
-            <img src="/assets/images/email-pattern-distribution-chart.png" alt="Bar chart showing email pattern usage by company size: small companies prefer firstname@ while enterprises prefer firstname.lastname@" width="700" height="400" loading="lazy">
+            <svg width="100%" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart showing email pattern distribution by company size">
+                <rect width="700" height="400" fill="#f9fafb" rx="8"/>
+                <text x="350" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1a1a1a">Email Pattern Usage by Company Size</text>
+                <!-- Legend -->
+                <rect x="160" y="48" width="12" height="12" rx="2" fill="#4F46E5"/>
+                <text x="178" y="59" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">firstname@</text>
+                <rect x="280" y="48" width="12" height="12" rx="2" fill="#6366F1"/>
+                <text x="298" y="59" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">flastname@</text>
+                <rect x="400" y="48" width="12" height="12" rx="2" fill="#10B981"/>
+                <text x="418" y="59" font-family="Inter, sans-serif" font-size="11" fill="#6b7280">first.last@</text>
+                <!-- Grid -->
+                <line x1="80" y1="80" x2="80" y2="330" stroke="#E5E7EB" stroke-width="1"/>
+                <line x1="80" y1="330" x2="660" y2="330" stroke="#E5E7EB" stroke-width="1"/>
+                <!-- Y axis -->
+                <text x="70" y="334" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">0%</text>
+                <text x="70" y="268" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">20%</text>
+                <text x="70" y="205" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">40%</text>
+                <text x="70" y="143" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">60%</text>
+                <text x="70" y="84" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6b7280">80%</text>
+                <!-- Grid lines -->
+                <line x1="80" y1="265" x2="660" y2="265" stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="80" y1="202" x2="660" y2="202" stroke="#f3f4f6" stroke-width="1"/>
+                <line x1="80" y1="140" x2="660" y2="140" stroke="#f3f4f6" stroke-width="1"/>
+                <!-- Group 1: Small (under 50) -->
+                <text x="210" y="360" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a" font-weight="600">Small (&lt;50)</text>
+                <!-- firstname@ = 71% -->
+                <rect x="130" y="107" width="50" height="223" rx="3" fill="#4F46E5"/>
+                <text x="155" y="98" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">71%</text>
+                <!-- flastname@ = 15% -->
+                <rect x="190" y="283" width="50" height="47" rx="3" fill="#6366F1"/>
+                <text x="215" y="276" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6366F1">15%</text>
+                <!-- first.last@ = 14% -->
+                <rect x="250" y="287" width="50" height="43" rx="3" fill="#10B981"/>
+                <text x="275" y="280" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#10B981">14%</text>
+                <!-- Group 2: Mid-size (51-200) -->
+                <text x="410" y="360" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a" font-weight="600">Mid (51-200)</text>
+                <!-- firstname@ = 28% -->
+                <rect x="330" y="244" width="50" height="86" rx="3" fill="#4F46E5"/>
+                <text x="355" y="237" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">28%</text>
+                <!-- flastname@ = 42% -->
+                <rect x="390" y="198" width="50" height="132" rx="3" fill="#6366F1"/>
+                <text x="415" y="191" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6366F1">42%</text>
+                <!-- first.last@ = 30% -->
+                <rect x="450" y="237" width="50" height="93" rx="3" fill="#10B981"/>
+                <text x="475" y="230" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#10B981">30%</text>
+                <!-- Group 3: Enterprise (1000+) -->
+                <text x="590" y="360" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a" font-weight="600">Enterprise (1K+)</text>
+                <!-- firstname@ = 18% -->
+                <rect x="520" y="274" width="50" height="56" rx="3" fill="#4F46E5"/>
+                <text x="545" y="267" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#4F46E5">18%</text>
+                <!-- flastname@ = 26% -->
+                <rect x="580" y="249" width="50" height="81" rx="3" fill="#6366F1"/>
+                <text x="605" y="242" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#6366F1">26%</text>
+                <!-- first.last@ = 56% -->
+                <rect x="640" y="155" width="50" height="175" rx="3" fill="#10B981"/>
+                <text x="665" y="148" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#10B981">56%</text>
+                <!-- Source -->
+                <text x="350" y="390" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Source: Hunter.io analysis of 12 million email addresses</text>
+            </svg>
 
             <p>The problem: guessing alone gives you no confirmation that the address is valid. You need to verify it before sending. I will cover verification tools later.</p>
 
@@ -424,15 +525,99 @@
 
             <p>Pro tip: DuckDuckGo handles the "@" symbol as literal text, unlike Google which treats it as a social media tag. Search <strong>"@acme.com"</strong> on DuckDuckGo and you will get pages where that exact domain string appears. This is one of the most underrated free methods.</p>
 
-            <!-- TODO: Create/screenshot: Google search results page showing a Google dork query like "sarah johnson" "@acme.com" with results highlighted -->
-            <img src="/assets/images/google-dork-email-search-example.png" alt="Google search results for email address dork query showing name and domain operator" width="700" height="400" loading="lazy">
+            <div class="visual-mockup">
+                <style>
+                    .visual-mockup { border: 1px solid #E5E7EB; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; margin: 1.5rem 0; background: #fff; font-family: 'Inter', Arial, sans-serif; }
+                    .goog-bar { background: #fff; padding: 16px 20px 12px; border-bottom: 1px solid #E5E7EB; }
+                    .goog-search-box { display: flex; align-items: center; border: 1px solid #dfe1e5; border-radius: 24px; padding: 8px 16px; max-width: 580px; background: #fff; }
+                    .goog-search-box .goog-icon { color: #9ca3af; margin-right: 10px; font-size: 16px; }
+                    .goog-search-box input { border: none; outline: none; font-size: 14px; flex: 1; font-family: inherit; background: transparent; color: #1a1a1a; }
+                    .goog-tabs { display: flex; gap: 20px; padding: 6px 20px 0; border-bottom: 1px solid #E5E7EB; }
+                    .goog-tabs span { font-size: 12px; color: #6b7280; padding-bottom: 8px; cursor: default; }
+                    .goog-tabs span.active { color: #4F46E5; border-bottom: 2px solid #4F46E5; font-weight: 600; }
+                    .goog-results { padding: 16px 20px; }
+                    .goog-meta { font-size: 12px; color: #6b7280; margin-bottom: 16px; }
+                    .goog-result { margin-bottom: 20px; }
+                    .goog-result .url { font-size: 12px; color: #6b7280; margin-bottom: 2px; }
+                    .goog-result .title { font-size: 16px; color: #4F46E5; text-decoration: none; margin-bottom: 4px; display: block; font-weight: 400; }
+                    .goog-result .snippet { font-size: 13px; color: #4d5156; line-height: 1.5; }
+                    .goog-result .snippet mark { background: #fcf0b4; padding: 0 2px; border-radius: 2px; }
+                </style>
+                <div class="goog-bar">
+                    <div class="goog-search-box">
+                        <span class="goog-icon">&#128269;</span>
+                        <input type="text" value='"sarah johnson" "@acme.com"' readonly>
+                    </div>
+                </div>
+                <div class="goog-tabs">
+                    <span class="active">All</span>
+                    <span>Images</span>
+                    <span>News</span>
+                    <span>More</span>
+                </div>
+                <div class="goog-results">
+                    <div class="goog-meta">About 3,240 results (0.42 seconds)</div>
+                    <div class="goog-result">
+                        <div class="url">https://acme.com/team</div>
+                        <span class="title">Our Team - Acme Corp</span>
+                        <div class="snippet"><mark>Sarah Johnson</mark>, VP of Sales. Contact: <mark>sarah.johnson@acme.com</mark>. Sarah leads the global sales organization at Acme Corp with 15 years of B2B experience...</div>
+                    </div>
+                    <div class="goog-result">
+                        <div class="url">https://saasconf2025.com/speakers</div>
+                        <span class="title">SaaS Conference 2025 - Speaker Lineup</span>
+                        <div class="snippet">...<mark>Sarah Johnson</mark>, Acme Corp - "Scaling Outbound in 2025." For speaking inquiries contact <mark>sarah.johnson@acme.com</mark> or the event coordinator...</div>
+                    </div>
+                    <div class="goog-result">
+                        <div class="url">https://medium.com/@sarahjohnson/outbound-playbook</div>
+                        <span class="title">The Outbound Playbook That Doubled Our Pipeline | by Sarah Johnson</span>
+                        <div class="snippet">...reach me at <mark>sarah.johnson@acme.com</mark> if you want to discuss outbound strategies. I respond to every email within 24 hours...</div>
+                    </div>
+                </div>
+            </div>
 
             <h2>Method 3: LinkedIn Contact Info (Free)</h2>
 
             <p>If you are connected with someone on LinkedIn (1st degree), click their profile and look for the "Contact info" section below their headline. About 30% of LinkedIn users share their work email here.</p>
 
-            <!-- TODO: Create/screenshot: LinkedIn profile showing the Contact Info section with email address visible -->
-            <img src="/assets/images/linkedin-contact-info-email.png" alt="LinkedIn profile Contact Info section showing where the email address appears for first-degree connections" width="700" height="400" loading="lazy">
+            <div class="visual-mockup" style="border: 1px solid #E5E7EB; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; margin: 1.5rem 0; background: #fff; font-family: 'Inter', Arial, sans-serif; max-width: 420px;">
+                <style>
+                    .li-popup-header { background: #f3f4f6; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E5E7EB; }
+                    .li-popup-header h4 { font-size: 16px; font-weight: 600; color: #1a1a1a; margin: 0; }
+                    .li-popup-header .li-close { font-size: 20px; color: #6b7280; cursor: default; }
+                    .li-popup-body { padding: 20px; }
+                    .li-popup-section { margin-bottom: 18px; }
+                    .li-popup-section .li-label { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+                    .li-popup-section .li-value { font-size: 14px; color: #4F46E5; text-decoration: none; }
+                    .li-popup-section .li-value-muted { font-size: 14px; color: #1a1a1a; }
+                    .li-popup-divider { border: none; border-top: 1px solid #E5E7EB; margin: 0 0 18px; }
+                    .li-badge { display: inline-block; background: #EEF2FF; color: #4F46E5; font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+                </style>
+                <div class="li-popup-header">
+                    <h4>Sarah Johnson's Contact Info</h4>
+                    <span class="li-close">&#10005;</span>
+                </div>
+                <div class="li-popup-body">
+                    <div class="li-popup-section">
+                        <div class="li-label">&#9993; Email <span class="li-badge">1st</span></div>
+                        <a class="li-value" href="#">sarah.johnson@acme.com</a>
+                    </div>
+                    <hr class="li-popup-divider">
+                    <div class="li-popup-section">
+                        <div class="li-label">&#127760; Website</div>
+                        <span class="li-value-muted">acme.com</span>
+                    </div>
+                    <hr class="li-popup-divider">
+                    <div class="li-popup-section">
+                        <div class="li-label">&#128222; Phone</div>
+                        <span class="li-value-muted">+1 (555) 012-3456</span>
+                    </div>
+                    <hr class="li-popup-divider">
+                    <div class="li-popup-section">
+                        <div class="li-label">&#128197; Connected</div>
+                        <span class="li-value-muted">March 12, 2025</span>
+                    </div>
+                </div>
+            </div>
 
             <p>For a deeper dive on extracting emails from LinkedIn, read our <a href="/blog/en/get-email-from-linkedin-profile">complete guide to getting emails from LinkedIn profiles</a>.</p>
 
@@ -470,8 +655,61 @@
 
             <p>Accuracy sits at 93%+ on verified results. The remaining 7% are flagged as "catch-all" domains where verification is technically impossible.</p>
 
-            <!-- TODO: Create/screenshot: Overloop Email Finder interface showing a name/company search with verified result -->
-            <img src="/assets/images/overloop-email-finder-interface.png" alt="Overloop Email Finder tool showing a search by name and company returning a verified email address" width="700" height="400" loading="lazy">
+            <div class="visual-mockup" style="border: 1px solid #E5E7EB; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); overflow: hidden; margin: 1.5rem 0; background: #fff; font-family: 'Inter', Arial, sans-serif;">
+                <style>
+                    .ov-topbar { background: #4F46E5; padding: 12px 20px; display: flex; align-items: center; gap: 12px; }
+                    .ov-topbar .ov-logo { color: #fff; font-weight: 700; font-size: 16px; letter-spacing: -0.5px; }
+                    .ov-topbar .ov-nav { display: flex; gap: 16px; margin-left: 24px; }
+                    .ov-topbar .ov-nav span { color: rgba(255,255,255,0.7); font-size: 13px; cursor: default; }
+                    .ov-topbar .ov-nav span.active { color: #fff; font-weight: 600; border-bottom: 2px solid #fff; padding-bottom: 2px; }
+                    .ov-body { padding: 24px; }
+                    .ov-title { font-size: 18px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+                    .ov-subtitle { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+                    .ov-search-row { display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+                    .ov-input { flex: 1; min-width: 160px; border: 1px solid #E5E7EB; border-radius: 8px; padding: 10px 14px; font-size: 14px; font-family: inherit; color: #1a1a1a; background: #f9fafb; }
+                    .ov-btn { background: #4F46E5; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; font-size: 14px; font-weight: 600; cursor: default; white-space: nowrap; font-family: inherit; }
+                    .ov-result-card { border: 1px solid #d1fae5; border-radius: 10px; padding: 16px 20px; background: #f0fdf4; display: flex; align-items: center; gap: 16px; }
+                    .ov-avatar { width: 44px; height: 44px; border-radius: 50%; background: #4F46E5; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+                    .ov-result-info { flex: 1; }
+                    .ov-result-name { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+                    .ov-result-title { font-size: 12px; color: #6b7280; }
+                    .ov-result-email { font-size: 14px; color: #4F46E5; font-weight: 600; margin-top: 4px; }
+                    .ov-badge { display: inline-block; background: #10B981; color: #fff; font-size: 10px; padding: 3px 10px; border-radius: 12px; font-weight: 600; margin-left: 8px; }
+                    .ov-confidence { text-align: right; }
+                    .ov-confidence-label { font-size: 10px; color: #6b7280; text-transform: uppercase; }
+                    .ov-confidence-value { font-size: 20px; font-weight: 700; color: #10B981; }
+                </style>
+                <div class="ov-topbar">
+                    <span class="ov-logo">Overloop</span>
+                    <div class="ov-nav">
+                        <span>Campaigns</span>
+                        <span>Prospects</span>
+                        <span class="active">Email Finder</span>
+                        <span>Templates</span>
+                    </div>
+                </div>
+                <div class="ov-body">
+                    <div class="ov-title">Email Finder</div>
+                    <div class="ov-subtitle">Find verified professional emails from 450M+ contacts</div>
+                    <div class="ov-search-row">
+                        <input class="ov-input" type="text" value="Sarah Johnson" readonly>
+                        <input class="ov-input" type="text" value="Acme Corp" readonly>
+                        <button class="ov-btn">Find Email</button>
+                    </div>
+                    <div class="ov-result-card">
+                        <div class="ov-avatar">SJ</div>
+                        <div class="ov-result-info">
+                            <div class="ov-result-name">Sarah Johnson</div>
+                            <div class="ov-result-title">VP of Sales at Acme Corp</div>
+                            <div class="ov-result-email">sarah.johnson@acme.com <span class="ov-badge">Verified</span></div>
+                        </div>
+                        <div class="ov-confidence">
+                            <div class="ov-confidence-label">Confidence</div>
+                            <div class="ov-confidence-value">97%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <h2>Method 7: Hunter.io Domain Search (Freemium)</h2>
 
@@ -532,8 +770,42 @@
 
             <p>Some developers use GitHub's noreply address (username@users.noreply.github.com). In that case, this method will not work. But a surprising number of technical people still use their real work email for commits.</p>
 
-            <!-- TODO: Create/screenshot: GitHub commit page with .patch URL extension showing the author email in the header -->
-            <img src="/assets/images/github-commit-patch-email.png" alt="GitHub commit patch view showing the author email address in the From header" width="700" height="400" loading="lazy">
+            <div class="visual-mockup" style="border: 1px solid #E5E7EB; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); overflow: hidden; margin: 1.5rem 0; background: #fff; font-family: 'Inter', Arial, sans-serif;">
+                <style>
+                    .gh-bar { background: #24292f; padding: 10px 20px; display: flex; align-items: center; gap: 10px; }
+                    .gh-bar .gh-icon { color: #fff; font-size: 22px; }
+                    .gh-bar .gh-path { color: rgba(255,255,255,0.7); font-size: 13px; }
+                    .gh-bar .gh-path strong { color: #fff; }
+                    .gh-url-bar { background: #f6f8fa; padding: 10px 20px; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center; gap: 8px; }
+                    .gh-url-bar .gh-url { font-size: 12px; color: #6b7280; font-family: monospace; background: #fff; border: 1px solid #E5E7EB; border-radius: 6px; padding: 6px 12px; flex: 1; }
+                    .gh-url-bar .gh-url .gh-highlight { color: #4F46E5; font-weight: 700; }
+                    .gh-patch { padding: 20px; background: #f9fafb; }
+                    .gh-patch-label { font-size: 12px; color: #6b7280; margin-bottom: 12px; }
+                    .gh-patch-content { font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace; font-size: 13px; line-height: 1.8; background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; padding: 16px; overflow-x: auto; color: #1a1a1a; }
+                    .gh-patch-content .gh-email-hl { background: #fef3c7; padding: 2px 4px; border-radius: 3px; font-weight: 700; color: #1a1a1a; border: 1px solid #fbbf24; }
+                    .gh-patch-content .gh-dim { color: #6b7280; }
+                </style>
+                <div class="gh-bar">
+                    <span class="gh-icon">&#9679;</span>
+                    <span class="gh-path"><strong>sarahjohnson</strong> / acme-sales-tools</span>
+                </div>
+                <div class="gh-url-bar">
+                    <div class="gh-url">github.com/sarahjohnson/acme-sales-tools/commit/a3f8e2b<span class="gh-highlight">.patch</span></div>
+                </div>
+                <div class="gh-patch">
+                    <div class="gh-patch-label">Raw patch view - email visible in commit metadata</div>
+                    <pre class="gh-patch-content"><span class="gh-dim">From a3f8e2b4c9d1e5f6a7b8c9d0e1f2a3b4 Mon Sep 17 00:00:00 2001</span>
+From: Sarah Johnson <span class="gh-email-hl">&lt;sarah.johnson@acme.com&gt;</span>
+<span class="gh-dim">Date: Wed, 8 Apr 2026 14:23:07 +0100
+Subject: [PATCH] Fix outbound sequence timing logic
+
+Updated the delay calculation between sequence steps
+to account for timezone differences.
+---
+ src/sequences/timing.js | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)</span></pre>
+                </div>
+            </div>
 
             <h2>Method 14: Chrome Extensions for Email Finding (Freemium)</h2>
 
@@ -673,8 +945,53 @@
 
             <p>A note on accuracy claims: many email finder vendors publish their own benchmark tests and (surprise) rank themselves first. The numbers above are drawn from independent reviews that tested the same contact list across all tools. Real-world accuracy for any tool depends on your target industry, geography, and company size.</p>
 
-            <!-- TODO: Create/screenshot: Side-by-side comparison of email finder tool interfaces showing search results for the same person -->
-            <img src="/assets/images/email-finder-tools-accuracy-comparison.png" alt="Comparison table showing email finder tool accuracy rates based on independent testing" width="700" height="400" loading="lazy">
+            <svg width="100%" viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Horizontal bar chart comparing email finder tool accuracy rates">
+                <rect width="700" height="420" fill="#f9fafb" rx="8"/>
+                <text x="350" y="32" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#1a1a1a">Email Finder Accuracy (Independent Tests)</text>
+                <!-- Y-axis labels -->
+                <text x="130" y="78" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#1a1a1a" font-weight="600">Overloop</text>
+                <text x="130" y="113" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">GetProspect</text>
+                <text x="130" y="148" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Lusha</text>
+                <text x="130" y="183" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Apollo.io</text>
+                <text x="130" y="218" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Hunter.io</text>
+                <text x="130" y="253" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Voila Norbert</text>
+                <text x="130" y="288" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">RocketReach</text>
+                <text x="130" y="323" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Snov.io</text>
+                <text x="130" y="358" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6b7280">Findymail</text>
+                <!-- Bars (scale: 140px = 0%, 640px = 100%, so 500px range -> 5px per %) -->
+                <!-- Overloop 93% -->
+                <rect x="140" y="64" width="465" height="24" rx="4" fill="#4F46E5"/>
+                <text x="613" y="82" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#4F46E5">93%</text>
+                <!-- GetProspect 95% -->
+                <rect x="140" y="99" width="475" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="623" y="117" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">95%</text>
+                <!-- Lusha 92% -->
+                <rect x="140" y="134" width="460" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="608" y="152" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">92%</text>
+                <!-- Apollo 91% -->
+                <rect x="140" y="169" width="455" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="603" y="187" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">91%</text>
+                <!-- Hunter 87% -->
+                <rect x="140" y="204" width="435" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="583" y="222" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">87%</text>
+                <!-- Voila Norbert 85% -->
+                <rect x="140" y="239" width="425" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="573" y="257" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">85%</text>
+                <!-- RocketReach 83% -->
+                <rect x="140" y="274" width="415" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="563" y="292" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">83%</text>
+                <!-- Snov.io 77% -->
+                <rect x="140" y="309" width="385" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="533" y="327" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">77%</text>
+                <!-- Findymail 75% -->
+                <rect x="140" y="344" width="375" height="24" rx="4" fill="#E5E7EB"/>
+                <text x="523" y="362" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6b7280">75%</text>
+                <!-- Annotation for Overloop -->
+                <rect x="430" y="56" width="105" height="18" rx="3" fill="#EEF2FF"/>
+                <text x="482" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#4F46E5" font-weight="600">Built-in verification</text>
+                <!-- Source -->
+                <text x="350" y="400" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#9ca3af">Source: Independent third-party benchmark tests (2026). Mid-range used for tools with accuracy ranges.</text>
+            </svg>
 
             <h2>Verifying Email Addresses Before You Send</h2>
 
