@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="drip-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f9ff"/>
+      <stop offset="100%" stop-color="#f2f4ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Window chrome -->
+  <rect width="1400" height="800" rx="12" fill="#1b1e3d"/>
+  <rect x="0" y="0" width="1400" height="40" rx="12" fill="#242750"/>
+  <rect x="0" y="28" width="1400" height="12" fill="#242750"/>
+  <circle cx="20" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="20" r="6" fill="#28c840"/>
+  <text x="700" y="25" text-anchor="middle" fill="#8888bb" font-family="system-ui" font-size="13">Dripify - LinkedIn Automation</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="220" height="760" fill="#1b1e3d"/>
+  <text x="30" y="78" fill="#00b4d8" font-family="system-ui" font-weight="700" font-size="20">dripify</text>
+  <rect x="15" y="95" width="190" height="36" rx="6" fill="#00b4d8" opacity="0.15"/>
+  <text x="50" y="118" fill="#00b4d8" font-family="system-ui" font-weight="600" font-size="13">Dashboard</text>
+  <text x="50" y="153" fill="#8888bb" font-family="system-ui" font-size="13">Campaigns</text>
+  <text x="50" y="183" fill="#8888bb" font-family="system-ui" font-size="13">Leads</text>
+  <text x="50" y="213" fill="#8888bb" font-family="system-ui" font-size="13">Inbox</text>
+  <text x="50" y="243" fill="#8888bb" font-family="system-ui" font-size="13">Team</text>
+  <text x="50" y="273" fill="#8888bb" font-family="system-ui" font-size="13">Analytics</text>
+  <text x="50" y="303" fill="#8888bb" font-family="system-ui" font-size="13">Smart Sequences</text>
+  <text x="50" y="333" fill="#8888bb" font-family="system-ui" font-size="13">A/B Testing</text>
+  <text x="50" y="363" fill="#8888bb" font-family="system-ui" font-size="13">Export</text>
+  <text x="50" y="393" fill="#8888bb" font-family="system-ui" font-size="13">Settings</text>
+
+  <!-- Main -->
+  <rect x="220" y="40" width="1180" height="760" fill="url(#drip-bg)"/>
+
+  <text x="260" y="85" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="22">Dashboard Overview</text>
+  <rect x="1200" y="62" width="160" height="36" rx="8" fill="#00b4d8"/>
+  <text x="1280" y="85" text-anchor="middle" fill="white" font-family="system-ui" font-weight="600" font-size="13">+ New Campaign</text>
+
+  <!-- Stats -->
+  <rect x="260" y="110" width="180" height="105" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="280" y="138" fill="#888" font-family="system-ui" font-size="11">INVITES SENT</text>
+  <text x="280" y="170" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="26">4,812</text>
+  <text x="280" y="198" fill="#28c840" font-family="system-ui" font-size="11">+420 this week</text>
+
+  <rect x="460" y="110" width="180" height="105" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="480" y="138" fill="#888" font-family="system-ui" font-size="11">ACCEPTED</text>
+  <text x="480" y="170" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="26">1,567</text>
+  <text x="480" y="198" fill="#00b4d8" font-family="system-ui" font-size="11">32.6% rate</text>
+
+  <rect x="660" y="110" width="180" height="105" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="680" y="138" fill="#888" font-family="system-ui" font-size="11">MESSAGES SENT</text>
+  <text x="680" y="170" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="26">2,340</text>
+  <text x="680" y="198" fill="#28c840" font-family="system-ui" font-size="11">+180 this week</text>
+
+  <rect x="860" y="110" width="180" height="105" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="880" y="138" fill="#888" font-family="system-ui" font-size="11">RESPONSES</text>
+  <text x="880" y="170" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="26">487</text>
+  <text x="880" y="198" fill="#28c840" font-family="system-ui" font-size="11">20.8% reply rate</text>
+
+  <rect x="1060" y="110" width="180" height="105" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="1080" y="138" fill="#888" font-family="system-ui" font-size="11">PROFILE VIEWS</text>
+  <text x="1080" y="170" fill="#1b1e3d" font-family="system-ui" font-weight="700" font-size="26">8,901</text>
+  <text x="1080" y="198" fill="#28c840" font-family="system-ui" font-size="11">+1,100 this week</text>
+
+  <!-- Funnel visualization -->
+  <rect x="260" y="240" width="540" height="280" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="285" y="275" fill="#1b1e3d" font-family="system-ui" font-weight="600" font-size="14">Campaign Funnel</text>
+
+  <!-- Funnel bars -->
+  <rect x="310" y="300" width="460" height="30" rx="4" fill="#00b4d8" opacity="0.2"/>
+  <rect x="310" y="300" width="460" height="30" rx="4" fill="#00b4d8"/>
+  <text x="320" y="320" fill="white" font-family="system-ui" font-weight="600" font-size="12">Invites Sent: 4,812</text>
+
+  <rect x="310" y="340" width="340" height="30" rx="4" fill="#00b4d8" opacity="0.8"/>
+  <text x="320" y="360" fill="white" font-family="system-ui" font-weight="600" font-size="12">Profiles Viewed: 3,590</text>
+
+  <rect x="310" y="380" width="200" height="30" rx="4" fill="#00b4d8" opacity="0.6"/>
+  <text x="320" y="400" fill="white" font-family="system-ui" font-weight="600" font-size="12">Connected: 1,567</text>
+
+  <rect x="310" y="420" width="140" height="30" rx="4" fill="#00b4d8" opacity="0.5"/>
+  <text x="320" y="440" fill="white" font-family="system-ui" font-weight="600" font-size="12">Messaged: 980</text>
+
+  <rect x="310" y="460" width="60" height="30" rx="4" fill="#00b4d8" opacity="0.4"/>
+  <text x="320" y="480" fill="white" font-family="system-ui" font-weight="600" font-size="11">Replied: 487</text>
+
+  <!-- Team performance -->
+  <rect x="820" y="240" width="540" height="280" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="845" y="275" fill="#1b1e3d" font-family="system-ui" font-weight="600" font-size="14">Team Performance</text>
+
+  <rect x="845" y="295" width="490" height="45" rx="6" fill="#f8f9ff"/>
+  <text x="865" y="322" fill="#1b1e3d" font-family="system-ui" font-weight="500" font-size="13">Nicolas F.</text>
+  <text x="1050" y="322" fill="#888" font-family="system-ui" font-size="12">1,240 invites</text>
+  <text x="1200" y="322" fill="#28c840" font-family="system-ui" font-size="12">38% accepted</text>
+
+  <rect x="845" y="350" width="490" height="45" rx="6" fill="#f8f9ff"/>
+  <text x="865" y="377" fill="#1b1e3d" font-family="system-ui" font-weight="500" font-size="13">Sarah M.</text>
+  <text x="1050" y="377" fill="#888" font-family="system-ui" font-size="12">1,180 invites</text>
+  <text x="1200" y="377" fill="#28c840" font-family="system-ui" font-size="12">34% accepted</text>
+
+  <rect x="845" y="405" width="490" height="45" rx="6" fill="#f8f9ff"/>
+  <text x="865" y="432" fill="#1b1e3d" font-family="system-ui" font-weight="500" font-size="13">Alex T.</text>
+  <text x="1050" y="432" fill="#888" font-family="system-ui" font-size="12">1,092 invites</text>
+  <text x="1200" y="432" fill="#00b4d8" font-family="system-ui" font-size="12">31% accepted</text>
+
+  <rect x="845" y="460" width="490" height="45" rx="6" fill="#f8f9ff"/>
+  <text x="865" y="487" fill="#1b1e3d" font-family="system-ui" font-weight="500" font-size="13">Jordan K.</text>
+  <text x="1050" y="487" fill="#888" font-family="system-ui" font-size="12">1,300 invites</text>
+  <text x="1200" y="487" fill="#28c840" font-family="system-ui" font-size="12">29% accepted</text>
+
+  <!-- Campaign list -->
+  <rect x="260" y="545" width="1100" height="235" rx="10" fill="white" stroke="#e0e4f4" stroke-width="1"/>
+  <text x="285" y="580" fill="#1b1e3d" font-family="system-ui" font-weight="600" font-size="16">Active Campaigns</text>
+
+  <rect x="260" y="595" width="1100" height="35" fill="#f8f9ff"/>
+  <text x="285" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">CAMPAIGN</text>
+  <text x="560" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">TYPE</text>
+  <text x="720" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">INVITES</text>
+  <text x="840" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">ACCEPTED</text>
+  <text x="970" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">MESSAGED</text>
+  <text x="1100" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">REPLIED</text>
+  <text x="1230" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">STATUS</text>
+
+  <text x="285" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">SaaS CEOs - Smart Sequence</text>
+  <text x="560" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">Connect + Msg</text>
+  <text x="720" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">2,140</text>
+  <text x="840" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">698</text>
+  <text x="970" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">420</text>
+  <text x="1100" y="657" fill="#1b1e3d" font-family="system-ui" font-size="13">87</text>
+  <rect x="1225" y="643" width="55" height="22" rx="11" fill="#d4edda"/>
+  <text x="1235" y="658" fill="#28a745" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="673" x2="1360" y2="673" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">Agency Founders - Profile Visit</text>
+  <text x="560" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">View + Connect</text>
+  <text x="720" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">1,872</text>
+  <text x="840" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">612</text>
+  <text x="970" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">340</text>
+  <text x="1100" y="702" fill="#1b1e3d" font-family="system-ui" font-size="13">71</text>
+  <rect x="1225" y="688" width="55" height="22" rx="11" fill="#d4edda"/>
+  <text x="1235" y="703" fill="#28a745" font-family="system-ui" font-size="11">Active</text>
+</svg>

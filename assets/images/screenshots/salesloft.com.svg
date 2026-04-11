@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="slt-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f9fb"/>
+      <stop offset="100%" stop-color="#f1f3f8"/>
+    </linearGradient>
+    <linearGradient id="slt-header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#003d7a"/>
+      <stop offset="100%" stop-color="#0058a8"/>
+    </linearGradient>
+  </defs>
+  <!-- Window chrome -->
+  <rect width="1400" height="800" rx="12" fill="#001f3f"/>
+  <rect x="0" y="0" width="1400" height="40" rx="12" fill="#00294d"/>
+  <rect x="0" y="28" width="1400" height="12" fill="#00294d"/>
+  <circle cx="20" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="20" r="6" fill="#28c840"/>
+  <text x="700" y="25" text-anchor="middle" fill="#6699cc" font-family="system-ui" font-size="13">Salesloft - Revenue Orchestration Platform</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="220" height="760" fill="#001f3f"/>
+  <text x="30" y="78" fill="#4da6ff" font-family="system-ui" font-weight="700" font-size="18">Salesloft</text>
+  <rect x="15" y="95" width="190" height="36" rx="6" fill="#4da6ff" opacity="0.15"/>
+  <text x="50" y="118" fill="#4da6ff" font-family="system-ui" font-weight="600" font-size="13">Dashboard</text>
+  <text x="50" y="153" fill="#6699cc" font-family="system-ui" font-size="13">Cadences</text>
+  <text x="50" y="183" fill="#6699cc" font-family="system-ui" font-size="13">People</text>
+  <text x="50" y="213" fill="#6699cc" font-family="system-ui" font-size="13">Deals</text>
+  <text x="50" y="243" fill="#6699cc" font-family="system-ui" font-size="13">Conversations</text>
+  <text x="50" y="273" fill="#6699cc" font-family="system-ui" font-size="13">Forecast</text>
+  <text x="50" y="303" fill="#6699cc" font-family="system-ui" font-size="13">Coaching</text>
+  <text x="50" y="333" fill="#6699cc" font-family="system-ui" font-size="13">Analytics</text>
+  <text x="50" y="363" fill="#6699cc" font-family="system-ui" font-size="13">Dialer</text>
+  <text x="50" y="393" fill="#6699cc" font-family="system-ui" font-size="13">Calendar</text>
+  <text x="50" y="423" fill="#6699cc" font-family="system-ui" font-size="13">Integrations</text>
+
+  <!-- Main -->
+  <rect x="220" y="40" width="1180" height="760" fill="url(#slt-bg)"/>
+
+  <text x="260" y="85" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="22">Revenue Dashboard</text>
+  <text x="260" y="105" fill="#666" font-family="system-ui" font-size="13">Q2 2026 - Team Performance</text>
+
+  <!-- Top metrics -->
+  <rect x="260" y="125" width="180" height="100" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="280" y="150" fill="#888" font-family="system-ui" font-size="11">PIPELINE</text>
+  <text x="280" y="180" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="24">$2.4M</text>
+  <text x="280" y="205" fill="#28c840" font-family="system-ui" font-size="11">+18% vs target</text>
+
+  <rect x="460" y="125" width="180" height="100" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="480" y="150" fill="#888" font-family="system-ui" font-size="11">CLOSED WON</text>
+  <text x="480" y="180" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="24">$890K</text>
+  <text x="480" y="205" fill="#28c840" font-family="system-ui" font-size="11">72% of quota</text>
+
+  <rect x="660" y="125" width="180" height="100" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="680" y="150" fill="#888" font-family="system-ui" font-size="11">ACTIVITIES</text>
+  <text x="680" y="180" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="24">14,230</text>
+  <text x="680" y="205" fill="#4da6ff" font-family="system-ui" font-size="11">This month</text>
+
+  <rect x="860" y="125" width="180" height="100" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="880" y="150" fill="#888" font-family="system-ui" font-size="11">MEETINGS</text>
+  <text x="880" y="180" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="24">187</text>
+  <text x="880" y="205" fill="#28c840" font-family="system-ui" font-size="11">+24% vs last month</text>
+
+  <rect x="1060" y="125" width="180" height="100" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="1080" y="150" fill="#888" font-family="system-ui" font-size="11">WIN RATE</text>
+  <text x="1080" y="180" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="24">34%</text>
+  <text x="1080" y="205" fill="#28c840" font-family="system-ui" font-size="11">+3pp vs Q1</text>
+
+  <!-- Cadence performance -->
+  <rect x="260" y="250" width="540" height="270" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="285" y="285" fill="#001f3f" font-family="system-ui" font-weight="600" font-size="14">Cadence Performance</text>
+
+  <rect x="260" y="300" width="540" height="35" fill="#f6f8fc"/>
+  <text x="285" y="322" fill="#888" font-family="system-ui" font-weight="500" font-size="11">CADENCE</text>
+  <text x="500" y="322" fill="#888" font-family="system-ui" font-weight="500" font-size="11">PEOPLE</text>
+  <text x="580" y="322" fill="#888" font-family="system-ui" font-weight="500" font-size="11">TOUCHES</text>
+  <text x="670" y="322" fill="#888" font-family="system-ui" font-weight="500" font-size="11">MEETINGS</text>
+
+  <text x="285" y="360" fill="#001f3f" font-family="system-ui" font-size="13">Enterprise Outbound Q2</text>
+  <text x="500" y="360" fill="#001f3f" font-family="system-ui" font-size="13">2,400</text>
+  <text x="580" y="360" fill="#001f3f" font-family="system-ui" font-size="13">8,640</text>
+  <text x="670" y="360" fill="#001f3f" font-family="system-ui" font-size="13">67</text>
+  <line x1="260" y1="375" x2="800" y2="375" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="400" fill="#001f3f" font-family="system-ui" font-size="13">Mid-Market Re-engage</text>
+  <text x="500" y="400" fill="#001f3f" font-family="system-ui" font-size="13">1,800</text>
+  <text x="580" y="400" fill="#001f3f" font-family="system-ui" font-size="13">5,400</text>
+  <text x="670" y="400" fill="#001f3f" font-family="system-ui" font-size="13">42</text>
+  <line x1="260" y1="415" x2="800" y2="415" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="440" fill="#001f3f" font-family="system-ui" font-size="13">Inbound Follow-Up</text>
+  <text x="500" y="440" fill="#001f3f" font-family="system-ui" font-size="13">890</text>
+  <text x="580" y="440" fill="#001f3f" font-family="system-ui" font-size="13">2,670</text>
+  <text x="670" y="440" fill="#001f3f" font-family="system-ui" font-size="13">38</text>
+  <line x1="260" y1="455" x2="800" y2="455" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="480" fill="#001f3f" font-family="system-ui" font-size="13">Event Attendees 2026</text>
+  <text x="500" y="480" fill="#001f3f" font-family="system-ui" font-size="13">650</text>
+  <text x="580" y="480" fill="#001f3f" font-family="system-ui" font-size="13">1,950</text>
+  <text x="670" y="480" fill="#001f3f" font-family="system-ui" font-size="13">28</text>
+
+  <!-- Deal pipeline -->
+  <rect x="820" y="250" width="540" height="270" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="845" y="285" fill="#001f3f" font-family="system-ui" font-weight="600" font-size="14">Deal Pipeline</text>
+
+  <!-- Pipeline stages as horizontal funnel -->
+  <rect x="845" y="305" width="110" height="35" rx="4" fill="#4da6ff" opacity="0.2"/>
+  <text x="900" y="327" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="11">Discovery</text>
+  <text x="900" y="360" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="16">$840K</text>
+  <text x="900" y="378" text-anchor="middle" fill="#888" font-family="system-ui" font-size="10">24 deals</text>
+
+  <rect x="970" y="305" width="110" height="35" rx="4" fill="#4da6ff" opacity="0.35"/>
+  <text x="1025" y="327" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="11">Qualified</text>
+  <text x="1025" y="360" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="16">$620K</text>
+  <text x="1025" y="378" text-anchor="middle" fill="#888" font-family="system-ui" font-size="10">16 deals</text>
+
+  <rect x="1095" y="305" width="110" height="35" rx="4" fill="#4da6ff" opacity="0.5"/>
+  <text x="1150" y="327" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="11">Proposal</text>
+  <text x="1150" y="360" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="16">$480K</text>
+  <text x="1150" y="378" text-anchor="middle" fill="#888" font-family="system-ui" font-size="10">8 deals</text>
+
+  <rect x="1220" y="305" width="110" height="35" rx="4" fill="#4da6ff" opacity="0.7"/>
+  <text x="1275" y="327" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="11">Negotiation</text>
+  <text x="1275" y="360" text-anchor="middle" fill="#001f3f" font-family="system-ui" font-weight="700" font-size="16">$310K</text>
+  <text x="1275" y="378" text-anchor="middle" fill="#888" font-family="system-ui" font-size="10">5 deals</text>
+
+  <!-- Recent deals -->
+  <text x="845" y="415" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="12">At-Risk Deals</text>
+  <rect x="845" y="430" width="490" height="35" rx="4" fill="#fff8f0"/>
+  <text x="865" y="452" fill="#001f3f" font-family="system-ui" font-size="12">Acme Corp - Enterprise</text>
+  <text x="1150" y="452" fill="#d97706" font-family="system-ui" font-size="12">$120K - No activity 14d</text>
+
+  <rect x="845" y="472" width="490" height="35" rx="4" fill="#fff8f0"/>
+  <text x="865" y="494" fill="#001f3f" font-family="system-ui" font-size="12">DataFlow Inc - Mid-Market</text>
+  <text x="1150" y="494" fill="#d97706" font-family="system-ui" font-size="12">$85K - Stalled in proposal</text>
+
+  <!-- Team leaderboard -->
+  <rect x="260" y="545" width="1100" height="235" rx="10" fill="white" stroke="#dde2ee" stroke-width="1"/>
+  <text x="285" y="580" fill="#001f3f" font-family="system-ui" font-weight="600" font-size="16">Team Leaderboard</text>
+
+  <rect x="260" y="595" width="1100" height="35" fill="#f6f8fc"/>
+  <text x="285" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">REP</text>
+  <text x="460" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">EMAILS</text>
+  <text x="570" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">CALLS</text>
+  <text x="670" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">MEETINGS</text>
+  <text x="790" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">PIPELINE</text>
+  <text x="920" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">CLOSED</text>
+  <text x="1050" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">QUOTA %</text>
+  <text x="1200" y="617" fill="#888" font-family="system-ui" font-weight="500" font-size="11">TREND</text>
+
+  <text x="285" y="655" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="13">Sarah Mitchell</text>
+  <text x="460" y="655" fill="#001f3f" font-family="system-ui" font-size="13">3,420</text>
+  <text x="570" y="655" fill="#001f3f" font-family="system-ui" font-size="13">189</text>
+  <text x="670" y="655" fill="#001f3f" font-family="system-ui" font-size="13">54</text>
+  <text x="790" y="655" fill="#001f3f" font-family="system-ui" font-size="13">$680K</text>
+  <text x="920" y="655" fill="#001f3f" font-family="system-ui" font-size="13">$310K</text>
+  <text x="1050" y="655" fill="#28c840" font-family="system-ui" font-weight="600" font-size="13">89%</text>
+  <text x="1200" y="655" fill="#28c840" font-family="system-ui" font-size="13">up 12%</text>
+  <line x1="260" y1="670" x2="1360" y2="670" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="700" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="13">James Chen</text>
+  <text x="460" y="700" fill="#001f3f" font-family="system-ui" font-size="13">2,890</text>
+  <text x="570" y="700" fill="#001f3f" font-family="system-ui" font-size="13">234</text>
+  <text x="670" y="700" fill="#001f3f" font-family="system-ui" font-size="13">48</text>
+  <text x="790" y="700" fill="#001f3f" font-family="system-ui" font-size="13">$540K</text>
+  <text x="920" y="700" fill="#001f3f" font-family="system-ui" font-size="13">$280K</text>
+  <text x="1050" y="700" fill="#28c840" font-family="system-ui" font-weight="600" font-size="13">81%</text>
+  <text x="1200" y="700" fill="#28c840" font-family="system-ui" font-size="13">up 8%</text>
+  <line x1="260" y1="715" x2="1360" y2="715" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="745" fill="#001f3f" font-family="system-ui" font-weight="500" font-size="13">Alex Rivera</text>
+  <text x="460" y="745" fill="#001f3f" font-family="system-ui" font-size="13">3,100</text>
+  <text x="570" y="745" fill="#001f3f" font-family="system-ui" font-size="13">156</text>
+  <text x="670" y="745" fill="#001f3f" font-family="system-ui" font-size="13">41</text>
+  <text x="790" y="745" fill="#001f3f" font-family="system-ui" font-size="13">$490K</text>
+  <text x="920" y="745" fill="#001f3f" font-family="system-ui" font-size="13">$220K</text>
+  <text x="1050" y="745" fill="#d97706" font-family="system-ui" font-weight="600" font-size="13">63%</text>
+  <text x="1200" y="745" fill="#dc3545" font-family="system-ui" font-size="13">down 5%</text>
+</svg>

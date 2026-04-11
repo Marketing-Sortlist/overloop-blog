@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="exp-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#f3f5f8"/>
+    </linearGradient>
+  </defs>
+  <!-- Window chrome -->
+  <rect width="1400" height="800" rx="12" fill="#002040"/>
+  <rect x="0" y="0" width="1400" height="40" rx="12" fill="#003060"/>
+  <rect x="0" y="28" width="1400" height="12" fill="#003060"/>
+  <circle cx="20" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="20" r="6" fill="#28c840"/>
+  <text x="700" y="25" text-anchor="middle" fill="#6699cc" font-family="system-ui" font-size="13">Expandi - LinkedIn Outreach Dashboard</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="220" height="760" fill="#002040"/>
+  <text x="30" y="78" fill="#FF6030" font-family="system-ui" font-weight="700" font-size="20">expandi</text>
+  <rect x="15" y="95" width="190" height="36" rx="6" fill="#004D87" opacity="0.4"/>
+  <text x="50" y="118" fill="#60aaff" font-family="system-ui" font-weight="600" font-size="13">Dashboard</text>
+  <text x="50" y="153" fill="#6699cc" font-family="system-ui" font-size="13">Campaigns</text>
+  <text x="50" y="183" fill="#6699cc" font-family="system-ui" font-size="13">Smart Inbox</text>
+  <text x="50" y="213" fill="#6699cc" font-family="system-ui" font-size="13">Connector</text>
+  <text x="50" y="243" fill="#6699cc" font-family="system-ui" font-size="13">Search</text>
+  <text x="50" y="273" fill="#6699cc" font-family="system-ui" font-size="13">Blacklist</text>
+  <text x="50" y="303" fill="#6699cc" font-family="system-ui" font-size="13">Webhooks</text>
+  <text x="50" y="333" fill="#6699cc" font-family="system-ui" font-size="13">Image/GIF Editor</text>
+  <text x="50" y="363" fill="#6699cc" font-family="system-ui" font-size="13">Safety Limits</text>
+  <text x="50" y="393" fill="#6699cc" font-family="system-ui" font-size="13">Settings</text>
+
+  <!-- Main -->
+  <rect x="220" y="40" width="1180" height="760" fill="url(#exp-bg)"/>
+
+  <text x="260" y="85" fill="#002040" font-family="system-ui" font-weight="700" font-size="22">Outreach Dashboard</text>
+  <rect x="1200" y="62" width="160" height="36" rx="8" fill="#FF6030"/>
+  <text x="1280" y="85" text-anchor="middle" fill="white" font-family="system-ui" font-weight="600" font-size="13">+ New Campaign</text>
+
+  <!-- Stats -->
+  <rect x="260" y="110" width="265" height="115" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="285" y="140" fill="#888" font-family="system-ui" font-size="11">CONNECTIONS SENT</text>
+  <text x="285" y="176" fill="#002040" font-family="system-ui" font-weight="700" font-size="30">6,234</text>
+  <text x="285" y="205" fill="#28c840" font-family="system-ui" font-size="11">+540 this week (within safety limits)</text>
+
+  <rect x="545" y="110" width="265" height="115" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="570" y="140" fill="#888" font-family="system-ui" font-size="11">ACCEPTANCE RATE</text>
+  <text x="570" y="176" fill="#002040" font-family="system-ui" font-weight="700" font-size="30">38.4%</text>
+  <text x="570" y="205" fill="#004D87" font-family="system-ui" font-size="11">Smart targeting active</text>
+
+  <rect x="830" y="110" width="265" height="115" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="855" y="140" fill="#888" font-family="system-ui" font-size="11">MESSAGES SENT</text>
+  <text x="855" y="176" fill="#002040" font-family="system-ui" font-weight="700" font-size="30">3,891</text>
+  <text x="855" y="205" fill="#28c840" font-family="system-ui" font-size="11">+310 this week</text>
+
+  <rect x="1115" y="110" width="245" height="115" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="1140" y="140" fill="#888" font-family="system-ui" font-size="11">REPLY RATE</text>
+  <text x="1140" y="176" fill="#002040" font-family="system-ui" font-weight="700" font-size="30">24.1%</text>
+  <text x="1140" y="205" fill="#FF6030" font-family="system-ui" font-size="11">Top performing</text>
+
+  <!-- Safety panel -->
+  <rect x="260" y="250" width="540" height="120" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="285" y="282" fill="#002040" font-family="system-ui" font-weight="600" font-size="14">Safety Limits (Today)</text>
+  <!-- Progress bars -->
+  <text x="285" y="310" fill="#666" font-family="system-ui" font-size="11">Connections: 42/80</text>
+  <rect x="440" y="300" width="340" height="12" rx="6" fill="#e8ecf0"/>
+  <rect x="440" y="300" width="178" height="12" rx="6" fill="#004D87"/>
+  <text x="285" y="340" fill="#666" font-family="system-ui" font-size="11">Messages: 38/60</text>
+  <rect x="440" y="330" width="340" height="12" rx="6" fill="#e8ecf0"/>
+  <rect x="440" y="330" width="215" height="12" rx="6" fill="#FF6030"/>
+  <text x="285" y="362" fill="#666" font-family="system-ui" font-size="11">Profile views: 65/100</text>
+  <rect x="440" y="352" width="340" height="12" rx="6" fill="#e8ecf0"/>
+  <rect x="440" y="352" width="221" height="12" rx="6" fill="#28c840"/>
+
+  <!-- Smart inbox -->
+  <rect x="820" y="250" width="540" height="120" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="845" y="282" fill="#002040" font-family="system-ui" font-weight="600" font-size="14">Smart Inbox</text>
+  <text x="845" y="310" fill="#666" font-family="system-ui" font-size="12">12 new replies today</text>
+  <text x="845" y="335" fill="#666" font-family="system-ui" font-size="12">4 interested leads flagged</text>
+  <text x="845" y="358" fill="#666" font-family="system-ui" font-size="12">2 meetings requested</text>
+  <rect x="1220" y="290" width="100" height="30" rx="6" fill="#004D87"/>
+  <text x="1270" y="310" text-anchor="middle" fill="white" font-family="system-ui" font-size="11">View Inbox</text>
+
+  <!-- Campaigns table -->
+  <rect x="260" y="395" width="1100" height="385" rx="10" fill="white" stroke="#e2e6ee" stroke-width="1"/>
+  <text x="285" y="430" fill="#002040" font-family="system-ui" font-weight="600" font-size="16">Active Campaigns</text>
+
+  <rect x="260" y="445" width="1100" height="36" fill="#f6f8fa"/>
+  <text x="285" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">CAMPAIGN</text>
+  <text x="540" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">TYPE</text>
+  <text x="700" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">SENT</text>
+  <text x="810" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">ACCEPTED</text>
+  <text x="930" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">REPLIED</text>
+  <text x="1050" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">RATE</text>
+  <text x="1170" y="468" fill="#888" font-family="system-ui" font-weight="500" font-size="11">STATUS</text>
+
+  <text x="285" y="510" fill="#002040" font-family="system-ui" font-size="13">SaaS Founders Outreach</text>
+  <text x="540" y="510" fill="#002040" font-family="system-ui" font-size="13">Connector</text>
+  <text x="700" y="510" fill="#002040" font-family="system-ui" font-size="13">2,400</text>
+  <text x="810" y="510" fill="#002040" font-family="system-ui" font-size="13">921</text>
+  <text x="930" y="510" fill="#002040" font-family="system-ui" font-size="13">234</text>
+  <text x="1050" y="510" fill="#002040" font-family="system-ui" font-size="13">25.4%</text>
+  <rect x="1165" y="496" width="55" height="22" rx="11" fill="#d4edda"/>
+  <text x="1175" y="511" fill="#28a745" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="528" x2="1360" y2="528" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="555" fill="#002040" font-family="system-ui" font-size="13">Agency Owners GIF Campaign</text>
+  <text x="540" y="555" fill="#002040" font-family="system-ui" font-size="13">GIF + Msg</text>
+  <text x="700" y="555" fill="#002040" font-family="system-ui" font-size="13">1,800</text>
+  <text x="810" y="555" fill="#002040" font-family="system-ui" font-size="13">693</text>
+  <text x="930" y="555" fill="#002040" font-family="system-ui" font-size="13">178</text>
+  <text x="1050" y="555" fill="#002040" font-family="system-ui" font-size="13">25.7%</text>
+  <rect x="1165" y="541" width="55" height="22" rx="11" fill="#d4edda"/>
+  <text x="1175" y="556" fill="#28a745" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="573" x2="1360" y2="573" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="600" fill="#002040" font-family="system-ui" font-size="13">VP Sales - Open InMail</text>
+  <text x="540" y="600" fill="#002040" font-family="system-ui" font-size="13">InMail</text>
+  <text x="700" y="600" fill="#002040" font-family="system-ui" font-size="13">890</text>
+  <text x="810" y="600" fill="#002040" font-family="system-ui" font-size="13">n/a</text>
+  <text x="930" y="600" fill="#002040" font-family="system-ui" font-size="13">112</text>
+  <text x="1050" y="600" fill="#002040" font-family="system-ui" font-size="13">12.6%</text>
+  <rect x="1165" y="586" width="55" height="22" rx="11" fill="#d4edda"/>
+  <text x="1175" y="601" fill="#28a745" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="618" x2="1360" y2="618" stroke="#f0f2f5" stroke-width="1"/>
+
+  <text x="285" y="645" fill="#002040" font-family="system-ui" font-size="13">Event Attendees Follow-Up</text>
+  <text x="540" y="645" fill="#002040" font-family="system-ui" font-size="13">Smart</text>
+  <text x="700" y="645" fill="#002040" font-family="system-ui" font-size="13">1,144</text>
+  <text x="810" y="645" fill="#002040" font-family="system-ui" font-size="13">440</text>
+  <text x="930" y="645" fill="#002040" font-family="system-ui" font-size="13">98</text>
+  <text x="1050" y="645" fill="#002040" font-family="system-ui" font-size="13">22.3%</text>
+  <rect x="1165" y="631" width="60" height="22" rx="11" fill="#fff3cd"/>
+  <text x="1173" y="646" fill="#856404" font-family="system-ui" font-size="11">Paused</text>
+</svg>

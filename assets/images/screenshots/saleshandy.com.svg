@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="1400" height="800">
+  <defs>
+    <linearGradient id="sh-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9fafb"/>
+      <stop offset="100%" stop-color="#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  <!-- Window chrome -->
+  <rect width="1400" height="800" rx="12" fill="#111827"/>
+  <rect x="0" y="0" width="1400" height="40" rx="12" fill="#1f2937"/>
+  <rect x="0" y="28" width="1400" height="12" fill="#1f2937"/>
+  <circle cx="20" cy="20" r="6" fill="#ff5f57"/>
+  <circle cx="40" cy="20" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="20" r="6" fill="#28c840"/>
+  <text x="700" y="25" text-anchor="middle" fill="#9ca3af" font-family="system-ui" font-size="13">SalesHandy - Unified Inbox</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="40" width="220" height="760" fill="#111827"/>
+  <text x="40" y="75" fill="#3b82f6" font-family="system-ui" font-weight="700" font-size="18">SalesHandy</text>
+  <rect x="15" y="95" width="190" height="36" rx="6" fill="#1e3a5f"/>
+  <text x="50" y="118" fill="#60a5fa" font-family="system-ui" font-weight="600" font-size="13">Sequences</text>
+  <text x="50" y="153" fill="#9ca3af" font-family="system-ui" font-size="13">Unified Inbox</text>
+  <text x="50" y="183" fill="#9ca3af" font-family="system-ui" font-size="13">Lead Finder</text>
+  <text x="50" y="213" fill="#9ca3af" font-family="system-ui" font-size="13">Templates</text>
+  <text x="50" y="243" fill="#9ca3af" font-family="system-ui" font-size="13">Analytics</text>
+  <text x="50" y="273" fill="#9ca3af" font-family="system-ui" font-size="13">Email Accounts</text>
+  <text x="50" y="303" fill="#9ca3af" font-family="system-ui" font-size="13">Deal Pipeline</text>
+  <text x="50" y="333" fill="#9ca3af" font-family="system-ui" font-size="13">Sender Rotation</text>
+  <text x="50" y="363" fill="#9ca3af" font-family="system-ui" font-size="13">Email Warm-Up</text>
+  <text x="50" y="393" fill="#9ca3af" font-family="system-ui" font-size="13">Settings</text>
+
+  <!-- Main content -->
+  <rect x="220" y="40" width="1180" height="760" fill="url(#sh-bg)"/>
+
+  <!-- Header -->
+  <text x="260" y="85" fill="#111827" font-family="system-ui" font-weight="700" font-size="22">Sequence Dashboard</text>
+  <rect x="1180" y="62" width="180" height="36" rx="8" fill="#3b82f6"/>
+  <text x="1270" y="85" text-anchor="middle" fill="white" font-family="system-ui" font-weight="600" font-size="13">+ Create Sequence</text>
+
+  <!-- Metric cards -->
+  <rect x="260" y="110" width="185" height="110" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="280" y="140" fill="#6b7280" font-family="system-ui" font-size="11">TOTAL PROSPECTS</text>
+  <text x="280" y="175" fill="#111827" font-family="system-ui" font-weight="700" font-size="28">18,342</text>
+  <text x="280" y="200" fill="#10b981" font-family="system-ui" font-size="11">+2,140 this month</text>
+
+  <rect x="465" y="110" width="185" height="110" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="485" y="140" fill="#6b7280" font-family="system-ui" font-size="11">EMAILS SENT</text>
+  <text x="485" y="175" fill="#111827" font-family="system-ui" font-weight="700" font-size="28">31,506</text>
+  <text x="485" y="200" fill="#10b981" font-family="system-ui" font-size="11">+18% vs last month</text>
+
+  <rect x="670" y="110" width="185" height="110" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="690" y="140" fill="#6b7280" font-family="system-ui" font-size="11">OPEN RATE</text>
+  <text x="690" y="175" fill="#111827" font-family="system-ui" font-weight="700" font-size="28">58.2%</text>
+  <text x="690" y="200" fill="#10b981" font-family="system-ui" font-size="11">Industry avg: 44%</text>
+
+  <rect x="875" y="110" width="185" height="110" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="895" y="140" fill="#6b7280" font-family="system-ui" font-size="11">REPLY RATE</text>
+  <text x="895" y="175" fill="#111827" font-family="system-ui" font-weight="700" font-size="28">11.4%</text>
+  <text x="895" y="200" fill="#3b82f6" font-family="system-ui" font-size="11">Above target</text>
+
+  <rect x="1080" y="110" width="185" height="110" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="1100" y="140" fill="#6b7280" font-family="system-ui" font-size="11">BOUNCE RATE</text>
+  <text x="1100" y="175" fill="#111827" font-family="system-ui" font-weight="700" font-size="28">1.2%</text>
+  <text x="1100" y="200" fill="#10b981" font-family="system-ui" font-size="11">Healthy</text>
+
+  <!-- Sequence list -->
+  <rect x="260" y="245" width="1100" height="495" rx="10" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="285" y="280" fill="#111827" font-family="system-ui" font-weight="600" font-size="16">Active Sequences</text>
+
+  <rect x="260" y="295" width="1100" height="38" fill="#f9fafb"/>
+  <text x="285" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">SEQUENCE</text>
+  <text x="560" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">STEPS</text>
+  <text x="660" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">PROSPECTS</text>
+  <text x="780" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">SENT</text>
+  <text x="880" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">OPENED</text>
+  <text x="980" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">REPLIED</text>
+  <text x="1090" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">INTERESTED</text>
+  <text x="1230" y="319" fill="#6b7280" font-family="system-ui" font-weight="500" font-size="11">STATUS</text>
+
+  <!-- Rows -->
+  <text x="285" y="360" fill="#111827" font-family="system-ui" font-size="13">SaaS Decision Makers</text>
+  <text x="560" y="360" fill="#111827" font-family="system-ui" font-size="13">5</text>
+  <text x="660" y="360" fill="#111827" font-family="system-ui" font-size="13">4,521</text>
+  <text x="780" y="360" fill="#111827" font-family="system-ui" font-size="13">12,408</text>
+  <text x="880" y="360" fill="#111827" font-family="system-ui" font-size="13">7,214</text>
+  <text x="980" y="360" fill="#111827" font-family="system-ui" font-size="13">534</text>
+  <text x="1090" y="360" fill="#111827" font-family="system-ui" font-size="13">89</text>
+  <rect x="1225" y="346" width="55" height="22" rx="11" fill="#d1fae5"/>
+  <text x="1235" y="361" fill="#065f46" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="378" x2="1360" y2="378" stroke="#f3f4f6" stroke-width="1"/>
+
+  <text x="285" y="405" fill="#111827" font-family="system-ui" font-size="13">Agency Owners US</text>
+  <text x="560" y="405" fill="#111827" font-family="system-ui" font-size="13">4</text>
+  <text x="660" y="405" fill="#111827" font-family="system-ui" font-size="13">3,210</text>
+  <text x="780" y="405" fill="#111827" font-family="system-ui" font-size="13">8,630</text>
+  <text x="880" y="405" fill="#111827" font-family="system-ui" font-size="13">5,177</text>
+  <text x="980" y="405" fill="#111827" font-family="system-ui" font-size="13">389</text>
+  <text x="1090" y="405" fill="#111827" font-family="system-ui" font-size="13">62</text>
+  <rect x="1225" y="391" width="55" height="22" rx="11" fill="#d1fae5"/>
+  <text x="1235" y="406" fill="#065f46" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="423" x2="1360" y2="423" stroke="#f3f4f6" stroke-width="1"/>
+
+  <text x="285" y="450" fill="#111827" font-family="system-ui" font-size="13">E-commerce VP Sales</text>
+  <text x="560" y="450" fill="#111827" font-family="system-ui" font-size="13">6</text>
+  <text x="660" y="450" fill="#111827" font-family="system-ui" font-size="13">5,890</text>
+  <text x="780" y="450" fill="#111827" font-family="system-ui" font-size="13">6,230</text>
+  <text x="880" y="450" fill="#111827" font-family="system-ui" font-size="13">3,614</text>
+  <text x="980" y="450" fill="#111827" font-family="system-ui" font-size="13">278</text>
+  <text x="1090" y="450" fill="#111827" font-family="system-ui" font-size="13">41</text>
+  <rect x="1225" y="436" width="55" height="22" rx="11" fill="#d1fae5"/>
+  <text x="1235" y="451" fill="#065f46" font-family="system-ui" font-size="11">Active</text>
+  <line x1="260" y1="468" x2="1360" y2="468" stroke="#f3f4f6" stroke-width="1"/>
+
+  <text x="285" y="495" fill="#111827" font-family="system-ui" font-size="13">Fintech Warm Leads</text>
+  <text x="560" y="495" fill="#111827" font-family="system-ui" font-size="13">3</text>
+  <text x="660" y="495" fill="#111827" font-family="system-ui" font-size="13">2,840</text>
+  <text x="780" y="495" fill="#111827" font-family="system-ui" font-size="13">4,238</text>
+  <text x="880" y="495" fill="#111827" font-family="system-ui" font-size="13">2,605</text>
+  <text x="980" y="495" fill="#111827" font-family="system-ui" font-size="13">198</text>
+  <text x="1090" y="495" fill="#111827" font-family="system-ui" font-size="13">34</text>
+  <rect x="1225" y="481" width="60" height="22" rx="11" fill="#fef3c7"/>
+  <text x="1233" y="496" fill="#92400e" font-family="system-ui" font-size="11">Paused</text>
+  <line x1="260" y1="513" x2="1360" y2="513" stroke="#f3f4f6" stroke-width="1"/>
+
+  <text x="285" y="540" fill="#111827" font-family="system-ui" font-size="13">Re-Engagement Q1</text>
+  <text x="560" y="540" fill="#111827" font-family="system-ui" font-size="13">7</text>
+  <text x="660" y="540" fill="#111827" font-family="system-ui" font-size="13">1,881</text>
+  <text x="780" y="540" fill="#111827" font-family="system-ui" font-size="13">3,100</text>
+  <text x="880" y="540" fill="#111827" font-family="system-ui" font-size="13">1,798</text>
+  <text x="980" y="540" fill="#111827" font-family="system-ui" font-size="13">143</text>
+  <text x="1090" y="540" fill="#111827" font-family="system-ui" font-size="13">22</text>
+  <rect x="1225" y="526" width="55" height="22" rx="11" fill="#d1fae5"/>
+  <text x="1235" y="541" fill="#065f46" font-family="system-ui" font-size="11">Active</text>
+</svg>
