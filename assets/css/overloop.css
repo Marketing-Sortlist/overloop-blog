@@ -1091,8 +1091,10 @@ tbody tr:hover {
     margin: 0 auto;
 }
 
-/* ===== SVG CHART CONTAINER ===== */
-.article-content svg {
+/* ===== SVG CHART CONTAINER (only large charts, not inline icons) ===== */
+.article-content svg[viewBox][width="100%"],
+.article-content > svg[height],
+.article-content figure svg {
     display: block;
     margin: 32px auto;
     border: 1px solid var(--border);
@@ -1100,6 +1102,24 @@ tbody tr:hover {
     padding: 24px;
     background: var(--white);
     box-shadow: var(--shadow-sm);
+}
+
+/* Small inline SVG icons: no border/padding/margin */
+.article-content svg[width="16"],
+.article-content svg[width="18"],
+.article-content svg[width="24"],
+.article-content svg[width="28"],
+.article-content svg[width="32"],
+.category-nav-enhanced svg,
+.spoke-link-enhanced svg,
+td svg, th svg, h2 svg, h3 svg, a svg {
+    display: inline;
+    margin: 0;
+    border: none;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    vertical-align: middle;
 }
 
 /* ===== SVG CHARTS ===== */
