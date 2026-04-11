@@ -1,5 +1,5 @@
 /* Overloop Blog Design System — Violet Edition */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+/* Fonts loaded via <link> in HTML <head> — no @import needed */
 
 :root {
     --violet: #7C3AED;
