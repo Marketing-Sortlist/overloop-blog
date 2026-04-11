@@ -1166,6 +1166,73 @@ svg text {
     .article-header { background: var(--violet-dark) !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
 
+/* ===== RESPONSIVE TABLES (card layout on mobile) ===== */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead {
+        position: absolute;
+        left: -9999px;
+    }
+    tbody tr {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 12px;
+    }
+    tbody tr:first-child {
+        border-color: var(--violet-lighter);
+        border-width: 2px;
+    }
+    tbody tr:hover {
+        background: var(--white);
+    }
+    tbody td {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    tbody td:last-child {
+        border-bottom: none;
+    }
+    tbody td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-secondary);
+        flex-shrink: 0;
+        min-width: 80px;
+    }
+    tbody td:first-child {
+        font-weight: 600;
+        font-size: 15px;
+        color: var(--text);
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--violet-lighter);
+    }
+    tbody td:first-child::before {
+        display: none;
+    }
+    .table-wrap {
+        margin: 24px 0;
+        padding: 0;
+        overflow-x: visible;
+    }
+    table {
+        min-width: 0;
+        border: none;
+    }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 640px) {
     .article-header {
