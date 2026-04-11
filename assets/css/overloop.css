@@ -1166,30 +1166,41 @@ svg text {
     .article-header { background: var(--violet-dark) !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
 
-/* ===== RESPONSIVE TABLES (card layout on mobile) ===== */
+/* ===== RESPONSIVE TABLES ===== */
+
+/* Dense tables (word lists, data tables) — stay as scrollable table */
+.table-dense,
+.table-dense table,
+.table-dense thead,
+.table-dense tbody,
+.table-dense th,
+.table-dense td,
+.table-dense tr {
+    display: revert;
+}
+
 @media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
+    /* Default: comparison tables become card layout */
+    table:not(.table-keep), thead:not(.table-keep *), tbody:not(.table-keep *),
+    th:not(.table-keep *), td:not(.table-keep *), tr:not(.table-keep *) {
         display: block;
     }
-    thead {
+    thead:not(.table-keep *) {
         position: absolute;
         left: -9999px;
     }
-    tbody tr {
+    tbody:not(.table-keep *) tr {
         background: var(--white);
         border: 1px solid var(--border);
         border-radius: 10px;
         padding: 16px;
         margin-bottom: 12px;
     }
-    tbody tr:first-child {
+    tbody:not(.table-keep *) tr:first-child {
         border-color: var(--violet-lighter);
         border-width: 2px;
     }
-    tbody tr:hover {
-        background: var(--white);
-    }
-    tbody td {
+    tbody:not(.table-keep *) td {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -1199,10 +1210,10 @@ svg text {
         font-size: 14px;
         line-height: 1.5;
     }
-    tbody td:last-child {
+    tbody:not(.table-keep *) td:last-child {
         border-bottom: none;
     }
-    tbody td::before {
+    tbody:not(.table-keep *) td::before {
         content: attr(data-label);
         font-weight: 600;
         font-size: 11px;
@@ -1212,16 +1223,33 @@ svg text {
         flex-shrink: 0;
         min-width: 80px;
     }
-    tbody td:first-child {
+    tbody:not(.table-keep *) td:first-child {
         font-weight: 600;
         font-size: 15px;
         color: var(--text);
         padding-bottom: 10px;
         border-bottom: 2px solid var(--violet-lighter);
     }
-    tbody td:first-child::before {
+    tbody:not(.table-keep *) td:first-child::before {
         display: none;
     }
+
+    /* Dense tables: compact scrollable on mobile */
+    .table-keep, .table-keep * {
+        display: revert;
+    }
+    .table-keep {
+        font-size: 12px;
+    }
+    .table-keep th {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+    .table-keep td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
     .table-wrap {
         margin: 24px 0;
         padding: 0;
