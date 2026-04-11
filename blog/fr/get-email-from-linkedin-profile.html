@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obtenir un email depuis un profil LinkedIn : 5 méthodes pas à pas (2026) | Overloop</title>
+    <meta name="description" content="5 méthodes éprouvées pour obtenir l'adresse email d'un profil LinkedIn. Méthodes manuelles, extensions Chrome, Sales Navigator et conformité RGPD.">
+    <link rel="canonical" href="https://overloop.com/fr/blog/get-email-from-linkedin-profile">
+
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/get-email-from-linkedin-profile">
+    <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/get-email-from-linkedin-profile">
+    <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/get-email-from-linkedin-profile">
+    <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/get-email-from-linkedin-profile">
+    <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/get-email-from-linkedin-profile">
+
+    <meta property="og:title" content="Obtenir un email depuis un profil LinkedIn : 5 méthodes pas à pas">
+    <meta property="og:description" content="5 méthodes éprouvées pour obtenir l'adresse email d'un profil LinkedIn. Conforme RGPD.">
+    <meta property="og:image" content="https://overloop.com/assets/images/get-email-linkedin-og.png">
+    <meta property="og:url" content="https://overloop.com/fr/blog/get-email-from-linkedin-profile">
+    <meta property="og:type" content="article">
+
+    <link rel="preload" href="/assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+
+    <style>
+        :root {
+            --color-primary: #4F46E5;
+            --color-text: #1a1a1a;
+            --color-muted: #6b7280;
+            --color-bg: #ffffff;
+            --color-surface: #f9fafb;
+            --max-width: 720px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 2rem 1.5rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.75rem; }
+        .article-meta { color: var(--color-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta a { color: var(--color-primary); text-decoration: none; }
+        .article-content h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; }
+        .article-content h3 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+        .article-content p { margin-bottom: 1.25rem; }
+        .article-content a { color: var(--color-primary); }
+        .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem 0; }
+        .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content blockquote {
+            border-left: 3px solid var(--color-primary);
+            padding-left: 1rem;
+            color: var(--color-muted);
+            margin: 1.5rem 0;
+        }
+        .article-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+        .article-content th, .article-content td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .article-content th { font-weight: 600; background: var(--color-surface); }
+        .cta-box {
+            background: var(--color-surface);
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .cta-box h3 { margin-bottom: 0.75rem; }
+        .cta-button {
+            display: inline-block;
+            background: var(--color-primary);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+        .author-bio {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--color-surface);
+            border-radius: 8px;
+            margin-top: 2.5rem;
+        }
+        .author-bio img { width: 56px; height: 56px; border-radius: 50%; }
+        .author-bio .name { font-weight: 600; }
+        .author-bio .role { color: var(--color-muted); font-size: 0.9rem; }
+        .breadcrumb { font-size: 0.85rem; color: var(--color-muted); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--color-muted); text-decoration: none; }
+        .breadcrumb a:hover { color: var(--color-primary); }
+        .related-posts { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #e5e7eb; }
+        .related-posts h3 { margin-bottom: 1rem; }
+        .related-posts a { display: block; color: var(--color-primary); margin-bottom: 0.5rem; }
+        @media print { .cta-box, .related-posts { display: none; } }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Obtenir un email depuis un profil LinkedIn : 5 méthodes pas à pas (2026)",
+        "description": "5 méthodes éprouvées pour obtenir l'adresse email d'un profil LinkedIn. Conforme RGPD.",
+        "image": "https://overloop.com/assets/images/get-email-linkedin-og.png",
+        "author": {
+            "@type": "Person",
+            "name": "Nicolas Finet",
+            "url": "https://www.linkedin.com/in/nicolasfinet/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Overloop",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://overloop.com/assets/images/overloop-logo.png"
+            }
+        },
+        "datePublished": "2026-04-10",
+        "dateModified": "2026-04-10",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://overloop.com/fr/blog/get-email-from-linkedin-profile"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/fr/blog"},
+            {"@type": "ListItem", "position": 2, "name": "Obtenir email profil LinkedIn", "item": "https://overloop.com/fr/blog/get-email-from-linkedin-profile"}
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <nav class="breadcrumb">
+            <a href="https://overloop.com/fr">Overloop</a> &rsaquo;
+            <a href="https://overloop.com/fr/blog">Blog</a> &rsaquo;
+            Obtenir email profil LinkedIn
+        </nav>
+
+        <header class="article-header">
+            <h1>Obtenir un email depuis un profil LinkedIn : 5 méthodes qui marchent en 2026</h1>
+            <div class="article-meta">
+                Par <a href="https://www.linkedin.com/in/nicolasfinet/">Nicolas Finet</a> &middot;
+                Publié le 10/04/2026 &middot;
+                Mis à jour le 10/04/2026
+            </div>
+        </header>
+
+        <article class="article-content">
+            <p>LinkedIn compte plus d'un milliard de membres. La plupart affichent leur titre, leur entreprise, leur localisation. Mais la seule information dont vous avez vraiment besoin pour démarrer une conversation en dehors de LinkedIn, l'adresse email, est cachée derrière des paramètres de confidentialité et des niveaux de connexion.</p>
+
+            <p>Je construis des systèmes d'outbound qui démarrent sur LinkedIn et finissent dans la boîte de réception depuis des années. Voici les cinq méthodes qui fonctionnent de manière fiable.</p>
+
+            <h2>RGPD et extraction de données LinkedIn</h2>
+
+            <p>En France et en Belgique, la RGPD et les recommandations de la CNIL encadrent ce que vous pouvez faire avec les données LinkedIn :</p>
+
+            <ul>
+                <li><strong>Le scraping automatisé est interdit.</strong> Tant par la RGPD que par les conditions d'utilisation de LinkedIn. La CNIL a sanctionné plusieurs entreprises pour cette pratique.</li>
+                <li><strong>La recherche manuelle est tolérée.</strong> Visiter des profils un par un et noter les informations publiques est acceptable.</li>
+                <li><strong>Les extensions Chrome qui enrichissent depuis des bases externes</strong> (pas depuis LinkedIn directement) sont plus conformes que les outils de scraping pur.</li>
+                <li><strong>Documentez tout.</strong> Notez quand et comment vous avez trouvé chaque adresse email. En cas de contrôle CNIL, vous aurez besoin de ces preuves.</li>
+            </ul>
+
+            <p>L'extension Chrome d'Overloop ne scrape pas les données de LinkedIn. Elle compare le nom et l'entreprise avec notre base de données externe et renvoie l'email depuis cette source. C'est une distinction importante.</p>
+
+            <h2>LinkedIn en France et en Belgique : les chiffres</h2>
+
+            <p>LinkedIn a largement dépassé Viadeo (qui n'existe plus) en France :</p>
+
+            <ul>
+                <li><strong>France :</strong> 28+ millions de membres LinkedIn. C'est le 5e pays au monde en nombre de membres.</li>
+                <li><strong>Belgique :</strong> 5+ millions de membres, dont environ 60% francophones.</li>
+                <li><strong>Suisse romande :</strong> Environ 1,5 million de membres francophones.</li>
+            </ul>
+
+            <p>Pour la prospection B2B en francophonie, LinkedIn est la source numéro un. La quasi-totalité des décideurs y sont présents.</p>
+
+            <h2>Méthode 1 : Vérifier la section Coordonnées (Gratuit, 30 secondes)</h2>
+
+            <p>L'approche la plus simple. Allez sur le profil LinkedIn de la personne et cherchez le lien "Coordonnées" sous leur nom et titre.</p>
+
+            <h3>Étape par étape :</h3>
+
+            <ol>
+                <li>Naviguez vers le profil LinkedIn de la personne.</li>
+                <li>Sous la photo de profil et le titre, cherchez "Coordonnées".</li>
+                <li>Cliquez. Un popup apparaît avec les coordonnées partagées : email, téléphone, site web.</li>
+                <li>Si l'email est listé, copiez-le.</li>
+            </ol>
+
+            <p><strong>Taux de réussite :</strong> Environ 30% pour les contacts de 1er degré. Moins de 10% pour les 2e et 3e degrés.</p>
+
+            <h2>Méthode 2 : Extension Chrome Overloop (Payant, instantané)</h2>
+
+            <p>La méthode que j'utilise au quotidien. L'extension Chrome Overloop ajoute un overlay aux profils LinkedIn. Quand vous visitez un profil, elle interroge notre base de 450M+ contacts et affiche l'email vérifié directement sur la page.</p>
+
+            <h3>Étape par étape :</h3>
+
+            <ol>
+                <li>Installez l'extension Chrome Overloop depuis le Chrome Web Store.</li>
+                <li>Naviguez vers n'importe quel profil LinkedIn.</li>
+                <li>L'icône de l'extension s'active. Cliquez pour voir l'email.</li>
+                <li>L'email est vérifié en temps réel par SMTP. S'il est valide, un check vert apparaît.</li>
+                <li>Cliquez "Ajouter à la campagne" pour pousser le contact directement dans une séquence Overloop.</li>
+            </ol>
+
+            <p><strong>Taux de réussite :</strong> 85-90% pour les professionnels en entreprise de 10+ salariés.</p>
+
+            <h2>Méthode 3 : Export de données LinkedIn (Gratuit, lent)</h2>
+
+            <p>LinkedIn permet de télécharger une archive de vos données de connexion.</p>
+
+            <h3>Étape par étape :</h3>
+
+            <ol>
+                <li>Allez dans Paramètres LinkedIn (photo de profil > Préférences et confidentialité).</li>
+                <li>Naviguez vers "Confidentialité des données" dans le menu de gauche.</li>
+                <li>Cliquez "Obtenir une copie de vos données".</li>
+                <li>Sélectionnez "Connexions".</li>
+                <li>Cliquez "Demander l'archive".</li>
+                <li>Attendez 24-72h. LinkedIn vous envoie un lien de téléchargement.</li>
+                <li>Téléchargez le ZIP. Ouvrez "Connections.csv".</li>
+            </ol>
+
+            <p><strong>Taux de réussite :</strong> Emails pour environ 30-40% de vos connexions.</p>
+
+            <p><strong>Idéal pour :</strong> Export en masse des connexions existantes. Si vous avez 2 000+ connexions LinkedIn, vous pouvez récupérer 600-800 emails d'un coup.</p>
+
+            <h2>Méthode 4 : Sales Navigator + Email Finder (Payant)</h2>
+
+            <p>LinkedIn Sales Navigator offre une recherche avancée mais ne montre pas les emails (LinkedIn veut que vous utilisiez InMail). Le contournement : Sales Navigator pour construire la liste, puis un email finder pour les adresses.</p>
+
+            <h3>Étape par étape :</h3>
+
+            <ol>
+                <li>Utilisez la recherche de leads de Sales Navigator pour trouver des prospects (secteur, taille d'entreprise, titre, zone géographique).</li>
+                <li>Sauvegardez les leads dans une liste.</li>
+                <li>Pour chaque lead, notez le nom complet et l'entreprise actuelle.</li>
+                <li>Passez ces paires nom+entreprise dans l'email finder d'Overloop en mode bulk.</li>
+            </ol>
+
+            <p><strong>Astuce :</strong> L'extension Chrome Overloop fonctionne directement sur les pages Sales Navigator. Pas besoin de visiter chaque profil complet.</p>
+
+            <h2>Méthode 5 : Deviner le pattern + vérification (Quasi gratuit)</h2>
+
+            <p>Si vous connaissez le nom (depuis le profil LinkedIn) et le domaine de l'entreprise, vous pouvez deviner le pattern email et le vérifier.</p>
+
+            <h3>Étape par étape :</h3>
+
+            <ol>
+                <li>Depuis le profil LinkedIn : noter le nom complet et l'entreprise actuelle.</li>
+                <li>Trouver le domaine de l'entreprise (visible sur la page entreprise LinkedIn).</li>
+                <li>Générer les permutations : prenom.nom@domaine.fr, prenom@domaine.fr, p.nom@domaine.fr, etc.</li>
+                <li>Passer chaque permutation dans un outil de vérification.</li>
+                <li>Le vérificateur ping le serveur mail (check SMTP) et vous dit quelle adresse est valide.</li>
+            </ol>
+
+            <p><strong>Taux de réussite :</strong> 60-70%. Échoue sur les domaines catch-all.</p>
+
+            <h2>Comparaison des méthodes</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Méthode</th>
+                        <th>Coût</th>
+                        <th>Vitesse</th>
+                        <th>Taux de réussite</th>
+                        <th>Sans connexion ?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Section Coordonnées</td>
+                        <td>Gratuit</td>
+                        <td>30 sec</td>
+                        <td>~30%</td>
+                        <td>Rarement</td>
+                    </tr>
+                    <tr>
+                        <td>Extension Chrome Overloop</td>
+                        <td>Dès 49$/mois</td>
+                        <td>Instantané</td>
+                        <td>85-90%</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Export données LinkedIn</td>
+                        <td>Gratuit</td>
+                        <td>24-72h</td>
+                        <td>30-40%</td>
+                        <td>Non</td>
+                    </tr>
+                    <tr>
+                        <td>Sales Nav + Email Finder</td>
+                        <td>Dès 99$/mois</td>
+                        <td>Minutes</td>
+                        <td>80-90%</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Pattern + vérification</td>
+                        <td>Gratuit</td>
+                        <td>5-10 min</td>
+                        <td>60-70%</td>
+                        <td>Oui</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Conditions d'utilisation LinkedIn et limites</h2>
+
+            <p>LinkedIn interdit le scraping. C'est-à-dire les bots qui parcourent automatiquement des milliers de profils. Utiliser une extension Chrome qui enrichit les profils que vous visitez manuellement, c'est différent. L'extension cherche l'email dans des bases de données externes, pas sur LinkedIn.</p>
+
+            <p>Cela dit, ne forcez pas. Limites quotidiennes de visites de profils :</p>
+
+            <ul>
+                <li><strong>LinkedIn gratuit :</strong> environ 100 visites par jour</li>
+                <li><strong>LinkedIn Premium :</strong> environ 150-200 visites</li>
+                <li><strong>Sales Navigator :</strong> environ 250-300 visites</li>
+            </ul>
+
+            <h2>Après avoir obtenu l'email</h2>
+
+            <ol>
+                <li><strong>Vérifier avant d'envoyer.</strong> Même si un outil dit que l'email est valide, repassez-le en vérification.</li>
+                <li><strong>Personnaliser.</strong> Vous venez de visiter leur profil LinkedIn. Utilisez ce que vous avez appris. Mentionnez leur dernier post, une actualité de leur entreprise, un changement de poste.</li>
+                <li><strong>Ne pas spammer.</strong> Envoyez 20-30 emails par jour depuis un nouveau domaine. Montez progressivement sur 2-3 semaines.</li>
+                <li><strong>Relancer.</strong> 80% des réponses viennent des relances, pas du premier email. Envoyez 3-4 relances espacées de 3-5 jours.</li>
+            </ol>
+
+            <p>Pour un tour d'horizon plus large de toutes les méthodes pour trouver des adresses email, lisez notre <a href="/blog/fr/how-to-find-someone-email-address-efficiently">guide complet : trouver une adresse email</a>.</p>
+
+            <p>Si vous voulez automatiser le LinkedIn outreach en plus de l'email, consultez notre sélection des <a href="/blog/fr/8-best-ai-linkedin-outreach-tools">meilleurs outils IA de prospection LinkedIn</a> et notre <a href="/blog/fr/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025">guide ultime de l'automatisation LinkedIn</a>.</p>
+        </article>
+
+        <div class="cta-box">
+            <h3>Prêt à automatiser votre outbound ?</h3>
+            <p>Overloop trouve vos prospects, rédige des emails personnalisés et prend des rendez-vous. Propulsé par l'IA.</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-button">Try Overloop Free</a>
+        </div>
+
+        <div class="author-bio">
+            <img src="/assets/images/nicolas-finet.jpg" alt="Nicolas Finet" width="56" height="56" loading="lazy">
+            <div>
+                <div class="name">Nicolas Finet</div>
+                <div class="role">CEO at Overloop</div>
+                <div class="role">Built outbound systems for 500+ B2B companies. CEO of Sortlist & Overloop.</div>
+            </div>
+        </div>
+
+        <div class="related-posts">
+            <h3>Articles connexes</h3>
+            <a href="/blog/fr/how-to-find-someone-email-address-efficiently">Trouver une adresse email : 12 méthodes</a>
+            <a href="/blog/fr/8-best-ai-linkedin-outreach-tools">8 meilleurs outils IA de prospection LinkedIn</a>
+            <a href="/blog/fr/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025">Le guide ultime de l'automatisation LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>
