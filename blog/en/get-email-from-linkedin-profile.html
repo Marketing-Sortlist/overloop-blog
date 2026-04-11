@@ -246,8 +246,32 @@
 
             <p>This matters because Method 1 only works if the person has not locked down their settings. Methods 2-9 work regardless of their privacy choices.</p>
 
-            <!-- TODO: Create/screenshot: LinkedIn privacy settings page showing email visibility options (Settings > Visibility > Edit your profile > Contact info) -->
-            <img src="/assets/images/linkedin-email-visibility-settings.png" alt="LinkedIn privacy settings showing email visibility options: visible to everyone, connections only, or no one" width="700" height="400" loading="lazy">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin:1.5rem 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:700px;" role="img" aria-label="LinkedIn privacy settings showing email visibility options: visible to everyone, connections only, or no one">
+                <div style="background:#0a66c2;color:#fff;padding:10px 16px;font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    Settings &amp; Privacy &rsaquo; Visibility
+                </div>
+                <div style="background:#fff;padding:20px 24px;">
+                    <div style="font-weight:600;font-size:15px;margin-bottom:4px;">Edit your profile &rsaquo; Contact info</div>
+                    <div style="color:#666;font-size:13px;margin-bottom:16px;">Control who can see your email address on your profile</div>
+                    <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e5e7eb;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:50%;border:2px solid #ccc;display:inline-block;flex-shrink:0;"></span>
+                            <span><strong>Visible to everyone</strong><br><span style="color:#666;font-size:12px;">Anyone on or off LinkedIn can see your email</span></span>
+                        </label>
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e5e7eb;background:#f0f6ff;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:50%;border:2px solid #0a66c2;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <span style="width:10px;height:10px;border-radius:50%;background:#0a66c2;display:block;"></span>
+                            </span>
+                            <span><strong>1st-degree connections</strong><br><span style="color:#666;font-size:12px;">Only people you are connected with (default)</span></span>
+                        </label>
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:50%;border:2px solid #ccc;display:inline-block;flex-shrink:0;"></span>
+                            <span><strong>Only me</strong><br><span style="color:#666;font-size:12px;">No one can see your email on your profile</span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
 
             <h2>Method 1: Check the Contact Info Section (Free, 30 Seconds)</h2>
 
@@ -262,8 +286,42 @@
                 <li>If their email is listed, copy it. You are done.</li>
             </ol>
 
-            <!-- TODO: Create/screenshot: LinkedIn profile Contact info popup showing email address, phone, website fields -->
-            <img src="/assets/images/linkedin-contact-info-popup.png" alt="LinkedIn Contact info popup showing email address field on a profile" width="700" height="400" loading="lazy">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin:1.5rem 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:440px;" role="img" aria-label="LinkedIn Contact info popup showing email address, phone, and website fields">
+                <div style="background:#fff;padding:16px 20px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;">
+                    <span style="font-weight:600;font-size:16px;">Contact info</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#666"><path d="M18.3 5.71a1 1 0 00-1.42 0L12 10.59 7.12 5.71a1 1 0 00-1.42 1.42L10.59 12l-4.89 4.88a1 1 0 001.42 1.42L12 13.41l4.88 4.89a1 1 0 001.42-1.42L13.41 12l4.89-4.88a1 1 0 000-1.41z"/></svg>
+                </div>
+                <div style="background:#fff;padding:16px 20px;">
+                    <div style="margin-bottom:16px;">
+                        <div style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Email</div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <a style="color:#0a66c2;text-decoration:none;">j.smith@acme-corp.com</a>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <div style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Phone</div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#666"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+                            <span style="color:#333;">+1 (555) 123-4567</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <div style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Website</div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#666"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            <a style="color:#0a66c2;text-decoration:none;">acme-corp.com</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Twitter</div>
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#666"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.38 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.32 3.91A12.16 12.16 0 013.15 4.83a4.28 4.28 0 001.33 5.72 4.26 4.26 0 01-1.94-.54v.05a4.28 4.28 0 003.44 4.2 4.27 4.27 0 01-1.93.07 4.29 4.29 0 004 2.98A8.6 8.6 0 012 19.54a12.13 12.13 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2l-.01-.56A8.72 8.72 0 0024 6.56a8.49 8.49 0 01-2.54.7z"/></svg>
+                            <a style="color:#0a66c2;text-decoration:none;">@jsmith</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <p><strong>Success rate:</strong> About 30% for 1st-degree connections. Under 10% for 2nd or 3rd degree.</p>
 
@@ -287,8 +345,33 @@
 
             <p><strong>Success rate:</strong> 85-90% for professionals at companies with 10+ employees. Lower for freelancers and very small businesses.</p>
 
-            <!-- TODO: Create/screenshot: Overloop Chrome extension overlay on a LinkedIn profile showing found email with green verified checkmark -->
-            <img src="/assets/images/overloop-chrome-extension-linkedin.png" alt="Overloop Chrome extension showing a verified email address on a LinkedIn profile" width="700" height="400" loading="lazy">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin:1.5rem 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:380px;box-shadow:0 4px 16px rgba(0,0,0,0.12);" role="img" aria-label="Overloop Chrome extension showing a verified email address on a LinkedIn profile">
+                <div style="background:#4F46E5;color:#fff;padding:12px 16px;display:flex;align-items:center;gap:8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="12" r="10" fill="none" stroke="#fff" stroke-width="2"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 3a3 3 0 110 6 3 3 0 010-6zm0 14.2a7.2 7.2 0 01-6-3.22c.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08a7.2 7.2 0 01-6 3.22z" fill="#fff"/></svg>
+                    <span style="font-weight:600;font-size:14px;">Overloop</span>
+                    <span style="margin-left:auto;font-size:11px;opacity:0.8;">Chrome Extension</span>
+                </div>
+                <div style="background:#fff;padding:16px;">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+                        <div style="width:42px;height:42px;border-radius:50%;background:#e0e7ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <span style="font-weight:700;color:#4F46E5;font-size:16px;">JS</span>
+                        </div>
+                        <div>
+                            <div style="font-weight:600;font-size:14px;">John Smith</div>
+                            <div style="color:#666;font-size:12px;">VP Sales at Acme Corp</div>
+                        </div>
+                    </div>
+                    <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:10px 12px;display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#16a34a"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <span style="font-size:13px;color:#166534;font-weight:500;">Verified</span>
+                    </div>
+                    <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:10px 12px;display:flex;align-items:center;gap:8px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#4F46E5"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <span style="font-size:13px;color:#333;">john.smith@acme-corp.com</span>
+                    </div>
+                    <button style="width:100%;margin-top:12px;background:#4F46E5;color:#fff;border:none;border-radius:6px;padding:10px;font-size:13px;font-weight:600;cursor:pointer;">Add to campaign</button>
+                </div>
+            </div>
 
             <p><strong>Why this works better than manual methods:</strong> The extension does not depend on LinkedIn's privacy settings. It cross-references multiple data sources (company email patterns, public records, previous verifications) to find the address independently of what LinkedIn shows.</p>
 
@@ -313,8 +396,37 @@
 
             <p><strong>Best for:</strong> Bulk export of existing connections. If you have 2,000+ LinkedIn connections, this can yield 600-800 email addresses in one shot.</p>
 
-            <!-- TODO: Create/screenshot: LinkedIn Settings > Data Privacy > Get a copy of your data page, with "Connections" checkbox selected -->
-            <img src="/assets/images/linkedin-data-export-settings.png" alt="LinkedIn Data Privacy settings showing the Get a copy of your data option with Connections selected" width="700" height="400" loading="lazy">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin:1.5rem 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:600px;" role="img" aria-label="LinkedIn Data Privacy settings showing the Get a copy of your data option with Connections selected">
+                <div style="background:#0a66c2;color:#fff;padding:10px 16px;font-weight:600;font-size:13px;display:flex;align-items:center;gap:8px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                    Settings &amp; Privacy &rsaquo; Data privacy
+                </div>
+                <div style="background:#fff;padding:20px 24px;">
+                    <div style="font-weight:600;font-size:16px;margin-bottom:4px;">Get a copy of your data</div>
+                    <div style="color:#666;font-size:13px;margin-bottom:16px;">Pick the data you want to download. We'll email you a link when it's ready.</div>
+                    <div style="border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;margin-bottom:16px;">
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e5e7eb;background:#f0f6ff;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:3px;border:2px solid #0a66c2;background:#0a66c2;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                            </span>
+                            <span><strong>Connections</strong><br><span style="color:#666;font-size:12px;">Names, email addresses, companies, positions, connection dates</span></span>
+                        </label>
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e5e7eb;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:3px;border:2px solid #ccc;display:inline-block;flex-shrink:0;"></span>
+                            <span>Messages</span>
+                        </label>
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid #e5e7eb;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:3px;border:2px solid #ccc;display:inline-block;flex-shrink:0;"></span>
+                            <span>Invitations</span>
+                        </label>
+                        <label style="display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;">
+                            <span style="width:18px;height:18px;border-radius:3px;border:2px solid #ccc;display:inline-block;flex-shrink:0;"></span>
+                            <span>Recommendations</span>
+                        </label>
+                    </div>
+                    <button style="background:#0a66c2;color:#fff;border:none;border-radius:20px;padding:10px 24px;font-size:14px;font-weight:600;cursor:pointer;">Request archive</button>
+                </div>
+            </div>
 
             <p><strong>Limitation:</strong> Only works for people you are already connected with. Not useful for new prospects.</p>
 
@@ -424,8 +536,30 @@
                 <li>Check the first 2-3 pages of results. Look for speaker bios, press releases, old blog posts, conference programs, and PDF documents where the person was listed as a contact.</li>
             </ol>
 
-            <!-- TODO: Create/screenshot: Google search results showing email found via search operator "firstname lastname" "@company.com" -->
-            <img src="/assets/images/google-search-operator-email.png" alt="Google search results revealing an email address using name and company domain operators" width="700" height="400" loading="lazy">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;margin:1.5rem 0;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;max-width:700px;" role="img" aria-label="Google search results revealing an email address using name and company domain operators">
+                <div style="background:#fff;padding:14px 20px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:12px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                    <div style="background:#f1f3f4;border-radius:20px;padding:8px 16px;flex:1;color:#333;font-size:14px;">"John Smith" "@acme-corp.com"</div>
+                </div>
+                <div style="background:#fff;padding:16px 20px;">
+                    <div style="color:#666;font-size:12px;margin-bottom:14px;">About 3 results (0.42 seconds)</div>
+                    <div style="margin-bottom:18px;">
+                        <div style="font-size:12px;color:#202124;margin-bottom:2px;">https://www.acme-corp.com &rsaquo; team</div>
+                        <a style="font-size:16px;color:#1a0dab;text-decoration:none;font-weight:400;display:block;margin-bottom:4px;">Our Team - Acme Corp</a>
+                        <div style="font-size:13px;color:#4d5156;line-height:1.5;">... VP Sales <strong>John Smith</strong> leads our enterprise sales division. Contact: <span style="background:#fcf3cf;padding:1px 2px;"><strong>john.smith@acme-corp.com</strong></span> | Based in New York ...</div>
+                    </div>
+                    <div style="margin-bottom:18px;">
+                        <div style="font-size:12px;color:#202124;margin-bottom:2px;">https://www.salesconference2025.com &rsaquo; speakers</div>
+                        <a style="font-size:16px;color:#1a0dab;text-decoration:none;font-weight:400;display:block;margin-bottom:4px;">SalesConf 2025 - Speaker Bios</a>
+                        <div style="font-size:13px;color:#4d5156;line-height:1.5;">... <strong>John Smith</strong>, VP Sales at Acme Corp, will present "Scaling Outbound." Reach him at <span style="background:#fcf3cf;padding:1px 2px;"><strong>john.smith@acme-corp.com</strong></span> ...</div>
+                    </div>
+                    <div>
+                        <div style="font-size:12px;color:#202124;margin-bottom:2px;">https://www.techblog.com &rsaquo; author &rsaquo; john-smith</div>
+                        <a style="font-size:16px;color:#1a0dab;text-decoration:none;font-weight:400;display:block;margin-bottom:4px;">John Smith - Author at TechBlog</a>
+                        <div style="font-size:13px;color:#4d5156;line-height:1.5;">... <strong>John Smith</strong> writes about B2B sales strategy. VP Sales @ Acme Corp. <strong>john.smith@acme-corp.com</strong> ...</div>
+                    </div>
+                </div>
+            </div>
 
             <p><strong>Success rate:</strong> 20-40%. Higher for executives, speakers, and people active in public forums.</p>
 
