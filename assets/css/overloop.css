@@ -1168,96 +1168,60 @@ svg text {
 
 /* ===== RESPONSIVE TABLES ===== */
 
-/* Dense tables (word lists, data tables) — stay as scrollable table */
-.table-dense,
-.table-dense table,
-.table-dense thead,
-.table-dense tbody,
-.table-dense th,
-.table-dense td,
-.table-dense tr {
-    display: revert;
-}
-
 @media (max-width: 768px) {
-    /* Default: comparison tables become card layout */
-    table:not(.table-keep), thead:not(.table-keep *), tbody:not(.table-keep *),
-    th:not(.table-keep *), td:not(.table-keep *), tr:not(.table-keep *) {
-        display: block;
+    /* Simple approach: all tables get horizontal scroll with shadow hint */
+    table {
+        font-size: 13px;
+        min-width: 480px;
     }
-    thead:not(.table-keep *) {
-        position: absolute;
-        left: -9999px;
-    }
-    tbody:not(.table-keep *) tr {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        padding: 16px;
-        margin-bottom: 12px;
-    }
-    tbody:not(.table-keep *) tr:first-child {
-        border-color: var(--violet-lighter);
-        border-width: 2px;
-    }
-    tbody:not(.table-keep *) td {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 8px 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 14px;
-        line-height: 1.5;
-    }
-    tbody:not(.table-keep *) td:last-child {
-        border-bottom: none;
-    }
-    tbody:not(.table-keep *) td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-        color: var(--text-secondary);
-        flex-shrink: 0;
-        min-width: 80px;
-    }
-    tbody:not(.table-keep *) td:first-child {
-        font-weight: 600;
-        font-size: 15px;
-        color: var(--text);
-        padding-bottom: 10px;
-        border-bottom: 2px solid var(--violet-lighter);
-    }
-    tbody:not(.table-keep *) td:first-child::before {
-        display: none;
-    }
-
-    /* Dense tables: compact scrollable on mobile */
-    .table-keep, .table-keep * {
-        display: revert;
-    }
-    .table-keep {
-        font-size: 12px;
-    }
-    .table-keep th {
-        padding: 8px 10px;
+    th {
+        padding: 10px 12px;
         font-size: 10px;
     }
-    .table-keep td {
-        padding: 8px 10px;
-        font-size: 12px;
+    td {
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 1.4;
     }
-
+    /* Scroll container */
+    .table-wrap,
+    .article-content {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Scroll hint gradient on right edge */
     .table-wrap {
-        margin: 24px 0;
-        padding: 0;
-        overflow-x: visible;
+        margin: 20px -16px;
+        padding: 0 16px;
+        position: relative;
     }
-    table {
-        min-width: 0;
-        border: none;
+    .table-wrap::after {
+        content: '';
+        position: sticky;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.8));
+        pointer-events: none;
+        display: block;
+        margin-top: -100%;
+        float: right;
+    }
+    /* Logos smaller on mobile */
+    td img[width="24"], td img[width="28"], td img[width="32"] {
+        width: 18px !important;
+        height: 18px !important;
+        margin-right: 4px !important;
+    }
+    h2 img[width="28"], h2 img[width="32"],
+    h3 img[width="28"], h3 img[width="32"] {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    /* First row highlight stays */
+    tbody tr:first-child {
+        background: rgba(124, 58, 237, 0.04);
     }
 }
 
