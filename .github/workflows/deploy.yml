@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# DISABLED: only runs on manual trigger until we're ready to go live
+# Change to push trigger when Cloudflare reverse proxy is configured
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -23,9 +24,7 @@ jobs:
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
-          # Find all HTML files and add to sitemap
           find blog tools playbooks templates -name "*.html" -not -name "template.html" | sort | while read f; do
-            # Strip file extension and build URL
             path=$(echo "$f" | sed 's/\.html$//')
             lastmod=$(git log -1 --format="%aI" -- "$f" 2>/dev/null || date -Iseconds)
             echo "  <url><loc>https://overloop.com/${path}</loc><lastmod>${lastmod}</lastmod></url>" >> sitemap.xml
