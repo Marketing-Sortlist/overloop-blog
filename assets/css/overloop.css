@@ -1189,10 +1189,26 @@ svg text {
 /* ===== RESPONSIVE TABLES ===== */
 
 @media (max-width: 768px) {
-    /* Simple approach: all tables get horizontal scroll with shadow hint */
+    /* Tables: compact font, only wide tables get min-width */
     table {
         font-size: 13px;
+        min-width: auto;
+    }
+    /* Wide comparison tables (5+ columns) get horizontal scroll */
+    table.table-wide,
+    .table-wrap table {
         min-width: 480px;
+    }
+    /* Small data tables (2-4 columns) fit on screen */
+    table:not(.table-wide):not(.table-keep) {
+        width: 100%;
+        min-width: auto;
+    }
+    table:not(.table-wide):not(.table-keep) td,
+    table:not(.table-wide):not(.table-keep) th {
+        padding: 8px 10px;
+        font-size: 12px;
+        word-wrap: break-word;
     }
     th {
         padding: 10px 12px;
