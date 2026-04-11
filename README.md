@@ -46,3 +46,77 @@ Each article follows the E-E-A-T template in `assets/template.html`.
 
 `redirects/redirects.csv` contains all 259+ URL mappings.
 Import into Cloudflare Workers bulk redirects.
+
+---
+
+## Content Rules (MUST FOLLOW)
+
+### Tables on mobile
+
+**Every table with 15+ rows MUST have `class="table-keep"`.**
+
+Without it, tables become stacked card layout on mobile (good for 5-10 row comparison tables, catastrophic for 300-row word lists).
+
+```html
+<!-- GOOD: Dense word list stays as compact scrollable table -->
+<table class="table-keep">
+
+<!-- GOOD: Small comparison table becomes cards on mobile (default) -->
+<table>
+```
+
+Articles that ALWAYS need `table-keep` on all tables:
+- `500-trigger-words.html` (1000+ words in tables)
+- `455-email-spam-trigger-words-avoid-2018.html` (600+ words in tables)
+- `cold-email-stats-2018.html` (stats tables)
+
+### Image paths
+
+**Preview (GitHub Pages):** All paths use `/overloop-blog/` prefix.
+```html
+<img src="/overloop-blog/assets/images/logos/overloop.com.png">
+```
+
+**Production (Cloudflare):** Paths use `/` directly.
+```html
+<img src="/assets/images/logos/overloop.com.png">
+```
+
+When switching to prod, run: `sed -i 's|/overloop-blog/|/|g' blog/**/*.html`
+
+### Internal links
+
+**Preview (GitHub Pages):**
+```html
+<a href="/overloop-blog/blog/en/slug.html">
+```
+
+**Production (Cloudflare):**
+```html
+<a href="/blog/slug">
+```
+
+### Logo filenames
+
+Logos are named by domain, not by brand:
+- `overloop.com.png` (not `overloop-logo.png`)
+- `apollo.io.png` (not `apollo-logo.png`)
+- `instantly.ai.svg` (not `instantly-logo.svg`)
+
+### noindex for preview
+
+All pages currently have `<meta name="robots" content="noindex, nofollow">`.
+**MUST be removed before going live on overloop.com.**
+
+### Author photo
+
+The file is `nicolas-finet.png` (not `.jpg`). All articles reference `.png`.
+
+### Design system
+
+- Font: Playfair Display (headings) + Inter (body)
+- Colors: violet palette (#7C3AED primary)
+- CSS: `/assets/css/overloop.css`
+- Nav: `/assets/nav.html`
+- Footer: `/assets/footer.html`
+- JS: `/assets/js/blog.js` (scroll progress, ToC active state)
