@@ -134,6 +134,164 @@
         ]
     }
     </script>
+    <style>
+        /* ===== HUB PAGE VISUAL ENHANCEMENTS ===== */
+
+        /* Category nav with icons */
+        .category-nav-enhanced {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1.5rem 0 2rem;
+        }
+        .category-nav-enhanced a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 13px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .category-nav-enhanced a:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+            background: var(--violet-lightest);
+            text-decoration: none;
+        }
+        .category-nav-enhanced a svg {
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+        .category-nav-enhanced a:hover svg {
+            opacity: 1;
+            stroke: var(--violet);
+        }
+
+        /* Enhanced spoke links */
+        .spoke-link-enhanced {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-decoration: none;
+            color: var(--violet);
+            font-weight: 600;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+            overflow: hidden;
+        }
+        .spoke-link-enhanced:hover {
+            border-color: var(--violet);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+        .spoke-link-enhanced .spoke-accent {
+            width: 5px;
+            align-self: stretch;
+            flex-shrink: 0;
+            background: linear-gradient(180deg, var(--violet), var(--violet-light));
+        }
+        .spoke-link-enhanced .spoke-body {
+            flex: 1;
+            padding: 16px 20px;
+        }
+        .spoke-link-enhanced .spoke-title {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--violet);
+            margin-bottom: 4px;
+        }
+        .spoke-link-enhanced .spoke-desc {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .spoke-link-enhanced .spoke-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .spoke-link-enhanced .spoke-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--violet-lightest);
+            padding: 2px 8px;
+            border-radius: 100px;
+        }
+        .spoke-link-enhanced .spoke-arrow {
+            flex-shrink: 0;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            color: var(--violet-light);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .spoke-link-enhanced:hover .spoke-arrow {
+            color: var(--violet);
+            transform: translateX(3px);
+        }
+
+        /* Enhanced TL;DR table */
+        .tldr-table-enhanced {
+            background: linear-gradient(135deg, rgba(245,243,255,1) 0%, rgba(237,233,254,0.6) 100%);
+            border: 1px solid var(--violet-lighter);
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .tldr-table-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--violet), var(--violet-light), var(--violet));
+        }
+        .tldr-table-enhanced h3 {
+            margin: 0 0 16px;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text);
+        }
+        .tldr-table-enhanced table {
+            margin: 0;
+        }
+
+        /* Tool section headers with logo */
+        .tool-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 12px;
+        }
+        .tool-heading img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+            flex-shrink: 0;
+        }
+        .tool-heading h3 {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -218,7 +376,7 @@
 
             <p>The AI sales tools market hit $3 billion in 2025 and is growing fast. But adoption is still fragmented. According to SPOTIO's 2026 field sales survey, 33% of sales teams still do not use AI at all. Among those that do, most use it for just one thing (email personalization or CRM data entry). The opportunity is in using AI across the full outbound workflow, not in isolated point solutions.</p>
 
-            <div class="tldr-table">
+            <div class="tldr-table-enhanced">
                 <h3>TL;DR: Best AI Sales Tools at a Glance</h3>
                 <div class="table-wrap">
                 <table>
@@ -248,13 +406,31 @@
                 </div>
             </div>
 
-            <div class="category-nav">
-                <a href="#category-bdr">AI BDR Tools</a>
-                <a href="#category-email">AI Email Outreach</a>
-                <a href="#category-linkedin">AI LinkedIn Outreach</a>
-                <a href="#category-enrichment">Data Enrichment</a>
-                <a href="#category-intelligence">Conversation Intelligence</a>
-                <a href="#category-coaching">AI Email Coaching</a>
+            <div class="category-nav-enhanced">
+                <a href="#category-bdr">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="4"/><path d="M12 9v2"/></svg>
+                    AI BDR Tools
+                </a>
+                <a href="#category-email">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    AI Email Outreach
+                </a>
+                <a href="#category-linkedin">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    AI LinkedIn Outreach
+                </a>
+                <a href="#category-enrichment">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    Data Enrichment
+                </a>
+                <a href="#category-intelligence">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                    Conversation Intelligence
+                </a>
+                <a href="#category-coaching">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                    AI Email Coaching
+                </a>
             </div>
 
             <h2>How We Tested These Tools</h2>
@@ -297,63 +473,87 @@
 
             <p>This is the fastest-growing category. The promise: an AI agent that finds prospects, writes personalized outreach, sends sequences across channels, and books meetings on your calendar. The reality is more nuanced, but the best tools here genuinely reduce the need for junior BDR headcount.</p>
 
-            <h3><img src="/assets/images/logos/overloop.com.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Overloop</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/overloop.com.png" alt="Overloop"><h3>Overloop</h3></div>
             <p>Multichannel sequences (email + LinkedIn + phone) with AI that personalizes based on prospect data, company info, and intent signals. The AI does not just swap a first name. It reads the prospect's LinkedIn activity, recent company news, and job title to write opening lines that sound like a human did the research. Built-in deliverability with email warmup and rotation. CRM sync with HubSpot, Salesforce, and Pipedrive.</p>
             <p><strong>Best for:</strong> Teams of 2-50 reps running multichannel outbound. Starting at $69/user/month.</p>
 
-            <h3><img src="/assets/images/logos/apollo.io.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Apollo.io</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/apollo.io.png" alt="Apollo.io"><h3>Apollo.io</h3></div>
             <p>Combines a large B2B database (275M+ contacts) with sequencing and AI writing. Strong for teams that want prospecting and outreach in one platform. The data quality is inconsistent on European contacts, and the LinkedIn automation is basic compared to dedicated tools.</p>
             <p><strong>Best for:</strong> SMBs that want an all-in-one database + outreach tool. Free tier available, paid from $49/month.</p>
 
-            <h3><img src="/assets/images/logos/amplemarket.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Amplemarket</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/amplemarket.svg" alt="Amplemarket"><h3>Amplemarket</h3></div>
             <p>AI-native BDR platform with strong intent data integration. The AI scores and prioritizes leads, then builds sequences automatically. Expensive, but genuinely reduces manual work for mid-market teams.</p>
             <p><strong>Best for:</strong> Mid-market teams with $100K+ outbound budgets. Pricing on request.</p>
 
-            <a href="/blog/11-best-ai-bdr-tools" class="spoke-link">
-                Read our full comparison: 11 Best AI BDR Tools in 2026
-                <span>Deep dive into features, pricing, and which AI BDR tool fits your team size.</span>
+            <a href="/blog/11-best-ai-bdr-tools" class="spoke-link-enhanced">
+                <div class="spoke-accent"></div>
+                <div class="spoke-body">
+                    <span class="spoke-title">Read our full comparison: 14 Best AI BDR Tools in 2026</span>
+                    <span class="spoke-desc">Deep dive into features, pricing, and which AI BDR tool fits your team size.</span>
+                    <div class="spoke-badges">
+                        <span class="spoke-badge">14 tools</span>
+                        <span class="spoke-badge">16 min read</span>
+                    </div>
+                </div>
+                <div class="spoke-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
 
             <h2 id="category-email">Category 2: AI Email Outreach Tools</h2>
 
             <p>If your primary channel is cold email, these tools focus on volume, deliverability, and AI-generated personalization. They do not try to be full BDR platforms. They do one thing and they do it well.</p>
 
-            <h3><img src="/assets/images/logos/smartlead.ai.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Smartlead</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/smartlead.ai.svg" alt="Smartlead"><h3>Smartlead</h3></div>
             <p>Built for agencies and teams sending high volumes. Unlimited mailbox rotation, AI warmup, and a unified inbox. The AI writing is decent for generating variants, but you will want to write your own templates and let the AI create spintax variations. Where Smartlead wins: it can manage 20+ sending accounts without breaking a sweat.</p>
             <p><strong>Best for:</strong> Agencies and teams sending 10,000+ emails/month. From $39/month.</p>
 
-            <h3><img src="/assets/images/logos/instantly.ai.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Instantly</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/instantly.ai.svg" alt="Instantly"><h3>Instantly</h3></div>
             <p>Similar to Smartlead but with a cleaner interface and a built-in lead database (Instantly B2B Lead Finder). The AI warm-up is solid and the campaign builder is intuitive. Less powerful on the automation side but easier to get started with.</p>
             <p><strong>Best for:</strong> Solo founders and small teams. From $30/month.</p>
 
-            <h3><img src="/assets/images/logos/overloop.com.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Overloop</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/overloop.com.png" alt="Overloop"><h3>Overloop</h3></div>
             <p>While Overloop is multichannel, its email engine is strong on its own: AI personalization per prospect, built-in warmup, bounce detection, and sending rotation. The difference from pure email tools is that you can add LinkedIn steps and calls to the same sequence without switching platforms.</p>
             <p><strong>Best for:</strong> Teams that want email-first but plan to add LinkedIn later. From $69/user/month.</p>
 
-            <a href="/blog/9-best-ai-email-outreach-tools" class="spoke-link">
-                Read our full comparison: 9 Best AI Email Outreach Tools in 2026
-                <span>Side-by-side breakdown of deliverability, pricing models, and AI writing quality.</span>
+            <a href="/blog/9-best-ai-email-outreach-tools" class="spoke-link-enhanced">
+                <div class="spoke-accent"></div>
+                <div class="spoke-body">
+                    <span class="spoke-title">Read our full comparison: 12 Best AI Email Outreach Tools in 2026</span>
+                    <span class="spoke-desc">Side-by-side breakdown of deliverability, pricing models, and AI writing quality.</span>
+                    <div class="spoke-badges">
+                        <span class="spoke-badge">12 tools</span>
+                        <span class="spoke-badge">14 min read</span>
+                    </div>
+                </div>
+                <div class="spoke-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
 
             <h2 id="category-linkedin">Category 3: AI LinkedIn Outreach Tools</h2>
 
             <p>LinkedIn is the highest-converting B2B outreach channel when done right. But it is also the easiest to get banned on. The tools in this category automate connection requests, messages, and engagement while trying to stay within LinkedIn's limits.</p>
 
-            <h3><img src="/assets/images/logos/expandi.io.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Expandi</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/expandi.io.svg" alt="Expandi"><h3>Expandi</h3></div>
             <p>Dedicated LinkedIn automation with smart sequences, A/B testing, and safety features like randomized delays. The tool is cloud-based and mimics human behavior patterns. Good for teams that live on LinkedIn and want deep campaign analytics. If LinkedIn is your primary outreach channel, Expandi is the most focused tool in this category.</p>
             <p><strong>Best for:</strong> LinkedIn-heavy teams. From $99/seat/month.</p>
 
-            <h3><img src="/assets/images/logos/overloop.com.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Overloop</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/overloop.com.png" alt="Overloop"><h3>Overloop</h3></div>
             <p>LinkedIn automation built into multichannel sequences. Profile visits, connection requests, and messages happen as steps alongside email and phone. The AI writes LinkedIn messages using the same prospect research it uses for email, so the messaging stays consistent across channels. Uses a cloud-based approach to reduce account risk.</p>
             <p><strong>Best for:</strong> Teams already doing multichannel outbound. From $69/user/month.</p>
 
-            <h3><img src="/assets/images/logos/lagrowthmachine.com.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">La Growth Machine</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/lagrowthmachine.com.svg" alt="La Growth Machine"><h3>La Growth Machine</h3></div>
             <p>Multichannel tool with a visual sequence builder that includes LinkedIn, email, and Twitter. The LinkedIn automation includes profile visits, connection requests, messages, and InMail. Strong in the French market and increasingly used across Europe. The workflow builder is more visual than most competitors.</p>
             <p><strong>Best for:</strong> European teams wanting multichannel with strong LinkedIn features. From $60/month.</p>
 
-            <a href="/blog/8-best-ai-linkedin-outreach-tools" class="spoke-link">
-                Read our full comparison: 8 Best AI LinkedIn Outreach Tools in 2026
-                <span>Safety features, automation limits, and which tools get accounts flagged.</span>
+            <a href="/blog/8-best-ai-linkedin-outreach-tools" class="spoke-link-enhanced">
+                <div class="spoke-accent"></div>
+                <div class="spoke-body">
+                    <span class="spoke-title">Read our full comparison: 13 Best AI LinkedIn Outreach Tools in 2026</span>
+                    <span class="spoke-desc">Safety features, automation limits, and which tools get accounts flagged.</span>
+                    <div class="spoke-badges">
+                        <span class="spoke-badge">13 tools</span>
+                        <span class="spoke-badge">13 min read</span>
+                    </div>
+                </div>
+                <div class="spoke-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
             </a>
 
             <p>We also published a detailed <a href="/blog/la-growth-machine-review">La Growth Machine review</a> if you want a closer look at that platform specifically.</p>
@@ -362,23 +562,23 @@
 
             <p>Your outreach is only as good as your data. These tools find verified emails, phone numbers, company technographics, and buying signals. They feed your outreach tools with accurate, fresh contact information.</p>
 
-            <h3><img src="/assets/images/logos/apollo.io.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Apollo.io</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/apollo.io.png" alt="Apollo.io"><h3>Apollo.io</h3></div>
             <p>275M+ contact database with email verification, intent data, and company filters. The best value in the market for database access. Data accuracy is strong for US contacts (around 85% email validity) but drops for European and APAC contacts.</p>
             <p><strong>Best for:</strong> US-focused teams. Free tier with 50 credits/month, paid from $49/month.</p>
 
-            <h3><img src="/assets/images/logos/clay.com.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Clay</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/clay.com.png" alt="Clay"><h3>Clay</h3></div>
             <p>Not a database itself, but a data orchestration platform that pulls from 75+ enrichment sources (Clearbit, Hunter, Dropcontact, and dozens more). Build waterfall enrichment workflows that check multiple sources in sequence until they find a valid email. Powerful but has a learning curve.</p>
             <p><strong>Best for:</strong> Data-obsessed teams willing to build custom workflows. From $149/month.</p>
 
-            <h3><img src="/assets/images/logos/cognism.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Cognism</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/cognism.svg" alt="Cognism"><h3>Cognism</h3></div>
             <p>European B2B data leader with GDPR-compliant phone numbers and emails. The diamond data verification process is genuinely better than most competitors for European contacts. Expensive, but if you sell into Europe, the data quality pays for itself.</p>
             <p><strong>Best for:</strong> Teams selling into Europe. Pricing on request (typically $15K+/year).</p>
 
-            <h3><img src="/assets/images/logos/zoominfo.com.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">ZoomInfo</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/zoominfo.com.png" alt="ZoomInfo"><h3>ZoomInfo</h3></div>
             <p>The enterprise standard for B2B data. Massive database of contacts and companies with intent data, org charts, and technographics. The data quality is strong, especially for mid-market and enterprise accounts in North America. The downside: pricing starts in the five figures annually and the contract terms are notoriously rigid. You are locked in once you sign.</p>
             <p><strong>Best for:</strong> Enterprise teams with budget for premium data. Pricing starts around $15K/year.</p>
 
-            <h3><img src="/assets/images/logos/seamless.ai.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Seamless.ai</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/seamless.ai.png" alt="Seamless.ai"><h3>Seamless.ai</h3></div>
             <p>Real-time contact discovery tool that finds verified emails and direct dials as you browse LinkedIn or build lists. The AI search engine approach means you are not limited to a static database. Good for teams that prospect actively rather than buying bulk lists. Data accuracy varies, and the free tier is limited enough that you will need to upgrade quickly.</p>
             <p><strong>Best for:</strong> Sales reps who prospect individually. Free tier available, paid from $147/month.</p>
 
@@ -396,7 +596,7 @@
 
             <p>Once prospects are in your pipeline, conversation intelligence tools record and analyze your sales calls. They surface what works, what does not, and where deals are at risk. These tools sit downstream of outreach but they directly improve close rates by giving reps and managers data they would otherwise miss.</p>
 
-            <h3><img src="/assets/images/logos/gong.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Gong</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/gong.svg" alt="Gong"><h3>Gong</h3></div>
             <p>The market leader in conversation intelligence. Gong records sales calls, transcribes them, and uses AI to analyze talk-to-listen ratios, objection patterns, competitor mentions, and next-step clarity. The deal intelligence layer flags at-risk deals based on conversation patterns, not just CRM field updates. Where Gong really shines is the coaching side: managers can review calls at 2x speed with AI highlights instead of sitting through full recordings.</p>
             <p><strong>Best for:</strong> Teams with 10+ reps doing discovery and demo calls. Pricing on request (typically $100-150/user/month, annual contract).</p>
 
@@ -412,7 +612,7 @@
 
             <p>These tools sit in your inbox and give real-time feedback on email quality before you send. They analyze tone, length, personalization, and readability. Think of them as Grammarly for sales emails, but trained on millions of outreach emails instead of general writing.</p>
 
-            <h3><img src="/assets/images/logos/lavender.svg" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;">Lavender</h3>
+            <div class="tool-heading"><img src="/assets/images/logos/lavender.svg" alt="Lavender"><h3>Lavender</h3></div>
             <p>The standout tool in this category. Lavender scores your email in real time and tells you exactly what to fix: too long, too many "I" statements, weak subject line, missing personalization. It pulls prospect data from LinkedIn and the web to suggest personalization angles. The coaching data is what sets it apart: Lavender has analyzed billions of sales emails and gives recommendations based on what actually gets replies, not what sounds good in theory.</p>
             <p><strong>Best for:</strong> Individual reps and teams focused on reply rates. Free for 5 emails/month, paid from $29/month.</p>
 
