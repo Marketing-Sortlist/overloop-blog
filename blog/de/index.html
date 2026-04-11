@@ -16,6 +16,329 @@
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog">
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog">
+    <style>
+        /* ===== BLOG INDEX STYLES ===== */
+
+        /* Hero with animated gradient */
+        .blog-hero {
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+            padding: 100px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 200px,
+                rgba(255, 107, 157, 0.03) 200px,
+                rgba(255, 107, 157, 0.03) 201px
+            );
+        }
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 50%, rgba(124, 58, 237, 0.25), transparent),
+                radial-gradient(ellipse 500px 300px at 80% 30%, rgba(167, 139, 250, 0.15), transparent);
+            animation: heroShift 8s ease-in-out infinite alternate;
+        }
+        @keyframes heroShift {
+            0%   { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .blog-hero .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-hero .hero-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--violet-lighter);
+            margin-bottom: 16px;
+        }
+        .blog-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .blog-hero h1 em {
+            font-style: italic;
+        }
+        .blog-hero .hero-sub {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+            margin-top: 12px;
+        }
+
+        /* Featured hero card */
+        .blog-hero-card {
+            display: block;
+            max-width: 1000px;
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #2E1065 0%, #4c1d95 40%, #7C3AED 100%);
+            border-radius: 16px;
+            padding: 48px 56px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 20px 60px rgba(46, 16, 101, 0.35), 0 0 0 1px rgba(167, 139, 250, 0.2);
+            transition: transform 0.25s, box-shadow 0.25s;
+            overflow: hidden;
+        }
+        .blog-hero-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 72px rgba(46, 16, 101, 0.45), 0 0 0 1px rgba(167, 139, 250, 0.35);
+            text-decoration: none;
+        }
+        .blog-hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent 70%);
+        }
+        .blog-hero-card .featured-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .blog-hero-card h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 12px;
+            line-height: 1.2;
+            position: relative;
+        }
+        .blog-hero-card .featured-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .blog-hero-card .featured-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            transition: gap 0.2s;
+        }
+        .blog-hero-card:hover .featured-cta {
+            gap: 12px;
+        }
+        .blog-hero-card .featured-meta {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 8px;
+            position: relative;
+        }
+
+        /* Category filter pills */
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 36px;
+            justify-content: center;
+        }
+        .blog-filters button {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .blog-filters button:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+            background: var(--violet-lightest);
+        }
+        .blog-filters button.active {
+            background: var(--violet);
+            color: #fff;
+            border-color: var(--violet);
+        }
+
+        /* Card grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 580px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-hero-card { padding: 32px 24px; margin-left: 16px; margin-right: 16px; }
+        }
+
+        /* Enhanced blog card */
+        .blog-card-v2 {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        }
+        .blog-card-v2:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--violet-lighter);
+            text-decoration: none;
+        }
+
+        /* Gradient header band */
+        .blog-card-gradient {
+            height: 6px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .blog-card-gradient.cold-email   { background: linear-gradient(135deg, #1a73e8, #3b82f6); }
+        .blog-card-gradient.ai-tools     { background: linear-gradient(135deg, #e8710a, #f59e0b); }
+        .blog-card-gradient.comparisons  { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+        .blog-card-gradient.legal        { background: linear-gradient(135deg, #059669, #10b981); }
+
+        .blog-card-v2 .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-v2 .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .blog-card-v2 .card-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 100px;
+            line-height: 1;
+        }
+        .card-badge.cold-email   { background: rgba(26,115,232,0.1);  color: #1a73e8; }
+        .card-badge.ai-tools     { background: rgba(232,113,10,0.1);  color: #c2600a; }
+        .card-badge.comparisons  { background: rgba(124,58,237,0.1);  color: #7C3AED; }
+        .card-badge.legal        { background: rgba(5,150,105,0.1);   color: #059669; }
+
+        .blog-card-readtime {
+            font-size: 11px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            white-space: nowrap;
+        }
+
+        .blog-card-v2 h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        .blog-card-v2 .card-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0 0 16px;
+            flex: 1;
+        }
+
+        /* Tool logos row */
+        .blog-card-logos {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .blog-card-logos img {
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: #fff;
+        }
+        .blog-card-logos .logo-count {
+            font-size: 11px;
+            color: var(--text-secondary);
+            margin-left: 4px;
+        }
+
+        .blog-card-v2 .card-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            margin-top: auto;
+            padding-top: 12px;
+        }
+
+        /* Section heading in main */
+        .blog-section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
 
@@ -71,163 +394,335 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 </script>
 </nav>
 
-    <header class="article-header" style="padding: 80px 24px 60px;">
-        <div class="container" style="max-width: 900px;">
-            <p style="color: var(--violet-lighter); font-size: 14px; margin-bottom: 16px;">Artikel, Leitfaden und Gedanken unseres Teams</p>
-            <h1 style="font-size: clamp(28px, 4vw, 44px);">Einblicke in besseren<br><em>Outbound-Vertrieb</em></h1>
+    <!-- Hero Section -->
+    <header class="blog-hero">
+        <div class="hero-inner">
+            <span class="hero-label">Artikel, Leitfaden und Gedanken unseres Teams</span>
+            <h1>Einblicke in besseren<br><em>Outbound-Vertrieb</em></h1>
+            <p class="hero-sub">Cold-Email-Playbooks, KI-Tool-Vergleiche und Outbound-Strategien aus echten Kampagnen.</p>
         </div>
     </header>
 
-    <main class="article-body" style="padding: 48px 0 80px;">
-        <div class="container" style="max-width: 1000px;">
+    <!-- Featured Hero Card -->
+    <a href="/overloop-blog/blog/de/best-ai-sales-tools" class="blog-hero-card">
+        <span class="featured-badge">Empfohlener Leitfaden</span>
+        <h2>Beste KI Vertriebstools 2026: Der Kaufratgeber</h2>
+        <p class="featured-desc">Wir haben 30+ KI Vertriebstools in 6 Kategorien getestet: BDR, E-Mail, LinkedIn, Datenanreicherung, Conversation Intelligence und E-Mail-Coaching. Vergleichstabelle mit Preisen, G2-Bewertungen und Entscheidungshilfe.</p>
+        <span class="featured-cta">Den vollstandigen Leitfaden lesen <span>&rarr;</span></span>
+        <span class="featured-meta">22 Min. Lesezeit &middot; 19 Tools verglichen &middot; April 2026</span>
+    </a>
+
+    <main style="padding: 56px 24px 80px; background: var(--bg);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+
             <!-- Category filter pills -->
-            <div class="category-nav" style="margin-bottom: 32px;">
-                <a href="#" class="active">Alle anzeigen</a>
-                <a href="#">Cold Email</a>
-                <a href="#">KI-Tools</a>
-                <a href="#">Vergleiche</a>
-                <a href="#">Recht</a>
+            <div class="blog-filters">
+                <button class="active" data-filter="all">Alle anzeigen</button>
+                <button data-filter="cold-email">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Cold Email
+                </button>
+                <button data-filter="ai-tools">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                    KI-Tools
+                </button>
+                <button data-filter="comparisons">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    Vergleiche
+                </button>
+                <button data-filter="legal">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Recht
+                </button>
             </div>
 
-            <!-- Article cards grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-
-                <!-- HUB PAGE -->
-                <a href="/overloop-blog/blog/de/best-ai-sales-tools" class="blog-card">
-                    <div class="blog-card-badge">KI-Tools</div>
-                    <h3>Beste KI Vertriebstools 2026: Der Kaufratgeber</h3>
-                    <p>Wir haben 30+ KI Vertriebstools getestet: E-Mail, LinkedIn, Datenanreicherung und BDR-Automatisierung. Strukturierter Kaufratgeber.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
-                </a>
+            <!-- Card Grid -->
+            <div class="blog-grid" id="blog-grid">
 
                 <!-- COLD EMAIL CLUSTER -->
-                <a href="/overloop-blog/blog/de/cold-email-stats-2018" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>Cold Email Statistiken 2026: Benchmarks &amp; Daten</h3>
-                    <p>Cold Email Statistiken 2026: Offnungsraten, Antwortquoten, Bounce-Raten, beste Versandzeiten und Branchen-Benchmarks.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/cold-email-stats-2018" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">12 Min.</span>
+                        </div>
+                        <h3>Cold Email Statistiken 2026: Benchmarks &amp; Daten</h3>
+                        <p class="card-desc">Cold Email Statistiken 2026: Offnungsraten, Antwortquoten, Bounce-Raten, beste Versandzeiten und Branchen-Benchmarks.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/whats-the-best-email-length-for-sales-outreach" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>Ideale Lange Cold Email: Datenbasierter Leitfaden (2026)</h3>
-                    <p>Wie lang sollte eine Cold Email sein? Daten zeigen: 50-125 Worter erzielen die besten Antwortquoten. Formell vs. informell.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/whats-the-best-email-length-for-sales-outreach" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">8 Min.</span>
+                        </div>
+                        <h3>Ideale Lange Cold Email: Datenbasierter Leitfaden (2026)</h3>
+                        <p class="card-desc">Wie lang sollte eine Cold Email sein? Daten zeigen: 50-125 Worter erzielen die besten Antwortquoten. Formell vs. informell.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/455-email-spam-trigger-words-avoid-2018" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>500+ Spam Worter E-Mail: Vollstandige Liste (2026)</h3>
-                    <p>Die umfassendste Liste mit 500+ Spam Wortern fur E-Mails. Nach Kategorie sortiert mit Alternativen fur deutsche ISPs.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/455-email-spam-trigger-words-avoid-2018" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">15 Min.</span>
+                        </div>
+                        <h3>500+ Spam Worter E-Mail: Vollstandige Liste (2026)</h3>
+                        <p class="card-desc">Die umfassendste Liste mit 500+ Spam Wortern fur E-Mails. Nach Kategorie sortiert mit Alternativen fur deutsche ISPs.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/500-trigger-words" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>Trigger-Worter E-Mail: 500+ Power-Worter fur Kaltakquise</h3>
-                    <p>500+ Trigger-Worter fur E-Mail-Kaltakquise, sortiert nach Emotion: Dringlichkeit, Neugier, Vertrauen, Exklusivitat und FOMO.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/500-trigger-words" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">18 Min.</span>
+                        </div>
+                        <h3>Trigger-Worter E-Mail: 500+ Power-Worter fur Kaltakquise</h3>
+                        <p class="card-desc">500+ Trigger-Worter fur E-Mail-Kaltakquise, sortiert nach Emotion: Dringlichkeit, Neugier, Vertrauen, Exklusivitat und FOMO.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/cold-emailing-link-building" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>Linkaufbau Cold Email: 23 Backlinks aus 500 E-Mails</h3>
-                    <p>Fallstudie: Linkaufbau per Cold Email. Templates, Betreffzeilen, Follow-up-Sequenzen und echte Zahlen aus 500 E-Mails.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/cold-emailing-link-building" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">10 Min.</span>
+                        </div>
+                        <h3>Linkaufbau Cold Email: 23 Backlinks aus 500 E-Mails</h3>
+                        <p class="card-desc">Fallstudie: Linkaufbau per Cold Email. Templates, Betreffzeilen, Follow-up-Sequenzen und echte Zahlen aus 500 E-Mails.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/how-to-find-someone-email-address-efficiently" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>E-Mail-Adresse finden: 12 Methoden die wirklich funktionieren (2026)</h3>
-                    <p>12 bewehrte Methoden, um professionelle E-Mail-Adressen zu finden. Kostenlose und kostenpflichtige Tools, DSGVO-konform.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/how-to-find-someone-email-address-efficiently" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">14 Min.</span>
+                        </div>
+                        <h3>E-Mail-Adresse finden: 12 Methoden die wirklich funktionieren (2026)</h3>
+                        <p class="card-desc">12 bewehrte Methoden, um professionelle E-Mail-Adressen zu finden. Kostenlose und kostenpflichtige Tools, DSGVO-konform.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/get-email-from-linkedin-profile" class="blog-card">
-                    <div class="blog-card-badge">Cold Email</div>
-                    <h3>E-Mail von LinkedIn Profil finden: 5 Methoden Schritt fur Schritt (2026)</h3>
-                    <p>5 bewehrte Wege, um E-Mail-Adressen von LinkedIn-Profilen zu bekommen. Chrome Extensions, Sales Navigator und DSGVO-konform.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/get-email-from-linkedin-profile" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="blog-card-readtime">9 Min.</span>
+                        </div>
+                        <h3>E-Mail von LinkedIn Profil finden: 5 Methoden Schritt fur Schritt (2026)</h3>
+                        <p class="card-desc">5 bewehrte Wege, um E-Mail-Adressen von LinkedIn-Profilen zu bekommen. Chrome Extensions, Sales Navigator und DSGVO-konform.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
                 <!-- AI TOOLS CLUSTER -->
-                <a href="/overloop-blog/blog/de/11-best-ai-bdr-tools" class="blog-card">
-                    <div class="blog-card-badge">KI-Tools</div>
-                    <h3>11 Beste KI Vertriebstools 2026 (Ehrlicher Vergleich)</h3>
-                    <p>Wir haben 11 KI Vertriebstools getestet. Echte Preise, echte Vor- und Nachteile. Overloop, Artisan, 11x und mehr.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/11-best-ai-bdr-tools" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">KI-Tools</span>
+                            <span class="blog-card-readtime">16 Min.</span>
+                        </div>
+                        <h3>11 Beste KI Vertriebstools 2026 (Ehrlicher Vergleich)</h3>
+                        <p class="card-desc">Wir haben 11 KI Vertriebstools getestet. Echte Preise, echte Vor- und Nachteile. Overloop, Artisan, 11x und mehr.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/clay.com.png" alt="Clay" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/amplemarket.svg" alt="Amplemarket" loading="lazy">
+                            <span class="logo-count">+7 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/9-best-ai-email-outreach-tools" class="blog-card">
-                    <div class="blog-card-badge">KI-Tools</div>
-                    <h3>9 Beste KI E-Mail Outreach Tools 2026 (Getestet &amp; Verglichen)</h3>
-                    <p>Wir haben 9 KI E-Mail Outreach Tools im direkten Vergleich getestet. KI-Texterstellung, Zustellbarkeit, Warm-up und Preise.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/9-best-ai-email-outreach-tools" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">KI-Tools</span>
+                            <span class="blog-card-readtime">14 Min.</span>
+                        </div>
+                        <h3>9 Beste KI E-Mail Outreach Tools 2026 (Getestet &amp; Verglichen)</h3>
+                        <p class="card-desc">Wir haben 9 KI E-Mail Outreach Tools im direkten Vergleich getestet. KI-Texterstellung, Zustellbarkeit, Warm-up und Preise.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
+                            <span class="logo-count">+6 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/8-best-ai-linkedin-outreach-tools" class="blog-card">
-                    <div class="blog-card-badge">KI-Tools</div>
-                    <h3>8 Beste KI LinkedIn Outreach Tools 2026 (Sicherheits-Leitfaden)</h3>
-                    <p>Wir haben 8 KI LinkedIn Outreach Tools auf Sicherheit, Tageslimits und Ban-Risiko getestet. Ehrlicher Vergleich fur DACH.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/8-best-ai-linkedin-outreach-tools" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">KI-Tools</span>
+                            <span class="blog-card-readtime">13 Min.</span>
+                        </div>
+                        <h3>8 Beste KI LinkedIn Outreach Tools 2026 (Sicherheits-Leitfaden)</h3>
+                        <p class="card-desc">Wir haben 8 KI LinkedIn Outreach Tools auf Sicherheit, Tageslimits und Ban-Risiko getestet. Ehrlicher Vergleich fur DACH.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/expandi.io.svg" alt="Expandi" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
+                            <span class="logo-count">+5 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
                 <!-- ALTERNATIVES / COMPARISONS -->
-                <a href="/overloop-blog/blog/de/apollo-alternatives" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>10 Beste Apollo Alternativen 2026 (Getestet und Verglichen)</h3>
-                    <p>Suchen Sie nach Apollo Alternativen? Wir haben 10+ Tools getestet: Overloop, Lemlist, Instantly, Saleshandy und mehr.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/apollo-alternatives" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Vergleiche</span>
+                            <span class="blog-card-readtime">18 Min.</span>
+                        </div>
+                        <h3>10 Beste Apollo Alternativen 2026 (Getestet und Verglichen)</h3>
+                        <p class="card-desc">Suchen Sie nach Apollo Alternativen? Wir haben 10+ Tools getestet: Overloop, Lemlist, Instantly, Saleshandy und mehr.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/cognism.svg" alt="Cognism" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/zoominfo.com.png" alt="ZoomInfo" loading="lazy">
+                            <span class="logo-count">+6 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/instantly-alternatives" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>6 Instantly Alternativen 2026 (Fur Teams, die mehr brauchen)</h3>
-                    <p>Instantly ist nur E-Mail. 6 Alternativen fur Teams, die LinkedIn, Telefon und bessere Zustellbarkeit brauchen.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/instantly-alternatives" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Vergleiche</span>
+                            <span class="blog-card-readtime">11 Min.</span>
+                        </div>
+                        <h3>6 Instantly Alternativen 2026 (Fur Teams, die mehr brauchen)</h3>
+                        <p class="card-desc">Instantly ist nur E-Mail. 6 Alternativen fur Teams, die LinkedIn, Telefon und bessere Zustellbarkeit brauchen.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
+                            <span class="logo-count">+3 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/lemlist-alternatives" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>8 Lemlist Alternativen 2026 (Gunstiger, einfacher, besser)</h3>
-                    <p>Die besten Lemlist Alternativen im Vergleich: Preise, Multichannel-Funktionen und KI-Features. Ehrlicher Vergleich.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/lemlist-alternatives" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Vergleiche</span>
+                            <span class="blog-card-readtime">10 Min.</span>
+                        </div>
+                        <h3>8 Lemlist Alternativen 2026 (Gunstiger, einfacher, besser)</h3>
+                        <p class="card-desc">Die besten Lemlist Alternativen im Vergleich: Preise, Multichannel-Funktionen und KI-Features. Ehrlicher Vergleich.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
+                            <span class="logo-count">+5 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/outreach-alternatives" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>7 Outreach.io Alternativen 2026 (Transparente Preise)</h3>
-                    <p>Outreach.io zu teuer oder zu komplex? 7 Alternativen mit transparenten Preisen fur KMUs und Mittelstand im DACH-Raum.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/outreach-alternatives" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Vergleiche</span>
+                            <span class="blog-card-readtime">10 Min.</span>
+                        </div>
+                        <h3>7 Outreach.io Alternativen 2026 (Transparente Preise)</h3>
+                        <p class="card-desc">Outreach.io zu teuer oder zu komplex? 7 Alternativen mit transparenten Preisen fur KMUs und Mittelstand im DACH-Raum.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/outreach.io.png" alt="Outreach" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
+                            <span class="logo-count">+4 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/salesloft-alternatives" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>6 Salesloft Alternativen 2026 (Nach der Clari-Fusion)</h3>
-                    <p>Salesloft fusionierte 2025 mit Clari. 6 Alternativen fur Teams, die ihren Sales-Engagement-Stack neu bewerten.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/salesloft-alternatives" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Vergleiche</span>
+                            <span class="blog-card-readtime">10 Min.</span>
+                        </div>
+                        <h3>6 Salesloft Alternativen 2026 (Nach der Clari-Fusion)</h3>
+                        <p class="card-desc">Salesloft fusionierte 2025 mit Clari. 6 Alternativen fur Teams, die ihren Sales-Engagement-Stack neu bewerten.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
+                            <span class="logo-count">+3 mehr</span>
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/la-growth-machine-review" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>La Growth Machine Erfahrungen (2026): Funktionen, Preise, Vor- &amp; Nachteile</h3>
-                    <p>Ehrlicher La Growth Machine Erfahrungsbericht von einem Wettbewerber. Multichannel-Outreach, Preise in EUR und Vergleich.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/la-growth-machine-review" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Erfahrungsbericht</span>
+                            <span class="blog-card-readtime">9 Min.</span>
+                        </div>
+                        <h3>La Growth Machine Erfahrungen (2026): Funktionen, Preise, Vor- &amp; Nachteile</h3>
+                        <p class="card-desc">Ehrlicher La Growth Machine Erfahrungsbericht von einem Wettbewerber. Multichannel-Outreach, Preise in EUR und Vergleich.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                        </div>
+                    </div>
                 </a>
 
-                <a href="/overloop-blog/blog/de/linkedin-helper-review" class="blog-card">
-                    <div class="blog-card-badge">Vergleiche</div>
-                    <h3>LinkedIn Helper Erfahrungen (2026): Funktionen, Preise, Vor- &amp; Nachteile</h3>
-                    <p>Ehrlicher LinkedIn Helper Erfahrungsbericht von einem Wettbewerber. 30 Tage getestet. Funktionen, Preise und Sperrrisiko.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/linkedin-helper-review" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Erfahrungsbericht</span>
+                            <span class="blog-card-readtime">8 Min.</span>
+                        </div>
+                        <h3>LinkedIn Helper Erfahrungen (2026): Funktionen, Preise, Vor- &amp; Nachteile</h3>
+                        <p class="card-desc">Ehrlicher LinkedIn Helper Erfahrungsbericht von einem Wettbewerber. 30 Tage getestet. Funktionen, Preise und Sperrrisiko.</p>
+                        <div class="blog-card-logos">
+                            <img src="/overloop-blog/assets/images/logos/linkedhelper.com.svg" alt="LinkedIn Helper" loading="lazy">
+                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                        </div>
+                    </div>
                 </a>
 
                 <!-- LEGAL -->
-                <a href="/overloop-blog/blog/de/cold-email-illegal" class="blog-card">
-                    <div class="blog-card-badge">Recht</div>
-                    <h3>Kaltakquise per E-Mail erlaubt? Rechtslage in Deutschland, EU &amp; weltweit (2026)</h3>
-                    <p>Ist Kaltakquise per E-Mail erlaubt? Rechtslage nach UWG, DSGVO, Bundesdatenschutzgesetz. B2B vs B2C Regeln und Strafen.</p>
-                    <div class="blog-card-meta">10. April 2026 &middot; Nicolas Finet</div>
+                <a href="/overloop-blog/blog/de/cold-email-illegal" class="blog-card-v2" data-category="legal">
+                    <div class="blog-card-gradient legal"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge legal">Recht</span>
+                            <span class="blog-card-readtime">16 Min.</span>
+                        </div>
+                        <h3>Kaltakquise per E-Mail erlaubt? Rechtslage in Deutschland, EU &amp; weltweit (2026)</h3>
+                        <p class="card-desc">Ist Kaltakquise per E-Mail erlaubt? Rechtslage nach UWG, DSGVO, Bundesdatenschutzgesetz. B2B vs B2C Regeln und Strafen.</p>
+                        <div class="card-meta">10. April 2026</div>
+                    </div>
                 </a>
 
             </div>
@@ -280,6 +775,31 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
         </div>
     </div>
 </footer>
+
+<script>
+// Category filter functionality
+(function() {
+    var buttons = document.querySelectorAll('.blog-filters button');
+    var cards = document.querySelectorAll('.blog-card-v2');
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = this.getAttribute('data-filter');
+
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+
+            cards.forEach(function(card) {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+})();
+</script>
 
 </body>
 </html>
