@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
     <link rel="stylesheet" href="/overloop-blog/assets/css/overloop-v2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best AI Sales Tools 2026: Buyer's Guide | Overloop</title>
@@ -161,7 +162,164 @@
         ]
     }
     </script>
-    
+    <style>
+        /* ===== HUB PAGE VISUAL ENHANCEMENTS ===== */
+
+        /* Category nav with icons */
+        .category-nav-enhanced {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 1.5rem 0 2rem;
+        }
+        .category-nav-enhanced a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 16px;
+            font-size: 13px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .category-nav-enhanced a:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+            background: var(--violet-lightest);
+            text-decoration: none;
+        }
+        .category-nav-enhanced a svg {
+            flex-shrink: 0;
+            opacity: 0.6;
+        }
+        .category-nav-enhanced a:hover svg {
+            opacity: 1;
+            stroke: var(--violet);
+        }
+
+        /* Enhanced spoke links */
+        .spoke-link-enhanced {
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 0;
+            margin: 1.5rem 0;
+            text-decoration: none;
+            color: var(--violet);
+            font-weight: 600;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+            overflow: hidden;
+        }
+        .spoke-link-enhanced:hover {
+            border-color: var(--violet);
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12);
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+        .spoke-link-enhanced .spoke-accent {
+            width: 5px;
+            align-self: stretch;
+            flex-shrink: 0;
+            background: linear-gradient(180deg, var(--violet), var(--violet-light));
+        }
+        .spoke-link-enhanced .spoke-body {
+            flex: 1;
+            padding: 16px 20px;
+        }
+        .spoke-link-enhanced .spoke-title {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--violet);
+            margin-bottom: 4px;
+        }
+        .spoke-link-enhanced .spoke-desc {
+            display: block;
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .spoke-link-enhanced .spoke-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .spoke-link-enhanced .spoke-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: var(--violet-lightest);
+            padding: 2px 8px;
+            border-radius: 100px;
+        }
+        .spoke-link-enhanced .spoke-arrow {
+            flex-shrink: 0;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            color: var(--violet-light);
+            transition: color 0.2s, transform 0.2s;
+        }
+        .spoke-link-enhanced:hover .spoke-arrow {
+            color: var(--violet);
+            transform: translateX(3px);
+        }
+
+        /* Enhanced TL;DR table */
+        .tldr-table-enhanced {
+            background: linear-gradient(135deg, rgba(245,243,255,1) 0%, rgba(237,233,254,0.6) 100%);
+            border: 1px solid var(--violet-lighter);
+            border-radius: 14px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .tldr-table-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--violet), var(--violet-light), var(--violet));
+        }
+        .tldr-table-enhanced h3 {
+            margin: 0 0 16px;
+            font-size: 1.15rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--text);
+        }
+        .tldr-table-enhanced table {
+            margin: 0;
+        }
+
+        /* Tool section headers with logo */
+        .tool-heading {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 40px 0 12px;
+        }
+        .tool-heading img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fff;
+            flex-shrink: 0;
+        }
+        .tool-heading h3 {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
 
