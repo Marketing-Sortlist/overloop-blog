@@ -368,6 +368,8 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             </p>
         </div>
 
+        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 24px; padding: 12px 16px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border);"><strong>Disclaimer:</strong> This article is provided for informational purposes only and does not constitute legal advice. It reflects our understanding of the legal landscape as of April 2026 and may not cover all aspects relevant to your specific situation. Overloop is a software company, not a law firm. We recommend consulting a qualified German lawyer (Rechtsanwalt/Fachanwalt fur IT-Recht) before making compliance decisions. GDPR applies to data subjects in Germany regardless of where your company is established (Art. 3(2)), and UWG claims can be brought in German courts against foreign companies under the Brussels I Regulation.</p>
+
         <!-- Quick-scan: 30s overview -->
         <div class="quick-scan">
             <h3>Quick Scan: Every Rule Covered</h3>
@@ -453,7 +455,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>The practical consequence is clear: having a GDPR-compliant database of German B2B contacts does not give you permission to email them. You need to satisfy both laws.</p>
 
-<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop's <a href="https://overloop.com/features">B2B contact database</a> operates under GDPR legitimate interest for data processing. That part is covered. But because UWG blocks unsolicited email, Overloop's multi-channel sequences let you start with a phone step for German prospects and only move to email after consent is collected. The platform enforces the two-law distinction by design.</p></div>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop's <a href="https://overloop.com/features">B2B contact database</a> operates under GDPR legitimate interest for data processing. That part is covered. But because UWG blocks unsolicited email, Overloop's multi-channel sequences let you start with a phone step for German prospects and only move to email after consent is collected. The platform supports this two-law workflow by design.</p></div>
 
 <h2 id="double-opt-in">The Double Opt-In Question</h2>
 
@@ -461,7 +463,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p><strong>The statute:</strong> Neither GDPR nor UWG Section 7 explicitly mandates double opt-in as a method. UWG Section 7(2) requires "prior express consent" for email marketing but does not specify how that consent must be verified.</p>
 
-<p><strong>The courts:</strong> The German Federal Supreme Court (Bundesgerichtshof, BGH) has ruled that single opt-in is "by no means sufficient to prove consent." The BGH stated that double opt-in is "a more appropriate means" to prove consent, provided the confirmation email itself remains "completely neutral" - no promotional content in the confirmation message.</p>
+<p><strong>The courts:</strong> The German Federal Supreme Court (Bundesgerichtshof, BGH) has consistently held (I ZR 164/09; I ZR 218/07) that single opt-in is "by no means sufficient to prove consent." The BGH stated that double opt-in is "a more appropriate means" to prove consent, provided the confirmation email itself remains "completely neutral" - no promotional content in the confirmation message.</p>
 
 <p><strong>The bottom line:</strong> Double opt-in is not technically required by the letter of the law. But it is the only evidentiary standard German courts accept as sufficient proof of valid consent. Any company that relies on single opt-in in Germany cannot prove consent in court. That makes double opt-in a de facto requirement.</p>
 
@@ -479,13 +481,13 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
         <tr><td><strong>Email</strong></td><td>Consent required</td><td>Consent required</td><td>UWG §7(2) applies identically to both. No B2B exemption.</td></tr>
         <tr><td><strong>Phone</strong></td><td>Presumed consent OK</td><td>Express consent required</td><td>B2B cold calling is legal if you have concrete indications of interest.</td></tr>
         <tr><td><strong>Postal mail</strong></td><td>Legitimate interest OK</td><td>Legitimate interest OK</td><td>Most permissive channel. GDPR Art. 6(1)(f) is sufficient.</td></tr>
-        <tr><td><strong>LinkedIn messages</strong></td><td>Consent required</td><td>Consent required</td><td>Treated as electronic communications under UWG §7.</td></tr>
+        <tr><td><strong>LinkedIn messages</strong></td><td>Unsettled</td><td>Unsettled</td><td>Legal status under UWG §7 is contested. InMail with promotional content may be treated as electronic mail. Connection requests without ads are generally not considered advertising.</td></tr>
     </tbody>
 </table>
 
 <p>Compare this to France, where B2B cold email to corporate addresses about professional topics is legal without opt-in. Or the Netherlands, where published corporate addresses can receive cold email. Or the UK, where PECR allows unsolicited email to corporate subscribers.</p>
 
-<p>In Germany, none of these exemptions exist for email. A B2B sales email to a CEO at their corporate address requires the same level of consent as a promotional email to a consumer.</p>
+<p>In Germany, none of these exemptions exist for email. A B2B sales email to a CEO at their corporate address requires the same level of consent as a promotional email to a consumer. This also applies to generic corporate addresses (info@, kontakt@). German courts (OLG Munich, 29 U 857/12) have confirmed that UWG Section 7(2) protects businesses from unsolicited commercial email at any address, personal or generic.</p>
 
 <div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>This is exactly why Overloop built <a href="https://overloop.com/features">multi-channel sequences</a>. A single campaign can combine phone calls, LinkedIn touches, and email steps in one workflow. For German prospects, you start with phone (legal under presumed consent), collect email consent during the conversation, then let the sequence automatically move them to email follow-up. One sequence, different rules per market.</p></div>
 
@@ -504,8 +506,8 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
         <tr><td><strong>Germany</strong></td><td><strong>No</strong></td><td><strong>UWG §7(2)</strong></td><td><strong>Consent required even for B2B</strong></td></tr>
         <tr><td>Spain</td><td>No</td><td>LSSI-CE</td><td>Explicit consent required</td></tr>
         <tr><td>Italy</td><td>No</td><td>D.Lgs 196/2003</td><td>Consent required, Garante enforces aggressively</td></tr>
-        <tr><td>Belgium</td><td>No</td><td>WER</td><td>Single opt-in consent required</td></tr>
-        <tr><td>Austria</td><td>No</td><td>TKG 2021 §174</td><td>Same approach as Germany</td></tr>
+        <tr><td>Belgium</td><td>No (with nuance)</td><td>WER (XII.13)</td><td>Prior consent generally required. Some tolerance for B2B email to published generic corporate addresses about professional topics.</td></tr>
+        <tr><td>Austria</td><td>No (with nuance)</td><td>TKG 2021 §174</td><td>Prior consent generally required, but some case law supports B2B email to published business addresses. More permissive than Germany.</td></tr>
         <tr><td>Poland</td><td>No</td><td>Prawo telekomunikacyjne</td><td>Prior consent for all electronic marketing</td></tr>
     </tbody>
 </table>
@@ -524,13 +526,13 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <h3>The ECJ Freemium Ruling (November 2025)</h3>
 
-<p>In November 2025, the European Court of Justice issued a ruling (Case C-654/23) that expanded the existing customer exception. The ECJ ruled that free service registrations - freemium signups, free trial accounts - can qualify as a "sale" for purposes of the existing customer privilege.</p>
+<p>In November 2025, the European Court of Justice issued a ruling (Case C-654/23) that expanded the interpretation of the existing customer exception. The ECJ indicated that free service registrations - freemium signups, free trial accounts - may qualify as a "sale" for purposes of the existing customer privilege, though national courts must still apply the specific conditions of their local implementation.</p>
 
-<p>This means: if someone registers for a free trial of your product, you may email them about similar paid offerings under the soft opt-in, without needing separate consent. All other conditions still apply.</p>
+<p>If this interpretation holds in German courts: when someone registers for a free trial of your product, you may email them about similar paid offerings under the soft opt-in, without needing separate consent. All other conditions of UWG Section 7(3) still apply strictly.</p>
 
-<p>The ECJ also clarified that when UWG Section 7(3) conditions are satisfied, companies do not need a separate legal basis under GDPR Article 6. The ePrivacy rules provide standalone authorization.</p>
+<p>The ECJ also clarified that ePrivacy rules function as lex specialis in this area. However, GDPR still applies to the underlying personal data processing. Companies should ensure they have a documented legal basis under both frameworks.</p>
 
-<p>This is a genuine opening for SaaS companies with free tiers. But it only covers existing users who signed up voluntarily - not cold prospects.</p>
+<p>This is a potential opening for SaaS companies with free tiers. But it only covers existing users who signed up voluntarily - not cold prospects. And because German courts have not yet issued domestic rulings applying C-654/23 to the UWG Section 7(3) framework specifically, the safest approach is to treat this as a developing area of law and consult with qualified German counsel before relying on it.</p>
 
 <div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>You can tag contacts in Overloop as "existing customer" or "free trial user" and build dedicated sequences for them that only promote similar features or upgrades. Overloop's automatic unsubscribe management ensures condition #4 (clear opt-out) is met in every email, and sender identification is baked into your email templates. The five conditions become a workflow, not a checklist you hope your team remembers.</p></div>
 
@@ -544,9 +546,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <ol>
     <li><strong>Build your prospect list.</strong> Use GDPR legitimate interest (Art. 6(1)(f)) to collect and process B2B contact data. This is legal.</li>
-    <li><strong>Cold call the business contact.</strong> B2B cold calling is permitted under UWG Section 7(2) No. 1 when there is "presumed consent" (mutmassliche Einwilligung) - concrete indications that the product or service would be relevant to the business.</li>
+    <li><strong>Cold call the business contact.</strong> B2B cold calling is permitted under UWG Section 7(2) No. 1 when there is "presumed consent" (mutmassliche Einwilligung). This requires objective, specific facts that suggest this particular business would welcome the call - for example, they operate in an industry with a documented need your product addresses, they recently signaled buying intent (website visit, content download, trade show attendance), or they have publicly sought solutions in your category. Generic B2B relevance ("all companies could benefit") is not sufficient. German courts (BGH, I ZR 169/07) apply this standard strictly.</li>
     <li><strong>Obtain verbal consent for email follow-up during the call.</strong> Ask explicitly: "Can I send you more details by email?"</li>
-    <li><strong>Document the consent.</strong> Record the date, time, and scope of consent in your CRM.</li>
+    <li><strong>Document the consent.</strong> Record the date, time, and scope of consent in your CRM. Best practice: immediately after the call, send a brief confirmation email asking the prospect to confirm their consent in writing. This creates a verifiable record that is stronger than a CRM note alone.</li>
     <li><strong>Send email.</strong> Now you have a consented contact. Add them to your email sequence.</li>
 </ol>
 
@@ -564,7 +566,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <h3>Strategy 4: LinkedIn + Content + Signals</h3>
 
-<p>Use intent signals to identify companies showing buying intent, then reach them through content and phone outreach. LinkedIn connection requests with value-add content are less clearly regulated than InMail. Build relationships first, collect consent through engagement.</p>
+<p>Use intent signals to identify companies showing buying intent, then reach them through content and phone outreach. The legal status of LinkedIn messaging under UWG Section 7 is unsettled: InMail with promotional content may be treated as electronic mail by some courts, while connection requests without promotional content are generally not considered advertising. Treat LinkedIn as a grey area and err on the side of caution. Build relationships first, collect consent through engagement before sending promotional messages.</p>
 
 <h3>Strategy 5: Postal Mail</h3>
 
@@ -586,7 +588,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <h3>Required Disclosures (GDPR Art. 13/14)</h3>
 
-<p>When you first contact someone - whether by phone, email, or any other channel - you must provide:</p>
+<p>When you first contact someone - whether by phone, email, or any other channel - you must provide the following information. Note: when you obtain contact data from third-party sources (Art. 14), you must inform the data subject within one month of acquiring the data or at the latest at first contact. If you build prospect lists from databases, the clock starts when you acquire the data, not when you reach out.</p>
 
 <ul>
     <li>Your identity as the data controller</li>
@@ -609,7 +611,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
     <li><strong>Balancing test:</strong> Do the individual's rights and freedoms override your legitimate interest?</li>
 </ol>
 
-<p>German data protection authorities (DSK) guidance suggests that unused consent or legitimate interest basis older than approximately 17 months loses its legitimacy. Review and refresh your records regularly.</p>
+<p>DSK guidance suggests that a legitimate interest basis for direct marketing data may weaken if there has been no meaningful contact with the data subject for approximately 17 months. This is a practical benchmark, not a statutory deadline. Note that valid consent does not expire through passage of time alone (though it must be freely withdrawable at any time). It is the legitimate interest assessment that weakens over time without interaction. Review and refresh your records regularly.</p>
 
 <h3>Data Minimization</h3>
 
@@ -644,7 +646,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <h3>2. Data Protection Authority (DPA) Enforcement</h3>
 
-<p>German state data protection authorities (Landesdatenschutzbehorden) can impose fines up to 20 million EUR or 4% of annual global turnover under GDPR. The Bundesnetzagentur (telecom regulator) imposed 1.435 million EUR in fines in 2023 alone for illegal marketing communications.</p>
+<p>German state data protection authorities (Landesdatenschutzbehorden) are the primary enforcement body for email-related GDPR violations and can impose fines up to 20 million EUR or 4% of annual global turnover. The Bundesnetzagentur (telecom regulator) imposed 1.435 million EUR in fines in 2023 for illegal marketing communications, primarily relating to unauthorized phone marketing. Both authorities are actively increasing enforcement.</p>
 
 <h3>3. Civil Claims</h3>
 
@@ -670,7 +672,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
     </tbody>
 </table>
 
-<p>Overloop does not make legal decisions for you. You still need to understand which contacts require consent and which qualify under the existing customer exception. But every compliance requirement in this guide maps to a specific feature in the platform. The tooling matches the law.</p>
+<p>Overloop does not make legal decisions for you. You still need to understand which contacts require consent and which qualify under the existing customer exception. But every compliance requirement in this guide maps to a specific feature in the platform. The tooling supports the workflows German law requires. Compliance depends on how you configure and use these features in accordance with legal advice specific to your situation.</p>
 
 <h2 id="checklist">Compliance Checklist: B2B Outreach in Germany</h2>
 
