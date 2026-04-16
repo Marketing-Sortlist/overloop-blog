@@ -8,6 +8,144 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    /* Quick-scan hero card */
+    .quick-scan {
+        background: linear-gradient(135deg, #2E1065 0%, #4c1d95 100%);
+        border-radius: 16px;
+        padding: 32px;
+        margin: 0 0 40px;
+        color: #fff;
+    }
+    .quick-scan h3 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: #fff;
+    }
+    .quick-scan .qs-subtitle {
+        font-size: 14px;
+        color: var(--violet-lighter);
+        margin: 0 0 20px;
+    }
+    .quick-scan-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    @media (max-width: 640px) {
+        .quick-scan-grid { grid-template-columns: 1fr; }
+        .quick-scan { padding: 24px 20px; }
+    }
+    .qs-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 10px;
+        padding: 12px 14px;
+    }
+    .qs-check {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        background: #22c55e;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1px;
+    }
+    .qs-check svg { width: 13px; height: 13px; }
+    .qs-text {
+        font-size: 13.5px;
+        line-height: 1.45;
+    }
+    .qs-text strong {
+        display: block;
+        font-size: 13.5px;
+        color: #fff;
+    }
+    .qs-text span {
+        color: var(--violet-lighter);
+        font-size: 12.5px;
+    }
+
+    /* Overloop callout boxes */
+    .ovl-box {
+        background: var(--violet-lightest);
+        border-left: 4px solid var(--violet);
+        border-radius: 0 12px 12px 0;
+        padding: 20px 24px;
+        margin: 20px 0 32px;
+        position: relative;
+    }
+    .ovl-box-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--violet);
+        margin-bottom: 8px;
+    }
+    .ovl-box-label svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--violet);
+    }
+    .ovl-box p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--text);
+    }
+
+    /* Sticky TOC */
+    .toc-sticky {
+        position: sticky;
+        top: calc(var(--nav-height) + 20px);
+        float: right;
+        width: 220px;
+        margin: 0 -260px 40px 20px;
+        padding: 16px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        font-size: 12.5px;
+        line-height: 1.5;
+        max-height: calc(100vh - 120px);
+        overflow-y: auto;
+    }
+    .toc-sticky h4 {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-secondary);
+        margin: 0 0 10px;
+        font-weight: 600;
+    }
+    .toc-sticky a {
+        display: block;
+        padding: 4px 0;
+        color: var(--text-secondary);
+        text-decoration: none;
+        border-left: 2px solid transparent;
+        padding-left: 10px;
+        transition: all 0.15s;
+    }
+    .toc-sticky a:hover,
+    .toc-sticky a.active {
+        color: var(--violet);
+        border-left-color: var(--violet);
+    }
+    @media (max-width: 1300px) {
+        .toc-sticky { display: none; }
+    }
+    </style>
     <title>B2B Cold Email in Germany: GDPR, UWG, and Double Opt-In Explained (2026) | Overloop</title>
     <meta name="description" content="Can you send B2B cold emails in Germany? Complete legal guide covering GDPR, UWG Section 7, double opt-in requirements, the existing customer exception, compliant outreach strategies, and enforcement risks. Written for sales teams prospecting into the German market.">
     <link rel="canonical" href="https://overloop.com/blog/b2b-cold-email-germany-gdpr-compliance">
@@ -230,7 +368,64 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             </p>
         </div>
 
+        <!-- Quick-scan: 30s overview -->
+        <div class="quick-scan">
+            <h3>Quick Scan: Every Rule Covered</h3>
+            <p class="qs-subtitle">Germany's requirements and how Overloop addresses each one.</p>
+            <div class="quick-scan-grid">
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>No cold email without consent</strong><span>Multi-channel sequences: phone first, email after consent</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Double opt-in proof required</strong><span>Consent tracking with timestamp, source, scope</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Opt-out in every email</strong><span>Automatic one-click unsubscribe, instant suppression</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Existing customer rules (UWG 7(3))</strong><span>Contact tagging + dedicated sequences per segment</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Data subject rights (GDPR)</strong><span>One-click deletion, export, DPA included</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Tracking pixel consent (TDDDG)</strong><span>Disable open/click tracking per segment</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>GDPR legitimate interest basis</strong><span>B2B database with documented legal basis + DPA</span></div>
+                </div>
+                <div class="qs-row">
+                    <div class="qs-check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="qs-text"><strong>Data minimization</strong><span>Collect only what you configure, no hidden enrichment</span></div>
+                </div>
+            </div>
+        </div>
+
         <article class="article-content">
+
+        <!-- Sticky TOC for desktop -->
+        <nav class="toc-sticky" id="toc">
+            <h4>Contents</h4>
+            <a href="#two-laws">Two Laws: GDPR vs. UWG</a>
+            <a href="#double-opt-in">Double Opt-In</a>
+            <a href="#b2b-vs-b2c">B2B vs. B2C</a>
+            <a href="#eu-comparison">EU Market Comparison</a>
+            <a href="#existing-customer">Existing Customer Exception</a>
+            <a href="#five-strategies">5 Compliant Strategies</a>
+            <a href="#data-handling">Data Handling</a>
+            <a href="#tracking-pixels">Tracking Pixels</a>
+            <a href="#enforcement">Enforcement</a>
+            <a href="#overloop-compliance">Overloop Compliance Table</a>
+            <a href="#checklist">Checklist</a>
+            <a href="#faq">FAQ</a>
+        </nav>
 
 <p><strong>Germany is the strictest EU market for B2B cold email.</strong> Most guides tell you that GDPR legitimate interest covers B2B outreach across Europe. That is true in France, the Netherlands, Ireland, and the UK. It is not true in Germany.</p>
 
@@ -238,7 +433,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>This guide covers the actual legal requirements, not simplified summaries. It explains what you can and cannot do, why, and exactly how to run compliant B2B outreach campaigns that target German prospects.</p>
 
-<h2>Two Laws, Two Questions: GDPR vs. UWG</h2>
+<h2 id="two-laws">Two Laws, Two Questions: GDPR vs. UWG</h2>
 
 <p>This is the concept that most compliance guides miss. Germany applies two separate legal frameworks to outbound email, and they answer different questions:</p>
 
@@ -258,9 +453,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>The practical consequence is clear: having a GDPR-compliant database of German B2B contacts does not give you permission to email them. You need to satisfy both laws.</p>
 
-<p><strong>How Overloop handles this:</strong> Overloop's <a href="https://overloop.com/features">B2B contact database</a> operates under GDPR legitimate interest for data processing. That part is covered. But because UWG blocks unsolicited email, Overloop's multi-channel sequences let you start with a phone step for German prospects and only move to email after consent is collected. The platform enforces the two-law distinction by design.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop's <a href="https://overloop.com/features">B2B contact database</a> operates under GDPR legitimate interest for data processing. That part is covered. But because UWG blocks unsolicited email, Overloop's multi-channel sequences let you start with a phone step for German prospects and only move to email after consent is collected. The platform enforces the two-law distinction by design.</p></div>
 
-<h2>The Double Opt-In Question</h2>
+<h2 id="double-opt-in">The Double Opt-In Question</h2>
 
 <p>The common claim is that "Germany requires double opt-in." This is a simplification, but it is practically correct.</p>
 
@@ -270,9 +465,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p><strong>The bottom line:</strong> Double opt-in is not technically required by the letter of the law. But it is the only evidentiary standard German courts accept as sufficient proof of valid consent. Any company that relies on single opt-in in Germany cannot prove consent in court. That makes double opt-in a de facto requirement.</p>
 
-<p><strong>How Overloop handles this:</strong> Overloop's consent tracking records the exact timestamp, source, and scope of each contact's consent. When a prospect gives you verbal permission on a call, you log it in Overloop with the date and context. If a court or DPA ever asks you to prove consent, you have an auditable trail ready to export.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop's consent tracking records the exact timestamp, source, and scope of each contact's consent. When a prospect gives you verbal permission on a call, you log it in Overloop with the date and context. If a court or DPA ever asks you to prove consent, you have an auditable trail ready to export.</p></div>
 
-<h2>B2B vs. B2C: Germany Has No B2B Email Exemption</h2>
+<h2 id="b2b-vs-b2c">B2B vs. B2C: Germany Has No B2B Email Exemption</h2>
 
 <p>This is where Germany diverges from the rest of Europe. Most EU countries treat B2B and B2C email differently. Germany does not - at least not for email.</p>
 
@@ -292,9 +487,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>In Germany, none of these exemptions exist for email. A B2B sales email to a CEO at their corporate address requires the same level of consent as a promotional email to a consumer.</p>
 
-<p><strong>How Overloop handles this:</strong> This is exactly why Overloop built <a href="https://overloop.com/features">multi-channel sequences</a>. A single campaign can combine phone calls, LinkedIn touches, and email steps in one workflow. For German prospects, you start with phone (legal under presumed consent), collect email consent during the conversation, then let the sequence automatically move them to email follow-up. One sequence, different rules per market.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>This is exactly why Overloop built <a href="https://overloop.com/features">multi-channel sequences</a>. A single campaign can combine phone calls, LinkedIn touches, and email steps in one workflow. For German prospects, you start with phone (legal under presumed consent), collect email consent during the conversation, then let the sequence automatically move them to email follow-up. One sequence, different rules per market.</p></div>
 
-<h2>How Germany Compares to Other EU Markets</h2>
+<h2 id="eu-comparison">How Germany Compares to Other EU Markets</h2>
 
 <table class="table-keep">
     <thead>
@@ -315,7 +510,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
     </tbody>
 </table>
 
-<h2>The Existing Customer Exception: UWG Section 7(3)</h2>
+<h2 id="existing-customer">The Existing Customer Exception: UWG Section 7(3)</h2>
 
 <p>There is one way to send email to German contacts without fresh consent. UWG Section 7(3) provides an "existing customer" exception - but it has strict conditions. All five must be met simultaneously:</p>
 
@@ -337,9 +532,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>This is a genuine opening for SaaS companies with free tiers. But it only covers existing users who signed up voluntarily - not cold prospects.</p>
 
-<p><strong>How Overloop handles this:</strong> You can tag contacts in Overloop as "existing customer" or "free trial user" and build dedicated sequences for them that only promote similar features or upgrades. Overloop's automatic unsubscribe management ensures condition #4 (clear opt-out) is met in every email, and sender identification is baked into your email templates. The five conditions become a workflow, not a checklist you hope your team remembers.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>You can tag contacts in Overloop as "existing customer" or "free trial user" and build dedicated sequences for them that only promote similar features or upgrades. Overloop's automatic unsubscribe management ensures condition #4 (clear opt-out) is met in every email, and sender identification is baked into your email templates. The five conditions become a workflow, not a checklist you hope your team remembers.</p></div>
 
-<h2>Five Compliant B2B Outreach Strategies for Germany</h2>
+<h2 id="five-strategies">Five Compliant B2B Outreach Strategies for Germany</h2>
 
 <p>Cold email is off the table without consent. That does not mean B2B prospecting into Germany is impossible. It means you need to use different channels and sequences.</p>
 
@@ -357,7 +552,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>This approach converts cold prospects into consented contacts through a legal channel (phone), then moves them into email. It works within the law and maintains high-quality pipeline.</p>
 
-<p><strong>How Overloop handles this:</strong> Build a multi-channel sequence in Overloop with a phone step first. When your sales rep completes the call and logs consent, the sequence automatically triggers the email follow-up. No manual handoff, no forgotten follow-ups, and the consent record is tied to the contact. Your team can scale the phone-first approach across hundreds of German prospects without losing track of who consented and who did not.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Build a multi-channel sequence in Overloop with a phone step first. When your sales rep completes the call and logs consent, the sequence automatically triggers the email follow-up. No manual handoff, no forgotten follow-ups, and the consent record is tied to the contact. Your team can scale the phone-first approach across hundreds of German prospects without losing track of who consented and who did not.</p></div>
 
 <h3>Strategy 2: Inbound Consent Collection</h3>
 
@@ -375,7 +570,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>Physical direct mail under GDPR legitimate interest. Include a call-to-action to opt in for email communications. More expensive per contact than email, but legally clean for cold outreach to German prospects and carries higher response rates for high-value accounts.</p>
 
-<h2>Data Handling Requirements</h2>
+<h2 id="data-handling">Data Handling Requirements</h2>
 
 <p>Even when you are not emailing German contacts, you still process their data. GDPR requires specific handling.</p>
 
@@ -420,7 +615,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>Collect only what is necessary for the specific purpose. If your outreach requires name, company, title, and phone number, do not enrich 50 additional data attributes. Document why each data field is needed.</p>
 
-<h2>Tracking Pixels and Open Tracking (TDDDG)</h2>
+<h2 id="tracking-pixels">Tracking Pixels and Open Tracking (TDDDG)</h2>
 
 <p>This is a compliance point that most B2B platforms overlook.</p>
 
@@ -430,9 +625,9 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p><strong>Practical impact:</strong> If you use a sales engagement platform that automatically inserts tracking pixels into emails, consider disabling open and click tracking for German recipients. The compliance exposure is real, and the penalties mirror GDPR enforcement.</p>
 
-<p><strong>How Overloop handles this:</strong> Overloop gives you control over tracking at the sequence and contact level. You can disable open tracking and click tracking for specific campaigns or segments. When you build a Germany-focused sequence, turn tracking off for those contacts. You lose some analytics, but you eliminate a compliance risk that most of your competitors are ignoring.</p>
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop gives you control over tracking at the sequence and contact level. You can disable open tracking and click tracking for specific campaigns or segments. When you build a Germany-focused sequence, turn tracking off for those contacts. You lose some analytics, but you eliminate a compliance risk that most of your competitors are ignoring.</p></div>
 
-<h2>Enforcement in Germany: Three Attack Vectors</h2>
+<h2 id="enforcement">Enforcement in Germany: Three Attack Vectors</h2>
 
 <p>German enforcement is real and comes from multiple directions. This is not theoretical risk.</p>
 
@@ -455,7 +650,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>Individual recipients and businesses can claim damages directly. Consumer protection associations can bring collective actions. German courts have a long track record of ruling against unsolicited commercial email.</p>
 
-<h2>How Overloop Handles GDPR Compliance: The Full Picture</h2>
+<h2 id="overloop-compliance">How Overloop Handles GDPR Compliance: The Full Picture</h2>
 
 <p>You have seen how Overloop addresses each compliance requirement throughout this guide. Here is the complete list in one place:</p>
 
@@ -477,7 +672,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>Overloop does not make legal decisions for you. You still need to understand which contacts require consent and which qualify under the existing customer exception. But every compliance requirement in this guide maps to a specific feature in the platform. The tooling matches the law.</p>
 
-<h2>Compliance Checklist: B2B Outreach in Germany</h2>
+<h2 id="checklist">Compliance Checklist: B2B Outreach in Germany</h2>
 
 <p>Use this checklist before launching any campaign that targets German prospects.</p>
 
@@ -522,7 +717,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
     <li>Consider disabling tracking pixels for German recipients (TDDDG)</li>
 </ul>
 
-<h2>Recent Legal Developments (2025-2026)</h2>
+<h2 id="legal-updates">Recent Legal Developments (2025-2026)</h2>
 
 <h3>ePrivacy Regulation Withdrawn (February 2025)</h3>
 
@@ -540,7 +735,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 
 <p>German state DPAs continue to increase enforcement actions. The trend toward treating email tracking pixels as requiring separate consent is accelerating.</p>
 
-<h2>Frequently Asked Questions</h2>
+<h2 id="faq">Frequently Asked Questions</h2>
 
 <h3>Is B2B cold email legal in Germany?</h3>
 <p>B2B cold email without prior consent is not legal in Germany. Unlike most EU countries, Germany's UWG Section 7(2) treats unsolicited commercial email as "unreasonable harassment" regardless of whether the recipient is a business or consumer. You need prior express consent or must qualify under the existing customer exception (UWG Section 7(3)).</p>
@@ -566,7 +761,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <h3>Do email tracking pixels require consent in Germany?</h3>
 <p>Germany's TDDDG Section 25 requires consent for accessing information stored on end-user devices, and tracking pixels fall under this rule. German authorities increasingly treat tracking pixels like cookies - requiring explicit consent. Consider disabling open and click tracking for German recipients to reduce compliance exposure.</p>
 
-<h2>The Bottom Line</h2>
+<h2 id="bottom-line">The Bottom Line</h2>
 
 <p>Germany is not impossible for B2B outbound. It is different. The law restricts the channel - unsolicited email - not the activity of B2B prospecting.</p>
 
@@ -653,5 +848,31 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 </footer>
 
 <script src="/overloop-blog/assets/js/blog.js" defer></script>
+<script>
+// TOC active state on scroll
+(function() {
+    var toc = document.getElementById('toc');
+    if (!toc) return;
+    var links = toc.querySelectorAll('a');
+    var sections = [];
+    links.forEach(function(a) {
+        var id = a.getAttribute('href').slice(1);
+        var el = document.getElementById(id);
+        if (el) sections.push({ el: el, link: a });
+    });
+    if (!sections.length) return;
+    var onScroll = function() {
+        var scrollY = window.scrollY + 100;
+        var current = sections[0];
+        for (var i = 0; i < sections.length; i++) {
+            if (sections[i].el.offsetTop <= scrollY) current = sections[i];
+        }
+        links.forEach(function(a) { a.classList.remove('active'); });
+        current.link.classList.add('active');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+</script>
 </body>
 </html>
