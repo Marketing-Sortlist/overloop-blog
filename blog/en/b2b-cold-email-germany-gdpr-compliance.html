@@ -298,17 +298,17 @@
 
         <ul class="nav-links">
             <li class="nav-dropdown">
-                <a href="/features" class="nav-dropdown-trigger">Features</a>
+                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
                 <div class="nav-dropdown-menu">
                     <ul class="nav-dropdown-content">
-                        <li><a href="/features">Multi-Channel Prospecting<span class="dropdown-desc">Email + LinkedIn in one sequence</span></a></li>
-                        <li><a href="/features">B2B Contact Database<span class="dropdown-desc">450M+ verified contacts</span></a></li>
-                        <li><a href="/features">AI Email Writing<span class="dropdown-desc">Hyper-personalized at scale</span></a></li>
-                        <li><a href="/features">LinkedIn Automation<span class="dropdown-desc">GDPR-compliant outreach</span></a></li>
+                        <li><a href="https://overloop.com/features">Multi-Channel Prospecting<span class="dropdown-desc">Email + LinkedIn in one sequence</span></a></li>
+                        <li><a href="https://overloop.com/features">B2B Contact Database<span class="dropdown-desc">450M+ verified contacts</span></a></li>
+                        <li><a href="https://overloop.com/features">AI Email Writing<span class="dropdown-desc">Hyper-personalized at scale</span></a></li>
+                        <li><a href="https://overloop.com/features">LinkedIn Automation<span class="dropdown-desc">GDPR-compliant outreach</span></a></li>
                     </ul>
                 </div>
             </li>
-            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="https://overloop.com/pricing">Pricing</a></li>
             <li class="nav-dropdown">
                 <a href="/overloop-blog/blog/en/" class="nav-dropdown-trigger">Resources</a>
                 <div class="nav-dropdown-menu">
@@ -317,7 +317,7 @@
                         <li><a href="/overloop-blog/tools/spam-checker">Spam Checker<span class="dropdown-desc">Free email analysis tool</span></a></li>
                         <li><a href="/overloop-blog/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Estimate your outbound ROI</span></a></li>
                         <li><a href="/overloop-blog/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Check SPF, DKIM, DMARC</span></a></li>
-                        <li><a href="/playbooks">Playbooks<span class="dropdown-desc">Industry-specific strategies</span></a></li>
+                        <li><a href="https://overloop.com/playbooks">Playbooks<span class="dropdown-desc">Industry-specific strategies</span></a></li>
                     </ul>
                 </div>
             </li>
@@ -429,6 +429,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             <a href="#eu-comparison">EU Market Comparison</a>
             <a href="#existing-customer">Existing Customer Exception</a>
             <a href="#five-strategies">5 Compliant Strategies</a>
+            <a href="#intent-data">Intent Data Signals</a>
             <a href="#data-handling">Data Handling</a>
             <a href="#tracking-pixels">Tracking Pixels</a>
             <a href="#enforcement">Enforcement</a>
@@ -597,6 +598,102 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <h3>Strategy 5: Postal Mail</h3>
 
 <p>Physical direct mail under GDPR legitimate interest. Include a call-to-action to opt in for email communications. More expensive per contact than email, but legally clean for cold outreach to German prospects and carries higher response rates for high-value accounts.</p>
+
+<h2 id="intent-data">Intent Data and Cold Email: What Signal Tools Can and Cannot Do</h2>
+
+<p>Intent platforms are everywhere in B2B sales: 6sense, Bombora, Clearbit Reveal, LinkedIn Sales Navigator alerts, Leadfeeder, RB2B, and newer AI-powered tools like Sortlist Radar. They identify which companies visit your website, research your category, or show buying signals on third-party sites. The question every sales team asks when they switch these tools on for the German market: <em>"If a German company visits our pricing page three times this week, can we just add the contacts to an Overloop sequence and hit send?"</em></p>
+
+<p>The answer is no. And the reasoning is the most misunderstood point in German B2B compliance.</p>
+
+<h3>Why intent signals do not unlock cold email in Germany</h3>
+
+<p>UWG Section 7(2) treats channels differently:</p>
+
+<ul>
+    <li><strong>Section 7(2) No. 1</strong> allows "presumed consent" (mutmassliche Einwilligung) for B2B <strong>phone calls</strong> when there are concrete, specific indications that the business would welcome the call.</li>
+    <li><strong>Section 7(2) No. 3</strong> requires "prior express consent" for <strong>email</strong>. No presumption, no exception for intent data, no relief for "warm" leads.</li>
+</ul>
+
+<p>A Radar signal, a Bombora surge, a pricing page visit, a demo request on a comparison site: these are exactly the kind of concrete indications of interest that BGH I ZR 169/07 had in mind when it defined the presumed consent standard for phone outreach. They are legally meaningful. They are useful. But they work in the phone column, not the email column. Intent data makes your phone call compliant. It does not make your email compliant.</p>
+
+<h3>Mentioning the signal in the email makes it worse</h3>
+
+<p>Sales teams often try to turn the intent signal into email copy: <em>"Hi Max, I noticed your team visited our pricing page twice this week."</em> In the German market, this single sentence stacks three violations in one email:</p>
+
+<ol>
+    <li><strong>UWG Section 7(2) No. 3.</strong> The email itself is unsolicited commercial communication without prior consent.</li>
+    <li><strong>TDDDG Section 25.</strong> You are confirming in writing that you tracked the recipient's device without consent. German authorities treat website tracking pixels and visitor identification tools the same way they treat cookies.</li>
+    <li><strong>GDPR Article 14.</strong> You obtained their identity from a third-party data source (your intent tool or its data partners) without meeting the disclosure requirements within the one-month window.</li>
+</ol>
+
+<p>This is one of the most reliably Abmahnung-triggering email patterns in the German market. Competitors, privacy advocates, and data protection authorities all know the signature.</p>
+
+<h3>Risk by channel when acting on intent signals</h3>
+
+<table class="table-keep">
+    <thead>
+        <tr><th>Action triggered by signal</th><th>Risk level</th><th>Why</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Cold email to detected contact</td><td><strong>High</strong></td><td>UWG §7(2) No. 3 requires express consent. Intent is not consent.</td></tr>
+        <tr><td>Cold email referencing the signal ("we saw you visited")</td><td><strong>Very high</strong></td><td>Stacks UWG §7 + TDDDG §25 + GDPR Art. 14 in a single message.</td></tr>
+        <tr><td>Cold email, signal hidden, no reference</td><td><strong>High</strong></td><td>Still a UWG §7 violation. Hiding the source does not cure it and may add transparency issues.</td></tr>
+        <tr><td>Phone call to detected contact</td><td><strong>Low</strong></td><td>The signal is the documented "concrete indication of interest" the BGH requires for presumed consent. Do not reveal the tracking on the call.</td></tr>
+        <tr><td>Non-promotional LinkedIn connection</td><td><strong>Low</strong></td><td>Not advertising under UWG §7. Valid path to initiate contact.</td></tr>
+        <tr><td>Postal mail with opt-in CTA for email</td><td><strong>Low</strong></td><td>GDPR legitimate interest is sufficient. Intent strengthens the LIA.</td></tr>
+    </tbody>
+</table>
+
+<h3>The compliant intent-to-email workflow</h3>
+
+<p>The signal is a trigger, not a permission slip. Route the signal to the channel the law allows, not the channel that scales fastest.</p>
+
+<ol>
+    <li><strong>Signal fires.</strong> Your intent platform flags Company X: three visits to the pricing page, a demo comparison request on a third-party site, a surge in category research, an AI Search query matching your keywords.</li>
+    <li><strong>Phone call.</strong> A sales rep calls the relevant contact. The intent data is your <em>internal</em> justification for the call, satisfying the BGH standard for presumed consent. Keep the call pitch contextual to their industry and probable use case. Do not say "I saw you on our website."</li>
+    <li><strong>Obtain email consent on the call.</strong> "Can I send you a case study and pricing by email?" If yes, log timestamp, scope, and context in your CRM. Best practice: send a short confirmation email asking them to reply "yes" to confirm, which turns the verbal consent into a written record.</li>
+    <li><strong>Email sequence triggers.</strong> Only now does the Overloop email step fire. The first email can reference the phone call, not the signal.</li>
+</ol>
+
+<p>Scalable variant: LinkedIn-first. Signal fires, a personalized non-promotional connection request goes out, the connection acceptance triggers a LinkedIn message asking for email permission, consent is logged, email sequence starts. This is the workflow that makes intent data usable at scale for the German market.</p>
+
+<h3>Concrete scenario: Sortlist Radar + agency Overloop campaign</h3>
+
+<p>This is a real pattern we see in the market. A Sortlist agency in Germany uses Radar to detect companies researching their service category on Sortlist pages. They then want to run an Overloop outbound campaign to those companies.</p>
+
+<p><strong>Non-compliant version</strong> (don't do this):</p>
+<ul>
+    <li>Radar flags "Company X researched SEO agencies"</li>
+    <li>Agency exports contact list</li>
+    <li>Overloop sequence sends email: "Hi Max, saw you were looking at SEO agencies on Sortlist..."</li>
+    <li>Result: UWG §7 violation + TDDDG violation + likely GDPR Article 14 violation. A single Abmahnung can cost the agency more than the deal is worth.</li>
+</ul>
+
+<p><strong>Compliant version</strong>:</p>
+<ul>
+    <li>Radar flags "Company X researched SEO agencies"</li>
+    <li>Agency BDR calls the marketing lead. Pitch is industry-contextual ("we work with [similar companies] on SEO"), no mention of the Radar signal or Sortlist tracking.</li>
+    <li>During the call, BDR asks: "Can I send you two case studies by email?" Prospect agrees.</li>
+    <li>BDR logs consent in Overloop with date, time, scope.</li>
+    <li>Overloop sequence triggers the email step. First email references the phone call, not the signal.</li>
+    <li>Result: compliant pipeline, auditable consent trail, same business outcome.</li>
+</ul>
+
+<p>Alternative LinkedIn flow: Radar flag triggers a personalized LinkedIn connection request from the agency BDR. On acceptance, a short message asks if email follow-up is welcome. On "yes," the Overloop email sequence starts. Same logic, different channel, fully asynchronous.</p>
+
+<h3>Phrases to never put in an email to a German prospect</h3>
+
+<ul>
+    <li>"We noticed you visited [specific page]"</li>
+    <li>"Our system flagged your company as a match"</li>
+    <li>"Based on your recent research into [topic]"</li>
+    <li>"You downloaded our guide on [X]" (unless they actually opted in through a form and you can prove it with a double opt-in confirmation)</li>
+    <li>"Your colleague [name] suggested I reach out" (without their written permission)</li>
+</ul>
+
+<p>Each of these invites an Abmahnung. A competitor or a privacy-aware recipient only needs to forward the email to a lawyer to trigger proceedings.</p>
+
+<div class="ovl-box"><div class="ovl-box-label"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> How Overloop handles this</div><p>Overloop supports the intent-to-channel routing workflow directly. Intent signals from your stack (or from partners like Sortlist Radar) can trigger a sequence that starts with a phone step or a LinkedIn step, not an email step, for German contacts. Consent tracking then records the date, time, scope, and source when the prospect grants email permission. The email step only fires after consent is logged. The signal tells you <em>who</em> deserves attention. The sequence enforces <em>how</em> you are allowed to reach them. Email-only tools cannot draw this line. Multi-channel sequences can.</p></div>
 
 <h2 id="data-handling">Data Handling Requirements</h2>
 
@@ -844,31 +941,31 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             </div>
             <div class="footer-col">
                 <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
+                <a href="https://overloop.com/features">Features</a>
+                <a href="https://overloop.com/pricing">Pricing</a>
                 <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
+                <a href="https://overloop.com/book-demo">Book a Demo</a>
             </div>
             <div class="footer-col">
                 <h4>Resources</h4>
                 <a href="/overloop-blog/blog/en/">Blog</a>
-                <a href="/playbooks">Playbooks</a>
+                <a href="https://overloop.com/playbooks">Playbooks</a>
                 <a href="/overloop-blog/tools/spam-checker">Spam Checker</a>
                 <a href="/overloop-blog/tools/roi-calculator">ROI Calculator</a>
                 <a href="/overloop-blog/tools/domain-health-checker">Domain Health</a>
             </div>
             <div class="footer-col">
                 <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
+                <a href="https://overloop.com/about">About</a>
+                <a href="https://overloop.com/testimonials">Testimonials</a>
                 <a href="mailto:hello@overloop.com">Contact</a>
-                <a href="/careers">Careers</a>
+                <a href="https://overloop.com/careers">Careers</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
+                <a href="https://overloop.com/terms">Terms</a>
+                <a href="https://overloop.com/privacy">Privacy</a>
+                <a href="https://overloop.com/gdpr">GDPR</a>
             </div>
         </div>
         <div class="footer-bottom">
