@@ -299,34 +299,47 @@
             flex: 1;
         }
 
-        /* Tool logos row */
-        .blog-card-logos {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
-        }
-        .blog-card-logos img {
-            width: 22px;
-            height: 22px;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            background: #fff;
-        }
-        .blog-card-logos .logo-count {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-left: 4px;
-        }
-
         .blog-card-v2 .card-meta {
             font-size: 12px;
             color: var(--text-secondary);
             opacity: 0.6;
             margin-top: auto;
             padding-top: 12px;
+        }
+
+        /* Versus section */
+        .versus-section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        .versus-section-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .versus-section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+        .versus-section-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .versus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .versus-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 580px) {
+            .versus-grid { grid-template-columns: 1fr; }
         }
 
         /* Section heading in main */
@@ -337,6 +350,17 @@
             letter-spacing: 0.1em;
             color: var(--text-secondary);
             margin-bottom: 8px;
+        }
+
+        /* Article count */
+        .blog-count {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .blog-count strong {
+            color: var(--violet);
         }
     </style>
 </head>
@@ -367,6 +391,7 @@
                 <div class="nav-dropdown-menu">
                     <ul class="nav-dropdown-content">
                         <li><a href="/overloop-blog/blog/en/">Blog<span class="dropdown-desc">Outbound strategies and guides</span></a></li>
+                        <li><a href="/overloop-blog/versus/">Versus<span class="dropdown-desc">Head-to-head tool comparisons</span></a></li>
                         <li><a href="/overloop-blog/tools/spam-checker">Spam Checker<span class="dropdown-desc">Free email analysis tool</span></a></li>
                         <li><a href="/overloop-blog/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Estimate your outbound ROI</span></a></li>
                         <li><a href="/overloop-blog/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Check SPF, DKIM, DMARC</span></a></li>
@@ -406,204 +431,48 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
     <!-- Featured Hero Card -->
     <a href="/overloop-blog/blog/en/best-ai-sales-tools.html" class="blog-hero-card">
         <span class="featured-badge">Featured Guide</span>
-        <h2>Best AI Sales Tools 2026: The Buyer's Guide That Actually Helps You Decide</h2>
+        <h2>Best AI Sales Tools 2026: The Buyer&rsquo;s Guide That Actually Helps You Decide</h2>
         <p class="featured-desc">We tested 30+ AI sales tools across 6 categories: BDR, email, LinkedIn, enrichment, conversation intelligence, and email coaching. Comparison table with pricing, G2 ratings, and decision framework.</p>
         <span class="featured-cta">Read the full guide <span>&rarr;</span></span>
-        <span class="featured-meta">22 min read &middot; 19 tools compared &middot; April 2026</span>
+        <span class="featured-meta">22 min read &middot; 19 tools compared &middot; August 2024</span>
     </a>
 
     <main style="padding: 56px 24px 80px; background: var(--bg);">
         <div style="max-width: 1000px; margin: 0 auto;">
 
+            <!-- Article count -->
+            <p class="blog-count"><strong>74</strong> articles on outbound sales, cold email, and AI tools</p>
+
             <!-- Category filter pills -->
             <div class="blog-filters">
-                <button class="active" data-filter="all">All articles</button>
+                <button class="active" data-filter="all">All articles (74)</button>
                 <button data-filter="cold-email">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    Cold Email
+                    Sales (60)
                 </button>
                 <button data-filter="ai-tools">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                    AI Tools
+                    AI Tools (5)
                 </button>
                 <button data-filter="comparisons">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    Comparisons
-                </button>
-                <button data-filter="legal">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Legal
+                    Comparisons (9)
                 </button>
             </div>
 
             <!-- Card Grid -->
             <div class="blog-grid" id="blog-grid">
 
-                <!-- COLD EMAIL CLUSTER -->
-                <a href="/overloop-blog/blog/en/cold-email-stats-2018.html" class="blog-card-v2" data-category="cold-email">
+                <a href="/overloop-blog/blog/en/best-lead-generation-tools.html" class="blog-card-v2" data-category="cold-email">
                     <div class="blog-card-gradient cold-email"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">12 min</span>
-                        </div>
-                        <h3>55+ Cold Email Statistics for 2026: Benchmarks, Data &amp; ROI</h3>
-                        <p class="card-desc">Open rates, reply rates, conversion rates, ROI, deliverability, and industry benchmarks from real campaign data.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/whats-the-best-email-length-for-sales-outreach.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">8 min</span>
-                        </div>
-                        <h3>Cold Email Length: The Data-Driven Guide to Ideal Length (2026)</h3>
-                        <p class="card-desc">Data shows 50-125 words get the best response rates. Stats, examples, and best practices for every outreach type.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/455-email-spam-trigger-words-avoid-2018.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">15 min</span>
-                        </div>
-                        <h3>600+ Email Spam Trigger Words to Avoid in 2026 (Full List)</h3>
-                        <p class="card-desc">600+ spam trigger words organized by 18 categories with risk levels and safer alternatives.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/500-trigger-words.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">18 min</span>
-                        </div>
-                        <h3>1000+ Trigger Words That Get Replies in Cold Email (2026 List)</h3>
-                        <p class="card-desc">1000+ words organized by emotion: urgency, curiosity, trust, authority, and more.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/cold-emailing-link-building.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">10 min</span>
-                        </div>
-                        <h3>Cold Email Link Building: How We Earned 23 Backlinks from 500 Emails</h3>
-                        <p class="card-desc">4.6% conversion rate. 8 copy-paste templates and the full playbook from our link building campaign.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/how-to-find-someone-email-address-efficiently.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
+                            <span class="card-badge cold-email">Sales</span>
                             <span class="blog-card-readtime">14 min</span>
                         </div>
-                        <h3>How to Find Someone's Email Address (17 Methods That Actually Work)</h3>
-                        <p class="card-desc">Free tools, paid finders, LinkedIn tricks, GitHub commits, and Google operators. 17 methods tested.</p>
+                        <h3>Best Lead Generation Tools: 10 Picks for B2B Teams</h3>
+                        <p class="card-desc">The 10 best lead generation tools for B2B teams in 2026: Overloop AI, Apollo.io, ZoomInfo, Clearbit, and more. Pricing from free to $49/mo. Compare features and pick the right s...</p>
                         <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/get-email-from-linkedin-profile.html" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Cold Email</span>
-                            <span class="blog-card-readtime">9 min</span>
-                        </div>
-                        <h3>How to Get Email from LinkedIn Profile (9 Methods, Step by Step)</h3>
-                        <p class="card-desc">Free manual methods, Chrome extensions, Google operators, and API approaches for extracting emails.</p>
-                        <div class="card-meta">April 10, 2026</div>
-                    </div>
-                </a>
-
-                <!-- AI TOOLS CLUSTER -->
-                <a href="/overloop-blog/blog/en/11-best-ai-bdr-tools.html" class="blog-card-v2" data-category="ai-tools">
-                    <div class="blog-card-gradient ai-tools"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge ai-tools">AI Tools</span>
-                            <span class="blog-card-readtime">16 min</span>
-                        </div>
-                        <h3>14 Best AI BDR Tools in 2026 (Tested &amp; Compared)</h3>
-                        <p class="card-desc">Real pricing, real pros/cons, honest verdicts. Overloop, Artisan, 11x, Clay, and more tested head-to-head.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/clay.com.png" alt="Clay" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/amplemarket.svg" alt="Amplemarket" loading="lazy">
-                            <span class="logo-count">+10 more</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/9-best-ai-email-outreach-tools.html" class="blog-card-v2" data-category="ai-tools">
-                    <div class="blog-card-gradient ai-tools"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge ai-tools">AI Tools</span>
-                            <span class="blog-card-readtime">14 min</span>
-                        </div>
-                        <h3>12 Best AI Email Outreach Tools in 2026 (Tested &amp; Compared)</h3>
-                        <p class="card-desc">AI writing quality, deliverability, warm-up, and pricing compared across 12 tools with real campaigns.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <span class="logo-count">+9 more</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/en/8-best-ai-linkedin-outreach-tools.html" class="blog-card-v2" data-category="ai-tools">
-                    <div class="blog-card-gradient ai-tools"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge ai-tools">AI Tools</span>
-                            <span class="blog-card-readtime">13 min</span>
-                        </div>
-                        <h3>13 Best AI LinkedIn Outreach Tools in 2026 (Safety-First Guide)</h3>
-                        <p class="card-desc">Safety features, daily limits, ban risk, and G2 ratings. Honest comparison with real data from 13 tools.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/expandi.io.svg" alt="Expandi" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
-                            <span class="logo-count">+10 more</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ALTERNATIVES / COMPARISONS -->
-                <a href="/overloop-blog/blog/en/apollo-alternatives.html" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge comparisons">Comparisons</span>
-                            <span class="blog-card-readtime">18 min</span>
-                        </div>
-                        <h3>20 Best Apollo Alternatives in 2026 (Tested With Real Campaigns)</h3>
-                        <p class="card-desc">Overloop, ZoomInfo, Cognism, Instantly, Hunter.io, and 14 more tested on real outbound campaigns.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/cognism.svg" alt="Cognism" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/zoominfo.com.png" alt="ZoomInfo" loading="lazy">
-                            <span class="logo-count">+16 more</span>
-                        </div>
                     </div>
                 </a>
 
@@ -612,16 +481,11 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparisons</span>
-                            <span class="blog-card-readtime">11 min</span>
+                            <span class="blog-card-readtime">16 min</span>
                         </div>
                         <h3>7 Best Instantly Alternatives in 2026 (For Teams That Need More Than Email)</h3>
-                        <p class="card-desc">Instantly is email-only. 7 alternatives compared for LinkedIn, calling, and deliverability.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <span class="logo-count">+4 more</span>
-                        </div>
+                        <p class="card-desc">Instantly is email-only. If you need LinkedIn, calling, or better deliverability, here are 7 Instantly alternatives compared on features and pricing.</p>
+                        <div class="card-meta">April 10, 2026</div>
                     </div>
                 </a>
 
@@ -630,16 +494,11 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparisons</span>
-                            <span class="blog-card-readtime">10 min</span>
+                            <span class="blog-card-readtime">16 min</span>
                         </div>
                         <h3>9 Best Lemlist Alternatives in 2026 (Cheaper, Simpler, Better)</h3>
-                        <p class="card-desc">9 tools compared on pricing, multichannel features, and AI writing. Honest breakdown.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <span class="logo-count">+6 more</span>
-                        </div>
+                        <p class="card-desc">Looking for a Lemlist alternative? We compare 9 tools on pricing, multichannel features, and AI writing. Honest breakdown.</p>
+                        <div class="card-meta">April 10, 2026</div>
                     </div>
                 </a>
 
@@ -648,16 +507,11 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparisons</span>
-                            <span class="blog-card-readtime">10 min</span>
+                            <span class="blog-card-readtime">14 min</span>
                         </div>
-                        <h3>8 Best Outreach.io Alternatives in 2026 (Transparent Pricing)</h3>
-                        <p class="card-desc">Transparent pricing, G2 ratings, and multichannel features. 8 alternatives compared.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/outreach.io.png" alt="Outreach" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
-                            <span class="logo-count">+5 more</span>
-                        </div>
+                        <h3>8 Best Outreach.io Alternatives in 2026 (For Teams Who Want Transparent Pricing)</h3>
+                        <p class="card-desc">Outreach.io too expensive or too complex? Compare 8 alternatives with transparent pricing, G2 ratings, and multichannel features.</p>
+                        <div class="card-meta">April 10, 2026</div>
                     </div>
                 </a>
 
@@ -666,16 +520,50 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparisons</span>
-                            <span class="blog-card-readtime">10 min</span>
+                            <span class="blog-card-readtime">14 min</span>
                         </div>
                         <h3>8 Best Salesloft Alternatives in 2026 (After the Clari Merger)</h3>
-                        <p class="card-desc">Salesloft merged with Clari in 2025. 8 alternatives compared for teams rethinking their stack.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <span class="logo-count">+5 more</span>
+                        <p class="card-desc">Salesloft merged with Clari in 2025. If you are rethinking your sales engagement stack, here are 8 alternatives compared on features and pricing.</p>
+                        <div class="card-meta">April 10, 2026</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/sales-appointment-setting.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">16 min</span>
                         </div>
+                        <h3>Sales appointment setting: book more meetings fast</h3>
+                        <p class="card-desc">If your appointment setting feels busy but your calendar stays empty, you don’t have a lead problem—you have a system problem. You can send 100 emails, ...</p>
+                        <div class="card-meta">March 27, 2026</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/increase-saas-sales-growth-system.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Increase saas sales with a repeatable growth system</h3>
+                        <p class="card-desc">You don’t increase SaaS sales by “doing more”—you do it by building a system that makes the next month easier than the last. If your pipeline spikes aft...</p>
+                        <div class="card-meta">March 18, 2026</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/apollo-alternatives.html" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Apollo Alternatives: 13 Best Competitors for Sales Teams in 2025</h3>
+                        <p class="card-desc">Discover top Apollo alternatives to supercharge your sales outreach. Compare 13 best Apollo competitors and find the perfect fit for your prospecting goals.</p>
+                        <div class="card-meta">December 16, 2025</div>
                     </div>
                 </a>
 
@@ -683,15 +571,12 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="blog-card-gradient comparisons"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge comparisons">Review</span>
-                            <span class="blog-card-readtime">9 min</span>
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
                         </div>
-                        <h3>La Growth Machine Review (2026): Features, Pricing, Pros &amp; Cons</h3>
-                        <p class="card-desc">Honest review from a competitor. Multichannel outreach, voice messages, pricing in EUR.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                        </div>
+                        <h3>La Growth Machine Review: Is It Worth It? [2025 Verdict]</h3>
+                        <p class="card-desc">Thinking of signing up? Read this honest La Growth Machine review first. Discover the exact multi-channel workflow that 10x’d our response rates.</p>
+                        <div class="card-meta">December 12, 2025</div>
                     </div>
                 </a>
 
@@ -699,33 +584,970 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
                     <div class="blog-card-gradient comparisons"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge comparisons">Review</span>
-                            <span class="blog-card-readtime">8 min</span>
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
                         </div>
-                        <h3>LinkedIn Helper Review (2026): Features, Pricing, Pros &amp; Cons</h3>
-                        <p class="card-desc">30-day test. Features, pricing ($15-45/mo), ban risk, and comparison with cloud-based tools.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/linkedhelper.com.svg" alt="LinkedIn Helper" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                        </div>
+                        <h3>LinkedIn Helper Review: Features, Safety &amp; Alternatives (2025)</h3>
+                        <p class="card-desc">Is LinkedIn Helper the best tool for B2B automation? Discover its key features, safety limits, and how it compares to Overloop in our full review.</p>
+                        <div class="card-meta">December 12, 2025</div>
                     </div>
                 </a>
 
-                <!-- LEGAL -->
-                <a href="/overloop-blog/blog/en/cold-email-illegal.html" class="blog-card-v2" data-category="legal">
-                    <div class="blog-card-gradient legal"></div>
+                <a href="/overloop-blog/blog/en/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690.html" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge legal">Legal</span>
-                            <span class="blog-card-readtime">16 min</span>
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">15 min</span>
                         </div>
-                        <h3>Is Cold Email Illegal? Country-by-Country Legal Guide (2026)</h3>
-                        <p class="card-desc">14 jurisdictions covered: CAN-SPAM, GDPR, PECR, CASL, Spam Act, and more. With compliance checklist.</p>
-                        <div class="card-meta">April 10, 2026</div>
+                        <h3>11 Best LinkedIn Automation Tools to Accelerate Your B2B Outreach in 2025</h3>
+                        <p class="card-desc">Discover the top 11 LinkedIn automation tools of 2025. Compare features and boost B2B lead generation with AI-driven sales automation.</p>
+                        <div class="card-meta">December 11, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/overloop-joins-sortlist.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Overloop Joins Forces with Sortlist</h3>
+                        <p class="card-desc">Today marks a new chapter for Overloop. We’ve been acquired by Sortlist, the leading marketplace for matching companies with marketing and professional service agencies.</p>
+                        <div class="card-meta">December 10, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>Sales Engagement Platforms Compared: Top Sales Engagement Platforms 2025 Versus Guide</h3>
+                        <p class="card-desc">Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.</p>
+                        <div class="card-meta">October 17, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis.html" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>AI Sales Tool Adoption in B2B Outbound Prospecting: 2025 Industry Review &amp; Analysis</h3>
+                        <p class="card-desc">Discover key trends, insights, and user sentiment for AI Sales Tool adoption in 2025 with expert reviews and actionable analysis.</p>
+                        <div class="card-meta">October 14, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>LinkedIn Automation Guide 2025: Safety, Tools &amp; Limits</h3>
+                        <p class="card-desc">LinkedIn Automation Guide 2025 reveals what’s safe, what gets banned, and the exact tools and limits to automate without risking your account.</p>
+                        <div class="card-meta">June 19, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-proven-sales-prospecting-tips-to-boost-your-pipeline-fast.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Proven Sales Prospecting Tips to Boost Your Pipeline Fast</h3>
+                        <p class="card-desc">Unlock top 10 sales prospecting tips and discover how automation with Overloop saves time and grows your pipeline efficiently.</p>
+                        <div class="card-meta">June 15, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>The Ultimate Checklist for Selecting the Best AI SDR Tools in 2025</h3>
+                        <p class="card-desc">Use this AI SDR checklist to find the best AI SDR tools for 2025. Ensure efficiency, personalization, and seamless integration for your team.</p>
+                        <div class="card-meta">May 31, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">12 min</span>
+                        </div>
+                        <h3>How to Find B2B Emails (Fast &amp; GDPR-Safe Methods)</h3>
+                        <p class="card-desc">How to Find B2B Emails without wasting hours or risking compliance. Proven tools, smart tactics, and methods that actually work in 2025.</p>
+                        <div class="card-meta">May 11, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/lead-generation-strategies-every-saas-business-should-try-today.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">11 min</span>
+                        </div>
+                        <h3>Lead Generation Strategies Every SaaS Business Should Try Today</h3>
+                        <p class="card-desc">Discover proven lead generation strategies for SaaS businesses and boost B2B sales with Overloop&#x27;s powerful automation tools.</p>
+                        <div class="card-meta">May 3, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-essential-sales-tools-every-b2b-team-needs-in-2025.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Essential Sales Tools Every B2B Team Needs in 2025</h3>
+                        <p class="card-desc">Discover the 10 must-have sales tools for B2B companies in 2025 to save time, boost productivity, and close more deals.</p>
+                        <div class="card-meta">April 24, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/ai-generated-value-propositions-guide.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>AI-Generated Value Propositions: Guide</h3>
+                        <p class="card-desc">Explore how AI can enhance sales outreach by creating personalized, data-driven value propositions that resonate with customers.</p>
+                        <div class="card-meta">February 11, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-write-a-successful-cold-email.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">17 min</span>
+                        </div>
+                        <h3>The 2025 Cold Email Guide</h3>
+                        <p class="card-desc">The 2025 Cold Email Guide shows exactly how to write emails that get replies, not ignored: updated tactics, real examples, and zero fluff.</p>
+                        <div class="card-meta">February 10, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/top-8-sales-prospecting-tools-for-small-business-teams.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>8 Best Prospecting Tools for SMBs (Free &amp; Paid)</h3>
+                        <p class="card-desc">Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.</p>
+                        <div class="card-meta">February 5, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/common-sales-automation-mistakes-and-how-to-avoid-them.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Common Sales Automation Mistakes and How to Avoid Them</h3>
+                        <p class="card-desc">Learn how to navigate common sales automation pitfalls to enhance efficiency and maintain meaningful customer interactions.</p>
+                        <div class="card-meta">February 3, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-best-practices-for-multi-channel-sales-campaigns.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Best Practices for Multi-Channel Sales Campaigns</h3>
+                        <p class="card-desc">Learn effective strategies for running successful multi-channel sales campaigns, from audience understanding to leveraging AI tools.</p>
+                        <div class="card-meta">January 27, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-write-personalized-sales-emails-at-scale.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Write Personalized Sales Email (High-Reply Framework for 2025)</h3>
+                        <p class="card-desc">Write Personalized Sales Email that actually gets replies. Proven structure, real personalization tactics, and examples to close more deals.</p>
+                        <div class="card-meta">January 22, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/7-ai-sales-prospecting-tools-that-boost-lead-generation.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>7 AI Sales Prospecting Tools That Boost Lead Generation</h3>
+                        <p class="card-desc">Explore seven AI tools that enhance sales prospecting, automate tasks, and improve lead generation for businesses of all sizes.</p>
+                        <div class="card-meta">January 20, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-build-scalable-lead-generation-workflows.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Build Scalable Lead Generation Workflows</h3>
+                        <p class="card-desc">Learn how to create scalable lead generation workflows that improve efficiency, lead quality, and save time through automation and templates</p>
+                        <div class="card-meta">January 18, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-ai-follow-up-scheduling-boosts-sales-efficiency.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How AI Follow-Up Scheduling Boosts Sales Efficiency</h3>
+                        <p class="card-desc">AI-driven follow-up scheduling enhances sales efficiency by automating personalized outreach and timing, ensuring no opportunities are missed.</p>
+                        <div class="card-meta">January 12, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/ai-sales-tools-roi-key-metrics-to-track.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>AI Sales Tools ROI: Key Metrics to Track</h3>
+                        <p class="card-desc">Learn how to measure the ROI of AI sales tools through cost savings, revenue growth, and efficiency improvements for better business outcomes.</p>
+                        <div class="card-meta">January 7, 2025</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/linkedin-vs-email-which-performs-better-for-b2b-outreach.html" class="blog-card-v2" data-category="comparisons">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>LinkedIn vs Email: Which Performs Better for B2B Outreach?</h3>
+                        <p class="card-desc">Explore the strengths and weaknesses of LinkedIn and email for B2B outreach, and learn how to combine both for optimal results.</p>
+                        <div class="card-meta">December 26, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-best-ai-sales-assistant-tools.html" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Best AI Sales Assistant Tools</h3>
+                        <p class="card-desc">Review of the 10 best AI sales assistant tools, including features, pros, cons, and pricing</p>
+                        <div class="card-meta">September 12, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/9-best-ai-agent-tools-for-sales.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Best AI Agent Tools for Sales</h3>
+                        <p class="card-desc">Review of the 9 best AI Agents Tools for sales, including features, pros, and cons</p>
+                        <div class="card-meta">September 9, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/best-ai-sales-tools.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Best AI Sales Tools</h3>
+                        <p class="card-desc">Review of the 8 best AI sales tools, including features, pros, and cons | Overloop AI</p>
+                        <div class="card-meta">August 29, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/9-best-ai-email-outreach-tools.html" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Best AI Email Outreach Tools</h3>
+                        <p class="card-desc">Review of the 9 best AI Email Outreach Tools, including features, pros, and cons</p>
+                        <div class="card-meta">April 13, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/get-email-from-linkedin-profile.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>How to Get Emails from LinkedIn Profiles (Free Tool &amp; Guide)</h3>
+                        <p class="card-desc">How to Get Emails from LinkedIn Profiles using a free tool and proven methods: no scraping, no guesswork, just accurate B2B emails.</p>
+                        <div class="card-meta">March 19, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/9-best-ai-multichannel-outreach-tools.html" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Best AI Multichannel Outreach Tools</h3>
+                        <p class="card-desc">Review of the 9 best AI Multichannel Outreach Tools, including features, pros, and cons</p>
+                        <div class="card-meta">March 13, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/pre-call-planning.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Master pre call planning for effective conversations</h3>
+                        <p class="card-desc">Discover the importance of pre call planning in sales. Enhance your sales conversations with our effective tips and planning techniques!</p>
+                        <div class="card-meta">March 12, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/11-best-ai-bdr-tools.html" class="blog-card-v2" data-category="ai-tools">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>11 Best AI BDR Tools</h3>
+                        <p class="card-desc">Review of the 11 best AI BDR Tools, including features, pros, and cons</p>
+                        <div class="card-meta">March 8, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-compose-a-follow-up-email.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>How to compose a follow-up email: our guide</h3>
+                        <p class="card-desc">Running out of email inspiration? We teach you how to compose a follow-up email your prospects will remember! Boost your responses with Overloop!</p>
+                        <div class="card-meta">March 7, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/8-best-ai-linkedin-outreach-tools.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>8 Best AI LinkedIn Outreach Tools</h3>
+                        <p class="card-desc">Review of the 8 best AI LinkedIn Outreach Tools, including features, pros, and cons</p>
+                        <div class="card-meta">March 1, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/email-automation.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Boost your sales productivity with email automation</h3>
+                        <p class="card-desc">Discover the game-changing benefits of email automation for your sales business!</p>
+                        <div class="card-meta">February 29, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/cold-email-illegal.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Is Cold Email Illegal?</h3>
+                        <p class="card-desc">Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM (US), GDPR (EU), PECR (UK), CASL (Canada), Spam Act (Australia), LGPD (Brazil), PIPA (South Korea), UAE, S...</p>
+                        <div class="card-meta">January 3, 2024</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/best-subject-lines-for-sales-emails.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Best subject lines for sales emails: some examples and keys to success</h3>
+                        <p class="card-desc">The subject line of an email is the first visible text from the inbox by the subscriber, which will indicate what the content of the received email is about....</p>
+                        <div class="card-meta">April 26, 2022</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-find-someone-email-address-efficiently.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>How to find someone&#x27;s email address efficiently</h3>
+                        <p class="card-desc">17 proven methods to find anyone&#x27;s email address in 2026. Free tools, paid finders, LinkedIn tricks, GitHub commits, Chrome extensions, and verification steps.</p>
+                        <div class="card-meta">April 19, 2022</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/sales-email-tips-to-help-you-close-more-deals.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Sales emails tips to help you close more deals</h3>
+                        <p class="card-desc">Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, A/B testing, and personalization strategies.</p>
+                        <div class="card-meta">March 27, 2022</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/how-to-write-a-successful-follow-up-email.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>How to write a successful follow up email, step by step</h3>
+                        <p class="card-desc">The most important parts of cold email is the follow-up email. We&#x27;ll help you write a successful follow up email, step by step.</p>
+                        <div class="card-meta">March 9, 2022</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/5-main-steps-for-an-effective-cold-email-marketing-strategy.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>5 Main Steps for an Effective Cold Email Marketing Strategy</h3>
+                        <p class="card-desc">Writing the perfect cold email is key if you want to get success with your cold email campaigns or your sales outbound activities. Discover the best practices in cold emailing a...</p>
+                        <div class="card-meta">February 22, 2022</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/455-email-spam-trigger-words-avoid-2018.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>455 Spam Trigger Words to Avoid in 2021</h3>
+                        <p class="card-desc">The most comprehensive list of 600+ email spam trigger words organized by 18 categories with risk levels and safer alternatives. Updated for 2026.</p>
+                        <div class="card-meta">October 14, 2021</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/automations.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">2 min</span>
+                        </div>
+                        <h3>Automations</h3>
+                        <p class="card-desc">A huge update in the Overloop platform, which completely changed the way you do your cold outreach.</p>
+                        <div class="card-meta">August 31, 2020</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/best-practices-for-links-in-your-emails.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>Best Practices for Links In Your Emails</h3>
+                        <p class="card-desc">Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.</p>
+                        <div class="card-meta">August 28, 2020</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/whats-the-best-email-length-for-sales-outreach.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>The Ideal Cold Email Length in 2025 (Backed by Data)</h3>
+                        <p class="card-desc">Cold Email Length revealed: the exact word count that boosts replies in 2025, backed by real data so your emails get read, not deleted.</p>
+                        <div class="card-meta">July 26, 2020</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/seasonal-sales.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Relying on Seasonal Sales? Here&#x27;s How to Survive in Between</h3>
+                        <p class="card-desc">Seasonal businesses can still make money year-round. Learn practical strategies for prospecting, cross-selling, and staying visible during the off season.</p>
+                        <div class="card-meta">August 19, 2019</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/sales-presentations.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Back to Basics: Why It’s Time to Kill the Generic Sales Presentation</h3>
+                        <p class="card-desc">As a salesperson, it’s your job to advise prospects on the ways your offering is uniquely positioned to address their unique needs.</p>
+                        <div class="card-meta">May 20, 2019</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/know-prospect-find.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How To Know Who To Prospect And Where To Find Them</h3>
+                        <p class="card-desc">Learn how to identify your ideal prospects and discover the best channels to find them for effective B2B sales prospecting.</p>
+                        <div class="card-meta">October 24, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/cold-emailing-link-building.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Cold Email Outreach for Link Building [Case Study]</h3>
+                        <p class="card-desc">We sent 500 cold emails for link building and earned 23 backlinks (4.6% conversion). Get 8 copy-paste templates, subject line data, deliverability setup, and the full campaign p...</p>
+                        <div class="card-meta">June 26, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/inside-sales-outside-sales.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Inside Sales vs Outside Sales: What&#x27;s The Best Solution For Your Company?</h3>
+                        <p class="card-desc">Compare inside sales vs outside sales to find the best approach for your business. Explore key differences in tools, costs, sales cycles, and compensation.</p>
+                        <div class="card-meta">May 15, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/best-sales-email-template.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>This Sales Email Template Will Make All SDR&#x27;s Wish They Came Up With it</h3>
+                        <p class="card-desc">A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.</p>
+                        <div class="card-meta">April 16, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/perfect-follow-up-email-campaign.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Write the Perfect Follow-up Email Sequence [Blueprint]</h3>
+                        <p class="card-desc">Learn how to write the perfect follow-up email sequence with proven blueprints. Discover the minimum sequence, business sequence, and value-driven strategies that get replies.</p>
+                        <div class="card-meta">March 28, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/6-reasons-sales-process-broken.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>6 Reasons Why Your Sales Process is Broken</h3>
+                        <p class="card-desc">Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation, and learn how to fix them.</p>
+                        <div class="card-meta">February 7, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/cold-email-stats-2018.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>4 Eye-Opening Cold Email Stats for 2018 [Based on 3M+ Emails]</h3>
+                        <p class="card-desc">55+ cold email statistics for 2026: open rates, reply rates, conversion rates, ROI, deliverability, and industry benchmarks. Data from 12M+ outbound emails.</p>
+                        <div class="card-meta">January 3, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/boost-sales-motivation.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Why Salespeople Should NOT Obsess Over Results [Interview with Carson V. Heady]</h3>
+                        <p class="card-desc">Carson V. Heady shares insights on sales motivation, why process matters more than results, and how appreciation and responsiveness drive long-term sales success.</p>
+                        <div class="card-meta">January 1, 2018</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/kickstart-sales-career-2.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Kickstart Your Sales Career [Interview With Marcus Cauchi]</h3>
+                        <p class="card-desc">Sales coach Marcus Cauchi from Sandler Training shares advice on launching a sales career, hiring great salespeople, and becoming a better sales manager.</p>
+                        <div class="card-meta">December 18, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/17-sentences-never-use-sales-email.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>17 Sentences You Should Never Use In a Sales Email</h3>
+                        <p class="card-desc">Discover the 17 most common sentences that kill your sales emails and learn what to write instead to grab attention, build trust, and close deals.</p>
+                        <div class="card-meta">December 13, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/500-trigger-words.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>500+ Trigger Words Guaranteed to Supercharge Your Copy</h3>
+                        <p class="card-desc">The most comprehensive trigger words list online: 1000+ words organized by emotion for cold emails. Urgency, curiosity, trust, exclusivity, FOMO, social proof, greed, anger, eas...</p>
+                        <div class="card-meta">October 23, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-favourite-sales-movies.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Top Salespeople&#x27;s Favourite Sales Movies</h3>
+                        <p class="card-desc">10 top salespeople share their favourite sales movies -- from motivational classics to surprising picks -- with insights on what makes each film a must-watch.</p>
+                        <div class="card-meta">October 9, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/5-rules-more-successful-salespeople.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>5 Rules That&#x27;ll Make You More Successful Than 90% of Salespeople Today</h3>
+                        <p class="card-desc">Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations, persistence, and customer success.</p>
+                        <div class="card-meta">September 18, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/following-up-surefire-techniques.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>48% of Salespeople Will Never Do Any of This</h3>
+                        <p class="card-desc">Master the art of following up with proven email templates for every situation. From post-trial to long-term nurturing, get scripts that actually convert.</p>
+                        <div class="card-meta">September 13, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/7-reasons-emails-bounce.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>7 Reasons Emails Bounce And How to Avoid It</h3>
+                        <p class="card-desc">Discover the 7 most common reasons your emails bounce and learn actionable strategies to reduce bounces and protect your sender reputation.</p>
+                        <div class="card-meta">September 5, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/increase-reply-rate.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How To Get a 31% Reply Rate to Your Sales Emails [Case Study]</h3>
+                        <p class="card-desc">Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation, personalization, and follow-ups.</p>
+                        <div class="card-meta">August 15, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/deal-objections.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Should you take &quot;No&quot; for an answer?</h3>
+                        <p class="card-desc">Learn how to handle sales objections like a pro. From generic no&#x27;s to real objections on price, timing, and authority, turn resistance into closed deals.</p>
+                        <div class="card-meta">August 6, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/ab-testing-email-drip-campaigns.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Our Guide to A/B Testing Email Drip Campaigns</h3>
+                        <p class="card-desc">Learn how to A/B test your email drip campaigns effectively. Master subject lines, from fields, delivery times, and more to maximize open rates, click-throughs, and replies.</p>
+                        <div class="card-meta">July 13, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/9-reasons-never-buy-email-lists.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Reasons Why You Should Never Buy Email Lists</h3>
+                        <p class="card-desc">Discover the 9 critical reasons why buying email lists destroys your deliverability, reputation, and sales results. Build your list the right way instead.</p>
+                        <div class="card-meta">June 27, 2017</div>
+                    </div>
+                </a>
+
+                <a href="/overloop-blog/blog/en/10-pro-tips-avoid-spam-folder.html" class="blog-card-v2" data-category="cold-email">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Pro Tips to Avoid the Spam Folder</h3>
+                        <p class="card-desc">Discover 10 proven tips to keep your emails out of the spam folder, from subject line best practices to sender reputation and list hygiene.</p>
+                        <div class="card-meta">May 19, 2017</div>
                     </div>
                 </a>
 
             </div>
+
+            <!-- Versus Section -->
+            <div class="versus-section">
+                <div class="versus-section-header">
+                    <h2>Head-to-Head Comparisons</h2>
+                    <p>Side-by-side tool comparisons to help you pick the right platform.</p>
+                </div>
+                <div class="versus-grid">
+
+                    <a href="/overloop-blog/versus/apollo-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Apollo vs Lemlist: Which B2B Prospecting Tool Should You Choose?</h3>
+                            <p class="card-desc">Compare Apollo vs Lemlist for B2B sales outreach. Database, personalization, automation, pricing, and deliverability compared. Plus a unified alter...</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/instantly-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Instantly vs Lemlist: Which Cold Outreach Tool Wins in 2026?</h3>
+                            <p class="card-desc">Compare Instantly vs Lemlist for cold email outreach. Deliverability, personalization, multi-channel, and pricing compared. Plus a better alternative.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/lemlist-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Lemlist vs Apollo: Which Prospecting Tool Wins for B2B Sales?</h3>
+                            <p class="card-desc">Compare Lemlist vs Apollo for B2B outbound sales. Database, personalization, multi-channel outreach, and pricing compared. Plus a third alternative.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Apollo: Which AI Sales Tool Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Apollo for B2B outbound sales in 2026. See how features, pricing, databases, and AI capabilities stack up side-by-side.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-artisan.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Artisan: Which AI Sales Agent Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Artisan (Ava) for AI-powered outbound sales. Features, pricing, setup, multi-channel outreach compared side-by-side.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-hubspot.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs HubSpot: Which Fits Your Outbound Sales in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs HubSpot for outbound sales in 2026. Sequences, CRM depth, AI features, pricing, and integrations compared for sales teams.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-instantly.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Instantly: Which Cold Email Tool Delivers in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Instantly for cold email outreach. DFY setup, AI writing, database size, and deliverability compared head-to-head.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Lemlist: Which Outreach Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Lemlist for B2B cold outreach. DFY setup vs DIY, AI personalization, email warmup, and pricing compared side-by-side.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-reply.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Reply: Which Outbound Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Reply for outbound sales in 2026. Prospecting, sequences, deliverability, AI, integrations, and pricing compared head-to-head.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-saleshandy.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Saleshandy: Which Cold Email Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Saleshandy for cold email in 2026. Prospecting, deliverability, AI writing, pricing, and workflow compared side-by-side.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -747,6 +1569,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             <div class="footer-col">
                 <h4>Resources</h4>
                 <a href="/overloop-blog/blog/en/">Blog</a>
+                <a href="/overloop-blog/versus/">Versus</a>
                 <a href="/playbooks">Playbooks</a>
                 <a href="/overloop-blog/tools/spam-checker">Spam Checker</a>
                 <a href="/overloop-blog/tools/roi-calculator">ROI Calculator</a>
@@ -780,7 +1603,8 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 // Category filter functionality
 (function() {
     var buttons = document.querySelectorAll('.blog-filters button');
-    var cards = document.querySelectorAll('.blog-card-v2');
+    var cards = document.querySelectorAll('#blog-grid .blog-card-v2');
+    var countEl = document.querySelector('.blog-count strong');
 
     buttons.forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -789,13 +1613,16 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
             buttons.forEach(function(b) { b.classList.remove('active'); });
             this.classList.add('active');
 
+            var visible = 0;
             cards.forEach(function(card) {
                 if (filter === 'all' || card.getAttribute('data-category') === filter) {
                     card.style.display = '';
+                    visible++;
                 } else {
                     card.style.display = 'none';
                 }
             });
+            if (countEl) countEl.textContent = visible;
         });
     });
 })();
