@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A/B-Tests für E-Mail-Drip-Kampagnen: Guide | Overloop</title>
+    <meta name="description" content="Erfahren Sie, wie Sie Ihre E-Mail-Drip-Kampagnen per A/B-Test optimieren. Bessere Öffnungs- und Antwortraten erzielen.">
+    <link rel="canonical" href="https://overloop.com/de/blog/ab-test-e-mail-drip-kampagnen">
+
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/ab-testing-email-drip-campaigns">
+    <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/ab-test-e-mail-drip-kampagnen">
+    <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/test-ab-campagnes-email">
+    <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/pruebas-ab-campanas-email-secuencia">
+    <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/ab-testing-email-drip-campaigns">
+
+    <meta property="og:title" content="A/B-Tests für E-Mail-Drip-Kampagnen: Guide">
+    <meta property="og:description" content="Erfahren Sie, wie Sie Ihre E-Mail-Drip-Kampagnen per A/B-Test optimieren. Bessere Öffnungs- und Antwortraten erzielen.">
+    <meta property="og:image" content="https://sortlist.github.io/overloop-blog/assets/images/og/ab-testing-email-drip-campaigns.png">
+    <meta property="og:url" content="https://overloop.com/de/blog/ab-test-e-mail-drip-kampagnen">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A/B-Tests für E-Mail-Drip-Kampagnen: Guide">
+    <meta name="twitter:description" content="Erfahren Sie, wie Sie Ihre E-Mail-Drip-Kampagnen per A/B-Test optimieren. Bessere Öffnungs- und Antwortraten erzielen.">
+    <meta name="twitter:image" content="https://sortlist.github.io/overloop-blog/assets/images/og/ab-testing-email-drip-campaigns.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A/B-Tests für E-Mail-Drip-Kampagnen: Guide",
+        "description": "Erfahren Sie, wie Sie Ihre E-Mail-Drip-Kampagnen per A/B-Test optimieren. Bessere Öffnungs- und Antwortraten erzielen.",
+        "image": "https://sortlist.github.io/overloop-blog/assets/images/og/ab-testing-email-drip-campaigns.png",
+        "author": {
+            "@type": "Person",
+            "name": "Nicolas Finet",
+            "url": "https://www.linkedin.com/in/nicolasfinet/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Overloop",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://overloop.com/assets/images/overloop-logo.png"
+            }
+        },
+        "datePublished": "2017-07-13",
+        "dateModified": "2026-04-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://overloop.com/de/blog/ab-test-e-mail-drip-kampagnen"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/de/blog"},
+            {"@type": "ListItem", "position": 2, "name": "A/B-Tests für E-Mail-Drip-Kampagnen: Guide", "item": "https://overloop.com/de/blog/ab-test-e-mail-drip-kampagnen"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Overloop Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="https://overloop.com" class="nav-logo">
+            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
+        </a>
+
+        <ul class="nav-links">
+            <li class="nav-dropdown">
+                <a href="/features" class="nav-dropdown-trigger">Features</a>
+                <div class="nav-dropdown-menu">
+                    <ul class="nav-dropdown-content">
+                        <li><a href="/features">Multi-Channel Prospecting<span class="dropdown-desc">Email + LinkedIn in one sequence</span></a></li>
+                        <li><a href="/features">B2B Contact Database<span class="dropdown-desc">450M+ verified contacts</span></a></li>
+                        <li><a href="/features">AI Email Writing<span class="dropdown-desc">Hyper-personalized at scale</span></a></li>
+                        <li><a href="/features">LinkedIn Automation<span class="dropdown-desc">GDPR-compliant outreach</span></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li class="nav-dropdown">
+                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
+                <div class="nav-dropdown-menu">
+                    <ul class="nav-dropdown-content">
+                        <li><a href="/blog">Blog<span class="dropdown-desc">Outbound strategies and guides</span></a></li>
+                        <li><a href="/tools/spam-checker">Spam Checker<span class="dropdown-desc">Free email analysis tool</span></a></li>
+                        <li><a href="/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Estimate your outbound ROI</span></a></li>
+                        <li><a href="/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Check SPF, DKIM, DMARC</span></a></li>
+                        <li><a href="/playbooks">Playbooks<span class="dropdown-desc">Industry-specific strategies</span></a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-cta">
+            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
+            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
+            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
+        </div>
+
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('nav-open');
+    document.querySelector('.nav-cta').classList.toggle('nav-open');
+});
+</script>
+</nav>
+
+<div class="breadcrumb-bar">
+    <div class="container">
+        <a href="https://overloop.com">Overloop</a>
+        <span class="sep">/</span>
+        <a href="/overloop-blog/blog/de/">Blog</a>
+        <span class="sep">/</span>
+        <span class="current">A/B-Tests für E-Mail-Drip-Kampagnen:...</span>
+    </div>
+</div>
+
+<header class="article-header">
+    <span class="header-badge">Vertrieb</span>
+    <h1>A/B-Tests für E-Mail-Drip-Kampagnen: Guide</h1>
+</header>
+
+<main class="article-body">
+    <div class="container">
+
+        <div class="article-meta">
+            <img class="meta-avatar" src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
+            <div class="meta-info">
+                Von <a href="https://www.linkedin.com/in/nicolasfinet/">Nicolas Finet</a> &middot;
+                13. Juli 2017 &middot;
+                10 Min. Lesezeit
+            </div>
+        </div>
+
+        <article class="article-content">
+<p>„Ich verstehe... ich verstehe...“ Nein, Sie sehen nichts, lassen Sie die Kristallkugel fallen und hören Sie auf, die Reaktion Ihres Interessenten vorherzusagen... Es ist Zeit, einige A/B-Tests durchzuführen!</p><p>Es ist gut, sich auf das Bauchgefühl zu verlassen, wenn Sie eine Einzelinteraktion führen. Wenn du weißt, wie man Menschen liest, ist das eine tolle Sache. Wenn Sie andererseits E-Mails an viele Personen senden, die Sie noch nie persönlich getroffen oder mit denen Sie noch nie gesprochen haben, ist Ihr Instinkt möglicherweise nicht Ihr bestes Werkzeug.</p><p>Apropos Tools: Sie benötigen keine, um A/B-Tests durchzuführen, also haben Sie hier keine Ausrede! Ich weiß es und jeder bei <a href="/?ref=blog">Überschleife</a> weiß es.</p><p>Bringen Sie die Analytik mit!</p><h2>Kenne deine KPIs!</h2><p>Traditionell gibt es drei Methoden, um den Erfolg einer E-Mail-Kampagne zu messen:</p><ol>
+<li><span><strong>Öffnungsrate: </strong><em>Öffnen potenzielle Kunden meine E-Mails?<br></em></span><span><span><span>Die Mathematik: Gesamtzahl der geöffneten E-Mails/Gesamtzahl der gesendeten E-Mails * 100</span></span></span></li>
+<li><span><strong>Klickrate:</strong> <em>Klicken potenzielle Kunden auf meine Links?</em><br>Die Rechnung: Gesamtzahl der angeklickten Links/Gesamtzahl der geöffneten E-Mails * 100</span></li>
+</ol><p><strong>oder</strong> Gesamtzahl der angeklickten Links/Gesamtzahl der geöffneten E-Mails * 100</p><p><span>3. <strong>Antwortrate: </strong><em>Antworten potenzielle Kunden auf meine E-Mails?</em><br></span><span>Die Rechnung: Gesamtzahl der beantworteten E-Mails/Gesamtzahl der gesendeten E-Mails * 100</span></p><p><strong>oder</strong> Gesamtzahl der beantworteten E-Mails/Gesamtzahl der geöffneten E-Mails * 100</p><p>Stellen Sie sicher, dass Sie für die letzten beiden Metriken immer denselben Nenner verwenden.</p><h2>A/B-Tests?</h2><p>A/B-Tests sind eine Methode, die implementiert wird, um die Effizienz eines Prozesses zu testen und zu verbessern, indem eine seiner Funktionen geändert und festgestellt wird, was am besten funktioniert.</p><p><span>Die goldene Regel für A/B-Tests: </span>optimiere immer nur EIN Element auf einmal. <span>Es mag offensichtlich erscheinen, aber wenn Sie mehr als eine Funktion an — in diesem Fall — Ihrer E-Mail ändern, ist es unmöglich zu identifizieren, was die Zunahme (oder den Rückgang) der Öffnungs- und Klickraten verursacht hat...</span></p><p>Sehen Sie, was funktioniert und treffen Sie dann eine Wahl!</p><h2>Testen und dann investieren</h2><p><span>Du bist aufgeregt, ich weiß, dass du es bist. Bevor Sie jedoch eine groß angelegte Kampagne starten, sollten Sie sie möglicherweise an einer Stichprobe Ihrer Zielgruppe testen, um die Wirkung zu maximieren und Ihr Budget zu optimieren.</span></p><p><span>Schauen wir uns ein Beispiel an.</span></p><p><span>Angenommen, Sie müssen eine Drip-Kampagne für 1000 potenzielle Kunden starten und möchten Ihre Betreffzeile und Ihre </span><span>von</span><span> Feld, um Ihre Öffnungsrate zu maximieren.</span></p><p>Wählen Sie 100 der Interessenten auf Ihrer Liste aus und teilen Sie sie in zwei Gruppen auf. Nennen wir sie Gruppe A und Gruppe B. Teilen Sie diese Gruppen erneut in zwei Teile auf. Nennen wir sie Aa und Ab und Ba et Bb.</p><p><span>Wählen Sie nun die beiden Betreffzeilen und die beiden </span><span>von </span><span>Namen, die Sie testen möchten. Aa et Ab erhalten dasselbe </span><span>von </span><span>Name, aber mit einer anderen Betreffzeile, während Ba und Bb dieselbe Betreffzeile erhalten, aber mit einer anderen Betreffzeile </span><span>von </span><span>Name.</span></p><p><span>Du kannst rennen <strong>beides</strong> A/B-Kampagnen <strong>zur gleichen Zeit</strong> Erreiche 10% deines Ziels und lerne in nur wenigen Tagen eine Menge.</span></p><p><span>Aber das sind nicht die einzigen Variablen. Lass uns tiefer gehen, sollen wir?</span></p><h2>Ziele und Variablen</h2><p>Jeder KPI ist mit einer bestimmten Anzahl von Einstellungen und Variablen verknüpft, die Sie beeinflussen können.</p><h3>1. Öffnet</h3><p><span>Ihr erstes Ziel ist natürlich, dass Ihre E-Mail geöffnet wird. Drei Hauptkriterien sind besonders wichtig, wenn es darum geht, Ihre E-Mail zu öffnen:</span></p><h4>Die Betreffzeile </h4><p><span>Laut </span><a href="http://www.convinceandconvert.com/convince-convert/15-email-statistics-that-are-shaping-the-future/" rel="external nofollow noopener"><span>Überzeugen und konvertieren</span></a><span>, 35% der Empfänger öffnen E-Mails allein aufgrund der Betreffzeile. Außerdem melden 69% von ihnen E-Mails ausschließlich aufgrund der Betreffzeile als Spam.</span></p><p><span>Dies unterstreicht die Bedeutung einer guten Betreffzeile. Stellen Sie daher sicher, dass Sie so viel Zeit wie nötig für die Erstellung aufwenden.</span></p><p>Hier sind einige <a href="/blog/7-cold-email-subject-lines/">Beratung</a> zum Thema!</p><h4>Das Absenderfeld</h4><p>Ein netter Absendername hat großen Einfluss auf die Dynamik Ihrer Beziehung zu Ihrem Interessenten.</p><p><span>Probiere Variablen wie: {dein Name}, {dein Name} bei {deinem Unternehmen}, {dein Unternehmen} Team aus</span></p><h4>Zeit der Lieferung</h4><p>Wie bereits erklärt, ist die Lieferzeit entscheidend. Grenzen Sie die wahrscheinlichsten Zeiten ein, zu denen Ihr Interessent für Ihre E-Mails empfänglich ist, und wählen Sie die beiden besten Optionen aus, damit Sie sie testen können.</p><h3>2. Durchklicken</h3><p>Herzlichen Glückwunsch, Ihr Empfänger hat Ihre E-Mail geöffnet!</p><p>Wir empfehlen zwar nicht, Links in Verkaufs-E-Mails zu verwenden, insbesondere in der Anfangsphase, aber hier sind einige Ratschläge für den Fall, dass Sie unbedingt auf eine Website umleiten müssen.</p><p>Es gibt zwei Hauptkriterien für das Anklicken eines Links in einer E-Mail:</p><h4><strong>Vertraue auf den Link</strong></h4><p><span>Links wird natürlich nicht vertraut, wenn sie von unbekannten Absendern stammen. </span></p><p><span>Was du tun kannst:</span></p><p><span>Sie sollten URL-Shortener so weit wie möglich vermeiden. Es ist verständlich, dass Sie die Ergebnisse mit bit.ly oder anderen ähnlichen Diensten verfolgen möchten, aber wenn Sie potenzielle Kunden suchen, werden verkürzte URLs dringend nicht empfohlen. Verwenden Sie stattdessen UTMs.</span></p><p><span>Verwenden Sie nur eine seriöse Domain mit etwas anderem als Ihrer Landingpage, damit Ihr Interessent die Website recherchieren kann (z. B. über Google) und sich selbst davon überzeugen kann, dass sie tatsächlich vertrauenswürdig ist.</span></p><h4><span><strong>Der Inhalt der E-Mail</strong> </span></h4><p><span>Wenn Ihr Interessent überhaupt nicht an dem interessiert ist, was Sie zu bieten haben, können Sie nicht viel tun. In allen anderen Fällen sollten Sie an folgenden Punkten arbeiten:</span></p><h5><strong>Halte es kurz</strong></h5><p>Die Zeit ist knapp und E-Mails gibt es viele. Wenn sich Ihr Interessent langweilt, bevor er zu dem Link kommt, sind Sie aufgeschmissen. Halten Sie es also kurz und auf den Punkt.</p><h5><strong>Ablenkungen entfernen</strong></h5><p>Wenn Ihr Ziel darin besteht, dass Ihr potenzieller Kunde auf diesen Link klickt, stellen Sie sicher, dass seine Aufmerksamkeit nicht von etwas anderem angezogen wird, wie Bildern, anderen Links von... am schlimmsten, mehreren Handlungsaufforderungen.</p><h5><strong>Füge ein P.S. hinzu</strong></h5><p>Das ist mächtig, muss aber mit Bedacht eingesetzt werden. Machen Sie es superpersönlich und nicht verkaufsfördernd und lassen Sie einfach die PS fallen, die ihre ganze Aufmerksamkeit erregen!</p><blockquote>
+<p>Hallo Jeremy,</p>
+<p>Haben Sie Probleme mit der Vertriebsautomatisierung?</p>
+<p>Mein Name ist Forster und ich arbeite bei Overloop, wo wir Unternehmen wie [Unternehmen X], [Unternehmen Y] und [Unternehmen Y] dabei unterstützen, ihre Vertriebsprozesse zu automatisieren.</p>
+<p>Ich würde gerne wissen, wie Sie das bei [Your Company] handhaben, vielleicht kann ich Ihnen ein paar Tipps geben!</p>
+<p>Prost,</p>
+<p>Förster</p>
+<p>PS: Schau dir das an <strong><a href="/blog">super umsetzbarer Inhalt</a></strong> Ich habe zusammengestellt!</p>
+</blockquote><h5><strong><br>Reagiert auf Mobilgeräten</strong></h5><p>40% aller E-Mails werden zuerst auf Mobilgeräten geöffnet. Sie müssen also sicherstellen, dass Ihr Interessent sie tatsächlich lesen kann. Entweder verwenden Sie ein Format, das auf Mobilgeräte reagiert, oder — noch besser — verwenden Sie einfach Klartext, was für Einzelgespräche immer besser ist. Das ist übrigens der Grund, warum Overloop In-Mail-HTML nicht unterstützt oder zulässt.</p><h3>3. Antworten</h3><p>Es ist schwierig, jemanden dazu zu bringen, auf Ihre E-Mail zu antworten, insbesondere wenn es um kalte E-Mails geht. Daher finden Sie hier einige Variablen, die Sie anpassen können, um erfolgreich Antworten zu erhalten.</p><h4>Passen Sie die Länge an</h4><p>Abhängig von Ihrem Ziel und dem Inhalt Ihrer E-Mail müssen Sie möglicherweise deren Länge anpassen. Reagieren Ihre Interessenten besser auf lange E-Mails oder auf kurze und präzise Nachrichten? Gehen Sie auf das zurück, was Sie wissen, und sehen Sie, was funktioniert.</p><h4>Gib einen Grund an</h4><p>Sie haben wahrscheinlich schon von dieser verrückten Studie gehört, die beweist, dass selbst die Angabe eines unsinnigen Grundes zu mehr Ergebnissen führt als die Angabe von gar keinem Grund. Wenn nicht, hier ist es kurz: Der Forscher würde jemanden entdecken, der darauf wartet, das Kopiergerät zu benutzen, und beiläufig auf ihn zugehen, mit der Absicht, ihn in die Reihe zu schneiden. Er probierte 3 Versionen der Anfrage aus:</p><ol>
+<li><strong>Version 1 (nur auf Anfrage):</strong> „Entschuldigung, ich habe 5 Seiten. Kann ich das Xerox-Gerät benutzen?“ =&gt; Erfolg: 60%</li>
+<li><strong>Version 2 (Anfrage mit einem echten Grund):</strong> „Entschuldigung, ich habe 5 Seiten. Kann ich das Kopiergerät benutzen, weil ich es eilig habe?“ =&gt; Erfolg: 94%</li>
+<li><strong>Version 3 (Anfrage mit falschem Grund):</strong> „Entschuldigung, ich habe 5 Seiten. Kann ich das Kopiergerät benutzen, weil ich Kopien machen muss?“ =&gt; Erfolg: 93%</li>
+</ol><p>Version 3 macht eindeutig nicht viel Sinn. Er hat gerade gesagt... <strong>da</strong>, und es hat funktioniert. Vielleicht kann das den Unterschied in Ihrer E-Mail ausmachen?</p><h4>Sozialer Beweis</h4><p>Ein paar Namen fallen zu lassen ist immer ein guter Weg, um zu beweisen, dass Sie ein seriöser Partner sind. Aber wie viele Namen? Und welche?</p><p>Wenn Sie mit internationalen Interessenten zusammenarbeiten, erwähnen Sie unbedingt Kunden von <strong>ihr </strong>Land. Wenn Sie mit Interessenten aus verschiedenen Branchen zusammenarbeiten, erwähnen Sie unbedingt Kunden aus <strong>ihr </strong>Industrie.</p><h4><strong>Füge ein P.S. hinzu</strong></h4><p>Schon wieder? Nun, da das PS ein guter Ort ist, um Ihren Aufruf zum Handeln zu platzieren, können Sie ihn genauso gut nutzen, um nach einer Antwort zu fragen!</p><blockquote>
+<p>Hallo Jeremy,</p>
+<p>Haben Sie Probleme mit der Vertriebsautomatisierung?</p>
+<p>Mein Name ist Forster und ich arbeite bei Overloop, wo wir Unternehmen wie [Unternehmen X], [Unternehmen Y] und [Unternehmen Y] dabei unterstützen, ihre Vertriebsprozesse zu automatisieren.</p>
+<p>Ich würde gerne wissen, wie Sie das bei [Your Company] handhaben, vielleicht kann ich Ihnen ein paar Tipps geben!</p>
+<p>Prost,</p>
+<p>Förster</p>
+<p>PS: Würde ein kurzer Anruf am Dienstagmorgen für Sie funktionieren?</p>
+</blockquote><p>&nbsp;</p><p>Jetzt bist du dran, teile dieses Stück und mach dich an die Arbeit!</p><p>&nbsp;</p>
+        </article>
+
+        <div class="cta-box">
+            <h3>Bereit, Ihre Akquise zu automatisieren?</h3>
+            <p>Overloop AI bietet Ihnen eine Datenbank mit über 450 Mio. Kontakten, KI-gestützte E-Mail-Erstellung und Multichannel-Sequenzen. Ab 69$/Nutzer/Monat.</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-button">Overloop kostenlos testen</a>
+        </div>
+
+        <div class="author-bio">
+            <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
+            <div>
+                <div class="name">Nicolas Finet</div>
+                <div class="role">CEO bei Overloop</div>
+                <div class="role">CEO von Sortlist & Overloop. Hat Outbound-Systeme für über 500 B2B-Unternehmen aufgebaut.</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Overloop Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
+                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
+                <a href="/book-demo">Book a Demo</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/blog">Blog</a>
+                <a href="/playbooks">Playbooks</a>
+                <a href="/tools/spam-checker">Spam Checker</a>
+                <a href="/tools/roi-calculator">ROI Calculator</a>
+                <a href="/tools/domain-health-checker">Domain Health</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about">About</a>
+                <a href="/testimonials">Testimonials</a>
+                <a href="mailto:hello@overloop.com">Contact</a>
+                <a href="/careers">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/terms">Terms</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/gdpr">GDPR</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
+            <div>
+                <a href="https://www.linkedin.com/company/overloop-ai/">LinkedIn</a>
+                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/overloop-blog/assets/js/blog.js" defer></script>
+</body>
+</html>
