@@ -128,12 +128,6 @@ const BLOG_REDIRECTS = {
 
 const INTL_REDIRECTS = {
   // === /FR (166 rules) ===
-  '/fr/blog/#N/A': '/blog',
-  '/fr/blog/#N/A': '/blog',
-  '/fr/blog/#N/A': '/blog',
-  '/fr/blog/#N/A': '/blog/9-best-ai-email-outreach-tools',
-  '/fr/blog/#N/A': '/blog/best-ai-sales-tools',
-  '/fr/blog/#N/A': '/blog/best-lead-generation-tools',
   '/fr/blog/adoption-ia-prospection-b2b-analyse': '/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis',
   '/fr/blog/alternatives-apollo-prospection-b2b': '/blog/apollo-alternatives',
   '/fr/blog/ameliorations-listes': '/blog',
@@ -296,9 +290,6 @@ const INTL_REDIRECTS = {
   '/fr/blog/video-strategie-vente': '/blog',
 
   // === /DE (166 rules) ===
-  '/de/blog/#N/A': '/blog/best-lead-generation-tools',
-  '/de/blog/#N/A': '/blog/increase-saas-sales-growth-system',
-  '/de/blog/#N/A': '/versus/overloop-vs-reply',
   '/de/blog/ab-test-affiliate-rekrutierung': '/blog',
   '/de/blog/ab-test-e-mail-drip-kampagnen': '/blog/ab-testing-email-drip-campaigns',
   '/de/blog/abmeldelink-e-mail': '/blog',
@@ -464,11 +455,6 @@ const INTL_REDIRECTS = {
   '/de/blog/webanwendung-neugestaltung': '/blog',
 
   // === /ES (166 rules) ===
-  '/es/blog/#N/A': '/blog/8-best-ai-linkedin-outreach-tools',
-  '/es/blog/#N/A': '/blog/best-lead-generation-tools',
-  '/es/blog/#N/A': '/blog/increase-saas-sales-growth-system',
-  '/es/blog/#N/A': '/versus/overloop-vs-hubspot',
-  '/es/blog/#N/A': '/versus/overloop-vs-reply',
   '/es/blog/3-errores-comunes-email-outreach': '/blog',
   '/es/blog/500-palabras-detonantes': '/blog/500-trigger-words',
   '/es/blog/8-eventos-clave-overloop-2020': '/blog',
@@ -632,10 +618,6 @@ const INTL_REDIRECTS = {
   '/es/blog/verificar-correos-electronicos': '/blog/how-to-find-someone-email-address-efficiently',
 
   // === /IT (166 rules) ===
-  '/it/blog/#N/A': '/blog',
-  '/it/blog/#N/A': '/blog/best-lead-generation-tools',
-  '/it/blog/#N/A': '/blog/increase-saas-sales-growth-system',
-  '/it/blog/#N/A': '/versus/overloop-vs-reply',
   '/it/blog/ab-test-email-drip': '/blog/ab-testing-email-drip-campaigns',
   '/it/blog/ab-testing-affiliati': '/blog',
   '/it/blog/adozione-strumenti-ai-outbound': '/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis',

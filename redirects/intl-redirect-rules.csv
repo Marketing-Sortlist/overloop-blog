@@ -1,7 +1,4 @@
 locale,source,target,en_slug,action
-de,/de/blog/#N/A,/blog/best-lead-generation-tools,best-lead-generation-tools,MIGRATE
-de,/de/blog/#N/A,/blog/increase-saas-sales-growth-system,increase-saas-sales-growth-system,MIGRATE
-de,/de/blog/#N/A,/versus/overloop-vs-reply,overloop-vs-reply,VS-REDIRECT
 de,/de/blog/ab-test-affiliate-rekrutierung,/blog,ab-testing-case-study,301-KILL
 de,/de/blog/ab-test-e-mail-drip-kampagnen,/blog/ab-testing-email-drip-campaigns,ab-testing-email-drip-campaigns,MIGRATE
 de,/de/blog/abmeldelink-e-mail,/blog,unsubscribe-link,301-KILL
@@ -165,11 +162,6 @@ de,/de/blog/vertriebstools-b2b-teams-leitfaden,/blog,the-ultimate-guide-to-sales
 de,/de/blog/video-in-verkaufsstrategie,/blog,the-guide-to-incorporating-video-into-your-sales-strategy,301-KILL
 de,/de/blog/warum-wir-diesen-blog-starten,/blog,why-are-we-starting-this-blog,301-KILL
 de,/de/blog/webanwendung-neugestaltung,/blog,web-application-re-design,301-KILL
-es,/es/blog/#N/A,/blog/best-lead-generation-tools,best-lead-generation-tools,MIGRATE
-es,/es/blog/#N/A,/blog/increase-saas-sales-growth-system,increase-saas-sales-growth-system,MIGRATE
-es,/es/blog/#N/A,/blog/8-best-ai-linkedin-outreach-tools,linkedin-outreach,301-KILL
-es,/es/blog/#N/A,/versus/overloop-vs-hubspot,overloop-vs-hubspot,VS-REDIRECT
-es,/es/blog/#N/A,/versus/overloop-vs-reply,overloop-vs-reply,VS-REDIRECT
 es,/es/blog/3-errores-comunes-email-outreach,/blog,the-3-most-common-mistakes-when-it-comes-to-outreach-emailing,301-KILL
 es,/es/blog/500-palabras-detonantes,/blog/500-trigger-words,500-trigger-words,REWRITE
 es,/es/blog/8-eventos-clave-overloop-2020,/blog,8-key-events-for-overloop-in-2020,301-KILL
@@ -331,12 +323,6 @@ es,/es/blog/ventas-internas-vs-externas,/blog/inside-sales-outside-sales,inside-
 es,/es/blog/ventas-sociales,/blog,not-doing-social-selling-youre-wrong,301-KILL
 es,/es/blog/ventas-startups,/blog,get-started-startup-sales,301-KILL
 es,/es/blog/verificar-correos-electronicos,/blog/how-to-find-someone-email-address-efficiently,find-and-verify-emails-within-the-app,301-KILL
-fr,/fr/blog/#N/A,/blog,sales-automation-account-based-selling,301-KILL
-fr,/fr/blog/#N/A,/blog/9-best-ai-email-outreach-tools,cold-email-software,301-KILL
-fr,/fr/blog/#N/A,/blog,revolutionize-b2b-sales-how-to-automate-multi-channel-follow-ups-with-an-ai-email-assistant,301-KILL
-fr,/fr/blog/#N/A,/blog/best-lead-generation-tools,best-lead-generation-tools,MIGRATE
-fr,/fr/blog/#N/A,/blog/best-ai-sales-tools,the-ultimate-guide-to-choosing-a-sales-platform-for-outbound-lead-generation,301-KILL
-fr,/fr/blog/#N/A,/blog,overloop-reshapes-outbound-workflows-with-a-simpler-more-flexible-platform-update,301-KILL
 fr,/fr/blog/adoption-ia-prospection-b2b-analyse,/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis,ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis,MIGRATE
 fr,/fr/blog/alternatives-apollo-prospection-b2b,/blog/apollo-alternatives,apollo-alternatives,REWRITE
 fr,/fr/blog/ameliorations-listes,/blog,lists-improvements,301-KILL
@@ -497,10 +483,6 @@ fr,/fr/blog/ventes-internes-vs-ventes-externes,/blog/inside-sales-outside-sales,
 fr,/fr/blog/ventes-saas-fetes-fin-annee,/blog,increase-your-saas-sales-during-holiday-season,301-KILL
 fr,/fr/blog/ventes-saisonnieres-survivre-basse-saison,/blog/seasonal-sales,seasonal-sales,MIGRATE
 fr,/fr/blog/video-strategie-vente,/blog,the-guide-to-incorporating-video-into-your-sales-strategy,301-KILL
-it,/it/blog/#N/A,/blog,sales-automation-account-based-selling,301-KILL
-it,/it/blog/#N/A,/blog/best-lead-generation-tools,best-lead-generation-tools,MIGRATE
-it,/it/blog/#N/A,/blog/increase-saas-sales-growth-system,increase-saas-sales-growth-system,MIGRATE
-it,/it/blog/#N/A,/versus/overloop-vs-reply,overloop-vs-reply,VS-REDIRECT
 it,/it/blog/ab-test-email-drip,/blog/ab-testing-email-drip-campaigns,ab-testing-email-drip-campaigns,MIGRATE
 it,/it/blog/ab-testing-affiliati,/blog,ab-testing-case-study,301-KILL
 it,/it/blog/adozione-strumenti-ai-outbound,/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis,ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis,MIGRATE
