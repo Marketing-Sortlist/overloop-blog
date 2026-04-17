@@ -36,7 +36,7 @@ const BLOG_REDIRECTS = {
   '/blog/9-best-ai-sales-workflow-tools': '/blog/best-ai-sales-tools',
   '/blog/Heyreach-Review': '/blog/8-best-ai-linkedin-outreach-tools',
   '/blog/ai-email-writer-revolution-how-to-use-ai-for-cold-outreach-in-outbound-sales': '/blog/9-best-ai-email-outreach-tools',
-  '/blog/best-ai-sales-tools': '/blog/best-ai-sales-tools',
+  // '/blog/best-ai-sales-tools' — REMOVED: page exists, was self-redirect loop
   '/blog/best-cold-email-software': '/blog/9-best-ai-email-outreach-tools',
   '/blog/cold-email-campaigns-reply-rates': '/blog/increase-reply-rate',
   '/blog/cold-email-software': '/blog/9-best-ai-email-outreach-tools',
