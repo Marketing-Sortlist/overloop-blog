@@ -783,13 +783,37 @@ const INTL_REDIRECTS = {
 
 };
 
-// tools.overloop.com → overloop.com/tools/
+// ──────────────────────────────────────────────
+// TOOLS.OVERLOOP.COM → OVERLOOP.COM
+// Subdomain redirect: tools + playbooks (41 rules)
+// ──────────────────────────────────────────────
+
 const TOOLS_REDIRECTS = {
+  // Tools
   '/roi-calculator': '/tools/roi-calculator',
   '/infrastructure-calculator': '/tools/infrastructure-calculator',
-  '/domain-health': '/tools/domain-health-checker',
+  '/domain-health': '/tools/domain-health',
   '/spam-checker': '/tools/spam-checker',
   '/prompt-builder': '/tools/prompt-builder',
+
+  // Playbooks index
+  '/playbooks': '/playbooks/',
+
+  // Individual playbooks (14 industries)
+  '/playbooks/marketing-agencies': '/playbooks/marketing-agencies',
+  '/playbooks/digital-web-agencies': '/playbooks/digital-web-agencies',
+  '/playbooks/seo-agencies': '/playbooks/seo-agencies',
+  '/playbooks/pr-communications': '/playbooks/pr-communications',
+  '/playbooks/branding-design': '/playbooks/branding-design',
+  '/playbooks/social-media': '/playbooks/social-media',
+  '/playbooks/performance-paid-media': '/playbooks/performance-paid-media',
+  '/playbooks/content-marketing': '/playbooks/content-marketing',
+  '/playbooks/dev-product-studios': '/playbooks/dev-product-studios',
+  '/playbooks/saas-b2b': '/playbooks/saas-b2b',
+  '/playbooks/ecommerce-b2b': '/playbooks/ecommerce-b2b',
+  '/playbooks/consulting-firms': '/playbooks/consulting-firms',
+  '/playbooks/fintech': '/playbooks/fintech',
+  '/playbooks/recruiting-staffing': '/playbooks/recruiting-staffing',
 };
 
 // ──────────────────────────────────────────────
