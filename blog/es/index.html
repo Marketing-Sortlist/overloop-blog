@@ -8,21 +8,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Overloop: Ventas Outbound, Email Frio &amp; Herramientas IA | Overloop</title>
-    <meta name="description" content="Ideas para un mejor outbound. Guias sobre email frio, prospection LinkedIn, herramientas IA de ventas y automatizacion outbound.">
+    <title>Blog Overloop: Ventas B2B, Cold Email y Herramientas IA | Overloop</title>
+    <meta name="description" content="Estrategias de prospección outbound, guías de cold email, herramientas de ventas IA y automatización B2B. Consejos probados en campañas reales.">
+    <meta property="og:title" content="Blog Overloop: Ventas B2B, Cold Email y Herramientas IA">
+    <meta property="og:description" content="Estrategias de prospección outbound, guías de cold email, herramientas de ventas IA y automatización B2B. Consejos probados en campañas reales.">
+    <meta property="og:image" content="https://overloop.com/assets/images/og/blog-index.png">
+    <meta property="og:url" content="https://overloop.com/es/blog">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog Overloop: Ventas B2B, Cold Email y Herramientas IA">
+    <meta name="twitter:description" content="Estrategias de prospección outbound, guías de cold email, herramientas de ventas IA y automatización B2B. Consejos probados en campañas reales.">
+    <meta name="twitter:image" content="https://overloop.com/assets/images/og/blog-index.png">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="canonical" href="https://overloop.com/es/blog">
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog">
+    <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog">
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog">
     <style>
         /* ===== BLOG INDEX STYLES ===== */
 
+        /* Breadcrumb */
+        .blog-breadcrumb {
+            padding: 12px 24px 0;
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+        }
+        .blog-breadcrumb nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 13px;
+        }
+        .blog-breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .blog-breadcrumb a:hover {
+            color: rgba(255,255,255,0.8);
+        }
+        .blog-breadcrumb span {
+            color: rgba(255,255,255,0.35);
+            margin: 0 6px;
+        }
+        .blog-breadcrumb .current {
+            color: rgba(255,255,255,0.7);
+        }
+
         /* Hero with animated gradient */
         .blog-hero {
             background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
-            padding: 100px 24px 80px;
+            padding: 60px 24px 80px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -168,12 +205,56 @@
             position: relative;
         }
 
-        /* Category filter pills */
+        /* Search bar */
+        .blog-search-wrap {
+            max-width: 480px;
+            margin: 0 auto 24px;
+            position: relative;
+        }
+        .blog-search-wrap svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .blog-search-wrap input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .blog-search-wrap input:focus {
+            border-color: var(--violet);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        .blog-search-wrap input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        /* Filter row with language switcher */
+        .blog-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
         .blog-filters {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 36px;
             justify-content: center;
         }
         .blog-filters button {
@@ -197,6 +278,80 @@
             background: var(--violet);
             color: #fff;
             border-color: var(--violet);
+        }
+
+        /* Language switcher */
+        .lang-switcher {
+            position: relative;
+        }
+        .lang-switcher-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .lang-switcher-btn:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+        }
+        .lang-switcher-btn svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            min-width: 160px;
+            z-index: 100;
+            overflow: hidden;
+        }
+        .lang-dropdown.open {
+            display: block;
+        }
+        .lang-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .lang-dropdown a:hover {
+            background: var(--violet-lightest);
+        }
+        .lang-dropdown a.active {
+            font-weight: 700;
+            color: var(--violet);
+        }
+
+        /* Article count */
+        .blog-count {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .blog-count strong {
+            color: var(--violet);
         }
 
         /* Card grid */
@@ -226,12 +381,14 @@
             color: var(--text);
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border);
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, border-left-color 0.2s;
+            border-left: 3px solid transparent;
         }
         .blog-card-v2:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
             border-color: var(--violet-lighter);
+            border-left-color: var(--violet);
             text-decoration: none;
         }
 
@@ -244,7 +401,6 @@
         .blog-card-gradient.cold-email   { background: linear-gradient(135deg, #1a73e8, #3b82f6); }
         .blog-card-gradient.ai-tools     { background: linear-gradient(135deg, #e8710a, #f59e0b); }
         .blog-card-gradient.comparisons  { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
-        .blog-card-gradient.legal        { background: linear-gradient(135deg, #059669, #10b981); }
 
         .blog-card-v2 .card-body {
             padding: 24px;
@@ -273,7 +429,6 @@
         .card-badge.cold-email   { background: rgba(26,115,232,0.1);  color: #1a73e8; }
         .card-badge.ai-tools     { background: rgba(232,113,10,0.1);  color: #c2600a; }
         .card-badge.comparisons  { background: rgba(124,58,237,0.1);  color: #7C3AED; }
-        .card-badge.legal        { background: rgba(5,150,105,0.1);   color: #059669; }
 
         .blog-card-readtime {
             font-size: 11px;
@@ -299,37 +454,184 @@
             flex: 1;
         }
 
-        /* Tool logos row */
-        .blog-card-logos {
+        /* Card footer with author + date */
+        .card-footer {
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: space-between;
             margin-top: auto;
             padding-top: 12px;
             border-top: 1px solid var(--border);
         }
-        .blog-card-logos img {
-            width: 22px;
-            height: 22px;
-            border-radius: 4px;
-            border: 1px solid var(--border);
-            background: #fff;
+        .card-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .blog-card-logos .logo-count {
-            font-size: 11px;
-            color: var(--text-secondary);
-            margin-left: 4px;
+        .card-author img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
         }
-
-        .blog-card-v2 .card-meta {
+        .card-author span {
             font-size: 12px;
             color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .card-date {
+            font-size: 11px;
+            color: var(--text-secondary);
             opacity: 0.6;
-            margin-top: auto;
-            padding-top: 12px;
         }
 
-        /* Section heading in main */
+        /* Show more button */
+        .blog-show-more-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .blog-show-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 12px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--violet);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .blog-show-more:hover {
+            background: var(--violet-lightest);
+            border-color: var(--violet);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+        .blog-show-more svg {
+            transition: transform 0.2s;
+        }
+        .blog-show-more:hover svg {
+            transform: translateY(2px);
+        }
+
+        /* No results message */
+        .blog-no-results {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: none;
+        }
+        .blog-no-results strong {
+            display: block;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        /* Versus section */
+        .versus-section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        .versus-section-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .versus-section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+        .versus-section-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .versus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .versus-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 580px) {
+            .versus-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Bottom CTA section */
+        .blog-cta-section {
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 64px;
+        }
+        .blog-cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 30% 50%, rgba(124, 58, 237, 0.3), transparent),
+                radial-gradient(ellipse 500px 300px at 70% 30%, rgba(167, 139, 250, 0.2), transparent);
+            animation: heroShift 8s ease-in-out infinite alternate;
+        }
+        .blog-cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-cta-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 16px;
+            line-height: 1.2;
+        }
+        .blog-cta-section .cta-sub {
+            color: rgba(255,255,255,0.75);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .blog-cta-section .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--violet);
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .blog-cta-section .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            text-decoration: none;
+        }
+        .blog-cta-section .cta-trust {
+            margin-top: 16px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Section heading */
         .blog-section-label {
             font-size: 11px;
             font-weight: 700;
@@ -339,6 +641,115 @@
             margin-bottom: 8px;
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Blog Overloop (Español)",
+      "description": "Estrategias de prospección outbound, guías de cold email, herramientas de ventas IA y automatización B2B. Consejos probados en campañas reales.",
+      "url": "https://overloop.com/es/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Overloop",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://overloop.com/assets/images/overloop-logo.png"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Artículos del Blog Overloop",
+      "numberOfItems": 72,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "9 Mejores Herramientas IA Email Outreach en 2026 (Comparativa Real)", "url": "https://overloop.com/es/blog/9-best-ai-email-outreach-tools"},
+        {"@type": "ListItem", "position": 2, "name": "Mejores Herramientas IA Ventas en 2026: La Guía de Compra Que Realmente Te Ayuda a Decidir", "url": "https://overloop.com/es/blog/best-ai-sales-tools"},
+        {"@type": "ListItem", "position": 3, "name": "7 Alternativas Outreach.io en 2026 (Precios Transparentes, Menos Complejidad)", "url": "https://overloop.com/es/blog/outreach-alternatives"},
+        {"@type": "ListItem", "position": 4, "name": "8 Mejores Alternativas Lemlist en 2026 (Mas baratas y mas simples)", "url": "https://overloop.com/es/blog/lemlist-alternatives"},
+        {"@type": "ListItem", "position": 5, "name": "6 Alternativas Salesloft en 2026 (Despues de la Fusion con Clari)", "url": "https://overloop.com/es/blog/salesloft-alternatives"},
+        {"@type": "ListItem", "position": 6, "name": "6 Alternativas Instantly en 2026 (Para Equipos que Necesitan Mas que Email)", "url": "https://overloop.com/es/blog/instantly-alternatives"},
+        {"@type": "ListItem", "position": 7, "name": "55 frases de ventas que realmente funcionan", "url": "https://overloop.com/es/blog/citas-de-ventas"},
+        {"@type": "ListItem", "position": 8, "name": "Alternativas a Apollo: 13 opciones (2025)", "url": "https://overloop.com/es/blog/alternativas-apollo"},
+        {"@type": "ListItem", "position": 9, "name": "LinkedIn Helper: test y alternativas 2025", "url": "https://overloop.com/es/blog/resena-linkedin-helper"},
+        {"@type": "ListItem", "position": 10, "name": "La Growth Machine: análisis y opinión 2025", "url": "https://overloop.com/es/blog/resena-la-growth-machine"},
+        {"@type": "ListItem", "position": 11, "name": "11 herramientas de automatización LinkedIn", "url": "https://overloop.com/es/blog/mejores-herramientas-automatizacion-linkedin"},
+        {"@type": "ListItem", "position": 12, "name": "Overloop une fuerzas con Sortlist", "url": "https://overloop.com/es/blog/overloop-se-une-sortlist"},
+        {"@type": "ListItem", "position": 13, "name": "Plataformas de sales engagement (2025)", "url": "https://overloop.com/es/blog/comparativa-plataformas-ventas-engagement"},
+        {"@type": "ListItem", "position": 14, "name": "Herramientas IA en prospección B2B (2025)", "url": "https://overloop.com/es/blog/adopcion-herramientas-ia-ventas-b2b"},
+        {"@type": "ListItem", "position": 15, "name": "Guía de automatización de LinkedIn 2025:...", "url": "https://overloop.com/es/blog/guia-automatizacion-linkedin-2025"},
+        {"@type": "ListItem", "position": 16, "name": "10 consejos de prospección para tu pipeline", "url": "https://overloop.com/es/blog/consejos-prospeccion-ventas-pipeline"},
+        {"@type": "ListItem", "position": 17, "name": "Checklist: mejores herramientas SDR IA 2025", "url": "https://overloop.com/es/blog/checklist-seleccionar-mejores-herramientas-ia-sdr"},
+        {"@type": "ListItem", "position": 18, "name": "Encontrar emails B2B seguros para el RGPD", "url": "https://overloop.com/es/blog/encontrar-correos-b2b"},
+        {"@type": "ListItem", "position": 19, "name": "Estrategias de leads para empresas SaaS", "url": "https://overloop.com/es/blog/estrategias-generacion-leads-saas"},
+        {"@type": "ListItem", "position": 20, "name": "10 herramientas de ventas para equipos B2B", "url": "https://overloop.com/es/blog/herramientas-ventas-esenciales-equipos-b2b"},
+        {"@type": "ListItem", "position": 21, "name": "Propuestas de valor generadas por IA: guía", "url": "https://overloop.com/es/blog/propuestas-valor-generadas-ia-guia"},
+        {"@type": "ListItem", "position": 22, "name": "La guía de correo electrónico frío de 2025", "url": "https://overloop.com/es/blog/guia-cold-email"},
+        {"@type": "ListItem", "position": 23, "name": "8 herramientas de prospección para pymes", "url": "https://overloop.com/es/blog/herramientas-prospeccion-pymes"},
+        {"@type": "ListItem", "position": 24, "name": "Errores de automatización de ventas a evitar", "url": "https://overloop.com/es/blog/errores-automatizacion-ventas-como-evitarlos"},
+        {"@type": "ListItem", "position": 25, "name": "10 prácticas para campañas multicanal", "url": "https://overloop.com/es/blog/mejores-practicas-campanas-ventas-multicanal"},
+        {"@type": "ListItem", "position": 26, "name": "Email de ventas personalizado: framework 2025", "url": "https://overloop.com/es/blog/correo-ventas-personalizado"},
+        {"@type": "ListItem", "position": 27, "name": "7 herramientas IA de prospección de ventas", "url": "https://overloop.com/es/blog/herramientas-prospeccion-ventas-ia"},
+        {"@type": "ListItem", "position": 28, "name": "Workflows escalables para generar leads", "url": "https://overloop.com/es/blog/flujos-trabajo-generacion-leads"},
+        {"@type": "ListItem", "position": 29, "name": "Seguimiento con IA: más eficiencia en ventas", "url": "https://overloop.com/es/blog/ia-programacion-seguimiento-ventas"},
+        {"@type": "ListItem", "position": 30, "name": "ROI de herramientas IA de ventas: métricas", "url": "https://overloop.com/es/blog/roi-herramientas-ventas-ia"},
+        {"@type": "ListItem", "position": 31, "name": "LinkedIn vs email: ¿cuál gana en B2B?", "url": "https://overloop.com/es/blog/linkedin-vs-email-comparativa-outreach-b2b"},
+        {"@type": "ListItem", "position": 32, "name": "10 mejores herramientas de asistente IA", "url": "https://overloop.com/es/blog/mejores-herramientas-asistente-ventas-ia"},
+        {"@type": "ListItem", "position": 33, "name": "Las 9 mejores herramientas de agentes de IA...", "url": "https://overloop.com/es/blog/mejores-herramientas-agentes-ia-ventas"},
+        {"@type": "ListItem", "position": 34, "name": "Extraer emails de LinkedIn (guía gratis)", "url": "https://overloop.com/es/blog/correos-perfil-linkedin"},
+        {"@type": "ListItem", "position": 35, "name": "9 herramientas IA de outreach multicanal", "url": "https://overloop.com/es/blog/mejores-herramientas-outreach-multicanal-ia"},
+        {"@type": "ListItem", "position": 36, "name": "Planificación pre-llamada para vender más", "url": "https://overloop.com/es/blog/planificacion-previa-llamada"},
+        {"@type": "ListItem", "position": 37, "name": "Las 11 mejores herramientas de IA BDR", "url": "https://overloop.com/es/blog/mejores-herramientas-ia-bdr"},
+        {"@type": "ListItem", "position": 38, "name": "Cómo redactar un correo electrónico de...", "url": "https://overloop.com/es/blog/redactar-correo-seguimiento"},
+        {"@type": "ListItem", "position": 39, "name": "8 herramientas IA de outreach en LinkedIn", "url": "https://overloop.com/es/blog/mejores-herramientas-outreach-linkedin-ia"},
+        {"@type": "ListItem", "position": 40, "name": "Más productividad con email automation", "url": "https://overloop.com/es/blog/automatizacion-correo-electronico"},
+        {"@type": "ListItem", "position": 41, "name": "¿Es ilegal el correo electrónico frío?", "url": "https://overloop.com/es/blog/email-frio-es-ilegal"},
+        {"@type": "ListItem", "position": 42, "name": "Asuntos de email de ventas: ejemplos y tips", "url": "https://overloop.com/es/blog/mejores-asuntos-email-ventas"},
+        {"@type": "ListItem", "position": 43, "name": "Cómo encontrar el email de cualquier persona", "url": "https://overloop.com/es/blog/encontrar-correo-electronico"},
+        {"@type": "ListItem", "position": 44, "name": "Emails de ventas: consejos para cerrar más", "url": "https://overloop.com/es/blog/consejos-correos-ventas"},
+        {"@type": "ListItem", "position": 45, "name": "Escribir un email de seguimiento eficaz", "url": "https://overloop.com/es/blog/correo-seguimiento"},
+        {"@type": "ListItem", "position": 46, "name": "5 pasos principales para una estrategia...", "url": "https://overloop.com/es/blog/estrategia-cold-email"},
+        {"@type": "ListItem", "position": 47, "name": "455 palabras desencadenantes del spam que se...", "url": "https://overloop.com/es/blog/palabras-spam-evitar-email"},
+        {"@type": "ListItem", "position": 48, "name": "Automatizaciones", "url": "https://overloop.com/es/blog/automatizaciones-overloop"},
+        {"@type": "ListItem", "position": 49, "name": "Mejores prácticas para los enlaces en sus...", "url": "https://overloop.com/es/blog/enlaces-correos-electronicos"},
+        {"@type": "ListItem", "position": 50, "name": "La longitud ideal de un correo electrónico en...", "url": "https://overloop.com/es/blog/longitud-ideal-email-frio"},
+        {"@type": "ListItem", "position": 51, "name": "¿Confías en las ventas de temporada? He aquí...", "url": "https://overloop.com/es/blog/ventas-estacionales-como-sobrevivir"},
+        {"@type": "ListItem", "position": 52, "name": "Deja las presentaciones de ventas genéricas", "url": "https://overloop.com/es/blog/presentacion-ventas"},
+        {"@type": "ListItem", "position": 53, "name": "A quién prospectar y dónde encontrarlos", "url": "https://overloop.com/es/blog/prospectar-clientes"},
+        {"@type": "ListItem", "position": 54, "name": "Email frío para link building [caso real]", "url": "https://overloop.com/es/blog/email-frio-link-building-caso-estudio"},
+        {"@type": "ListItem", "position": 55, "name": "Ventas internas vs externas: ¿cuál elegir?", "url": "https://overloop.com/es/blog/ventas-internas-vs-externas"},
+        {"@type": "ListItem", "position": 56, "name": "La plantilla de email que todo SDR quiere", "url": "https://overloop.com/es/blog/plantilla-correo-electronico-ventas"},
+        {"@type": "ListItem", "position": 57, "name": "Cómo escribir la secuencia perfecta de...", "url": "https://overloop.com/es/blog/secuencia-correos-seguimiento"},
+        {"@type": "ListItem", "position": 58, "name": "6 razones por las que su proceso de ventas no...", "url": "https://overloop.com/es/blog/proceso-ventas-roto-razones"},
+        {"@type": "ListItem", "position": 59, "name": "4 stats de cold email (3M+ analizados)", "url": "https://overloop.com/es/blog/estadisticas-cold-email"},
+        {"@type": "ListItem", "position": 60, "name": "Vendedores: no te obsesiones con los KPIs", "url": "https://overloop.com/es/blog/vendedores-no-obsesionarse-resultados"},
+        {"@type": "ListItem", "position": 61, "name": "Cómo iniciar tu carrera en ventas", "url": "https://overloop.com/es/blog/carrera-ventas"},
+        {"@type": "ListItem", "position": 62, "name": "17 frases prohibidas en emails de ventas", "url": "https://overloop.com/es/blog/frases-prohibidas-email-ventas"},
+        {"@type": "ListItem", "position": 63, "name": "500+ palabras clave para potenciar tu copy", "url": "https://overloop.com/es/blog/500-palabras-detonantes"},
+        {"@type": "ListItem", "position": 64, "name": "Las 10 películas de ventas favoritas de los...", "url": "https://overloop.com/es/blog/peliculas-ventas-favoritas-vendedores"},
+        {"@type": "ListItem", "position": 65, "name": "5 reglas para superar al 90% de vendedores", "url": "https://overloop.com/es/blog/reglas-exito-vendedores"},
+        {"@type": "ListItem", "position": 66, "name": "El 48% de los vendedores nunca hará nada de esto", "url": "https://overloop.com/es/blog/tecnicas-seguimiento-ventas"},
+        {"@type": "ListItem", "position": 67, "name": "7 razones por las que los correos...", "url": "https://overloop.com/es/blog/razones-rebote-emails-como-evitarlo"},
+        {"@type": "ListItem", "position": 68, "name": "31% de tasa de respuesta email [caso real]", "url": "https://overloop.com/es/blog/tasa-respuesta-correo-ventas"},
+        {"@type": "ListItem", "position": 69, "name": "¿Deberías aceptar un «no» por respuesta?", "url": "https://overloop.com/es/blog/objeciones-ventas"},
+        {"@type": "ListItem", "position": 70, "name": "Guía de A/B testing en campañas email drip", "url": "https://overloop.com/es/blog/pruebas-ab-campanas-email-secuencia"},
+        {"@type": "ListItem", "position": 71, "name": "9 razones para no comprar listas de email", "url": "https://overloop.com/es/blog/comprar-listas-de-correo-electronico"},
+        {"@type": "ListItem", "position": 72, "name": "10 consejos profesionales para evitar la...", "url": "https://overloop.com/es/blog/consejos-evitar-carpeta-spam"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Overloop", "item": "https://overloop.com"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://overloop.com/es/blog"}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -366,11 +777,12 @@
                 <a href="/overloop-blog/blog/es/" class="nav-dropdown-trigger">Resources</a>
                 <div class="nav-dropdown-menu">
                     <ul class="nav-dropdown-content">
-                        <li><a href="/overloop-blog/blog/es/">Blog<span class="dropdown-desc">Outbound strategies and guides</span></a></li>
-                        <li><a href="/overloop-blog/tools/spam-checker">Spam Checker<span class="dropdown-desc">Free email analysis tool</span></a></li>
-                        <li><a href="/overloop-blog/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Estimate your outbound ROI</span></a></li>
-                        <li><a href="/overloop-blog/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Check SPF, DKIM, DMARC</span></a></li>
-                        <li><a href="/playbooks">Playbooks<span class="dropdown-desc">Industry-specific strategies</span></a></li>
+                        <li><a href="/overloop-blog/blog/es/">Blog<span class="dropdown-desc">Estrategias y guías outbound</span></a></li>
+                        <li><a href="/overloop-blog/versus/">Versus<span class="dropdown-desc">Comparativas de herramientas</span></a></li>
+                        <li><a href="/overloop-blog/tools/spam-checker">Spam Checker<span class="dropdown-desc">Herramienta de análisis de email</span></a></li>
+                        <li><a href="/overloop-blog/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Calcula tu ROI outbound</span></a></li>
+                        <li><a href="/overloop-blog/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Verifica SPF, DKIM, DMARC</span></a></li>
+                        <li><a href="/playbooks">Playbooks<span class="dropdown-desc">Estrategias por industria</span></a></li>
                     </ul>
                 </div>
             </li>
@@ -394,340 +806,1527 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 </script>
 </nav>
 
+    <!-- Breadcrumb -->
+    <div class="blog-breadcrumb">
+        <nav>
+            <a href="https://overloop.com">Overloop</a>
+            <span>&rsaquo;</span>
+            <span class="current">Blog</span>
+        </nav>
+    </div>
+
     <!-- Hero Section -->
     <header class="blog-hero">
         <div class="hero-inner">
-            <span class="hero-label">Articulos, guias y reflexiones de nuestro equipo</span>
-            <h1>Ideas para un<br><em>mejor outbound</em></h1>
-            <p class="hero-sub">Playbooks de email frio, comparativas de herramientas IA y estrategias outbound probadas en campanas reales.</p>
+            <span class="hero-label">Explora artículos, guías y consejos de nuestro equipo</span>
+            <h1>Estrategias y consejos para una<br><em>prospección outbound eficaz</em></h1>
+            <p class="hero-sub">Playbooks de cold email, comparativas de herramientas IA y estrategias outbound probadas en campañas reales.</p>
         </div>
     </header>
 
     <!-- Featured Hero Card -->
-    <a href="/overloop-blog/blog/es/best-ai-sales-tools" class="blog-hero-card">
-        <span class="featured-badge">Guia Destacada</span>
-        <h2>Mejores Herramientas IA Ventas en 2026: La Guia de Compra</h2>
-        <p class="featured-desc">Probamos 30+ herramientas IA de ventas en 6 categorias: BDR, email, LinkedIn, enriquecimiento, conversation intelligence y coaching de email. Tabla comparativa con precios, puntuaciones G2 y marco de decision.</p>
-        <span class="featured-cta">Leer la guia completa <span>&rarr;</span></span>
-        <span class="featured-meta">22 min de lectura &middot; 19 herramientas comparadas &middot; Abril 2026</span>
+    <a href="/overloop-blog/blog/es/9-best-ai-email-outreach-tools.html" class="blog-hero-card">
+        <span class="featured-badge">Guía destacada</span>
+        <h2>9 Mejores Herramientas IA Email Outreach en 2026 (Comparativa Real)</h2>
+        <p class="featured-desc">Probamos 9 herramientas IA email outreach en campañas reales. Comparativa honesta: redacción IA, entregabilidad, warm-up, precios y funciones multicanal. Abril 2026.</p>
+        <span class="featured-cta">Leer la guía completa <span>&rarr;</span></span>
+        <span class="featured-meta">10 min</span>
     </a>
 
     <main style="padding: 56px 24px 80px; background: var(--bg);">
         <div style="max-width: 1000px; margin: 0 auto;">
 
-            <!-- Category filter pills -->
-            <div class="blog-filters">
-                <button class="active" data-filter="all">Ver todo</button>
-                <button data-filter="cold-email">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    Email Frio
-                </button>
-                <button data-filter="ai-tools">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-                    Herramientas IA
-                </button>
-                <button data-filter="comparisons">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                    Comparativas
-                </button>
-                <button data-filter="legal">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Legal
-                </button>
+            <!-- Search bar -->
+            <div class="blog-search-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="blog-search" placeholder="Buscar artículos..." autocomplete="off">
+            </div>
+
+            <!-- Article count -->
+            <p class="blog-count">Mostrando <strong id="blog-visible-count">72</strong> de <strong>72</strong> artículos</p>
+
+            <!-- Category filter pills + Language switcher -->
+            <div class="blog-toolbar">
+                <div class="blog-filters" id="blog-filters">
+                    <button class="active" data-filter="all">Todos (72)</button>
+                    <button data-filter="cold-email">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Ventas (54)
+                    </button>
+                    <button data-filter="ai-tools">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                        Herramientas IA (9)
+                    </button>
+                    <button data-filter="comparisons">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        Comparativas (9)
+                    </button>
+                </div>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-btn" id="lang-toggle" aria-label="Cambiar idioma">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        ES
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <a href="/overloop-blog/blog/en/">&#127468;&#127463; English</a>
+                        <a href="/overloop-blog/blog/fr/">&#127467;&#127479; Fran&ccedil;ais</a>
+                        <a href="/overloop-blog/blog/de/">&#127465;&#127466; Deutsch</a>
+                        <a href="/overloop-blog/blog/es/" class="active">&#127466;&#127480; Espa&ntilde;ol</a>
+                        <a href="/overloop-blog/blog/it/">&#127470;&#127481; Italiano</a>
+                    </div>
+                </div>
             </div>
 
             <!-- Card Grid -->
             <div class="blog-grid" id="blog-grid">
 
-                <!-- COLD EMAIL CLUSTER -->
-                <a href="/overloop-blog/blog/es/cold-email-stats-2018" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
+                <a href="/overloop-blog/blog/es/9-best-ai-email-outreach-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="9 Mejores Herramientas IA Email Outreach en 2026 (Comparativa Real)" data-description="Probamos 9 herramientas IA email outreach en campañas reales. Comparativa honesta: redacción IA, entregabilidad, warm-up, precios y funciones multicanal. Abril 2026.">
+                    <div class="blog-card-gradient ai-tools"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">12 min</span>
-                        </div>
-                        <h3>Estadisticas Email Frio 2026: Benchmarks y Datos</h3>
-                        <p class="card-desc">Estadisticas de email frio 2026: tasas de apertura, tasas de respuesta, bounce rate, mejores horarios y benchmarks por industria.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/whats-the-best-email-length-for-sales-outreach" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">8 min</span>
-                        </div>
-                        <h3>Longitud Ideal Email Frio: Guia con Datos (2026)</h3>
-                        <p class="card-desc">Cual es la longitud ideal de un email frio? Los datos muestran que 50-125 palabras obtienen las mejores tasas de respuesta.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/455-email-spam-trigger-words-avoid-2018" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">15 min</span>
-                        </div>
-                        <h3>500+ Palabras Spam Email que Debes Evitar (Lista 2026)</h3>
-                        <p class="card-desc">La lista mas completa de 500+ palabras spam en email organizadas por categoria. Descubre que palabras activan los filtros.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/500-trigger-words" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">18 min</span>
-                        </div>
-                        <h3>Palabras Gatillo Email: 500+ Palabras que Generan Respuestas</h3>
-                        <p class="card-desc">500+ palabras gatillo para cold email organizadas por emocion: urgencia, curiosidad, confianza, exclusividad, FOMO y prueba social.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/cold-emailing-link-building" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
+                            <span class="card-badge ai-tools">Herramientas IA</span>
                             <span class="blog-card-readtime">10 min</span>
                         </div>
-                        <h3>Email Frio Link Building: 23 Backlinks con 500 Emails</h3>
-                        <p class="card-desc">Caso de estudio: como usar el email frio para link building SEO. Plantillas, asuntos, secuencias y metricas reales.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/how-to-find-someone-email-address-efficiently" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">14 min</span>
+                        <h3>9 Mejores Herramientas IA Email Outreach en 2026 (Comparativa Real)</h3>
+                        <p class="card-desc">Probamos 9 herramientas IA email outreach en campañas reales. Comparativa honesta: redacción IA, entregabilidad, warm-up, precios y funciones multicanal. Abril 2026.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
                         </div>
-                        <h3>Encontrar correo electronico: 12 metodos que funcionan de verdad (2026)</h3>
-                        <p class="card-desc">12 metodos probados para encontrar el correo electronico profesional de cualquier persona. Herramientas gratuitas y de pago.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/get-email-from-linkedin-profile" class="blog-card-v2" data-category="cold-email">
-                    <div class="blog-card-gradient cold-email"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge cold-email">Email Frio</span>
-                            <span class="blog-card-readtime">9 min</span>
-                        </div>
-                        <h3>Obtener email de un perfil LinkedIn: 5 metodos paso a paso (2026)</h3>
-                        <p class="card-desc">5 formas probadas de obtener la direccion de email desde un perfil de LinkedIn. Extensiones Chrome, Sales Navigator y mas.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
-                    </div>
-                </a>
-
-                <!-- AI TOOLS CLUSTER -->
-                <a href="/overloop-blog/blog/es/11-best-ai-bdr-tools" class="blog-card-v2" data-category="ai-tools">
+                <a href="/overloop-blog/blog/es/best-ai-sales-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="Mejores Herramientas IA Ventas en 2026: La Guía de Compra Que Realmente Te Ayuda a Decidir" data-description="Probamos 30+ herramientas IA de ventas: email, LinkedIn, enriquecimiento y automatización BDR. Guía de compra estructurada con tabla comparativa, precios y recomendaciones honestas.">
                     <div class="blog-card-gradient ai-tools"></div>
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge ai-tools">Herramientas IA</span>
                             <span class="blog-card-readtime">16 min</span>
                         </div>
-                        <h3>11 Mejores Herramientas IA Ventas 2026 (Comparativa Honesta)</h3>
-                        <p class="card-desc">Probamos 11 herramientas IA de ventas. Precios reales, pros/contras reales. Overloop, Artisan, 11x, Regie.ai y mas.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/clay.com.png" alt="Clay" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/amplemarket.svg" alt="Amplemarket" loading="lazy">
-                            <span class="logo-count">+7 mas</span>
+                        <h3>Mejores Herramientas IA Ventas en 2026: La Guía de Compra Que Realmente Te Ayuda a Decidir</h3>
+                        <p class="card-desc">Probamos 30+ herramientas IA de ventas: email, LinkedIn, enriquecimiento y automatización BDR. Guía de compra estructurada con tabla comparativa, precios y recomendaciones...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
                         </div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/9-best-ai-email-outreach-tools" class="blog-card-v2" data-category="ai-tools">
-                    <div class="blog-card-gradient ai-tools"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge ai-tools">Herramientas IA</span>
-                            <span class="blog-card-readtime">14 min</span>
-                        </div>
-                        <h3>9 Mejores Herramientas IA Email Outreach en 2026 (Comparativa Real)</h3>
-                        <p class="card-desc">Probamos 9 herramientas IA email outreach en campanas reales. Comparativa honesta: redaccion IA, entregabilidad, warm-up y precios.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <span class="logo-count">+6 mas</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/8-best-ai-linkedin-outreach-tools" class="blog-card-v2" data-category="ai-tools">
-                    <div class="blog-card-gradient ai-tools"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge ai-tools">Herramientas IA</span>
-                            <span class="blog-card-readtime">13 min</span>
-                        </div>
-                        <h3>8 Mejores Herramientas IA LinkedIn Outreach 2026 (Guia de Seguridad)</h3>
-                        <p class="card-desc">Probamos 8 herramientas IA LinkedIn outreach en seguridad, limites diarios y riesgo de ban. Comparativa honesta con datos reales.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/expandi.io.svg" alt="Expandi" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
-                            <span class="logo-count">+5 mas</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- ALTERNATIVES / COMPARISONS -->
-                <a href="/overloop-blog/blog/es/apollo-alternatives" class="blog-card-v2" data-category="comparisons">
+                <a href="/overloop-blog/blog/es/outreach-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="7 Alternativas Outreach.io en 2026 (Precios Transparentes, Menos Complejidad)" data-description="Outreach.io demasiado caro o complejo? 7 alternativas con precios publicos para pymes y equipos medianos.">
                     <div class="blog-card-gradient comparisons"></div>
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparativas</span>
-                            <span class="blog-card-readtime">18 min</span>
+                            <span class="blog-card-readtime">4 min</span>
                         </div>
-                        <h3>10 Mejores Alternativas Apollo 2026 (Probadas y Comparadas)</h3>
-                        <p class="card-desc">Buscas alternativas a Apollo? Probamos 10+ herramientas: Overloop, Lemlist, Instantly, Saleshandy, Reply.io y mas.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/cognism.svg" alt="Cognism" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/zoominfo.com.png" alt="ZoomInfo" loading="lazy">
-                            <span class="logo-count">+6 mas</span>
+                        <h3>7 Alternativas Outreach.io en 2026 (Precios Transparentes, Menos Complejidad)</h3>
+                        <p class="card-desc">Outreach.io demasiado caro o complejo? 7 alternativas con precios publicos para pymes y equipos medianos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
                         </div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/instantly-alternatives" class="blog-card-v2" data-category="comparisons">
+                <a href="/overloop-blog/blog/es/lemlist-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="8 Mejores Alternativas Lemlist en 2026 (Mas baratas y mas simples)" data-description="Las mejores alternativas Lemlist comparadas: precios, funciones multicanal e IA. Comparativa honesta de un competidor directo.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>8 Mejores Alternativas Lemlist en 2026 (Mas baratas y mas simples)</h3>
+                        <p class="card-desc">Las mejores alternativas Lemlist comparadas: precios, funciones multicanal e IA. Comparativa honesta de un competidor directo.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/salesloft-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="6 Alternativas Salesloft en 2026 (Despues de la Fusion con Clari)" data-description="Salesloft fusiono con Clari en 2025. 6 alternativas para equipos que reevaluan su stack de sales engagement. Precios y funciones comparados.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>6 Alternativas Salesloft en 2026 (Despues de la Fusion con Clari)</h3>
+                        <p class="card-desc">Salesloft fusiono con Clari en 2025. 6 alternativas para equipos que reevaluan su stack de sales engagement. Precios y funciones comparados.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/instantly-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="6 Alternativas Instantly en 2026 (Para Equipos que Necesitan Mas que Email)" data-description="Instantly solo hace email. 6 alternativas para equipos que necesitan LinkedIn, telefono y mejor entregabilidad. Precios y funciones comparados.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>6 Alternativas Instantly en 2026 (Para Equipos que Necesitan Mas que Email)</h3>
+                        <p class="card-desc">Instantly solo hace email. 6 alternativas para equipos que necesitan LinkedIn, telefono y mejor entregabilidad. Precios y funciones comparados.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de abril de 2026</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/citas-de-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="55 frases de ventas que realmente funcionan" data-description="Una buena frase puede abrir una reunión; una mala puede cerrarte el trimestre. Si te has quedado en blanco en una llamada, si has sonado “demasiado vend...">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>55 frases de ventas que realmente funcionan</h3>
+                        <p class="card-desc">Una buena frase puede abrir una reunión; una mala puede cerrarte el trimestre. Si te has quedado en blanco en una llamada, si has sonado “demasiado vend...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">27 de marzo de 2026</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/alternativas-apollo.html" class="blog-card-v2" data-category="comparisons" data-title="Alternativas a Apollo: 13 opciones (2025)" data-description="Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>Alternativas a Apollo: 13 opciones (2025)</h3>
+                        <p class="card-desc">Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">16 de diciembre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/resena-linkedin-helper.html" class="blog-card-v2" data-category="comparisons" data-title="LinkedIn Helper: test y alternativas 2025" data-description="¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>LinkedIn Helper: test y alternativas 2025</h3>
+                        <p class="card-desc">¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">12 de diciembre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/resena-la-growth-machine.html" class="blog-card-v2" data-category="comparisons" data-title="La Growth Machine: análisis y opinión 2025" data-description="¿Vale la pena La Growth Machine? Reseña honesta con el flujo multicanal exacto que multiplicó por 10 nuestras tasas de respuesta.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>La Growth Machine: análisis y opinión 2025</h3>
+                        <p class="card-desc">¿Vale la pena La Growth Machine? Reseña honesta con el flujo multicanal exacto que multiplicó por 10 nuestras tasas de respuesta.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">12 de diciembre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-automatizacion-linkedin.html" class="blog-card-v2" data-category="cold-email" data-title="11 herramientas de automatización LinkedIn" data-description="Las 11 mejores herramientas de automatización de LinkedIn en 2025. Compara funciones e impulsa tu generación de leads B2B con IA.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">19 min</span>
+                        </div>
+                        <h3>11 herramientas de automatización LinkedIn</h3>
+                        <p class="card-desc">Las 11 mejores herramientas de automatización de LinkedIn en 2025. Compara funciones e impulsa tu generación de leads B2B con IA.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">11 de diciembre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/overloop-se-une-sortlist.html" class="blog-card-v2" data-category="cold-email" data-title="Overloop une fuerzas con Sortlist" data-description="Nuevo capítulo para Overloop: nos unimos a Sortlist, el marketplace líder para conectar empresas con agencias de marketing.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Overloop une fuerzas con Sortlist</h3>
+                        <p class="card-desc">Nuevo capítulo para Overloop: nos unimos a Sortlist, el marketplace líder para conectar empresas con agencias de marketing.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de diciembre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/comparativa-plataformas-ventas-engagement.html" class="blog-card-v2" data-category="comparisons" data-title="Plataformas de sales engagement (2025)" data-description="Compare las mejores plataformas de engagement de ventas en 2025. Descubra funciones y encuentre la ideal para su equipo B2B.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparativas</span>
+                            <span class="blog-card-readtime">17 min</span>
+                        </div>
+                        <h3>Plataformas de sales engagement (2025)</h3>
+                        <p class="card-desc">Compare las mejores plataformas de engagement de ventas en 2025. Descubra funciones y encuentre la ideal para su equipo B2B.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">17 de octubre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/adopcion-herramientas-ia-ventas-b2b.html" class="blog-card-v2" data-category="ai-tools" data-title="Herramientas IA en prospección B2B (2025)" data-description="Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">18 min</span>
+                        </div>
+                        <h3>Herramientas IA en prospección B2B (2025)</h3>
+                        <p class="card-desc">Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">14 de octubre de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/guia-automatizacion-linkedin-2025.html" class="blog-card-v2" data-category="cold-email" data-title="Guía de automatización de LinkedIn 2025:..." data-description="Guía de automatización de LinkedIn 2025: qué es seguro, qué está prohibido y las herramientas para automatizar sin riesgo.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">19 min</span>
+                        </div>
+                        <h3>Guía de automatización de LinkedIn 2025:...</h3>
+                        <p class="card-desc">Guía de automatización de LinkedIn 2025: qué es seguro, qué está prohibido y las herramientas para automatizar sin riesgo.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">19 de junio de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/consejos-prospeccion-ventas-pipeline.html" class="blog-card-v2" data-category="cold-email" data-title="10 consejos de prospección para tu pipeline" data-description="10 consejos de prospección probados para impulsar tu pipeline. Descubre cómo Overloop automatiza y acelera tus ventas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">17 min</span>
+                        </div>
+                        <h3>10 consejos de prospección para tu pipeline</h3>
+                        <p class="card-desc">10 consejos de prospección probados para impulsar tu pipeline. Descubre cómo Overloop automatiza y acelera tus ventas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">15 de junio de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/checklist-seleccionar-mejores-herramientas-ia-sdr.html" class="blog-card-v2" data-category="cold-email" data-title="Checklist: mejores herramientas SDR IA 2025" data-description="Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">21 min</span>
+                        </div>
+                        <h3>Checklist: mejores herramientas SDR IA 2025</h3>
+                        <p class="card-desc">Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">31 de mayo de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/encontrar-correos-b2b.html" class="blog-card-v2" data-category="cold-email" data-title="Encontrar emails B2B seguros para el RGPD" data-description="Cómo encontrar emails B2B sin perder horas ni arriesgar cumplimiento. Herramientas probadas y métodos que funcionan en 2025.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>Encontrar emails B2B seguros para el RGPD</h3>
+                        <p class="card-desc">Cómo encontrar emails B2B sin perder horas ni arriesgar cumplimiento. Herramientas probadas y métodos que funcionan en 2025.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">11 de mayo de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/estrategias-generacion-leads-saas.html" class="blog-card-v2" data-category="cold-email" data-title="Estrategias de leads para empresas SaaS" data-description="Estrategias de generación de leads para SaaS. Impulse ventas B2B con las potentes herramientas de automatización de Overloop.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">17 min</span>
+                        </div>
+                        <h3>Estrategias de leads para empresas SaaS</h3>
+                        <p class="card-desc">Estrategias de generación de leads para SaaS. Impulse ventas B2B con las potentes herramientas de automatización de Overloop.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">3 de mayo de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/herramientas-ventas-esenciales-equipos-b2b.html" class="blog-card-v2" data-category="cold-email" data-title="10 herramientas de ventas para equipos B2B" data-description="Descubra las 10 herramientas de ventas imprescindibles para las empresas B2B en 2025 para ahorrar tiempo, aumentar la productividad y cerrar más negocios.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>10 herramientas de ventas para equipos B2B</h3>
+                        <p class="card-desc">Descubra las 10 herramientas de ventas imprescindibles para las empresas B2B en 2025 para ahorrar tiempo, aumentar la productividad y cerrar más negocios.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">24 de abril de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/propuestas-valor-generadas-ia-guia.html" class="blog-card-v2" data-category="cold-email" data-title="Propuestas de valor generadas por IA: guía" data-description="Descubra cómo la IA mejora el alcance de ventas creando propuestas de valor personalizadas y basadas en datos para captar clientes.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>Propuestas de valor generadas por IA: guía</h3>
+                        <p class="card-desc">Descubra cómo la IA mejora el alcance de ventas creando propuestas de valor personalizadas y basadas en datos para captar clientes.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">11 de febrero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/guia-cold-email.html" class="blog-card-v2" data-category="cold-email" data-title="La guía de correo electrónico frío de 2025" data-description="Guía de Cold Email 2025: cómo escribir emails que reciban respuestas. Tácticas actualizadas, ejemplos reales y estrategia eficaz.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>La guía de correo electrónico frío de 2025</h3>
+                        <p class="card-desc">Guía de Cold Email 2025: cómo escribir emails que reciban respuestas. Tácticas actualizadas, ejemplos reales y estrategia eficaz.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">10 de febrero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/herramientas-prospeccion-pymes.html" class="blog-card-v2" data-category="cold-email" data-title="8 herramientas de prospección para pymes" data-description="Las 8 mejores herramientas de prospección para pymes: encuentre leads rápido, reduzca costos y amplíe su alcance. Opciones gratis.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">18 min</span>
+                        </div>
+                        <h3>8 herramientas de prospección para pymes</h3>
+                        <p class="card-desc">Las 8 mejores herramientas de prospección para pymes: encuentre leads rápido, reduzca costos y amplíe su alcance. Opciones gratis.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">5 de febrero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/errores-automatizacion-ventas-como-evitarlos.html" class="blog-card-v2" data-category="cold-email" data-title="Errores de automatización de ventas a evitar" data-description="Aprenda a evitar los errores comunes de automatización de ventas para mejorar la eficiencia y las relaciones con clientes.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Errores de automatización de ventas a evitar</h3>
+                        <p class="card-desc">Aprenda a evitar los errores comunes de automatización de ventas para mejorar la eficiencia y las relaciones con clientes.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">3 de febrero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/mejores-practicas-campanas-ventas-multicanal.html" class="blog-card-v2" data-category="cold-email" data-title="10 prácticas para campañas multicanal" data-description="10 estrategias eficaces para campañas de ventas multicanal exitosas, desde segmentación de audiencia hasta herramientas de IA.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">21 min</span>
+                        </div>
+                        <h3>10 prácticas para campañas multicanal</h3>
+                        <p class="card-desc">10 estrategias eficaces para campañas de ventas multicanal exitosas, desde segmentación de audiencia hasta herramientas de IA.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">27 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/correo-ventas-personalizado.html" class="blog-card-v2" data-category="cold-email" data-title="Email de ventas personalizado: framework 2025" data-description="Escribe emails de ventas personalizados que obtengan respuestas. Estructura probada y ejemplos para cerrar más negocios.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>Email de ventas personalizado: framework 2025</h3>
+                        <p class="card-desc">Escribe emails de ventas personalizados que obtengan respuestas. Estructura probada y ejemplos para cerrar más negocios.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">22 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/herramientas-prospeccion-ventas-ia.html" class="blog-card-v2" data-category="ai-tools" data-title="7 herramientas IA de prospección de ventas" data-description="7 herramientas IA de prospección que automatizan tareas y mejoran la generación de leads para empresas de todos los tamaños.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">18 min</span>
+                        </div>
+                        <h3>7 herramientas IA de prospección de ventas</h3>
+                        <p class="card-desc">7 herramientas IA de prospección que automatizan tareas y mejoran la generación de leads para empresas de todos los tamaños.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">20 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/flujos-trabajo-generacion-leads.html" class="blog-card-v2" data-category="cold-email" data-title="Workflows escalables para generar leads" data-description="Cree workflows escalables de generación de leads que mejoren la eficiencia y calidad mediante automatización y plantillas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">11 min</span>
+                        </div>
+                        <h3>Workflows escalables para generar leads</h3>
+                        <p class="card-desc">Cree workflows escalables de generación de leads que mejoren la eficiencia y calidad mediante automatización y plantillas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">18 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/ia-programacion-seguimiento-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="Seguimiento con IA: más eficiencia en ventas" data-description="La IA automatiza el seguimiento de ventas para mayor eficiencia: outreach personalizado y timing óptimo. No pierda oportunidades.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>Seguimiento con IA: más eficiencia en ventas</h3>
+                        <p class="card-desc">La IA automatiza el seguimiento de ventas para mayor eficiencia: outreach personalizado y timing óptimo. No pierda oportunidades.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">12 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/roi-herramientas-ventas-ia.html" class="blog-card-v2" data-category="cold-email" data-title="ROI de herramientas IA de ventas: métricas" data-description="Mida el ROI de herramientas de ventas IA: ahorro de costos, crecimiento de ingresos y mejoras de eficiencia para su negocio.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>ROI de herramientas IA de ventas: métricas</h3>
+                        <p class="card-desc">Mida el ROI de herramientas de ventas IA: ahorro de costos, crecimiento de ingresos y mejoras de eficiencia para su negocio.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">7 de enero de 2025</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/linkedin-vs-email-comparativa-outreach-b2b.html" class="blog-card-v2" data-category="comparisons" data-title="LinkedIn vs email: ¿cuál gana en B2B?" data-description="LinkedIn vs email para B2B: descubra las fortalezas de cada canal y cómo combinarlos para obtener resultados óptimos.">
                     <div class="blog-card-gradient comparisons"></div>
                     <div class="card-body">
                         <div class="card-top">
                             <span class="card-badge comparisons">Comparativas</span>
                             <span class="blog-card-readtime">11 min</span>
                         </div>
-                        <h3>6 Alternativas Instantly en 2026 (Para Equipos que Necesitan Mas)</h3>
-                        <p class="card-desc">Instantly solo hace email. 6 alternativas para equipos que necesitan LinkedIn, telefono y mejor entregabilidad.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <span class="logo-count">+3 mas</span>
+                        <h3>LinkedIn vs email: ¿cuál gana en B2B?</h3>
+                        <p class="card-desc">LinkedIn vs email para B2B: descubra las fortalezas de cada canal y cómo combinarlos para obtener resultados óptimos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">26 de diciembre de 2024</span>
                         </div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/lemlist-alternatives" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-asistente-ventas-ia.html" class="blog-card-v2" data-category="ai-tools" data-title="10 mejores herramientas de asistente IA" data-description="Revisión de las 10 mejores herramientas de asistente de ventas de IA, incluidas las características, las ventajas, las desventajas y los precios">
+                    <div class="blog-card-gradient ai-tools"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge comparisons">Comparativas</span>
-                            <span class="blog-card-readtime">10 min</span>
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">12 min</span>
                         </div>
-                        <h3>8 Mejores Alternativas Lemlist en 2026 (Mas baratas y mas simples)</h3>
-                        <p class="card-desc">Las mejores alternativas Lemlist comparadas: precios, funciones multicanal e IA. Comparativa honesta de un competidor directo.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/smartlead.ai.svg" alt="Smartlead" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/instantly.ai.svg" alt="Instantly" loading="lazy">
-                            <span class="logo-count">+5 mas</span>
+                        <h3>10 mejores herramientas de asistente IA</h3>
+                        <p class="card-desc">Revisión de las 10 mejores herramientas de asistente de ventas de IA, incluidas las características, las ventajas, las desventajas y los precios</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">12 de septiembre de 2024</span>
                         </div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/outreach-alternatives" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-agentes-ia-ventas.html" class="blog-card-v2" data-category="ai-tools" data-title="Las 9 mejores herramientas de agentes de IA..." data-description="Revisión de las 9 mejores herramientas de AI Agents para ventas, incluidas sus características, ventajas y desventajas">
+                    <div class="blog-card-gradient ai-tools"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge comparisons">Comparativas</span>
-                            <span class="blog-card-readtime">10 min</span>
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">13 min</span>
                         </div>
-                        <h3>7 Alternativas Outreach.io en 2026 (Precios Transparentes)</h3>
-                        <p class="card-desc">Outreach.io demasiado caro o complejo? 7 alternativas con precios publicos para pymes y equipos medianos.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/outreach.io.png" alt="Outreach" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
-                            <span class="logo-count">+4 mas</span>
+                        <h3>Las 9 mejores herramientas de agentes de IA...</h3>
+                        <p class="card-desc">Revisión de las 9 mejores herramientas de AI Agents para ventas, incluidas sus características, ventajas y desventajas</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">9 de septiembre de 2024</span>
                         </div>
                     </div>
                 </a>
-
-                <a href="/overloop-blog/blog/es/salesloft-alternatives" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
+                <a href="/overloop-blog/blog/es/correos-perfil-linkedin.html" class="blog-card-v2" data-category="cold-email" data-title="Extraer emails de LinkedIn (guía gratis)" data-description="Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.">
+                    <div class="blog-card-gradient cold-email"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge comparisons">Comparativas</span>
-                            <span class="blog-card-readtime">10 min</span>
-                        </div>
-                        <h3>6 Alternativas Salesloft en 2026 (Despues de la Fusion con Clari)</h3>
-                        <p class="card-desc">Salesloft fusiono con Clari en 2025. 6 alternativas para equipos que reevaluan su stack de sales engagement.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/salesloft.com.svg" alt="Salesloft" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/apollo.io.png" alt="Apollo" loading="lazy">
-                            <span class="logo-count">+3 mas</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/la-growth-machine-review" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge comparisons">Resena</span>
-                            <span class="blog-card-readtime">9 min</span>
-                        </div>
-                        <h3>Resena La Growth Machine (2026): Funciones, Precios, Ventajas e Inconvenientes</h3>
-                        <p class="card-desc">Resena honesta de La Growth Machine por un competidor directo. Outreach multicanal, mensajes de voz y precios en EUR.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/lagrowthmachine.com.svg" alt="LGM" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/overloop-blog/blog/es/linkedin-helper-review" class="blog-card-v2" data-category="comparisons">
-                    <div class="blog-card-gradient comparisons"></div>
-                    <div class="card-body">
-                        <div class="card-top">
-                            <span class="card-badge comparisons">Resena</span>
+                            <span class="card-badge cold-email">Ventas</span>
                             <span class="blog-card-readtime">8 min</span>
                         </div>
-                        <h3>Resena LinkedIn Helper (2026): Funciones, Precios, Ventajas e Inconvenientes</h3>
-                        <p class="card-desc">Resena honesta de LinkedIn Helper por un competidor directo. 30 dias de prueba. Funciones, precios y riesgo de baneo.</p>
-                        <div class="blog-card-logos">
-                            <img src="/overloop-blog/assets/images/logos/linkedhelper.com.svg" alt="LinkedIn Helper" loading="lazy">
-                            <img src="/overloop-blog/assets/images/logos/overloop.com.png" alt="Overloop" loading="lazy">
+                        <h3>Extraer emails de LinkedIn (guía gratis)</h3>
+                        <p class="card-desc">Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">19 de marzo de 2024</span>
                         </div>
                     </div>
                 </a>
-
-                <!-- LEGAL -->
-                <a href="/overloop-blog/blog/es/cold-email-illegal" class="blog-card-v2" data-category="legal">
-                    <div class="blog-card-gradient legal"></div>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-outreach-multicanal-ia.html" class="blog-card-v2" data-category="ai-tools" data-title="9 herramientas IA de outreach multicanal" data-description="Revisión de las 9 mejores herramientas de divulgación multicanal de IA, incluidas sus características, ventajas y desventajas">
+                    <div class="blog-card-gradient ai-tools"></div>
                     <div class="card-body">
                         <div class="card-top">
-                            <span class="card-badge legal">Legal</span>
-                            <span class="blog-card-readtime">16 min</span>
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">13 min</span>
                         </div>
-                        <h3>Email Frio es Legal? Guia Legal por Pais (2026)</h3>
-                        <p class="card-desc">El email frio es legal? Guia legal completa: RGPD (UE), CAN-SPAM (USA), LFPDPPP (Mexico). Reglas B2B vs B2C y sanciones.</p>
-                        <div class="card-meta">10 de abril de 2026</div>
+                        <h3>9 herramientas IA de outreach multicanal</h3>
+                        <p class="card-desc">Revisión de las 9 mejores herramientas de divulgación multicanal de IA, incluidas sus características, ventajas y desventajas</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">13 de marzo de 2024</span>
+                        </div>
                     </div>
                 </a>
-
+                <a href="/overloop-blog/blog/es/planificacion-previa-llamada.html" class="blog-card-v2" data-category="cold-email" data-title="Planificación pre-llamada para vender más" data-description="Descubra la importancia de planificar antes de llamar. Mejore sus conversaciones de ventas con técnicas de planificación eficaces.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">8 min</span>
+                        </div>
+                        <h3>Planificación pre-llamada para vender más</h3>
+                        <p class="card-desc">Descubra la importancia de planificar antes de llamar. Mejore sus conversaciones de ventas con técnicas de planificación eficaces.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">12 de marzo de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-ia-bdr.html" class="blog-card-v2" data-category="ai-tools" data-title="Las 11 mejores herramientas de IA BDR" data-description="Revisión de las 11 mejores herramientas de IA BDR, incluidas sus características, ventajas y desventajas">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">14 min</span>
+                        </div>
+                        <h3>Las 11 mejores herramientas de IA BDR</h3>
+                        <p class="card-desc">Revisión de las 11 mejores herramientas de IA BDR, incluidas sus características, ventajas y desventajas</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">8 de marzo de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/redactar-correo-seguimiento.html" class="blog-card-v2" data-category="cold-email" data-title="Cómo redactar un correo electrónico de..." data-description="¿Sin inspiración para emails? Aprende a redactar un correo de seguimiento memorable. ¡Aumenta tus respuestas con Overloop!">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Cómo redactar un correo electrónico de...</h3>
+                        <p class="card-desc">¿Sin inspiración para emails? Aprende a redactar un correo de seguimiento memorable. ¡Aumenta tus respuestas con Overloop!</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">7 de marzo de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/mejores-herramientas-outreach-linkedin-ia.html" class="blog-card-v2" data-category="ai-tools" data-title="8 herramientas IA de outreach en LinkedIn" data-description="Revisión de las 8 mejores herramientas de divulgación de LinkedIn con IA, incluidas sus características, ventajas y desventajas">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">Herramientas IA</span>
+                            <span class="blog-card-readtime">13 min</span>
+                        </div>
+                        <h3>8 herramientas IA de outreach en LinkedIn</h3>
+                        <p class="card-desc">Revisión de las 8 mejores herramientas de divulgación de LinkedIn con IA, incluidas sus características, ventajas y desventajas</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">1 de marzo de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/automatizacion-correo-electronico.html" class="blog-card-v2" data-category="cold-email" data-title="Más productividad con email automation" data-description="¡Descubra los beneficios innovadores de la automatización del correo electrónico para su negocio de ventas!">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>Más productividad con email automation</h3>
+                        <p class="card-desc">¡Descubra los beneficios innovadores de la automatización del correo electrónico para su negocio de ventas!</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">29 de febrero de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/email-frio-es-ilegal.html" class="blog-card-v2" data-category="cold-email" data-title="¿Es ilegal el correo electrónico frío?" data-description="¿Es legal el cold email? Descubre cómo cumplir con GDPR, CAN-SPAM y otras normativas. Guía esencial para equipos de ventas B2B.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>¿Es ilegal el correo electrónico frío?</h3>
+                        <p class="card-desc">¿Es legal el cold email? Descubre cómo cumplir con GDPR, CAN-SPAM y otras normativas. Guía esencial para equipos de ventas B2B.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">3 de enero de 2024</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/mejores-asuntos-email-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="Asuntos de email de ventas: ejemplos y tips" data-description="Descubre las mejores líneas de asunto para emails de ventas con ejemplos reales. Claves para que tus correos se abran y lean.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">12 min</span>
+                        </div>
+                        <h3>Asuntos de email de ventas: ejemplos y tips</h3>
+                        <p class="card-desc">Descubre las mejores líneas de asunto para emails de ventas con ejemplos reales. Claves para que tus correos se abran y lean.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">26 de abril de 2022</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/encontrar-correo-electronico.html" class="blog-card-v2" data-category="cold-email" data-title="Cómo encontrar el email de cualquier persona" data-description="Aprende a encontrar la dirección de email de alguien de forma rápida y eficiente. Métodos y herramientas para la prospección B2B.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>Cómo encontrar el email de cualquier persona</h3>
+                        <p class="card-desc">Aprende a encontrar la dirección de email de alguien de forma rápida y eficiente. Métodos y herramientas para la prospección B2B.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">19 de abril de 2022</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/consejos-correos-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="Emails de ventas: consejos para cerrar más" data-description="Descubre consejos prácticos de emails de ventas para cerrar más negocios. Mejora tus líneas de asunto, textos y estrategia de follow-up.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">11 min</span>
+                        </div>
+                        <h3>Emails de ventas: consejos para cerrar más</h3>
+                        <p class="card-desc">Descubre consejos prácticos de emails de ventas para cerrar más negocios. Mejora tus líneas de asunto, textos y estrategia de follow-up.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">27 de marzo de 2022</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/correo-seguimiento.html" class="blog-card-v2" data-category="cold-email" data-title="Escribir un email de seguimiento eficaz" data-description="La clave del cold email es el seguimiento. Te enseñamos a escribir un email de follow-up exitoso paso a paso para más respuestas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>Escribir un email de seguimiento eficaz</h3>
+                        <p class="card-desc">La clave del cold email es el seguimiento. Te enseñamos a escribir un email de follow-up exitoso paso a paso para más respuestas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">9 de marzo de 2022</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/estrategia-cold-email.html" class="blog-card-v2" data-category="cold-email" data-title="5 pasos principales para una estrategia..." data-description="Domina el cold email en 5 pasos clave. Mejores prácticas y estrategias probadas para obtener respuestas positivas a tus campañas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>5 pasos principales para una estrategia...</h3>
+                        <p class="card-desc">Domina el cold email en 5 pasos clave. Mejores prácticas y estrategias probadas para obtener respuestas positivas a tus campañas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">22 de febrero de 2022</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/palabras-spam-evitar-email.html" class="blog-card-v2" data-category="cold-email" data-title="455 palabras desencadenantes del spam que se..." data-description="Descubre 455 palabras spam que debes evitar en tus emails de ventas. Mejora la entregabilidad y evita la carpeta de correo no deseado.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>455 palabras desencadenantes del spam que se...</h3>
+                        <p class="card-desc">Descubre 455 palabras spam que debes evitar en tus emails de ventas. Mejora la entregabilidad y evita la carpeta de correo no deseado.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">14 de octubre de 2021</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/automatizaciones-overloop.html" class="blog-card-v2" data-category="cold-email" data-title="Automatizaciones" data-description="Una gran actualización en la plataforma Overloop, que cambió por completo la forma de hacer divulgación en frío.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Automatizaciones</h3>
+                        <p class="card-desc">Una gran actualización en la plataforma Overloop, que cambió por completo la forma de hacer divulgación en frío.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">31 de agosto de 2020</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/enlaces-correos-electronicos.html" class="blog-card-v2" data-category="cold-email" data-title="Mejores prácticas para los enlaces en sus..." data-description="¿Los enlaces en tus emails ayudan o perjudican? Descubre cómo usarlos bien en emails de ventas para más conversiones.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>Mejores prácticas para los enlaces en sus...</h3>
+                        <p class="card-desc">¿Los enlaces en tus emails ayudan o perjudican? Descubre cómo usarlos bien en emails de ventas para más conversiones.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">28 de agosto de 2020</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/longitud-ideal-email-frio.html" class="blog-card-v2" data-category="cold-email" data-title="La longitud ideal de un correo electrónico en..." data-description="¿Cuál es la longitud ideal de un cold email en 2025? El conteo de palabras exacto para más respuestas, respaldado por datos reales.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>La longitud ideal de un correo electrónico en...</h3>
+                        <p class="card-desc">¿Cuál es la longitud ideal de un cold email en 2025? El conteo de palabras exacto para más respuestas, respaldado por datos reales.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">26 de julio de 2020</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/ventas-estacionales-como-sobrevivir.html" class="blog-card-v2" data-category="cold-email" data-title="¿Confías en las ventas de temporada? He aquí..." data-description="Descubre cómo mantener ingresos estables entre los picos de ventas estacionales. Estrategias probadas para todo el año.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">8 min</span>
+                        </div>
+                        <h3>¿Confías en las ventas de temporada? He aquí...</h3>
+                        <p class="card-desc">Descubre cómo mantener ingresos estables entre los picos de ventas estacionales. Estrategias probadas para todo el año.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">19 de agosto de 2019</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/presentacion-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="Deja las presentaciones de ventas genéricas" data-description="Descubre por qué las presentaciones genéricas arruinan tus ventas y cómo personalizarlas. Consejos para pitchs más efectivos.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>Deja las presentaciones de ventas genéricas</h3>
+                        <p class="card-desc">Descubre por qué las presentaciones genéricas arruinan tus ventas y cómo personalizarlas. Consejos para pitchs más efectivos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">20 de mayo de 2019</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/prospectar-clientes.html" class="blog-card-v2" data-category="cold-email" data-title="A quién prospectar y dónde encontrarlos" data-description="Aprende a identificar los prospectos correctos y dónde encontrarlos. Construye una lista de leads segmentada para ventas B2B.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>A quién prospectar y dónde encontrarlos</h3>
+                        <p class="card-desc">Aprende a identificar los prospectos correctos y dónde encontrarlos. Construye una lista de leads segmentada para ventas B2B.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">24 de octubre de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/email-frio-link-building-caso-estudio.html" class="blog-card-v2" data-category="cold-email" data-title="Email frío para link building [caso real]" data-description="Aprende cómo el cold email se usó para link building en este caso práctico. Tácticas probadas para ganar backlinks y mejorar tu SEO.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">12 min</span>
+                        </div>
+                        <h3>Email frío para link building [caso real]</h3>
+                        <p class="card-desc">Aprende cómo el cold email se usó para link building en este caso práctico. Tácticas probadas para ganar backlinks y mejorar tu SEO.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">26 de junio de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/ventas-internas-vs-externas.html" class="blog-card-v2" data-category="cold-email" data-title="Ventas internas vs externas: ¿cuál elegir?" data-description="Descubre la diferencia entre ventas internas y externas. Encuentra el modelo ideal para la estrategia de crecimiento de tu empresa.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">11 min</span>
+                        </div>
+                        <h3>Ventas internas vs externas: ¿cuál elegir?</h3>
+                        <p class="card-desc">Descubre la diferencia entre ventas internas y externas. Encuentra el modelo ideal para la estrategia de crecimiento de tu empresa.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">15 de mayo de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/plantilla-correo-electronico-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="La plantilla de email que todo SDR quiere" data-description="Descubre la plantilla de email de ventas que todo SDR desearía tener. Fórmula probada para mejorar tu tasa de respuesta.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>La plantilla de email que todo SDR quiere</h3>
+                        <p class="card-desc">Descubre la plantilla de email de ventas que todo SDR desearía tener. Fórmula probada para mejorar tu tasa de respuesta.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">16 de abril de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/secuencia-correos-seguimiento.html" class="blog-card-v2" data-category="cold-email" data-title="Cómo escribir la secuencia perfecta de..." data-description="Aprende a escribir la secuencia de follow-up perfecta con esta guía paso a paso. Mejora tus tasas de respuesta y cierra más negocios.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>Cómo escribir la secuencia perfecta de...</h3>
+                        <p class="card-desc">Aprende a escribir la secuencia de follow-up perfecta con esta guía paso a paso. Mejora tus tasas de respuesta y cierra más negocios.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">28 de marzo de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/proceso-ventas-roto-razones.html" class="blog-card-v2" data-category="cold-email" data-title="6 razones por las que su proceso de ventas no..." data-description="Conoce 6 razones por las que tu proceso de ventas no funciona y cómo arreglarlo. Optimiza tu pipeline para mejorar las conversiones.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>6 razones por las que su proceso de ventas no...</h3>
+                        <p class="card-desc">Conoce 6 razones por las que tu proceso de ventas no funciona y cómo arreglarlo. Optimiza tu pipeline para mejorar las conversiones.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">7 de febrero de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/estadisticas-cold-email.html" class="blog-card-v2" data-category="cold-email" data-title="4 stats de cold email (3M+ analizados)" data-description="Descubre 4 estadísticas reveladoras de cold email basadas en más de 3 millones de emails. Mejora tus campañas con datos reales.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>4 stats de cold email (3M+ analizados)</h3>
+                        <p class="card-desc">Descubre 4 estadísticas reveladoras de cold email basadas en más de 3 millones de emails. Mejora tus campañas con datos reales.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">3 de enero de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/vendedores-no-obsesionarse-resultados.html" class="blog-card-v2" data-category="cold-email" data-title="Vendedores: no te obsesiones con los KPIs" data-description="Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">22 min</span>
+                        </div>
+                        <h3>Vendedores: no te obsesiones con los KPIs</h3>
+                        <p class="card-desc">Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">1 de enero de 2018</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/carrera-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="Cómo iniciar tu carrera en ventas" data-description="Aprende a impulsar tu carrera de ventas con los consejos de Marcus Cauchi. Tips probados para triunfar en ventas B2B.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">13 min</span>
+                        </div>
+                        <h3>Cómo iniciar tu carrera en ventas</h3>
+                        <p class="card-desc">Aprende a impulsar tu carrera de ventas con los consejos de Marcus Cauchi. Tips probados para triunfar en ventas B2B.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">18 de diciembre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/frases-prohibidas-email-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="17 frases prohibidas en emails de ventas" data-description="Conoce 17 frases que debes evitar en tus emails de ventas y qué escribir en su lugar. Mejora tu tasa de respuesta en cold email.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>17 frases prohibidas en emails de ventas</h3>
+                        <p class="card-desc">Conoce 17 frases que debes evitar en tus emails de ventas y qué escribir en su lugar. Mejora tu tasa de respuesta en cold email.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">13 de diciembre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/500-palabras-detonantes.html" class="blog-card-v2" data-category="cold-email" data-title="500+ palabras clave para potenciar tu copy" data-description="Descubre más de 500 palabras poderosas para potenciar tus textos de venta y líneas de asunto. Aumenta engagement y conversiones.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">8 min</span>
+                        </div>
+                        <h3>500+ palabras clave para potenciar tu copy</h3>
+                        <p class="card-desc">Descubre más de 500 palabras poderosas para potenciar tus textos de venta y líneas de asunto. Aumenta engagement y conversiones.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">23 de octubre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/peliculas-ventas-favoritas-vendedores.html" class="blog-card-v2" data-category="cold-email" data-title="Las 10 películas de ventas favoritas de los..." data-description="Descubre las 10 películas de ventas favoritas de los mejores vendedores. Inspírate con escenas icónicas para mejorar tu mentalidad.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>Las 10 películas de ventas favoritas de los...</h3>
+                        <p class="card-desc">Descubre las 10 películas de ventas favoritas de los mejores vendedores. Inspírate con escenas icónicas para mejorar tu mentalidad.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">9 de octubre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/reglas-exito-vendedores.html" class="blog-card-v2" data-category="cold-email" data-title="5 reglas para superar al 90% de vendedores" data-description="Aprende 5 reglas para superar al 90% de los vendedores. Consejos prácticos para cerrar más negocios y acelerar tu carrera.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>5 reglas para superar al 90% de vendedores</h3>
+                        <p class="card-desc">Aprende 5 reglas para superar al 90% de los vendedores. Consejos prácticos para cerrar más negocios y acelerar tu carrera.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">18 de septiembre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/tecnicas-seguimiento-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="El 48% de los vendedores nunca hará nada de esto" data-description="Descubre por qué el 48% de los vendedores nunca hace seguimiento y cómo destacar con técnicas de follow-up que cierran más ventas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">8 min</span>
+                        </div>
+                        <h3>El 48% de los vendedores nunca hará nada de esto</h3>
+                        <p class="card-desc">Descubre por qué el 48% de los vendedores nunca hace seguimiento y cómo destacar con técnicas de follow-up que cierran más ventas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">13 de septiembre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/razones-rebote-emails-como-evitarlo.html" class="blog-card-v2" data-category="cold-email" data-title="7 razones por las que los correos..." data-description="Conoce 7 razones por las que los emails rebotan y cómo evitarlo. Reduce la tasa de rebote y mejora la entregabilidad de tus campañas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>7 razones por las que los correos...</h3>
+                        <p class="card-desc">Conoce 7 razones por las que los emails rebotan y cómo evitarlo. Reduce la tasa de rebote y mejora la entregabilidad de tus campañas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">5 de septiembre de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/tasa-respuesta-correo-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="31% de tasa de respuesta email [caso real]" data-description="Descubre cómo lograr un 31% de tasa de respuesta en emails de ventas. Caso práctico con estrategias de cold email que funcionan.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>31% de tasa de respuesta email [caso real]</h3>
+                        <p class="card-desc">Descubre cómo lograr un 31% de tasa de respuesta en emails de ventas. Caso práctico con estrategias de cold email que funcionan.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">15 de agosto de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/objeciones-ventas.html" class="blog-card-v2" data-category="cold-email" data-title="¿Deberías aceptar un «no» por respuesta?" data-description="Aprende a manejar objeciones de venta y cuándo insistir tras un no. Técnicas probadas para superar rechazos y cerrar más tratos.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>¿Deberías aceptar un «no» por respuesta?</h3>
+                        <p class="card-desc">Aprende a manejar objeciones de venta y cuándo insistir tras un no. Técnicas probadas para superar rechazos y cerrar más tratos.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">6 de agosto de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/pruebas-ab-campanas-email-secuencia.html" class="blog-card-v2" data-category="cold-email" data-title="Guía de A/B testing en campañas email drip" data-description="Aprende a hacer pruebas A/B en tus campañas de email drip para mejorar apertura y respuesta. Guía completa de optimización.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">8 min</span>
+                        </div>
+                        <h3>Guía de A/B testing en campañas email drip</h3>
+                        <p class="card-desc">Aprende a hacer pruebas A/B en tus campañas de email drip para mejorar apertura y respuesta. Guía completa de optimización.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">13 de julio de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/comprar-listas-de-correo-electronico.html" class="blog-card-v2" data-category="cold-email" data-title="9 razones para no comprar listas de email" data-description="Conoce 9 razones para nunca comprar listas de emails. Descubre mejores alternativas para construir una base de prospectos de calidad.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">9 min</span>
+                        </div>
+                        <h3>9 razones para no comprar listas de email</h3>
+                        <p class="card-desc">Conoce 9 razones para nunca comprar listas de emails. Descubre mejores alternativas para construir una base de prospectos de calidad.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">27 de junio de 2017</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/overloop-blog/blog/es/consejos-evitar-carpeta-spam.html" class="blog-card-v2" data-category="cold-email" data-title="10 consejos profesionales para evitar la..." data-description="Aprende 10 consejos para evitar la carpeta de spam y mejorar la entregabilidad de tus emails de ventas. Aumenta tus respuestas.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Ventas</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>10 consejos profesionales para evitar la...</h3>
+                        <p class="card-desc">Aprende 10 consejos para evitar la carpeta de spam y mejorar la entregabilidad de tus emails de ventas. Aumenta tus respuestas.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">19 de mayo de 2017</span>
+                        </div>
+                    </div>
+                </a>
             </div>
+
+            <!-- No results message -->
+            <div class="blog-no-results" id="blog-no-results">
+                <strong>No se encontraron artículos</strong>
+                Prueba con otro término de búsqueda o limpia los filtros.
+            </div>
+
+            <!-- Show more button -->
+            <div class="blog-show-more-wrap" id="show-more-wrap">
+                <button class="blog-show-more" id="show-more-btn">
+                    Ver más artículos
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+            </div>
+
+            <!-- Versus Section -->
+            <div class="versus-section">
+                <div class="versus-section-header">
+                    <h2>Comparativas directas</h2>
+                    <p>Comparaciones lado a lado para ayudarte a elegir la plataforma correcta.</p>
+                </div>
+                <div class="versus-grid">
+
+                    <a href="/overloop-blog/versus/apollo-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Apollo vs Lemlist</h3>
+                            <p class="card-desc">Compara Apollo vs Lemlist para prospección B2B. Base de datos, personalización, automatización y precios.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/instantly-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Instantly vs Lemlist</h3>
+                            <p class="card-desc">Compara Instantly vs Lemlist para cold email outreach. Entregabilidad, personalización, multicanal y precios.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/lemlist-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Lemlist vs Apollo</h3>
+                            <p class="card-desc">Compara Lemlist vs Apollo para ventas B2B outbound. Base de datos, personalización, outreach multicanal y precios.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Apollo</h3>
+                            <p class="card-desc">Compara Overloop vs Apollo para ventas B2B outbound en 2026. Funciones, precios, bases de datos e IA.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-artisan.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Artisan</h3>
+                            <p class="card-desc">Compara Overloop vs Artisan (Ava) para ventas outbound con IA. Funciones, precios, configuración y multicanal.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-hubspot.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs HubSpot</h3>
+                            <p class="card-desc">Compara Overloop vs HubSpot para ventas outbound en 2026. Secuencias, CRM, IA, precios e integraciones.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-instantly.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Instantly</h3>
+                            <p class="card-desc">Compara Overloop vs Instantly para cold email. Configuración DFY, escritura IA, base de datos y entregabilidad.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Lemlist</h3>
+                            <p class="card-desc">Compara Overloop vs Lemlist para outreach B2B. Configuración DFY vs DIY, personalización IA, warm-up y precios.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-reply.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Reply</h3>
+                            <p class="card-desc">Compara Overloop vs Reply para ventas outbound en 2026. Prospección, secuencias, entregabilidad, IA y precios.</p>
+                        </div>
+                    </a>
+
+                    <a href="/overloop-blog/versus/overloop-vs-saleshandy.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Saleshandy</h3>
+                            <p class="card-desc">Compara Overloop vs Saleshandy para cold email en 2026. Prospección, entregabilidad, escritura IA y precios.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
         </div>
     </main>
+
+    <!-- Bottom CTA Section -->
+    <section class="blog-cta-section">
+        <div class="blog-cta-inner">
+            <h2>¿Listo para automatizar tu prospección?</h2>
+            <p class="cta-sub">450M+ contactos. Secuencias con IA. Email + LinkedIn en una plataforma. Desde 69$/usuario/mes.</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-btn">Probar Overloop gratis</a>
+            <p class="cta-trust">14 días gratis &bull; Sin tarjeta de crédito</p>
+        </div>
+    </section>
 
 <!-- Overloop Footer -->
 <footer class="footer">
@@ -735,34 +2334,35 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
+                <p>Plataforma de ventas outbound con IA. Encuentra prospectos, escribe emails personalizados y agenda reuniones en automático.</p>
             </div>
             <div class="footer-col">
-                <h4>Platform</h4>
+                <h4>Plataforma</h4>
                 <a href="/features">Features</a>
                 <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
+                <a href="https://app.overloop.ai/session/signup">Prueba gratuita</a>
                 <a href="/book-demo">Book a Demo</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
+                <h4>Recursos</h4>
                 <a href="/overloop-blog/blog/es/">Blog</a>
+                <a href="/overloop-blog/versus/">Versus</a>
                 <a href="/playbooks">Playbooks</a>
                 <a href="/overloop-blog/tools/spam-checker">Spam Checker</a>
                 <a href="/overloop-blog/tools/roi-calculator">ROI Calculator</a>
                 <a href="/overloop-blog/tools/domain-health-checker">Domain Health</a>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                <a href="/careers">Careers</a>
+                <h4>Empresa</h4>
+                <a href="/about">Nosotros</a>
+                <a href="/testimonials">Testimonios</a>
+                <a href="mailto:hello@overloop.com">Contacto</a>
+                <a href="/careers">Empleo</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
+                <a href="/terms">Términos</a>
+                <a href="/privacy">Privacidad</a>
                 <a href="/gdpr">GDPR</a>
             </div>
         </div>
@@ -777,27 +2377,108 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 </footer>
 
 <script>
-// Category filter functionality
+// Blog Index: Search + Filter + Pagination
 (function() {
-    var buttons = document.querySelectorAll('.blog-filters button');
-    var cards = document.querySelectorAll('.blog-card-v2');
+    var PAGE_SIZE = 12;
+    var grid = document.getElementById('blog-grid');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card-v2'));
+    var searchInput = document.getElementById('blog-search');
+    var filterBtns = document.querySelectorAll('#blog-filters button');
+    var visibleCountEl = document.getElementById('blog-visible-count');
+    var showMoreWrap = document.getElementById('show-more-wrap');
+    var showMoreBtn = document.getElementById('show-more-btn');
+    var noResults = document.getElementById('blog-no-results');
 
-    buttons.forEach(function(btn) {
+    var currentFilter = 'all';
+    var currentSearch = '';
+    var currentPage = 1;
+
+    function getMatchingCards() {
+        return cards.filter(function(card) {
+            var cat = card.getAttribute('data-category') || '';
+            var title = (card.getAttribute('data-title') || '').toLowerCase();
+            var desc = (card.getAttribute('data-description') || '').toLowerCase();
+            var searchText = title + ' ' + desc;
+            var matchesFilter = currentFilter === 'all' || cat === currentFilter;
+            var matchesSearch = !currentSearch || searchText.indexOf(currentSearch) !== -1;
+            return matchesFilter && matchesSearch;
+        });
+    }
+
+    function render() {
+        var matching = getMatchingCards();
+        var totalVisible = matching.length;
+        var showCount = Math.min(currentPage * PAGE_SIZE, totalVisible);
+
+        // Hide all cards first
+        cards.forEach(function(card) {
+            card.style.display = 'none';
+        });
+
+        // Show matching cards up to showCount
+        for (var i = 0; i < matching.length; i++) {
+            if (i < showCount) {
+                matching[i].style.display = '';
+            }
+        }
+
+        // Update counter
+        if (visibleCountEl) {
+            visibleCountEl.textContent = Math.min(showCount, totalVisible);
+        }
+
+        // Show/hide "show more" button
+        if (showMoreWrap) {
+            showMoreWrap.style.display = showCount < totalVisible ? '' : 'none';
+        }
+
+        // Show/hide no results
+        if (noResults) {
+            noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+        }
+    }
+
+    // Filter buttons
+    filterBtns.forEach(function(btn) {
         btn.addEventListener('click', function() {
-            var filter = this.getAttribute('data-filter');
-
-            buttons.forEach(function(b) { b.classList.remove('active'); });
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
             this.classList.add('active');
-
-            cards.forEach(function(card) {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            currentFilter = this.getAttribute('data-filter');
+            currentPage = 1;
+            render();
         });
     });
+
+    // Search input
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value.trim().toLowerCase();
+        currentPage = 1;
+        render();
+    });
+
+    // Show more button
+    showMoreBtn.addEventListener('click', function() {
+        currentPage++;
+        render();
+    });
+
+    // Language switcher
+    var langToggle = document.getElementById('lang-toggle');
+    var langDropdown = document.getElementById('lang-dropdown');
+
+    langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!langDropdown.contains(e.target) && e.target !== langToggle) {
+            langDropdown.classList.remove('open');
+        }
+    });
+
+    // Initial render
+    render();
 })();
 </script>
 
