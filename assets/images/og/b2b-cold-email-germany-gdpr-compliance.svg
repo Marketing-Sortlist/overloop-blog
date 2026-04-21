@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a2e"/>
+      <stop offset="50%" stop-color="#2E1065"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.08)"/>
+      <stop offset="50%" stop-color="rgba(255,255,255,0)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Subtle shine overlay -->
+  <rect width="1200" height="630" fill="url(#shine)"/>
+
+  <!-- Decorative accent line at top -->
+  <rect x="100" y="70" width="60" height="4" rx="2" fill="#8b5cf6" opacity="0.8"/>
+
+  <!-- Category badge -->
+  <rect x="100" y="90" width="200" height="36" rx="18" fill="rgba(139,92,246,0.25)" stroke="rgba(139,92,246,0.5)" stroke-width="1"/>
+  <text x="200" y="114" fill="#c4b5fd" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="600" text-anchor="middle" letter-spacing="0.5">GDPR Compliance</text>
+
+  <!-- Title text -->
+    <text x="100" y="261" fill="white" font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif" font-size="46" font-weight="700" letter-spacing="-0.5">B2B Cold Email in Germany:</text>
+    <text x="100" y="317" fill="white" font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif" font-size="46" font-weight="700" letter-spacing="-0.5">GDPR, UWG &amp; Double Opt-In</text>
+
+  <!-- Bottom divider line -->
+  <line x1="100" y1="540" x2="1100" y2="540" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Overloop logo mark (bottom-left) -->
+  <circle cx="120" cy="580" r="16" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
+  <circle cx="120" cy="580" r="6" fill="#8b5cf6"/>
+  <text x="146" y="586" fill="white" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="0.5">Overloop</text>
+
+  <!-- URL (bottom-right) -->
+  <text x="1100" y="586" fill="rgba(255,255,255,0.5)" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="15" text-anchor="end" letter-spacing="0.3">overloop.com/blog</text>
+</svg>
