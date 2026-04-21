@@ -27,6 +27,7 @@ const BLOG_REDIRECTS = {
   '/blog/overloop-vs-lemlist': '/versus/overloop-vs-lemlist',
   '/blog/overloop-vs-reply': '/versus/overloop-vs-reply',
   '/blog/overloop-vs-saleshandy': '/versus/overloop-vs-saleshandy',
+  '/versus/apollo-vs-lemlist': '/versus/lemlist-vs-apollo',
 
   // === Consolidations: redirect to stronger article (26) ===
   '/blog/10-essential-b2b-prospect-sourcing-tools-for-2025-a-checklist-for-success': '/blog/top-8-sales-prospecting-tools-for-small-business-teams',
