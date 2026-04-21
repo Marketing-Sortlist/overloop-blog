@@ -1,0 +1,2601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/overloop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overloop Blog: Outbound Sales, Cold Email & AI Tools | Overloop</title>
+    <meta name="description" content="Insights from building better outbound. Guides on cold email, LinkedIn outreach, AI sales tools, and outbound automation.">
+    <meta property="og:title" content="Overloop Blog: Outbound Sales, Cold Email & AI Tools">
+    <meta property="og:description" content="Insights from building better outbound. Guides on cold email, LinkedIn outreach, AI sales tools, and outbound automation.">
+    <meta property="og:image" content="https://overloop.com/assets/images/og/blog-index.png">
+    <meta property="og:url" content="https://overloop.com/blog">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Overloop Blog: Outbound Sales, Cold Email & AI Tools">
+    <meta name="twitter:description" content="Insights from building better outbound. Guides on cold email, LinkedIn outreach, AI sales tools, and outbound automation.">
+    <meta name="twitter:image" content="https://overloop.com/assets/images/og/blog-index.png">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <link rel="canonical" href="https://overloop.com/blog">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog">
+    <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog">
+    <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog">
+    <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog">
+    <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog">
+    <style>
+        /* ===== BLOG INDEX STYLES ===== */
+
+        /* Breadcrumb */
+        .blog-breadcrumb {
+            padding: 12px 24px 0;
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+        }
+        .blog-breadcrumb nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            font-size: 13px;
+        }
+        .blog-breadcrumb a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .blog-breadcrumb a:hover {
+            color: rgba(255,255,255,0.8);
+        }
+        .blog-breadcrumb span {
+            color: rgba(255,255,255,0.35);
+            margin: 0 6px;
+        }
+        .blog-breadcrumb .current {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Hero with animated gradient */
+        .blog-hero {
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+            padding: 60px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 200px,
+                rgba(255, 107, 157, 0.03) 200px,
+                rgba(255, 107, 157, 0.03) 201px
+            );
+        }
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 20% 50%, rgba(124, 58, 237, 0.25), transparent),
+                radial-gradient(ellipse 500px 300px at 80% 30%, rgba(167, 139, 250, 0.15), transparent);
+            animation: heroShift 8s ease-in-out infinite alternate;
+        }
+        @keyframes heroShift {
+            0%   { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+        .blog-hero .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .blog-hero .hero-label {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--violet-lighter);
+            margin-bottom: 16px;
+        }
+        .blog-hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .blog-hero h1 em {
+            font-style: italic;
+        }
+        .blog-hero .hero-sub {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+            margin-top: 12px;
+        }
+
+        /* Featured hero card */
+        .blog-hero-card {
+            display: block;
+            max-width: 1000px;
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, #2E1065 0%, #4c1d95 40%, #7C3AED 100%);
+            border-radius: 16px;
+            padding: 48px 56px;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 20px 60px rgba(46, 16, 101, 0.35), 0 0 0 1px rgba(167, 139, 250, 0.2);
+            transition: transform 0.25s, box-shadow 0.25s;
+            overflow: hidden;
+        }
+        .blog-hero-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 24px 72px rgba(46, 16, 101, 0.45), 0 0 0 1px rgba(167, 139, 250, 0.35);
+            text-decoration: none;
+        }
+        .blog-hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(167, 139, 250, 0.15), transparent 70%);
+        }
+        .blog-hero-card .featured-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .blog-hero-card h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 12px;
+            line-height: 1.2;
+            position: relative;
+        }
+        .blog-hero-card .featured-desc {
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .blog-hero-card .featured-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            transition: gap 0.2s;
+        }
+        .blog-hero-card:hover .featured-cta {
+            gap: 12px;
+        }
+        .blog-hero-card .featured-meta {
+            font-size: 13px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 8px;
+            position: relative;
+        }
+
+        /* Search bar */
+        .blog-search-wrap {
+            max-width: 480px;
+            margin: 0 auto 24px;
+            position: relative;
+        }
+        .blog-search-wrap svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .blog-search-wrap input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
+            font-family: inherit;
+            color: var(--text);
+            background: var(--white);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .blog-search-wrap input:focus {
+            border-color: var(--violet);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        .blog-search-wrap input::placeholder {
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        /* Filter row with language switcher */
+        .blog-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .blog-filters button {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .blog-filters button:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+            background: var(--violet-lightest);
+        }
+        .blog-filters button.active {
+            background: var(--violet);
+            color: #fff;
+            border-color: var(--violet);
+        }
+
+        /* Language switcher */
+        .lang-switcher {
+            position: relative;
+        }
+        .lang-switcher-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .lang-switcher-btn:hover {
+            border-color: var(--violet);
+            color: var(--violet);
+        }
+        .lang-switcher-btn svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+        .lang-dropdown {
+            display: none;
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            min-width: 160px;
+            z-index: 100;
+            overflow: hidden;
+        }
+        .lang-dropdown.open {
+            display: block;
+        }
+        .lang-dropdown a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            font-size: 13px;
+            color: var(--text);
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        .lang-dropdown a:hover {
+            background: var(--violet-lightest);
+        }
+        .lang-dropdown a.active {
+            font-weight: 700;
+            color: var(--violet);
+        }
+
+        /* Category filter pills */
+        .blog-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        /* Article count */
+        .blog-count {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .blog-count strong {
+            color: var(--violet);
+        }
+
+        /* Card grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 580px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-hero-card { padding: 32px 24px; margin-left: 16px; margin-right: 16px; }
+        }
+
+        /* Enhanced blog card */
+        .blog-card-v2 {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, border-left-color 0.2s;
+            border-left: 3px solid transparent;
+        }
+        .blog-card-v2:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--violet-lighter);
+            border-left-color: var(--violet);
+            text-decoration: none;
+        }
+
+        /* Gradient header band */
+        .blog-card-gradient {
+            height: 6px;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .blog-card-gradient.cold-email   { background: linear-gradient(135deg, #1a73e8, #3b82f6); }
+        .blog-card-gradient.ai-tools     { background: linear-gradient(135deg, #e8710a, #f59e0b); }
+        .blog-card-gradient.comparisons  { background: linear-gradient(135deg, #7C3AED, #A78BFA); }
+        .blog-card-gradient.legal        { background: linear-gradient(135deg, #059669, #10b981); }
+
+        .blog-card-v2 .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-v2 .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .blog-card-v2 .card-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 4px 10px;
+            border-radius: 100px;
+            line-height: 1;
+        }
+        .card-badge.cold-email   { background: rgba(26,115,232,0.1);  color: #1a73e8; }
+        .card-badge.ai-tools     { background: rgba(232,113,10,0.1);  color: #c2600a; }
+        .card-badge.comparisons  { background: rgba(124,58,237,0.1);  color: #7C3AED; }
+        .card-badge.legal        { background: rgba(5,150,105,0.1);   color: #059669; }
+
+        .blog-card-readtime {
+            font-size: 11px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+            white-space: nowrap;
+        }
+
+        .blog-card-v2 h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        .blog-card-v2 .card-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0 0 16px;
+            flex: 1;
+        }
+
+        /* Card footer with author + date */
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .card-author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-author img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .card-author span {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .card-date {
+            font-size: 11px;
+            color: var(--text-secondary);
+            opacity: 0.6;
+        }
+
+        /* Show more button */
+        .blog-show-more-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .blog-show-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 12px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--violet);
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+        .blog-show-more:hover {
+            background: var(--violet-lightest);
+            border-color: var(--violet);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+        .blog-show-more svg {
+            transition: transform 0.2s;
+        }
+        .blog-show-more:hover svg {
+            transform: translateY(2px);
+        }
+
+        /* No results message */
+        .blog-no-results {
+            text-align: center;
+            padding: 48px 24px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: none;
+        }
+        .blog-no-results strong {
+            display: block;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        /* Versus section */
+        .versus-section {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+        .versus-section-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .versus-section-header h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 8px;
+        }
+        .versus-section-header p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+        .versus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .versus-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 580px) {
+            .versus-grid { grid-template-columns: 1fr; }
+        }
+
+        /* Bottom CTA section */
+        .blog-cta-section {
+            background: linear-gradient(135deg, #0a0a2e 0%, #2E1065 40%, #4c1d95 100%);
+            padding: 80px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 64px;
+        }
+        .blog-cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 600px 400px at 30% 50%, rgba(124, 58, 237, 0.3), transparent),
+                radial-gradient(ellipse 500px 300px at 70% 30%, rgba(167, 139, 250, 0.2), transparent);
+            animation: heroShift 8s ease-in-out infinite alternate;
+        }
+        .blog-cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .blog-cta-section h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 16px;
+            line-height: 1.2;
+        }
+        .blog-cta-section .cta-sub {
+            color: rgba(255,255,255,0.75);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .blog-cta-section .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            color: var(--violet);
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        .blog-cta-section .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            text-decoration: none;
+        }
+        .blog-cta-section .cta-trust {
+            margin-top: 16px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* Section heading */
+        .blog-section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Overloop Blog",
+      "description": "Insights from building better outbound. Guides on cold email, LinkedIn outreach, AI sales tools, and outbound automation.",
+      "url": "https://overloop.com/blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Overloop",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://overloop.com/assets/images/overloop-logo.png"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Overloop Blog Articles",
+      "numberOfItems": 21,
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "B2B Cold Email in Germany: GDPR, UWG, and Double Opt-In Explained (2026)", "url": "https://overloop.com/blog/b2b-cold-email-germany-gdpr-compliance"},
+        {"@type": "ListItem", "position": 2, "name": "Best Lead Generation Tools: 10 Picks for B2B Teams", "url": "https://overloop.com/blog/best-lead-generation-tools"},
+        {"@type": "ListItem", "position": 3, "name": "7 Best Instantly Alternatives in 2026 (For Teams That Need More Than Email)", "url": "https://overloop.com/blog/instantly-alternatives"},
+        {"@type": "ListItem", "position": 4, "name": "9 Best Lemlist Alternatives in 2026 (Cheaper, Simpler, Better)", "url": "https://overloop.com/blog/lemlist-alternatives"},
+        {"@type": "ListItem", "position": 5, "name": "8 Best Outreach.io Alternatives in 2026 (For Teams Who Want Transparent Pricing)", "url": "https://overloop.com/blog/outreach-alternatives"},
+        {"@type": "ListItem", "position": 6, "name": "8 Best Salesloft Alternatives in 2026 (After the Clari Merger)", "url": "https://overloop.com/blog/salesloft-alternatives"},
+        {"@type": "ListItem", "position": 7, "name": "Sales Appointment Setting: Book More Meetings Fast", "url": "https://overloop.com/blog/sales-appointment-setting"},
+        {"@type": "ListItem", "position": 8, "name": "Increase SaaS Sales with a Repeatable Growth System", "url": "https://overloop.com/blog/increase-saas-sales-growth-system"},
+        {"@type": "ListItem", "position": 9, "name": "20 Best Apollo Alternatives in 2026 (Tested With Real Campaigns)", "url": "https://overloop.com/blog/apollo-alternatives"},
+        {"@type": "ListItem", "position": 10, "name": "La Growth Machine Review (2026): Features, Pricing, Pros & Cons", "url": "https://overloop.com/blog/la-growth-machine-review"},
+        {"@type": "ListItem", "position": 11, "name": "LinkedIn Helper Review (2026): Features, Pricing, Pros & Cons", "url": "https://overloop.com/blog/linkedin-helper-review"},
+        {"@type": "ListItem", "position": 12, "name": "11 Best LinkedIn Automation Tools to Accelerate Your B2B Outreach in 2025", "url": "https://overloop.com/blog/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690"},
+        {"@type": "ListItem", "position": 13, "name": "Overloop Joins Forces with Sortlist", "url": "https://overloop.com/blog/overloop-joins-sortlist"},
+        {"@type": "ListItem", "position": 14, "name": "Sales Engagement Platforms Compared: Top Sales Engagement Platforms 2025 Versus Guide", "url": "https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide"},
+        {"@type": "ListItem", "position": 15, "name": "AI Sales Tool Adoption in B2B Outbound Prospecting: 2025 Industry Review & Analysis", "url": "https://overloop.com/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis"},
+        {"@type": "ListItem", "position": 16, "name": "LinkedIn Automation Guide 2025: Safety, Tools & Limits", "url": "https://overloop.com/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025"},
+        {"@type": "ListItem", "position": 17, "name": "10 Proven Sales Prospecting Tips to Boost Your Pipeline Fast", "url": "https://overloop.com/blog/10-proven-sales-prospecting-tips-to-boost-your-pipeline-fast"},
+        {"@type": "ListItem", "position": 18, "name": "The Ultimate Checklist for Selecting the Best AI SDR Tools in 2025", "url": "https://overloop.com/blog/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025"},
+        {"@type": "ListItem", "position": 19, "name": "How to Find B2B Emails (Fast & GDPR-Safe Methods)", "url": "https://overloop.com/blog/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation"},
+        {"@type": "ListItem", "position": 20, "name": "Lead Generation Strategies Every SaaS Business Should Try Today", "url": "https://overloop.com/blog/lead-generation-strategies-every-saas-business-should-try-today"},
+        {"@type": "ListItem", "position": 21, "name": "10 Essential Sales Tools Every B2B Team Needs in 2025", "url": "https://overloop.com/blog/10-essential-sales-tools-every-b2b-team-needs-in-2025"}
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Overloop", "item": "https://overloop.com"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://overloop.com/blog"}
+      ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Overloop Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="https://overloop.com" class="nav-logo">
+            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
+        </a>
+
+        <ul class="nav-links">
+            <li class="nav-dropdown">
+                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
+                <div class="nav-dropdown-menu nav-dropdown-wide">
+                    <ul class="nav-dropdown-content nav-features-grid">
+                        <li><a href="https://overloop.com/f/linkedin-automation">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
+                        </a></li>
+                        <li><a href="https://overloop.com/f/email-verification">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
+                        </a></li>
+                        <li><a href="https://overloop.com/f/b2b-contact-database">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
+                        </a></li>
+                        <li><a href="https://overloop.com/f/multi-channel-outreach">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
+                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="https://overloop.com/pricing">Pricing</a></li>
+            <li class="nav-dropdown">
+                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
+                <div class="nav-dropdown-menu nav-dropdown-wide">
+                    <ul class="nav-dropdown-content nav-resources-grid">
+                        <li><a href="/blog">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
+                        </a></li>
+                        <li><a href="/versus">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
+                        </a></li>
+                        <li><a href="https://tools.overloop.com/spam-checker">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
+                        </a></li>
+                        <li><a href="https://tools.overloop.com/roi-calculator">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
+                        </a></li>
+                        <li><a href="https://tools.overloop.com/domain-health">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
+                        </a></li>
+                        <li><a href="https://tools.overloop.com/playbooks">
+                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
+                        </a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-cta">
+            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
+            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
+            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
+        </div>
+
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('nav-open');
+    document.querySelector('.nav-cta').classList.toggle('nav-open');
+});
+</script>
+</nav><!-- Breadcrumb -->
+    <div class="blog-breadcrumb">
+        <nav>
+            <a href="https://overloop.com">Overloop</a>
+            <span>&rsaquo;</span>
+            <span class="current">Blog</span>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="blog-hero">
+        <div class="hero-inner">
+            <span class="hero-label">Explore articles, guides, and stray thoughts from our team</span>
+            <h1>Insights from building<br><em>better outbound</em></h1>
+            <p class="hero-sub">Cold email playbooks, AI tool comparisons, and outbound strategies tested on real campaigns.</p>
+        </div>
+    </header>
+
+    <!-- Featured Hero Card -->
+    <a href="/blog/best-ai-sales-tools.html" class="blog-hero-card">
+        <span class="featured-badge">Featured Guide</span>
+        <h2>Best AI Sales Tools 2026: The Buyer&rsquo;s Guide That Actually Helps You Decide</h2>
+        <p class="featured-desc">We tested 30+ AI sales tools across 6 categories: BDR, email, LinkedIn, enrichment, conversation intelligence, and email coaching. Comparison table with pricing, G2 ratings, and decision framework.</p>
+        <span class="featured-cta">Read the full guide <span>&rarr;</span></span>
+        <span class="featured-meta">22 min read &middot; 19 tools compared &middot; August 2024</span>
+    </a>
+
+    <main style="padding: 56px 24px 80px; background: var(--bg);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+
+            <!-- Search bar -->
+            <div class="blog-search-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="blog-search" placeholder="Search articles..." autocomplete="off">
+            </div>
+
+            <!-- Article count -->
+            <p class="blog-count">Showing <strong id="blog-visible-count">75</strong> of <strong>75</strong> articles</p>
+
+            <!-- Category filter pills + Language switcher -->
+            <div class="blog-toolbar">
+                <div class="blog-filters" id="blog-filters">
+                    <button class="active" data-filter="all">All articles (75)</button>
+                    <button data-filter="cold-email">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Sales (57)
+                    </button>
+                    <button data-filter="ai-tools">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                        AI Tools (8)
+                    </button>
+                    <button data-filter="comparisons">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        Comparisons (10)
+                    </button>
+                </div>
+                <div class="lang-switcher">
+                    <button class="lang-switcher-btn" id="lang-toggle" aria-label="Switch language">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        EN
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <a href="/blog/" class="active">&#127468;&#127463; English</a>
+                        <a href="/blog/fr/">&#127467;&#127479; Fran&ccedil;ais</a>
+                        <a href="/blog/de/">&#127465;&#127466; Deutsch</a>
+                        <a href="/blog/es/">&#127466;&#127480; Espa&ntilde;ol</a>
+                        <a href="/blog/it/">&#127470;&#127481; Italiano</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Grid -->
+            <div class="blog-grid" id="blog-grid">
+
+                <a href="/blog/b2b-cold-email-germany-gdpr-compliance.html" class="blog-card-v2" data-category="cold-email" data-title="B2B Cold Email in Germany: GDPR, UWG, and Double Opt-In Explained (2026)" data-description="Can you send B2B cold emails in Germany? Complete legal guide covering GDPR, UWG Section 7, double opt-in requirements, the existing customer exception, compliant outreach strategies, and enforcement risks. Written for sales teams prospecting into the German market.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">18 min</span>
+                        </div>
+                        <h3>B2B Cold Email in Germany: GDPR, UWG, and Double Opt-In Explained (2026)</h3>
+                        <p class="card-desc">Can you send B2B cold emails in Germany? Complete legal guide covering GDPR, UWG Section 7, double opt-in requirements, the existing customer exception, compliant outreach strategies, and enforcement risks.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 16, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/best-lead-generation-tools.html" class="blog-card-v2" data-category="cold-email" data-title="Best Lead Generation Tools: 10 Picks for B2B Teams" data-description="The 10 best lead generation tools for B2B teams in 2026: Overloop AI, Apollo.io, ZoomInfo, Clearbit, and more. Pricing from free to $49/mo. Compare features and pick the right stack.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">14 min</span>
+                        </div>
+                        <h3>Best Lead Generation Tools: 10 Picks for B2B Teams</h3>
+                        <p class="card-desc">The 10 best lead generation tools for B2B teams in 2026: Overloop AI, Apollo.io, ZoomInfo, Clearbit, and more. Pricing from free to $49/mo. Compare features ...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">JV</text></svg>
+                                <span>Jazmin Villarino</span>
+                            </div>
+                            <span class="card-date">April 10, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/instantly-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="7 Best Instantly Alternatives in 2026 (For Teams That Need More Than Email)" data-description="Instantly is email-only. If you need LinkedIn, calling, or better deliverability, here are 7 Instantly alternatives compared on features and pricing.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">16 min</span>
+                        </div>
+                        <h3>7 Best Instantly Alternatives in 2026 (For Teams That Need More Than Email)</h3>
+                        <p class="card-desc">Instantly is email-only. If you need LinkedIn, calling, or better deliverability, here are 7 Instantly alternatives compared on features and pricing.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 10, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/lemlist-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="9 Best Lemlist Alternatives in 2026 (Cheaper, Simpler, Better)" data-description="Looking for a Lemlist alternative? We compare 9 tools on pricing, multichannel features, and AI writing. Honest breakdown.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">16 min</span>
+                        </div>
+                        <h3>9 Best Lemlist Alternatives in 2026 (Cheaper, Simpler, Better)</h3>
+                        <p class="card-desc">Looking for a Lemlist alternative? We compare 9 tools on pricing, multichannel features, and AI writing. Honest breakdown.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 10, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/outreach-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="8 Best Outreach.io Alternatives in 2026 (For Teams Who Want Transparent Pricing)" data-description="Outreach.io too expensive or too complex? Compare 8 alternatives with transparent pricing, G2 ratings, and multichannel features.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">14 min</span>
+                        </div>
+                        <h3>8 Best Outreach.io Alternatives in 2026 (For Teams Who Want Transparent Pricing)</h3>
+                        <p class="card-desc">Outreach.io too expensive or too complex? Compare 8 alternatives with transparent pricing, G2 ratings, and multichannel features.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 10, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/salesloft-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="8 Best Salesloft Alternatives in 2026 (After the Clari Merger)" data-description="Salesloft merged with Clari in 2025. If you are rethinking your sales engagement stack, here are 8 alternatives compared on features and pricing.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">14 min</span>
+                        </div>
+                        <h3>8 Best Salesloft Alternatives in 2026 (After the Clari Merger)</h3>
+                        <p class="card-desc">Salesloft merged with Clari in 2025. If you are rethinking your sales engagement stack, here are 8 alternatives compared on features and pricing.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 10, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/sales-appointment-setting.html" class="blog-card-v2" data-category="cold-email" data-title="Sales appointment setting: book more meetings fast" data-description="If your appointment setting feels busy but your calendar stays empty, you don’t have a lead problem—you have a system problem. You can send 100 emails, ...">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">16 min</span>
+                        </div>
+                        <h3>Sales appointment setting: book more meetings fast</h3>
+                        <p class="card-desc">If your appointment setting feels busy but your calendar stays empty, you don’t have a lead problem—you have a system problem. You can send 100 emails, ...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">JV</text></svg>
+                                <span>Jazmin Villarino</span>
+                            </div>
+                            <span class="card-date">March 27, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/increase-saas-sales-growth-system.html" class="blog-card-v2" data-category="cold-email" data-title="Increase saas sales with a repeatable growth system" data-description="You don’t increase SaaS sales by “doing more”—you do it by building a system that makes the next month easier than the last. If your pipeline spikes aft...">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Increase saas sales with a repeatable growth system</h3>
+                        <p class="card-desc">You don’t increase SaaS sales by “doing more”—you do it by building a system that makes the next month easier than the last. If your pipeline spikes aft...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">JV</text></svg>
+                                <span>Jazmin Villarino</span>
+                            </div>
+                            <span class="card-date">March 18, 2026</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/apollo-alternatives.html" class="blog-card-v2" data-category="comparisons" data-title="20 Best Apollo Alternatives in 2026 (Tested With Real Campaigns)" data-description="We tested 20 Apollo.io alternatives on real outbound campaigns. Overloop, ZoomInfo, Cognism, Instantly, Hunter.io, RocketReach, and 14 more compared on data accuracy, pricing, and deliverability.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>20 Best Apollo Alternatives in 2026 (Tested With Real Campaigns)</h3>
+                        <p class="card-desc">We tested 20 Apollo.io alternatives on real outbound campaigns. Overloop, ZoomInfo, Cognism, Instantly, Hunter.io, RocketReach, and 14 more compared on data accuracy, pricing, and deliverability.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">December 16, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/la-growth-machine-review.html" class="blog-card-v2" data-category="comparisons" data-title="La Growth Machine Review (2026): Features, Pricing, Pros &amp; Cons" data-description="Honest La Growth Machine (LGM) review from a competitor. Multichannel outreach, voice messages, pricing in EUR, and how it compares to Overloop.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>La Growth Machine Review (2026): Features, Pricing, Pros &amp; Cons</h3>
+                        <p class="card-desc">Honest La Growth Machine (LGM) review from a competitor. Multichannel outreach, voice messages, pricing in EUR, and how it compares to Overloop.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">December 12, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/linkedin-helper-review.html" class="blog-card-v2" data-category="comparisons" data-title="LinkedIn Helper Review (2026): Features, Pricing, Pros &amp; Cons" data-description="Honest LinkedIn Helper review from a competitor. We tested it for 30 days. Features, pricing ($15-45/mo), ban risk, and how it compares to Overloop.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>LinkedIn Helper Review (2026): Features, Pricing, Pros &amp; Cons</h3>
+                        <p class="card-desc">Honest LinkedIn Helper review from a competitor. We tested it for 30 days. Features, pricing ($15-45/mo), ban risk, and how it compares to Overloop.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">December 12, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690.html" class="blog-card-v2" data-category="comparisons" data-title="11 Best LinkedIn Automation Tools to Accelerate Your B2B Outreach in 2025" data-description="Discover the top 11 LinkedIn automation tools of 2025. Compare features and boost B2B lead generation with AI-driven sales automation.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>11 Best LinkedIn Automation Tools to Accelerate Your B2B Outreach in 2025</h3>
+                        <p class="card-desc">Discover the top 11 LinkedIn automation tools of 2025. Compare features and boost B2B lead generation with AI-driven sales automation.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">December 11, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/overloop-joins-sortlist.html" class="blog-card-v2" data-category="cold-email" data-title="Overloop Joins Forces with Sortlist" data-description="Today marks a new chapter for Overloop. We’ve been acquired by Sortlist, the leading marketplace for matching companies with marketing and professional service agencies.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Overloop Joins Forces with Sortlist</h3>
+                        <p class="card-desc">Today marks a new chapter for Overloop. We’ve been acquired by Sortlist, the leading marketplace for matching companies with marketing and professional servi...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">December 10, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide.html" class="blog-card-v2" data-category="comparisons" data-title="Sales Engagement Platforms Compared: Top Sales Engagement Platforms 2025 Versus Guide" data-description="Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">7 min</span>
+                        </div>
+                        <h3>Sales Engagement Platforms Compared: Top Sales Engagement Platforms 2025 Versus Guide</h3>
+                        <p class="card-desc">Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">October 17, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis.html" class="blog-card-v2" data-category="ai-tools" data-title="AI Sales Tool Adoption in B2B Outbound Prospecting: 2025 Industry Review &amp; Analysis" data-description="Discover key trends, insights, and user sentiment for AI Sales Tool adoption in 2025 with expert reviews and actionable analysis.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>AI Sales Tool Adoption in B2B Outbound Prospecting: 2025 Industry Review &amp; Analysis</h3>
+                        <p class="card-desc">Discover key trends, insights, and user sentiment for AI Sales Tool adoption in 2025 with expert reviews and actionable analysis.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">October 14, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025.html" class="blog-card-v2" data-category="cold-email" data-title="LinkedIn Automation Guide 2025: Safety, Tools &amp; Limits" data-description="LinkedIn Automation Guide 2025 reveals what’s safe, what gets banned, and the exact tools and limits to automate without risking your account.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>LinkedIn Automation Guide 2025: Safety, Tools &amp; Limits</h3>
+                        <p class="card-desc">LinkedIn Automation Guide 2025 reveals what’s safe, what gets banned, and the exact tools and limits to automate without risking your account.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">June 19, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-proven-sales-prospecting-tips-to-boost-your-pipeline-fast.html" class="blog-card-v2" data-category="cold-email" data-title="10 Proven Sales Prospecting Tips to Boost Your Pipeline Fast" data-description="Unlock top 10 sales prospecting tips and discover how automation with Overloop saves time and grows your pipeline efficiently.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Proven Sales Prospecting Tips to Boost Your Pipeline Fast</h3>
+                        <p class="card-desc">Unlock top 10 sales prospecting tips and discover how automation with Overloop saves time and grows your pipeline efficiently.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">June 15, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025.html" class="blog-card-v2" data-category="cold-email" data-title="The Ultimate Checklist for Selecting the Best AI SDR Tools in 2025" data-description="Use this AI SDR checklist to find the best AI SDR tools for 2025. Ensure efficiency, personalization, and seamless integration for your team.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>The Ultimate Checklist for Selecting the Best AI SDR Tools in 2025</h3>
+                        <p class="card-desc">Use this AI SDR checklist to find the best AI SDR tools for 2025. Ensure efficiency, personalization, and seamless integration for your team.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">May 31, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation.html" class="blog-card-v2" data-category="cold-email" data-title="How to Find B2B Emails (Fast &amp; GDPR-Safe Methods)" data-description="How to Find B2B Emails without wasting hours or risking compliance. Proven tools, smart tactics, and methods that actually work in 2025.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">12 min</span>
+                        </div>
+                        <h3>How to Find B2B Emails (Fast &amp; GDPR-Safe Methods)</h3>
+                        <p class="card-desc">How to Find B2B Emails without wasting hours or risking compliance. Proven tools, smart tactics, and methods that actually work in 2025.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">May 11, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/lead-generation-strategies-every-saas-business-should-try-today.html" class="blog-card-v2" data-category="cold-email" data-title="Lead Generation Strategies Every SaaS Business Should Try Today" data-description="Discover proven lead generation strategies for SaaS businesses and boost B2B sales with Overloop&#x27;s powerful automation tools.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">11 min</span>
+                        </div>
+                        <h3>Lead Generation Strategies Every SaaS Business Should Try Today</h3>
+                        <p class="card-desc">Discover proven lead generation strategies for SaaS businesses and boost B2B sales with Overloop&#x27;s powerful automation tools.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">May 3, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-essential-sales-tools-every-b2b-team-needs-in-2025.html" class="blog-card-v2" data-category="cold-email" data-title="10 Essential Sales Tools Every B2B Team Needs in 2025" data-description="Discover the 10 must-have sales tools for B2B companies in 2025 to save time, boost productivity, and close more deals.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Essential Sales Tools Every B2B Team Needs in 2025</h3>
+                        <p class="card-desc">Discover the 10 must-have sales tools for B2B companies in 2025 to save time, boost productivity, and close more deals.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">April 24, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-generated-value-propositions-guide.html" class="blog-card-v2" data-category="cold-email" data-title="AI-Generated Value Propositions: Guide" data-description="Explore how AI can enhance sales outreach by creating personalized, data-driven value propositions that resonate with customers.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>AI-Generated Value Propositions: Guide</h3>
+                        <p class="card-desc">Explore how AI can enhance sales outreach by creating personalized, data-driven value propositions that resonate with customers.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 11, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-write-a-successful-cold-email.html" class="blog-card-v2" data-category="cold-email" data-title="The 2026 Cold Email Guide: How to Write Emails That Get Replies" data-description="The 2026 Cold Email Guide shows exactly how to write emails that get replies, not ignored: updated tactics, real examples, and zero fluff.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">17 min</span>
+                        </div>
+                        <h3>The 2026 Cold Email Guide: How to Write Emails That Get Replies</h3>
+                        <p class="card-desc">The 2026 Cold Email Guide shows exactly how to write emails that get replies, not ignored: updated tactics, real examples, and zero fluff.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 10, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/top-8-sales-prospecting-tools-for-small-business-teams.html" class="blog-card-v2" data-category="cold-email" data-title="8 Best Prospecting Tools for SMBs (Free &amp; Paid)" data-description="Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>8 Best Prospecting Tools for SMBs (Free &amp; Paid)</h3>
+                        <p class="card-desc">Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 5, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/common-sales-automation-mistakes-and-how-to-avoid-them.html" class="blog-card-v2" data-category="cold-email" data-title="Common Sales Automation Mistakes and How to Avoid Them" data-description="Learn how to navigate common sales automation pitfalls to enhance efficiency and maintain meaningful customer interactions.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Common Sales Automation Mistakes and How to Avoid Them</h3>
+                        <p class="card-desc">Learn how to navigate common sales automation pitfalls to enhance efficiency and maintain meaningful customer interactions.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 3, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-best-practices-for-multi-channel-sales-campaigns.html" class="blog-card-v2" data-category="cold-email" data-title="10 Best Practices for Multi-Channel Sales Campaigns" data-description="Learn effective strategies for running successful multi-channel sales campaigns, from audience understanding to leveraging AI tools.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Best Practices for Multi-Channel Sales Campaigns</h3>
+                        <p class="card-desc">Learn effective strategies for running successful multi-channel sales campaigns, from audience understanding to leveraging AI tools.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 27, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-write-personalized-sales-emails-at-scale.html" class="blog-card-v2" data-category="cold-email" data-title="Write Personalized Sales Emails at Scale (High-Reply Framework for 2026)" data-description="Write Personalized Sales Email that actually gets replies. Proven structure, real personalization tactics, and examples to close more deals.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Write Personalized Sales Emails at Scale (High-Reply Framework for 2026)</h3>
+                        <p class="card-desc">Write Personalized Sales Email that actually gets replies. Proven structure, real personalization tactics, and examples to close more deals.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 22, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/7-ai-sales-prospecting-tools-that-boost-lead-generation.html" class="blog-card-v2" data-category="cold-email" data-title="7 AI Sales Prospecting Tools That Boost Lead Generation" data-description="Explore seven AI tools that enhance sales prospecting, automate tasks, and improve lead generation for businesses of all sizes.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>7 AI Sales Prospecting Tools That Boost Lead Generation</h3>
+                        <p class="card-desc">Explore seven AI tools that enhance sales prospecting, automate tasks, and improve lead generation for businesses of all sizes.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 20, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-build-scalable-lead-generation-workflows.html" class="blog-card-v2" data-category="cold-email" data-title="How to Build Scalable Lead Generation Workflows" data-description="Learn how to create scalable lead generation workflows that improve efficiency, lead quality, and save time through automation and templates">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Build Scalable Lead Generation Workflows</h3>
+                        <p class="card-desc">Learn how to create scalable lead generation workflows that improve efficiency, lead quality, and save time through automation and templates</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 18, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-ai-follow-up-scheduling-boosts-sales-efficiency.html" class="blog-card-v2" data-category="cold-email" data-title="How AI Follow-Up Scheduling Boosts Sales Efficiency" data-description="AI-driven follow-up scheduling enhances sales efficiency by automating personalized outreach and timing, ensuring no opportunities are missed.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How AI Follow-Up Scheduling Boosts Sales Efficiency</h3>
+                        <p class="card-desc">AI-driven follow-up scheduling enhances sales efficiency by automating personalized outreach and timing, ensuring no opportunities are missed.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 12, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ai-sales-tools-roi-key-metrics-to-track.html" class="blog-card-v2" data-category="cold-email" data-title="AI Sales Tools ROI: Key Metrics to Track" data-description="Learn how to measure the ROI of AI sales tools through cost savings, revenue growth, and efficiency improvements for better business outcomes.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>AI Sales Tools ROI: Key Metrics to Track</h3>
+                        <p class="card-desc">Learn how to measure the ROI of AI sales tools through cost savings, revenue growth, and efficiency improvements for better business outcomes.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">January 7, 2025</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach.html" class="blog-card-v2" data-category="comparisons" data-title="LinkedIn vs Email: Which Performs Better for B2B Outreach?" data-description="Explore the strengths and weaknesses of LinkedIn and email for B2B outreach, and learn how to combine both for optimal results.">
+                    <div class="blog-card-gradient comparisons"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge comparisons">Comparisons</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>LinkedIn vs Email: Which Performs Better for B2B Outreach?</h3>
+                        <p class="card-desc">Explore the strengths and weaknesses of LinkedIn and email for B2B outreach, and learn how to combine both for optimal results.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">December 26, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-best-ai-sales-assistant-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="10 Best AI Sales Assistant Tools" data-description="Review of the 10 best AI sales assistant tools, including features, pros, cons, and pricing">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Best AI Sales Assistant Tools</h3>
+                        <p class="card-desc">Review of the 10 best AI sales assistant tools, including features, pros, cons, and pricing</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">September 12, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/9-best-ai-agent-tools-for-sales.html" class="blog-card-v2" data-category="ai-tools" data-title="9 Best AI Agent Tools for Sales" data-description="Review of the 9 best AI Agents Tools for sales, including features, pros, and cons">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Best AI Agent Tools for Sales</h3>
+                        <p class="card-desc">Review of the 9 best AI Agents Tools for sales, including features, pros, and cons</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">September 9, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/best-ai-sales-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="Best AI Sales Tools 2026: Buyer&rsquo;s Guide" data-description="We tested 30+ AI sales tools across 6 categories: BDR, email, LinkedIn, enrichment, conversation intelligence, and email coaching. Comparison table with pricing, G2 ratings, and decision framework.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Best AI Sales Tools 2026: Buyer&rsquo;s Guide</h3>
+                        <p class="card-desc">We tested 30+ AI sales tools across 6 categories: BDR, email, LinkedIn, enrichment, conversation intelligence, and email coaching. Comparison table with pricing, G2 ratings, and decision framework.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">August 29, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/9-best-ai-email-outreach-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="12 Best AI Email Outreach Tools in 2026 (Tested &amp; Compared)" data-description="We tested 12 AI email outreach tools head-to-head with real campaigns. Comparison of AI writing, deliverability scores, warm-up, pricing, and multichannel features.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>12 Best AI Email Outreach Tools in 2026 (Tested &amp; Compared)</h3>
+                        <p class="card-desc">We tested 12 AI email outreach tools head-to-head with real campaigns. Comparison of AI writing, deliverability scores, warm-up, pricing, and multichannel features.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">April 13, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/get-email-from-linkedin-profile.html" class="blog-card-v2" data-category="cold-email" data-title="How to Get Email from LinkedIn Profile (9 Methods, Step by Step)" data-description="9 proven ways to get someone's email from their LinkedIn profile. Free manual methods, Chrome extensions, Google operators, Sales Navigator, and email guessing.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>How to Get Email from LinkedIn Profile (9 Methods, Step by Step)</h3>
+                        <p class="card-desc">9 proven ways to get someone&rsquo;s email from their LinkedIn profile. Free manual methods, Chrome extensions, Google operators, Sales Navigator, and email guessing.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">March 19, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/9-best-ai-multichannel-outreach-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="9 Best AI Multichannel Outreach Tools" data-description="Review of the 9 best AI Multichannel Outreach Tools, including features, pros, and cons">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Best AI Multichannel Outreach Tools</h3>
+                        <p class="card-desc">Review of the 9 best AI Multichannel Outreach Tools, including features, pros, and cons</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">March 13, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/pre-call-planning.html" class="blog-card-v2" data-category="cold-email" data-title="Master pre call planning for effective conversations" data-description="Discover the importance of pre call planning in sales. Enhance your sales conversations with our effective tips and planning techniques!">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Master pre call planning for effective conversations</h3>
+                        <p class="card-desc">Discover the importance of pre call planning in sales. Enhance your sales conversations with our effective tips and planning techniques!</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">March 12, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/11-best-ai-bdr-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="14 Best AI BDR Tools in 2026 (Tested &amp; Compared)" data-description="We tested 14 AI BDR tools head-to-head. Real pricing, real pros/cons, honest verdicts. Overloop, Artisan, 11x, Clay, Instantly, Amplemarket, and 8 more ranked.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>14 Best AI BDR Tools in 2026 (Tested &amp; Compared)</h3>
+                        <p class="card-desc">We tested 14 AI BDR tools head-to-head. Real pricing, real pros/cons, honest verdicts. Overloop, Artisan, 11x, Clay, Instantly, Amplemarket, and 8 more ranked.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">March 8, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-compose-a-follow-up-email.html" class="blog-card-v2" data-category="cold-email" data-title="How to compose a follow-up email: our guide" data-description="Running out of email inspiration? We teach you how to compose a follow-up email your prospects will remember! Boost your responses with Overloop!">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>How to compose a follow-up email: our guide</h3>
+                        <p class="card-desc">Running out of email inspiration? We teach you how to compose a follow-up email your prospects will remember! Boost your responses with Overloop!</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">March 7, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/8-best-ai-linkedin-outreach-tools.html" class="blog-card-v2" data-category="ai-tools" data-title="13 Best AI LinkedIn Outreach Tools in 2026 (Safety-First Guide)" data-description="We tested 13 AI LinkedIn outreach tools for safety, daily limits, ban risk, and G2 ratings. Honest comparison with real data on connection request limits, SSI scores, and account restrictions.">
+                    <div class="blog-card-gradient ai-tools"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge ai-tools">AI Tools</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>13 Best AI LinkedIn Outreach Tools in 2026 (Safety-First Guide)</h3>
+                        <p class="card-desc">We tested 13 AI LinkedIn outreach tools for safety, daily limits, ban risk, and G2 ratings. Honest comparison with real data on connection request limits, SSI scores, and account restrictions.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="24" height="24" loading="lazy">
+                                <span>Nicolas Finet</span>
+                            </div>
+                            <span class="card-date">March 1, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/email-automation.html" class="blog-card-v2" data-category="cold-email" data-title="Boost your sales productivity with email automation" data-description="Discover the game-changing benefits of email automation for your sales business!">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">4 min</span>
+                        </div>
+                        <h3>Boost your sales productivity with email automation</h3>
+                        <p class="card-desc">Discover the game-changing benefits of email automation for your sales business!</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 29, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/cold-email-illegal.html" class="blog-card-v2" data-category="cold-email" data-title="Is Cold Email Illegal? Country-by-Country Legal Guide (2026)" data-description="Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM (US), GDPR (EU), PECR (UK), CASL (Canada), Spam Act (Australia), LGPD (Brazil), and more.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Is Cold Email Illegal? Country-by-Country Legal Guide (2026)</h3>
+                        <p class="card-desc">Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM (US), GDPR (EU), PECR (UK), CASL (Canada), Spam Act (Australia), LGPD (Brazil), and more.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">January 3, 2024</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/best-subject-lines-for-sales-emails.html" class="blog-card-v2" data-category="cold-email" data-title="Best subject lines for sales emails: some examples and keys to success" data-description="The subject line of an email is the first visible text from the inbox. Learn which subject lines for sales emails get the best open rates.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Best subject lines for sales emails: some examples and keys to success</h3>
+                        <p class="card-desc">The subject line of an email is the first visible text from the inbox. Learn which subject lines for sales emails get the best open rates.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">April 26, 2022</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-find-someone-email-address-efficiently.html" class="blog-card-v2" data-category="cold-email" data-title="How to find someone&#x27;s email address efficiently" data-description="17 proven methods to find anyone&#x27;s email address in 2026. Free tools, paid finders, LinkedIn tricks, and verification steps.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>How to find someone&#x27;s email address efficiently</h3>
+                        <p class="card-desc">17 proven methods to find anyone&#x27;s email address in 2026. Free tools, paid finders, LinkedIn tricks, and verification steps.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">April 19, 2022</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/sales-email-tips-to-help-you-close-more-deals.html" class="blog-card-v2" data-category="cold-email" data-title="Sales emails tips to help you close more deals" data-description="Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, and personalization strategies.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Sales emails tips to help you close more deals</h3>
+                        <p class="card-desc">Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, and personalization strategies.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">March 27, 2022</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/how-to-write-a-successful-follow-up-email.html" class="blog-card-v2" data-category="cold-email" data-title="How to write a successful follow up email, step by step" data-description="The most important parts of cold email is the follow-up email. We&#x27;ll help you write a successful follow up email, step by step.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>How to write a successful follow up email, step by step</h3>
+                        <p class="card-desc">The most important parts of cold email is the follow-up email. We&#x27;ll help you write a successful follow up email, step by step.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">March 9, 2022</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy.html" class="blog-card-v2" data-category="cold-email" data-title="5 Main Steps for an Effective Cold Email Marketing Strategy" data-description="Writing the perfect cold email is key if you want to get success with your cold email campaigns or your sales outbound activities. Discover the best practices in cold emailing and start getting positi">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>5 Main Steps for an Effective Cold Email Marketing Strategy</h3>
+                        <p class="card-desc">Writing the perfect cold email is key if you want to get success with your cold email campaigns or your sales outbound activities. Discover the best practice...</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">February 22, 2022</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/455-email-spam-trigger-words-avoid-2018.html" class="blog-card-v2" data-category="cold-email" data-title="600+ Email Spam Trigger Words to Avoid in 2026 (Full List)" data-description="The most comprehensive list of 600+ email spam trigger words organized by 18 categories with risk levels and safer alternatives. Updated for 2026.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>600+ Email Spam Trigger Words to Avoid in 2026 (Full List)</h3>
+                        <p class="card-desc">The most comprehensive list of 600+ email spam trigger words organized by 18 categories with risk levels and safer alternatives. Updated for 2026.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">October 14, 2021</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/automations.html" class="blog-card-v2" data-category="cold-email" data-title="Automations" data-description="A huge update in the Overloop platform, which completely changed the way you do your cold outreach.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">2 min</span>
+                        </div>
+                        <h3>Automations</h3>
+                        <p class="card-desc">A huge update in the Overloop platform, which completely changed the way you do your cold outreach.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">CG</text></svg>
+                                <span>Carina Gotovcenco</span>
+                            </div>
+                            <span class="card-date">August 31, 2020</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/best-practices-for-links-in-your-emails.html" class="blog-card-v2" data-category="cold-email" data-title="Best Practices for Links In Your Emails" data-description="Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">6 min</span>
+                        </div>
+                        <h3>Best Practices for Links In Your Emails</h3>
+                        <p class="card-desc">Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">August 28, 2020</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/whats-the-best-email-length-for-sales-outreach.html" class="blog-card-v2" data-category="cold-email" data-title="Cold Email Length: The Data-Driven Guide to Ideal Length (2026)" data-description="What's the ideal cold email length? Data shows 50-125 words get the best response rates. See the stats, examples, and best practices for every scenario.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">5 min</span>
+                        </div>
+                        <h3>Cold Email Length: The Data-Driven Guide to Ideal Length (2026)</h3>
+                        <p class="card-desc">What&rsquo;s the ideal cold email length? Data shows 50-125 words get the best response rates. See the stats, examples, and best practices for every scenario.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">VR</text></svg>
+                                <span>Vincenzo Ruggiero</span>
+                            </div>
+                            <span class="card-date">July 26, 2020</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/seasonal-sales.html" class="blog-card-v2" data-category="cold-email" data-title="Relying on Seasonal Sales? Here&#x27;s How to Survive in Between" data-description="Seasonal businesses can still make money year-round. Learn practical strategies for prospecting, cross-selling, and staying visible during the off season.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Relying on Seasonal Sales? Here&#x27;s How to Survive in Between</h3>
+                        <p class="card-desc">Seasonal businesses can still make money year-round. Learn practical strategies for prospecting, cross-selling, and staying visible during the off season.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">August 19, 2019</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/sales-presentations.html" class="blog-card-v2" data-category="cold-email" data-title="Back to Basics: Why It’s Time to Kill the Generic Sales Presentation" data-description="As a salesperson, it&#x27;s your job to advise prospects on the ways your offering is uniquely positioned to address their unique needs.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Back to Basics: Why It’s Time to Kill the Generic Sales Presentation</h3>
+                        <p class="card-desc">As a salesperson, it&#x27;s your job to advise prospects on the ways your offering is uniquely positioned to address their unique needs.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">May 20, 2019</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/know-prospect-find.html" class="blog-card-v2" data-category="cold-email" data-title="How To Know Who To Prospect And Where To Find Them" data-description="Learn how to identify your ideal prospects and discover the best channels to find them for effective B2B sales prospecting.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How To Know Who To Prospect And Where To Find Them</h3>
+                        <p class="card-desc">Learn how to identify your ideal prospects and discover the best channels to find them for effective B2B sales prospecting.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">October 24, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/cold-emailing-link-building.html" class="blog-card-v2" data-category="cold-email" data-title="Cold Email Link Building: How We Earned 23 Backlinks from 500 Emails" data-description="We sent 500 cold emails for link building and earned 23 backlinks (4.6% conversion). Get 8 copy-paste templates, subject line data, deliverability setup, and the full campaign playbook.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Cold Email Link Building: How We Earned 23 Backlinks from 500 Emails</h3>
+                        <p class="card-desc">We sent 500 cold emails for link building and earned 23 backlinks (4.6% conversion). Get 8 copy-paste templates, subject line data, deliverability setup, and the full campaign playbook.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">GK</text></svg>
+                                <span>Gabka Ko-Ov</span>
+                            </div>
+                            <span class="card-date">June 26, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/inside-sales-outside-sales.html" class="blog-card-v2" data-category="cold-email" data-title="Inside Sales vs Outside Sales: What&#x27;s The Best Solution For Your Company?" data-description="Compare inside sales vs outside sales to find the best approach for your business. Explore key differences in tools, costs, and sales cycles.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Inside Sales vs Outside Sales: What&#x27;s The Best Solution For Your Company?</h3>
+                        <p class="card-desc">Compare inside sales vs outside sales to find the best approach for your business. Explore key differences in tools, costs, and sales cycles.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">May 15, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/best-sales-email-template.html" class="blog-card-v2" data-category="cold-email" data-title="This Sales Email Template Will Make All SDR&#x27;s Wish They Came Up With it" data-description="A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags and social proof.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>This Sales Email Template Will Make All SDR&#x27;s Wish They Came Up With it</h3>
+                        <p class="card-desc">A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags and social proof.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">April 16, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/perfect-follow-up-email-campaign.html" class="blog-card-v2" data-category="cold-email" data-title="How to Write the Perfect Follow-up Email Sequence [Blueprint]" data-description="Learn how to write the perfect follow-up email sequence with proven blueprints. Discover strategies that get replies.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Write the Perfect Follow-up Email Sequence [Blueprint]</h3>
+                        <p class="card-desc">Learn how to write the perfect follow-up email sequence with proven blueprints. Discover strategies that get replies.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">March 28, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/6-reasons-sales-process-broken.html" class="blog-card-v2" data-category="cold-email" data-title="6 Reasons Why Your Sales Process is Broken" data-description="Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>6 Reasons Why Your Sales Process is Broken</h3>
+                        <p class="card-desc">Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">February 7, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/cold-email-stats-2018.html" class="blog-card-v2" data-category="cold-email" data-title="55+ Cold Email Statistics for 2026: Benchmarks, Data &amp; ROI" data-description="55+ cold email statistics for 2026: open rates, reply rates, conversion rates, ROI, deliverability, and industry benchmarks. Data from 12M+ outbound emails.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>55+ Cold Email Statistics for 2026: Benchmarks, Data &amp; ROI</h3>
+                        <p class="card-desc">55+ cold email statistics for 2026: open rates, reply rates, conversion rates, ROI, deliverability, and industry benchmarks. Data from 12M+ outbound emails.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">January 3, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/boost-sales-motivation.html" class="blog-card-v2" data-category="cold-email" data-title="Why Salespeople Should NOT Obsess Over Results [Interview with Carson V. Heady]" data-description="Carson V. Heady shares insights on sales motivation, why process matters more than results, and how to drive long-term sales success.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Why Salespeople Should NOT Obsess Over Results [Interview with Carson V. Heady]</h3>
+                        <p class="card-desc">Carson V. Heady shares insights on sales motivation, why process matters more than results, and how to drive long-term sales success.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">January 1, 2018</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/kickstart-sales-career-2.html" class="blog-card-v2" data-category="cold-email" data-title="How to Kickstart Your Sales Career [Interview With Marcus Cauchi]" data-description="Sales coach Marcus Cauchi shares advice on launching a sales career, hiring great salespeople, and becoming a better sales manager.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How to Kickstart Your Sales Career [Interview With Marcus Cauchi]</h3>
+                        <p class="card-desc">Sales coach Marcus Cauchi shares advice on launching a sales career, hiring great salespeople, and becoming a better sales manager.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">December 18, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/17-sentences-never-use-sales-email.html" class="blog-card-v2" data-category="cold-email" data-title="17 Sentences You Should Never Use In a Sales Email" data-description="Discover the 17 most common sentences that kill your sales emails and learn what to write instead to grab attention and close deals.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>17 Sentences You Should Never Use In a Sales Email</h3>
+                        <p class="card-desc">Discover the 17 most common sentences that kill your sales emails and learn what to write instead to grab attention and close deals.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">December 13, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/500-trigger-words.html" class="blog-card-v2" data-category="cold-email" data-title="1000+ Trigger Words That Get Replies in Cold Email (2026 List)" data-description="The most comprehensive trigger words list online: 1000+ words organized by emotion for cold emails. Urgency, curiosity, trust, exclusivity, FOMO, social proof, greed, and more.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>1000+ Trigger Words That Get Replies in Cold Email (2026 List)</h3>
+                        <p class="card-desc">The most comprehensive trigger words list online: 1000+ words organized by emotion for cold emails. Urgency, curiosity, trust, exclusivity, FOMO, social proof, greed, and more.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">October 23, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-favourite-sales-movies.html" class="blog-card-v2" data-category="cold-email" data-title="10 Top Salespeople&#x27;s Favourite Sales Movies" data-description="10 top salespeople share their favourite sales movies -- from motivational classics to surprising picks -- with insights on what makes each a must-watch.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Top Salespeople&#x27;s Favourite Sales Movies</h3>
+                        <p class="card-desc">10 top salespeople share their favourite sales movies -- from motivational classics to surprising picks -- with insights on what makes each a must-watch.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">October 9, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/5-rules-more-successful-salespeople.html" class="blog-card-v2" data-category="cold-email" data-title="5 Rules That&#x27;ll Make You More Successful Than 90% of Salespeople Today" data-description="Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations and persistence.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>5 Rules That&#x27;ll Make You More Successful Than 90% of Salespeople Today</h3>
+                        <p class="card-desc">Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations and persistence.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">September 18, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/following-up-surefire-techniques.html" class="blog-card-v2" data-category="cold-email" data-title="48% of Salespeople Will Never Do Any of This" data-description="Master the art of following up with proven email templates for every situation. From post-trial to long-term nurturing, get scripts that convert.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>48% of Salespeople Will Never Do Any of This</h3>
+                        <p class="card-desc">Master the art of following up with proven email templates for every situation. From post-trial to long-term nurturing, get scripts that convert.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">September 13, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/7-reasons-emails-bounce.html" class="blog-card-v2" data-category="cold-email" data-title="7 Reasons Emails Bounce And How to Avoid It" data-description="Discover the 7 most common reasons your emails bounce and learn actionable strategies to reduce bounces and protect your sender reputation.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>7 Reasons Emails Bounce And How to Avoid It</h3>
+                        <p class="card-desc">Discover the 7 most common reasons your emails bounce and learn actionable strategies to reduce bounces and protect your sender reputation.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">September 5, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/increase-reply-rate.html" class="blog-card-v2" data-category="cold-email" data-title="How To Get a 31% Reply Rate to Your Sales Emails [Case Study]" data-description="Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation and personalization.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>How To Get a 31% Reply Rate to Your Sales Emails [Case Study]</h3>
+                        <p class="card-desc">Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation and personalization.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">August 15, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/deal-objections.html" class="blog-card-v2" data-category="cold-email" data-title="Should you take &quot;No&quot; for an answer?" data-description="Learn how to handle sales objections like a pro. From generic no&#x27;s to real objections on price, timing, and authority, turn resistance into deals.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Should you take &quot;No&quot; for an answer?</h3>
+                        <p class="card-desc">Learn how to handle sales objections like a pro. From generic no&#x27;s to real objections on price, timing, and authority, turn resistance into deals.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">August 6, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/ab-testing-email-drip-campaigns.html" class="blog-card-v2" data-category="cold-email" data-title="Our Guide to A/B Testing Email Drip Campaigns" data-description="Learn how to A/B test your email drip campaigns effectively. Master subject lines, delivery times, and more to maximize open rates.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>Our Guide to A/B Testing Email Drip Campaigns</h3>
+                        <p class="card-desc">Learn how to A/B test your email drip campaigns effectively. Master subject lines, delivery times, and more to maximize open rates.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">July 13, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/9-reasons-never-buy-email-lists.html" class="blog-card-v2" data-category="cold-email" data-title="9 Reasons Why You Should Never Buy Email Lists" data-description="Discover the 9 critical reasons why buying email lists destroys your deliverability, reputation, and sales results.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>9 Reasons Why You Should Never Buy Email Lists</h3>
+                        <p class="card-desc">Discover the 9 critical reasons why buying email lists destroys your deliverability, reputation, and sales results.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">June 27, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/blog/10-pro-tips-avoid-spam-folder.html" class="blog-card-v2" data-category="cold-email" data-title="10 Pro Tips to Avoid the Spam Folder" data-description="Discover 10 proven tips to keep your emails out of the spam folder, from subject line best practices to sender reputation and list hygiene.">
+                    <div class="blog-card-gradient cold-email"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-badge cold-email">Sales</span>
+                            <span class="blog-card-readtime">10 min</span>
+                        </div>
+                        <h3>10 Pro Tips to Avoid the Spam Folder</h3>
+                        <p class="card-desc">Discover 10 proven tips to keep your emails out of the spam folder, from subject line best practices to sender reputation and list hygiene.</p>
+                        <div class="card-footer">
+                            <div class="card-author">
+                                <svg width="24" height="24" viewBox="0 0 24 24" style="border-radius:50%;"><rect width="24" height="24" rx="12" fill="#7C3AED"/><text x="12" y="13" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="9">FP</text></svg>
+                                <span>Forster Perelsztejn</span>
+                            </div>
+                            <span class="card-date">May 19, 2017</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- No results message -->
+            <div class="blog-no-results" id="blog-no-results">
+                <strong>No articles found</strong>
+                Try a different search term or clear the filters.
+            </div>
+
+            <!-- Show more button -->
+            <div class="blog-show-more-wrap" id="show-more-wrap">
+                <button class="blog-show-more" id="show-more-btn">
+                    Show more articles
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+            </div>
+
+            <!-- Versus Section -->
+            <div class="versus-section">
+                <div class="versus-section-header">
+                    <h2>Head-to-Head Comparisons</h2>
+                    <p>Side-by-side tool comparisons to help you pick the right platform.</p>
+                </div>
+                <div class="versus-grid">
+
+                    <a href="/versus/lemlist-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Apollo vs Lemlist: Which B2B Prospecting Tool Should You Choose?</h3>
+                            <p class="card-desc">Compare Apollo vs Lemlist for B2B sales outreach. Database, personalization, automation, pricing, and deliverability compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/instantly-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Instantly vs Lemlist: Which Cold Outreach Tool Wins in 2026?</h3>
+                            <p class="card-desc">Compare Instantly vs Lemlist for cold email outreach. Deliverability, personalization, multi-channel, and pricing compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/lemlist-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Lemlist vs Apollo: Which Prospecting Tool Wins for B2B Sales?</h3>
+                            <p class="card-desc">Compare Lemlist vs Apollo for B2B outbound sales. Database, personalization, multi-channel outreach, and pricing compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-apollo.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Apollo: Which AI Sales Tool Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Apollo for B2B outbound sales in 2026. Features, pricing, databases, and AI capabilities compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-artisan.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Artisan: Which AI Sales Agent Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Artisan (Ava) for AI-powered outbound sales. Features, pricing, setup, and multi-channel outreach compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-hubspot.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs HubSpot: Which Fits Your Outbound Sales in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs HubSpot for outbound sales in 2026. Sequences, CRM, AI features, pricing, and integrations compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-instantly.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Instantly: Which Cold Email Tool Delivers in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Instantly for cold email outreach. DFY setup, AI writing, database size, and deliverability compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-lemlist.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Lemlist: Which Outreach Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Lemlist for B2B cold outreach. DFY setup vs DIY, AI personalization, email warmup, and pricing compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-reply.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Reply: Which Outbound Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Reply for outbound sales in 2026. Prospecting, sequences, deliverability, AI, and pricing compared.</p>
+                        </div>
+                    </a>
+
+                    <a href="/versus/overloop-vs-saleshandy.html" class="blog-card-v2" data-category="versus">
+                        <div class="blog-card-gradient comparisons"></div>
+                        <div class="card-body">
+                            <div class="card-top">
+                                <span class="card-badge comparisons">Versus</span>
+                            </div>
+                            <h3>Overloop vs Saleshandy: Which Cold Email Platform Wins in 2026?</h3>
+                            <p class="card-desc">Compare Overloop vs Saleshandy for cold email in 2026. Prospecting, deliverability, AI writing, pricing, and workflow compared.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom CTA Section -->
+    <section class="blog-cta-section">
+        <div class="blog-cta-inner">
+            <h2>Ready to automate your outbound?</h2>
+            <p class="cta-sub">450M+ contacts. AI-powered sequences. Email + LinkedIn in one platform. From $69/user/month.</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-btn">Try Overloop Free</a>
+            <p class="cta-trust">14-day free trial &bull; No credit card required</p>
+        </div>
+    </section>
+
+<!-- Overloop Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
+                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
+                <a href="/book-demo">Book a Demo</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/blog/">Blog</a>
+                <a href="/versus/">Versus</a>
+                <a href="/playbooks">Playbooks</a>
+                <a href="/tools/spam-checker">Spam Checker</a>
+                <a href="/tools/roi-calculator">ROI Calculator</a>
+                <a href="/tools/domain-health-checker">Domain Health</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about">About</a>
+                <a href="/testimonials">Testimonials</a>
+                <a href="mailto:hello@overloop.com">Contact</a>
+                <a href="/careers">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/terms">Terms</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/gdpr">GDPR</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
+            <div>
+                <a href="https://www.linkedin.com/company/overloop-ai/">LinkedIn</a>
+                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Blog Index: Search + Filter + Pagination
+(function() {
+    var PAGE_SIZE = 12;
+    var grid = document.getElementById('blog-grid');
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.blog-card-v2'));
+    var searchInput = document.getElementById('blog-search');
+    var filterBtns = document.querySelectorAll('#blog-filters button');
+    var visibleCountEl = document.getElementById('blog-visible-count');
+    var showMoreWrap = document.getElementById('show-more-wrap');
+    var showMoreBtn = document.getElementById('show-more-btn');
+    var noResults = document.getElementById('blog-no-results');
+
+    var currentFilter = 'all';
+    var currentSearch = '';
+    var currentPage = 1;
+
+    function getMatchingCards() {
+        return cards.filter(function(card) {
+            var cat = card.getAttribute('data-category') || '';
+            var title = (card.getAttribute('data-title') || '').toLowerCase();
+            var desc = (card.getAttribute('data-description') || '').toLowerCase();
+            var searchText = title + ' ' + desc;
+            var matchesFilter = currentFilter === 'all' || cat === currentFilter;
+            var matchesSearch = !currentSearch || searchText.indexOf(currentSearch) !== -1;
+            return matchesFilter && matchesSearch;
+        });
+    }
+
+    function render() {
+        var matching = getMatchingCards();
+        var totalVisible = matching.length;
+        var showCount = Math.min(currentPage * PAGE_SIZE, totalVisible);
+
+        // Hide all cards first
+        cards.forEach(function(card) {
+            card.style.display = 'none';
+        });
+
+        // Show matching cards up to showCount
+        for (var i = 0; i < matching.length; i++) {
+            if (i < showCount) {
+                matching[i].style.display = '';
+            }
+        }
+
+        // Update counter
+        if (visibleCountEl) {
+            visibleCountEl.textContent = Math.min(showCount, totalVisible);
+        }
+
+        // Show/hide "show more" button
+        if (showMoreWrap) {
+            showMoreWrap.style.display = showCount < totalVisible ? '' : 'none';
+        }
+
+        // Show/hide no results
+        if (noResults) {
+            noResults.style.display = totalVisible === 0 ? 'block' : 'none';
+        }
+    }
+
+    // Filter buttons
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+            currentFilter = this.getAttribute('data-filter');
+            currentPage = 1;
+            render();
+        });
+    });
+
+    // Search input
+    searchInput.addEventListener('input', function() {
+        currentSearch = this.value.trim().toLowerCase();
+        currentPage = 1;
+        render();
+    });
+
+    // Show more button
+    showMoreBtn.addEventListener('click', function() {
+        currentPage++;
+        render();
+    });
+
+    // Language switcher
+    var langToggle = document.getElementById('lang-toggle');
+    var langDropdown = document.getElementById('lang-dropdown');
+
+    langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!langDropdown.contains(e.target) && e.target !== langToggle) {
+            langDropdown.classList.remove('open');
+        }
+    });
+
+    // Initial render
+    render();
+})();
+</script>
+
+</body>
+</html>
