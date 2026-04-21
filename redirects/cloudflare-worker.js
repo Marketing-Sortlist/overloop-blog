@@ -581,7 +581,76 @@ export default {
       return Response.redirect(`https://overloop.com${enPath}`, 301);
     }
 
-    // 6. Reverse proxy to GitHub Pages
+    // 6. Sitemap: merge Webflow + GitHub Pages, filter out /blog/* from Webflow
+    if (path === '/sitemap.xml') {
+      try {
+        // Fetch both sitemaps in parallel
+        const [webflowRes, ghPagesRes] = await Promise.all([
+          fetch('https://overloop.com/sitemap-webflow.xml', { headers: request.headers }),
+          fetch('https://sortlist.github.io/overloop-blog/sitemap.xml', { headers: request.headers }),
+        ]);
+
+        const webflowXml = await webflowRes.text();
+        const ghPagesXml = await ghPagesRes.text();
+
+        // Extract <url> blocks from Webflow sitemap, EXCLUDING paths we manage
+        const managedPrefixes = ['/blog', '/versus', '/tools/', '/playbooks/'];
+        const webflowUrls = [];
+        const urlRegex = /<url>([\s\S]*?)<\/url>/g;
+        let match;
+
+        while ((match = urlRegex.exec(webflowXml)) !== null) {
+          const urlBlock = match[1];
+          const locMatch = urlBlock.match(/<loc>([^<]+)<\/loc>/);
+          if (locMatch) {
+            const loc = locMatch[1];
+            const urlPath = loc.replace('https://overloop.com', '');
+            // Keep this URL only if it's NOT a managed path
+            const isManaged = managedPrefixes.some(prefix => urlPath.startsWith(prefix));
+            // Also filter locale blog paths: /fr/blog, /de/blog, etc.
+            const isLocaleBlog = /^\/(fr|de|es|it)\/blog/.test(urlPath);
+            if (!isManaged && !isLocaleBlog) {
+              webflowUrls.push(match[0]);
+            }
+          }
+        }
+
+        // Extract <url> blocks from GitHub Pages sitemap (our blog/versus pages)
+        const ghPagesUrls = [];
+        while ((match = urlRegex.exec(ghPagesXml)) !== null) {
+          ghPagesUrls.push(match[0]);
+        }
+
+        // Build the combined sitemap
+        const combinedSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Webflow pages (${webflowUrls.length} URLs, excluding /blog/* and /versus/*) -->
+${webflowUrls.join('\n')}
+  <!-- Blog & Versus pages from GitHub Pages (${ghPagesUrls.length} URLs) -->
+${ghPagesUrls.join('\n')}
+</urlset>`;
+
+        return new Response(combinedSitemap, {
+          headers: {
+            'Content-Type': 'application/xml; charset=utf-8',
+            'Cache-Control': 'public, max-age=3600',
+          },
+        });
+      } catch (e) {
+        // Fallback: serve Webflow sitemap if merge fails
+        return fetch(request);
+      }
+    }
+
+    // 6b. Serve Webflow's raw sitemap at a different URL (needed for the merge above)
+    if (path === '/sitemap-webflow.xml') {
+      // Pass through to Webflow's original sitemap
+      const webflowReq = new Request('https://overloop.com/sitemap.xml', request);
+      return fetch(webflowReq);
+    }
+
+    // 7. Reverse proxy to GitHub Pages
     //    Routes: /blog/*, /versus/*, /tools/*, /playbooks/*, /templates/*
     if (
       path.startsWith('/blog') ||
@@ -599,7 +668,7 @@ export default {
       return newResponse;
     }
 
-    // 7. Pass through everything else (Webflow)
+    // 8. Pass through everything else (Webflow)
     return fetch(request);
   }
 };
