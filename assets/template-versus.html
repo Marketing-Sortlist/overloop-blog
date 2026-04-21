@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TOOL_A}} vs {{TOOL_B}}: {{TAGLINE}} | Overloop</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="https://overloop.com/versus/{{SLUG}}">
+
+    <meta property="og:title" content="{{TOOL_A}} vs {{TOOL_B}}: {{TAGLINE}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="https://overloop.com/assets/images/og/{{SLUG}}.png">
+    <meta property="og:url" content="https://overloop.com/versus/{{SLUG}}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TOOL_A}} vs {{TOOL_B}}: {{TAGLINE}}">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="https://overloop.com/assets/images/og/{{SLUG}}.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "{{TOOL_A}} vs {{TOOL_B}}",
+        "description": "{{META_DESCRIPTION}}",
+        "url": "https://overloop.com/versus/{{SLUG}}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Overloop",
+            "logo": { "@type": "ImageObject", "url": "https://overloop.com/assets/images/overloop-logo.png" }
+        },
+        "dateModified": "{{DATE_MODIFIED}}"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Versus", "item": "https://overloop.com/versus"},
+            {"@type": "ListItem", "position": 2, "name": "{{TOOL_A}} vs {{TOOL_B}}", "item": "https://overloop.com/versus/{{SLUG}}"}
+        ]
+    }
+    </script>
+
+    <style>
+    /* VS-specific styles (extend overloop.css) */
+    .vs-hero {
+        text-align: center;
+        padding: 4rem 1.5rem 3rem;
+        background: linear-gradient(135deg, var(--violet-lightest) 0%, #fff 100%);
+        border-bottom: 1px solid var(--border);
+    }
+    .vs-hero .vs-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    .vs-hero .vs-logos img {
+        height: 48px;
+        max-width: 160px;
+        object-fit: contain;
+    }
+    .vs-hero .vs-badge {
+        display: inline-block;
+        background: var(--violet);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.85rem;
+        padding: 0.3rem 1rem;
+        border-radius: 999px;
+        letter-spacing: 0.05em;
+    }
+    .vs-hero h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.6rem;
+        line-height: 1.15;
+        margin: 1.5rem auto 1rem;
+        max-width: 700px;
+    }
+    .vs-hero .vs-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.15rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        line-height: 1.6;
+    }
+    .vs-hero .vs-cta {
+        display: inline-block;
+        background: var(--violet);
+        color: #fff;
+        padding: 0.85rem 2.5rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background 0.2s;
+    }
+    .vs-hero .vs-cta:hover { background: var(--violet-dark); }
+    .vs-hero .vs-trust {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+    .vs-hero .vs-trust span::before {
+        content: "✓ ";
+        color: var(--violet);
+        font-weight: 700;
+    }
+
+    /* Reasons section */
+    .vs-reasons {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
+    .vs-reasons h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+    .vs-reasons-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .vs-reason-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        transition: box-shadow 0.2s;
+    }
+    .vs-reason-card:hover { box-shadow: var(--shadow-md); }
+    .vs-reason-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--text);
+    }
+    .vs-reason-card p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Comparison table */
+    .vs-comparison {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+    }
+    .vs-comparison h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .vs-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+    }
+    .vs-table thead th {
+        padding: 1rem;
+        text-align: center;
+        font-weight: 700;
+        border-bottom: 2px solid var(--violet);
+        background: var(--violet-lightest);
+    }
+    .vs-table thead th:first-child {
+        text-align: left;
+        background: transparent;
+        border-bottom: 2px solid var(--border);
+    }
+    .vs-table thead th img {
+        height: 28px;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+    .vs-table tbody td {
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    .vs-table tbody td:first-child {
+        text-align: left;
+        font-weight: 500;
+    }
+    .vs-table .category-row td {
+        background: var(--bg);
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--violet);
+        padding-top: 1.2rem;
+    }
+    .vs-table .check { color: #16a34a; font-size: 1.2rem; }
+    .vs-table .cross { color: #dc2626; font-size: 1.2rem; }
+    .vs-table .partial { color: #f59e0b; font-size: 1.2rem; }
+    .vs-table .winner-col { background: var(--violet-lightest); }
+
+    /* Detail sections */
+    .vs-details {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 0 1.5rem 4rem;
+    }
+    .vs-details h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    .vs-details h3 {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+    .vs-details p {
+        color: var(--text);
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+    }
+    .vs-details img {
+        max-width: 100%;
+        border-radius: var(--radius-md);
+        margin: 1.5rem 0;
+        border: 1px solid var(--border);
+    }
+
+    /* Verdict */
+    .vs-verdict {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 2.5rem;
+        background: var(--violet-lightest);
+        border-radius: var(--radius-lg);
+        text-align: center;
+    }
+    .vs-verdict h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    .vs-verdict p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .vs-verdict .vs-cta {
+        display: inline-block;
+        background: var(--violet);
+        color: #fff;
+        padding: 0.85rem 2.5rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+    .vs-verdict .vs-cta:hover { background: var(--violet-dark); }
+
+    /* Other VS pages */
+    .vs-other {
+        max-width: 900px;
+        margin: 3rem auto 0;
+        padding: 2rem 1.5rem;
+        border-top: 1px solid var(--border);
+    }
+    .vs-other h3 { text-align: center; margin-bottom: 1.5rem; }
+    .vs-other-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    .vs-other-grid a {
+        display: block;
+        padding: 1rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        transition: border-color 0.2s;
+    }
+    .vs-other-grid a:hover { border-color: var(--violet); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .vs-hero h1 { font-size: 1.8rem; }
+        .vs-reasons-grid { grid-template-columns: 1fr; }
+        .vs-hero .vs-trust { flex-direction: column; gap: 0.5rem; }
+        .vs-table { font-size: 0.85rem; }
+        .vs-table thead th, .vs-table tbody td { padding: 0.6rem 0.5rem; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- NAV (shared component) -->
+{{NAV}}
+
+<!-- HERO -->
+<section class="vs-hero">
+    <div class="vs-logos">
+        <img src="/overloop-blog/assets/images/logos/{{LOGO_A}}" alt="{{TOOL_A}}">
+        <span class="vs-badge">VS</span>
+        <img src="/overloop-blog/assets/images/logos/{{LOGO_B}}" alt="{{TOOL_B}}">
+    </div>
+    <h1>{{TOOL_A}} vs {{TOOL_B}}</h1>
+    <p class="vs-subtitle">{{HERO_SUBTITLE}}</p>
+    <a href="https://app.overloop.ai/session/signup" class="vs-cta">Try Overloop Free</a>
+    <div class="vs-trust">
+        <span>14-day free trial</span>
+        <span>450M+ contacts database</span>
+        <span>AI-powered sequences</span>
+    </div>
+</section>
+
+<!-- 3 REASONS -->
+<section class="vs-reasons">
+    <h2>{{REASONS_HEADING}}</h2>
+    <div class="vs-reasons-grid">
+        <div class="vs-reason-card">
+            <h3>{{REASON_1_TITLE}}</h3>
+            <p>{{REASON_1_TEXT}}</p>
+        </div>
+        <div class="vs-reason-card">
+            <h3>{{REASON_2_TITLE}}</h3>
+            <p>{{REASON_2_TEXT}}</p>
+        </div>
+        <div class="vs-reason-card">
+            <h3>{{REASON_3_TITLE}}</h3>
+            <p>{{REASON_3_TEXT}}</p>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE COMPARISON TABLE -->
+<section class="vs-comparison">
+    <h2>Feature-by-feature comparison</h2>
+    <table class="vs-table">
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th class="winner-col"><img src="/overloop-blog/assets/images/logos/{{LOGO_A}}" alt="{{TOOL_A}}"> {{TOOL_A}}</th>
+                <th><img src="/overloop-blog/assets/images/logos/{{LOGO_B}}" alt="{{TOOL_B}}"> {{TOOL_B}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{COMPARISON_ROWS}}
+            <!-- Example rows:
+            <tr class="category-row"><td colspan="3">Prospecting</td></tr>
+            <tr><td>B2B Lead Database</td><td class="winner-col"><span class="check">✓</span> 450M+</td><td><span class="check">✓</span> 275M+</td></tr>
+            <tr><td>Email Finder & Verifier</td><td class="winner-col"><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+            <tr class="category-row"><td colspan="3">Outreach</td></tr>
+            <tr><td>AI Email Writing</td><td class="winner-col"><span class="check">✓</span></td><td><span class="cross">✗</span></td></tr>
+            -->
+        </tbody>
+    </table>
+</section>
+
+<!-- DETAILED COMPARISON SECTIONS -->
+<section class="vs-details">
+    {{DETAIL_SECTIONS}}
+    <!-- Example:
+    <h2>Pricing</h2>
+    <p>...</p>
+    <h2>Ease of Use</h2>
+    <p>...</p>
+    <h2>Deliverability</h2>
+    <p>...</p>
+    -->
+</section>
+
+<!-- VERDICT -->
+<section class="vs-verdict">
+    <h2>{{VERDICT_HEADING}}</h2>
+    <p>{{VERDICT_TEXT}}</p>
+    <a href="https://app.overloop.ai/session/signup" class="vs-cta">Try Overloop Free</a>
+</section>
+
+<!-- OTHER VS PAGES -->
+<section class="vs-other">
+    <h3>Other comparisons</h3>
+    <div class="vs-other-grid">
+        {{OTHER_VS_LINKS}}
+        <!-- Example:
+        <a href="/overloop-blog/versus/overloop-vs-apollo.html">Overloop vs Apollo</a>
+        <a href="/overloop-blog/versus/overloop-vs-lemlist.html">Overloop vs Lemlist</a>
+        -->
+    </div>
+</section>
+
+<!-- FOOTER (shared component) -->
+{{FOOTER}}
+
+<script src="/overloop-blog/assets/js/blog.js" defer></script>
+</body>
+</html>

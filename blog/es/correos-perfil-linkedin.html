@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/overloop-blog/assets/css/overloop.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraer emails de LinkedIn (guía gratis) | Overloop</title>
+    <meta name="description" content="Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.">
+    <link rel="canonical" href="https://overloop.com/es/blog/correos-perfil-linkedin">
+
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/get-email-from-linkedin-profile">
+    <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/obtenir-emails-linkedin">
+    <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/e-mails-linkedin-profil-finden">
+    <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/correos-perfil-linkedin">
+    <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/get-email-from-linkedin-profile">
+
+    <meta property="og:title" content="Extraer emails de LinkedIn (guía gratis)">
+    <meta property="og:description" content="Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.">
+    <meta property="og:image" content="https://sortlist.github.io/overloop-blog/assets/images/og/correos-perfil-linkedin.png">
+    <meta property="og:url" content="https://overloop.com/es/blog/correos-perfil-linkedin">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Extraer emails de LinkedIn (guía gratis)">
+    <meta name="twitter:description" content="Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.">
+    <meta name="twitter:image" content="https://sortlist.github.io/overloop-blog/assets/images/og/correos-perfil-linkedin.png">
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Extraer emails de LinkedIn (guía gratis)",
+        "description": "Cómo obtener emails de perfiles de LinkedIn con herramientas gratuitas y métodos probados. Sin scraping, solo emails B2B precisos.",
+        "image": "https://overloop.com/assets/images/og-correos-perfil-linkedin.png",
+        "author": {
+            "@type": "Person",
+            "name": "Vincenzo Ruggiero",
+            "url": "https://www.linkedin.com/in/vincenzo-ruggiero/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Overloop",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://overloop.com/assets/images/overloop-logo.png"
+            }
+        },
+        "datePublished": "2024-03-19",
+        "dateModified": "2026-04-17",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://overloop.com/es/blog/correos-perfil-linkedin"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/es/blog"},
+            {"@type": "ListItem", "position": 2, "name": "Extraer emails de LinkedIn (guía gratis)", "item": "https://overloop.com/es/blog/correos-perfil-linkedin"}
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Overloop Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="https://overloop.com" class="nav-logo">
+            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
+        </a>
+
+        <ul class="nav-links">
+            <li class="nav-dropdown">
+                <a href="/features" class="nav-dropdown-trigger">Features</a>
+                <div class="nav-dropdown-menu">
+                    <ul class="nav-dropdown-content">
+                        <li><a href="/features">Multi-Channel Prospecting<span class="dropdown-desc">Email + LinkedIn in one sequence</span></a></li>
+                        <li><a href="/features">B2B Contact Database<span class="dropdown-desc">450M+ verified contacts</span></a></li>
+                        <li><a href="/features">AI Email Writing<span class="dropdown-desc">Hyper-personalized at scale</span></a></li>
+                        <li><a href="/features">LinkedIn Automation<span class="dropdown-desc">GDPR-compliant outreach</span></a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li class="nav-dropdown">
+                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
+                <div class="nav-dropdown-menu">
+                    <ul class="nav-dropdown-content">
+                        <li><a href="/blog">Blog<span class="dropdown-desc">Outbound strategies and guides</span></a></li>
+                        <li><a href="/tools/spam-checker">Spam Checker<span class="dropdown-desc">Free email analysis tool</span></a></li>
+                        <li><a href="/tools/roi-calculator">ROI Calculator<span class="dropdown-desc">Estimate your outbound ROI</span></a></li>
+                        <li><a href="/tools/domain-health-checker">Domain Health<span class="dropdown-desc">Check SPF, DKIM, DMARC</span></a></li>
+                        <li><a href="/playbooks">Playbooks<span class="dropdown-desc">Industry-specific strategies</span></a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <div class="nav-cta">
+            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
+            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
+            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
+        </div>
+
+        <button class="nav-mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+<script>
+document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('nav-open');
+    document.querySelector('.nav-cta').classList.toggle('nav-open');
+});
+</script>
+</nav>
+
+<main class="blog-post">
+    <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="https://overloop.com">Overloop</a> &rsaquo;
+            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
+            <span>Extraer emails de LinkedIn (guía gratis)</span>
+        </nav>
+
+        <header class="article-header">
+            <h1>Extraer emails de LinkedIn (guía gratis)</h1>
+        </header>
+
+        <div class="article-meta">
+            <img class="meta-avatar" src="/overloop-blog/assets/images/nicolas-finet.png" alt="Vincenzo Ruggiero" width="44" height="44" style="border-radius:50%;object-fit:cover;">
+            <div class="meta-info">
+                <strong>Vincenzo Ruggiero</strong>
+                <span>|</span> 19 de marzo de 2024
+                <span>|</span> 4 min de lectura
+            </div>
+        </div>
+
+        <article class="article-content">
+<div>
+  <p>Encontrar direcciones de correo electrónico es crucial para los profesionales de ventas que buscan conectarse con clientes potenciales y expandir sus redes. ¡Es nada menos que el primer paso de su viaje de ventas! LinkedIn resulta ser una mina de oro para encontrar este tipo de información. Sin embargo, no siempre es fácil recuperar las direcciones de correo electrónico del sitio web. Esta es una guía ampliada para descubrir esas valiosas direcciones de correo electrónico.</p>
+</div><h2>Configuración de privacidad de LinkedIn: ¿por qué se ocultan las direcciones de correo electrónico?</h2><p>La mayoría de las veces, descubrirás que las direcciones de correo electrónico en LinkedIn están ocultas. Puede que le resulte difícil encontrarlos simplemente yendo a los perfiles de sus clientes potenciales. Esto se debe a la normativa del RGPD, que exige que los usuarios den su consentimiento para el uso de sus datos. La mayoría de los usuarios deciden excluirse y no muestran sus direcciones de correo electrónico. Sin embargo, hay varias maneras de descubrirlas.</p><h2>¿Cómo encontrar correos electrónicos en LinkedIn?</h2><h3>Herramientas para encontrar direcciones de correo electrónico en LinkedIn: Buscadores de correo electrónico</h3><p>¡Existen varias extensiones de Chrome que pueden ayudarte a encontrar tu Santo Grial! Esta es una lista de algunas de ellas:</p><ul>
+  <li>SalesQL le ofrece una función gratuita de búsqueda de correo electrónico para LinkedIn y le permite organizarlos en listas. </li>
+  <li>Kaspr le ayuda a obtener direcciones de correo electrónico, números de teléfono e información de la empresa de forma gratuita. Puedes usar Kaspr en tus perfiles de LinkedIn, en Sales Navigator y de forma masiva en tus búsquedas.</li>
+  <li>Uplead te permite recuperar direcciones de correo electrónico de LinkedIn con un enfoque específico. Puede refinar su búsqueda por tipo de industria, cargo, etc. </li>
+  <li>Skrapp te permite encontrar hasta 100 direcciones de correo electrónico verificadas por mes de forma gratuita.</li>
+  <li>AeroLeads: permite extraer datos de LinkedIn y verificar las direcciones de correo electrónico.</li>
+</ul><p><a href="/features/">Overloop</a> le permite encontrar direcciones de correo electrónico de LinkedIn, pero también de cualquier otro sitio web o incluso de un archivo masivo. También es <a href="/integrations/">compatible con herramientas de terceros y CRM</a> como Pipedrive, Salesforce o Hubspot. ¡Nuestro verificador de correo electrónico comprueba el correo electrónico que encuentras y la información se envía automáticamente a una lista específica y se agrega a una campaña automatizada! ¡Nuestra función de automatización le ayuda a ganar tiempo e incluso puede seguir buscando correos electrónicos mientras duerme!</p><h3>Busca directamente en el perfil de linkedin</h3><p>A veces, el enfoque más simple es el más fácil: ¡inspecciona el perfil de LinkedIn de tu cliente potencial! ¡Puedes encontrar lo que buscas en su área de información de contacto, en la sección Acerca de ellos o incluso en el banner de su perfil!</p><p>Si resulta que el cliente potencial está en tus primeras conexiones, puedes descargar una copia de tus datos y, con suerte, tener acceso a las direcciones de correo electrónico de todos tus primeros contactos que aceptaron compartirlos. </p><ul>
+  <li>Banner: generalmente se usa para la marca personal, a veces se usa para compartir información de contacto</li>
+  <li>Área de información de contacto: es donde se muestra el cargo del usuario. La mayoría de las veces, también es donde encontrarás la dirección de correo electrónico si están de acuerdo en compartirla</li>
+  <li>Acerca de: este resumen contiene muchos detalles. Es posible que el usuario haya decidido compartir su dirección de correo electrónico en esta ubicación. </li>
+</ul><p>Para acceder fácilmente a la información de contacto, como las direcciones de correo electrónico de los perfiles de LinkedIn, usa una herramienta como Overloop AI o Kaspr. Esto significa que no tienes que correr el riesgo de que los datos de los perfiles (si aparecen en la lista) estén desactualizados o sean inexactos.</p><h3>¡Simplemente pídalo!</h3><p>De vez en cuando, el simple hecho de comunicarte con un cliente potencial mostrando un interés genuino en su trabajo te ayudará a obtener sus direcciones de correo electrónico. Este enfoque no solo ayuda a obtener la dirección de correo electrónico, sino también a sentar las bases para una relación profesional sólida. Establecerás un primer contacto que será el primer paso hacia la confianza mutua.</p><h3>Pregúntele a su red</h3><p>¡Las redes pueden hacer milagros! Su propia red es una verdadera mina de oro para referencias e introducciones. No dude en pedir a sus contactos mutuos presentaciones o direcciones de correo electrónico. La creación de redes sigue siendo una de las herramientas más poderosas del arsenal de cualquier profesional de ventas.</p><h3>¡Solo adivina!</h3><p>Con el tiempo, las conjeturas pueden dar resultados. Muchas direcciones de correo electrónico de las empresas siguen un formato estándar que combina el nombre de sus trabajadores y el nombre de la empresa, por ejemplo, name.surname@company.com. Intenta escribir el nombre del cliente potencial con el dominio de su empresa adjunto, ¡podrías llevarte el premio gordo! Sin embargo, recuerda que este método no garantiza que la dirección de correo electrónico sea la correcta. La persistencia es clave, y no olvides verificar la validez de la dirección de correo electrónico para evitar rebotes. Es una situación en la que debes intentarlo una y otra vez. </p><h3>Combina LinkedIn y Google</h3><p>Si conoces el nombre de la empresa de tu cliente potencial, prueba con varias combinaciones de su nombre y el nombre de la empresa y busca su correo electrónico en Google. A veces, su dirección de correo electrónico puede aparecer en los resultados, por ejemplo, en el sitio web de la empresa, en los comunicados de prensa o en cualquier otra publicación.</p><h3>¡LinkedIn no es el único sitio web en Internet!</h3><p>¡No olvides que LinkedIn no es el único sitio web que puede proporcionarte información sobre tus clientes potenciales! Puedes buscar en el sitio web de la empresa como hicimos en el párrafo anterior, pero también en redes sociales como Twitter, Facebook o Instagram. ¿El cliente potencial tiene una cuenta profesional en estos sitios web?</p><ul>
+  <li>Twitter: Algunas personas mencionan su dirección de correo electrónico en su biografía. A veces, las personas también comparten sus direcciones de correo electrónico en sus tuits. Es posible que sustituyan los símbolos por palabras para ocultarlos de los bots, por ejemplo, utilizando «hacer» y «at» en lugar de «.» y «@».</li>
+  <li>Redes sociales como Instagram o Facebook consultando el perfil del cliente potencial</li>
+  <li>Sitio web de la empresa: la dirección de correo electrónico del cliente potencial se encuentra en la sección «Acerca de nosotros» o «Equipo».</li>
+</ul><p>No pases por alto esos otros recursos: ¡pueden ayudarte en tu investigación!</p><h2>Después de encontrar los correos electrónicos: ¿qué sigue?</h2><p>Una vez que haya encontrado la dirección de correo electrónico de su cliente potencial, ¡su viaje no termina aquí! Es solo el principio. Tu trabajo real comienza ahora.</p><p>Lo primero que debes hacer: verifica la dirección de correo electrónico que encontraste para asegurarte de que está activa y reducir el riesgo de que se devuelvan los correos electrónicos. Con Overloop, no tienes que preocuparte por eso: nuestro <a href="/email-finder/">Buscador de correo electrónico</a> no solo encuentra correos electrónicos, sino que comprueba si la dirección de correo electrónico está activa y accesible, lo que le ayuda a iniciar su recorrido de ventas con el pie derecho.</p><p>Con las direcciones de correo electrónico correctas a mano, puede crear correos electrónicos ultrapersonalizados y crear secuencias específicas basadas en el comportamiento del cliente potencial. Este enfoque personalizado aumenta significativamente tus posibilidades de interactuar satisfactoriamente con ellos y de ir más allá en tu embudo de ventas.</p><p>¡Ahora tienes todos los trucos y herramientas para buscar direcciones de correo electrónico en LinkedIn! No olvides que no solo se trata de encontrar correos electrónicos, sino también de ampliar tu red de contactos e iniciar conexiones nuevas y significativas que puedan convertirse en relaciones fructíferas. Overloop simplifica y agiliza este proceso, ya que ofrece un enfoque integral que busca las direcciones de correo electrónico, pero también las verifica, para garantizar que tus esfuerzos de divulgación sean lo más eficaces posible. Overloop te acompaña en esta fase inicial de tu viaje de ventas, pero también te guía a lo largo de toda tu aventura, ¡ayudándote a generar resultados impresionantes!</p><h2>PREGUNTAS MÁS FRECUENTES</h2><h3>¿La búsqueda de direcciones de correo electrónico en Linkedin cumple con el RGPD?</h3><p>Sí. Es posible que el uso de una herramienta de búsqueda de correo electrónico no sea intrínsecamente un incumplimiento del RGPD. El uso de las direcciones de correo electrónico que se encuentran en el buscador de correos electrónicos es importante. Le invitamos a leer el artículo de nuestro blog»<a href="/blog/cold-email-illegal/">¿Es ilegal el correo electrónico frío?</a>«para obtener más información.</p><h3>¿LinkedIn muestra las direcciones de correo electrónico?</h3><p>De forma predeterminada, solo puedes ver las direcciones de correo electrónico de tus contactos directos en LinkedIn. Sin embargo, algunas personas optan por ocultar sus direcciones de correo electrónico incluso a esas conexiones.</p><h3>¿Cómo busco de forma anónima en LinkedIn?</h3><p>Para ello, debes unirte a LinkedIn Premium. Posee un «modo de navegación privada» que te permite ver los perfiles de otros usuarios y evita que vean que has visto sus perfiles.</p>
+        </article>
+
+        <div class="cta-box">
+            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
+            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
+            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
+        </div>
+
+        <div class="author-bio">
+            <img src="/overloop-blog/assets/images/nicolas-finet.png" alt="Vincenzo Ruggiero" width="56" height="56" loading="lazy">
+            <div>
+                <div class="name">Vincenzo Ruggiero</div>
+                <div class="role">Redactor en Overloop</div>
+                <div class="role">Experto en ventas outbound y automatizacion B2B.</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- Overloop Footer -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
+                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Platform</h4>
+                <a href="/features">Features</a>
+                <a href="/pricing">Pricing</a>
+                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
+                <a href="/book-demo">Book a Demo</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/blog">Blog</a>
+                <a href="/playbooks">Playbooks</a>
+                <a href="/tools/spam-checker">Spam Checker</a>
+                <a href="/tools/roi-calculator">ROI Calculator</a>
+                <a href="/tools/domain-health-checker">Domain Health</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/about">About</a>
+                <a href="/testimonials">Testimonials</a>
+                <a href="mailto:hello@overloop.com">Contact</a>
+                <a href="/careers">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/terms">Terms</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/gdpr">GDPR</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
+            <div>
+                <a href="https://www.linkedin.com/company/overloop-ai/">LinkedIn</a>
+                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/overloop-blog/assets/js/blog.js" defer></script>
+</body>
+</html>
