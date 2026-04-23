@@ -26,11 +26,31 @@ jobs:
       - name: Generate sitemap
         run: |
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">' >> sitemap.xml
           find blog versus tools playbooks templates -name "*.html" -not -name "template.html" -not -name "template-versus.html" | sort | while read f; do
-            path=$(echo "$f" | sed 's/\.html$//')
+            # Convert file path to production URL
+            # blog/slug.html → /blog/slug (EN, root)
+            # blog/fr/slug.html → /fr/blog/slug (locale)
+            # versus/slug.html → /versus/slug
+            filepath=$(echo "$f" | sed 's/\.html$//')
+
+            # Handle locale blog paths: blog/{lang}/slug → /{lang}/blog/slug
+            # Handle index pages: blog/index → /blog, blog/fr/index → /fr/blog
+            if echo "$filepath" | grep -qE '^blog/(fr|de|es|it)/index$'; then
+              lang=$(echo "$filepath" | sed 's|^blog/\([a-z][a-z]\)/index|\1|')
+              url_path="/${lang}/blog"
+            elif echo "$filepath" | grep -qE '^blog/index$'; then
+              url_path="/blog"
+            elif echo "$filepath" | grep -qE '^blog/(fr|de|es|it)/'; then
+              lang=$(echo "$filepath" | sed 's|^blog/\([a-z][a-z]\)/.*|\1|')
+              slug=$(echo "$filepath" | sed 's|^blog/[a-z][a-z]/||')
+              url_path="/${lang}/blog/${slug}"
+            else
+              url_path="/${filepath}"
+            fi
+
             lastmod=$(git log -1 --format="%aI" -- "$f" 2>/dev/null || date -Iseconds)
-            echo "  <url><loc>https://overloop.com/${path}</loc><lastmod>${lastmod}</lastmod></url>" >> sitemap.xml
+            echo "  <url><loc>https://overloop.com${url_path}</loc><lastmod>${lastmod}</lastmod></url>" >> sitemap.xml
           done
           echo '</urlset>' >> sitemap.xml
           echo "Generated sitemap with $(grep -c '<url>' sitemap.xml) URLs"
