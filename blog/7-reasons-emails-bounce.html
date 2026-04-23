@@ -115,19 +115,19 @@
                             <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                             <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
                         </a></li>
-                        <li><a href="https://tools.overloop.com/spam-checker">
+                        <li><a href="/tools/spam-checker">
                             <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                             <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
                         </a></li>
-                        <li><a href="https://tools.overloop.com/roi-calculator">
+                        <li><a href="/tools/roi-calculator">
                             <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
                             <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
                         </a></li>
-                        <li><a href="https://tools.overloop.com/domain-health">
+                        <li><a href="/tools/domain-health">
                             <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                             <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
                         </a></li>
-                        <li><a href="https://tools.overloop.com/playbooks">
+                        <li><a href="/tools/playbooks">
                             <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                             <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
                         </a></li>
@@ -222,7 +222,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <p><strong>Type: Soft bounce</strong></p>
 <p>It can happen that the server of the recipient is unavailable at the moment, which will be categorized as a soft bounce. It's generally safe to give it another try. Email marketing services like Sendgrid keep attempting to send the message for <a href="https://sendgrid.com//email-bounce-management/" rel="external noopener">another 72 hours</a> in case of a soft bounce.</p>
 <p><strong>What you can do about it:</strong></p>
-<p>This isn't something you can do much about. It's extremely rare for the email server of a company to be down for more than a few hours, so in case you haven't been able to get your email across after a day or two, it might be worth checking if the company… didn't just close up shop, which <a href="http://www.businessinsider.com/zach-ware-startups-should-not-shut-down-overnight-2016-5" rel="external noopener">can happen</a> overnight with startups, even with <a href="http://trak.in/tags/business/2016/12/27/5-biggest-funded-startups-shut-down-2016/" rel="external noopener">massive funding</a>.</p>
+<p>This isn't something you can do much about. It's extremely rare for the email server of a company to be down for more than a few hours, so in case you haven't been able to get your email across after a day or two, it might be worth checking if the company… didn't just close up shop, which <a href="https://www.businessinsider.com/zach-ware-startups-should-not-shut-down-overnight-2016-5" rel="external noopener">can happen</a> overnight with startups, even with <a href="http://trak.in/tags/business/2016/12/27/5-biggest-funded-startups-shut-down-2016/" rel="external noopener">massive funding</a>.</p>
 <h2>5. Inbox is full</h2>
 <p><strong>Type: Soft bounce</strong></p>
 <p>In this day and age, a full inbox is <strong>not</strong> a current occurence. A full mailbox usually means and old and non maintained mailbox; it doesn't really make sense to pursue sending emails to this address.</p>
@@ -234,10 +234,10 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <p>Another reason why your reputation score might be low is that your IP is brand new and is thus unknown to other servers. And, like humans, servers are suspicious of what they don't know.</p>
 <p><strong>What you can do about it:</strong></p>
 <p>Clean your lists. If more than a 10% of your emails bounce, you're up for huge red flags. The reason for this is that spammers mass email large purchased lists full of invalid email addresses. If your emails bounce a lot -or you experience bounce spikes- ISP's might think you're doing just that. And if you actually are, <a href="/blog/9-reasons-never-buy-email-lists">you need to stop</a>. Now.</p>
-<p>In case your sending domain is brand new, you should consider Active Campaign's approach; they compares sender reputation to <a href="http://www.activecampaign.com//email-marketing-building-credit-with-isps/" rel="external noopener">credit history</a>. You may not have done anything bad but since you haven't done anything <em>at all</em>, how should anyone know if you're trustworthy?</p>
+<p>In case your sending domain is brand new, you should consider Active Campaign's approach; they compares sender reputation to <a href="https://www.activecampaign.com//email-marketing-building-credit-with-isps/" rel="external noopener">credit history</a>. You may not have done anything bad but since you haven't done anything <em>at all</em>, how should anyone know if you're trustworthy?</p>
 <h2>7. Server administrators</h2>
 <p><strong>Type: Hard bounce</strong></p>
-<p>Beyond ESP's, servers admins can themselves flag emails as SPAM or implement tools like <a href="http://spamassassin.apache.org/" rel="external noopener">SpamAssassin</a> that will grade every incoming email and give it a score. That score depends on an exhaustive list of criteria that varies from one tool to another.</p>
+<p>Beyond ESP's, servers admins can themselves flag emails as SPAM or implement tools like <a href="https://spamassassin.apache.org/" rel="external noopener">SpamAssassin</a> that will grade every incoming email and give it a score. That score depends on an exhaustive list of criteria that varies from one tool to another.</p>
 <p><strong>What you can do about it:</strong></p>
 <p>They may not all do it but SpamAssassin does inform you when they bounce your email back. They have published a <a href="https://wiki.apache.org/spamassassin/AvoidingFpsForSenders" rel="external noopener">list of tips</a> in order to avoid false positives and you can contact them if you think you're being blocked because of a bug. If none of that works and you genuinely believe your emails to belong in your recipient's inbox, you can then try and contact the server admin personally and ask for your domain to be whitelisted.</p>
 <h2>Technical but invaluable: SPF and DKIM records</h2>
@@ -249,11 +249,11 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <p>We, here at Overloop -as well as most of our clients- deliver emails through Google's servers; so here are <strong><a href="https://support.google.com/a/answer/178723?hl=en" rel="external noopener">their instructions</a></strong> on how to set your SPF.</p>
 <p>It's unfortunately impossible to make a step-by-step guide for DNS settings since the process depends on every domain host. Here are, nonetheless the link to the instructions for some of the most popular ones:</p>
 <ul>
-<li><strong>Amazon Web Services</strong>: <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring.html" target="_blank" rel="external noopener">Configuring DNS</a>, <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html" target="_blank" rel="external noopener">Resource Record Types</a></li>
+<li><strong>Amazon Web Services</strong>: <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring.html" target="_blank" rel="external noopener">Configuring DNS</a>, <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ResourceRecordTypes.html" target="_blank" rel="external noopener">Resource Record Types</a></li>
 <li><strong>Dreamhost</strong>: <a href="http://wiki.dreamhost.com/SPF" target="_blank" rel="external noopener">SPF</a>, <a href="http://wiki.dreamhost.com/DKIM" target="_blank" rel="noopener">DKIM</a></li>
 <li><strong>GoDaddy</strong>: <a href="https://www.godaddy.com/help/add-a-cname-record-19236" target="_blank" rel="external noopener">Add a CNAME Record</a></li>
 <li><strong>Google</strong> Domains: <a href="https://support.google.com/a/answer/48090?hl=en" target="_blank" rel="external noopener">DNS Basics</a></li>
-<li><strong>Hostgator</strong>: <a href="http://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/manage-dns-records-with-hostgatorenom" target="_blank" rel="external noopener">Manage DNS records</a></li>
+<li><strong>Hostgator</strong>: <a href="https://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/manage-dns-records-with-hostgatorenom" target="_blank" rel="external noopener">Manage DNS records</a></li>
 <li><strong>Hover</strong>: <a href="https://help.hover.com/entries/21204757-how-to-edit-dns-records-a-cname-mx-txt-and-srv" target="_blank" rel="external noopener">Edit DNS Record</a></li>
 <li><strong>Namecheap</strong>: <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9214/31/email-authentication-tool-in-cpanel-spf-records" target="_blank" rel="external noopener">SPF &amp; DKIM</a></li>
 <li><strong>Squarespace</strong>: <a href="https://support.squarespace.com/hc/en-us/articles/205812348-Opening-Advanced-DNS-settings" target="_blank" rel="external noopener">Advanced DNS Settings</a></li>
