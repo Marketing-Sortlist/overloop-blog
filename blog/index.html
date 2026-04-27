@@ -183,6 +183,51 @@ Purpose: Editorial hub at https://overloop.com/blog
     .pillar-grid-5 .post-title { font-size: 14px; }
     .post-excerpt { font-size: 13px; line-height: 1.5; color: var(--color-text-secondary); margin: 0 0 14px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .pillar-grid-5 .post-excerpt { -webkit-line-clamp: 2; font-size: 12px; }
+    /* ============= AUTHOR MINI (card footer) ============= */
+    .author-mini {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 12px;
+    }
+    .author-mini__photo {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .author-mini__photo-fallback {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366F1, #A855F7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .author-mini__text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .author-mini__name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.2;
+    }
+    .author-mini__date {
+      font-size: 12px;
+      color: var(--color-text-muted, var(--color-muted));
+      line-height: 1.2;
+    }
+
     .pillar-viewall { text-align: right; margin-top: 28px; }
     .pillar-viewall a { color: var(--color-primary); font-size: 14px; font-weight: 600; text-decoration: none; }
     .pillar-viewall a:hover { text-decoration: underline; }
@@ -423,7 +468,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Tactical</div>
           <h3 class="post-title">10 Proven Sales Prospecting Tips to Boost Your Pipeline Fast</h3>
           <p class="post-excerpt">Battle-tested prospecting tactics that move BDRs from cold lists to booked meetings in under 2 weeks.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 10 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jun 16, 2025 · 10 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-tactical" href="/blog/10-best-practices-for-multi-channel-sales-campaigns">
@@ -431,7 +476,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Tactical</div>
           <h3 class="post-title">10 Best Practices for Multi-Channel Sales Campaigns</h3>
           <p class="post-excerpt">How to orchestrate email, LinkedIn, and phone touches without overwhelming prospects or burning your sender reputation.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 8 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 27, 2025 · 8 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-howto" href="/blog/how-to-build-scalable-lead-generation-workflows">
@@ -439,7 +484,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Build Scalable Lead Generation Workflows</h3>
           <p class="post-excerpt">A 4-stage workflow framework that turns ad-hoc lead gen into a predictable engine — with the tools and KPIs to track each stage.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 12 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 19, 2025 · 12 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-pillar" href="/blog/inside-sales-outside-sales">
@@ -447,7 +492,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Pillar Guide</div>
           <h3 class="post-title">Inside Sales vs Outside Sales: Complete Comparison</h3>
           <p class="post-excerpt">Pros, cons, costs, and the modern hybrid model — how 2026 B2B teams allocate reps between inside and field sales.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 14 MIN</span></div></div>
+          <div class="author-mini"><div class="author-mini__photo-fallback">FP</div><div class="author-mini__text"><span class="author-mini__name">Forster Perelsztejn</span><span class="author-mini__date">May 15, 2018 · 14 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-strategy" href="/blog/6-reasons-sales-process-broken">
@@ -455,7 +500,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Strategy</div>
           <h3 class="post-title">6 Reasons Your Sales Process Is Broken</h3>
           <p class="post-excerpt">Common gaps that quietly kill pipeline — from leaky discovery calls to mis-aligned ICP, with diagnostic questions for each.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 7 MIN</span></div></div>
+          <div class="author-mini"><div class="author-mini__photo-fallback">FP</div><div class="author-mini__text"><span class="author-mini__name">Forster Perelsztejn</span><span class="author-mini__date">Feb 8, 2018 · 7 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-tactical" href="/blog/ai-sales-tools-roi-key-metrics-to-track">
@@ -463,7 +508,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Tactical</div>
           <h3 class="post-title">AI Sales Tools ROI: Key Metrics to Track</h3>
           <p class="post-excerpt">The 7 metrics that prove (or disprove) AI sales tools are pulling their weight — with formulas and benchmarks.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 9 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 7, 2025 · 9 min</span></div></div>
         </div>
       </a>
     </div>
@@ -486,7 +531,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Write a Successful Cold Email</h3>
           <p class="post-excerpt">The 5-line template that turns cold prospects into replies — broken down line by line with examples and anti-patterns.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 11 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Feb 10, 2025 · 11 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-templates" href="/blog/best-sales-email-template">
@@ -494,7 +539,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Templates</div>
           <h3 class="post-title">Best Sales Email Templates That Get Replies</h3>
           <p class="post-excerpt">15 templates organized by funnel stage — cold open, warm follow-up, last-chance, and post-meeting recap.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 15 MIN</span></div></div>
+          <div class="author-mini"><div class="author-mini__photo-fallback">FP</div><div class="author-mini__text"><span class="author-mini__name">Forster Perelsztejn</span><span class="author-mini__date">Apr 17, 2018 · 15 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-templates" href="/blog/best-subject-lines-for-sales-emails">
@@ -502,7 +547,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Templates</div>
           <h3 class="post-title">Best Subject Lines for Sales Emails</h3>
           <p class="post-excerpt">50+ subject lines with open-rate data, plus the 4 patterns that consistently outperform — and which words trigger spam filters.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">APR 27 · 12 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Apr 26, 2022 · 12 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-howto" href="/blog/how-to-write-personalized-sales-emails-at-scale">
@@ -510,7 +555,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Write Personalized Sales Emails at Scale</h3>
           <p class="post-excerpt">A repeatable framework for AI-personalized cold emails that don't sound like AI — proven on 50,000+ sends.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 9 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 23, 2025 · 9 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-pillar" href="/blog/ab-testing-email-drip-campaigns">
@@ -518,7 +563,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Pillar Guide</div>
           <h3 class="post-title">A/B Testing Email Drip Campaigns</h3>
           <p class="post-excerpt">What to test, when to test it, and statistical significance for B2B volumes (hint: most teams call it too early).</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">APR 27 · 13 MIN</span></div></div>
+          <div class="author-mini"><div class="author-mini__photo-fallback">FP</div><div class="author-mini__text"><span class="author-mini__name">Forster Perelsztejn</span><span class="author-mini__date">Jul 14, 2017 · 13 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-tactical" href="/blog/sales-email-tips-to-help-you-close-more-deals">
@@ -526,7 +571,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Tactical</div>
           <h3 class="post-title">Sales Email Tips to Help You Close More Deals</h3>
           <p class="post-excerpt">12 small email tweaks (CTA placement, P.S. lines, urgency words) that lift reply-to-meeting conversion 2-3x.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">APR 27 · 8 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Mar 28, 2022 · 8 min</span></div></div>
         </div>
       </a>
     </div>
@@ -549,7 +594,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Pillar</div>
           <h3 class="post-title">The Ultimate Guide to LinkedIn Automation</h3>
           <p class="post-excerpt">Everything to scale LinkedIn outreach without flags.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">18 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">Jun 20, 2025 · 18 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-besttools" href="/blog/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690">
@@ -557,7 +602,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Best Tools</div>
           <h3 class="post-title">11 Best LinkedIn Automation Tools (2025)</h3>
           <p class="post-excerpt">Tested 30+ tools. The 11 that don't get accounts banned.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">14 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">N. Finet</span><span class="author-mini__date">Dec 11, 2025 · 14 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-besttools" href="/blog/8-best-ai-linkedin-outreach-tools">
@@ -565,7 +610,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Best Tools</div>
           <h3 class="post-title">8 Best AI LinkedIn Outreach Tools</h3>
           <p class="post-excerpt">AI-powered LinkedIn tools that personalize at scale without sounding robotic.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">12 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">N. Finet</span><span class="author-mini__date">Mar 1, 2024 · 12 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-versus" href="/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach">
@@ -573,7 +618,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Versus</div>
           <h3 class="post-title">LinkedIn vs Email for B2B Outreach</h3>
           <p class="post-excerpt">Real data from 10,000 messages — when each channel wins.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">9 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">N. Finet</span><span class="author-mini__date">Dec 26, 2024 · 9 min</span></div></div>
         </div>
       </a>
       <a class="post-card pc-review" href="/blog/linkedin-helper-review">
@@ -581,7 +626,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Tool Review</div>
           <h3 class="post-title">LinkedIn Helper Review</h3>
           <p class="post-excerpt">Hands-on test — what works, what's risky, who it's for.</p>
-          <div class="author-mini"><div class="author-mini__photo-fallback">VR</div><div class="author-mini__text"><span class="author-mini__name">V. Ruggiero</span><span class="author-mini__date">8 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">N. Finet</span><span class="author-mini__date">Dec 12, 2025 · 8 min</span></div></div>
         </div>
       </a>
     </div>
