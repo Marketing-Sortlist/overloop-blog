@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #f0f0f0; padding: 40px; display: flex; flex-direction: column; gap: 40px; align-items: center; font-family: -apple-system, sans-serif; }
+.cover {
+  width: 720px;
+  height: 405px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  color: white;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cover > * { position: relative; z-index: 1; }
+
+/* Cover 1: LinkedIn Automation — deep purple with grid */
+.cover-1 {
+  background: linear-gradient(135deg, #312e81 0%, #6366F1 40%, #A855F7 100%);
+}
+.cover-1::before {
+  background:
+    linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.05) 39px, rgba(255,255,255,0.05) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.05) 39px, rgba(255,255,255,0.05) 40px);
+}
+.cover-1::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(168,85,247,0.3) 0%, transparent 70%);
+  z-index: 0;
+}
+
+/* Cover 2: AI BDR Tools — dark with data visualization */
+.cover-2 {
+  background: linear-gradient(160deg, #0f0a2e 0%, #1e1b4b 50%, #312e81 100%);
+}
+.cover-2::before {
+  background:
+    linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%),
+    repeating-linear-gradient(0deg, transparent, transparent 29px, rgba(99,102,241,0.08) 29px, rgba(99,102,241,0.08) 30px),
+    repeating-linear-gradient(90deg, transparent, transparent 29px, rgba(99,102,241,0.08) 29px, rgba(99,102,241,0.08) 30px);
+}
+.cover-2::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #6366F1 20%, #A855F7 50%, #6366F1 80%, transparent 100%);
+  z-index: 0;
+}
+.cover-2 .bars {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  right: 40px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  z-index: 0;
+  opacity: 0.15;
+}
+.cover-2 .bar {
+  flex: 1;
+  background: linear-gradient(0deg, #6366F1, #A855F7);
+  border-radius: 4px 4px 0 0;
+}
+
+/* Cover 3: Personalized Emails — warm purple with abstract shapes */
+.cover-3 {
+  background: linear-gradient(135deg, #581c87 0%, #7c3aed 40%, #a855f7 70%, #c084fc 100%);
+}
+.cover-3::before {
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+}
+.cover-3 .circles {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+}
+.cover-3 .circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.cover-3 .circle:nth-child(1) { width: 200px; height: 200px; top: -40px; right: -40px; }
+.cover-3 .circle:nth-child(2) { width: 300px; height: 300px; top: -80px; right: -80px; }
+.cover-3 .circle:nth-child(3) { width: 400px; height: 400px; top: -120px; right: -120px; }
+
+/* Shared text styles */
+.cover-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.cover-title {
+  font-family: 'Epilogue', -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  max-width: 540px;
+}
+.cover-title em {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+.cover-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.8;
+  max-width: 480px;
+  line-height: 1.5;
+}
+.cover-logo {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.cover-year {
+  position: absolute;
+  top: 24px;
+  left: 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  opacity: 0.4;
+}
+h3 { margin: 20px 0 10px; color: #666; font-size: 14px; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=Playfair+Display:ital@1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h3>Cover 1: LinkedIn Automation Guide (720×405)</h3>
+<div class="cover cover-1">
+  <span class="cover-year">2026</span>
+  <span class="cover-logo">OVERLOOP</span>
+  <div class="cover-pill">Pillar Guide</div>
+  <h1 class="cover-title">The Ultimate Guide to LinkedIn Automation: <em>Boost B2B Sales in 2026</em></h1>
+  <p class="cover-subtitle">Connection requests, message sequences, automation tools, and compliance — everything you need.</p>
+</div>
+
+<h3>Cover 2: 11 Best AI BDR Tools (720×405)</h3>
+<div class="cover cover-2">
+  <div class="bars">
+    <div class="bar" style="height:45%"></div>
+    <div class="bar" style="height:72%"></div>
+    <div class="bar" style="height:58%"></div>
+    <div class="bar" style="height:90%"></div>
+    <div class="bar" style="height:65%"></div>
+    <div class="bar" style="height:82%"></div>
+    <div class="bar" style="height:48%"></div>
+    <div class="bar" style="height:95%"></div>
+    <div class="bar" style="height:70%"></div>
+    <div class="bar" style="height:55%"></div>
+    <div class="bar" style="height:78%"></div>
+  </div>
+  <span class="cover-year">2026</span>
+  <span class="cover-logo">OVERLOOP</span>
+  <div class="cover-pill">Best Tools</div>
+  <h1 class="cover-title">14 Best AI BDR Tools <em>Tested & Compared</em></h1>
+  <p class="cover-subtitle">We tested 30+ AI BDR tools across 6 categories. Here are the 14 that actually deliver pipeline.</p>
+</div>
+
+<h3>Cover 3: Personalized Sales Emails (720×405)</h3>
+<div class="cover cover-3">
+  <div class="circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+  <span class="cover-year">2026</span>
+  <span class="cover-logo">OVERLOOP</span>
+  <div class="cover-pill">How-To</div>
+  <h1 class="cover-title">How to Write <em>Personalized Sales Emails</em> at Scale</h1>
+  <p class="cover-subtitle">A repeatable framework for AI-personalized cold emails that don't sound like AI — proven on 50,000+ sends.</p>
+</div>
+
+<p style="margin-top:20px;color:#999;font-size:13px;">Screenshot these 3 covers at 2x resolution (1440×810) for retina OG images.</p>
+</body>
+</html>
