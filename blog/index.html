@@ -135,8 +135,10 @@ Purpose: Editorial hub at https://overloop.com/blog
     .feat-img-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--gradient-brand); color: rgba(255,255,255,0.85); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
     .feat-body { padding: 24px 26px 22px; flex: 1; display: flex; flex-direction: column; }
     .feat-pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; align-self: flex-start; }
+    .feat-card.has-fallback .feat-title { display: none; }
     .feat-title { font-size: 24px; line-height: 1.25; font-weight: 700; color: var(--color-text); margin-bottom: 10px; letter-spacing: -0.015em; }
-    .feat-card.small .feat-title { font-size: 17px; }
+    .feat-card.small .feat-card.has-fallback .feat-title { display: none; }
+    .feat-title { font-size: 17px; }
     .feat-excerpt { font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); margin-bottom: 18px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .feat-card:not(.small) .feat-excerpt { -webkit-line-clamp: 3; }
 
@@ -362,7 +364,7 @@ Purpose: Editorial hub at https://overloop.com/blog
         </div>
       </div>
       <div class="expert-card">
-        <img class="expert-photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img class="expert-photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
         <div class="expert-photo-fallback" style="display:none;" aria-label="Nicolas Finet avatar">NF</div>
         <div class="expert-info">
           <strong>Nicolas Finet</strong>
@@ -385,7 +387,7 @@ Purpose: Editorial hub at https://overloop.com/blog
   <section class="featured-strip">
     <a class="feat-card" href="/blog/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025">
       <div class="feat-img">
-        <img src="https://overloop.com/assets/images/og/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="https://overloop.com/assets/images/og/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
         <div class="feat-img-fallback fb-pillar" style="display:none;"><div class="fb-pill">Featured · Pillar Guide</div><div class="fb-title">The Ultimate Guide to LinkedIn Automation: Boost B2B Sales in 2026</div><div class="fb-mono">OL</div></div>
       </div>
       <div class="feat-body">
@@ -403,7 +405,7 @@ Purpose: Editorial hub at https://overloop.com/blog
     </a>
     <a class="feat-card small" href="/blog/11-best-ai-bdr-tools">
       <div class="feat-img">
-        <img src="https://overloop.com/assets/images/og/11-best-ai-bdr-tools.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="https://overloop.com/assets/images/og/11-best-ai-bdr-tools.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
         <div class="feat-img-fallback fb-besttools" style="display:none;"><div class="fb-pill">Best Tools</div><div class="fb-title">11 Best AI BDR Tools (Tested in 2026)</div><div class="fb-mono">OL</div></div>
       </div>
       <div class="feat-body">
@@ -421,7 +423,7 @@ Purpose: Editorial hub at https://overloop.com/blog
     </a>
     <a class="feat-card small" href="/blog/how-to-write-personalized-sales-emails-at-scale">
       <div class="feat-img">
-        <img src="https://overloop.com/assets/images/og/how-to-write-personalized-sales-emails-at-scale.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="https://overloop.com/assets/images/og/how-to-write-personalized-sales-emails-at-scale.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
         <div class="feat-img-fallback fb-howto" style="display:none;"><div class="fb-pill">How-To</div><div class="fb-title">How to Write Personalized Sales Emails at Scale</div><div class="fb-mono">OL</div></div>
       </div>
       <div class="feat-body">
@@ -429,7 +431,7 @@ Purpose: Editorial hub at https://overloop.com/blog
         <h2 class="feat-title">How to Write Personalized Sales Emails at Scale</h2>
         <p class="feat-excerpt">A repeatable framework for AI-personalized cold emails that don't sound like AI — proven on 50,000+ sends.</p>
         <div class="author-mini">
-          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
           <div class="author-mini__photo-fallback" style="display:none;">NF</div>
           <div class="author-mini__text">
             <span class="author-mini__name">Nicolas Finet</span>
@@ -485,7 +487,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Build Scalable Lead Generation Workflows</h3>
           <p class="post-excerpt">A 4-stage workflow framework that turns ad-hoc lead gen into a predictable engine — with the tools and KPIs to track each stage.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 12 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 12 MIN</span></div></div>
         </div>
       </a>
       <a class="post-card pc-pillar" href="/blog/inside-sales-outside-sales">
@@ -501,7 +503,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">Strategy</div>
           <h3 class="post-title">6 Reasons Your Sales Process Is Broken</h3>
           <p class="post-excerpt">Common gaps that quietly kill pipeline — from leaky discovery calls to mis-aligned ICP, with diagnostic questions for each.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 7 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 7 MIN</span></div></div>
         </div>
       </a>
       <a class="post-card pc-tactical" href="/blog/ai-sales-tools-roi-key-metrics-to-track">
@@ -532,7 +534,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Write a Successful Cold Email</h3>
           <p class="post-excerpt">The 5-line template that turns cold prospects into replies — broken down line by line with examples and anti-patterns.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 11 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 11 MIN</span></div></div>
         </div>
       </a>
       <a class="post-card pc-templates" href="/blog/best-sales-email-template">
@@ -556,7 +558,7 @@ Purpose: Editorial hub at https://overloop.com/blog
           <div class="post-pill">How-To</div>
           <h3 class="post-title">How to Write Personalized Sales Emails at Scale</h3>
           <p class="post-excerpt">A repeatable framework for AI-personalized cold emails that don't sound like AI — proven on 50,000+ sends.</p>
-          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 9 MIN</span></div></div>
+          <div class="author-mini"><img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');"><div class="author-mini__photo-fallback" style="display:none;">NF</div><div class="author-mini__text"><span class="author-mini__name">Nicolas Finet</span><span class="author-mini__date">APR 27 · 9 MIN</span></div></div>
         </div>
       </a>
       <a class="post-card pc-pillar" href="/blog/ab-testing-email-drip-campaigns">
