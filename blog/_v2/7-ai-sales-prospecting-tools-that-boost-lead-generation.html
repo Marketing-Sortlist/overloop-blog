@@ -952,6 +952,66 @@ Applied changes from design-system-overloop.md:
       .related-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -1012,30 +1072,26 @@ Applied changes from design-system-overloop.md:
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#how-tested" class="active">How we tested</a></li>
-          <li><a href="#categories">The six categories</a></li>
-          <li><a href="#category-bdr">1 · AI BDR Tools</a></li>
-          <li><a href="#category-email">2 · AI Email Outreach</a></li>
-          <li><a href="#category-linkedin">3 · AI LinkedIn Outreach</a></li>
-          <li><a href="#category-enrichment">4 · Data Enrichment</a></li>
-          <li><a href="#category-intelligence">5 · Conversation Intelligence</a></li>
-          <li><a href="#category-coaching">6 · AI Email Coaching</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#comparison">Full comparison</a></li>
-            <li><a href="#how-to-choose">How to choose</a></li>
-            <li><a href="#pitfalls">What to watch for</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#best-20-lead-generation-tools-for-prospecting-ai-driven">Best 20 Lead Generation Tools for Prospecting […</a></li>
+    <li><a href="#how-ai-is-changing-sales-prospecting">How AI is Changing Sales Prospecting</a></li>
+    <li><a href="#1overloop-ai">1.Overloop AI</a></li>
+    <li><a href="#2customersai">2.Customers.ai</a></li>
+    <li><a href="#3salesforge">3.Salesforge</a></li>
+    <li><a href="#4aisdr">4.AiSDR</a></li>
+    <li><a href="#5instantlyai">5.Instantly.ai</a></li>
+    <li><a href="#6-6sense">6. 6sense</a></li>
+    <li><a href="#7hubspot-sales">7.HubSpot Sales</a></li>
+    <li><a href="#comparison-of-ai-sales-tools">Comparison of AI Sales Tools</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+        
       </aside>
 
       <!-- Main -->
@@ -1043,7 +1099,7 @@ Applied changes from design-system-overloop.md:
 
 <p>Looking to supercharge your sales prospecting with AI? Here's a quick guide to seven tools that can help you find, qualify, and connect with leads more effectively.</p>
 <p>These tools automate repetitive tasks, analyze data for better targeting, and integrate with platforms like Salesforce, HubSpot, and LinkedIn to streamline workflows.</p>
-<h3>Key Tools:</h3>
+<h3 id="key-tools">Key Tools:</h3>
 <ul>
 <li>
 <p><a href="https://overloop.com/"><strong>Overloop AI</strong></a>: Automates multi-channel outreach with access to 450M+ verified contacts.</p>
@@ -1067,7 +1123,7 @@ Applied changes from design-system-overloop.md:
 <p><a href="https://www.hubspot.com/products/sales" target="_blank"><strong>HubSpot Sales</strong></a>: An all-in-one suite for lead scoring, email workflows, and CRM integration.</p>
 </li>
 </ul>
-<h3>Quick Comparison Table:</h3>
+<h3 id="quick-comparison-table">Quick Comparison Table:</h3>
 <div><table>
 <thead>
 <tr>
@@ -1123,8 +1179,8 @@ Applied changes from design-system-overloop.md:
 </tbody>
 </table></div>
 <p>These tools save time, improve lead quality, and help sales teams focus on closing deals. Whether you're looking for advanced analytics, personalized outreach, or seamless CRM integration, there's a solution here for every need.</p>
-<h2>Best 20 Lead Generation Tools for Prospecting [AI-Driven]</h2>
-<h2>How AI is Changing Sales Prospecting</h2>
+<h2 id="best-20-lead-generation-tools-for-prospecting-ai-driven">Best 20 Lead Generation Tools for Prospecting [AI-Driven]</h2>
+<h2 id="how-ai-is-changing-sales-prospecting">How AI is Changing Sales Prospecting</h2>
 <p>AI is transforming the way sales teams find, qualify, and connect with potential customers. It's making the process smarter and more efficient.</p>
 <p><strong>Improved Lead Scoring and Targeting</strong><br/>
 AI can sift through massive amounts of data to refine lead qualification. For example, <a href="https://www.lift-ai.com/" target="_blank">Lift AI</a> assigns buyer intent scores to anonymous website visitors, allowing sales teams to prioritize prospects more likely to convert <a href="https://www.lift-ai.com/blog/how-you-can-use-ai-to-reinvent-business-prospecting" target="_blank"><sup>[3]</sup></a>.</p>
@@ -1166,7 +1222,7 @@ Overloop AI connects seamlessly with platforms like Salesforce, HubSpot, Gmail, 
 Repetitive tasks are no longer a burden. Tools like Customers.ai handle these automatically, freeing up sales reps to focus on building meaningful relationships <sup>[1]</sup>.</p>
 <p><strong>Challenges to Keep in Mind</strong><br/>
 While AI offers incredible benefits, there are hurdles like steep learning curves, the need for proper setup to ensure accurate personalization, and reliance on dependable integrations <a href="https://automateed.com/overloop-ai-review/" target="_blank"><sup>[2]</sup></a>. Even with these challenges, the value AI brings to sales prospecting is undeniable, as demonstrated by tools like Lift AI, Overloop AI, and Customers.ai.</p>
-<h2>1. <a href="https://overloop.com/">Overloop AI</a></h2>
+<h2 id="1overloop-ai">1. <a href="https://overloop.com/">Overloop AI</a></h2>
 <p><img alt="Overloop AI" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2fc_overloop.com-c7f1352ae441b37983135869c26c67b7.jpeg"/></p>
 <p>Overloop AI is transforming sales prospecting by simplifying multi-channel outreach and making personalization easier. With access to a B2B database of over 450 million verified contacts, it helps sales teams efficiently find and connect with high-quality leads.</p>
 <p><strong>Key Features and Capabilities</strong></p>
@@ -1212,7 +1268,7 @@ The platform handles repetitive tasks, including:</p>
 <p><strong>Implementation Details</strong><br/>
 Overloop AI offers a 30-day free trial with 50 credits <a href="https://automateed.com/overloop-ai-review/" target="_blank"><sup>[2]</sup></a>. While the platform is packed with features, its effectiveness depends on how well it's integrated and how familiar users are with its tools <a href="https://automateed.com/overloop-ai-review/" target="_blank"><sup>[2]</sup></a>.</p>
 <p>For teams focused on advanced personalization and multi-channel campaigns, Overloop AI is a strong option. Up next, we'll look at Customers.ai, which shines in automating repetitive tasks.</p>
-<h2>2. <a href="https://customers.ai/" target="_blank">Customers.ai</a></h2>
+<h2 id="2customersai">2. <a href="https://customers.ai/" target="_blank">Customers.ai</a></h2>
 <p><img alt="Customers.ai" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667dde1dc10ec70223b310_customers.ai-671cd62b584541b31487b667daa6d6a9.jpeg"/></p>
 <p>Customers.ai (formerly known as Mobile Monkey) uses advanced tools and smart automation to turn anonymous website visitors into qualified leads.</p>
 <p><strong>Key Features and Automation</strong></p>
@@ -1236,7 +1292,7 @@ Overloop AI offers a 30-day free trial with 50 credits <a href="https://automate
 <p><strong>Results That Matter</strong></p>
 <p>Clients using Customers.ai have reported up to 25x ROI and significant cost savings thanks to automated prospecting workflows <sup>[1]</sup>. The platform's ability to identify and connect with website visitors makes it a powerful tool for businesses looking to grow their pool of qualified leads.</p>
 <p>While Customers.ai shines in lead generation and visitor identification, the next section will dive into how Salesforge takes outreach strategies to another level.</p>
-<h2>3. <a href="https://www.salesforge.ai/" target="_blank">Salesforge</a></h2>
+<h2 id="3salesforge">3. <a href="https://www.salesforge.ai/" target="_blank">Salesforge</a></h2>
 <p><img alt="Salesforge" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667dde1dc10ec70223b305_www.salesforge.ai-f2b6a33981ebf82aa0abfbb00bf851ae.jpeg"/></p>
 <p>Salesforge is an AI-powered tool designed to simplify sales prospecting by combining automation with personalized outreach. Its standout feature is its ability to process large datasets to find and engage promising leads.</p>
 <p><strong>AI-Driven Personalization</strong><br/>
@@ -1249,7 +1305,7 @@ Using AI, Salesforge evaluates engagement patterns to identify and prioritize le
 Salesforge supports consistent outreach across multiple channels, with tools for real-time tracking and AI insights to refine your approach.</p>
 <p><strong>How to Use It Effectively</strong><br/>
 Start by defining your ideal customer profile to fine-tune targeting. Then, use automation to save time and focus on building relationships with the most promising leads.</p>
-<h2>4. <a href="https://aisdr.com/" target="_blank">AiSDR</a></h2>
+<h2 id="4aisdr">4. <a href="https://aisdr.com/" target="_blank">AiSDR</a></h2>
 <p><img alt="AiSDR" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667dde1dc10ec70223b309_aisdr.com-c5851ba1b99c12396b3b90956f91287e.jpeg"/></p>
 <p>AiSDR makes sales prospecting easier by combining AI-powered automation with tools designed for personalized outreach. It helps generate leads efficiently while keeping interactions meaningful.</p>
 <p><strong>Targeting and Personalization</strong><br/>
@@ -1261,7 +1317,7 @@ Users report measurable improvements, including a <strong>25% increase in lead c
 <p><strong>Implementation Strategy</strong><br/>
 To get the most out of AiSDR, align its AI settings with your sales goals and track key performance metrics regularly. As the system learns from ongoing interactions, it sharpens its targeting and messaging for even better results.</p>
 <p>Next, we’ll look at how Instantly.ai offers a different way to refine your outreach efforts.</p>
-<h2>5. <a href="https://instantly.ai/" target="_blank">Instantly.ai</a></h2>
+<h2 id="5instantlyai">5. <a href="https://instantly.ai/" target="_blank">Instantly.ai</a></h2>
 <p><img alt="Instantly.ai" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667dde1dc10ec70223b30d_instantly.ai-24648195c9052b5d341a048a65063b02.jpeg"/></p>
 <p>Instantly.ai uses automation and AI-driven lead qualification to simplify sales prospecting. Its AI crafts tailored messages based on prospect data, ensuring a personal touch while automating repetitive tasks. The platform connects effortlessly with CRM and email tools, enabling real-time data syncing, automated lead tracking, and unified reporting.</p>
 <p>Users have reported up to <strong>60% faster pipeline progression</strong> thanks to automated prospecting and tailored recommendations. This allows sales teams to dedicate more time to building relationships. The tool stands out by identifying and prioritizing high-potential opportunities, cutting down time wasted on low-quality leads.</p>
@@ -1279,7 +1335,7 @@ To get the most out of AiSDR, align its AI settings with your sales goals and tr
 </ul>
 <p>The platform’s AI evaluates various data points to pinpoint and rank prospects with the highest likelihood of converting. This reduces manual effort and boosts conversion rates. By blending smart automation with data insights, Instantly.ai helps sales teams achieve more in less time.</p>
 <p>Focused on speeding up pipelines and improving lead engagement, Instantly.ai delivers a smoother prospecting process. Up next, we’ll dive into how 6sense leverages predictive insights to elevate AI prospecting even further.</p>
-<h2>6. 6sense</h2>
+<h2 id="6-6sense">6. 6sense</h2>
 <p><img alt="6sense" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667dde1dc10ec70223b300_6sense.com-56d85e65b007fb54299326c0d8ed023e.jpeg"/></p>
 <p>6sense leverages AI to analyze intent signals, offering real-time insights and predictive scoring. Its account engagement platform combines these insights with multi-channel orchestration to help businesses identify and connect with top prospects.</p>
 <p>By analyzing intent signals and scoring accounts predictively, 6sense pinpoints high-potential leads, triggers tailored engagement sequences, and updates CRM systems instantly. It studies past buyer behavior to forecast future purchasing intentions, offering actionable insights on timing, messaging, and which accounts to prioritize.</p>
@@ -1327,12 +1383,12 @@ To get the most out of AiSDR, align its AI settings with your sales goals and tr
 </ul>
 <p>6sense’s integration features ensure smooth data flow with your CRM, while its predictive analytics prioritize high-value accounts. This helps sales teams work efficiently, scale their efforts, and dedicate more time to engaging with key prospects.</p>
 <p>Although 6sense shines in predictive analytics and intent-based prospecting, platforms like HubSpot Sales offer a broader toolkit that combines AI with both marketing and sales functionalities.</p>
-<h2>7. <a href="https://www.hubspot.com/products/sales" target="_blank">HubSpot Sales</a></h2>
+<h2 id="7hubspot-sales">7. <a href="https://www.hubspot.com/products/sales" target="_blank">HubSpot Sales</a></h2>
 <p><img alt="HubSpot Sales" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667ddf1dc10ec70223b3a8_www.hubspot.com-0d585c4d26267d66af810f5ef5131539.jpeg"/></p>
 <p>HubSpot Sales offers a complete set of tools that combine AI insights with automation, making it a solid option for managing the entire sales process. While 6sense stands out in predictive analytics, HubSpot Sales focuses on streamlining workflows and prioritizing leads.</p>
 <p>With features like AI-driven lead scoring, automated email sequences, and task automation, HubSpot Sales integrates seamlessly with CRM systems. This allows sales teams to focus on high-priority leads while simplifying repetitive tasks. Its AI engine evaluates customer interactions, behavior, and demographic data to provide actionable insights that help teams make smarter decisions.</p>
 <p>The platform's lead scoring system is particularly useful, helping sales teams zero in on the most promising prospects. For instance, a B2B software company using HubSpot's tools saw a 25% boost in qualified leads by targeting high-potential prospects more effectively.</p>
-<h3>Key Features:</h3>
+<h3 id="key-features">Key Features:</h3>
 <ul>
 <li>
 <p>AI-powered lead scoring and qualification</p>
@@ -1349,7 +1405,7 @@ To get the most out of AiSDR, align its AI settings with your sales goals and tr
 </ul>
 <p>Pricing begins at $45 per user/month for the Professional plan. HubSpot Sales works with popular CRM systems, email providers, and social media platforms, ensuring smooth data synchronization. It also automates lead scoring updates and email sequences, saving time and improving efficiency.</p>
 <p>To get the most out of HubSpot Sales, teams should clearly define lead criteria, set up workflows, integrate all relevant data sources, and regularly review AI performance. The platform is GDPR-compliant, ensuring data security and regulatory adherence.</p>
-<h2>Comparison of AI Sales Tools</h2>
+<h2 id="comparison-of-ai-sales-tools">Comparison of AI Sales Tools</h2>
 <p>AI is transforming sales prospecting, and choosing the right tool can make all the difference. Here's a breakdown of some popular AI-driven sales tools to help you decide which fits your needs.</p>
 <div><table>
 <thead>
@@ -1413,7 +1469,7 @@ To get the most out of AiSDR, align its AI settings with your sales goals and tr
 </tr>
 </tbody>
 </table></div>
-<h3>Key Selection Factors</h3>
+<h3 id="key-selection-factors">Key Selection Factors</h3>
 <p><strong>Scale and Integration</strong></p>
 <ul>
 <li>
@@ -1450,7 +1506,7 @@ To get the most out of AiSDR, align its AI settings with your sales goals and tr
 <p>For <strong>email campaign analytics</strong>, <strong>Instantly.ai</strong> delivers reliable tools.</p>
 </li>
 </ul>
-<h2>Final Thoughts</h2>
+<h2 id="final-thoughts">Final Thoughts</h2>
 <p>AI-powered sales prospecting tools have changed the way businesses find, connect with, and convert leads. As highlighted in the tool comparisons, each solution comes with its own set of strengths, such as predictive analytics or multi-channel automation.</p>
 <p><strong>Boosting Efficiency and ROI</strong><br/>
 AI tools handle repetitive tasks, freeing up sales teams to focus on top-priority prospects and drive better conversion rates <sup>[1]</sup>. By using AI for tasks like data analysis and lead scoring, teams can make smarter decisions about where to direct their energy.</p>
@@ -1461,8 +1517,8 @@ When bringing AI tools into your workflow, focus on how easily they integrate, t
 <p><strong>Planning for the Future</strong><br/>
 The real challenge is choosing tools that fit your specific business needs. Keep an eye on measurable results, like conversion rates and revenue growth, to ensure your AI tools continue to deliver <a href="https://automateed.com/overloop-ai-review/" target="_blank"><sup>[2]</sup></a><a href="https://www.lift-ai.com/blog/how-you-can-use-ai-to-reinvent-business-prospecting" target="_blank"><sup>[3]</sup></a>.</p>
 <p>With these points in mind, let’s dive into some common questions about AI-powered sales tools.</p>
-<h2>FAQs</h2>
-<h3>What is the best AI tool for lead generation?</h3>
+<h2 id="faqs">FAQs</h2>
+<h3 id="what-is-the-best-ai-tool-for-lead-generation">What is the best AI tool for lead generation?</h3>
 <p>The best AI tool for lead generation depends on your business goals and the size of your team. Here's a breakdown of options based on organizational needs:</p>
 <p><strong>For Enterprise Teams</strong></p>
 <ul>

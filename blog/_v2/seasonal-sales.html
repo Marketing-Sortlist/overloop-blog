@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -332,30 +392,30 @@ No TOC sidebar (too short — in-article links only).
 
 <p>Being in a seasonal business means working all the year round whilst only making a profit for a fraction of that time, says Paul Sullivan in his article for The New York Times. And he isn't wrong, which is why seasonal businesses often struggle to survive at all. However, the fact that your products or services are seasonal doesn't mean that you cannot keep making sales throughout the year. You will of course need to accept that revenue during the low season won't be as high as during peak times, but it is possible to make money even when things are quiet.</p>
 <p>To achieve this you will need to be creative and to ensure that you focus even more keenly on the customer during the leaner months, as well as rethinking your personal marketing strategy. Check out the following ideas to see how you can do this and keep the checks coming all the year round.</p>
-<h2>Do the studying and research you had no time for before</h2>
+<h2 id="do-the-studying-and-research-you-had-no-time-for-before">Do the studying and research you had no time for before</h2>
 <p>Continuing professional development <a href="https://continuingprofessionaldevelopment.org/why-is-cpd-important/" rel="external noopener">is essential for your professional success</a>, but working in sales makes it hard to find the time to study. So use your downtime brought about by the off season productively and catch up on those courses that you've been putting off.</p>
 <p>During this training period you may develop ideas that you will be able to implement right away, thereby increasing your sales regardless of the season. In fact, putting the ideas and methods you learn into practice at this time is the best strategy. Not only will it allow you to see which of them works best, but you will also be able to improve and adapt them to your personal style. So by the time the next season starts, you will be better prepared.</p>
 <p>But this time should not only be spent on training and researching new sales techniques. It should also be thought of as an opportunity to analyze your performance data and to develop future plans. While doing this, pay attention to those customers that buy consistently or otherwise have the potential to be interested in purchases even during the low season. Focus your sales efforts on them for now.</p>
-<h2>Come up with new marketing ideas (and be more active)</h2>
+<h2 id="come-up-with-new-marketing-ideas-and-be-more-active">Come up with new marketing ideas (and be more active)</h2>
 <p>Of course, your company has a marketing strategy that is active at all times and adapted to the season. But even as a sales rep you can contribute to its improvement by offering some ideas to the marketing department, and the low season is the best time to do it.</p>
 <p>You also shouldn't forget that you need to keep customers interested in your products/services throughout the year. So stay in touch with them and send regular emails with reminders of your products, ideas for their application, and announcements of discounts and special offers. Talk to your marketing experts as they can have such emails be mass-generated through the company's automated marketing solutions. But your most important and loyal customers are likely to appreciate a more personal touch.</p>
 <p>For more ideas, consider the different types of marketing materials available to you, and through which you might be able to score more sales and attract new customers. Posters are a great choice and can be designed and produced within a short space of time using an <a href="https://crello.com/create/posters/" rel="external noopener">online poster maker tool</a> and a printer. Produce some eye-catching material and distribute it throughout your local community. This method is old-school but <a href="https://www.entrepreneurshipsecret.com/using-posters-as-an-effective-marketing-tool/" rel="external noopener">it thrives even now</a>, and you should grasp at any opportunity during the low season sales slump. Be proactive and offer these or any other ideas you come up with to your colleagues who can realize them. After all, it's best to work together to improve the business as a whole.</p>
-<h2>Approach prospective new customers</h2>
+<h2 id="approach-prospective-new-customers">Approach prospective new customers</h2>
 <p>It may be low season for you now, but is the product you are selling "in season" someplace else? Can you reach out to prospective customers there?</p>
 <p>If this is not possible, you can still focus on working niche audiences more thoroughly. Your task is to reach out to everyone who might be interested and whom you haven't yet approached. To do this you should study consumer behavior reports to enable you to identify niche audiences which might fall into your range.</p>
 <p>You can also try to use your loyal customers to help you to find new prospects. Ask them for referrals and offer some kind of bonus for doing so if you can. This will help to increase your sales in two directions at the same time.</p>
-<h2>Connect with your customers and start talking</h2>
+<h2 id="connect-with-your-customers-and-start-talking">Connect with your customers and start talking</h2>
 <p>Don't neglect social media, which you can use to connect directly with your customers and to start a dialog to build up goodwill as well as to score some sales. You should keep your social media accounts active all the year round for these channels to remain strong. In fact, as you will have more time during the low season you can focus on attracting more followers and enabling your business accounts to achieve a better standing within the Internet community.</p>
 <p>Use this time to seek feedback from customers and to run various surveys. You can utilize this data to improve your selling techniques during the upcoming season.</p>
 <p>This is also your opportunity to do some social selling, which should be possible even out of season if you are up to the task. Launching a social selling project during the low season will help you keep busy and provide a chance to enhance your skills through practice.</p>
-<h2>Generate a buzz around your product</h2>
+<h2 id="generate-a-buzz-around-your-product">Generate a buzz around your product</h2>
 <p>Your product or service not being in season doesn't mean that you can't bring the buyers' attention back to it. Do your best to generate a buzz that will give people more reasons to buy now, instead of waiting.</p>
 <p>For example, you can create a piece of content that will extol the benefits offered by your product and how it can be beneficial when bought now. But remember that any content of this kind should not be over-the-top in its presentation. Think about the customers first and offer valuable information as well as reasonable suggestions for why now is a good time to make a purchase. Back your words up with research and data, as well as with links to expert opinion.</p>
-<h2>Look for cross-selling opportunities</h2>
+<h2 id="look-for-cross-selling-opportunities">Look for cross-selling opportunities</h2>
 <p>Are you using cross-selling? If not, this is a good time to try to incorporate it into your strategy. Research the possibilities and roll out an offer to your boss. When you can, take an active role in finding other businesses that can partner up with yours and promote or sell their products alongside yours.</p>
 <p>If selling is impossible, look for <a href="https://en.wikipedia.org/wiki/Cross-promotion" rel="external noopener">cross-promotion deals</a>. Is there a complementary business that is willing to post your ads on its website? It is always possible to score deals in this way because there are other businesses in the same position as yours and other sales reps who are looking for new opportunities. By combining forces, you will get access to each other's audiences.</p>
 <p>This is why it is important to partner up with businesses that offer complementary products or services. Their customers will be more interested in buying from you.</p>
-<h2>To Summarize: Use Your Time Productively During the Off Season</h2>
+<h2 id="to-summarize-use-your-time-productively-during-the-off-season">To Summarize: Use Your Time Productively During the Off Season</h2>
 <p>A seasonal business might not be as profitable during the low season, but it can bring in some revenue all year round. In fact, you need to make sure that your company remains as strong and as visible as possible by maintaining constant contact with customers as well as reaching out to new ones. This is necessary to ensure that you can remain competitive when the productive season comes around.</p>
 <p>You should look for new avenues of business so that you aren't entirely dependent upon single season trade. Expanding into new areas is the best way to make money throughout all of the year.</p>
 

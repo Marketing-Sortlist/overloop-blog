@@ -342,6 +342,66 @@ No tested-by banner (informational template).
       .step__head { flex-direction: column; }
       .step__num { width: 48px; height: 48px; font-size: 20px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -393,17 +453,32 @@ No tested-by banner (informational template).
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Steps</div>
         <ul>
-          <li><a href="#step-1" class="active"><span class="ch-num">01</span> Buy a domain</a></li>
-          <li><a href="#step-2"><span class="ch-num">02</span> Set up DNS records</a></li>
-          <li><a href="#step-3"><span class="ch-num">03</span> Create mailboxes</a></li>
-          <li><a href="#step-4"><span class="ch-num">04</span> Enable warmup tool</a></li>
-          <li><a href="#step-5"><span class="ch-num">05</span> Send first manual emails</a></li>
-          <li><a href="#step-6"><span class="ch-num">06</span> Ramp daily volume</a></li>
-          <li><a href="#step-7"><span class="ch-num">07</span> Monitor deliverability</a></li>
-          <li><a href="#step-8"><span class="ch-num">08</span> Launch first cold campaign</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#quick-version">The Quick Version: Which Method Should You Use?</a></li>
+    <li><a href="#method-1">Method 1: Email Pattern Guessing (Free)</a></li>
+    <li><a href="#method-2">Method 2: Google Dorking (Free)</a></li>
+    <li><a href="#method-3">Method 3: LinkedIn Contact Info (Free)</a></li>
+    <li><a href="#method-4">Method 4: LinkedIn Data Export (Free, Slow)</a></li>
+    <li><a href="#method-5">Method 5: Company Website (Free)</a></li>
+    <li><a href="#method-6">Method 6: Overloop Email Finder (Paid)</a></li>
+    <li><a href="#method-7">Method 7: Hunter.io Domain Search (Freemium)</a></li>
+    <li><a href="#method-8">Method 8: Social Media Profiles (Free)</a></li>
+    <li><a href="#method-9">Method 9: Email Permutator + Verifier Combo (Fr…</a></li>
+    <li><a href="#method-10">Method 10: Ask Directly (Free)</a></li>
+    <li><a href="#method-11">Method 11: Conference and Event Attendee Lists …</a></li>
+    <li><a href="#method-12">Method 12: WHOIS and Domain Records (Free)</a></li>
+    <li><a href="#method-13">Method 13: GitHub Commits (Free)</a></li>
+    <li><a href="#method-14">Method 14: Chrome Extensions for Email Finding …</a></li>
+    <li><a href="#method-15">Method 15: People Search Sites (Freemium)</a></li>
+    <li><a href="#method-16">Method 16: Slack and Discord Communities (Free)</a></li>
+    <li><a href="#method-17">Method 17: Subscribe to Their Newsletter (Free)</a></li>
+    <li><a href="#accuracy-comparison">Email Finder Tools: Accuracy Comparison</a></li>
+    <li><a href="#verifying">Verifying Email Addresses Before You Send</a></li>
+    <li><a href="#free-vs-paid">Free vs. Paid: What Should You Use?</a></li>
+    <li><a href="#legal">Legal Considerations: Can You Just Email Anyone?</a></li>
+    <li><a href="#workflow">My Recommended Workflow</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -416,7 +491,7 @@ No tested-by banner (informational template).
 <p><strong>To find someone's email address, use an email finder tool like Overloop or Hunter.io, guess common patterns (firstname.lastname@company.com covers 46% of companies), search Google with operators like "name" "@domain.com", check LinkedIn contact info, or browse company team pages.</strong> Free methods work for one-off lookups. Paid tools with built-in verification are better when you need accuracy at scale.</p>
 <p><strong>Disclosure:</strong> I am the CEO of Overloop, an AI-powered outbound platform that includes an email finder. I recommend Overloop where it fits, but this guide covers 17 methods including free options and competitors.</p>
 <nav class="toc">
-<h3>In this guide</h3>
+<h3 id="in-this-guide">In this guide</h3>
 <ol>
 <li><a href="#quick-version">The Quick Version: Which Method Should You Use?</a></li>
 <li><a href="#method-1">Method 1: Email Pattern Guessing</a></li>
@@ -1144,23 +1219,23 @@ to account for timezone differences.
 <p>This workflow gets us to a 93% deliverability rate across all campaigns. The verification step is what most people skip, and it is the most important one.</p>
 <p>For more on finding the right prospects before you even search for their email, check out our guide on <a href="/blog/how-to-find-someone-email-address-efficiently">knowing where to find your prospects</a>.</p>
 <h2 id="faq">Frequently Asked Questions</h2>
-<h3>How do I find someone's email address for free?</h3>
+<h3 id="how-do-i-find-someones-email-address-for-free">How do I find someone's email address for free?</h3>
 <p>The best free methods are Google dorking ("name" "@domain.com"), checking LinkedIn contact info for 1st-degree connections, browsing company team/about pages, and using DuckDuckGo to search "@domain.com" as a literal string. Free tiers of tools like Hunter.io (25 searches/month) and Skrapp.io (100 emails/month) also work for small volumes.</p>
-<h3>Can I find an email address just from a name?</h3>
+<h3 id="can-i-find-an-email-address-just-from-a-name">Can I find an email address just from a name?</h3>
 <p>A name alone is usually not enough. You need either a company name or a domain to narrow it down. With a name + company, email finder tools can match against their databases. With a name + domain, you can guess the pattern (firstname.lastname@domain.com covers 46% of companies) and verify it. Without any company context, try searching the person's full name in quotes on Google along with the word "email" to find publicly listed addresses.</p>
-<h3>Is it legal to look up someone's email address?</h3>
+<h3 id="is-it-legal-to-look-up-someones-email-address">Is it legal to look up someone's email address?</h3>
 <p>Yes, finding a professional email address is legal in most jurisdictions. In the US, CAN-SPAM allows unsolicited B2B emails as long as you include an unsubscribe link and physical address. In the EU under GDPR, B2B cold emailing is allowed under "legitimate interest" as long as you provide an opt-out. Canada's CASL is stricter and generally requires implied or express consent. Always check local regulations before sending. Read our full guide: <a href="/blog/cold-email-illegal">Is Cold Email Illegal?</a></p>
-<h3>What is the most accurate email finder tool in 2026?</h3>
+<h3 id="what-is-the-most-accurate-email-finder-tool-in-2026">What is the most accurate email finder tool in 2026?</h3>
 <p>Independent accuracy tests show significant variation. Most tools claim 90%+ accuracy, but real-world tests on the same contact list show results ranging from 75% to 95%. Overloop's email finder delivers 93%+ accuracy on verified results because it checks against SMTP servers before returning an address. The key differentiator is whether a tool verifies addresses or just guesses patterns.</p>
-<h3>How do I verify that an email address is real before sending?</h3>
+<h3 id="how-do-i-verify-that-an-email-address-is-real-before-sending">How do I verify that an email address is real before sending?</h3>
 <p>Use SMTP verification, which pings the mail server to check if the address exists without sending an actual email. Overloop includes this automatically. Standalone verification tools include NeverBounce, ZeroBounce, and Bouncer. Keep your bounce rate under 2% to protect sender reputation. Anything above 5% will trigger throttling from email providers like Gmail and Outlook.</p>
-<h3>What is a catch-all email domain?</h3>
+<h3 id="what-is-a-catch-all-email-domain">What is a catch-all email domain?</h3>
 <p>A catch-all domain accepts all incoming emails regardless of what comes before the @. So test123@company.com and garbage@company.com both get delivered. This makes verification impossible because the server will confirm any address. About 20-30% of business domains are catch-all. Send to catch-all addresses with caution and lower volume.</p>
-<h3>How do I find a CEO's email address?</h3>
+<h3 id="how-do-i-find-a-ceos-email-address">How do I find a CEO's email address?</h3>
 <p>CEOs at small companies (under 50 people) often use firstname@company.com. For larger companies, try firstname.lastname@company.com. LinkedIn contact info is a good starting point if you are connected. WHOIS records sometimes reveal founder emails. GitHub profiles work for technical CEOs. An email finder tool like Overloop is the fastest route since it searches a 450M+ contact database.</p>
-<h3>How many free email lookups can I do per month?</h3>
+<h3 id="how-many-free-email-lookups-can-i-do-per-month">How many free email lookups can I do per month?</h3>
 <p>It depends on the tool. Hunter.io gives 25 free searches/month. Skrapp.io offers 100 free emails/month. Voila Norbert provides 50 free searches as a one-time credit. GetProspect offers 50 free emails/month. Clearbit Connect (Chrome extension) gives 100 free lookups/month. For unlimited free lookups, manual methods like Google dorking, LinkedIn, and GitHub commits have no cap.</p>
-<h3>What is the best way to find email addresses in bulk?</h3>
+<h3 id="what-is-the-best-way-to-find-email-addresses-in-bulk">What is the best way to find email addresses in bulk?</h3>
 <p>For bulk email finding (50+ contacts), upload a CSV of names and companies to a tool like Overloop's bulk email finder. It processes thousands of records in minutes and returns verified results. The alternative is using an API integration with tools like Hunter.io, Apollo.io, or Snov.io if you want to build the enrichment into your own workflow.</p>
 
 </main>

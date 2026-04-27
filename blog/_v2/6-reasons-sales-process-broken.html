@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -335,7 +395,7 @@ No TOC sidebar (too short — in-article links only).
 <p><a href="https://hbr.org/2015/01/companies-with-a-formal-sales-process-generate-more-revenue">According to a study</a> conducted by Vantage Point Performance and the Sales Management Association, companies that defined a formal sales process saw <strong>18% greater revenue growth</strong> compared to companies that didn't.</p>
 <p>However, if your process is poorly designed or incorrectly implemented, it can do your team more harm than good.</p>
 <p>Here are six sales process mistakes that may be limiting your ability to sell, without you even realizing it.</p>
-<h2>Mistake #1: It didn't come from your sales reps.</h2>
+<h2 id="mistake-1-it-didnt-come-from-your-sales-reps">Mistake #1: It didn't come from your sales reps.</h2>
 <p>A good sales process can't be created in a vacuum--it has to be a joint effort between the manager and the sellers, or else the end result will be unfamiliar to the team, and will likely be rejected or ignored.</p>
 <p>To ensure that your team will buy into your new sales process from the beginning, spend some time with each rep beforehand to learn <strong>the activities they already perform during the course of a sale</strong>.</p>
 <p>Among other things, you need to understand:</p>
@@ -347,27 +407,27 @@ No TOC sidebar (too short — in-article links only).
 </ul>
 <p>The people reaching out to your prospects have learned what works and what doesn't, so it's critical to work with your sales organization to ensure that the process will be effective before you ask them to start following it.</p>
 <p>And whatever you do, don't "borrow" the sales process of another organization and try to use it for your own team. <strong>Templates don't work; your process has to be personal</strong>.</p>
-<h2>Mistake #2: It's too detailed or complicated.</h2>
+<h2 id="mistake-2-its-too-detailed-or-complicated">Mistake #2: It's too detailed or complicated.</h2>
 <p>The more stages your sales process includes, the harder it will be for your sales team to memorize and internalize it.</p>
 <p><strong>A sales process should contain between three and seven stages</strong>, with each one reflecting a specific <em>goal</em> related to moving the sale forward, such as "Handling Objections," not an individual activity, such as "schedule follow-up call." (Those individual activities are called <strong>steps</strong>, and you can learn more about them in my How to Build a Sales Process guide.)</p>
 <p>According to Jacco van der Kooij, founder of <a href="https://winningbydesign.com/">Winning by Design</a>, one effective way to measure the health of a sales process is to see how well your reps can explain it.</p>
 <p>"Can your reps draw four or five blocks of your sales process on a whiteboard and describe what happens in each block?" van der Kooij asks. "Can they point to a block and say, 'this is where most of our deals get stuck'?"</p>
 <p>If they can't, check in with your team to make sure they aren't suffering from information overload.</p>
 <p>Creating an overly-detailed sales process can also demotivate your team by turning selling into a robotic enterprise with little room for invention. Ideally, your sellers should have the freedom to occasionally find new paths to move a challenging deal from one stage to the next. As Amazon founder and CEO <a href="https://www.forbes.com/sites/johngreathouse/2013/04/30/5-time-tested-success-tips-from-amazon-founder-jeff-bezos/#449fbc47370c">Jeff Bezos put it</a>, be stubborn on the vision and flexible on the detail.</p>
-<h2>Mistake #3: It's too vague.</h2>
+<h2 id="mistake-3-its-too-vague">Mistake #3: It's too vague.</h2>
 <p>Experienced salespeople will have no trouble understanding sales process stages like "Prospecting," "Qualifying," or "Presenting." These concepts are fundamental to what a sales rep does on a daily basis.</p>
 <p>The problem is, each of your sales reps might have a different interpretation of when each stage is <em>complete</em>. For example, how much qualification is required to move a prospect from Qualifying to Presenting in your sales process? At what point do you officially move a prospect to the Closing stage?</p>
 <p><strong>Failing to clearly define the goal-posts creates a vague sales process that can confuse reps and slow them down.</strong></p>
 <p>To address this, each stage of your sales process <a href="http://salesperformance.com/how-do-you-map-a-sales-process/">needs an operational definition</a>. You and your team need to define the <em>observable customer activity</em> that tells you a prospect is in one stage or another, and each rep needs to stick to it.</p>
 <p>Keep in mind that some sales process stages can't easily be defined in terms of <em>incomplete</em> or <em>complete</em>. "Qualification is not a one-time event that takes place during a discovery call," explains Jacco van der Kooij. "It's something that takes place all the time, during every part of the interaction with a client." Similarly, <a href="https://.capabiliti.co/5-worst-closing-mistakes-sales-process/">closing commitments should be present in every sales process stage</a>, not just at the end.</p>
 <p>In other words, what <em>exactly</em> are you looking for your buyer to do or say before moving them to the next stage? Your sales process won't be ready to use until your team is in agreement.</p>
-<h2>Mistake #4: It isn't automated.</h2>
+<h2 id="mistake-4-it-isnt-automated">Mistake #4: It isn't automated.</h2>
 <p>Having a roadmap of repeatable sales steps is a big advantage for your team, but to get the most out of your sales process, automation is key.</p>
 <p><a href="https://velocify.com//4-characteristics-of-a-high-performing-sales-team/">According to a study from Velocify</a>, high-performing sales organizations are almost <strong>twice as likely</strong> to use an automated sales process than underperforming organizations.</p>
 <p>By automating your sales process in a CRM, your reps will know exactly what to do at any given moment to move a deal forward, and valuable leads won't drift away. But let's be clear: While a CRM will make it easy for your sales team to navigate your sales process, building and understanding that process can't be outsourced to a software program.</p>
 <p>"The biggest mistake to avoid is not doing every piece of your sales process manually first--or at least <em>understanding</em> how to do every piece of the process manually," says <strong>Max Altschuler</strong>, best-selling author of <a href="https://www.hackingsales.com"><em>Hacking Sales</em></a> and CEO of <a href="https://www.saleshacker.com">Sales Hacker Inc</a>.</p>
 <p>"If you just buy technology before understanding your buyer personas, what data and insights you need, and how to reach out and how often, you'll be throwing money away on things that won't be adopted properly," Altschuler says.</p>
-<h2>Mistake #5: Nobody is measuring it.</h2>
+<h2 id="mistake-5-nobody-is-measuring-it">Mistake #5: Nobody is measuring it.</h2>
 <p>A sales process isn't simply a playbook for activity. When properly integrated and automated, it can also provide a treasure trove of actionable sales data.</p>
 <p>Measuring the health and impact of your sales process can help you <strong>identify weak spots so you can improve as an organization</strong>. Some metrics that will help you evaluate your sales process include:</p>
 <ul>
@@ -381,7 +441,7 @@ No TOC sidebar (too short — in-article links only).
 </ul>
 <p>If you see any of these metrics start to slip in the wrong direction, take the time to identify where your sales process is underperforming so you can improve your strategies in those stages.</p>
 <p>Are your reps waiting too long to reach out to a warm lead? Are your sales presentations turning off interested prospects? Reviewing your conversion rates at each stage and making targeted improvements to the weak spots is a lot more effective than trying to blindly "fix" your sales operations as a whole.</p>
-<h2>Mistake #6: It's set in stone.</h2>
+<h2 id="mistake-6-its-set-in-stone">Mistake #6: It's set in stone.</h2>
 <p>While regular tweaking and improvement is necessary to the health of your sales process, it's also important to step back a couple times a year and take a broader view.</p>
 <p>Particularly in startup businesses or companies experiencing rapid growth, <strong>the sales process you first implement with might not be appropriate six months later</strong>.</p>
 <p>Some changes that could spur a full redesign of your sales process include:</p>

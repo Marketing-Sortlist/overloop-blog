@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -335,37 +395,37 @@ No TOC sidebar (too short — in-article links only).
 <p>While this prevents spammers from taking over the world, it also prevents honest e-mails from reaching their recipient.</p>
 <p>So what can you do to avoid ending up in the limbo of the junk folder?</p>
 <p>Here are a few tips that we use at <a href="https://overloop.com/?ref=blog" rel="external noopener">Overloop</a> to help you make sure it doesn’t happen.</p>
-<h2>Write Spam-Free Email Content</h2>
-<h3>1. Watch your subject line</h3>
+<h2 id="write-spam-free-email-content">Write Spam-Free Email Content</h2>
+<h3 id="1-watch-your-subject-line">1. Watch your subject line</h3>
 <p>While it is understandable that you really want your e-mail to be opened, refrain yourself from using overly tout language. Words and expressions like “this isn’t spam”, “make money”, “satisfaction guaranteed” or “no obligation” are obvious red flags for spam filters.</p>
 <p>We've put together an extensive<a href="/blog/455-email-spam-trigger-words-avoid-2018"> <span style="font-weight: 400;">list</span></a><span style="font-weight: 400;"> of words and expressions you should avoid. It’s worth taking a look! Also you can read more on how to improve your subject line <a href="/blog/how-to-write-a-successful-cold-email">here</a>.</span></p>
-<h3>2. Avoid ALL CAPS and exclamation points!!!!</h3>
+<h3 id="2-avoid-all-caps-and-exclamation-points">2. Avoid ALL CAPS and exclamation points!!!!</h3>
 <p>Yeah, and also don’t use red or invisible (e.g. white on white) fonts. Those are the best ways to be immediately reported as spam by your recipients and have your e-mail address end up on a blacklist, even if you get through the filters. It’s also widely unprofessional.</p>
 <p>In other words: avoid the spam folder by not being a jackass.</p>
-<h2>Technical Email Setup for Better Deliverability</h2>
-<h3>3. Use a reliable ESP</h3>
+<h2 id="technical-email-setup-for-better-deliverability">Technical Email Setup for Better Deliverability</h2>
+<h3 id="3-use-a-reliable-esp">3. Use a reliable ESP</h3>
 <p>The reliability of an E-mail Service Provider depends on the reputation of the IP addresses and domains of their clients. If you communicate through a shady ESP, you’ll be associated with shady IP’s and domains and your e-mails will more than likely end up in junk folders.</p>
 <p>For that instance, we strongly recommend using the paid version of Gmail in G suite. Let's just say that Google's reputation is, you know, pretty good.</p>
-<h3>4. Mind your links</h3>
+<h3 id="4-mind-your-links">4. Mind your links</h3>
 <p>Clickable images and redirection to a landing page have become standard practice and should stick around for a while. However, you should only include links to reputable domains or they might be flagged as fraudulent.</p>
 <p>Also avoid URL shorteners. Their use by spammers got them branded as risky, which is liable to get your e-mails caught in spam filters.</p>
-<h2>Optimize Your Email Format and Identity</h2>
-<h3>5. Keep your e-mails short</h3>
+<h2 id="optimize-your-email-format-and-identity">Optimize Your Email Format and Identity</h2>
+<h3 id="5-keep-your-e-mails-short">5. Keep your e-mails short</h3>
 <p>Large amounts of copy will tingle the spammey sense of your recipient’s inbox. If you absolutely must send a long e-mail, break it into multiple paragraphs in order to make it readable and clear for your recipient.</p>
 <p><a href="/blog/how-to-write-a-successful-cold-email">This article</a> gives you more insight on why you should go for short and concise emails.</p>
-<h3>6. Optimize your From field</h3>
+<h3 id="6-optimize-your-from-field">6. Optimize your From field</h3>
 <p>I don’t care where you’re from, but the spam filter does. Mailbox providers don’t just evaluate the IP and domain, they also put the <i>From</i> field under scrutiny. Which is why you should use clear and trustworthy names like you@yourdomain.com only!</p>
 <p>288cgs867g@mydomain.com or account1@mydomain.com are a no-go.</p>
-<h3>7. Don’t attach files</h3>
+<h3 id="7-dont-attach-files">7. Don’t attach files</h3>
 <p>Unless you absolutely have to, don’t attach files to your e-mails, especially if they’re unsolicited. And if you do, avoid large files at all cost. They’re yet another obvious red flag for spam filters. This is the reason why Overloop doesn’t allow you to attach files directly to your emails.</p>
 <p>What you can however do is upload the files to a cloud service like Dropbox or Google Drive and share the link in your email. The reputability of these services won't hurt your deliverability.</p>
-<h2>Final Checks Before Sending</h2>
-<h3>8. Check your spelling</h3>
+<h2 id="final-checks-before-sending">Final Checks Before Sending</h2>
+<h3 id="8-check-your-spelling">8. Check your spelling</h3>
 <p>You don’t have to be a Nigerian prince -and God knows they struggle to avoid the spam folder- to know this. Poor spelling is an instant sign that there might be a scam going on. Therefore, if you don’t want to end up reported as spam, do a thorough spell check before sending your e-mails, especially if you’re sending a drip campaign to hundreds of prospects.</p>
-<h3>9. Go through the spam checker</h3>
+<h3 id="9-go-through-the-spam-checker">9. Go through the spam checker</h3>
 <p>Before sending your e-mail, take a minute to get it through a spam checker like <a href="https://www.isnotspam.com/" rel="external noopener">IsNotSpam.com</a>. It’s free and it will test your e-mail for the main liabilities that could impair its efficiency. It's an easy way to avoid the spam folder, use it.</p>
 <p>It won't however tell you if your IP is blacklisted; in that case, you should check <a href="https://mxtoolbox.com/blacklists.aspx" rel="external noopener">MXToolbox</a>.</p>
-<h3>10. Never buy email lists</h3>
+<h3 id="10-never-buy-email-lists">10. Never buy email lists</h3>
 <p>I know, you worry about reaching your quota. But while it may be tempting to buy prospects lists, don’t do it, if only because they won’t advance your business. Those lists are full of unqualified addresses that you never had a chance to check beforehand and that will probably lead to dead ends.</p>
 <p>But it gets worse. Purchased lists generally contain bad addresses, which involve high bounce rates and, eventually, blacklisting. It’s always worth taking the extra time to identify quality leads.</p>
 <p>Here's more info on <a href="/blog/9-reasons-never-buy-email-lists">why you should never buy email lists</a>.</p>

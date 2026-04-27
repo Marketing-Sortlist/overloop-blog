@@ -342,6 +342,66 @@ No tested-by banner (informational template).
       .step__head { flex-direction: column; }
       .step__num { width: 48px; height: 48px; font-size: 20px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -393,17 +453,10 @@ No tested-by banner (informational template).
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Steps</div>
         <ul>
-          <li><a href="#step-1" class="active"><span class="ch-num">01</span> Buy a domain</a></li>
-          <li><a href="#step-2"><span class="ch-num">02</span> Set up DNS records</a></li>
-          <li><a href="#step-3"><span class="ch-num">03</span> Create mailboxes</a></li>
-          <li><a href="#step-4"><span class="ch-num">04</span> Enable warmup tool</a></li>
-          <li><a href="#step-5"><span class="ch-num">05</span> Send first manual emails</a></li>
-          <li><a href="#step-6"><span class="ch-num">06</span> Ramp daily volume</a></li>
-          <li><a href="#step-7"><span class="ch-num">07</span> Monitor deliverability</a></li>
-          <li><a href="#step-8"><span class="ch-num">08</span> Launch first cold campaign</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#whats-a-follow-up-email">What's a Follow-Up Email?</a></li>
+    <li><a href="#so-how-do-i-write-a-follow-up-email">So, How Do I Write a Follow-Up Email?</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -414,23 +467,23 @@ No tested-by banner (informational template).
       <main class="prose">
 
 <p>In the busy world of sales, the follow-up email emerges as a pivotal tool. But how to stand up among countless emails? Here's how to master the art of follow-up emails.</p>
-<h2>What's a Follow-Up Email?</h2>
+<h2 id="whats-a-follow-up-email">What's a Follow-Up Email?</h2>
 <p>A follow-up email helps you nurture already initiated relationships. They can help you re-engage non-responsive leads. Their aim is to trigger a response from them, whether it's just a reply, a meeting booking, a phone call, a document download, or a sale. You can see them as a nudge to remind your prospects of your existence and value. They differ from cold emails as their aim is not to give a good first impression, but rather arouse interest.</p>
-<h2>So, How Do I Write a Follow-Up Email?</h2>
-<h3>Determine Your Objectives</h3>
+<h2 id="so-how-do-i-write-a-follow-up-email">So, How Do I Write a Follow-Up Email?</h2>
+<h3 id="determine-your-objectives">Determine Your Objectives</h3>
 <p>Before you start typing, think about what you want from this email. What's its purpose? What kind of action do you expect from your recipient? Your objective could be a request for specific information, a meeting, catching up, expressing gratitude, or addressing the problem your prospect is facing and offering a solution.</p>
-<h3>Add Context</h3>
+<h3 id="add-context">Add Context</h3>
 <p>Everybody loves context. The opening lines of a follow-up email are crucial: they help your prospect remember you, reconnect them with your previous interaction, whether it was by phone, at a meeting or an event. Don't hesitate to add personalized greetings to add warmth and include the original message if there's one. It will demonstrate your interest and personal investment in your prospect.</p>
 <p>However, if you have many emails to write, this task can quickly become time-consuming. <a href="https://overloop.com/features">Overloop</a> allows you to gain time by using email templates to personalize.</p>
-<h3>State Your Purpose Clearly</h3>
+<h3 id="state-your-purpose-clearly">State Your Purpose Clearly</h3>
 <p>Get to the point about why you're reaching out. What are your objectives? Be clear with your prospect and don't beat around the bush. Introduce new information if available and articulate your CTA clearly. What do you want the recipient to do next? Whether it's providing feedback, scheduling a meeting, or downloading a document, your purpose should be unmistakable and unmissable. If you need some writing tips, check out our article about writing <a href="/blog/sales-email-tips-to-help-you-close-more-deals">the perfect sales email</a>.</p>
-<h3>Create a Winning Ending</h3>
+<h3 id="create-a-winning-ending">Create a Winning Ending</h3>
 <p>Always try to end your email on a positive note. Even a simple "thank you" can leave a lasting impression and encourage a positive response.</p>
-<h3>The Subject Line: Your Email's Handshake</h3>
+<h3 id="the-subject-line-your-emails-handshake">The Subject Line: Your Email's Handshake</h3>
 <p>The subject line is a key element of your follow-up email: it's your first (and sometimes only) chance to grab attention. We advise you to write it after you created the body of your email. Also make sure it correctly reflects the subject of the email. A well-crafted subject line sets the tone and expectations, increasing the likelihood of your email being opened. Still stuck on this step? Check out our article to write the <a href="/blog/best-subject-lines-for-sales-emails">best subject lines for sales emails</a>.</p>
-<h3>Proofreading: The Final Polish</h3>
+<h3 id="proofreading-the-final-polish">Proofreading: The Final Polish</h3>
 <p>You wrote your email, found your subject line... But you're not set yet. Never underestimate the power of proofreading. A typo-free, grammatically correct email conveys professionalism and respect for the recipient. It will also help build trust. Take time to review your email or use tools to help catch any mistake.</p>
-<h3>Time Your Send</h3>
+<h3 id="time-your-send">Time Your Send</h3>
 <p>Choosing the right time to send your email can significantly impact its effectiveness. Adapt the timing of your sending based on the interactions you had with your prospect and the message you want to carry. If you want to send a thank-you email, do it in the next 24 hours of your encounter with your prospect. For other follow-ups, you can wait from 2-3 days to up to a week. If you need to send multiple emails, space them out strategically. With Overloop, you can <a href="https://overloop.com/features">schedule your emails</a> to be sent at the optimal time and at the right moment, even adjusting for the recipient's time zone, ensuring your message arrives when they're most likely to be seen.</p>
 <p>Mastering the art of follow-up email is crucial in the sales world. That's what sets top-performing sales professionals apart from the competition. Clearly define your objectives, add context, state your objectives, write a compelling subject line, end on a positive note and meticulously proofread your email. Don't forget to choose the most efficient timing to send your email.</p>
 <p>It seems a bit overwhelming to you? With <a href="https://overloop.com">Overloop</a>, writing and sending follow-up email becomes a piece of cake: create different sequences, customize your emails and schedule their sending to make sure they reach their destination and trigger actions from your leads!</p>

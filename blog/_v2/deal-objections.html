@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,17 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#how-to-avoid-generic-nos">How to avoid generic no's?</a></li>
+    <li><a href="#embrace-the-objection">Embrace the objection</a></li>
+    <li><a href="#deal-with-it">Deal with it</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -446,11 +497,11 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>Truth is, they're reluctant to giving you <strong>attention</strong>,<strong> time</strong>, and <strong>credibility </strong>because you haven't given them a compelling reason to be interested.</p>
 <p>If you have properly done your research and truly believe that your prospect can really benefit from your product, those No's should <strong>not </strong>throw you off.</p>
 <p>As Chris Beall puts it: '<em>The false “No” is the worst, because it tricks you into disqualifying the well-qualified, perhaps even the perfectly qualified.'</em></p>
-<h3>Expect those no's</h3>
+<h3 id="expect-those-nos">Expect those no's</h3>
 <p>If you call or write expecting a positive answer, you'll be disappointed to get a no. You may even start doubting yourself or act defensive. But once you acknowledge that "No" is the norm and actually constitutes the <strong>basis</strong> for most negotiations, you'll have a much more relaxed approach and, more importantly, will integrate "No" as part of your process.</p>
 <p>People rarely ever say "Yes!" immediately after you propose a big change that'll require investment on their part. So get comfortable with rejection.</p>
 <p>If your prospect feels that you're comfortable hearing/reading "No", they'll be much more receptive to what you might have to say next.</p>
-<h3>Deal with those no's</h3>
+<h3 id="deal-with-those-nos">Deal with those no's</h3>
 <p>As I previously said, don't take these "No's" personally or against your product. It's a defensive move, your prospect is protecting their time and attention quota. Plus, they don't know you.</p>
 <p>You need two weapons to deal with this: <strong>empathy </strong>and <strong>social proof</strong>. You need to show them that you understand why they would say no, but that you really believe you can help them because you've already helped other companies similar to theirs.</p>
 <p>We at <a href="https://overloop.com">Overloop</a> are used to overturn "No's"; respond with something along these lines, whether you're on the phone or typing on your computer:</p>
@@ -460,25 +511,25 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>I however agree that neither of us can at this point know for sure if our solution can indeed be as valuable for you. How about we take a couple of minutes to clear that out?</p>
 </blockquote>
 <p>By showing empathy, you demonstrate that you understand the position they're in and by displaying social proof, you showcase your ability to satisfy clients. Plus, by admitting that you don't know either if they're a good fit for the product, you're not being needy or pushy, which makes them much more likely to hear you out.</p>
-<h2>How to avoid generic no's?</h2>
+<h2 id="how-to-avoid-generic-nos">How to avoid generic no's?</h2>
 <p>As we already know, generic no's aren't real objections, and they occur before the discussion has chance to go anywhere. Whenever possible, make sure to generate a discussion and a connection <strong>before</strong> you mention your product. If your prospect is already engaged and sharing information about their company and the way they handle things, you can use that information to introduce your product later on in the discussion. You'll have a much better grasp of your prospect's needs by then.</p>
 <p>And since you're already talking, they'll be much more open to hearing about what you have to offer.</p>
 <p>Show genuine interest in what it is they're doing that you may help them with and they'll be open to hearing you out.</p>
 <p>And at that point, if they object, you'll know it's for real, and you can start handling actual <strong>objections</strong>.</p>
 <h1>Objections</h1>
 <p>Sh*t's getting real, but you can definitely handle this!</p>
-<h2>Embrace the objection</h2>
+<h2 id="embrace-the-objection">Embrace the objection</h2>
 <p>Wait, I'll say it again, <strong>embrace the objection</strong>.</p>
 <p>Negotiation expert Jim Camp encourages you to invite "No" into the conversation. It gives the opportunity for each party to explain what they expect out of the deal, or what the problem precisely is.</p>
 <p>Plus, you want to acknowledge your prospect's objection as much as possible. You need to convey your understanding of their reluctance in order for them to feel that you're going to competently deal with it. And that you're not trying to shove your product down their throat.</p>
-<h2>Deal with it</h2>
+<h2 id="deal-with-it">Deal with it</h2>
 <p>Several obstacles may position themselves between you and closing your sale. Here's how to deal with them!</p>
-<h3>Understanding the benefits</h3>
+<h3 id="understanding-the-benefits">Understanding the benefits</h3>
 <p>Often times, misunderstanding will plague your sales process. As objections start to arise, start by making sure your prospect really understands the benefits your product will bring them.</p>
-<h3>Need</h3>
+<h3 id="need">Need</h3>
 <p>There isn't much you can do if your prospect has no need for your product. If the benefits are clear but they don't need them, then you should take your business somewhere else.</p>
 <p><strong>But </strong>don't do that before asking them whether it's okay to get in touch a few months later. Circumstances might have changed by then.</p>
-<h3>Price</h3>
+<h3 id="price">Price</h3>
 <p>Most of the time, price objections mean to… get you to get the price down.</p>
 <p>Though, sometimes, discounts prove to be necessary to close a deal, most times, it is possible to thwart price objections.</p>
 <p>As sales trainer <a href="https://www.linkedin.com/pulse/7-guiding-principles-victor-antonio" rel="external noopener">Victor Antonio</a> would say: sell on value!</p>
@@ -515,7 +566,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p>If you're in B2B and especially the SaaS industry, you may be selling a great product, with features your prospects are looking for, but also features they're not interested in. And since they would be paying for those as well, it may seem too expensive overall.</p>
 <p>If you can make that out, you can offer to only give them access to the features they want, for a discounted price.</p>
-<h3>Fear of change</h3>
+<h3 id="fear-of-change">Fear of change</h3>
 <p>Fear of change can be motivated by different factors.</p>
 <p>Most of the time, your prospect will be a) a manager in place for a long time, b)  someone who's hasn't been there for as long but feeling the heat from above.</p>
 <p>Either way, they have concerns:</p>
@@ -534,10 +585,10 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>To quote sales expert <a href="https://www.linkedin.com/pulse/sales-leaders-losing-decision-myth-brian-burns" rel="external noopener"><strong>Brian Burn</strong></a>'s exact words :<strong> 'A-Players know that it is their responsibility to guide the client throw the decision process and demonstrate that the cost of NOT acting is substantially more than placing the order NOW!'</strong></p>
 <p>2. Reassure with support</p>
 <p>If they're going to change the way they work, they're entitled to full help and support from your part. Ensure they know you'll make yourself available whenever needed.</p>
-<h3>Authority</h3>
+<h3 id="authority">Authority</h3>
 <p>It happens often that your user is not the decision-maker. Which, more than an <em>generic no</em> -"I need to consult with my boss" or "My boss says no, thank you"- can constitute an actual objection.</p>
 <p>In both cases, this brings you closer to the decision-maker. Agree that the boss should indeed take the decision, which is why you'd like to talk to them, the goal here being to set up a meeting with both parties as soon as possible.</p>
-<h3>Timing</h3>
+<h3 id="timing">Timing</h3>
 <p>"This is not a good time for us" is quite frequent to hear when it comes to objections.</p>
 <p>Try to understand <strong>why </strong>it's not a good time. Since this is your area of expertise, you can -after acknowledging their objection- demonstrate why it actually <strong>is </strong>a good time. And how waiting won't benefit them, on the contrary.</p>
 <p>If it actually is not a good time, acknowledge that as well. And politely ask whether it would be okay for you to contact them again at a later time.</p>

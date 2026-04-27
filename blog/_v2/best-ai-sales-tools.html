@@ -951,6 +951,66 @@ Applied changes from design-system-overloop.md:
       .related-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -1011,30 +1071,26 @@ Applied changes from design-system-overloop.md:
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#how-tested" class="active">How we tested</a></li>
-          <li><a href="#categories">The six categories</a></li>
-          <li><a href="#category-bdr">1 · AI BDR Tools</a></li>
-          <li><a href="#category-email">2 · AI Email Outreach</a></li>
-          <li><a href="#category-linkedin">3 · AI LinkedIn Outreach</a></li>
-          <li><a href="#category-enrichment">4 · Data Enrichment</a></li>
-          <li><a href="#category-intelligence">5 · Conversation Intelligence</a></li>
-          <li><a href="#category-coaching">6 · AI Email Coaching</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#comparison">Full comparison</a></li>
-            <li><a href="#how-to-choose">How to choose</a></li>
-            <li><a href="#pitfalls">What to watch for</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#how-we-tested-these-tools">How We Tested These Tools</a></li>
+    <li><a href="#the-six-categories-of-ai-sales-tools">The Six Categories of AI Sales Tools</a></li>
+    <li><a href="#category-bdr">Category 1: AI BDR Tools</a></li>
+    <li><a href="#category-email">Category 2: AI Email Outreach Tools</a></li>
+    <li><a href="#category-linkedin">Category 3: AI LinkedIn Outreach Tools</a></li>
+    <li><a href="#category-enrichment">Category 4: AI Data Enrichment Tools</a></li>
+    <li><a href="#category-intelligence">Category 5: Conversation Intelligence Tools</a></li>
+    <li><a href="#category-coaching">Category 6: AI Email Coaching Tools</a></li>
+    <li><a href="#full-comparison-table-ai-sales-tools-in-2026">Full Comparison Table: AI Sales Tools in 2026</a></li>
+    <li><a href="#how-to-choose-a-decision-framework">How to Choose: A Decision Framework</a></li>
+    <li><a href="#what-to-watch-out-for">What to Watch Out For</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <!-- Main -->
@@ -1045,7 +1101,7 @@ Applied changes from design-system-overloop.md:
 <p>This guide is the result of that experience. It covers 19 tools across six categories, structured as a buyer's guide, not a listicle. I will walk you through the categories that matter, my top picks in each, a full comparison table with G2 ratings, and a decision framework so you can match the right tool to your team size, budget, and channels.</p>
 <p>The AI sales tools market hit $3 billion in 2025 and is growing fast. But adoption is still fragmented. According to SPOTIO's 2026 field sales survey, 33% of sales teams still do not use AI at all. Among those that do, most use it for just one thing (email personalization or CRM data entry). The opportunity is in using AI across the full outbound workflow, not in isolated point solutions.</p>
 <div class="tldr-table-enhanced">
-<h3>TL;DR: Best AI Sales Tools at a Glance</h3>
+<h3 id="tldr-best-ai-sales-tools-at-a-glance">TL;DR: Best AI Sales Tools at a Glance</h3>
 <div class="table-wrap">
 <table>
 <thead>
@@ -1099,10 +1155,10 @@ Applied changes from design-system-overloop.md:
                     AI Email Coaching
                 </a>
 </div>
-<h2>How We Tested These Tools</h2>
+<h2 id="how-we-tested-these-tools">How We Tested These Tools</h2>
 <p>Every guide claims to be unbiased. Here is what we actually did across six months of testing.</p>
 <div class="methodology-box">
-<h3>Our Testing Methodology</h3>
+<h3 id="our-testing-methodology">Our Testing Methodology</h3>
 <ul>
 <li><strong>Hands-on testing:</strong> Every tool in this guide was used by our sales team or evaluated in a structured trial of at least 14 days. We sent real campaigns to real prospects, not test emails to ourselves. Total: 30+ tools evaluated, 12 used in production.</li>
 <li><strong>Real campaign data:</strong> We tracked open rates, reply rates, bounce rates, and meetings booked across 47,000+ emails and 8,000+ LinkedIn messages sent between October 2025 and March 2026.</li>
@@ -1114,7 +1170,7 @@ Applied changes from design-system-overloop.md:
 </ul>
 </div>
 <p>Disclosure: Overloop is our product. I will be upfront about where it fits and where other tools are a better choice. If all you need is email blasting at scale, Overloop is not the cheapest option. If you need multichannel sequences with real AI personalization, it is.</p>
-<h2>The Six Categories of AI Sales Tools</h2>
+<h2 id="the-six-categories-of-ai-sales-tools">The Six Categories of AI Sales Tools</h2>
 <p>AI sales tools are not one category. They are at least six distinct ones, and most teams need tools from two or three of them. Here is how the landscape breaks down:</p>
 <ol>
 <li><strong>AI BDR Tools</strong> -- Full-cycle automation: prospecting, sequencing, follow-ups. These aim to replace or augment your BDR headcount.</li>
@@ -1128,13 +1184,13 @@ Applied changes from design-system-overloop.md:
 <p>Let me break down each category with my top picks, then we will get into the full comparison table.</p>
 <h2 id="category-bdr">Category 1: AI BDR Tools</h2>
 <p>This is the fastest-growing category. The promise: an AI agent that finds prospects, writes personalized outreach, sends sequences across channels, and books meetings on your calendar. The reality is more nuanced, but the best tools here genuinely reduce the need for junior BDR headcount.</p>
-<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3>Overloop</h3></div>
+<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3 id="overloop">Overloop</h3></div>
 <p>Multichannel sequences (email + LinkedIn + phone) with AI that personalizes based on prospect data, company info, and intent signals. The AI does not just swap a first name. It reads the prospect's LinkedIn activity, recent company news, and job title to write opening lines that sound like a human did the research. Built-in deliverability with email warmup and rotation. CRM sync with HubSpot, Salesforce, and Pipedrive.</p>
 <p><strong>Best for:</strong> Teams of 2-50 reps running multichannel outbound. Starting at $69/user/month.</p>
-<div class="tool-heading"><img alt="Apollo.io" src="/assets/images/logos/apollo.io.png"/><h3>Apollo.io</h3></div>
+<div class="tool-heading"><img alt="Apollo.io" src="/assets/images/logos/apollo.io.png"/><h3 id="apolloio">Apollo.io</h3></div>
 <p>Combines a large B2B database (275M+ contacts) with sequencing and AI writing. Strong for teams that want prospecting and outreach in one platform. The data quality is inconsistent on European contacts, and the LinkedIn automation is basic compared to dedicated tools.</p>
 <p><strong>Best for:</strong> SMBs that want an all-in-one database + outreach tool. Free tier available, paid from $49/month.</p>
-<div class="tool-heading"><img alt="Amplemarket" src="/assets/images/logos/amplemarket.svg"/><h3>Amplemarket</h3></div>
+<div class="tool-heading"><img alt="Amplemarket" src="/assets/images/logos/amplemarket.svg"/><h3 id="amplemarket">Amplemarket</h3></div>
 <p>AI-native BDR platform with strong intent data integration. The AI scores and prioritizes leads, then builds sequences automatically. Expensive, but genuinely reduces manual work for mid-market teams.</p>
 <p><strong>Best for:</strong> Mid-market teams with $100K+ outbound budgets. Pricing on request.</p>
 <a class="spoke-link-enhanced" href="/blog/11-best-ai-bdr-tools">
@@ -1151,13 +1207,13 @@ Applied changes from design-system-overloop.md:
 </a>
 <h2 id="category-email">Category 2: AI Email Outreach Tools</h2>
 <p>If your primary channel is cold email, these tools focus on volume, deliverability, and AI-generated personalization. They do not try to be full BDR platforms. They do one thing and they do it well.</p>
-<div class="tool-heading"><img alt="Smartlead" src="/assets/images/logos/smartlead.ai.svg"/><h3>Smartlead</h3></div>
+<div class="tool-heading"><img alt="Smartlead" src="/assets/images/logos/smartlead.ai.svg"/><h3 id="smartlead">Smartlead</h3></div>
 <p>Built for agencies and teams sending high volumes. Unlimited mailbox rotation, AI warmup, and a unified inbox. The AI writing is decent for generating variants, but you will want to write your own templates and let the AI create spintax variations. Where Smartlead wins: it can manage 20+ sending accounts without breaking a sweat.</p>
 <p><strong>Best for:</strong> Agencies and teams sending 10,000+ emails/month. From $39/month.</p>
-<div class="tool-heading"><img alt="Instantly" src="/assets/images/logos/instantly.ai.svg"/><h3>Instantly</h3></div>
+<div class="tool-heading"><img alt="Instantly" src="/assets/images/logos/instantly.ai.svg"/><h3 id="instantly">Instantly</h3></div>
 <p>Similar to Smartlead but with a cleaner interface and a built-in lead database (Instantly B2B Lead Finder). The AI warm-up is solid and the campaign builder is intuitive. Less powerful on the automation side but easier to get started with.</p>
 <p><strong>Best for:</strong> Solo founders and small teams. From $30/month.</p>
-<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3>Overloop</h3></div>
+<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3 id="overloop-2">Overloop</h3></div>
 <p>While Overloop is multichannel, its email engine is strong on its own: AI personalization per prospect, built-in warmup, bounce detection, and sending rotation. The difference from pure email tools is that you can add LinkedIn steps and calls to the same sequence without switching platforms.</p>
 <p><strong>Best for:</strong> Teams that want email-first but plan to add LinkedIn later. From $69/user/month.</p>
 <a class="spoke-link-enhanced" href="/blog/9-best-ai-email-outreach-tools">
@@ -1174,13 +1230,13 @@ Applied changes from design-system-overloop.md:
 </a>
 <h2 id="category-linkedin">Category 3: AI LinkedIn Outreach Tools</h2>
 <p>LinkedIn is the highest-converting B2B outreach channel when done right. But it is also the easiest to get banned on. The tools in this category automate connection requests, messages, and engagement while trying to stay within LinkedIn's limits.</p>
-<div class="tool-heading"><img alt="Expandi" src="/assets/images/logos/expandi.io.svg"/><h3>Expandi</h3></div>
+<div class="tool-heading"><img alt="Expandi" src="/assets/images/logos/expandi.io.svg"/><h3 id="expandi">Expandi</h3></div>
 <p>Dedicated LinkedIn automation with smart sequences, A/B testing, and safety features like randomized delays. The tool is cloud-based and mimics human behavior patterns. Good for teams that live on LinkedIn and want deep campaign analytics. If LinkedIn is your primary outreach channel, Expandi is the most focused tool in this category.</p>
 <p><strong>Best for:</strong> LinkedIn-heavy teams. From $99/seat/month.</p>
-<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3>Overloop</h3></div>
+<div class="tool-heading"><img alt="Overloop" src="/assets/images/logos/overloop.com.png"/><h3 id="overloop-3">Overloop</h3></div>
 <p>LinkedIn automation built into multichannel sequences. Profile visits, connection requests, and messages happen as steps alongside email and phone. The AI writes LinkedIn messages using the same prospect research it uses for email, so the messaging stays consistent across channels. Uses a cloud-based approach to reduce account risk.</p>
 <p><strong>Best for:</strong> Teams already doing multichannel outbound. From $69/user/month.</p>
-<div class="tool-heading"><img alt="La Growth Machine" src="/assets/images/logos/lagrowthmachine.com.svg"/><h3>La Growth Machine</h3></div>
+<div class="tool-heading"><img alt="La Growth Machine" src="/assets/images/logos/lagrowthmachine.com.svg"/><h3 id="la-growth-machine">La Growth Machine</h3></div>
 <p>Multichannel tool with a visual sequence builder that includes LinkedIn, email, and Twitter. The LinkedIn automation includes profile visits, connection requests, messages, and InMail. Strong in the French market and increasingly used across Europe. The workflow builder is more visual than most competitors.</p>
 <p><strong>Best for:</strong> European teams wanting multichannel with strong LinkedIn features. From $60/month.</p>
 <a class="spoke-link-enhanced" href="/blog/8-best-ai-linkedin-outreach-tools">
@@ -1198,48 +1254,48 @@ Applied changes from design-system-overloop.md:
 <p>We also published a detailed <a href="/blog/la-growth-machine-review">La Growth Machine review</a> if you want a closer look at that platform specifically.</p>
 <h2 id="category-enrichment">Category 4: AI Data Enrichment Tools</h2>
 <p>Your outreach is only as good as your data. These tools find verified emails, phone numbers, company technographics, and buying signals. They feed your outreach tools with accurate, fresh contact information.</p>
-<div class="tool-heading"><img alt="Apollo.io" src="/assets/images/logos/apollo.io.png"/><h3>Apollo.io</h3></div>
+<div class="tool-heading"><img alt="Apollo.io" src="/assets/images/logos/apollo.io.png"/><h3 id="apolloio-2">Apollo.io</h3></div>
 <p>275M+ contact database with email verification, intent data, and company filters. The best value in the market for database access. Data accuracy is strong for US contacts (around 85% email validity) but drops for European and APAC contacts.</p>
 <p><strong>Best for:</strong> US-focused teams. Free tier with 50 credits/month, paid from $49/month.</p>
-<div class="tool-heading"><img alt="Clay" src="/assets/images/logos/clay.com.png"/><h3>Clay</h3></div>
+<div class="tool-heading"><img alt="Clay" src="/assets/images/logos/clay.com.png"/><h3 id="clay">Clay</h3></div>
 <p>Not a database itself, but a data orchestration platform that pulls from 75+ enrichment sources (Clearbit, Hunter, Dropcontact, and dozens more). Build waterfall enrichment workflows that check multiple sources in sequence until they find a valid email. Powerful but has a learning curve.</p>
 <p><strong>Best for:</strong> Data-obsessed teams willing to build custom workflows. From $149/month.</p>
-<div class="tool-heading"><img alt="Cognism" src="/assets/images/logos/cognism.svg"/><h3>Cognism</h3></div>
+<div class="tool-heading"><img alt="Cognism" src="/assets/images/logos/cognism.svg"/><h3 id="cognism">Cognism</h3></div>
 <p>European B2B data leader with GDPR-compliant phone numbers and emails. The diamond data verification process is genuinely better than most competitors for European contacts. Expensive, but if you sell into Europe, the data quality pays for itself.</p>
 <p><strong>Best for:</strong> Teams selling into Europe. Pricing on request (typically $15K+/year).</p>
-<div class="tool-heading"><img alt="ZoomInfo" src="/assets/images/logos/zoominfo.com.png"/><h3>ZoomInfo</h3></div>
+<div class="tool-heading"><img alt="ZoomInfo" src="/assets/images/logos/zoominfo.com.png"/><h3 id="zoominfo">ZoomInfo</h3></div>
 <p>The enterprise standard for B2B data. Massive database of contacts and companies with intent data, org charts, and technographics. The data quality is strong, especially for mid-market and enterprise accounts in North America. The downside: pricing starts in the five figures annually and the contract terms are notoriously rigid. You are locked in once you sign.</p>
 <p><strong>Best for:</strong> Enterprise teams with budget for premium data. Pricing starts around $15K/year.</p>
-<div class="tool-heading"><img alt="Seamless.ai" src="/assets/images/logos/seamless.ai.png"/><h3>Seamless.ai</h3></div>
+<div class="tool-heading"><img alt="Seamless.ai" src="/assets/images/logos/seamless.ai.png"/><h3 id="seamlessai">Seamless.ai</h3></div>
 <p>Real-time contact discovery tool that finds verified emails and direct dials as you browse LinkedIn or build lists. The AI search engine approach means you are not limited to a static database. Good for teams that prospect actively rather than buying bulk lists. Data accuracy varies, and the free tier is limited enough that you will need to upgrade quickly.</p>
 <p><strong>Best for:</strong> Sales reps who prospect individually. Free tier available, paid from $147/month.</p>
 <p>Looking for alternatives to Apollo specifically? We have a detailed breakdown of <a href="/blog/apollo-alternatives">the best Apollo alternatives</a> with head-to-head comparisons on data accuracy, pricing, and European coverage.</p>
 <p>Need to find prospect email addresses? Read our <a href="/blog/how-to-find-someone-email-address-efficiently">guide to finding email addresses (17 methods)</a>.</p>
 <div class="cta-box">
-<h3>Calculate Your Outbound ROI</h3>
+<h3 id="calculate-your-outbound-roi">Calculate Your Outbound ROI</h3>
 <p>How much pipeline should your outbound generate? Use our ROI calculator to model scenarios based on your team size, deal value, and conversion rates.</p>
 <a class="cta-button" href="/tools/roi-calculator">Calculate your outbound ROI</a>
 </div>
 <h2 id="category-intelligence">Category 5: Conversation Intelligence Tools</h2>
 <p>Once prospects are in your pipeline, conversation intelligence tools record and analyze your sales calls. They surface what works, what does not, and where deals are at risk. These tools sit downstream of outreach but they directly improve close rates by giving reps and managers data they would otherwise miss.</p>
-<div class="tool-heading"><img alt="Gong" src="/assets/images/logos/gong.svg"/><h3>Gong</h3></div>
+<div class="tool-heading"><img alt="Gong" src="/assets/images/logos/gong.svg"/><h3 id="gong">Gong</h3></div>
 <p>The market leader in conversation intelligence. Gong records sales calls, transcribes them, and uses AI to analyze talk-to-listen ratios, objection patterns, competitor mentions, and next-step clarity. The deal intelligence layer flags at-risk deals based on conversation patterns, not just CRM field updates. Where Gong really shines is the coaching side: managers can review calls at 2x speed with AI highlights instead of sitting through full recordings.</p>
 <p><strong>Best for:</strong> Teams with 10+ reps doing discovery and demo calls. Pricing on request (typically $100-150/user/month, annual contract).</p>
-<h3>Fireflies.ai</h3>
+<h3 id="firefliesai">Fireflies.ai</h3>
 <p>A lighter alternative to Gong. Fireflies joins your meetings automatically, transcribes them, and generates summaries with action items. The AI search lets you query across all your calls ("show me every time a prospect mentioned budget concerns"). Less deep on deal analytics than Gong, but much cheaper and faster to deploy. Works with Zoom, Google Meet, and Teams.</p>
 <p><strong>Best for:</strong> Small teams that want call transcription without enterprise pricing. Free tier available, paid from $18/user/month.</p>
-<h3>Sybill</h3>
+<h3 id="sybill">Sybill</h3>
 <p>AI sales assistant that goes beyond transcription. Sybill auto-fills your CRM after every call, drafts follow-up emails based on conversation context, and generates pre-meeting briefs by pulling prospect data. The deal health scoring uses behavioral signals from calls (not just self-reported CRM data) to predict which deals will close. Newer player but growing fast among teams that hate CRM data entry.</p>
 <p><strong>Best for:</strong> Teams that want AI to handle post-call admin work. From $59/user/month.</p>
 <h2 id="category-coaching">Category 6: AI Email Coaching Tools</h2>
 <p>These tools sit in your inbox and give real-time feedback on email quality before you send. They analyze tone, length, personalization, and readability. Think of them as Grammarly for sales emails, but trained on millions of outreach emails instead of general writing.</p>
-<div class="tool-heading"><img alt="Lavender" src="/assets/images/logos/lavender.svg"/><h3>Lavender</h3></div>
+<div class="tool-heading"><img alt="Lavender" src="/assets/images/logos/lavender.svg"/><h3 id="lavender">Lavender</h3></div>
 <p>The standout tool in this category. Lavender scores your email in real time and tells you exactly what to fix: too long, too many "I" statements, weak subject line, missing personalization. It pulls prospect data from LinkedIn and the web to suggest personalization angles. The coaching data is what sets it apart: Lavender has analyzed billions of sales emails and gives recommendations based on what actually gets replies, not what sounds good in theory.</p>
 <p><strong>Best for:</strong> Individual reps and teams focused on reply rates. Free for 5 emails/month, paid from $29/month.</p>
-<h3>Copy.ai</h3>
+<h3 id="copyai">Copy.ai</h3>
 <p>AI writing platform with sales-specific workflows. Goes beyond email coaching into full sequence generation, prospect research summaries, and personalized icebreakers. The workflow builder lets you chain multiple AI steps together (research a prospect, write a personalized email, generate follow-up variants). Less focused than Lavender on real-time coaching, but broader in scope.</p>
 <p><strong>Best for:</strong> Teams that want AI to draft outreach from scratch. Free tier available, paid from $49/month.</p>
-<h2>Full Comparison Table: AI Sales Tools in 2026</h2>
+<h2 id="full-comparison-table-ai-sales-tools-in-2026">Full Comparison Table: AI Sales Tools in 2026</h2>
 <p>Here is every tool mentioned in this guide, compared side by side. Use this to shortlist before reading the detailed category comparisons linked above.</p>
 <div class="table-wrap">
 <table class="table-keep">
@@ -1430,23 +1486,23 @@ Applied changes from design-system-overloop.md:
 </table>
 </div>
 <p>For a closer look at LinkedIn Helper specifically, read our <a href="/blog/linkedin-helper-review">LinkedIn Helper review</a> with pros, cons, and safety considerations.</p>
-<h2>How to Choose: A Decision Framework</h2>
+<h2 id="how-to-choose-a-decision-framework">How to Choose: A Decision Framework</h2>
 <p>Forget about feature lists for a minute. The right tool depends on three things: your team size, your budget, and which channels your buyers actually respond to. Here is how to think through it.</p>
-<h3>By Team Size</h3>
+<h3 id="by-team-size">By Team Size</h3>
 <p><strong>Solo founder or 1-2 reps:</strong> Start with a tool that combines database and outreach. Apollo.io gives you contacts and basic sequences in one place. Add Instantly or Smartlead if you need higher email volume. Total cost: $50-100/month.</p>
 <p><strong>Small team (3-10 reps):</strong> This is where multichannel pays off. Your reps are too expensive to waste on manual LinkedIn messaging. Overloop or La Growth Machine let you run email + LinkedIn sequences from one platform. Pair with Apollo or Clay for data. Total cost: $200-600/month.</p>
 <p><strong>Scaling team (10-50 reps):</strong> You need a platform that scales without per-seat pricing eating your budget. Look at Overloop for outbound sequences, Cognism or Apollo for data, and make sure your CRM integration is solid. Total cost: $2K-8K/month.</p>
 <p><strong>Enterprise (50+ reps):</strong> Salesloft or Outreach become more viable at this scale because their per-seat cost is offset by the workflow standardization and analytics. Add Cognism or ZoomInfo for data, Gong for call intelligence, and Lavender for email coaching across the team. Total cost: $10K+/month.</p>
-<h3>By Primary Channel</h3>
+<h3 id="by-primary-channel">By Primary Channel</h3>
 <p><strong>Email-first:</strong> Smartlead or Instantly for volume. Overloop if you plan to add LinkedIn later. The most common mistake is choosing a cheap email tool, then needing to migrate everything when you add channels.</p>
 <p><strong>LinkedIn-first:</strong> Overloop or Expandi. Avoid browser extensions that put your LinkedIn account at risk. Cloud-based tools are safer.</p>
 <p><strong>Multichannel from day one:</strong> Overloop or La Growth Machine. Both handle email + LinkedIn natively. Overloop adds phone steps; La Growth Machine adds Twitter.</p>
-<h3>By Budget</h3>
+<h3 id="by-budget">By Budget</h3>
 <p><strong>Under $100/month:</strong> Apollo.io (free tier + paid upgrade) or Instantly ($30) plus LinkedIn Helper ($15). Scrappy but functional.</p>
 <p><strong>$100-500/month:</strong> Overloop ($69/user) or La Growth Machine ($60) plus Apollo for data. This is the sweet spot for most B2B teams.</p>
 <p><strong>$500-2,000/month:</strong> Overloop for sequences, Clay for enrichment, Cognism for European data, Fireflies.ai for call transcription. Professional-grade stack.</p>
 <p><strong>$2,000+/month:</strong> Enterprise tools (Salesloft/Outreach) with premium data (ZoomInfo or Cognism), Gong for conversation intelligence, and Lavender for email coaching. Only justified if you have 10+ reps and complex workflows.</p>
-<h2>What to Watch Out For</h2>
+<h2 id="what-to-watch-out-for">What to Watch Out For</h2>
 <p>After years of buying and evaluating these tools, here are the patterns that waste money:</p>
 <ul>
 <li><strong>The "AI" that is just templates:</strong> Some tools call mail merge "AI personalization." Real AI reads prospect data and generates unique copy. Swapping {first_name} and {company} is not AI.</li>
@@ -1455,24 +1511,24 @@ Applied changes from design-system-overloop.md:
 <li><strong>LinkedIn tools that use browser extensions:</strong> These get flagged by LinkedIn. Cloud-based automation is safer for long-term use.</li>
 <li><strong>Tools that only demo well:</strong> The sales demo always looks smooth. Ask for a sandbox with your real data, or at minimum, a 14-day trial with no credit card required.</li>
 </ul>
-<h2>Frequently Asked Questions</h2>
-<h3>What is the best AI sales tool in 2026?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-best-ai-sales-tool-in-2026">What is the best AI sales tool in 2026?</h3>
 <p>It depends on your use case. For multichannel outbound (email + LinkedIn + calls), Overloop is the top pick. For pure email volume, Smartlead or Instantly work well. For data enrichment, Apollo or Clay lead the pack. There is no single best tool for every team.</p>
-<h3>How much do AI sales tools cost?</h3>
+<h3 id="how-much-do-ai-sales-tools-cost">How much do AI sales tools cost?</h3>
 <p>Most range from $30 to $150 per user per month. Some charge by volume (emails sent, contacts enriched) rather than per seat. Enterprise tools like Salesloft or Outreach can exceed $100/user/month with annual contracts. Budget $50-200/month for a functional outbound stack as a small team.</p>
-<h3>Can AI replace SDRs and BDRs?</h3>
+<h3 id="can-ai-replace-sdrs-and-bdrs">Can AI replace SDRs and BDRs?</h3>
 <p>Not entirely. AI BDR tools can automate prospecting, initial outreach, and follow-ups, but human judgment is still needed for complex deals, relationship building, and strategic accounts. The best approach is using AI to handle volume while your team focuses on high-value conversations. Most teams we talk to reduce BDR headcount by 30-50% while increasing total pipeline.</p>
-<h3>What features should I look for in an AI sales tool?</h3>
+<h3 id="what-features-should-i-look-for-in-an-ai-sales-tool">What features should I look for in an AI sales tool?</h3>
 <p>Prioritize: multichannel sequences (email + LinkedIn + phone), AI personalization that actually uses prospect data, native CRM integration, deliverability infrastructure, and transparent pricing. Avoid tools that lock critical features behind enterprise tiers.</p>
-<h3>Are AI sales tools GDPR compliant?</h3>
+<h3 id="are-ai-sales-tools-gdpr-compliant">Are AI sales tools GDPR compliant?</h3>
 <p>It depends on the tool and how you use it. Tools like Cognism are built for GDPR compliance with opt-out databases and consent tracking. For email outreach, legitimate interest under GDPR can apply to B2B prospecting, but you need proper opt-out mechanisms. Overloop includes unsubscribe handling and compliance features out of the box.</p>
-<h3>How long does it take to see results from AI sales tools?</h3>
+<h3 id="how-long-does-it-take-to-see-results-from-ai-sales-tools">How long does it take to see results from AI sales tools?</h3>
 <p>Email warmup takes 2-3 weeks. Building initial sequences takes a few days. Most teams see meaningful pipeline impact within 4-6 weeks of launching campaigns. The biggest factor is data quality: garbage contacts in, garbage results out. Invest time in list building before you start sending.</p>
-<h3>What is the difference between AI BDR tools and sales engagement platforms?</h3>
+<h3 id="what-is-the-difference-between-ai-bdr-tools-and-sales-engagement-platforms">What is the difference between AI BDR tools and sales engagement platforms?</h3>
 <p>AI BDR tools (like Overloop, Apollo, Amplemarket) are built for outbound prospecting. They find leads, write personalized outreach, and run automated sequences. Sales engagement platforms (like Salesloft and Outreach) are broader: they manage the full sales workflow including inbound follow-up, deal progression, and team analytics. If your primary goal is generating new pipeline through cold outreach, start with an AI BDR tool. If you need to manage an existing pipeline with multiple stages and team-wide reporting, a sales engagement platform makes more sense.</p>
-<h3>Do I need separate tools for email and LinkedIn outreach?</h3>
+<h3 id="do-i-need-separate-tools-for-email-and-linkedin-outreach">Do I need separate tools for email and LinkedIn outreach?</h3>
 <p>Not necessarily. Multichannel tools like Overloop and La Growth Machine handle both email and LinkedIn in a single sequence. The advantage of a combined tool is consistency: the same prospect gets a coordinated sequence across channels rather than receiving disconnected messages. Separate tools make sense only if you need best-in-class depth in one channel (e.g., Smartlead for very high email volume or Expandi for advanced LinkedIn campaign analytics).</p>
-<h3>Which AI sales tools work best with HubSpot or Salesforce?</h3>
+<h3 id="which-ai-sales-tools-work-best-with-hubspot-or-salesforce">Which AI sales tools work best with HubSpot or Salesforce?</h3>
 <p>For HubSpot: Overloop, Apollo, and Salesloft all offer native two-way sync. For Salesforce: Outreach and Salesloft have the deepest integrations, followed by Apollo and Overloop. The key question is whether the integration pushes data both ways (activities logged in CRM, CRM data available in the outreach tool) or just one way. One-way sync creates data silos that cause problems at scale.</p>
 
 </main>

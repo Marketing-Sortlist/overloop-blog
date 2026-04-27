@@ -211,6 +211,66 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
     .footer-bottom{border-top:1px solid #374151;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;gap:20px}
     @media (max-width:991px){:root{--page-px:24px}.verdict-box__head{grid-template-columns:1fr}.verdict-box__pros-cons,.alt-section__compare,.pricing{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr 1fr}.scoring-row__bar{width:120px}}
     @media (max-width:639px){.article-hero{padding:40px var(--page-px-mobile) 28px}.article-hero h1{font-size:28px}.nav-links{display:none}.newsletter form{flex-direction:column}.related-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.scoring-row{grid-template-columns:1fr auto}.scoring-row__bar{grid-column:1;width:100%}}
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -246,49 +306,6 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
         </div>
       </div>
     </header>
-
-    <!-- VERDICT BOX -->
-    <div class="verdict-box">
-      <div class="verdict-box__inner">
-        <div class="verdict-box__head">
-          <div class="verdict-box__logo">SL</div>
-          <div class="verdict-box__title">
-            <h2>Salesloft</h2>
-            <span>Sales Engagement Platform · G2 4.5/5</span>
-          </div>
-          <div class="verdict-box__score">
-            <div class="verdict-box__score-num">8.2</div>
-            <div class="verdict-box__score-label">Overall score</div>
-          </div>
-        </div>
-        <p class="verdict-box__tagline"><strong>Verdict:</strong> <em>Enterprise-grade</em> sales engagement that delivers when you have the scale (50+ reps) and budget ($125+/seat) to match. Overkill for SMB.</p>
-        <div class="verdict-box__pros-cons">
-          <div class="verdict-box__col verdict-box__col--pros">
-            <h4>Strengths</h4>
-            <ul>
-              <li>Best-in-class Salesforce sync depth</li>
-              <li>Conductor AI genuinely reduces admin work</li>
-              <li>Top-tier deal intelligence + coaching</li>
-              <li>Enterprise-ready security + SOC 2</li>
-            </ul>
-          </div>
-          <div class="verdict-box__col verdict-box__col--cons">
-            <h4>Weaknesses</h4>
-            <ul>
-              <li>12-month contracts required</li>
-              <li>$125+/seat — 2-3× competitors</li>
-              <li>Basic LinkedIn automation</li>
-              <li>Steep learning curve for new SDRs</li>
-            </ul>
-          </div>
-        </div>
-        <div class="verdict-box__meta">
-          <span><i data-lucide="calendar"></i> Tested Jan-Mar 2026</span>
-          <span><i data-lucide="users"></i> 12-rep team trial</span>
-          <span><i data-lucide="layers"></i> 8 criteria evaluated</span>
-        </div>
-      </div>
-    </div>
 
     <main class="main-wrap">
 
@@ -378,7 +395,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 </div>
 <p>La Growth Machine (LGM) is a French-built multichannel outreach platform that has been gaining serious traction, especially in Europe. Founded in Paris, the team has built a product that combines LinkedIn, email, and Twitter/X outreach in one visual workflow builder. They have carved out a strong niche with features like automated voice messages and a slick drag-and-drop sequence editor.</p>
 <p>We used it to run a real outbound campaign targeting 500 prospects over 30 days. Here is what we found.</p>
-<h2>What La Growth Machine Does</h2>
+<h2 id="what-la-growth-machine-does">What La Growth Machine Does</h2>
 <p>LGM is a cloud-based multichannel outreach tool. You connect your LinkedIn account, email inbox, and optionally your Twitter/X profile. Then you build visual sequences that combine actions across all three channels.</p>
 <p>The core features include:</p>
 <ul>
@@ -392,7 +409,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <li><strong>Lead import</strong> from LinkedIn, Sales Navigator, or CSV</li>
 </ul>
 <p>The platform is fully cloud-based. No desktop app, no Chrome extension. Campaigns run 24/7 regardless of whether your computer is on.</p>
-<h2>La Growth Machine Pricing (2026)</h2>
+<h2 id="la-growth-machine-pricing-2026">La Growth Machine Pricing (2026)</h2>
 <p>LGM prices in euros and uses per-identity billing. An "identity" is one LinkedIn profile that runs campaigns. If your SDR team has 5 people, you need 5 identities. Here is the full breakdown as of April 2026:</p>
 <table>
 <thead>
@@ -451,7 +468,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <p>Annual billing gives you two months free across all plans. There is also an Agency plan with custom pricing starting at 6 identities, which includes dedicated support and onboarding.</p>
 <p>The cost math matters. Put 3 SDRs on the Pro plan and you are paying €360/month, or €4,320/year, before you exceed the 400 enriched leads/month cap. Twitter/X outreach is locked behind the Ultimate tier, not Pro. That surprised us.</p>
 <p>A free 14-day trial is available on all plans. No credit card required.</p>
-<h2>The Visual Workflow Builder</h2>
+<h2 id="the-visual-workflow-builder">The Visual Workflow Builder</h2>
 <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
 <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
 <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
@@ -533,7 +550,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <p>A typical sequence might look like: Visit LinkedIn profile &gt; Wait 1 day &gt; Send connection request &gt; If accepted within 3 days, send LinkedIn message &gt; If no reply after 2 days, send email &gt; If still no reply, send Twitter DM.</p>
 <p>The visual representation makes complex sequences easy to understand and debug. You can see exactly where prospects are in the flow, which branches they took, and where they dropped off. This is genuinely better than most text-based sequence builders we have seen (including older versions of our own tool).</p>
 <p>Two complaints. First, the builder can feel sluggish with complex sequences (10+ steps with multiple branches). Second, several users on G2 and Capterra report occasional bugs in the campaign execution: broken contact handling, messages not sending on schedule, or sync errors between channels. Minor when things work, but frustrating during a live campaign.</p>
-<h2>Voice Messages: LGM's Killer Feature</h2>
+<h2 id="voice-messages-lgms-killer-feature">Voice Messages: LGM's Killer Feature</h2>
 <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
 <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
 <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
@@ -625,7 +642,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <p>We tested this extensively. The AI voice cloning requires you to record a sample of your voice, and then it generates personalized audio messages using your voice clone. The results are surprisingly good. Not perfect (occasionally you can tell it is AI), but good enough that most recipients will not notice.</p>
 <p>Voice messages consistently outperformed text messages in our test. Reply rates on voice messages were roughly 2x higher than standard LinkedIn messages. That is a significant advantage.</p>
 <p>No other major outbound tool offers this feature at this level of polish. Credit where it is due: LGM nailed this.</p>
-<h2>Lead Enrichment</h2>
+<h2 id="lead-enrichment">Lead Enrichment</h2>
 <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
 <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
 <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
@@ -710,26 +727,26 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <p>LGM integrates with Dropcontact for email enrichment. When you import leads from LinkedIn, LGM automatically finds their professional email addresses. The enrichment runs in the background and typically returns results within a few hours.</p>
 <p>The enrichment quality is decent but not exceptional. In our test of 500 leads, Dropcontact found valid emails for about 65% of them. That is solid but not class-leading. Tools with built-in databases (like Apollo or, yes, Overloop) tend to achieve 75-85% match rates because they are not relying solely on email pattern guessing.</p>
 <p>One thing LGM does not have: a native lead database. You cannot search for prospects inside LGM. You need to find them on LinkedIn first, then import them. For teams that need prospecting and outreach in one tool, this is a gap.</p>
-<h2>Magic Messages: LGM's AI Writing</h2>
+<h2 id="magic-messages-lgms-ai-writing">Magic Messages: LGM's AI Writing</h2>
 <p>LGM calls its AI copywriting feature "Magic Messages." It does not write campaigns from scratch. Instead, you write your initial message templates manually, and Magic Messages optimizes them: suggesting rewrites, adjusting tone, and personalizing variables per prospect based on their LinkedIn profile data.</p>
 <p>The optimization is decent for tweaking existing copy. But if you are starting from zero and want AI to generate an entire campaign based on a target description and value proposition, Magic Messages will not do that. You still need to bring the creative strategy yourself.</p>
-<h2>Phone Calls: The Pro-Tier Channel</h2>
+<h2 id="phone-calls-the-pro-tier-channel">Phone Calls: The Pro-Tier Channel</h2>
 <p>Starting with the Pro plan, LGM adds phone calls as an outreach channel. You can integrate calling steps into your sequences, with click-to-call functionality and call logging. This is useful for teams that mix cold calling with LinkedIn and email outreach.</p>
 <p>The calling feature is functional but basic compared to dedicated dialers like Aircall or Ringover. It works best as a follow-up step after LinkedIn or email engagement, not as a primary cold calling tool.</p>
-<h2>LinkedIn Safety and Compliance</h2>
+<h2 id="linkedin-safety-and-compliance">LinkedIn Safety and Compliance</h2>
 <p>LGM includes built-in safety features to reduce the risk of LinkedIn account restrictions. The platform mimics human behavior patterns: randomized delays between actions, daily activity limits, and gradual warm-up periods for new accounts.</p>
 <p>In our 30-day test, we did not receive any LinkedIn warnings or restrictions. That said, any tool that automates LinkedIn actions carries inherent risk. LGM manages this better than most, but it is not zero-risk.</p>
-<h2>The Twitter/X Channel</h2>
+<h2 id="the-twitterx-channel">The Twitter/X Channel</h2>
 <p>LGM is one of the few outbound tools that includes Twitter/X as a native channel. Important caveat: Twitter/X is only available on the Ultimate plan (€120/mo per identity). It is not included on Basic or Pro. You can follow prospects, like their tweets, and send DMs as part of your sequences.</p>
 <p>In practice, the Twitter channel is useful for specific audiences (tech, VC, media, marketing) but irrelevant for most B2B verticals. Most mid-market decision-makers do not check their Twitter DMs regularly. We saw very low engagement on the Twitter steps in our sequences.</p>
 <p>That said, having it as an option is strictly better than not having it. For certain campaigns targeting active Twitter users, it is a genuine advantage.</p>
-<h2>CRM Integration</h2>
+<h2 id="crm-integration">CRM Integration</h2>
 <p>LGM offers native integrations with HubSpot and Pipedrive. The sync is bidirectional: leads and activities flow from LGM to your CRM, and CRM status updates can trigger actions in LGM.</p>
 <p>The HubSpot integration worked well in our testing. Contact creation, deal updates, and activity logging all synced without issues. The Pipedrive integration was similarly solid.</p>
 <p>If you use Salesforce, you will need to go through Zapier or their API. That is a meaningful gap for enterprise teams.</p>
-<h2>What Users Say: G2 and Capterra Ratings</h2>
+<h2 id="what-users-say-g2-and-capterra-ratings">What Users Say: G2 and Capterra Ratings</h2>
 <p>La Growth Machine holds a 4.7/5 rating on G2 (based on 100+ reviews) and a 4.6/5 on Capterra. Users consistently praise the multichannel approach and the visual builder. The most common complaints across review sites are per-identity pricing, occasional bugs in campaign execution, and advanced features being gated behind higher tiers.</p>
-<h2>Honest Pros</h2>
+<h2 id="honest-pros">Honest Pros</h2>
 <ul>
 <li><strong>Best-in-class workflow builder.</strong> The visual sequence editor is genuinely excellent. Easy to build, easy to understand, easy to debug.</li>
 <li><strong>Voice messages.</strong> A unique feature that delivers measurably better reply rates. Nobody else does this as well.</li>
@@ -739,7 +756,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <li><strong>Solid CRM integrations.</strong> HubSpot and Pipedrive sync works out of the box.</li>
 <li><strong>Active product development.</strong> The LGM team ships frequently. New features appear regularly.</li>
 </ul>
-<h2>Honest Cons</h2>
+<h2 id="honest-cons">Honest Cons</h2>
 <ul>
 <li><strong>No native lead database.</strong> You need to find prospects elsewhere (LinkedIn, CSV) before importing them. This adds friction to the workflow.</li>
 <li><strong>No AI writing from scratch.</strong> LGM offers "Magic Messages" for optimization, but you still need to write your initial templates manually. There is no "describe your target and let AI write the campaign" feature.</li>
@@ -752,7 +769,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <li><strong>Feature gating.</strong> CRM sync requires Ultimate. Twitter/X requires Ultimate. Rotating inbox requires Pro. The Basic plan is quite limited for the €60/mo price tag.</li>
 <li><strong>Enrichment caps.</strong> Basic gets 250 leads/month, Pro gets 400. If you burn through enrichment credits mid-campaign, you need to buy add-on credits or wait for the next billing cycle.</li>
 </ul>
-<h2>Who Should Use La Growth Machine?</h2>
+<h2 id="who-should-use-la-growth-machine">Who Should Use La Growth Machine?</h2>
 <p>LGM is a strong choice if you are:</p>
 <ul>
 <li>A European team that values GDPR compliance and EUR pricing</li>
@@ -762,7 +779,7 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <li>Excited about voice messages as a differentiation strategy</li>
 </ul>
 <p>It is not the best fit if you need a built-in lead database, AI-powered campaign creation from scratch, Salesforce integration out of the box, or if your team has 5+ SDRs (the per-identity pricing becomes very expensive at scale).</p>
-<h2>La Growth Machine vs. Overloop: Direct Comparison</h2>
+<h2 id="la-growth-machine-vs-overloop-direct-comparison">La Growth Machine vs. Overloop: Direct Comparison</h2>
 <div style="border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin: 1.5rem 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.4;">
 <div style="background: #e5e7eb; padding: 8px 14px; display: flex; align-items: center; gap: 6px;">
 <span style="width: 12px; height: 12px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
@@ -923,24 +940,24 @@ Features: verdict box top (score + one-liner + pros/cons), scoring table by crit
 <p>Where LGM wins: the visual workflow builder is best-in-class, full stop. Voice messages are a genuine competitive advantage nobody else matches. The Twitter/X channel adds a third touchpoint for audiences that are active there. And for European teams, the GDPR-native approach and EUR billing remove friction.</p>
 <p>Where Overloop wins: AI-native campaign creation means you can go from target description to live campaign in minutes, not hours of template writing. Our built-in 200M+ contact database eliminates the "find leads somewhere else first" friction. Built-in email warmup means one less tool in your stack. Salesforce integration ships natively. And per-user pricing (not per-identity) is significantly cheaper at scale: a team of 5 on Overloop costs less than 2 identities on LGM Pro.</p>
 <p>The core philosophical difference: LGM is template-based. You write the messages, build the sequences manually, and the tool executes them. Overloop is AI-native. You describe your target and value proposition, and the AI generates personalized outreach at scale. If you like hands-on control over every word and visual flow design, LGM is for you. If you want AI to handle the heavy lifting while you focus on closing, Overloop is the better fit.</p>
-<h2>The Bottom Line</h2>
+<h2 id="the-bottom-line">The Bottom Line</h2>
 <p>La Growth Machine is a well-built multichannel outreach tool with genuine strengths. The workflow builder is excellent, voice messages are a real innovation, and the European DNA means strong GDPR compliance and responsive support in the EU timezone.</p>
 <p>The main limitations are the lack of a native lead database (you need to bring your own leads), no AI writing from scratch (Magic Messages only optimizes existing copy), pricing that scales aggressively with team size, and key features like Twitter/X and CRM sync locked behind the Ultimate tier.</p>
 <p>If you are a European team that values visual workflow design and voice messages, LGM deserves serious consideration. If you want AI-powered outreach with a built-in lead database and simpler pricing, <a href="https://app.overloop.ai/session/signup">try Overloop</a>. Free 14-day trial, no credit card.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>What is La Growth Machine?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-la-growth-machine">What is La Growth Machine?</h3>
 <p>La Growth Machine (LGM) is a French-built multichannel sales outreach platform that automates prospecting across LinkedIn, email, and Twitter/X. It uses a visual drag-and-drop workflow builder to let you create sequences that combine actions across all three channels, with features like AI voice messages and lead enrichment via Dropcontact.</p>
-<h3>How much does La Growth Machine cost?</h3>
+<h3 id="how-much-does-la-growth-machine-cost">How much does La Growth Machine cost?</h3>
 <p>La Growth Machine pricing starts at €60/month per identity on the Basic plan (LinkedIn + email only). The Pro plan is €120/month per identity and adds phone calls and rotating inbox. The Ultimate plan is also €120/month per identity and adds Twitter/X, unlimited campaigns, and full CRM sync. Annual billing saves roughly two months. All plans offer a free 14-day trial with no credit card required.</p>
-<h3>Is La Growth Machine good for large teams?</h3>
+<h3 id="is-la-growth-machine-good-for-large-teams">Is La Growth Machine good for large teams?</h3>
 <p>LGM works well for small teams (1-3 SDRs) but gets expensive fast at scale. The per-identity pricing model means each SDR needs their own identity. A team of 5 on the Pro plan costs €600/month. For larger teams, tools with per-user or flat-rate pricing (like Overloop or HeyReach) tend to be more cost-effective.</p>
-<h3>Does La Growth Machine include Twitter/X outreach?</h3>
+<h3 id="does-la-growth-machine-include-twitterx-outreach">Does La Growth Machine include Twitter/X outreach?</h3>
 <p>Yes, but only on the Ultimate plan (€120/month per identity). The Basic and Pro plans do not include Twitter/X as a channel. If Twitter/X outreach is critical to your strategy, you need the highest tier.</p>
-<h3>What are the main alternatives to La Growth Machine?</h3>
+<h3 id="what-are-the-main-alternatives-to-la-growth-machine">What are the main alternatives to La Growth Machine?</h3>
 <p>The main La Growth Machine alternatives are Overloop (AI-native outreach with a built-in lead database), Lemlist (creative cold email), Waalaxy (LinkedIn-first with simpler pricing), Apollo.io (275M+ contact database with built-in sequences), and HeyReach (agency-focused with flat-rate pricing). The best choice depends on whether you prioritize AI writing, lead data, visual workflows, or cost per seat.</p>
-<h3>Is La Growth Machine safe for LinkedIn?</h3>
+<h3 id="is-la-growth-machine-safe-for-linkedin">Is La Growth Machine safe for LinkedIn?</h3>
 <p>LGM includes built-in LinkedIn safety features: randomized delays between actions, daily activity caps, and gradual warm-up for new accounts. In our 30-day test, we received no LinkedIn warnings. However, any tool that automates LinkedIn actions carries some inherent risk of account restrictions. LGM manages this well, but it is not zero-risk.</p>
-<h3>Does La Growth Machine have a lead database?</h3>
+<h3 id="does-la-growth-machine-have-a-lead-database">Does La Growth Machine have a lead database?</h3>
 <p>No. La Growth Machine does not include a native lead database. You need to find prospects on LinkedIn, Sales Navigator, or via CSV import, then bring them into LGM for outreach. For teams that need prospecting and outreach in one tool, this is a gap. Alternatives like Overloop (200M+ contacts) and Apollo.io (275M+ contacts) include built-in databases.</p>
 
 </main>

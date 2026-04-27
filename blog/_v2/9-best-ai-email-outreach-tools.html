@@ -951,6 +951,66 @@ Applied changes from design-system-overloop.md:
       .related-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -1011,30 +1071,33 @@ Applied changes from design-system-overloop.md:
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#how-tested" class="active">How we tested</a></li>
-          <li><a href="#categories">The six categories</a></li>
-          <li><a href="#category-bdr">1 · AI BDR Tools</a></li>
-          <li><a href="#category-email">2 · AI Email Outreach</a></li>
-          <li><a href="#category-linkedin">3 · AI LinkedIn Outreach</a></li>
-          <li><a href="#category-enrichment">4 · Data Enrichment</a></li>
-          <li><a href="#category-intelligence">5 · Conversation Intelligence</a></li>
-          <li><a href="#category-coaching">6 · AI Email Coaching</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#comparison">Full comparison</a></li>
-            <li><a href="#how-to-choose">How to choose</a></li>
-            <li><a href="#pitfalls">What to watch for</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#methodology">What We Tested (And How)</a></li>
+    <li><a href="#quick-comparison">Quick Comparison: 12 AI Email Outreach Tools at…</a></li>
+    <li><a href="#overloop">1. OverloopG2: 4.4/5</a></li>
+    <li><a href="#instantly">2. InstantlyG2: 4.8/5</a></li>
+    <li><a href="#lemlist">3. LemlistG2: 4.6/5</a></li>
+    <li><a href="#saleshandy">4. SaleshandyG2: 4.6/5</a></li>
+    <li><a href="#reply">5. Reply.ioG2: 4.6/5</a></li>
+    <li><a href="#woodpecker">6. WoodpeckerG2: 4.3/5</a></li>
+    <li><a href="#mailshake">7. MailshakeG2: 4.7/5</a></li>
+    <li><a href="#klenty">8. KlentyG2: 4.6/5</a></li>
+    <li><a href="#smartlead">9. SmartleadG2: 4.8/5</a></li>
+    <li><a href="#apollo">10. Apollo.ioG2: 4.7/5</a></li>
+    <li><a href="#snovio">11. Snov.ioG2: 4.6/5</a></li>
+    <li><a href="#quickmail">12. QuickMailG2: 4.7/5</a></li>
+    <li><a href="#deliverability-benchmarks">2026 Cold Email Deliverability Benchmarks</a></li>
+    <li><a href="#how-to-pick">How to Pick the Right Tool for Your Team</a></li>
+    <li><a href="#feature-matrix">Final Comparison: Feature Matrix</a></li>
+    <li><a href="#bottom-line">Bottom Line</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <!-- Main -->
@@ -1042,7 +1105,7 @@ Applied changes from design-system-overloop.md:
 
 <p><strong>Disclosure: We are Overloop, a competing tool in this space. This is our honest assessment based on real testing. We ran campaigns through all 12 platforms over the past quarter so you do not have to burn your budget figuring out which one actually works.</strong></p>
 <div class="key-takeaways">
-<h3>Key Takeaways</h3>
+<h3 id="key-takeaways">Key Takeaways</h3>
 <ul>
 <li><strong>Best overall (multichannel + AI):</strong> Overloop. Prospect-level AI research, 450M+ lead database, email + LinkedIn + phone in one tool.</li>
 <li><strong>Best for email volume:</strong> Instantly. Unlimited accounts, 85%+ inbox placement in our tests, $47/mo starting price.</li>
@@ -1054,7 +1117,7 @@ Applied changes from design-system-overloop.md:
 </ul>
 </div>
 <nav class="toc">
-<h3>In this guide</h3>
+<h3 id="in-this-guide">In this guide</h3>
 <ol>
 <li><a href="#methodology">What We Tested (And How)</a></li>
 <li><a href="#quick-comparison">Quick Comparison Table</a></li>
@@ -1218,151 +1281,151 @@ Applied changes from design-system-overloop.md:
 <h2 id="overloop"><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop <span class="g2-badge">G2: 4.4/5</span></h2>
 <p>Full transparency: this is our tool. We built Overloop because we were tired of stitching together five different products to run outbound. Here is what it actually does well, and where it falls short.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Overloop sequence builder showing multichannel workflow (email + LinkedIn + phone steps) -->[Screenshot: Overloop sequence builder with multichannel workflow]</div>
-<h3>What Overloop does differently</h3>
+<h3 id="what-overloop-does-differently">What Overloop does differently</h3>
 <p>Overloop's AI doesn't just swap in a first name and company. It reads the prospect's website, LinkedIn profile, recent posts, and company news, then writes an email that references something specific. When we A/B tested AI-generated emails against our best manually written ones, the AI versions matched or beat manual emails on reply rate in 7 out of 10 tests.</p>
 <p>The multichannel piece is genuinely integrated. You build one sequence that starts with a LinkedIn profile view, follows up with a connection request, sends an email if they don't accept within 3 days, and drops a phone task if they open but don't reply. One workflow, not three tools duck-taped together.</p>
 <p>Lead sourcing pulls from a 450M+ contact database. You define your ICP, Overloop finds matching contacts, verifies emails, and feeds them directly into your campaign. No CSV exports, no third-party enrichment tools.</p>
-<h3>Where Overloop falls short</h3>
+<h3 id="where-overloop-falls-short">Where Overloop falls short</h3>
 <p>The credit system takes getting used to. Everything burns credits: lead sourcing, AI emails, enrichment. On the Starter plan, you can run through your monthly allotment in a week if you're not careful. If you're sending 50,000+ emails per month, Instantly or Smartlead will be cheaper on a per-email basis.</p>
 <p>The reporting dashboard is functional but not pretty. Instantly and Lemlist both have better campaign analytics UI.</p>
-<h3>Pricing</h3>
+<h3 id="pricing">Pricing</h3>
 <p>Starts at $49/month with 1,000 credits. Growth and Enterprise tiers scale from there. 30-day money-back guarantee. No surprise charges at renewal.</p>
-<h3>Verdict</h3>
+<h3 id="verdict">Verdict</h3>
 <p>Best for B2B teams that want AI writing, lead sourcing, and multichannel outreach in a single tool. Not the cheapest option for pure email volume.</p>
 <h2 id="instantly"><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Instantly <span class="g2-badge">G2: 4.8/5</span></h2>
 <p>Instantly made its name on one promise: unlimited email accounts and unlimited warm-up. That promise holds up. If your strategy is to blast volume across dozens of sending domains, Instantly is built for exactly that. We also compared it head-to-head with similar tools in our <a href="/blog/instantly-alternatives">Instantly alternatives</a> guide.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Instantly dashboard showing campaign analytics and warm-up status -->[Screenshot: Instantly campaign dashboard with warm-up metrics]</div>
-<h3>Strengths</h3>
+<h3 id="strengths">Strengths</h3>
 <p>The deliverability infrastructure is genuinely good. Their SISR system (Server and IP Sharding and Rotation) automatically manages IP pools, rotates flagged IPs, and keeps your sending reputation clean across accounts. We ran 25,000 emails through Instantly over two weeks. Inbox placement stayed above 85% the entire time.</p>
 <p>Setup is fast. Connect your email accounts, upload your list, write your sequence, and you're sending within an hour. The warm-up runs automatically in the background.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses">Weaknesses</h3>
 <p>AI writing is basic. It fills in merge fields and does light personalization, but nothing close to the prospect-level research you get from Overloop or Lemlist. You're still writing the templates yourself.</p>
 <p>No native LinkedIn or phone automation. Instantly is email-only at its core. The leads database (Instantly Credits) and CRM are separate paid modules. A team that needs leads + email + CRM is looking at $150-200/month minimum, not the $47 on the pricing page.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-2">Pricing</h3>
 <p>Growth plan: $47/mo for unlimited accounts and 5,000 emails. Hypergrowth: $97/mo. Light Speed: $358/mo. Leads database and CRM are additional subscriptions.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-2">Verdict</h3>
 <p>The best pure cold email sender on this list. If email volume is your game and you handle LinkedIn separately, Instantly delivers.</p>
 <h2 id="lemlist"><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Lemlist <span class="g2-badge">G2: 4.6/5</span></h2>
 <p>Lemlist pioneered image personalization in cold email and they have built a solid multichannel platform around it. The ability to drop a prospect's name onto a custom image inside the email body still gets attention. See our <a href="/blog/lemlist-alternatives">Lemlist alternatives</a> comparison for more context.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Lemlist image personalization editor showing dynamic prospect name on mockup -->[Screenshot: Lemlist image personalization editor]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-2">Strengths</h3>
 <p>Multichannel sequencing is strong. One campaign handles email, LinkedIn, and phone tasks with conditional branching based on prospect behavior. Lemwarm is included in all paid plans and keeps deliverability solid without extra cost.</p>
 <p>The image personalization remains a genuine differentiator. Custom screenshots, personalized landing page previews, and dynamic images boost reply rates by 15-25% in our testing compared to text-only emails.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-2">Weaknesses</h3>
 <p>Per-user pricing adds up fast. A five-person SDR team on the Multichannel Expert plan pays $495/month. Add enrichment credits and CRM integrations, and you're north of $7,000 per year. For a startup running lean, that's a real budget decision.</p>
 <p>The UI has a lot going on. New users face a learning curve that takes 1-2 weeks before they're comfortable building complex sequences.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-3">Pricing</h3>
 <p>Email Pro: $69/user/mo. Multichannel Expert: $99/user/mo. Enterprise: custom pricing. Free plan exists but only gives you the Chrome extension.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-3">Verdict</h3>
 <p>Best for creative outbound teams who will actually use image personalization. Not worth it if you're just sending plain text sequences.</p>
 <h2 id="saleshandy"><img alt="" height="28" src="/assets/images/logos/saleshandy.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Saleshandy <span class="g2-badge">G2: 4.6/5</span></h2>
 <p>Saleshandy's pitch is simple: unlimited email accounts on every plan, starting at $25/month. For agencies and high-volume senders who connect 20-50 sending accounts, the math works out well.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Saleshandy unified inbox with multiple sender accounts -->[Screenshot: Saleshandy unified inbox]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-3">Strengths</h3>
 <p>The Outreach Starter plan is the most affordable entry point on this list. You get unlimited email accounts, AI-powered sequences, a unified inbox, and basic deliverability tools. For solopreneurs and small agencies, this is genuinely hard to beat on price.</p>
 <p>Built-in email verification means you don't need a separate tool like ZeroBounce or NeverBounce. Connect your accounts, upload your list, verify, and send. Recent MCP support lets you connect Saleshandy to AI agents for automated campaign management.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-3">Weaknesses</h3>
 <p>Email only. No LinkedIn automation, no phone dialer, no multichannel sequences. If your prospects live on LinkedIn (and most B2B prospects do), you'll need a separate tool.</p>
 <p>AI writing is basic compared to Overloop, Lemlist, or Reply.io. It handles merge fields and simple spintax, but it's not researching each prospect and crafting unique angles.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-4">Pricing</h3>
 <p>Outreach Starter: $25/mo. Pro: $69/mo. Scale Plus: from $149/mo. All with unlimited email accounts. 7-day free trial, no credit card.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-4">Verdict</h3>
 <p>Best budget option for teams that only need email. If you want multichannel, look elsewhere.</p>
 <h2 id="reply"><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Reply.io <span class="g2-badge">G2: 4.6/5</span></h2>
 <p>Reply.io's Jason AI agent is the most ambitious attempt at fully autonomous outreach on this list. Rather than just writing emails, Jason handles prospect responses, classifies intent, and books meetings on your behalf.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Reply.io Jason AI conversation handling interface -->[Screenshot: Reply.io Jason AI reply classification]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-4">Strengths</h3>
 <p>The multichannel coverage is the broadest here: email, LinkedIn, phone, SMS, and WhatsApp, all from one sequence builder. If a prospect ignores your email, the sequence automatically pivots to LinkedIn. If they open but don't reply, a phone task drops into your queue.</p>
 <p>Jason AI is legitimately useful for handling the flood of "not interested" and "wrong person" replies that eat up SDR time. It can identify warm responses, route them correctly, and even suggest meeting times.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-4">Weaknesses</h3>
 <p>Pricing gets confusing. The base Multichannel plan is $89/month, but LinkedIn automation and calling are separate add-ons ($69 and $29 respectively). A rep who actually uses all channels pays $187/month. That's not on the pricing page.</p>
 <p>The platform feels heavy. There are a lot of features, a lot of settings, and a lot of ways to misconfigure things. Smaller teams can feel overwhelmed.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-5">Pricing</h3>
 <p>Email Volume: from $49/mo. Multichannel: from $89/mo (plus add-ons for LinkedIn and calling). Agency: from $166/mo.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-5">Verdict</h3>
 <p>Best for large SDR teams that want an AI agent handling reply classification and meeting booking. Overkill for small teams.</p>
 <h2 id="woodpecker"><img alt="" height="28" src="/assets/images/logos/woodpecker.co.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Woodpecker <span class="g2-badge">G2: 4.3/5</span></h2>
 <p>Woodpecker is the quiet, reliable option. No flashy AI features, no bold claims. It sends cold emails well and doesn't try to be everything.</p>
-<h3>Strengths</h3>
+<h3 id="strengths-5">Strengths</h3>
 <p>The if/then branching logic is clean. Different follow-ups for openers vs. non-openers, reply-based branching, time-zone-aware sending. It does the fundamentals right. Free unlimited email accounts on every plan. Built-in warm-up and email verification.</p>
 <p>Woodpecker's agency features (client management, white-label reporting) are solid for agencies running campaigns on behalf of clients.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-5">Weaknesses</h3>
 <p>AI writing is minimal. You're writing all your own copy. LinkedIn integration exists but it's limited compared to Overloop, Lemlist, or Reply.io. The pricing jumps are steep: $29 for Starter (500 contacts), but $84 for Growth (3,000 contacts). The Max plan at $9,999/month is clearly enterprise-only.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-6">Pricing</h3>
 <p>Starter: $29/mo (500 contacts). Growth: $84/mo (3,000 contacts). Scale and Max tiers go up from there. 14-day free trial.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-6">Verdict</h3>
 <p>Best for agencies and small teams who want reliable email delivery without complexity. Not the tool if you need AI writing or deep multichannel.</p>
 <h2 id="mailshake">7. Mailshake <span class="g2-badge">G2: 4.7/5</span></h2>
 <p>Mailshake has been around since the early days of cold email automation. The SHAKEspeare AI writer was one of the first AI email assistants in this space.</p>
-<h3>Strengths</h3>
+<h3 id="strengths-6">Strengths</h3>
 <p>Simplicity is the real selling point. The interface is clean, campaign setup takes minutes, and the learning curve is almost flat. The Sales Engagement plan ($99/user/mo) includes email, LinkedIn automation, and a built-in power dialer, making it a genuine all-in-one for small sales teams.</p>
 <p>Data Finder for contact discovery, ready-to-use pre-warmed mailboxes, and team templates make onboarding new SDRs fast.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-6">Weaknesses</h3>
 <p>No free trial. Annual billing required for advertised pricing. The Starter plan's 1,500 monthly send limit is restrictive. SHAKEspeare AI writes decent first drafts but doesn't do prospect-level research. It's a template generator, not a personalization engine.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-7">Pricing</h3>
 <p>Starter: $29/user/mo. Email Outreach: $59/user/mo. Sales Engagement: $99/user/mo. All require annual prepayment.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-7">Verdict</h3>
 <p>Best for sales teams that want something simple and proven. The lack of a free trial and annual lock-in are the main downsides.</p>
 <h2 id="klenty">8. Klenty <span class="g2-badge">G2: 4.6/5</span></h2>
 <p>Klenty is built for sales teams that live inside their CRM. The platform's strength is deep CRM integration and intent-based playbooks that adjust outreach based on buyer signals.</p>
-<h3>Strengths</h3>
+<h3 id="strengths-7">Strengths</h3>
 <p>CRM Acceleration is the standout feature. Klenty syncs bi-directionally with Salesforce, HubSpot, and Pipedrive, automatically updating deal stages, logging activities, and triggering sequences based on CRM events. No other tool on this list does CRM integration this deeply.</p>
 <p>The deliverability suite (warmup, validation, placement testing) is included in all plans. AI-powered Agentic Cadences can autonomously adjust sequences based on prospect engagement patterns.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-7">Weaknesses</h3>
 <p>The Starter plan is email-only. You need the Growth plan ($70/user/mo) for multichannel. Calling minutes on the Plus plan ($99/user/mo) are limited to 1,000. If your team makes a lot of calls, you'll burn through those fast.</p>
 <p>Less well-known than Instantly or Lemlist, which means a smaller community, fewer templates, and less third-party integration support.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-8">Pricing</h3>
 <p>Starter: $50/mo (email only). Growth: $70/user/mo. Plus: $99/user/mo. Enterprise: custom. 14-day free trial on all plans.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-8">Verdict</h3>
 <p>Best for sales orgs where CRM data drives outreach decisions. If your reps live in Salesforce, Klenty is worth a serious look.</p>
 <h2 id="smartlead"><img alt="" height="28" src="/assets/images/logos/smartlead.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>9. Smartlead <span class="g2-badge">G2: 4.8/5</span></h2>
 <p>Smartlead is Instantly's main competitor in the "unlimited everything" category. Unlimited mailboxes, unlimited warm-up, with a focus on agencies managing multiple client accounts.</p>
-<h3>Strengths</h3>
+<h3 id="strengths-8">Strengths</h3>
 <p>The agency model is well-designed. White-label workspaces ($29/month per client), dedicated sending infrastructure, and a unified master inbox that consolidates replies across all connected mailboxes. For agencies managing 10+ clients, the economics work out better than most alternatives.</p>
 <p>SmartDelivery runs pre-send inbox placement tests so you know where your emails will land before you hit send. The SmartAgents feature uses AI to handle autonomous outreach, though it's still early.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-8">Weaknesses</h3>
 <p>Core product is email-only. The multichannel add-ons exist but feel bolted on rather than integrated. AI personalization uses spintax and basic variable insertion rather than deep prospect research. The free plan is limited to the point of being a demo.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-9">Pricing</h3>
 <p>Base: $39/mo (2,000 leads, 6,000 emails). Pro: $94/mo (30,000 leads, 150,000 emails). Unlimited Smart: $174/mo. Annual billing saves 17%.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-9">Verdict</h3>
 <p>Best for agencies that need white-label client workspaces and high-volume email sending. Not ideal for teams that need multichannel or deep AI writing.</p>
 <h2 id="apollo"><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>10. Apollo.io <span class="g2-badge">G2: 4.7/5</span></h2>
 <p>Apollo is the elephant in the room. With a database of 275M+ contacts and 73M+ companies, it has the largest B2B data asset in this category. The platform combines prospecting, enrichment, and outreach into one workflow. If you are already evaluating Apollo, read our detailed <a href="/blog/apollo-alternatives">Apollo alternatives comparison</a> for a deeper look at the trade-offs.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Apollo.io prospecting filters and AI Sequence CoPilot -->[Screenshot: Apollo.io lead filters and AI Sequence CoPilot]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-9">Strengths</h3>
 <p>The lead database is massive and searchable with 65+ filters. You can go from "VP of Marketing at Series B SaaS companies in DACH" to a verified contact list in minutes. The AI Sequence CoPilot generates complete email sequences (subject lines, body copy, follow-ups) based on your website URL and prospect list. It is not prospect-level research like Overloop, but it is more than basic merge fields.</p>
 <p>The free plan is genuinely useful: unlimited email credits, basic sequence automation, and 250 emails per day. For bootstrapped founders testing cold outreach for the first time, Apollo is the lowest-risk entry point.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-9">Weaknesses</h3>
 <p>Data accuracy is the recurring complaint. Multiple independent audits report 65-70% email accuracy, which means bounce rates of 15-25% on raw Apollo data. You will need a separate verification step (ZeroBounce, NeverBounce, or Snov.io's verifier) before sending at volume. Credit consumption is aggressive: enrichment, exports, and mobile numbers all burn credits that don't roll over. A team doing real prospecting often lands at $150-400/user/month, not the $49 on the pricing page.</p>
 <p>Deliverability infrastructure is weaker than Instantly or Smartlead. No unlimited mailbox rotation, no advanced warm-up network. Apollo is a prospecting-first tool with outreach bolted on, not an outreach-first tool with prospecting added.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-10">Pricing</h3>
 <p>Free: unlimited email credits, 250 emails/day. Basic: $49/user/mo. Professional: $79/user/mo. Organization: $119/user/mo (3-seat minimum). All credits expire monthly with no rollover.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-10">Verdict</h3>
 <p>Best for teams that need a huge lead database first and outreach second. If you already have verified lists and just need to send, pick a dedicated sending tool instead.</p>
 <h2 id="snovio">11. Snov.io <span class="g2-badge">G2: 4.6/5</span></h2>
 <p>Snov.io is the Swiss Army knife of cold outreach on a budget. It combines email finding, 7-step verification, drip campaigns, and a basic CRM into one platform starting at $39/month. Not the best at any single thing, but covers the full workflow without needing three separate subscriptions.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: Snov.io email drip campaign builder with AI writing assistant -->[Screenshot: Snov.io drip campaign builder]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-10">Strengths</h3>
 <p>The email verification is genuinely solid. Snov.io runs a 7-step process checking MX records, SMTP response, domain validity, catch-all detection, and formatting. In our test of 1,000 contacts, bounce rate after Snov.io verification was under 3%. The AI Cold Email Generator creates draft sequences from your ICP description and selling points. It also generates buyer personas and ICP profiles, which is useful for teams still figuring out their targeting.</p>
 <p>LinkedIn integration works through a Chrome extension for finding and verifying emails directly from LinkedIn profiles. The built-in CRM is basic but functional for tracking deal stages without paying for HubSpot or Pipedrive.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-10">Weaknesses</h3>
 <p>AI writing is template-level, not prospect-level. It creates good starting drafts but does not research individual prospects the way Overloop does. The platform feels dated compared to Instantly or Lemlist. The UI works, but it is not winning any design awards. Multichannel is limited to email plus LinkedIn (via extension), with no phone dialer or SMS.</p>
 <p>Credit-based pricing means you share credits across finding, verifying, and sending. Teams that do heavy prospecting can burn through their allocation fast on the lower plans.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-11">Pricing</h3>
 <p>Trial: 50 credits free. Starter: $39/mo (1,000 credits). Pro: $99/mo (5,000 credits). Managed Service: $3,999/mo. All plans include email warm-up and verification.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-11">Verdict</h3>
 <p>Best for budget-conscious teams that want find + verify + send in one tool. If you need multichannel beyond email or deep AI personalization, you will outgrow it.</p>
 <h2 id="quickmail">12. QuickMail <span class="g2-badge">G2: 4.7/5</span></h2>
 <p>QuickMail is the deliverability-obsessed option. Where most tools bolt on warm-up as a feature, QuickMail built its entire product around making sure your emails land in Primary. The team publishes public deliverability benchmarks and their support actively helps troubleshoot inbox placement issues.</p>
 <div class="screenshot-placeholder"><!-- Screenshot: QuickMail campaign analytics showing deliverability metrics and inbox placement -->[Screenshot: QuickMail deliverability dashboard]</div>
-<h3>Strengths</h3>
+<h3 id="strengths-11">Strengths</h3>
 <p>Built-in email warm-up, throttling, and blacklist monitoring come standard on every plan. LinkedIn integration is available across all tiers, giving you multichannel without paying for an upgrade. The auto-rotation feature distributes sends across multiple accounts within a single campaign, which keeps per-mailbox volume low and deliverability high.</p>
 <p>Analytics are clear: opens, clicks, replies, and bounces per campaign with easy drill-down. The Expert plan supports up to 300,000 emails per month, which puts it in the same volume class as Instantly and Smartlead.</p>
-<h3>Weaknesses</h3>
+<h3 id="weaknesses-11">Weaknesses</h3>
 <p>AI writing is minimal. QuickMail focuses on sending infrastructure, not content generation. You write the emails. No built-in lead database or enrichment. You need Apollo, Snov.io, or a separate data provider to feed it contacts. The UI is functional but not as polished as Instantly or Lemlist.</p>
-<h3>Pricing</h3>
+<h3 id="pricing-12">Pricing</h3>
 <p>Basic: $49/mo. Pro: $89/mo. Expert: $129/mo. Free 14-day trial on all plans. No annual lock-in required.</p>
-<h3>Verdict</h3>
+<h3 id="verdict-12">Verdict</h3>
 <p>Best for teams that prioritize deliverability above all else. If your problem is emails landing in spam, QuickMail is worth testing before you switch tools.</p>
 <h2 id="deliverability-benchmarks">2026 Cold Email Deliverability Benchmarks</h2>
 <p>This section exists because deliverability is the single biggest factor separating tools that work from tools that waste money. Every vendor claims "high deliverability." Here is what the data actually shows.</p>
@@ -1598,45 +1661,45 @@ Applied changes from design-system-overloop.md:
 <p>The biggest mistake we see teams make is optimizing for price over deliverability. A $25/month tool that lands in spam costs you infinitely more than a $99/month tool that lands in Primary. Test deliverability first. Everything else is secondary.</p>
 <p>Second biggest mistake: buying a tool that only does email. In 2026, email-only reply rates sit at 3-5%. Add LinkedIn touches and phone, and that jumps to 12-18%. Unless you are running pure volume plays across 50+ mailboxes, multichannel outreach is not optional anymore. See our full breakdown of <a href="/blog/8-best-ai-linkedin-outreach-tools">AI LinkedIn outreach tools</a> if that channel is a priority.</p>
 <div class="faq-section" id="faq">
-<h2>Frequently Asked Questions</h2>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <div class="faq-item">
-<h3>What is the best AI email outreach tool in 2026?</h3>
+<h3 id="what-is-the-best-ai-email-outreach-tool-in-2026">What is the best AI email outreach tool in 2026?</h3>
 <p>It depends on your use case. For multichannel outreach with AI prospect research, Overloop is the most complete single-tool option. For pure email volume with strong deliverability, Instantly leads the category. For teams on a tight budget, Saleshandy ($25/mo) or Snov.io ($39/mo) cover the basics. For teams that need a massive lead database, Apollo.io offers 275M+ contacts with a free plan.</p>
 </div>
 <div class="faq-item">
-<h3>How much do AI cold email tools cost?</h3>
+<h3 id="how-much-do-ai-cold-email-tools-cost">How much do AI cold email tools cost?</h3>
 <p>Entry-level plans range from $25/month (Saleshandy) to $69/month (Lemlist). But advertised prices rarely tell the full story. Add-ons for LinkedIn automation, phone dialers, lead databases, and extra credits can push real costs to $150-400/user/month. Instantly and Smartlead offer the best value for high-volume email-only senders. Overloop bundles AI writing, lead sourcing, and multichannel into one subscription starting at $69/month.</p>
 </div>
 <div class="faq-item">
-<h3>Do AI email outreach tools actually improve reply rates?</h3>
+<h3 id="do-ai-email-outreach-tools-actually-improve-reply-rates">Do AI email outreach tools actually improve reply rates?</h3>
 <p>Yes, when used correctly. In our testing, AI-personalized emails that reference a prospect's recent LinkedIn post or company news got 2-3x higher reply rates than generic templates with basic merge fields. The gap between template-level AI (swapping in first names) and prospect-level AI (researching each contact individually) is significant. Tools like Overloop and Reply.io's Jason AI operate at the prospect level. Most others stay at template level.</p>
 </div>
 <div class="faq-item">
-<h3>Is cold email outreach legal?</h3>
+<h3 id="is-cold-email-outreach-legal">Is cold email outreach legal?</h3>
 <p>Cold email is legal in most jurisdictions when done correctly. In the US, CAN-SPAM requires a physical address, an unsubscribe mechanism, and no deceptive subject lines. In the EU, GDPR requires a legitimate interest basis and easy opt-out. In Canada, CASL is stricter and generally requires prior consent. All 12 tools on this list include unsubscribe handling and compliance features. Read our full guide on <a href="/blog/cold-email-illegal">whether cold email is illegal</a> for country-by-country rules.</p>
 </div>
 <div class="faq-item">
-<h3>What is the difference between AI email outreach tools and email marketing platforms?</h3>
+<h3 id="what-is-the-difference-between-ai-email-outreach-tools-and-email-marketing-platforms">What is the difference between AI email outreach tools and email marketing platforms?</h3>
 <p>Email marketing platforms (Mailchimp, Brevo, ConvertKit) send newsletters and promotional emails to opted-in subscribers. AI email outreach tools send personalized one-to-one emails to cold prospects who have not opted in. They use individual mailboxes (not bulk senders), warm-up infrastructure, and AI personalization to land in Primary inbox rather than Promotions. The two categories serve completely different use cases and should not be confused.</p>
 </div>
 <div class="faq-item">
-<h3>How do I improve cold email deliverability in 2026?</h3>
+<h3 id="how-do-i-improve-cold-email-deliverability-in-2026">How do I improve cold email deliverability in 2026?</h3>
 <p>Five non-negotiable steps: (1) Set up SPF, DKIM, and DMARC on every sending domain. (2) Warm up new mailboxes for at least 14 days before sending campaigns. (3) Keep daily send volume under 30-50 emails per mailbox. (4) Verify every email address before sending. (5) Use multiple sending domains and rotate them. Tools like Instantly and Smartlead handle most of this automatically. Use our <a href="/tools/spam-checker">spam checker</a> to test your templates before sending.</p>
 </div>
 <div class="faq-item">
-<h3>Can I use AI email outreach for recruiting?</h3>
+<h3 id="can-i-use-ai-email-outreach-for-recruiting">Can I use AI email outreach for recruiting?</h3>
 <p>Yes. We tested all 12 tools with a recruiting campaign targeting engineering leads. Tools with LinkedIn integration (Overloop, Lemlist, Reply.io, Klenty) performed best for recruiting because candidates live on LinkedIn. The AI personalization that references someone's GitHub contributions or recent conference talks significantly outperformed generic "I saw your profile" messages.</p>
 </div>
 <div class="faq-item">
-<h3>What is a good cold email reply rate in 2026?</h3>
+<h3 id="what-is-a-good-cold-email-reply-rate-in-2026">What is a good cold email reply rate in 2026?</h3>
 <p>The average cold email reply rate is 3.43%. Top 25% campaigns hit 5.5%. Top 10% break 10%. If you are below 3%, your deliverability, targeting, or copy needs work. The first email in a sequence captures 58% of total replies, so spend most of your optimization effort on the opener, not on adding more follow-ups.</p>
 </div>
 <div class="faq-item">
-<h3>How many email accounts do I need for cold outreach?</h3>
+<h3 id="how-many-email-accounts-do-i-need-for-cold-outreach">How many email accounts do I need for cold outreach?</h3>
 <p>Keep volume under 30-50 emails per mailbox per day. If you want to send 500 emails daily, you need 10-15 mailboxes across 3-5 sending domains. Tools like Instantly, Smartlead, and Saleshandy support unlimited mailbox connections. QuickMail and Woodpecker handle multi-account rotation well at smaller scale. More mailboxes at lower volume per account always beats fewer mailboxes at high volume.</p>
 </div>
 <div class="faq-item">
-<h3>Should I warm up email accounts before sending cold emails?</h3>
+<h3 id="should-i-warm-up-email-accounts-before-sending-cold-emails">Should I warm up email accounts before sending cold emails?</h3>
 <p>Yes, always. Warmed mailboxes achieve 94% inbox placement. Unwarmed mailboxes achieve 61%. That gap means a third of your emails go to spam before you even start. Warm up every new mailbox for at least 14 days. Every tool on this list except Mailshake includes built-in warm-up. If your tool does not, use a standalone service like Mailwarm or Warmbox.</p>
 </div>
 </div>

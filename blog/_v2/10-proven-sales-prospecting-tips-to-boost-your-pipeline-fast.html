@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -331,7 +391,7 @@ No TOC sidebar (too short — in-article links only).
     <main class="main-wrap">
 
 <p>B2B sales prospecting often slows growth due to manual tasks and low efficiency. Teams spend hours compiling lead lists, struggle to personalize outreach, and juggle disconnected tools that undercut productivity. Outbound messages get ignored or blocked, and sellers waste time updating CRMs instead of building relationships. These pain points drain pipeline momentum.</p>
-<h3>Upgrading Prospecting With Modern Tools and Automation</h3>
+<h3 id="upgrading-prospecting-with-modern-tools-and-automation">Upgrading Prospecting With Modern Tools and Automation</h3>
 <p>Advancements in AI and automation now enable faster, more targeted prospecting. Platforms like <a href="https://overloop.com/">Overloop</a> and solutions such as <a href="https://www.linkedin.com/sales/">LinkedIn Sales Navigator</a> remove manual steps, personalize communication, and centralize campaign management. Instead of scattered efforts, teams can automate lead sourcing, streamline outreach, and use real-time data to optimize results.</p>
 <table>
 <thead>
@@ -365,10 +425,10 @@ No TOC sidebar (too short — in-article links only).
 </tbody>
 </table>
 <p>Below, discover proven tips--backed by automation and AI--for energizing your pipeline and simplifying prospecting.</p>
-<h2>1. Automate Lead Sourcing With Overloop</h2>
+<h2 id="1-automate-lead-sourcing-with-overloop">1. Automate Lead Sourcing With Overloop</h2>
 <a href="https://overloop.com/"><img alt="Screenshot of Overloop website" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68659d3b61f50ad63350985a_tl21yto05bpx7j3rqnvy9n9vz86w.jpeg"/></a>
 <p>Manual lead sourcing can overwhelm B2B sales teams and restrict growth. Traditional methods--scouring LinkedIn, building lists in spreadsheets, entering data by hand--drain time and make it tough to scale. Automated lead sourcing resolves these obstacles by continuously finding and qualifying potential prospects based on custom parameters.</p>
-<h3>How Overloop's AI Simplifies Lead Sourcing</h3>
+<h3 id="how-overloops-ai-simplifies-lead-sourcing">How Overloop's AI Simplifies Lead Sourcing</h3>
 <p>Overloop's AI-powered engine searches a database of over 450 million verified business contacts to match your ideal customer profile. Instead of hunting for leads one at a time, sales teams specify criteria such as company size, title, industry, or location. Overloop instantly delivers a curated list of prospects, each with up-to-date details and verified contact information.</p>
 <ul>
 <li><strong>Eliminates manual list building:</strong> Input your targeting criteria and let the platform generate relevant leads automatically.</li>
@@ -377,9 +437,9 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Reduces repetitive tasks:</strong> One-click syncing integrates prospects directly into automated outbound campaigns, bypassing copy-paste workflows.</li>
 </ul>
 <p>This automation not only accelerates your pipeline but also raises the quality of each lead. Teams can focus on connecting with prospects who fit their goals instead of shuffling spreadsheets. For comparison, ZoomInfo and <a href="https://www.lusha.com/">Lusha</a> also offer enriched B2B contact data, but Overloop stands out by combining AI-driven sourcing with direct enrollment into multi-channel outreach--all from one platform.</p>
-<h2>2. Personalize Outreach With AI-Powered Email Writing</h2>
+<h2 id="2-personalize-outreach-with-ai-powered-email-writing">2. Personalize Outreach With AI-Powered Email Writing</h2>
 <p>Email outreach loses its impact if messages sound generic or automated. Today's prospects expect communication that feels authentic and tailored to their specific needs. AI-powered personalization tools address this challenge by analyzing lead data and crafting emails that reflect real interest and relevance.</p>
-<h3>How AI Personalization Boosts Response Rates</h3>
+<h3 id="how-ai-personalization-boosts-response-rates">How AI Personalization Boosts Response Rates</h3>
 <p>AI-driven tools, such as Overloop, use prospect profile data--like industry, job title, or recent public activity--to customize subject lines and email content automatically. This goes beyond simple mail merges:</p>
 <ul>
 <li>Content adapts to recipient roles (e.g., a CTO vs. a Marketing Director receives distinct benefits).</li>
@@ -387,16 +447,16 @@ No TOC sidebar (too short — in-article links only).
 <li>Each email reads as if written just for that individual, increasing open and reply rates.</li>
 </ul>
 <p>For example, Overloop can generate personalized icebreakers based on a lead's recent LinkedIn post or press release. By referencing a detail unique to the recipient, reps show they've done their homework--without spending hours on manual research or custom drafting.</p>
-<h3>Practical Impact for B2B Teams</h3>
+<h3 id="practical-impact-for-b2b-teams">Practical Impact for B2B Teams</h3>
 <ul>
 <li>Sales teams see reply rates increase as much as 2-3x when shifting from static templates to AI-personalized emails.</li>
 <li>AI surfaces talking points from sources including <a href="https://www.linkedin.com/">LinkedIn</a> or company websites, keeping outreach fresh and relevant.</li>
 <li>Automation helps send hundreds of tailored messages daily, scaling personalization without extra effort.</li>
 </ul>
 <p>Personalized messaging--delivered at speed and scale--results in stronger engagement, more positive responses, and a healthier sales pipeline.</p>
-<h2>3. Utilize LinkedIn for Hyper-Targeted Prospecting</h2>
+<h2 id="3-utilize-linkedin-for-hyper-targeted-prospecting">3. Utilize LinkedIn for Hyper-Targeted Prospecting</h2>
 <p>LinkedIn remains an essential platform for B2B prospecting, but working manually leads to missed connections and slow results. The rise of advanced tools and smarter workflows helps sales teams reach the right people faster--often within a single session.</p>
-<h3>Best Practices for Targeted Prospecting on LinkedIn</h3>
+<h3 id="best-practices-for-targeted-prospecting-on-linkedin">Best Practices for Targeted Prospecting on LinkedIn</h3>
 <p>To reach decision-makers efficiently, use <a href="https://www.linkedin.com/sales/">LinkedIn Sales Navigator</a> to filter targets by role, company size, geography, or recent activity. This focused approach creates lists that align with your ideal customer profile, cutting time spent surfing generic feeds. Sales Navigator also enables sales teams to:</p>
 <ul>
 <li><strong>Build custom lead lists:</strong> Save searches based on detailed filters and set alerts for job changes or company news, so outreach is always relevant.</li>
@@ -410,8 +470,8 @@ No TOC sidebar (too short — in-article links only).
 <li>Efficiency--multiple touchpoints managed from one dashboard</li>
 </ul>
 <p>Linking Sales Navigator with automation simplifies prospecting, elevates outbound results, and ensures teams focus on outreach that matters most, not on routine tasks.</p>
-<h2>4. Implement Multi-Channel Campaigns for Higher Engagement</h2>
-<h3>Multi-Channel Outreach Redefines Pipeline Acceleration</h3>
+<h2 id="4-implement-multi-channel-campaigns-for-higher-engagement">4. Implement Multi-Channel Campaigns for Higher Engagement</h2>
+<h3 id="multi-channel-outreach-redefines-pipeline-acceleration">Multi-Channel Outreach Redefines Pipeline Acceleration</h3>
 <p>Sending emails alone is rarely enough to capture busy decision-makers. Modern buyers shift between inboxes, LinkedIn, and phone, so connecting across multiple channels is crucial. Teams that blend <strong>email, LinkedIn steps, and calls</strong> in a coordinated sequence see higher response rates, more meetings booked, and warmer leads entering the sales pipeline.</p>
 <p>A multi-channel strategy works because each interaction reinforces your message and increases the chance your outreach gets noticed. For example, a prospect who ignores your email may engage with a LinkedIn invite, or respond to a follow-up voice mail. The key is staying present on all channels without overwhelming prospects or losing track of activities.</p>
 <h4>Simplifying Multi-Channel Campaigns With Overloop</h4>
@@ -422,9 +482,9 @@ No TOC sidebar (too short — in-article links only).
 <li>Track performance at each channel and touchpoint to quickly identify what works best for your target audience.</li>
 </ul>
 <p>Other tools like <a href="https://outreach.io/">Outreach</a> and <a href="https://www.apollo.io/">Apollo.io</a> also support multi-channel workflows, but Overloop eliminates manual steps by directly linking AI-sourced leads with personalized, automated, multi-channel campaigns. Teams can focus on building relationships while their pipeline grows efficiently with minimal hands-on management.</p>
-<h2>5. Score and Prioritize Leads With AI</h2>
+<h2 id="5-score-and-prioritize-leads-with-ai">5. Score and Prioritize Leads With AI</h2>
 <p>Not all leads have the same potential to impact your pipeline. AI-powered lead scoring helps B2B sales teams focus on prospects who are most likely to convert, saving time and increasing overall sales effectiveness. By analyzing data points such as engagement history, firmographics, buyer intent signals, and interaction with previous outreach, these systems assign each lead a dynamic score.</p>
-<h3>How AI Lead Scoring Drives Pipeline Results</h3>
+<h3 id="how-ai-lead-scoring-drives-pipeline-results">How AI Lead Scoring Drives Pipeline Results</h3>
 <p>AI analyzes thousands of variables faster than a human, including:</p>
 <ul>
 <li>Email open and reply rates</li>
@@ -433,15 +493,15 @@ No TOC sidebar (too short — in-article links only).
 <li>Recent buying signals or tech adoption</li>
 </ul>
 <p>This process puts the highest value prospects at the top of your team's priority list. AI models continuously learn from outcomes, so scoring accuracy improves over time as deals close or opportunities stall.</p>
-<h3>Top Solutions Used by Leading B2B Teams</h3>
+<h3 id="top-solutions-used-by-leading-b2b-teams">Top Solutions Used by Leading B2B Teams</h3>
 <ul>
 <li><a href="https://overloop.com/">Overloop</a>: Scores and segments leads based on engagement and fit, then routes them to the right outreach workflow automatically.</li>
 <li>HubSpot Sales Hub: Uses predictive lead scoring and workflow automation integrated into CRM tools.</li>
 <li><a href="https://www.salesforce.com/products/sales-cloud/features/lead-scoring/">Salesforce Sales Cloud</a>: Offers Einstein lead scoring, which learns from your sales data to highlight top opportunities.</li>
 </ul>
 <p>Adopting AI scoring ensures that reps spend energy on prospects who matter most. The result is a shorter sales cycle, higher conversion rates, and a healthier sales pipeline, all with less manual guesswork.</p>
-<h2>6. Analyze and Optimize With Real-Time Insights</h2>
-<h3>Measure What Matters: Using Analytics To Refine Prospecting</h3>
+<h2 id="6-analyze-and-optimize-with-real-time-insights">6. Analyze and Optimize With Real-Time Insights</h2>
+<h3 id="measure-what-matters-using-analytics-to-refine-prospecting">Measure What Matters: Using Analytics To Refine Prospecting</h3>
 <p>Successful sales prospecting relies on knowing which strategies produce results. Teams that use analytics platforms gain clarity on what's working, what's not, and where to double down. Real-time insights help adjust outreach methods and messaging based on clear data, preventing wasted effort on ineffective campaigns. Without this feedback loop, it's easy to repeat the same mistakes or overlook emerging opportunities.</p>
 <p>Analytics platforms like <a href="https://overloop.com/">Overloop</a> centralize key metrics so teams can see opens, reply rates, bounces, and engagement across all outreach channels at a glance. Instead of piecing together reports from different tools, dashboards present a live view of your campaigns in one place. This saves time and draws attention to problem areas immediately, letting sales teams act fast to adapt their approach.</p>
 <ul>
@@ -451,8 +511,8 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Test and iterate:</strong> Apply A/B testing for subject lines or templates, using results to improve every sequence.</li>
 </ul>
 <p>Modern platforms also give managers and reps the information needed to track activity against goals and quotas. Overloop, for example, highlights individual and team performance, showing where efforts turn into real opportunities. Other solutions such as <a href="https://www.outreach.io/">Outreach</a> and <a href="https://www.hubspot.com/products/sales/analytics">HubSpot Sales Analytics</a> offer similar campaign dashboards, but integrating analytics with lead sourcing and outreach in a single platform accelerates the feedback and optimization cycle. Using data as a guide, B2B teams refine tactics quickly--keeping the prospecting pipeline full and focused on what drives growth.</p>
-<h2>7. Reduce Manual Data Entry With CRM Integrations</h2>
-<h3>How CRM Integrations Remove Data Bottlenecks</h3>
+<h2 id="7-reduce-manual-data-entry-with-crm-integrations">7. Reduce Manual Data Entry With CRM Integrations</h2>
+<h3 id="how-crm-integrations-remove-data-bottlenecks">How CRM Integrations Remove Data Bottlenecks</h3>
 <p>Manual data entry creates friction for B2B sales teams. Updating lead records by hand, copying notes between tools, and logging each activity takes valuable time away from actual selling. Integrations between sales platforms and major CRMs have reduced this burden by automating data capture, syncing touchpoints, and triggering workflows behind the scenes.</p>
 <p>Top CRMs such as <a href="https://www.hubspot.com/products/crm">HubSpot</a> and <a href="https://www.salesforce.com/products/crm/overview/">Salesforce</a> now connect directly with prospecting and outreach platforms, letting sales reps:</p>
 <ul>
@@ -463,8 +523,8 @@ No TOC sidebar (too short — in-article links only).
 </ul>
 <p>Overloop, for example, integrates with both Salesforce and HubSpot, pushing enriched lead profiles and activity data in real time. This means sales teams always work from updated records, never from stale spreadsheets or partial details. Automated syncing not only reduces manual work, but also improves pipeline tracking and forecasting accuracy.</p>
 <p>Integrations with platforms like <a href="https://www.pipedrive.com/">Pipedrive</a> or <a href="https://slack.com/">Slack</a> further streamline handoffs between sales, marketing, and customer success. When data flows freely, teams stay aligned, response times drop, and sales cycles shorten. These integrations let reps focus on high-value conversations--not on chasing down or entering information.</p>
-<h2>Conclusion: Transform Your B2B Prospecting for Scalable Growth</h2>
-<h3>Accelerate Pipeline Growth With Modern Prospecting</h3>
+<h2 id="conclusion-transform-your-b2b-prospecting-for-scalable-growth">Conclusion: Transform Your B2B Prospecting for Scalable Growth</h2>
+<h3 id="accelerate-pipeline-growth-with-modern-prospecting">Accelerate Pipeline Growth With Modern Prospecting</h3>
 <p>Embracing AI-driven automation and multi-channel outreach gives B2B teams a proven path to a stronger sales pipeline. Manual prospecting tasks--once a source of inefficiency and bottlenecks--are now handled automatically by platforms designed for scale. Instead of spending hours sourcing leads, writing repetitive emails, or managing disconnected tools, teams shift focus to high-impact selling activities.</p>
 <p>Efficient prospecting combines:</p>
 <ul>

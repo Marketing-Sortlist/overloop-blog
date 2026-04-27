@@ -318,6 +318,66 @@ Tested-by banner KEPT (product comparison template)
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .alt-card__head { flex-direction: column; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -373,22 +433,19 @@ Tested-by banner KEPT (product comparison template)
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#why-switch" class="active"><span class="ch-num">—</span>Why teams switch</a></li>
-          <li><a href="#matrix"><span class="ch-num">—</span>Comparison matrix</a></li>
-          <li><a href="#alt-1"><span class="ch-num">01</span>Overloop</a></li>
-          <li><a href="#alt-2"><span class="ch-num">02</span>Cognism</a></li>
-          <li><a href="#alt-3"><span class="ch-num">03</span>Clay</a></li>
-          <li><a href="#alt-4"><span class="ch-num">04</span>ZoomInfo</a></li>
-          <li><a href="#alt-5"><span class="ch-num">05</span>Lusha</a></li>
-          <li><a href="#alt-6"><span class="ch-num">06</span>Seamless.ai</a></li>
-          <li><a href="#alt-7"><span class="ch-num">07</span>Hunter.io</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#migration">Migration checklist</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#why-teams-outgrow-instantly">Why Teams Outgrow Instantly</a></li>
+    <li><a href="#feature-comparison-table">Feature Comparison Table</a></li>
+    <li><a href="#1-overloop">1. Overloop</a></li>
+    <li><a href="#2-lemlist">2. Lemlist</a></li>
+    <li><a href="#3-replyio">3. Reply.io</a></li>
+    <li><a href="#4-saleshandy">4. Saleshandy</a></li>
+    <li><a href="#5-woodpecker">5. Woodpecker</a></li>
+    <li><a href="#6-smartlead">6. Smartlead</a></li>
+    <li><a href="#7-apolloio">7. Apollo.io</a></li>
+    <li><a href="#which-alternative-fits">Which Alternative Fits?</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <main class="prose">
@@ -396,14 +453,14 @@ Tested-by banner KEPT (product comparison template)
 <p><strong>Disclosure: We're Overloop, a competing tool. We'll be straightforward about why we think multichannel beats email-only, and where Instantly still wins.</strong></p>
 <p>Instantly built its reputation on a simple promise: unlimited email accounts, built-in warm-up, and affordable volume. The Growth plan at $37.60/month (annual) lets you connect as many sending accounts as you want and send up to 5,000 emails per month. For pure cold email at scale, that's hard to beat on price.</p>
 <p>But cold email alone isn't working the way it used to. Reply rates are declining across the industry. Spam filters are getting more aggressive. And decision-makers increasingly respond better to multichannel sequences that combine email with LinkedIn and phone. If you've hit those walls with Instantly, here are the alternatives worth looking at.</p>
-<h2>Why Teams Outgrow Instantly</h2>
+<h2 id="why-teams-outgrow-instantly">Why Teams Outgrow Instantly</h2>
 <ul>
 <li><strong>Email only.</strong> No LinkedIn automation. No calling. No SMS. If a prospect doesn't respond to email, your only option is to send more emails. That's the definition of diminishing returns.</li>
 <li><strong>Deliverability concerns at scale.</strong> Instantly's shared infrastructure means your sending reputation is partially tied to other users on the same IPs. As Instantly's user base has grown, deliverability complaints have increased. The Light Speed plan ($286.30/month annual, $358/month monthly) offers dedicated infrastructure, but that's a significant jump from the Growth tier.</li>
 <li><strong>Real costs are higher than advertised.</strong> The $37.60/month sticker price doesn't include domains (~$15/domain), Google Workspace mailboxes (~$5/month each), or Instantly Credits for the lead database. Teams running serious volume report actual spend of $150-400/month.</li>
 <li><strong>Modular pricing adds up.</strong> Outreach, Credits (lead database), and CRM are separate subscriptions. You might start at $37.60/month but end up paying for three products to get a complete workflow.</li>
 </ul>
-<h2>Feature Comparison Table</h2>
+<h2 id="feature-comparison-table">Feature Comparison Table</h2>
 <div style="margin: 1.5rem 0; overflow-x: auto;">
 <svg aria-label="Channel comparison: email-only vs multichannel alternatives to Instantly" role="img" viewbox="0 0 720 380" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#f9fafb" height="380" rx="8" width="720"></rect>
@@ -559,30 +616,30 @@ Tested-by banner KEPT (product comparison template)
 </tr>
 </tbody>
 </table>
-<h2><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
+<h2 id="1-overloop"><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
 <p>Overloop is the most direct upgrade from Instantly if your reason for switching is "I need more than email." Every plan includes email sequences, LinkedIn automation (connection requests, messages, profile visits), and calling. The AI generates full outreach sequences from scratch based on prospect data.</p>
 <p>The pricing model is different from Instantly's. Where Instantly charges per volume tier, Overloop starts at $69/mo with multichannel included. You won't get "unlimited" email accounts like Instantly offers, but you get channels that actually increase reply rates instead of just sending more of the same.</p>
 <p>Where Instantly beats Overloop: raw email volume per dollar. If you're sending 100,000+ emails a month and don't care about other channels, Instantly's Hypergrowth plan at $77.60/month (annual) is more cost-effective for pure email throughput.</p>
-<h3>Key strengths</h3>
+<h3 id="key-strengths">Key strengths</h3>
 <ul>
 <li>Email + LinkedIn + Calls on every plan</li>
 <li>AI generates personalized sequences from prospect profiles</li>
 <li>Built-in email warm-up and deliverability monitoring</li>
 <li>No modular pricing maze</li>
 </ul>
-<h2><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Lemlist</h2>
+<h2 id="2-lemlist"><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Lemlist</h2>
 <p>Lemlist's Email Pro plan at $55/user/month (annual) is email-only but includes the 450M+ lead database and warm-up. The Multichannel Expert plan at $79/user/month (annual) adds LinkedIn and calling. Both tiers went up $10/user in February 2026. Lemlist's image and video personalization features are unique in the market and still drive above-average open and reply rates. G2 rating: 4.6/5 from 1,270+ reviews.</p>
 <p>Compared to Instantly, Lemlist costs more per user but includes prospecting data and creative personalization tools that Instantly doesn't have. The credit system for enrichment and AI can add costs beyond the base price. If you value creative, personalized outreach over raw volume, Lemlist is a strong option.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Reply.io</h2>
+<h2 id="3-replyio"><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Reply.io</h2>
 <p>Reply.io's Email Volume plan at $49/month is a direct Instantly competitor for email-only outreach. The Multichannel plan at $89/month adds the other channels, but LinkedIn ($69/month extra) and calling ($29/month extra) are separate add-ons.</p>
 <p>The standout feature is Jason AI SDR (from $800/month), which handles initial prospect engagement autonomously. For teams that want AI to do the heavy lifting on the first touch, then hand warm prospects to humans, Jason AI is ahead of what Instantly or most competitors offer. The agency plan at $210/month with unlimited clients is also worth considering if you manage outreach for multiple companies.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/saleshandy.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Saleshandy</h2>
+<h2 id="4-saleshandy"><img alt="" height="28" src="/assets/images/logos/saleshandy.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Saleshandy</h2>
 <p>Saleshandy is the closest alternative to Instantly in philosophy: affordable email at scale. The Starter plan at $25/month (annual) gives you 6,000 emails. The Pro plan at $69/month offers 150,000 emails and unlimited team members. No per-seat pricing on Pro, which is unusual and valuable for growing teams.</p>
 <p>Like Instantly, Saleshandy is email-only. No LinkedIn, no calling. If you're leaving Instantly purely for deliverability or pricing reasons but don't need multichannel, Saleshandy is worth testing. The lead enrichment credits ($0.03-0.05 each) are an additional cost to factor in.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/woodpecker.co.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Woodpecker</h2>
+<h2 id="5-woodpecker"><img alt="" height="28" src="/assets/images/logos/woodpecker.co.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Woodpecker</h2>
 <p>Woodpecker charges based on contacted prospects rather than emails sent. The Starter plan at $29/month covers 500 prospects. LinkedIn automation is a $29/month add-on per account. The agency panel at $27/client makes it popular with outreach agencies.</p>
 <p>Woodpecker is a reliable, no-frills tool that does email well and has decent deliverability features. It won't match Instantly on volume capacity or Overloop on AI sophistication. But for small teams or agencies that want predictable costs based on prospect count rather than email volume, the pricing model is refreshingly simple.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/smartlead.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Smartlead</h2>
+<h2 id="6-smartlead"><img alt="" height="28" src="/assets/images/logos/smartlead.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Smartlead</h2>
 <p>Smartlead is the closest direct competitor to Instantly. The Basic plan at $39/month gives you unlimited mailboxes, unlimited warm-up, and inbox rotation. The Pro plan at $94/month adds API access and webhooks for teams building custom workflows.</p>
 <p>Like Instantly, Smartlead is email-only. The differentiator is the multi-client infrastructure. Agencies managing 10+ accounts report that Smartlead's client management is more polished than Instantly's. The real cost is higher than advertised (expect $150-250/month once you add domains, mailboxes, and verification), but the per-client math works for agencies. If you're a solo sender or small team, the price advantage over Instantly is minimal.</p>
 <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
@@ -649,11 +706,11 @@ Tested-by banner KEPT (product comparison template)
 <span style="font-size: 11px; color: #6b7280;">Both are email-only. For multichannel (email + LinkedIn + calls), see <a href="#" style="color: #4F46E5;">Overloop</a>.</span>
 </div>
 </div>
-<h2><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Apollo.io</h2>
+<h2 id="7-apolloio"><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Apollo.io</h2>
 <p>Apollo brings something Instantly doesn't have at all: a built-in contact database with 275M+ records. The Basic plan at $49/user/month (annual) includes email sequences, phone numbers (8 credits each), and CRM integration.</p>
 <p>If you're currently using Instantly for outreach and a separate tool for prospecting, Apollo can replace both. The combined value often beats paying for two platforms. The credit system means costs can escalate for heavy users ($150-400/user/month in practice), but you're getting data and outreach in one platform.</p>
 <p>Read more: <a href="/blog/apollo-alternatives">Apollo.io Alternatives</a></p>
-<h2>Which Alternative Fits?</h2>
+<h2 id="which-alternative-fits">Which Alternative Fits?</h2>
 <ul>
 <li><strong>Need multichannel (email + LinkedIn + calls)?</strong> Overloop. It's the most direct upgrade from Instantly's email-only approach.</li>
 <li><strong>Want creative personalization?</strong> Lemlist. Image and video personalization is their edge.</li>
@@ -664,16 +721,16 @@ Tested-by banner KEPT (product comparison template)
 </ul>
 <p>Instantly is a good tool for what it does. But "what it does" is email. If your reply rates are dropping and you're considering adding LinkedIn or phone touchpoints to your sequences, that's not an Instantly problem to solve. That's a signal to switch to a multichannel platform.</p>
 <p>More context: <a href="/blog/9-best-ai-email-outreach-tools">9 Best AI Email Outreach Tools</a> and <a href="/blog/best-ai-sales-tools">Best AI Sales Tools in 2026</a>.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>Is Instantly worth it in 2026?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-instantly-worth-it-in-2026">Is Instantly worth it in 2026?</h3>
 <p>For email-only outreach at scale, Instantly still delivers strong value. The Growth plan at $37.60/month (annual) with unlimited email accounts is hard to beat on volume per dollar. But reply rates on email-only campaigns are declining industry-wide (down to roughly 5.1%). If you need multichannel to hit targets, Instantly won't get you there. G2 rating: 4.8/5 from 3,700+ reviews.</p>
-<h3>What is the best multichannel alternative to Instantly?</h3>
+<h3 id="what-is-the-best-multichannel-alternative-to-instantly">What is the best multichannel alternative to Instantly?</h3>
 <p>Overloop is the most direct upgrade. Every plan includes email, LinkedIn automation, and calling from $69/month. No per-channel add-ons. Lemlist ($79/user/month annual for multichannel) and Reply.io ($89/month base + add-ons) also offer multichannel, but at higher total cost for full channel access.</p>
-<h3>Is Smartlead better than Instantly?</h3>
+<h3 id="is-smartlead-better-than-instantly">Is Smartlead better than Instantly?</h3>
 <p>For agencies managing multiple clients, Smartlead's client management is more polished. Both are email-only with unlimited mailboxes and warmup. Smartlead starts at $39/month vs Instantly's $37.60/month (annual). The real difference is in agency infrastructure, not core email functionality. Smartlead G2: 4.8/5. Instantly G2: 4.8/5.</p>
-<h3>How much does Instantly actually cost?</h3>
+<h3 id="how-much-does-instantly-actually-cost">How much does Instantly actually cost?</h3>
 <p>The $37.60/month Growth plan is the sticker price. Real costs are higher once you add domains (~$15/domain), Google Workspace mailboxes (~$5/month each), and Instantly Credits for the lead database. Teams running serious volume report actual spend of $150-400/month. The Hypergrowth plan at $77.60/month (annual) is where most growing teams land.</p>
-<h3>Can Instantly do LinkedIn outreach?</h3>
+<h3 id="can-instantly-do-linkedin-outreach">Can Instantly do LinkedIn outreach?</h3>
 <p>No. Instantly is email-only. There is no LinkedIn automation, calling, or SMS. If you need to add LinkedIn touchpoints to your sequences, you need a different tool. Overloop, Lemlist, and Reply.io all support LinkedIn automation in their multichannel sequences.</p>
 
 </main>

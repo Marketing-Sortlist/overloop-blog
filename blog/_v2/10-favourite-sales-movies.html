@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -334,44 +394,44 @@ No TOC sidebar (too short — in-article links only).
 <p>While some were to be expected, some others were more of a surprise.</p>
 <p>Which is not to say they don't deserve to be here. On the contrary, they pave the way for new points of view and we hope you'll enjoy discovering them!</p>
 <p>Here we go!</p>
-<h3>1. Jason Jordan (Sales management expert and author)</h3>
+<h3 id="1-jason-jordan-sales-management-expert-and-author">1. Jason Jordan (Sales management expert and author)</h3>
 <p><em>"Easy - No contest. Unquestionably <strong>Tommy Boy</strong> - one of the funniest movies ever made. Under the skilful coaching of David Spade, new salesperson Chris Farley makes a speedy transformation from an insecure new hire to a confident rock star.</em></p>
 <p><em>In fact, David Spade should receive a Sales Manager Lifetime Achievement Award. Comically inspiring."</em></p>
 <p>IMDB Rating: 7.1/10</p>
 <p>https://www.youtube.com/embed/V_vQFFCscds</p>
-<h3>2. Daniel Disney (Founder - The Daily Sales)</h3>
+<h3 id="2-daniel-disney-founder-the-daily-sales">2. Daniel Disney (Founder - The Daily Sales)</h3>
 <p><em>"I (like many) love Wolf of Wall Street. Whilst unethical, it does show the passion and drive needed for success in sales. Again taking the ethical side out, the energy, the motivation and team work is great to watch and shows the excitement that sales floors often have.</em></p>
 <p><em>The second is <strong>The Founder</strong> which shows the story of the milkshake salesman who helped turn McDonalds into the dominant franchise business it is today."</em></p>
 <p>IMDB Rating: 7.2/10</p>
 <p>https://www.youtube.com/watch?v=ghJjMUH3tws</p>
-<h3>3. Richard Harris (Owner - The Harris Consulting Group)</h3>
+<h3 id="3-richard-harris-owner-the-harris-consulting-group">3. Richard Harris (Owner - The Harris Consulting Group)</h3>
 <p><em>"<strong>The Goods – Live Hard, Sell Hard</strong>, often overlooked."</em></p>
 <p>IMDB Rating: 5.8/10</p>
 <p>https://www.youtube.com/watch?v=9-VLtpSZh7o</p>
-<h3>4. Iulian Boia (Head of Sales - Overloop)</h3>
+<h3 id="4-iulian-boia-head-of-sales-overloop">4. Iulian Boia (Head of Sales - Overloop)</h3>
 <p><em><span>"I like <strong>Boiler Room</strong> because I'm into stock markets and this movie does a great job at telling the greed story of brokers riding the markets in the '90s. </span></em></p>
 <p><em><span>It's exciting to watch and there's a lot of punch lines that stick with you. There are also lots of helpful tricks if you need to do cold calls and, in fact, it should push you to make the next one right now. As Seth Davis would put it “The only people making money passing are NFL quarterbacks and I don’t see a number on your back.”</span></em></p>
 <p>IMDB Rating: 7/10</p>
 <p>https://www.youtube.com/watch?v=a-nzY-pAtWg</p>
-<h3>5. Chris Murray (Author - Selling With Ease)</h3>
+<h3 id="5-chris-murray-author-selling-with-ease">5. Chris Murray (Author - Selling With Ease)</h3>
 <p><em>"My favourite movie about sales would probably be <strong>The Pursuit Of Happyness</strong> (Will Smith stars in the true story about Chris Gardner, a struggling San Francisco salesman raising his 5-year-old son by himself after his girlfriend walks out - due to his apparent sales "failures").</em></p>
 <p><em>Why do I like it? This film is about tenacity, talent, hard work, love, pin point focus and purpose - which are the REAL reasons people become successful- whereas other well known Sales and (particularly) "Wall Street" movies glamorise the complete opposite."</em></p>
 <p>IMDB Rating: 8/10</p>
 <p>https://www.youtube.com/watch?v=xPBBnS4br9w</p>
-<h3>6. Stu Heinecke (Author - How to Get a Meeting with Anyone)</h3>
+<h3 id="6-stu-heinecke-author-how-to-get-a-meeting-with-anyone">6. Stu Heinecke (Author - How to Get a Meeting with Anyone)</h3>
 <p><em>"<strong>Contact</strong>, with Jody Foster… and isn't that convenient, it's also the name of my agency.</em></p>
 <p><em>My book introduces the concept of Contact Marketing. In order to sell to our top accounts we need to make contact with them. The movie is the ultimate example making contact."<br/></em></p>
 <p>Check out Stu's book, <a href="https://www.stuheinecke.com/">How to Get a Meeting with Anyone</a>!</p>
 <p>IMDB Rating: 7.4/10</p>
 <p>https://www.youtube.com/watch?v=O9G5lrxTF6k</p>
-<h3>7. Steve Hall (Executive Sales Coach)</h3>
+<h3 id="7-steve-hall-executive-sales-coach">7. Steve Hall (Executive Sales Coach)</h3>
 <p><em>"<strong>Hidden Figures</strong> has a brilliant example if a sales reframe in it.</em></p>
 <p><em>We can know what we want and why, we can do our research, we can think from the perspective of the prospect, we can paint a compelling vision, we can reframe objections to make the customer part of our team rather than an adversary, we can create an elegant call to action and we can take the customer mentally into the future and get them to FEEL the benefits they will have received from our offering.</em></p>
 <p><em>And if you take my advice, you can see one of the best movies of 2017 and of many other years too."</em></p>
 <p>Read <a href="https://www.linkedin.com/pulse/stunningly-successful-sales-lesson-oscar-nominated-movie-steve-hall/" rel="external noopener">Steve's full article</a> about <strong>this</strong> very scene!</p>
 <p>IMDB Rating: 7.8/10</p>
 <p>https://www.youtube.com/watch?v=PcKzIDc1V-s</p>
-<h3>8. Rob Jeppsen (CEO - Xvoyant)</h3>
+<h3 id="8-rob-jeppsen-ceo-xvoyant">8. Rob Jeppsen (CEO - Xvoyant)</h3>
 <p><em>"One of my favorites is one that surprises some. It is <strong>The </strong><strong>Pursuit of Happyness</strong>.</em></p>
 <p><em>I love the fact that this person set his goal and then made his own plan and didn't let anything stop him from achieving it. But he didn't lose his individuality along the way. He remained a committed father and didn't lose track of priorities along the way.</em></p>
 <p><em>The movie is filled with quotes to live by but 2 have stayed with me:</em></p>
@@ -380,16 +440,16 @@ No TOC sidebar (too short — in-article links only).
 <p><em>It is the ultimate story of belief, action, adaptiveness, and the relentless chase for winning. Everyone would be better off to see this show. It is about everything that's right in the world of sales. Some of the iconic sales movies fuel the negative stereotypes of sales. This one is so positive…"</em></p>
 <p>IMDB Rating: 8/10</p>
 <p>https://www.youtube.com/watch?v=UZb2NOHPA2A</p>
-<h3>9. Carson V. Heady (Author/Corporate Territory Manager - Microsoft)</h3>
+<h3 id="9-carson-v-heady-authorcorporate-territory-manager-microsoft">9. Carson V. Heady (Author/Corporate Territory Manager - Microsoft)</h3>
 <p><em>"My favorite sales movie is <strong>Wall Street</strong>. I believe this is because it shows the rise and the fall, it shows the power of persistence and art of possible but it also has classic lines and is the blueprint of every sales movie after it."</em></p>
 <p>IMDB Rating: 7.4/10</p>
 <p>https://www.youtube.com/watch?v=-TLCaDbBv_s</p>
-<h3>10. Mario M. Martinez Jr. (CEO - <a href="https://vengreso.com/" rel="external noopener">Vengreso</a>)</h3>
+<h3 id="10-mario-m-martinez-jr-ceo-vengreso">10. Mario M. Martinez Jr. (CEO - <a href="https://vengreso.com/" rel="external noopener">Vengreso</a>)</h3>
 <p><em>"Actually it's the movie called <strong>The Goonies</strong>. It's not about sales at all, rather a story about understanding your "why" which drives one to never give up and creates success!</em></p>
 <p><em>You see, in order to succeed in sales you must under your why. Your why isn't just about money. It's about understanding why you would be one of the few in the world that bets their families healthcare, mortgage, food, and everything else on achieving a quota. But when your why is big enough meaning you know what motivates you, your significant other and children both physically, emotionally, spiritually and mentally, then and only then can you truly have sustained success in sales each and every year."</em></p>
 <p>IMDB Rating: 7.8/10</p>
 <p>https://www.youtube.com/watch?v=OnrORwEG4lQ</p>
-<h2>What about your favourite sales movies?</h2>
+<h2 id="what-about-your-favourite-sales-movies">What about your favourite sales movies?</h2>
 <p>Agree? Disagree? What movies do <strong>you</strong> think should've made this list?</p>
 
 </main>

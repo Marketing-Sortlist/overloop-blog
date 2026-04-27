@@ -97,7 +97,7 @@ def check_file(path: Path) -> None:
 def main() -> int:
     print(f"V2 Migration Audit — scanning {V2_DIR}\n")
 
-    files = sorted(V2_DIR.glob("*.html"))
+    files = [f for f in sorted(V2_DIR.glob("*.html")) if f.name != "index.html"]
     for f in files:
         check_file(f)
 

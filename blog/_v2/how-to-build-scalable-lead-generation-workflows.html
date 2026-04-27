@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,20 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#11-makecom-automations-you-need-to-start-using-every-day">11 Make.com Automations You Need to Start Using…</a></li>
+    <li><a href="#key-elements-of-scalable-lead-generation-workflows">Key Elements of Scalable Lead Generation Workflows</a></li>
+    <li><a href="#step-by-step-process-for-building-scalable-lead-generation-workflows">Step-by-Step Process for Building Scalable Lead…</a></li>
+    <li><a href="#examples-of-successful-scalable-lead-generation-workflows">Examples of Successful Scalable Lead Generation…</a></li>
+    <li><a href="#conclusion-and-next-steps">Conclusion and Next Steps</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -442,18 +496,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Customizable Templates</strong>: Maintain consistent messaging while tailoring campaigns for different audiences.</li>
 <li><strong>Lead Nurturing Strategies</strong>: Combine automation with personalized follow-ups to engage prospects effectively.</li>
 </ul>
-<h3>Key Benefits:</h3>
+<h3 id="key-benefits">Key Benefits:</h3>
 <ul>
 <li>Save time by automating repetitive tasks.</li>
 <li>Improve lead quality with AI-driven insights.</li>
 <li>Ensure consistent communication across platforms.</li>
 </ul>
 <p>By integrating tools with your CRM and analyzing performance regularly, you can optimize workflows for long-term growth. Start by defining clear goals, choosing the right tools, and monitoring results to refine your process.</p>
-<h2>11 Make.com Automations You Need to Start Using Every Day</h2>
+<h2 id="11-makecom-automations-you-need-to-start-using-every-day">11 Make.com Automations You Need to Start Using Every Day</h2>
 <iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.youtube-nocookie.com/embed/dIH1F1WlE84" style="width: 100%; height: auto; aspect-ratio: 16/9;"></iframe>
-<h2>Key Elements of Scalable Lead Generation Workflows</h2>
+<h2 id="key-elements-of-scalable-lead-generation-workflows">Key Elements of Scalable Lead Generation Workflows</h2>
 <p>To build workflows that can grow with your business, focus on three main components: <strong>automation tools</strong>, <strong>customizable templates</strong>, and <strong>strategic lead nurturing</strong>. These elements work together to streamline processes, improve efficiency, and maintain quality as you scale.</p>
-<h3>Automation Tools to Simplify Lead Generation</h3>
+<h3 id="automation-tools-to-simplify-lead-generation">Automation Tools to Simplify Lead Generation</h3>
 <p>Automation tools are a game-changer for handling larger volumes of leads without sacrificing quality. For example, Overloop AI integrates lead sourcing, email personalization, and multi-channel outreach into one system, allowing teams to manage more leads efficiently.</p>
 <table>
 <thead>
@@ -481,13 +535,13 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tr>
 </tbody>
 </table>
-<h3>Customizable Templates for Consistency and Speed</h3>
+<h3 id="customizable-templates-for-consistency-and-speed">Customizable Templates for Consistency and Speed</h3>
 <p>Templates are a quick way to maintain consistency while tailoring campaigns for different audiences. Platforms like <a href="https://www.involve.me/" target="_blank">involve.me</a> and <a href="https://www.fillout.com/" target="_blank">fillout.com</a> offer flexible frameworks to match various campaign needs, saving time and effort.</p>
 <blockquote>
 <p>"Best practices include using multi-channel approaches, leveraging automation for scalability, and integrating offline and online lead sources with a central CRM system."</p>
 </blockquote>
 <p><a href="https://www.hubspot.com/products/marketing/marketing-automation" target="_blank">HubSpot</a> takes this further with its lead scoring system, which automates the evaluation of prospects, ensuring quality remains high even as workflows expand.</p>
-<h3>Strategies to Effectively Nurture Leads</h3>
+<h3 id="strategies-to-effectively-nurture-leads">Strategies to Effectively Nurture Leads</h3>
 <p>Balancing automation with personalization is key to nurturing leads at scale. <a href="https://www.zendesk.com/" target="_blank">Zendesk</a> sets a great example by combining behavior tracking, multi-channel retargeting, and data-driven personalization. Their strategy includes automated follow-ups paired with educational resources like webinars, helping them guide prospects without losing the personal touch.</p>
 <p>Key pieces of a successful nurturing strategy include:</p>
 <ul>
@@ -496,8 +550,8 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Using data to create personalized interactions</li>
 </ul>
 <p>These approaches ensure you can manage more leads while keeping the experience relevant and engaging.</p>
-<h2>Step-by-Step Process for Building Scalable Lead Generation Workflows</h2>
-<h3>Step 1: Define Clear Goals for Lead Generation</h3>
+<h2 id="step-by-step-process-for-building-scalable-lead-generation-workflows">Step-by-Step Process for Building Scalable Lead Generation Workflows</h2>
+<h3 id="step-1-define-clear-goals-for-lead-generation">Step 1: Define Clear Goals for Lead Generation</h3>
 <p>Start by setting measurable goals, like "increase qualified leads by 20% in Q1 2025." Use specific metrics to track progress, such as lead volume, quality, and engagement rates. CRM dashboards and analytics tools can help you monitor these effectively.</p>
 <table>
 <thead>
@@ -530,7 +584,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tr>
 </tbody>
 </table>
-<h3>Step 2: Choose Automation Tools That Fit Your Needs</h3>
+<h3 id="step-2-choose-automation-tools-that-fit-your-needs">Step 2: Choose Automation Tools That Fit Your Needs</h3>
 <p>Pick tools that match your business requirements and can grow with you. Look for features like:</p>
 <ul>
 <li>Integration with your existing tech stack</li>
@@ -538,9 +592,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>A database that aligns with your target audience</li>
 <li>Multi-channel outreach options</li>
 </ul>
-<h3>Step 3: Develop and Use Customizable Templates</h3>
+<h3 id="step-3-develop-and-use-customizable-templates">Step 3: Develop and Use Customizable Templates</h3>
 <p>Create templates that are easy to adjust while keeping a consistent tone and format. Dynamic content fields can help you personalize messages for large audiences. For example, tools like HubSpot allow you to build email sequences that adapt automatically based on how prospects interact with your content.</p>
-<h3>Step 4: Integrate Tools with Your CRM</h3>
+<h3 id="step-4-integrate-tools-with-your-crm">Step 4: Integrate Tools with Your CRM</h3>
 <p>Ensure that your automation tools sync seamlessly with your CRM. This makes it easier to:</p>
 <ul>
 <li>Automatically update lead data</li>
@@ -548,7 +602,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Keep contact information accurate across platforms</li>
 <li>Feed engagement metrics into your reporting system</li>
 </ul>
-<h3>Step 5: Analyze and Optimize Workflow Performance</h3>
+<h3 id="step-5-analyze-and-optimize-workflow-performance">Step 5: Analyze and Optimize Workflow Performance</h3>
 <p>Regularly evaluate performance using key metrics like conversion rates and engagement levels. Identify what works by analyzing top-performing campaigns, then apply those insights to weaker workflows. Focus on metrics such as:</p>
 <ul>
 <li>Conversion rates across channels</li>
@@ -557,9 +611,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Time saved through automation</li>
 </ul>
 <p>Following these steps will help you build workflows that grow with your business and handle a variety of challenges, as shown in the success stories shared below.</p>
-<h2>Examples of Successful Scalable Lead Generation Workflows</h2>
+<h2 id="examples-of-successful-scalable-lead-generation-workflows">Examples of Successful Scalable Lead Generation Workflows</h2>
 <p>Here are some real-world examples of businesses that improved their lead generation efforts by applying scalable workflows and tools. These case studies highlight how the strategies discussed earlier can drive measurable results.</p>
-<h3>Case Study: Transforming B2B Sales with Overloop AI</h3>
+<h3 id="case-study-transforming-b2b-sales-with-overloop-ai">Case Study: Transforming B2B Sales with Overloop AI</h3>
 <p><img alt="Overloop AI" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2fc_overloop.com-c7f1352ae441b37983135869c26c67b7.jpeg"/></p>
 <p>A mid-sized precision tooling manufacturer revamped their lead generation process using Overloop AI's automation platform. By focusing on decision-makers in the manufacturing sector, they achieved impressive results:</p>
 <table>
@@ -590,7 +644,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Automated email campaigns triggered by engagement signals from prospects.</li>
 <li>Seamless integration with <a href="https://www.salesforce.com/crm/" target="_blank">Salesforce</a> and LinkedIn workflows to streamline processes.</li>
 </ul>
-<h3>Case Study: Integrating Automation Tools for Scalable Growth</h3>
+<h3 id="case-study-integrating-automation-tools-for-scalable-growth">Case Study: Integrating Automation Tools for Scalable Growth</h3>
 <p>A software services provider built a scalable lead generation system by combining multiple automation platforms. This strategic integration delivered outstanding results:</p>
 <table>
 <thead>
@@ -619,11 +673,11 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </blockquote>
 <p>This integration allowed the team to expand their outreach while keeping messages personalized. The result? Higher conversion rates and lower acquisition costs. Their approach shows how blending the right tools can amplify lead generation efforts and drive business growth.</p>
 <p>These examples highlight what's possible with well-executed workflows and the right tools, offering practical insights for scaling your lead generation strategy.</p>
-<h2>Conclusion and Next Steps</h2>
+<h2 id="conclusion-and-next-steps">Conclusion and Next Steps</h2>
 <p>The examples shared above highlight how scalable workflows can reshape business operations. Now, let's explore how you can create your own.</p>
-<h3>Key Takeaways</h3>
+<h3 id="key-takeaways">Key Takeaways</h3>
 <p>Scalable workflows combine automation, templates, CRM integration, and performance tracking to boost efficiency, maintain consistency, and enable ongoing improvement. By thoughtfully integrating these components, businesses can design systems that grow seamlessly while still delivering personalized, high-quality experiences. The steps in this guide offer a clear plan to help you get started and achieve measurable outcomes.</p>
-<h3>Steps to Get Started</h3>
+<h3 id="steps-to-get-started">Steps to Get Started</h3>
 <p>Here's how to kick off your scalable lead generation workflow:</p>
 <ul>
 <li><strong>Review Your Current Process</strong>: Take a close look at your existing lead generation approach. Identify any weak spots or inefficiencies and establish baseline metrics for comparison.</li>
@@ -631,8 +685,8 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Monitor and Refine</strong>: Keep an eye on performance metrics and tweak workflows based on data insights to improve results over time.</li>
 </ul>
 <p>Keep in mind that success requires ongoing monitoring and adjustments. Start with these core steps and expand your automation efforts as you begin to see progress.</p>
-<h2>FAQs</h2>
-<h3>How to automate sales prospecting?</h3>
+<h2 id="faqs">FAQs</h2>
+<h3 id="how-to-automate-sales-prospecting">How to automate sales prospecting?</h3>
 <p>Automating sales prospecting can simplify your process and help you handle a growing number of leads without overwhelming your team. Here's a clear guide to getting started:</p>
 <p><strong>1. Define Your Ideal Customer Profile (ICP)</strong></p>
 <p>Start by outlining the key characteristics of your perfect customer. Include details like:</p>

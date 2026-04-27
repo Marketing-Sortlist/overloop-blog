@@ -342,6 +342,66 @@ No tested-by banner (informational template).
       .step__head { flex-direction: column; }
       .step__num { width: 48px; height: 48px; font-size: 20px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -393,17 +453,24 @@ No tested-by banner (informational template).
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Steps</div>
         <ul>
-          <li><a href="#step-1" class="active"><span class="ch-num">01</span> Buy a domain</a></li>
-          <li><a href="#step-2"><span class="ch-num">02</span> Set up DNS records</a></li>
-          <li><a href="#step-3"><span class="ch-num">03</span> Create mailboxes</a></li>
-          <li><a href="#step-4"><span class="ch-num">04</span> Enable warmup tool</a></li>
-          <li><a href="#step-5"><span class="ch-num">05</span> Send first manual emails</a></li>
-          <li><a href="#step-6"><span class="ch-num">06</span> Ramp daily volume</a></li>
-          <li><a href="#step-7"><span class="ch-num">07</span> Monitor deliverability</a></li>
-          <li><a href="#step-8"><span class="ch-num">08</span> Launch first cold campaign</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#first-understanding-linkedins-privacy-settings">First: Understanding LinkedIn's Privacy Settings</a></li>
+    <li><a href="#method-1-check-the-contact-info-section-free-30-seconds">Method 1: Check the Contact Info Section (Free,…</a></li>
+    <li><a href="#method-2-use-overloops-chrome-extension-paid-instant">Method 2: Use Overloop's Chrome Extension (Paid…</a></li>
+    <li><a href="#method-3-linkedin-data-export-free-slow">Method 3: LinkedIn Data Export (Free, Slow)</a></li>
+    <li><a href="#method-4-sales-navigator-email-finder-combo-paid">Method 4: Sales Navigator + Email Finder Combo …</a></li>
+    <li><a href="#method-5-email-pattern-guessing-verification-free-ish">Method 5: Email Pattern Guessing + Verification…</a></li>
+    <li><a href="#method-6-google-search-operators-free-2-minutes">Method 6: Google Search Operators (Free, 2 Minu…</a></li>
+    <li><a href="#method-7-send-a-direct-message-on-linkedin-free-1-minute">Method 7: Send a Direct Message on LinkedIn (Fr…</a></li>
+    <li><a href="#method-8-check-the-company-website-free-2-minutes">Method 8: Check the Company Website (Free, 2 Mi…</a></li>
+    <li><a href="#method-9-find-emails-from-github-commits-free-technical">Method 9: Find Emails from GitHub Commits (Free…</a></li>
+    <li><a href="#method-comparison">Method Comparison</a></li>
+    <li><a href="#is-it-legal-to-get-emails-from-linkedin-profiles">Is It Legal to Get Emails from LinkedIn Profiles?</a></li>
+    <li><a href="#linkedin-profile-viewing-limits">LinkedIn Profile Viewing Limits</a></li>
+    <li><a href="#best-linkedin-email-finder-tools-compared-2026">Best LinkedIn Email Finder Tools Compared (2026)</a></li>
+    <li><a href="#after-you-get-the-email-what-next">After You Get the Email: What Next?</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#troubleshooting">Troubleshooting</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -415,7 +482,7 @@ No tested-by banner (informational template).
 
 <p><strong>To get an email from a LinkedIn profile, click "Contact info" below their headline to check if they share it publicly. If not, use a Chrome extension like Overloop to look up their verified business email from external databases, or try Google search operators, LinkedIn data export, email pattern guessing, or a direct message.</strong> Below are all nine methods, ranked by reliability.</p>
 <p>LinkedIn has 1 billion members. Most list their job title, company, and location. But the one thing you actually need to start a conversation outside LinkedIn, their email address, is locked behind privacy settings, connection gates, and deliberate obscurity. I have spent years building outbound systems that start on LinkedIn and end in the inbox. Here is every method that works in 2026.</p>
-<h2>First: Understanding LinkedIn's Privacy Settings</h2>
+<h2 id="first-understanding-linkedins-privacy-settings">First: Understanding LinkedIn's Privacy Settings</h2>
 <p>Before you try any method, know what you are up against. LinkedIn gives users three visibility levels for their email:</p>
 <ul>
 <li><strong>Visible to everyone</strong> - rare. Maybe 5-10% of users.</li>
@@ -449,9 +516,9 @@ No tested-by banner (informational template).
 </div>
 </div>
 </div>
-<h2>Method 1: Check the Contact Info Section (Free, 30 Seconds)</h2>
+<h2 id="method-1-check-the-contact-info-section-free-30-seconds">Method 1: Check the Contact Info Section (Free, 30 Seconds)</h2>
 <p>The simplest approach. Go to the person's LinkedIn profile and look for the "Contact info" link just below their name and headline.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step">Step by step:</h3>
 <ol>
 <li>Navigate to the person's LinkedIn profile.</li>
 <li>Below their profile photo and headline, look for a small link or icon labeled "Contact info."</li>
@@ -497,9 +564,9 @@ No tested-by banner (informational template).
 <p><strong>Success rate:</strong> About 30% for 1st-degree connections. Under 10% for 2nd or 3rd degree.</p>
 <p><strong>Limitation:</strong> You need to be logged into LinkedIn, and many users only share with 1st-degree connections. If you are not connected, you will likely see nothing.</p>
 <p><strong>Bonus:</strong> Also scan the person's "About" section. Founders, consultants, and freelancers often drop their email directly in their bio or summary text because they want inbound leads.</p>
-<h2>Method 2: Use Overloop's Chrome Extension (Paid, Instant)</h2>
+<h2 id="method-2-use-overloops-chrome-extension-paid-instant">Method 2: Use Overloop's Chrome Extension (Paid, Instant)</h2>
 <p>This is the method I use daily. Overloop's Chrome extension sits in your browser and adds an overlay to LinkedIn profiles. When you visit someone's profile, it searches our database of 450M+ contacts and shows you their verified email address right on the page.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-2">Step by step:</h3>
 <ol>
 <li>Install the Overloop Chrome extension from the Chrome Web Store.</li>
 <li>Navigate to any LinkedIn profile.</li>
@@ -536,9 +603,9 @@ No tested-by banner (informational template).
 </div>
 </div>
 <p><strong>Why this works better than manual methods:</strong> The extension does not depend on LinkedIn's privacy settings. It cross-references multiple data sources (company email patterns, public records, previous verifications) to find the address independently of what LinkedIn shows.</p>
-<h2>Method 3: LinkedIn Data Export (Free, Slow)</h2>
+<h2 id="method-3-linkedin-data-export-free-slow">Method 3: LinkedIn Data Export (Free, Slow)</h2>
 <p>LinkedIn lets you download an archive of all your connection data. This archive includes email addresses for connections who shared them.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-3">Step by step:</h3>
 <ol>
 <li>Go to LinkedIn Settings (click your profile photo &gt; Settings &amp; Privacy).</li>
 <li>Navigate to "Data privacy" in the left sidebar.</li>
@@ -583,9 +650,9 @@ No tested-by banner (informational template).
 </div>
 </div>
 <p><strong>Limitation:</strong> Only works for people you are already connected with. Not useful for new prospects.</p>
-<h2>Method 4: Sales Navigator + Email Finder Combo (Paid)</h2>
+<h2 id="method-4-sales-navigator-email-finder-combo-paid">Method 4: Sales Navigator + Email Finder Combo (Paid)</h2>
 <p>LinkedIn Sales Navigator gives you advanced search and filtering, but it deliberately does not show email addresses (LinkedIn wants you to use InMail). The workaround: use Sales Navigator to build your prospect list, then run those names through an email finder.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-4">Step by step:</h3>
 <ol>
 <li>Use Sales Navigator's lead search to find prospects matching your criteria (industry, company size, title, geography).</li>
 <li>Save leads to a list within Sales Navigator.</li>
@@ -595,9 +662,9 @@ No tested-by banner (informational template).
 </ol>
 <p><strong>Pro tip:</strong> Overloop's Chrome extension works directly on Sales Navigator pages. You do not need to visit each person's full profile. The extension detects names on Sales Navigator search results and can enrich them in bulk.</p>
 <p><strong>Success rate:</strong> 80-90% when combining Sales Navigator targeting with a good email finder.</p>
-<h2>Method 5: Email Pattern Guessing + Verification (Free-ish)</h2>
+<h2 id="method-5-email-pattern-guessing-verification-free-ish">Method 5: Email Pattern Guessing + Verification (Free-ish)</h2>
 <p>If you know the person's name (from their LinkedIn profile) and their company domain, you can guess their email pattern and verify it.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-5">Step by step:</h3>
 <ol>
 <li>From the LinkedIn profile, note the person's full name and current company.</li>
 <li>Find the company's domain (usually visible on the LinkedIn company page or a quick Google search).</li>
@@ -607,7 +674,7 @@ No tested-by banner (informational template).
 </ol>
 <p><strong>Success rate:</strong> 60-70%. Fails on catch-all domains where the server accepts everything.</p>
 <p><strong>Best for:</strong> One-off lookups when you do not want to pay for a tool. Not practical for more than 10-20 lookups per day.</p>
-<h3>Common email format patterns by company size</h3>
+<h3 id="common-email-format-patterns-by-company-size">Common email format patterns by company size</h3>
 <table>
 <thead>
 <tr>
@@ -655,9 +722,9 @@ No tested-by banner (informational template).
 </tbody>
 </table>
 <p>Start with firstname.lastname@ and work down the list. Two or three guesses usually get you there.</p>
-<h2>Method 6: Google Search Operators (Free, 2 Minutes)</h2>
+<h2 id="method-6-google-search-operators-free-2-minutes">Method 6: Google Search Operators (Free, 2 Minutes)</h2>
 <p>Google indexes a surprising amount of contact information. Combine the person's name from their LinkedIn profile with search operators to surface their email from other corners of the web.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-6">Step by step:</h3>
 <ol>
 <li>Copy the person's full name and current company from their LinkedIn profile.</li>
 <li>Go to Google and try these searches:
@@ -697,9 +764,9 @@ No tested-by banner (informational template).
 <p><strong>Success rate:</strong> 20-40%. Higher for executives, speakers, and people active in public forums.</p>
 <p><strong>Best for:</strong> C-level executives who appear at conferences, on podcasts, or in press releases. Their emails are scattered across the web even if LinkedIn hides them.</p>
 <p><strong>Pro tip:</strong> Try adding <code>site:twitter.com</code> or <code>site:github.com</code> to the search. Developers and technical founders often have their email in their Twitter bio or GitHub profile.</p>
-<h2>Method 7: Send a Direct Message on LinkedIn (Free, 1 Minute)</h2>
+<h2 id="method-7-send-a-direct-message-on-linkedin-free-1-minute">Method 7: Send a Direct Message on LinkedIn (Free, 1 Minute)</h2>
 <p>Sometimes the simplest path is the most overlooked. Just ask.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-7">Step by step:</h3>
 <ol>
 <li>Send a connection request with a short, relevant note. Do not pitch. Just reference something specific from their profile.</li>
 <li>Once connected, send a message like: "Thanks for connecting. I have something relevant to share about [topic from their profile]. What is the best email to reach you at?"</li>
@@ -708,9 +775,9 @@ No tested-by banner (informational template).
 <p><strong>Success rate:</strong> 15-25% response rate. But the emails you get this way are the highest quality because the person has opted in.</p>
 <p><strong>Best for:</strong> High-value prospects where personalization matters more than volume. Enterprise deals, partnership outreach, recruiting.</p>
 <p><strong>Warning:</strong> Do not send the same template to 100 people. LinkedIn will throttle your messaging if the response rate drops below ~20%.</p>
-<h2>Method 8: Check the Company Website (Free, 2 Minutes)</h2>
+<h2 id="method-8-check-the-company-website-free-2-minutes">Method 8: Check the Company Website (Free, 2 Minutes)</h2>
 <p>Company websites leak email addresses constantly. Team pages, "About us" sections, press pages, and job postings all list contact information that you will not find on LinkedIn.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-8">Step by step:</h3>
 <ol>
 <li>From the LinkedIn profile, click through to the person's company page and find the website URL.</li>
 <li>Check these pages in order:
@@ -725,9 +792,9 @@ No tested-by banner (informational template).
 </ol>
 <p><strong>Success rate:</strong> 30-50%. Small and mid-sized companies are more likely to list team emails than enterprise companies.</p>
 <p><strong>Best for:</strong> Prospects at startups and SMBs where team pages tend to be detailed.</p>
-<h2>Method 9: Find Emails from GitHub Commits (Free, Technical)</h2>
+<h2 id="method-9-find-emails-from-github-commits-free-technical">Method 9: Find Emails from GitHub Commits (Free, Technical)</h2>
 <p>This one is niche but powerful for reaching developers, CTOs, and technical founders. Every Git commit contains the author's email address, and most GitHub repos are public.</p>
-<h3>Step by step:</h3>
+<h3 id="step-by-step-9">Step by step:</h3>
 <ol>
 <li>From the LinkedIn profile, check if the person links to their GitHub account (under Contact info or in their bio).</li>
 <li>If not, search Google: <code>"firstname lastname" site:github.com</code></li>
@@ -739,7 +806,7 @@ No tested-by banner (informational template).
 <p><strong>Success rate:</strong> 70-80% for developers who contribute to public repos. Many use their work email for commits.</p>
 <p><strong>Best for:</strong> Reaching engineers, CTOs, DevOps leads, and open-source contributors. This method is underused and gives you emails that no Chrome extension will find.</p>
 <p><strong>Limitation:</strong> Only works for people active on GitHub. Some developers use a noreply@github.com alias for commits.</p>
-<h2>Method Comparison</h2>
+<h2 id="method-comparison">Method Comparison</h2>
 <table>
 <thead>
 <tr>
@@ -816,21 +883,21 @@ No tested-by banner (informational template).
 </tr>
 </tbody>
 </table>
-<h2>Is It Legal to Get Emails from LinkedIn Profiles?</h2>
+<h2 id="is-it-legal-to-get-emails-from-linkedin-profiles">Is It Legal to Get Emails from LinkedIn Profiles?</h2>
 <p>Short answer: finding publicly available email addresses is legal. Scraping LinkedIn with bots is not.</p>
 <p><strong>LinkedIn's Terms of Service:</strong> LinkedIn prohibits scraping, meaning bots that crawl thousands of profiles automatically and extract data. Using a Chrome extension that enriches profiles you manually visit is different. You are browsing LinkedIn normally, and the extension looks up the email from external databases, not from LinkedIn itself. The 2022 US appeals court ruling in <em>hiQ Labs v. LinkedIn</em> confirmed that scraping publicly available data does not violate the Computer Fraud and Abuse Act, but LinkedIn can still restrict access through its ToS.</p>
 <p><strong>GDPR (Europe):</strong> If you are reaching out to prospects in the EU, you need a lawful basis for processing their email. For B2B outreach, "legitimate interest" (Article 6(1)(f)) typically applies, meaning you have a genuine business reason to contact them and the outreach is relevant. You must still include an unsubscribe option in every email and honor opt-out requests within 30 days.</p>
 <p><strong>CAN-SPAM (US):</strong> You can send unsolicited B2B email in the US, but every message must include your physical address, a clear unsubscribe mechanism, and accurate sender information. No false headers, no misleading subject lines. Penalties go up to $51,744 per violation.</p>
 <p><strong>CASL (Canada):</strong> Canada is stricter. You generally need implied or express consent to email someone. Implied consent exists if the recipient's email was publicly listed for business purposes (like on a company website), but this is a gray area. When in doubt, get explicit permission first.</p>
 <p>That said, do not go wild with profile browsing. If you visit 500 profiles in an hour, LinkedIn will flag your account regardless of how you are doing it. Keep your daily profile views under 100-150 for a free account, 200-300 for Sales Navigator.</p>
-<h2>LinkedIn Profile Viewing Limits</h2>
+<h2 id="linkedin-profile-viewing-limits">LinkedIn Profile Viewing Limits</h2>
 <ul>
 <li><strong>Free LinkedIn:</strong> ~100 profile views per day before you get throttled</li>
 <li><strong>LinkedIn Premium:</strong> ~150-200 profile views per day</li>
 <li><strong>Sales Navigator:</strong> ~250-300 profile views per day</li>
 </ul>
 <p>These are not official numbers. LinkedIn does not publish them. But they are consistent with what we see across thousands of Overloop users.</p>
-<h2>Best LinkedIn Email Finder Tools Compared (2026)</h2>
+<h2 id="best-linkedin-email-finder-tools-compared-2026">Best LinkedIn Email Finder Tools Compared (2026)</h2>
 <p>If you want to go beyond free methods, here are the tools that matter for extracting emails from LinkedIn profiles. I have tested all of them.</p>
 <table>
 <thead>
@@ -888,7 +955,7 @@ No tested-by banner (informational template).
 </tbody>
 </table>
 <p>The difference between these tools is less about accuracy (they all hit 70-90% for B2B contacts) and more about what happens after you find the email. Overloop lets you push the found email directly into a multi-step outreach campaign with automatic follow-ups. Most other tools require exporting to a CSV and importing into a separate sending tool.</p>
-<h2>After You Get the Email: What Next?</h2>
+<h2 id="after-you-get-the-email-what-next">After You Get the Email: What Next?</h2>
 <p>Having the email is step one. Here is what matters next:</p>
 <ol>
 <li><strong>Verify before sending.</strong> Even if a tool says the email is valid, run it through verification. Catch-all domains are tricky.</li>
@@ -898,22 +965,22 @@ No tested-by banner (informational template).
 </ol>
 <p>For a broader look at all the ways to find professional email addresses (not just from LinkedIn), check our <a href="/blog/how-to-find-someone-email-address-efficiently">complete guide to finding someone's email address</a>.</p>
 <p>If you want to automate LinkedIn outreach alongside email, see our roundup of the <a href="/blog/8-best-ai-linkedin-outreach-tools">best AI LinkedIn outreach tools</a> and our <a href="/blog/8-best-ai-linkedin-outreach-tools">LinkedIn automation guide</a>.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>How can I get someone's email from their LinkedIn profile for free?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-can-i-get-someones-email-from-their-linkedin-profile-for-free">How can I get someone's email from their LinkedIn profile for free?</h3>
 <p>Three free methods work: (1) Click "Contact info" below their headline to check if they share their email publicly. (2) Use Google search operators like <code>"firstname lastname" "@company.com"</code> to find their email indexed elsewhere on the web. (3) Guess the email pattern (firstname.lastname@company.com is the most common format) and verify it with a free SMTP checker. You can also export your LinkedIn connections as a CSV, which includes emails for about 30-40% of your network.</p>
-<h3>Is it legal to find email addresses from LinkedIn?</h3>
+<h3 id="is-it-legal-to-find-email-addresses-from-linkedin">Is it legal to find email addresses from LinkedIn?</h3>
 <p>Yes, finding publicly available email addresses is legal. Automated scraping of LinkedIn profiles violates their Terms of Service, but using a Chrome extension that looks up emails from external databases while you browse manually is a different activity. For B2B outreach in the US, CAN-SPAM allows cold email as long as you include an unsubscribe link and your physical address. In the EU, GDPR requires a legitimate business interest. In Canada, CASL is stricter and generally requires some form of prior consent.</p>
-<h3>What is the best Chrome extension to find emails on LinkedIn?</h3>
+<h3 id="what-is-the-best-chrome-extension-to-find-emails-on-linkedin">What is the best Chrome extension to find emails on LinkedIn?</h3>
 <p>Overloop, Hunter.io, Kaspr, and Lusha are the most reliable Chrome extensions for finding emails directly from LinkedIn profiles. Overloop has a database of 450M+ contacts and lets you push found emails directly into outreach campaigns. Hunter.io is strong for domain-based search. Kaspr also returns phone numbers. The best choice depends on whether you need just the email or a full outbound workflow.</p>
-<h3>Can I find someone's email on LinkedIn without being connected?</h3>
+<h3 id="can-i-find-someones-email-on-linkedin-without-being-connected">Can I find someone's email on LinkedIn without being connected?</h3>
 <p>Yes. The built-in "Contact info" section usually requires a 1st-degree connection, but external tools like Overloop, Hunter.io, and Kaspr do not depend on your connection status. They pull email data from their own databases. You can also use Google search operators, check the company website, or look at GitHub commit history to find emails without any LinkedIn connection.</p>
-<h3>How do I find someone's email from their name and company?</h3>
+<h3 id="how-do-i-find-someones-email-from-their-name-and-company">How do I find someone's email from their name and company?</h3>
 <p>If you know the person's name and company domain, try the most common email patterns in order: firstname.lastname@company.com (used by ~50% of companies), firstname@company.com (~15%), flastname@company.com (~12%). Run each guess through an email verification tool that checks SMTP servers. Two or three guesses usually land the right address unless the company uses a catch-all domain.</p>
-<h3>How many LinkedIn profiles can I view per day without getting restricted?</h3>
+<h3 id="how-many-linkedin-profiles-can-i-view-per-day-without-getting-restricted">How many LinkedIn profiles can I view per day without getting restricted?</h3>
 <p>LinkedIn does not publish official limits, but based on what we observe across thousands of users: free accounts get throttled around 100 profile views per day, LinkedIn Premium around 150-200, and Sales Navigator around 250-300. Exceeding these limits consistently can trigger temporary restrictions or a commercial use warning on your account.</p>
-<h3>What is the success rate of LinkedIn email finder tools?</h3>
+<h3 id="what-is-the-success-rate-of-linkedin-email-finder-tools">What is the success rate of LinkedIn email finder tools?</h3>
 <p>Most reputable tools find verified emails for 70-90% of B2B professionals at companies with 10+ employees. Success rates drop for freelancers, solopreneurs, and very small businesses. The key factor is email verification: tools that do real-time SMTP verification (like Overloop) have higher accuracy than those that rely on static databases alone.</p>
-<h3>Do I need LinkedIn Sales Navigator to find emails?</h3>
+<h3 id="do-i-need-linkedin-sales-navigator-to-find-emails">Do I need LinkedIn Sales Navigator to find emails?</h3>
 <p>No. Sales Navigator helps you build targeted prospect lists with advanced filters (industry, headcount, role, geography), but it deliberately hides email addresses. You still need an email finder tool to get the actual address. If you only need a few emails, the free methods (Contact info check, Google operators, pattern guessing) work without any paid LinkedIn subscription.</p>
 
 </main>

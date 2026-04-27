@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -334,9 +394,9 @@ No TOC sidebar (too short — in-article links only).
 <p>You spent 30 minutes writing the perfect cold email. Three paragraphs. Detailed value prop. A clean CTA at the end. You send it to 500 prospects. Open rate: 45%. Reply rate: 0.8%.</p>
 <p>The problem is not your offer. It's the length. Your prospects decided in 2 seconds that your email was too long to read, and they moved on.</p>
 <p>So how long should a cold email actually be? We looked at the data.</p>
-<h2>The Numbers: What Data Says About Cold Email Length</h2>
+<h2 id="the-numbers-what-data-says-about-cold-email-length">The Numbers: What Data Says About Cold Email Length</h2>
 <p>Multiple studies across millions of cold emails converge on the same answer: shorter is better, but there's a sweet spot.</p>
-<h3>Reply rate by word count</h3>
+<h3 id="reply-rate-by-word-count">Reply rate by word count</h3>
 <table>
 <tr><th>Email Length</th><th>Average Reply Rate</th><th>Verdict</th></tr>
 <tr><td>Under 25 words</td><td>4.1%</td><td>Too short. Feels spammy or lazy.</td></tr>
@@ -373,7 +433,7 @@ No TOC sidebar (too short — in-article links only).
 <text fill="#9ca3af" font-family="Inter, sans-serif" font-size="11" text-anchor="middle" x="350" y="376">Source: Aggregated from Boomerang, Lemlist, Instantly, and Lavender/Gong studies</text>
 </svg>
 <p>The sweet spot: <strong>50-125 words</strong>. That's about 5-8 sentences. Enough to establish context, deliver value, and make one clear ask.</p>
-<h3>Corroborating studies</h3>
+<h3 id="corroborating-studies">Corroborating studies</h3>
 <p>This is not a single-study finding. Multiple independent datasets land in the same zone:</p>
 <table>
 <tr><th>Study / Source</th><th>Sample Size</th><th>Optimal Length</th><th>Key Finding</th></tr>
@@ -383,7 +443,7 @@ No TOC sidebar (too short — in-article links only).
 <tr><td>Lavender / Gong</td><td>304K+ emails</td><td>Under 100 words</td><td>Initial cold emails under 100 words booked the most meetings</td></tr>
 </table>
 <p>The range narrows depending on what you measure. If you optimize for reply rate, aim for 75-125 words. If you optimize for meetings booked, go tighter: under 80 words.</p>
-<h3>Why this range works</h3>
+<h3 id="why-this-range-works">Why this range works</h3>
 <p>This tracks with how people actually read email. The average professional spends 11 seconds on an email (9.7 seconds on mobile). At normal reading speed, that's about 50-60 words. If your email is 200+ words, most readers will skim the first two lines and decide whether to keep going. Most don't.</p>
 <p>Mobile compounds the problem. 61% of B2B emails are first opened on a phone. At 75-100 words, your entire email is visible without scrolling on most smartphones. At 200+ words, the reader has to scroll, and the CTA disappears below the fold.</p>
 <svg aria-label="Side-by-side mobile mockup comparing a 75-word email that fits on screen versus a 200-word email that requires scrolling" role="img" viewbox="0 0 700 480" width="100%" xmlns="http://www.w3.org/2000/svg">
@@ -457,7 +517,7 @@ No TOC sidebar (too short — in-article links only).
 <!-- Label -->
 <text fill="#6b7280" font-family="Inter, sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="510" y="468">200 words - requires scroll</text>
 </svg>
-<h2>Subject Line Length: The 4-7 Word Rule</h2>
+<h2 id="subject-line-length-the-4-7-word-rule">Subject Line Length: The 4-7 Word Rule</h2>
 <p>Your subject line determines whether your email gets opened at all. Length matters here too.</p>
 <table>
 <tr><th>Subject Line Length</th><th>Average Open Rate</th></tr>
@@ -467,7 +527,7 @@ No TOC sidebar (too short — in-article links only).
 <tr><td>13+ words</td><td>22%</td></tr>
 </table>
 <p><strong>4-7 words</strong> gets the highest open rates. That's enough to be specific without getting truncated on mobile. Most mobile email clients cut subject lines at 35-40 characters, so keep it tight.</p>
-<h3>Subject line length by character count</h3>
+<h3 id="subject-line-length-by-character-count">Subject line length by character count</h3>
 <p>Backlinko's research on subject line character count tells a complementary story:</p>
 <table>
 <tr><th>Character Count</th><th>Response Rate</th></tr>
@@ -529,8 +589,8 @@ No TOC sidebar (too short — in-article links only).
 <li>"Idea for [Company] sales team" (5 words)</li>
 </ul>
 <p>Avoid <a href="/blog/455-email-spam-trigger-words-avoid-2018">spam trigger words</a> in your subject line. Words like "free," "urgent," or "act now" will tank your open rate regardless of length.</p>
-<h2>Short vs. Long: When to Use Each</h2>
-<h3>When short emails win (50-75 words)</h3>
+<h2 id="short-vs-long-when-to-use-each">Short vs. Long: When to Use Each</h2>
+<h3 id="when-short-emails-win-50-75-words">When short emails win (50-75 words)</h3>
 <p>Use short emails when:</p>
 <ul>
 <li>It's a first touch and you have no relationship</li>
@@ -538,7 +598,7 @@ No TOC sidebar (too short — in-article links only).
 <li>You're sending a follow-up or bump</li>
 <li>You have a clear, simple ask (book a call, reply with yes/no)</li>
 </ul>
-<h3>When longer emails work (100-150 words)</h3>
+<h3 id="when-longer-emails-work-100-150-words">When longer emails work (100-150 words)</h3>
 <p>Longer emails can work when:</p>
 <ul>
 <li>You have a warm intro or referral ("Sarah from X suggested I reach out")</li>
@@ -547,7 +607,7 @@ No TOC sidebar (too short — in-article links only).
 <li>You're reaching out about a specific problem you can prove you understand</li>
 </ul>
 <p>Even in these cases, stay under 150 words. If you can't explain it in 150 words, you don't understand it well enough.</p>
-<h2>2026 Benchmarks: The Bar Keeps Dropping</h2>
+<h2 id="2026-benchmarks-the-bar-keeps-dropping">2026 Benchmarks: The Bar Keeps Dropping</h2>
 <p>Cold email is getting harder. The Instantly 2026 Benchmark Report (analyzing billions of sends across thousands of workspaces) shows the current state:</p>
 <table>
 <tr><th>Metric</th><th>Average</th><th>Top 25%</th><th>Elite (Top 10%)</th></tr>
@@ -603,7 +663,7 @@ No TOC sidebar (too short — in-article links only).
 <!-- Source -->
 <text fill="#9ca3af" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" x="370" y="380">Source: Instantly Benchmark Report (2024, 2026), industry aggregates</text>
 </svg>
-<h2>Anatomy of a 75-Word Cold Email That Works</h2>
+<h2 id="anatomy-of-a-75-word-cold-email-that-works">Anatomy of a 75-Word Cold Email That Works</h2>
 <p>Here's the structure that consistently performs across our <a href="/blog/cold-email-stats-2018">cold email data</a>:</p>
 <p><strong>Line 1: Context (why you're reaching out)</strong><br/>
             "I noticed [Company] just expanded into EMEA. Congrats."</p>
@@ -612,7 +672,7 @@ No TOC sidebar (too short — in-article links only).
 <p><strong>Line 4: CTA (one clear ask)</strong><br/>
             "Worth a 15-min call this week?"</p>
 <p>That's 52 words. It works because every sentence earns the next one. No filler. No "I hope this email finds you well."</p>
-<h2>CTA Placement: Where to Put Your Ask</h2>
+<h2 id="cta-placement-where-to-put-your-ask">CTA Placement: Where to Put Your Ask</h2>
 <p>The data is clear: put your CTA at the very end. Emails with the call-to-action in the last sentence get 22% more replies than emails where the ask is buried in the middle.</p>
 <p>Gong's data adds a twist: the highest-performing CTA type is the "interest CTA," which sells the conversation, not the meeting. Instead of asking to book a demo, you ask if the topic is even relevant. This works because it removes pressure.</p>
 <p>Rules for CTAs in cold emails:</p>
@@ -623,7 +683,7 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Use interest CTAs.</strong> "Is this something you're thinking about?" outperforms "Can I get 15 minutes on your calendar?" because it asks about the topic, not the meeting.</li>
 <li><strong>Don't hide it.</strong> Your CTA should be its own line or paragraph, not tacked onto the end of a long sentence.</li>
 </ul>
-<h2>Follow-Up Emails: Shorter Body, But Not Fewer Sentences</h2>
+<h2 id="follow-up-emails-shorter-body-but-not-fewer-sentences">Follow-Up Emails: Shorter Body, But Not Fewer Sentences</h2>
 <p>Follow-up word count should drop from your initial email, but don't strip them down to one-liners. There's an important nuance here.</p>
 <p>Gong analyzed 304,174 prospecting emails and found that <strong>follow-up emails with 4+ sentences book 15x more meetings</strong> than follow-ups with three or fewer sentences. That sounds like a contradiction, but it's not. Four short sentences at 8-12 words each still lands you at 35-50 words total. The trick is packing value into each sentence instead of writing one lazy "Just bumping this up" line.</p>
 <table>
@@ -634,14 +694,14 @@ No TOC sidebar (too short — in-article links only).
 </table>
 <p>The Instantly 2026 Benchmark Report confirms this pattern: step 1 generates 58% of total replies, but steps 2-7 still contribute 42% combined. Follow-ups with new value outperform generic check-ins by about 30%.</p>
 <p>Three to four follow-ups is the max for most cold sequences. After that, you're hurting your sender reputation. Read our guide on <a href="/blog/cold-email-stats-2018">building an effective cold email strategy</a> for the full sequence framework.</p>
-<h2>Real Examples: Before and After</h2>
-<h3>Before (187 words, 1.2% reply rate)</h3>
+<h2 id="real-examples-before-and-after">Real Examples: Before and After</h2>
+<h3 id="before-187-words-12-reply-rate">Before (187 words, 1.2% reply rate)</h3>
 <blockquote>
 <p>Hi John,</p>
 <p>My name is Sarah and I work at AcmeSoft. We're a leading provider of sales engagement solutions that help businesses scale their outbound efforts. I came across your profile on LinkedIn and noticed that you're the VP of Sales at TechCorp. I wanted to reach out because I think our platform could really help your team achieve better results. Our solution offers automated sequences, multi-channel outreach, AI-powered personalization, and real-time analytics. We've helped companies like BigCo and MegaCorp increase their reply rates by up to 40%. I'd love to schedule a 30-minute call to walk you through a demo and show you how we can help TechCorp specifically. Would you be available sometime next week? I'm flexible on timing. Looking forward to hearing from you.</p>
 <p>Best regards,<br/>Sarah</p>
 </blockquote>
-<h3>After (62 words, 6.8% reply rate)</h3>
+<h3 id="after-62-words-68-reply-rate">After (62 words, 6.8% reply rate)</h3>
 <blockquote>
 <p>Hi John,</p>
 <p>Saw TechCorp just hired 5 new SDRs. Scaling outbound?</p>
@@ -658,14 +718,14 @@ No TOC sidebar (too short — in-article links only).
 <li>Cut the word count from 187 to 62 (a 67% reduction).</li>
 <li>Changed the CTA from "schedule a 30-minute demo" to "15-min call." Lower commitment, higher conversion.</li>
 </ul>
-<h3>Example 2: The follow-up that books meetings</h3>
-<h3>Bad follow-up (12 words, 0.3% reply rate)</h3>
+<h3 id="example-2-the-follow-up-that-books-meetings">Example 2: The follow-up that books meetings</h3>
+<h3 id="bad-follow-up-12-words-03-reply-rate">Bad follow-up (12 words, 0.3% reply rate)</h3>
 <blockquote>
 <p>Hi John,</p>
 <p>Just following up on my last email. Let me know your thoughts.</p>
 <p>Sarah</p>
 </blockquote>
-<h3>Good follow-up (41 words, 4.2% reply rate)</h3>
+<h3 id="good-follow-up-41-words-42-reply-rate">Good follow-up (41 words, 4.2% reply rate)</h3>
 <blockquote>
 <p>Hi John,</p>
 <p>Saw TechCorp posted two more SDR roles last week. Scaling fast.</p>
@@ -674,7 +734,7 @@ No TOC sidebar (too short — in-article links only).
 <p>Sarah</p>
 </blockquote>
 <p>The bad version is one sentence of nothing. The good version is four sentences, each pulling its weight: trigger event, social proof, specific number, low-friction CTA. This is why Gong's "4+ sentences" rule works for follow-ups.</p>
-<h2>Readability Matters as Much as Length</h2>
+<h2 id="readability-matters-as-much-as-length">Readability Matters as Much as Length</h2>
 <p>Word count is only half the equation. The Boomerang study also found that <strong>emails written at a 3rd-grade reading level get 36% more responses</strong> than emails written at a college reading level. That does not mean writing like a child. It means short sentences, common words, and no jargon.</p>
 <table>
 <tr><th>Reading Level</th><th>Lift vs. College-Level Emails</th></tr>
@@ -739,7 +799,7 @@ No TOC sidebar (too short — in-article links only).
 <!-- Source -->
 <text fill="#9ca3af" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" x="370" y="380">Source: Boomerang study (40 million emails)</text>
 </svg>
-<h2>Common Mistakes That Make Emails Too Long</h2>
+<h2 id="common-mistakes-that-make-emails-too-long">Common Mistakes That Make Emails Too Long</h2>
 <ol>
 <li><strong>"I hope this email finds you well."</strong> Delete it. Everyone knows it's filler.</li>
 <li><strong>Listing every feature.</strong> Pick the one that matters to this prospect. Save the rest for the call.</li>
@@ -748,7 +808,7 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Hedging language.</strong> "I was wondering if maybe you'd possibly be interested in perhaps..." Just ask.</li>
 </ol>
 <p>Make sure you also avoid <a href="/blog/500-trigger-words">trigger words</a> that increase your email length AND hurt deliverability. Run a quick check with our <a href="/tools/spam-checker">free Spam Checker</a> before sending.</p>
-<h2>Key Takeaways</h2>
+<h2 id="key-takeaways">Key Takeaways</h2>
 <ul>
 <li><strong>Body:</strong> 50-125 words for first touch (under 80 for elite performance). 25-60 for follow-ups.</li>
 <li><strong>Subject line:</strong> 4-7 words / 36-50 characters. Specific, not generic.</li>
@@ -760,18 +820,18 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Mobile:</strong> 61% of B2B emails open on phones first. Keep your entire email visible without scrolling.</li>
 </ul>
 <p>The best cold emails feel like they took 30 seconds to write and 10 seconds to read. That takes more effort than writing a long one. But the reply rates make it worth it.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>How many words should a cold email be?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-many-words-should-a-cold-email-be">How many words should a cold email be?</h3>
 <p>A cold email should be 50 to 125 words. This range produces the highest reply rates across every major study. The Boomerang study of 40 million emails found that 75-100 words hit a 51% response rate. The Instantly 2026 Benchmark Report found that top-performing campaigns stay under 80 words. If you have to pick one number, aim for 75 words.</p>
-<h3>Is 200 words too long for a cold email?</h3>
+<h3 id="is-200-words-too-long-for-a-cold-email">Is 200 words too long for a cold email?</h3>
 <p>Yes. Emails over 200 words see reply rates drop to 3.9% or lower. Lemlist's campaign data shows that 300+ word emails have only a 19% booking rate, compared to 52% for emails around 120 words. The only exception is when you have a warm intro or referral that justifies the extra context.</p>
-<h3>Should follow-up emails be shorter than the first email?</h3>
+<h3 id="should-follow-up-emails-be-shorter-than-the-first-email">Should follow-up emails be shorter than the first email?</h3>
 <p>Follow-up emails should use fewer words (25-60 words), but not fewer sentences. Gong's study of 304,174 emails found that follow-ups with 4+ sentences book 15x more meetings than follow-ups with three or fewer sentences. Write four short, punchy sentences instead of one vague "just checking in" line.</p>
-<h3>How long should a cold email subject line be?</h3>
+<h3 id="how-long-should-a-cold-email-subject-line-be">How long should a cold email subject line be?</h3>
 <p>4 to 7 words, or 36 to 50 characters. Subject lines in this range get the highest open rates (37%) and response rates (22.3%). Shorter subject lines get truncated on desktop; longer ones get cut off on mobile. Keep it specific and skip the clickbait.</p>
-<h3>Does reading level affect cold email response rates?</h3>
+<h3 id="does-reading-level-affect-cold-email-response-rates">Does reading level affect cold email response rates?</h3>
 <p>Yes. Boomerang found that emails written at a 3rd-grade reading level get 36% more responses than emails written at a college reading level. Write short sentences, use common words, and avoid jargon. Run your email through a Flesch-Kincaid checker and aim for a score above 60.</p>
-<h3>What day of the week gets the most cold email replies?</h3>
+<h3 id="what-day-of-the-week-gets-the-most-cold-email-replies">What day of the week gets the most cold email replies?</h3>
 <p>Wednesday has the highest engagement rates for cold email, according to the Instantly 2026 Benchmark Report. Monday is best for launching new sequences. Avoid Friday, which has the highest auto-reply volume.</p>
 
 </main>

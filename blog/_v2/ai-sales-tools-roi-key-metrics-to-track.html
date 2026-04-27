@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,20 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#related-video-from-youtube">Related video from YouTube</a></li>
+    <li><a href="#metrics-for-tracking-ai-sales-tools-roi">Metrics for Tracking AI Sales Tools ROI</a></li>
+    <li><a href="#maximizing-roi-with-ai-sales-tools">Maximizing ROI with AI Sales Tools</a></li>
+    <li><a href="#best-practices-for-measuring-and-improving-roi">Best Practices for Measuring and Improving ROI</a></li>
+    <li><a href="#maximizing-ai-sales-tools">Maximizing AI Sales Tools</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>

@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -331,7 +391,7 @@ No TOC sidebar (too short — in-article links only).
     <main class="main-wrap">
 
 <p>Email has been, for many years, the main tool for prospecting and closing new customers. Companies from any sector (education, technology, services, tourism, etc.), use email as the main tool for managing potential customers. For this reason, today I want to give you, from the experience of Overloop as a <a href="https://overloop.com">sales automation tool</a>, a series of tips to close more deals with your sales emails.</p>
-<h2>TL;DR</h2>
+<h2 id="tldr">TL;DR</h2>
 <p>Here is a summary of all the tips contained in this article:</p>
 <ul>
 <li>Check your sender's name</li>
@@ -348,11 +408,11 @@ No TOC sidebar (too short — in-article links only).
 <li>Take care of all the details</li>
 <li>Focus on the customer, be empathetic</li>
 </ul>
-<h2>OK, let's go!</h2>
+<h2 id="ok-lets-go">OK, let's go!</h2>
 <p>First of all, if you have not yet read <a href="/blog/how-to-write-a-successful-follow-up-email">our post on how to write a successful cold email</a>, I recommend that you take a look at it to get a first general idea of some of the key points of all email. But, beyond that first cold email, today I want to talk about how to optimize an email with a commercial proposal to generate trust in your prospect and transform him into a new client. Interesting, right? Start!</p>
-<h2>Structure of a successful sales email</h2>
+<h2 id="structure-of-a-successful-sales-email">Structure of a successful sales email</h2>
 <p>Let's analyze, first of all, some key points that every sales email should meet. So you can take them as a reference when setting up your cold email campaigns and you will have a base on which to work.</p>
-<h3>Anatomy of a Successful Sales Email</h3>
+<h3 id="anatomy-of-a-successful-sales-email">Anatomy of a Successful Sales Email</h3>
 <p>It has been a few years developing email marketing campaigns, since Overloop began its journey. And, during all this time, we have had the opportunity to contrast which are the key pieces of a successful sales email or, at least, which are the ones that will contribute to increase the probability of success of your next shipment.</p>
 <ul>
 <li><strong>Subject line.</strong> There has been a lot of talk about this short piece of text which, so to speak, is our first cover letter when our email reaches the inbox of a prospect who didn't know us at all previously.</li>
@@ -377,7 +437,7 @@ No TOC sidebar (too short — in-article links only).
 <ul>
 <li><strong>Call to action.</strong> You have already explained to your prospect who you are, what needs you can help him solve and you have generated enough trust so that he wants to move forward in your business relationship (even if it is only a matter of responding to your email). Now it's time to make it clear to him what you want from him. Don't give room for ambiguities, be direct. But don't go straight to closing the deal in your first cold email, because it will generate distrust. Tell him what the next step is clearly. And never forget to be polite. Something like "Would you be available for a video call during this week?" is better than an aggressive call to action like "Click and schedule your call."</li>
 </ul>
-<h3>Follow-up emails</h3>
+<h3 id="follow-up-emails">Follow-up emails</h3>
 <p>Any self-respecting email marketing campaign should consider including a strategy of retaking contacts, through follow-up emails. Often, a cold first email may not achieve the expected result, but that doesn't mean we shouldn't insist. I already talked in more detail about this issue in a <a href="/blog/how-to-write-a-successful-follow-up-email">previous post</a>, so I recommend you take a look for more information.</p>
 <p>A follow-up email should focus, in general terms, on three key points:</p>
 <ul>
@@ -385,7 +445,7 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Continue to advance in the value proposition</strong>. That it is not a simple repetition of the information you have already sent. Continue the story, take another step on your way to converting that prospect into a new business partner.</li>
 <li><strong>Look for a clear and simple answer from the prospect</strong>. Always keep this in mind, whether it's the second or fifth follow-up email you send.</li>
 </ul>
-<h2>Communication strategies that work for your sales emails</h2>
+<h2 id="communication-strategies-that-work-for-your-sales-emails">Communication strategies that work for your sales emails</h2>
 <p>Once the structure of a sales email has been analyzed step by step, it is time to go one step further. I'm going to talk about some communication strategies that will help you increase the success rate of your emails drastically. Try them!</p>
 <ul>
 <li><strong>A/B Testing</strong>: Ok, it may not be a communication strategy as such, but it is certainly one of the most powerful optimization tools for your sales emails. Because only by testing and contrasting results can you find that message that really captures the attention of your prospect, that text that really intrigues him, that makes him want to know more about you and your business. This type of test is especially effective when it comes to the subject line of a sales email, but you can apply it to any part of it. Do not hesitate to experiment, because the results obtained by your campaigns will give you the most valuable information about what works or what should be improved.</li>

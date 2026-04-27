@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <!--
 ================================================================
-TEMPLATE #7: Data List / Directory (P1 — 53 articles)
-Example: "250+ Email Spam Trigger Words to Avoid in 2026"
+TEMPLATE #3: Pillar / Ultimate Guide (P0 — 288 articles)
+DESIGN SYSTEM: Overloop canonical (indigo #6366F1 → purple #A855F7)
+
+Example topic: B2B Lead Generation — The Complete Guide (2026)
+Covers: cold email, LinkedIn, content, paid, tools, KPIs, mistakes, scaling
 
 Template-specific sections:
-- Hero with data-scope badges (250+ entries · 12 categories · verified)
-- Live-search input with filter
-- Category tag chips (click-to-filter)
-- Sortable/filterable table with .table-keep (no card collapse on mobile)
-- Export / download-CSV CTA
-- "How to use this list" section
-- Related lists grid at the bottom
+- Chapter navigation (visual, numbered circles)
+- Sub-TOC per chapter (`.sub-toc`)
+- Key takeaways card per chapter (`.key-takeaways`)
+- Downloadable PDF / checklist CTA (`.downloadable`)
+- Expert quote scattered per chapter (expert-callout reused)
+- Internal-link grid per chapter (`.chapter-links`)
+- Longer TOC with chapter groupings
+
+NO tested-by banner (per feedback — reserved for product-comparison templates)
 ================================================================
 -->
 <html lang="en">
@@ -43,6 +48,7 @@ Template-specific sections:
   <meta name="twitter:image" content="https://overloop.com/assets/images/og/455-email-spam-trigger-words-avoid-2018.png">
 
   <style>
+    /* ============= TOKENS ============= */
     :root {
       --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
       --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
@@ -64,9 +70,10 @@ Template-specific sections:
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
       --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
       --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
       --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
-      --container-max: 1200px; --container-blog: 960px;
+      --container-max: 1200px; --container-blog: 800px;
       --page-px: 48px; --page-px-mobile: 16px;
       --t: 200ms ease;
     }
@@ -76,6 +83,7 @@ Template-specific sections:
     a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
     a:hover { color: var(--color-primary-dark); text-decoration: underline; }
     .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
     .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
 
     /* Nav */
@@ -97,115 +105,53 @@ Template-specific sections:
     .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
     .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
 
-    /* Hero */
-    .article-hero { background: var(--gradient-hero-bg); padding: 64px var(--page-px) 48px; position: relative; overflow: hidden; }
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
     .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
     .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
     .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
     .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
-    .article-hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: var(--color-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
     .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
-    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 720px; margin: 0 auto 24px; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
     .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
     .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
     .article-meta__text { text-align: left; line-height: 1.3; }
     .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
     .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
 
-    /* Data-list hero stats */
-    .data-stats { display: flex; justify-content: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-    .data-stats__item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-text); box-shadow: var(--shadow-sm); }
-    .data-stats__item strong { color: var(--color-primary); font-size: 15px; }
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
 
-    /* Main */
-    .data-main { max-width: var(--container-blog); margin: 0 auto; padding: 40px var(--page-px); }
-    .data-main > * { margin-bottom: 20px; }
-    .data-main p { line-height: 1.75; }
-    .data-main h2 { font-size: 26px; font-weight: 800; color: var(--color-text); letter-spacing: -0.01em; line-height: 1.2; margin: 40px 0 16px; }
-    .data-main h3 { font-size: 19px; font-weight: 700; color: var(--color-text); margin: 24px 0 10px; }
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
 
-    /* Toolbar (search + count + download) */
-    .data-toolbar {
-      display: grid; grid-template-columns: 1fr auto auto; gap: 14px; align-items: center;
-      padding: 18px 20px; background: var(--color-white);
-      border: 1px solid var(--color-border-light); border-radius: var(--r-lg);
-      box-shadow: var(--shadow-sm);
-      position: sticky; top: 88px; z-index: 10;
-      margin: 24px 0 20px;
-    }
-    .data-search { position: relative; }
-    .data-search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--color-muted); pointer-events: none; }
-    .data-search input {
-      width: 100%; padding: 11px 14px 11px 40px;
-      background: var(--color-surface-alt); border: 1px solid transparent;
-      border-radius: var(--r-sm);
-      font-family: var(--font-sans); font-size: 14px; color: var(--color-text);
-      transition: var(--t);
-    }
-    .data-search input:focus { outline: none; background: #fff; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.10); }
-    .data-count { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary); white-space: nowrap; }
-    .data-count strong { color: var(--color-primary); }
-
-    /* Filter chips */
-    .data-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 6px 14px; background: var(--color-white);
-      border: 1px solid var(--color-border-light); border-radius: var(--r-pill);
-      font-family: var(--font-sans); font-size: 13px; font-weight: 600;
-      color: var(--color-text-body); cursor: pointer; transition: var(--t);
-    }
-    .chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
-    .chip.is-active { background: var(--gradient-brand); border-color: transparent; color: #fff; box-shadow: var(--shadow-sm); }
-    .chip .count { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; font-weight: 700; }
-
-    /* Data table */
-    .data-table-wrap {
-      border-radius: var(--r-lg); border: 1px solid var(--color-border);
-      background: #fff; overflow: hidden;
-      box-shadow: var(--shadow-sm);
-    }
-    .data-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; }
-    .data-table thead th {
-      position: sticky; top: 180px; z-index: 5;
-      background: var(--color-text); color: #fff;
-      padding: 12px 18px;
-      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
-      letter-spacing: 0.04em; text-transform: uppercase; text-align: left;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .data-table thead th:first-child { border-top-left-radius: 0; }
-    .data-table thead th.sort-btn { cursor: pointer; user-select: none; }
-    .data-table thead th.sort-btn::after { content: "↕"; margin-left: 6px; opacity: 0.5; }
-    .data-table thead th.sort-btn.sort-asc::after { content: "↑"; opacity: 1; color: var(--color-primary-light); }
-    .data-table thead th.sort-btn.sort-desc::after { content: "↓"; opacity: 1; color: var(--color-primary-light); }
-    .data-table tbody td { padding: 12px 18px; border-bottom: 1px solid var(--color-border-light); vertical-align: middle; }
-    .data-table tbody tr:last-child td { border-bottom: none; }
-    .data-table tbody tr:hover { background: var(--color-primary-50); }
-    .data-table tbody tr.hidden { display: none; }
-    .data-table .word { font-family: var(--font-mono); font-weight: 700; color: var(--color-text); }
-    .data-table .cat-tag {
-      display: inline-block; padding: 2px 10px; border-radius: var(--r-pill);
-      font-family: var(--font-mono); font-size: 10px; font-weight: 700;
-      letter-spacing: 0.04em; text-transform: uppercase;
-    }
-    .cat-tag--finance { background: #FEF3C7; color: #92400E; }
-    .cat-tag--urgency { background: #FEE2E2; color: #991B1B; }
-    .cat-tag--free { background: #DBEAFE; color: #1E40AF; }
-    .cat-tag--scam { background: #FFE4E6; color: #9F1239; }
-    .cat-tag--medical { background: #DCFCE7; color: #166534; }
-    .cat-tag--adult { background: #FCE7F3; color: #9D174D; }
-    .cat-tag--marketing { background: var(--color-primary-50); color: var(--color-primary); }
-    .cat-tag--deadline { background: #FFEDD5; color: #9A3412; }
-    .data-table .score { font-family: var(--font-mono); font-size: 12px; text-align: right; }
-    .data-table .score--high { color: var(--color-danger); font-weight: 700; }
-    .data-table .score--med { color: var(--color-warning); font-weight: 700; }
-    .data-table .score--low { color: var(--color-success-dark); font-weight: 700; }
-
-    /* Empty state */
-    .data-empty { display: none; padding: 48px 24px; text-align: center; color: var(--color-muted); }
-    .data-empty svg { width: 32px; height: 32px; margin: 0 auto 12px; color: var(--color-border); }
-    .data-empty.is-visible { display: block; }
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
 
     /* Callouts */
     .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
@@ -223,25 +169,113 @@ Template-specific sections:
     .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
     .callout--fact .callout__body strong { color: #fff; }
     .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
 
-    /* Download banner */
-    .download-banner {
-      background: var(--gradient-brand); color: #fff;
-      border-radius: var(--r-xl); padding: 28px 32px;
-      margin: 28px 0;
-      display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center;
-      box-shadow: var(--shadow-glow); position: relative; overflow: hidden;
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
     }
-    .download-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
-    .download-banner > * { position: relative; }
-    .download-banner__icon { width: 56px; height: 56px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
-    .download-banner__icon svg { color: #fff; width: 24px; height: 24px; }
-    .download-banner__body h4 { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; }
-    .download-banner__body p { font-size: 13.5px; color: rgba(255,255,255,0.9); margin: 0; }
-    .download-banner .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
-    .download-banner .btn:hover { background: #fff; color: var(--color-primary-dark); }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
 
-    /* CTA dark */
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
     .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
     .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
     .cta-hard > * { position: relative; }
@@ -260,7 +294,21 @@ Template-specific sections:
     .faq details[open] summary { color: var(--color-primary); }
     .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
 
-    /* Footer + author + newsletter + related (reused) */
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
     .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
     .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
     .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
@@ -287,32 +335,100 @@ Template-specific sections:
     .footer a:hover { color: #fff; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
 
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
     @media (max-width: 991px) {
       :root { --page-px: 24px; }
-      .data-toolbar { grid-template-columns: 1fr; top: 80px; }
-      .data-count { text-align: center; }
-      .related-grid { grid-template-columns: 1fr 1fr; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
-      .download-banner { grid-template-columns: 1fr; text-align: center; }
     }
     @media (max-width: 639px) {
       .article-hero { padding: 40px var(--page-px-mobile) 32px; }
-      .article-hero h1 { font-size: 30px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
       .nav-links { display: none; }
       .newsletter form { flex-direction: column; }
-      .related-grid { grid-template-columns: 1fr; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
-      /* table-keep: do NOT collapse to cards even on mobile (data-list specific) */
-      .data-table-wrap { overflow-x: auto; }
-      .data-table thead th { top: 72px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+
   <div class="reading-progress" id="reading-progress"></div>
 
+  <!-- Nav -->
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo">
       <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
@@ -330,11 +446,13 @@ Template-specific sections:
   </nav>
 
   <article>
+
+    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
         <span class="pill pill--glass">
-          <i data-lucide="database" style="width:12px;height:12px"></i>
-          Data list · 8 categories
+          <i data-lucide="library" style="width:12px;height:12px"></i>
+          Ultimate Guide · 10 chapters
         </span>
         <h1>600+ Email Spam Trigger Words (2026 List)</h1>
         <p class="lead">The most comprehensive list of 600+ email spam trigger words organized by 18 categories with risk levels and safer alternatives. Updated for 2026.</p>
@@ -345,21 +463,55 @@ Template-specific sections:
             <div class="article-meta__dates">Published Jun 12, 2018 · Updated Apr 27, 2026 · 47 min read</div>
           </div>
         </div>
-        <div class="data-stats">
-          <span class="data-stats__item"><strong>250+</strong> entries</span>
-          <span class="data-stats__item"><strong>8</strong> categories</span>
-          <span class="data-stats__item"><strong>Verified</strong> Apr 2026</span>
-        </div>
       </div>
     </header>
 
-    <main class="data-main">
+    <div class="article-layout">
+
+      <!-- TOC -->
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">Chapters</div>
+        <ul>
+    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#how-spam-filters-work">How Spam Filters Actually Work in 2026</a></li>
+    <li><a href="#urgency-words">1. Urgency and Pressure Words</a></li>
+    <li><a href="#financial-words">2. Financial and Money Words</a></li>
+    <li><a href="#free-discount-words">3. Free and Discount Words</a></li>
+    <li><a href="#clickbait-words">4. Clickbait and Hype Words</a></li>
+    <li><a href="#pressure-words">5. Pressure and Manipulation Words</a></li>
+    <li><a href="#health-words">6. Health and Weight Loss Words</a></li>
+    <li><a href="#scam-words">7. Scam and Phishing Words</a></li>
+    <li><a href="#formatting-triggers">8. Formatting and Technical Triggers</a></li>
+    <li><a href="#marketing-words">9. Marketing and Sales Buzzwords</a></li>
+    <li><a href="#subject-line-triggers">10. Subject Line Specific Triggers</a></li>
+    <li><a href="#gambling-words">11. Gambling and Lottery Words</a></li>
+    <li><a href="#tech-security-words">12. Tech and Security Words</a></li>
+    <li><a href="#legal-compliance-words">13. Legal and Compliance Words</a></li>
+    <li><a href="#employment-words">14. Employment and Opportunity Words</a></li>
+    <li><a href="#adult-dating-words">15. Adult and Dating Words</a></li>
+    <li><a href="#symbols-triggers">16. Symbols, Numbers, and Character Triggers</a></li>
+    <li><a href="#generic-greetings">17. Generic Greeting Triggers</a></li>
+    <li><a href="#social-proof-triggers">18. Social Proof and Testimonial Triggers</a></li>
+    <li><a href="#how-to-avoid">How to Write Emails That Avoid Spam Filters</a></li>
+    <li><a href="#the-bottom-line">The Bottom Line</a></li>
+    <li><a href="#faq">Frequently Asked Questions</a></li>
+  </ul>
+        
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#experts">Meet the experts</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="prose">
 
 <p><strong>Email spam trigger words are specific words and phrases that cause spam filters (Gmail, Outlook, Yahoo) to flag your email and send it to the junk folder instead of the inbox.</strong> Common examples include "free," "act now," "guaranteed," "click here," and "make money." This guide lists 600+ of them organized by category, with risk levels and safer alternatives.</p>
 <p>One wrong word in your subject line and your cold email goes straight to spam. Not because your offer is bad. Because spam filters are pattern-matching machines, and they flag specific words before a human ever sees your message.</p>
 <p>We analyzed thousands of <a href="/blog/cold-email-illegal">cold emails</a> and compiled the most complete list of email spam trigger words you need to avoid in 2026. This list covers 600+ words across 18 categories, with alternatives you can use instead.</p>
 <p>Before you send your next campaign, run it through our free <a href="/tools/spam-checker">Spam Checker</a> to catch trigger words automatically.</p>
-<h2>Table of Contents</h2>
+<h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#how-spam-filters-work">How Spam Filters Actually Work in 2026</a></li>
 <li><a href="#urgency-words">Urgency and Pressure Words</a></li>
@@ -1151,54 +1303,100 @@ Template-specific sections:
 </table>
 <h2 id="how-to-avoid">How to Write Emails That Avoid Spam Filters</h2>
 <p>Avoiding trigger words is step one. Here's how to keep your emails out of spam consistently:</p>
-<h3>1. Keep your subject line clean</h3>
+<h3 id="1-keep-your-subject-line-clean">1. Keep your subject line clean</h3>
 <p>Use 4-7 words. No ALL CAPS. No excessive punctuation. Write it like you'd write to a colleague, not a billboard. Check our guide on <a href="/blog/whats-the-best-email-length-for-sales-outreach">ideal email length for sales outreach</a> for more on this.</p>
-<h3>2. Write like a human</h3>
+<h3 id="2-write-like-a-human">2. Write like a human</h3>
 <p>If your email reads like a marketing brochure, it will be treated like one. Short sentences. Plain language. One ask per email.</p>
-<h3>3. Watch your sender reputation</h3>
+<h3 id="3-watch-your-sender-reputation">3. Watch your sender reputation</h3>
 <p>Trigger words matter more when your sender reputation is low. If you're new to cold email, warm up your domain first. High bounce rates tank your reputation fast. Read more about <a href="/blog/cold-email-stats-2018">why emails bounce and how to fix it</a>.</p>
-<h3>4. Test before you send</h3>
+<h3 id="4-test-before-you-send">4. Test before you send</h3>
 <p><a href="/tools/spam-checker">Check your email with our free Spam Checker</a> to catch trigger words and spam score issues before they cost you deliverability.</p>
-<h3>5. Don't stack triggers</h3>
+<h3 id="5-dont-stack-triggers">5. Don't stack triggers</h3>
 <p>One medium-risk word in a well-written email probably won't hurt you. Three trigger words in the same sentence will. Filters look at density, not just presence. Review the full list of <a href="/blog/500-trigger-words">500 trigger words</a> for reference.</p>
-<h3>6. Personalize your emails</h3>
+<h3 id="6-personalize-your-emails">6. Personalize your emails</h3>
 <p>Generic mass emails get flagged. Emails that reference the recipient's company, role, or recent activity look legitimate because they are. This is why <a href="/blog/cold-email-illegal">cold email done right</a> works while spam does not.</p>
-<h2>The Bottom Line</h2>
+<h2 id="the-bottom-line">The Bottom Line</h2>
 <p>Spam filters are getting smarter every year, but they still rely on word patterns. The 600+ trigger words in this list are the ones that consistently flag emails across Gmail, Outlook, Yahoo, and corporate filters in 2026.</p>
 <p>Bookmark this page. Run your emails through a <a href="/tools/spam-checker">spam checker</a> before every campaign. And when in doubt, write your cold email like you'd write to a busy colleague: short, direct, and free of hype.</p>
 <div class="cta-box">
-<h3>Download This List as a PDF</h3>
+<h3 id="download-this-list-as-a-pdf">Download This List as a PDF</h3>
 <p>Keep the full 600+ spam trigger word list on your desk. Print it, share it with your team, or pin it next to your email editor.</p>
                 Download the Checklist (PDF)
             </div>
 <h2 id="faq">Frequently Asked Questions</h2>
-<h3>What are email spam trigger words?</h3>
+<h3 id="what-are-email-spam-trigger-words">What are email spam trigger words?</h3>
 <p>Email spam trigger words are specific words and phrases that cause spam filters to flag your email as junk. Filters like SpamAssassin assign point values to these words. When the combined score exceeds a threshold, the email is routed to spam instead of the inbox. Common examples include "free," "guaranteed," "act now," and "click here."</p>
-<h3>How many spam trigger words should I avoid?</h3>
+<h3 id="how-many-spam-trigger-words-should-i-avoid">How many spam trigger words should I avoid?</h3>
 <p>There is no fixed number. A single trigger word in an otherwise well-written email from a reputable sender usually won't cause problems. The risk comes from stacking multiple trigger words in the same email, especially in the subject line. As a rule: avoid high-risk words entirely, and limit medium-risk words to one per email.</p>
-<h3>Does using the word "free" automatically send my email to spam?</h3>
+<h3 id="does-using-the-word-free-automatically-send-my-email-to-spam">Does using the word "free" automatically send my email to spam?</h3>
 <p>Not automatically. Spam filters evaluate context, not just individual words. "Free" in a subject line combined with ALL CAPS and exclamation marks will almost certainly get flagged. "Free" used once in the body of a personalized email from a warmed-up domain will probably be fine. The risk multiplies when "free" appears alongside other trigger words.</p>
-<h3>What is the difference between spam trigger words in the subject line vs. the body?</h3>
+<h3 id="what-is-the-difference-between-spam-trigger-words-in-the-subject-line-vs-the-body">What is the difference between spam trigger words in the subject line vs. the body?</h3>
 <p>Subject line words carry 2-3x more weight in spam scoring than body text. A word like "urgent" in your subject line is far more likely to trigger filters than the same word buried in a paragraph. This is why your subject line needs to be the cleanest part of your email.</p>
-<h3>Do spam filters work the same across Gmail, Outlook, and Yahoo?</h3>
+<h3 id="do-spam-filters-work-the-same-across-gmail-outlook-and-yahoo">Do spam filters work the same across Gmail, Outlook, and Yahoo?</h3>
 <p>No. Each provider runs its own filtering system. Gmail relies heavily on engagement signals (opens, replies, clicks). Outlook weighs sender reputation and authentication (SPF, DKIM, DMARC). Yahoo uses a mix of content analysis and IP reputation. The trigger words in this list are flagged across all major providers, but the weight each provider gives them varies.</p>
-<h3>Can I check my email for spam trigger words before sending?</h3>
+<h3 id="can-i-check-my-email-for-spam-trigger-words-before-sending">Can I check my email for spam trigger words before sending?</h3>
 <p>Yes. Use a <a href="/tools/spam-checker">spam checker tool</a> to scan your subject line and body text for trigger words before you hit send. These tools show you which words are risky and suggest alternatives. Overloop's free spam checker does this automatically for every campaign.</p>
-<h3>Are spam trigger words the only reason emails go to spam?</h3>
+<h3 id="are-spam-trigger-words-the-only-reason-emails-go-to-spam">Are spam trigger words the only reason emails go to spam?</h3>
 <p>No. Spam filters look at three main signals: content (trigger words), sender reputation (domain age, authentication, bounce rates), and engagement (do recipients open, reply, or mark as spam). Trigger words matter most when your sender reputation is new or weak. A strong sender reputation can offset some content risk, but stacking trigger words will hurt even established senders.</p>
 
 </main>
+    </div>
 
+    <!-- End-of-article PDF download (bottom) -->
+    <section style="max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px);">
+      <div class="downloadable">
+        <div class="downloadable__icon"><i data-lucide="file-down"></i></div>
+        <div class="downloadable__body">
+          <h4>Take this guide with you</h4>
+          <p>62-page PDF · Print-ready · Includes the complete checklist + cold email templates + LinkedIn sequences</p>
+        </div>
+        <a href="#" class="btn"><i data-lucide="download" style="width:16px;height:16px"></i> Download PDF</a>
+      </div>
+    </section>
+
+    <!-- End CTA -->
     <section class="cta-hard">
-      <h3>Don't just avoid spam — <em>score your emails</em></h3>
-      <p>Overloop's free spam checker analyzes your email across 7 dimensions (not just spam words) and gives click-to-fix suggestions in 30 seconds.</p>
-      <a href="https://overloop.com/spam-checker" class="btn-glow">
+      <h3>Ready to build your <em>B2B lead gen engine?</em></h3>
+      <p>Overloop combines AI prospecting, multichannel sequencing, and native CRM sync. Everything in this guide, in one platform. No annual contract.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
         <i data-lucide="sparkles" style="width:18px;height:18px"></i>
-        Score your email free
+        Try Overloop free
       </a>
     </section>
 
-    <section class="author-card">
+    <!-- Expert panel -->
+    <section class="expert-panel" id="experts" aria-label="Meet the experts">
+      <div class="expert-panel__header">
+        <h3>Meet the Experts Behind This Guide</h3>
+        <p>Every chapter is backed by hands-on testing, real campaign data, and years of B2B lead gen experience.</p>
+      </div>
+      <div class="expert-panel__grid">
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+          <div class="expert-bio__name">Vincenzo Ruggiero</div>
+          <div class="expert-bio__role">CEO, Overloop</div>
+          <p class="expert-bio__text">Founded Overloop in 2015 as Prospect.io. 10+ years building sales automation for B2B SaaS. Personally tests every competitor tool.</p>
+          <a href="https://www.linkedin.com/in/vincenzor/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+          <div class="expert-bio__name">Nicolas Finet</div>
+          <div class="expert-bio__role">CEO & Co-founder, Sortlist & Overloop</div>
+          <p class="expert-bio__text">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies. Deep expertise in cold email, LinkedIn automation, and multichannel.</p>
+          <a href="https://www.linkedin.com/in/nifinet/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          <div class="expert-bio__name">Nathalie Saikali</div>
+          <div class="expert-bio__role">Customer Success Manager, Overloop</div>
+          <p class="expert-bio__text">Works daily with sales teams deploying Overloop. Sees firsthand what moves the needle for pipeline generation across industries.</p>
+          <a href="https://www.linkedin.com/in/nathalie-saikali/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author card -->
+    <section class="author-card" aria-label="About the author">
       <div class="author-card__avatar">VR</div>
       <div>
         <div class="author-card__name">Forster Perelsztejn</div>
@@ -1207,114 +1405,108 @@ Template-specific sections:
       </div>
     </section>
 
+    <!-- Newsletter -->
     <section class="newsletter">
-      <h3>Deliverability tips — once a week</h3>
-      <p>Join 8,400+ B2B operators getting our tested tactics and templates.</p>
-      <form onsubmit="event.preventDefault(); alert('Demo only');">
+      <h3>B2B lead gen insights — once a week, no fluff</h3>
+      <p>Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only — wire up form action in production');">
         <input type="email" placeholder="Your work email" required>
         <button type="submit" class="btn">Subscribe</button>
       </form>
     </section>
 
+    <!-- Related -->
     <section class="related">
-      <h3>Related lists</h3>
+      <h3>Related guides</h3>
       <div class="related-grid">
-        <a href="#" class="related-card">
-          <div class="related-card__cat">Data list · 5 min</div>
-          <div class="related-card__title">B2B Contact Database Providers</div>
+        <a href="https://overloop.com/blog/best-ai-sales-tools" class="related-card">
+          <div class="related-card__cat">Buyer's guide · 22 min</div>
+          <div class="related-card__title">Best AI Sales Tools in 2026</div>
         </a>
         <a href="#" class="related-card">
-          <div class="related-card__cat">Data list · 6 min</div>
-          <div class="related-card__title">CMO Email List 2026 (Verified)</div>
+          <div class="related-card__cat">Industry playbook · 11 min</div>
+          <div class="related-card__title">Lead Generation for SaaS</div>
         </a>
-        <a href="#" class="related-card">
-          <div class="related-card__cat">Directory · 4 min</div>
-          <div class="related-card__title">Free Email Verification Tools</div>
+        <a href="https://overloop.com/blog/apollo-alternatives" class="related-card">
+          <div class="related-card__cat">Alternatives · 14 min</div>
+          <div class="related-card__title">Apollo Alternatives (2026)</div>
         </a>
       </div>
     </section>
+
   </article>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
           <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
-          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform.</p>
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div><h4>Platform</h4><a href="#">Features</a><br><a href="#">Pricing</a><br><a href="#">Integrations</a></div>
-        <div><h4>Resources</h4><a href="#">Blog</a><br><a href="#">Playbooks</a><br><a href="#">Free tools</a></div>
-        <div><h4>Company</h4><a href="#">About</a><br><a href="#">Careers</a><br><a href="#">Contact</a></div>
-        <div><h4>Legal</h4><a href="#">Privacy</a><br><a href="#">Terms</a><br><a href="#">Security</a></div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 Overloop.</span>
+        <span>© 2026 Overloop. All rights reserved.</span>
         <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
       </div>
     </div>
   </footer>
 
+  <!-- JSON-LD -->
   <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
-
-    // Search + filter + sort
-    (function(){
-      const table = document.getElementById('data-table');
-      const tbody = table.querySelector('tbody');
-      const rows = Array.from(tbody.querySelectorAll('tr'));
-      const q = document.getElementById('q');
-      const chips = document.getElementById('chips');
-      const count = document.getElementById('count');
-      const empty = document.getElementById('empty');
-      let activeCat = 'all';
-
-      function filter() {
-        const term = (q.value || '').toLowerCase().trim();
-        let visible = 0;
-        rows.forEach(r => {
-          const cat = r.getAttribute('data-cat');
-          const word = r.querySelector('.word').textContent.toLowerCase();
-          const matchCat = activeCat === 'all' || activeCat === cat;
-          const matchQ = !term || word.includes(term);
-          const show = matchCat && matchQ;
-          r.classList.toggle('hidden', !show);
-          if (show) visible++;
-        });
-        count.innerHTML = `<strong>${visible}</strong> of ${rows.length} entries`;
-        empty.classList.toggle('is-visible', visible === 0);
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
       }
-
-      q.addEventListener('input', filter);
-      chips.addEventListener('click', e => {
-        const b = e.target.closest('.chip');
-        if (!b) return;
-        chips.querySelectorAll('.chip').forEach(c => c.classList.remove('is-active'));
-        b.classList.add('is-active');
-        activeCat = b.getAttribute('data-cat');
-        filter();
-      });
-
-      // Sort
-      const ths = table.querySelectorAll('thead th.sort-btn');
-      ths.forEach(th => th.addEventListener('click', () => {
-        const key = th.getAttribute('data-sort');
-        const dir = th.classList.contains('sort-asc') ? 'desc' : 'asc';
-        ths.forEach(t => t.classList.remove('sort-asc','sort-desc'));
-        th.classList.add(dir === 'asc' ? 'sort-asc' : 'sort-desc');
-        const sorted = rows.slice().sort((a,b) => {
-          let av, bv;
-          if (key === 'score') { av = parseInt(a.getAttribute('data-score'),10); bv = parseInt(b.getAttribute('data-score'),10); }
-          else if (key === 'cat') { av = a.getAttribute('data-cat'); bv = b.getAttribute('data-cat'); }
-          else { av = a.querySelector('.word').textContent; bv = b.querySelector('.word').textContent; }
-          return (av > bv ? 1 : av < bv ? -1 : 0) * (dir === 'asc' ? 1 : -1);
-        });
-        sorted.forEach(r => tbody.appendChild(r));
-      }));
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     })();
   </script>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",

@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,20 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#how-to-use-gpt-for-sheets-to-create-tailored-value-proposition-messaging-for-sales">How to Use GPT For Sheets To Create Tailored Va…</a></li>
+    <li><a href="#steps-to-create-ai-generated-value-propositions">Steps to Create AI-Generated Value Propositions</a></li>
+    <li><a href="#integrating-ai-into-sales-prospecting-workflows">Integrating AI into Sales Prospecting Workflows</a></li>
+    <li><a href="#best-practices-for-ai-generated-value-propositions">Best Practices for AI-Generated Value Propositions</a></li>
+    <li><a href="#conclusion-the-future-of-ai-generated-value-propositions">Conclusion: The Future of AI-Generated Value Pr…</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -449,12 +503,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </li>
 <li><strong>Best Practices</strong>: Focus on buyer personas, iterate based on feedback, and maintain transparency and ethics.</li>
 </ul>
-<h2>How to Use GPT For Sheets To Create Tailored Value Proposition Messaging For Sales</h2>
+<h2 id="how-to-use-gpt-for-sheets-to-create-tailored-value-proposition-messaging-for-sales">How to Use GPT For Sheets To Create Tailored Value Proposition Messaging For Sales</h2>
 <p><img alt="GPT For Sheets" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667d4984e696a86a503a60_workspace.google.com-dd4b87986f4b05823f7b7337c547ede3.jpeg"/></p>
 <iframe allowfullscreen="" class="sb-iframe" frameborder="0" loading="lazy" src="https://www.youtube-nocookie.com/embed/GyCVT-Zdo7Q" style="width: 100%; height: auto; aspect-ratio: 16/9;"></iframe>
-<h2>Steps to Create AI-Generated Value Propositions</h2>
+<h2 id="steps-to-create-ai-generated-value-propositions">Steps to Create AI-Generated Value Propositions</h2>
 <p>AI can simplify and improve the process of creating value propositions by tapping into data insights and scaling efforts efficiently. Here's how you can use AI tools to craft effective value propositions:</p>
-<h3>1. Define Your Target Audience and Objectives</h3>
+<h3 id="1-define-your-target-audience-and-objectives">1. Define Your Target Audience and Objectives</h3>
 <p>Start by clearly identifying your ideal customer profile (ICP). This means analyzing your current customers and spotting shared traits. Focus on:</p>
 <ul>
 <li><strong>Industry challenges and decision factors</strong>: What issues are they facing, and what drives their choices?</li>
@@ -462,7 +516,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Buyer personas</strong>: Gather demographic and psychographic details to paint a full picture.</li>
 </ul>
 <p>This groundwork helps AI generate relevant and focused value propositions.</p>
-<h3>2. Leverage AI for Data Analysis</h3>
+<h3 id="2-leverage-ai-for-data-analysis">2. Leverage AI for Data Analysis</h3>
 <p>AI can process data from various sources to uncover actionable insights:</p>
 <div class="table-container"><table class="content-table">
 <thead>
@@ -496,17 +550,17 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table></div>
 <p>These insights ensure your value propositions are backed by real data.</p>
-<h3>3. Fine-Tune AI-Generated Results</h3>
+<h3 id="3-fine-tune-ai-generated-results">3. Fine-Tune AI-Generated Results</h3>
 <p>AI outputs need to be polished to align with your brand and sales strategies. Focus on:</p>
 <ul>
 <li><strong>Quality Check</strong>: Confirm the AI-generated content is accurate and addresses customer pain points effectively.</li>
 <li><strong>Brand Consistency</strong>: Make sure the tone and language match your brand's voice while keeping the core message intact.</li>
 <li><strong>Performance Metrics</strong>: Test engagement and conversion rates to refine and improve the messaging over time.</li>
 </ul>
-<h2>Integrating AI into Sales Prospecting Workflows</h2>
-<h3>Using Platforms like Overloop AI</h3>
+<h2 id="integrating-ai-into-sales-prospecting-workflows">Integrating AI into Sales Prospecting Workflows</h2>
+<h3 id="using-platforms-like-overloop-ai">Using Platforms like Overloop AI</h3>
 <p>Sales prospecting has taken a leap forward with platforms that combine AI-driven tools and streamlined outreach features. For example, <a href="https://overloop.com">Overloop AI</a> simplifies the process with tools like automated list building, multi-language content creation, and integration across multiple outreach channels. It also provides access to a massive B2B database of over 450 million contacts, making it easier to find and connect with prospects.</p>
-<h3>Automation and Personalization in Outreach</h3>
+<h3 id="automation-and-personalization-in-outreach">Automation and Personalization in Outreach</h3>
 <p>AI makes it possible to personalize outreach on a large scale. By analyzing data about prospects, the technology crafts messages that feel tailored to specific audience groups. Messages adapt automatically based on factors like industry, company size, or the prospect's role, ensuring they address the most relevant needs and priorities.</p>
 <p>Some key factors that influence personalization include:</p>
 <ul>
@@ -517,11 +571,11 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p>This mix of automation and personalization allows sales teams to expand their reach without sacrificing quality. AI-powered workflows handle the time-consuming tasks, freeing up teams to focus on creating precise, data-backed messages that resonate with prospects.</p>
 <p>Once AI is part of your prospecting process, the next step is to refine your approach and adopt strategies that ensure your messaging stands out.</p>
-<h2>Best Practices for AI-Generated Value Propositions</h2>
-<h3>Focus on Buyer Personas</h3>
+<h2 id="best-practices-for-ai-generated-value-propositions">Best Practices for AI-Generated Value Propositions</h2>
+<h3 id="focus-on-buyer-personas">Focus on Buyer Personas</h3>
 <p>AI is great at analyzing customer data to identify patterns tied to buyer personas. This includes factors like industry-specific challenges, company size, decision-maker roles, and technology preferences. By combining AI insights with detailed persona profiles, you can create messages that directly address their needs and goals.</p>
 <p>Once your value propositions are aligned with these personas, it's essential to keep refining them based on how they perform.</p>
-<h3>Iterate Based on Feedback</h3>
+<h3 id="iterate-based-on-feedback">Iterate Based on Feedback</h3>
 <p>Improving your AI-generated value propositions requires ongoing adjustments. Keep an eye on performance metrics and listen to customer feedback to make your messaging stronger over time:</p>
 <div class="table-container"><table class="content-table">
 <thead>
@@ -550,7 +604,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table></div>
 <p>These insights can help you fine-tune your AI models and adapt your value propositions. Throughout this process, it's crucial to prioritize ethical practices in your AI-driven strategies.</p>
-<h3>Maintain Transparency and Ethics</h3>
+<h3 id="maintain-transparency-and-ethics">Maintain Transparency and Ethics</h3>
 <p>As you refine your messaging, ensure it aligns with ethical and transparent practices. Being upfront about using AI and sticking to truthful communication builds trust and protects your reputation.</p>
 <p>Key points to keep in mind:</p>
 <ul>
@@ -560,10 +614,10 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Be clear about where and how AI is used</li>
 </ul>
 <p>AI should support - not replace - genuine human interaction in sales. Use it to enhance personalization while keeping your communication honest and relatable.</p>
-<h2>Conclusion: The Future of AI-Generated Value Propositions</h2>
-<h3>Key Takeaways</h3>
+<h2 id="conclusion-the-future-of-ai-generated-value-propositions">Conclusion: The Future of AI-Generated Value Propositions</h2>
+<h3 id="key-takeaways">Key Takeaways</h3>
 <p>AI is reshaping sales outreach by delivering personalized, data-driven value propositions that truly connect with prospects. By blending automation, real-time feedback, and tailored insights, AI boosts both the efficiency and impact of sales communications.</p>
-<h3>Future Potential</h3>
+<h3 id="future-potential">Future Potential</h3>
 <p>AI's role in sales is heading toward hyper-personalization, with tools that can predict buying moments and fine-tune outreach timing. While these advancements are already making waves, the future promises even more possibilities.</p>
 <p>AI integration is stretching across the entire sales journey - from identifying prospects to closing deals. This growth is paving the way for tools that can:</p>
 <ul>
@@ -574,8 +628,8 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p>As these systems become more advanced, businesses will need to balance innovation with ethical considerations. Transparency and trust will be key to keeping sales interactions both effective and human. The challenge lies in using AI's analytical power to solve customer pain points while being upfront about its involvement.</p>
 <p>Moving forward, combining automation with human oversight will ensure that AI-driven value propositions remain impactful and relevant. Striking this balance will help sales teams craft timely, meaningful messages that support long-term business growth.</p>
-<h2>FAQs</h2>
-<h3>Can AI write a sales pitch?</h3>
+<h2 id="faqs">FAQs</h2>
+<h3 id="can-ai-write-a-sales-pitch">Can AI write a sales pitch?</h3>
 <p>Yes, AI can create sales pitches by analyzing data and generating tailored messaging. However, human input is needed to fine-tune and personalize the final version.</p>
 <p><strong>What AI Does Well</strong>:</p>
 <ul>

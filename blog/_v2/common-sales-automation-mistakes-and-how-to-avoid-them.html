@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -349,7 +409,7 @@ Automation isn’t a “set it and forget it” tool. Regularly review and impro
 Without proper training, teams may misuse tools or resist adoption. Provide hands-on training and ongoing support to maximize results.</p>
 </li>
 </ul>
-<h3>Quick Fixes:</h3>
+<h3 id="quick-fixes">Quick Fixes:</h3>
 <ul>
 <li>Set clear automation goals (e.g., improving lead quality or reducing manual tasks).</li>
 <li>Keep data accurate with regular audits and integrations.</li>
@@ -357,9 +417,9 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 <li>Use AI to prioritize leads and personalize campaigns.</li>
 </ul>
 <p>Automation works best when it supports - not replaces - human interaction. Focus on quality, regularly test workflows, and adapt based on feedback to get the most out of your efforts.</p>
-<h2>Common Mistakes in Sales Automation</h2>
+<h2 id="common-mistakes-in-sales-automation">Common Mistakes in Sales Automation</h2>
 <p>Sales automation can be a game-changer, but many businesses struggle to use it effectively. In fact, <strong>85% of B2B marketers</strong> admit they find it challenging to fully leverage its potential <a href="https://www.sugarcrm.com/blog/rookie-marketing-automation-mistakes/" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>. These missteps can lead to lost revenue, frustrated customers, and inefficiencies that slow down growth.</p>
-<h3>Automating Too Much of the Sales Process</h3>
+<h3 id="automating-too-much-of-the-sales-process">Automating Too Much of the Sales Process</h3>
 <p>Relying too heavily on automation can backfire, making interactions feel robotic and impersonal. According to <a href="https://www.researchtoaction.org/about-pec/" target="_blank">PEC</a>'s research, keeping a human touch is essential for building trust and strong customer relationships <a href="https://www.egenconsulting.com/blog/avoid-these-5-common-pitfalls-when-automating-your-crm-sales-and-marketing.html" style="text-decoration: none;" target="_blank"><sup>[1]</sup></a>.</p>
 <p>Here’s how to strike the right balance:</p>
 <div class="table-container"><table class="content-table">
@@ -393,16 +453,16 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 </tr>
 </tbody>
 </table></div>
-<h3>Using Outdated or Incomplete Data</h3>
+<h3 id="using-outdated-or-incomplete-data">Using Outdated or Incomplete Data</h3>
 <p>Automation is only as good as the data it relies on. Outdated or inaccurate information can result in irrelevant messages, missed opportunities, and wasted effort on invalid leads.</p>
 <p>A common challenge? <strong>45.9% of companies</strong> report that finding the right platform with the necessary features is their biggest hurdle when adopting automation <a href="https://meetalfred.com/guides/how-to-automate-sales-27-mistakes-to-avoid-with-sales-automation" style="text-decoration: none;" target="_blank"><sup>[4]</sup></a>.</p>
-<h3>Not Reviewing and Improving Automation Workflows</h3>
+<h3 id="not-reviewing-and-improving-automation-workflows">Not Reviewing and Improving Automation Workflows</h3>
 <p>Automation isn’t a “set it and forget it” solution. Without regular updates, workflows can become outdated and ineffective. To keep performance on track, businesses need to consistently refine workflows and integrate tools like CRM systems, lead scoring, and analytics.</p>
-<h3>Skipping Training for Sales Teams</h3>
+<h3 id="skipping-training-for-sales-teams">Skipping Training for Sales Teams</h3>
 <p>Even the best tools fall short without proper training. Teams that aren’t trained may misuse automation, make costly mistakes, or resist using the tools altogether. This can undermine the entire investment and create bottlenecks in the sales process.</p>
 <p>Recognizing these common mistakes is a critical step. Next, we’ll dive into practical strategies to ensure your sales automation efforts succeed.</p>
-<h2>Ways to Avoid Sales Automation Errors</h2>
-<h3>Set Clear Goals for Automation</h3>
+<h2 id="ways-to-avoid-sales-automation-errors">Ways to Avoid Sales Automation Errors</h2>
+<h3 id="set-clear-goals-for-automation">Set Clear Goals for Automation</h3>
 <p>To make automation effective, focus on areas that deliver measurable results. <a href="https://www.sugarcrm.com/" target="_blank">SugarCRM</a> highlights the importance of integrating multiple components into your strategy:</p>
 <blockquote>
 <p>"Marketing automation includes content marketing, lead management and scoring, social media, CRM integration, landing pages, reporting, and analytics" <a href="https://www.sugarcrm.com/blog/rookie-marketing-automation-mistakes/" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>.</p>
@@ -440,7 +500,7 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 </tbody>
 </table></div>
 <p>Having well-defined objectives ensures automation aligns with your overall sales strategy without creating inefficiencies.</p>
-<h3>Keep Your Data Accurate and Up-to-Date</h3>
+<h3 id="keep-your-data-accurate-and-up-to-date">Keep Your Data Accurate and Up-to-Date</h3>
 <p>Good data is the backbone of successful automation. To maintain its reliability, implement these practices:</p>
 <ul>
 <li><strong>Data Validation</strong>: Use tools to verify contact details and eliminate duplicates.</li>
@@ -448,7 +508,7 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 <li><strong>Integration Management</strong>: Ensure all platforms work together seamlessly for smooth data flow.</li>
 </ul>
 <p>These steps help prevent errors and make your automation efforts more reliable.</p>
-<h3>Provide Training and Ongoing Support</h3>
+<h3 id="provide-training-and-ongoing-support">Provide Training and Ongoing Support</h3>
 <p>Your team needs the right training to get the most out of automation tools. Focus on hands-on learning and real-world scenarios to show how these tools can be applied effectively.</p>
 <p>Consider using a tiered training structure:</p>
 <div class="table-container"><table class="content-table">
@@ -478,8 +538,8 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 </tbody>
 </table></div>
 <p>This approach addresses the challenge that <strong>85% of B2B marketers</strong> feel they aren't fully utilizing their automation platforms <a href="https://www.sugarcrm.com/blog/rookie-marketing-automation-mistakes/" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>. Regular feedback and performance reviews can also highlight where additional training or support is needed.</p>
-<h2>Using AI Tools to Improve Sales Automation</h2>
-<h3>AI for Lead Scoring and Prioritization</h3>
+<h2 id="using-ai-tools-to-improve-sales-automation">Using AI Tools to Improve Sales Automation</h2>
+<h3 id="ai-for-lead-scoring-and-prioritization">AI for Lead Scoring and Prioritization</h3>
 <p>AI-driven lead scoring has reshaped how businesses identify and prioritize potential customers. A great example is <a href="https://razorpay.com/" target="_blank">Razorpay</a>, which implemented an ML-powered lead scoring system and saw impressive results: a <strong>50% boost in monthly GMV</strong> and a <strong>70% cut in team effort</strong> <a href="https://masterofcode.com/blog/how-ai-can-automate-your-sales" style="text-decoration: none;" target="_blank"><sup>[2]</sup></a>. Without precise lead scoring, sales teams might waste time chasing low-priority leads instead of focusing on high-value opportunities. AI ensures the effort goes where it matters most.</p>
 <div class="table-container"><table class="content-table">
 <thead class="table-header-cell">
@@ -508,14 +568,14 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 </tbody>
 </table></div>
 <p>Beyond prioritizing leads, AI also enhances sales efficiency by enabling more personalized interactions.</p>
-<h3>AI for Personalized Campaigns</h3>
+<h3 id="ai-for-personalized-campaigns">AI for Personalized Campaigns</h3>
 <p>AI is excellent at creating tailored messages by analyzing customer behavior and engagement data in real time. This keeps automation feeling personal and relatable. For instance, AI chatbots function like virtual sales reps, offering instant answers, customized recommendations, and guiding users toward making decisions <a href="https://improvado.io/blog/ai-lead-generation-tools-best-practices" style="text-decoration: none;" target="_blank"><sup>[5]</sup></a>.</p>
 <p>To unlock these benefits, integrating AI seamlessly with existing tools is essential.</p>
-<h3>Integrating AI with Existing Tools</h3>
+<h3 id="integrating-ai-with-existing-tools">Integrating AI with Existing Tools</h3>
 <p><strong>58% of B2B professionals</strong> highlight quality data as the most critical factor for success in marketing automation <a href="https://blog.hubspot.com/marketing/marketing-automation-mistakes" style="text-decoration: none;" target="_blank"><sup>[6]</sup></a>. Tools like <a href="https://overloop.com/">Overloop AI</a> integrate smoothly with CRMs such as <a href="https://www.salesforce.com/" target="_blank">Salesforce</a> and <a href="https://www.hubspot.com/products/marketing" target="_blank">HubSpot</a>, making it easier to manage multi-channel campaigns and leverage AI-driven communication.</p>
 <p>The real secret to effective AI implementation lies in striking the right balance. AI can supercharge efficiency, but it works best when paired with human oversight, ensuring that automation supports rather than replaces human decision-making in the sales process.</p>
-<h2>Tips for Successful Sales Automation</h2>
-<h3>Focus on Quality, Not Quantity</h3>
+<h2 id="tips-for-successful-sales-automation">Tips for Successful Sales Automation</h2>
+<h3 id="focus-on-quality-not-quantity">Focus on Quality, Not Quantity</h3>
 <p>Sales automation works best when it delivers <strong>personalized and relevant content</strong>, rather than bombarding prospects with generic messages. The goal is to create interactions that genuinely connect with your audience.</p>
 <div class="table-container"><table class="content-table">
 <thead class="table-header-cell">
@@ -544,13 +604,13 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 </tbody>
 </table></div>
 <p>Once you prioritize quality, make sure to test regularly to keep your automation strategy effective and aligned with your objectives.</p>
-<h3>Regular Testing Is Key</h3>
+<h3 id="regular-testing-is-key">Regular Testing Is Key</h3>
 <p>Did you know that nearly 60% of B2B professionals feel they don’t fully use their automation tools <a href="https://blog.hubspot.com/marketing/marketing-automation-mistakes" style="text-decoration: none;" target="_blank"><sup>[6]</sup></a>? This shows how important it is to test and refine your approach.</p>
 <blockquote>
 <p>"Automation isn't a set-it-and-forget-it initiative. It requires regular monitoring to ensure it's delivering the desired results" <a href="https://www.egenconsulting.com/blog/avoid-these-5-common-pitfalls-when-automating-your-crm-sales-and-marketing.html" style="text-decoration: none;" target="_blank"><sup>[1]</sup></a>.</p>
 </blockquote>
 <p><a href="https://support.overloop.com/en/articles/3343605-a-b-testing-in-campaigns">A/B testing</a> can be a game-changer. Experiment with email content, timing, and personalization to see what works best. Use the results to tweak your workflows, ensuring they stay relevant and effective.</p>
-<h3>Let Feedback Guide Your Strategy</h3>
+<h3 id="let-feedback-guide-your-strategy">Let Feedback Guide Your Strategy</h3>
 <p>Feedback is the bridge between automation tools and human decision-making. It helps ensure your tools meet the needs of both sales teams and customers. With nearly half of companies struggling to find platforms with the right features <a href="https://blog.hubspot.com/marketing/marketing-automation-mistakes" style="text-decoration: none;" target="_blank"><sup>[6]</sup></a>, feedback becomes even more critical.</p>
 <p>Incorporate feedback effectively by focusing on:</p>
 <ul>
@@ -559,7 +619,7 @@ Without proper training, teams may misuse tools or resist adoption. Provide hand
 <li><strong>Engagement metrics</strong>: Track key data points to identify areas for improvement.</li>
 </ul>
 <p>Routine audits of your workflows will keep your automation tools on track, balancing technology with the human touch for better results.</p>
-<h2>Conclusion: Making Sales Automation Work for Your Business</h2>
+<h2 id="conclusion-making-sales-automation-work-for-your-business">Conclusion: Making Sales Automation Work for Your Business</h2>
 <p>Balancing automation with personal interaction is key to building effective sales processes. With 85% of B2B marketers finding it challenging to fully use automation <a href="https://www.sugarcrm.com/blog/rookie-marketing-automation-mistakes/" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>, it's crucial to steer clear of common mistakes.</p>
 <p>The foundation of <a href="https://overloop.com/de/blog/vertriebsautomatisierung-account-based-marketing">successful sales automation</a> lies in having reliable data and well-trained teams. Companies that prioritize these basics often see better results compared to those that rush into automation. A great example is Razorpay, which saw a 50% boost in GMV and reduced effort by 70% through AI-powered lead scoring <a href="https://masterofcode.com/blog/how-ai-can-automate-your-sales" style="text-decoration: none;" target="_blank"><sup>[2]</sup></a>.</p>
 <p>Here are some areas to focus on for better results:</p>

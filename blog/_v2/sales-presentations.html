@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#why-the-old-way-of-advising-prospects-doesnt-work">Why the Old Way of Advising Prospects Doesn’t Work</a></li>
+    <li><a href="#how-to-determine-budget-timeline-and-get-commitment">How to Determine Budget, Timeline and Get Commi…</a></li>
+    <li><a href="#why-the-legacy-sales-presentation-flow-fails">Why the Legacy Sales Presentation Flow Fails</a></li>
+    <li><a href="#the-modern-sales-presentation-flow">The Modern Sales Presentation Flow</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -438,7 +490,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 
 <p>As a salesperson, it’s your job to advise prospects on the ways your offering is uniquely positioned to address their unique needs.</p>
 <p>You might be thinking, "I've been advising my prospects all along." And maybe you have -- but to really understand what it means to advise buyers, you have to understand the difference between legacy salespeople and <a href="https://academy.hubspot.com/courses/inbound-sales">inbound salespeople</a> in this final stage of <a href="https://blog.hubspot.com/sales/sales-process-">the sales process</a>.</p>
-<h2>Why the Old Way of Advising Prospects Doesn’t Work</h2>
+<h2 id="why-the-old-way-of-advising-prospects-doesnt-work">Why the Old Way of Advising Prospects Doesn’t Work</h2>
 <p>Legacy salespeople deliver the same presentation and same case studies to all buyers. Like a broken record, they say the same things on the phone over and over again and rarely deviate from a script. Going on autopilot to deliver a standard presentation is normal.</p>
 <p>By sticking to a generic script, legacy salespeople fail to represent themselves as a solution to their prospect’s specific needs.  Prospects want to know how features are specifically going to help them and their situation.</p>
 <p>Modern salespeople tailor presentations to their buyers' context, leveraging the information they've already gathered in the exploratory phase to explain why they are uniquely positioned to help.  </p>
@@ -447,7 +499,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>You can help prospects determine the right time to buy by creating a plan to help achieve their goals by the time they need to achieve them. Instead of focusing on when the prospect will buy, they focus on when the prospect must achieve their goals. They then work backward to determine a start date that will give them time to implement the right plan.</p>
 <p>Legacy salespeople may even withhold resources requested by buyers -- like a customer reference or access to their executives -- until there’s a commitment to purchase.  But the empowered buyer is no longer dependent on the seller for this information. The empowered buyer has access to the seller’s customers and can request references without the help of the seller.</p>
 <p>In short, the buyer has more power than ever before. Effective salespeople recognize this and adjust their behavior to compensate.</p>
-<h2>How to Determine Budget, Timeline and Get Commitment</h2>
+<h2 id="how-to-determine-budget-timeline-and-get-commitment">How to Determine Budget, Timeline and Get Commitment</h2>
 <p>As an inbound salesperson, you serve as a translator between the generic messaging found on your company’s website and the unique needs of your buyer.</p>
 <p>If you’re ready to advise, you've succeeded in capturing the buyer's interest and exploring the opportunities to help them. Now you can convey your product or service's value in a way that compels them to buy.</p>
 <p>Helping your prospect move forward and advising them can be accomplished in a few different formats depending on your preference, your client’s preference, or the industry you’re in. Based on those factors, you might lean on one of these methods more frequently than the others:</p>
@@ -456,12 +508,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>We'll primarily focus on how to accomplish this through an effective presentation. If you do choose to <a href="https://blog.hubspot.com/agency/proposal-software">write a proposal</a> or contract, you should still set aside time, <a href="https://www.hubspot.com/products/sales/schedule-meeting">book a meeting</a>, and review it along with your prospect to achieve buy-in. And although each of these formats is very different, the elements that make each successful are very similar.</p>
 <p>Regardless of how you close your prospect, the following four things should be accomplished:</p>
 <ul><li>A recap of what you've learned, so the prospect knows you completely understand their context</li><li>Suggestions of ways to achieve their goals and overcome their challenges using your service/product</li><li>Confirmation of budget, decision-making processes, and timeline, so you know whether the buyer will make the decision to move forward or not</li><li>A commitment that the prospect wants to pursue your plan</li></ul>
-<h2>Why the Legacy Sales Presentation Flow Fails</h2>
+<h2 id="why-the-legacy-sales-presentation-flow-fails">Why the Legacy Sales Presentation Flow Fails</h2>
 <p>The actual presentation portion of the advising stage is crucial. Don't let your prospecting and connecting efforts go to waste. The typical legacy sales presentation flow, that you may have even come across yourself, starts with the following information:</p>
 <ul><li>Who the seller and her company are</li><li>Who the seller is working with</li><li>Review of the information the prospect told the seller</li><li>How the seller is going to solve the buyer's problem</li><li>Where the buyer signs</li></ul>
 <p>Now think about it -- in many ways, that presentation flow is backward. Does telling a prospect who you are and the other businesses you’ve worked with add value to your presentation? No, because a buyer could find that information with a quick search.</p>
 <p>Don’t start a presentation with a recitation of facts about yourself, your company’s history, and a description of what you provide. Somewhere along the way, salespeople were told they have to impress prospects by bragging about themselves. But all they're doing is wasting time giving a generic presentation irrelevant to the prospect’s unique situation. </p>
-<h2>The Modern Sales Presentation Flow</h2>
+<h2 id="the-modern-sales-presentation-flow">The Modern Sales Presentation Flow</h2>
 <p>The next time you give a sales presentation, be the trusted advisor your prospects need you to be, not the pitchman you think they expect you to be.</p>
 <p>Try this presentation flow instead:</p>
 <ol><li>What you heard your prospect tell you</li><li>Summary of the ways those in your prospect's situation think about making a needed change</li><li>The pros and cons of the different approaches to this situation</li><li>The outcome your prospect wants and the approach that will yield the best outcome</li><li>Why this choice makes the most sense for your prospect</li><li>How you can best support that choice</li></ol>

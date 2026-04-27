@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -333,7 +393,7 @@ No TOC sidebar (too short — in-article links only).
 <p>Today marks a new chapter for Overloop. We've been acquired by Sortlist, the leading marketplace for matching companies with marketing and professional service agencies.</p>
 <p>From day one, our mission at Overloop has been clear: help business-to-business teams generate more sales conversations, faster. We built Overloop to solve one problem. Outbound sales is hard, time-consuming, and often inefficient. Companies struggle to build consistent pipelines without burning time on manual work or juggling too many tools.</p>
 <p>Joining Sortlist isn't a change of direction. It's an acceleration.</p>
-<h2>Why this matters for you</h2>
+<h2 id="why-this-matters-for-you">Why this matters for you</h2>
 <p>This partnership brings together Overloop's SaaS expertise in outbound and sales automation with Sortlist's scale, market presence, and deep knowledge of the agency and professional-services ecosystem.</p>
 <p>For you, this means:</p>
 <ul>
@@ -341,7 +401,7 @@ No TOC sidebar (too short — in-article links only).
 <li><strong>Broader support</strong>: Backing from Sortlist's experienced customer success teams.</li>
 <li><strong>Seamless continuity</strong>: No service disruption. Same product, same team, same commitment.</li>
 </ul>
-<h2>What's next</h2>
+<h2 id="whats-next">What's next</h2>
 <p>The Overloop team stays in place and continues building with the same focus as before -- now supported by a larger group that shares our vision.</p>
 <p>I'll be joining Sortlist's leadership team to work on SaaS products and innovation across the platform.</p>
 <blockquote>

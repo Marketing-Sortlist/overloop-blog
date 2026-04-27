@@ -318,6 +318,66 @@ Tested-by banner KEPT (product comparison template)
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .alt-card__head { flex-direction: column; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -373,22 +433,20 @@ Tested-by banner KEPT (product comparison template)
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#why-switch" class="active"><span class="ch-num">—</span>Why teams switch</a></li>
-          <li><a href="#matrix"><span class="ch-num">—</span>Comparison matrix</a></li>
-          <li><a href="#alt-1"><span class="ch-num">01</span>Overloop</a></li>
-          <li><a href="#alt-2"><span class="ch-num">02</span>Cognism</a></li>
-          <li><a href="#alt-3"><span class="ch-num">03</span>Clay</a></li>
-          <li><a href="#alt-4"><span class="ch-num">04</span>ZoomInfo</a></li>
-          <li><a href="#alt-5"><span class="ch-num">05</span>Lusha</a></li>
-          <li><a href="#alt-6"><span class="ch-num">06</span>Seamless.ai</a></li>
-          <li><a href="#alt-7"><span class="ch-num">07</span>Hunter.io</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#migration">Migration checklist</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#why-teams-look-for-outreach-alternatives">Why Teams Look for Outreach Alternatives</a></li>
+    <li><a href="#feature-comparison-table">Feature Comparison Table</a></li>
+    <li><a href="#1-overloop">1. Overloop</a></li>
+    <li><a href="#2-salesloft">2. Salesloft</a></li>
+    <li><a href="#3-apolloio">3. Apollo.io</a></li>
+    <li><a href="#4-replyio">4. Reply.io</a></li>
+    <li><a href="#5-lemlist">5. Lemlist</a></li>
+    <li><a href="#6-hubspot-sales-hub">6. HubSpot Sales Hub</a></li>
+    <li><a href="#7-instantly">7. Instantly</a></li>
+    <li><a href="#8-groove-by-clari">8. Groove (by Clari)</a></li>
+    <li><a href="#how-to-choose">How to Choose</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <main class="prose">
@@ -396,14 +454,14 @@ Tested-by banner KEPT (product comparison template)
 <p><strong>Disclosure: We built Overloop, which competes with Outreach. We'll be upfront about where we fit and where we don't. You get the full picture either way.</strong></p>
 <p>Outreach.io is the 800-pound gorilla of sales engagement. Enterprise teams with 50+ reps, Salesforce deployments, and dedicated RevOps staff love it. Everyone else tends to find it overbuilt, overpriced, and frustrating to buy.</p>
 <p>If you've tried to get a price from Outreach, you already know the drill: book a demo, sit through a sales process, negotiate a contract, then discover the real cost after add-ons. For SMBs and mid-market teams, there are tools that do 90% of what Outreach does at a fraction of the price and complexity.</p>
-<h2>Why Teams Look for Outreach Alternatives</h2>
+<h2 id="why-teams-look-for-outreach-alternatives">Why Teams Look for Outreach Alternatives</h2>
 <ul>
 <li><strong>No public pricing.</strong> Outreach forces you through a sales cycle before revealing costs. Industry estimates put it at $100-160/user/month, but real deployments often land at $120/user/month or more. A 50-user deal typically lists at $72,000/year.</li>
 <li><strong>Long contracts.</strong> Annual commitments are standard. Multi-year deals come with 5-8% annual price escalators baked in. Getting out early is expensive.</li>
 <li><strong>Complexity overkill.</strong> If you have 5-20 reps doing outbound, you don't need revenue intelligence, deal forecasting, and conversation analytics bundled into your sequencing tool. You need sequences that work and a UI your reps will actually use.</li>
 <li><strong>Slow onboarding.</strong> Enterprise-grade implementation means weeks of setup, professional services fees, and training sessions. Some teams report 2-3 months before the platform is fully operational.</li>
 </ul>
-<h2>Feature Comparison Table</h2>
+<h2 id="feature-comparison-table">Feature Comparison Table</h2>
 <div style="margin: 1.5rem 0; overflow-x: auto;">
 <svg aria-label="Pricing comparison of Outreach.io alternatives showing transparent vs hidden pricing" role="img" viewbox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#f9fafb" height="420" rx="8" width="720"></rect>
@@ -549,10 +607,10 @@ Tested-by banner KEPT (product comparison template)
 </tr>
 </tbody>
 </table>
-<h2><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
+<h2 id="1-overloop"><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
 <p>Overloop takes the opposite approach to Outreach. Instead of building an enterprise platform and working downmarket, we built for SMBs and mid-market teams first. Multichannel outreach (email, LinkedIn, calls) is available on every plan. AI generates complete outreach sequences from prospect data. Pricing starts at $69/mo and is published on the website.</p>
 <p>Where Overloop won't replace Outreach: if you need deal management, revenue forecasting, conversation intelligence, or deep Salesforce workflow automation. Overloop is a focused outreach tool, not a revenue platform. For teams that just need to book meetings, that focus is a feature, not a limitation.</p>
-<h3>Key strengths</h3>
+<h3 id="key-strengths">Key strengths</h3>
 <ul>
 <li>Transparent pricing, no sales process required</li>
 <li>AI writes sequences from scratch using prospect data</li>
@@ -616,30 +674,30 @@ Tested-by banner KEPT (product comparison template)
 </div>
 </div>
 </div>
-<h2><img alt="" height="28" src="/assets/images/logos/salesloft.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Salesloft</h2>
+<h2 id="2-salesloft"><img alt="" height="28" src="/assets/images/logos/salesloft.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Salesloft</h2>
 <p>Salesloft is the closest direct competitor to Outreach. After merging with Clari in 2025, the platform now combines sales engagement with revenue intelligence and forecasting. Pricing starts around $125/user/month, with annual contracts required and minimum seat counts (typically 10-15 users).</p>
 <p>If you're leaving Outreach because of complexity or price, Salesloft won't solve either problem. It's a lateral move. But if your issue with Outreach is specific (bad support, missing features, poor Salesforce sync), Salesloft might be a better fit within the same category. Watch for the 5-8% annual price escalators in multi-year contracts.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Apollo.io</h2>
+<h2 id="3-apolloio"><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Apollo.io</h2>
 <p>Apollo combines a 275M+ contact database with outreach sequencing. The Basic plan starts at $49/user/month (annual). You can prospect, enrich, and sequence without leaving the platform.</p>
 <p>Apollo is genuinely strong as a prospecting tool. As an outreach tool, it's adequate but not best-in-class. The credit system can drive actual costs to $150-400/user/month for heavy users. If your primary need is finding and enriching contacts with outreach as a secondary capability, Apollo delivers good value.</p>
 <p>Read more: <a href="/blog/apollo-alternatives">Apollo.io Alternatives</a></p>
-<h2><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
+<h2 id="4-replyio"><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
 <p>Reply.io covers email, LinkedIn, calls, and SMS. The Multichannel plan starts at $89/month, but adding LinkedIn ($69/mo) and calling ($29/mo) brings the real per-rep cost to $187/month. That's actually more than some Outreach quotes.</p>
 <p>The Jason AI SDR feature ($800/month entry) autonomously handles initial prospect engagement. For teams that want to automate the top of the funnel entirely, that's a differentiated offering. The agency plan at $210/month is also competitive for multi-client setups.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Lemlist</h2>
+<h2 id="5-lemlist"><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Lemlist</h2>
 <p>Lemlist's Email Pro plan starts at $55/user/month (annual), or $69 monthly. The Multichannel Expert plan at $79/user/month (annual) adds LinkedIn and calling. Both tiers went up $10/user in February 2026. Lemlist's standout feature is image and video personalization in emails, which still gets above-average response rates. G2 rating: 4.6/5 from 1,270+ reviews.</p>
 <p>Compared to Outreach, Lemlist is significantly cheaper and easier to set up. The trade-off is a lack of enterprise features: no deal management, limited reporting, and less CRM depth. For teams under 20 reps focused on creative outbound, Lemlist is a solid pick.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/hubspot.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. HubSpot Sales Hub</h2>
+<h2 id="6-hubspot-sales-hub"><img alt="" height="28" src="/assets/images/logos/hubspot.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. HubSpot Sales Hub</h2>
 <p>If your team already runs HubSpot CRM, Sales Hub is the path of least resistance. Starter at $20/seat/month gets you sequences, templates, and calling. Professional at $90/seat/month (annual) adds advanced automation and reporting. There's a $1,500 onboarding fee for Pro.</p>
 <p>HubSpot won't match Outreach on outbound-specific features. Sequences are simpler. LinkedIn automation isn't built in. But the CRM integration is seamless (because it IS the CRM), and for teams that do both inbound and outbound, having everything in one platform reduces tool sprawl.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Instantly</h2>
+<h2 id="7-instantly"><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Instantly</h2>
 <p>Instantly is email-only, which makes it a different category from Outreach. But if your team primarily does email outreach and Outreach's complexity is the problem, Instantly at $37.60/month (annual) is a dramatic cost reduction. Unlimited email accounts and built-in warm-up on every plan.</p>
 <p>The trade-off is obvious: no LinkedIn, no calling, no deal management. If your outreach motion is 90% email and you want to cut costs by 80%, Instantly works. If you need multichannel or any of Outreach's enterprise features, look at the other options on this list.</p>
 <p>Read more: <a href="/blog/instantly-alternatives">Instantly Alternatives</a></p>
-<h2>8. Groove (by Clari)</h2>
+<h2 id="8-groove-by-clari">8. Groove (by Clari)</h2>
 <p>Groove is built specifically for Salesforce-native teams. It runs on top of Salesforce rather than alongside it, which means all activity data lives in your CRM automatically. Pricing ranges from $50-150/user/month depending on configuration.</p>
 <p>The downside: Groove doesn't publish pricing, requires minimum seat counts, and enterprise deployments need professional services ($10,000-25,000 for setup). If you're leaving Outreach because of those exact problems, Groove doesn't fix them. But the Salesforce integration is genuinely best-in-class.</p>
-<h2>How to Choose</h2>
+<h2 id="how-to-choose">How to Choose</h2>
 <ul>
 <li><strong>Small team, need something fast?</strong> Overloop. You'll be sending sequences the same day.</li>
 <li><strong>Enterprise staying enterprise?</strong> Salesloft. It's the direct Outreach competitor.</li>
@@ -650,16 +708,16 @@ Tested-by banner KEPT (product comparison template)
 </ul>
 <p>The best Outreach alternative depends on why you're leaving. If it's pricing and complexity, the answer is usually a focused tool like Overloop or Lemlist. If it's specific feature gaps, Salesloft or Apollo might fill them.</p>
 <p>For a broader view: <a href="/blog/best-ai-sales-tools">Best AI Sales Tools</a> and <a href="/blog/11-best-ai-bdr-tools">11 Best AI BDR Tools</a>.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>How much does Outreach.io actually cost?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-much-does-outreachio-actually-cost">How much does Outreach.io actually cost?</h3>
 <p>Outreach does not publish pricing. Based on industry reports and user feedback, expect $100-160/user/month with annual contracts. A 50-user deployment typically costs around $72,000/year before add-ons. Multi-year deals include 5-8% annual price escalators. Outreach has a G2 rating of 4.3/5 from 3,500+ reviews.</p>
-<h3>What is the cheapest alternative to Outreach?</h3>
+<h3 id="what-is-the-cheapest-alternative-to-outreach">What is the cheapest alternative to Outreach?</h3>
 <p>For email-only, Instantly at $37.60/month (annual) or Saleshandy at $25/month (annual) are the cheapest options. For multichannel (email + LinkedIn + calls), Overloop at $69/month is the most affordable with all channels included on every plan.</p>
-<h3>Is Salesloft better than Outreach?</h3>
+<h3 id="is-salesloft-better-than-outreach">Is Salesloft better than Outreach?</h3>
 <p>They compete at the same tier. Salesloft (G2: 4.5/5) is generally considered easier to use, while Outreach (G2: 4.3/5) has stronger A/B testing and analytics. Both require custom quotes, annual contracts, and minimum seat counts. After the Clari merger in 2025, Salesloft is now part of a revenue intelligence platform. If price and complexity are your issues with Outreach, Salesloft is a lateral move, not a solution.</p>
-<h3>Can small teams use Outreach?</h3>
+<h3 id="can-small-teams-use-outreach">Can small teams use Outreach?</h3>
 <p>Technically yes, but Outreach is built for 50+ rep teams. The minimum seat requirements (typically 10-15 users), annual contracts, and complex onboarding make it impractical for teams under 10. Overloop, Apollo, or Lemlist are better fits for small teams.</p>
-<h3>What is the best Outreach alternative for Salesforce users?</h3>
+<h3 id="what-is-the-best-outreach-alternative-for-salesforce-users">What is the best Outreach alternative for Salesforce users?</h3>
 <p>Groove (by Clari) is built specifically for Salesforce-native teams and runs on top of Salesforce rather than alongside it. HubSpot Sales Hub is the natural choice if you're on HubSpot CRM. Apollo also has strong CRM integrations and adds a prospecting database.</p>
 
 </main>

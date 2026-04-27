@@ -178,6 +178,66 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
     .footer-bottom{border-top:1px solid #374151;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;gap:20px}
     @media (max-width:991px){:root{--page-px:24px}.hero-stats{grid-template-columns:1fr 1fr}.yoy{grid-template-columns:1fr}.stat-row{grid-template-columns:auto 1fr}.stat-row__source{grid-column:2}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr 1fr}}
     @media (max-width:639px){.article-hero{padding:40px var(--page-px-mobile) 28px}.article-hero h1{font-size:28px}.nav-links{display:none}.hero-stats{grid-template-columns:1fr}.quote-stat{padding:28px 24px}.quote-stat__num{font-size:52px}.quote-stat__text{font-size:16px}.newsletter form{flex-direction:column}.related-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -204,30 +264,6 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
         </div>
       </div>
     </header>
-
-    <!-- Hero stat cards -->
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hero-stat__num">3.2%</div>
-        <div class="hero-stat__label">Average B2B cold email reply rate in 2026</div>
-        <div class="hero-stat__source"><a href="#">Source: Overloop data 2026</a></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat__num">22%</div>
-        <div class="hero-stat__label">Average cold email open rate (down from 28% in 2023)</div>
-        <div class="hero-stat__source"><a href="#">Source: GlockApps 2026</a></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat__num">5.1%</div>
-        <div class="hero-stat__label">Reply rate for AI-personalized emails (vs 2.1% generic)</div>
-        <div class="hero-stat__source"><a href="#">Source: Overloop data 2026</a></div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat__num">67%</div>
-        <div class="hero-stat__label">Of B2B teams now use AI in outbound (vs 33% in 2024)</div>
-        <div class="hero-stat__source"><a href="#">Source: SPOTIO 2026</a></div>
-      </div>
-    </div>
 
     <main class="main-wrap">
 
@@ -293,7 +329,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <rect fill="#10B981" height="18" rx="3" width="125" x="210" y="463"></rect>
 <text fill="#10B981" font-size="12" font-weight="600" x="343" y="477">50-125 words</text>
 </svg>
-<h2>Cold Email Open Rate Statistics</h2>
+<h2 id="cold-email-open-rate-statistics">Cold Email Open Rate Statistics</h2>
 <div class="stat-callout">
 <div class="big-number">27.3%</div>
 <div class="stat-label">Average cold email open rate in 2026 (B2B, first touch)</div>
@@ -366,7 +402,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#6b7280" font-size="13" font-weight="600" x="348" y="352">21%</text>
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="390">Source: Overloop analysis of 12.4M cold emails (2026)</text>
 </svg>
-<h2>Cold Email Reply Rate Statistics</h2>
+<h2 id="cold-email-reply-rate-statistics">Cold Email Reply Rate Statistics</h2>
 <div class="stat-callout">
 <div class="big-number">4.5%</div>
 <div class="stat-label">Average cold email reply rate (all industries, multi-step sequences)</div>
@@ -431,7 +467,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 </tbody>
 </table>
 <p>Advanced personalization doubles the reply rate compared to no personalization. Yet only 5% of senders actually personalize every email. That gap is your opportunity.</p>
-<h3>Reply Sentiment Breakdown</h3>
+<h3 id="reply-sentiment-breakdown">Reply Sentiment Breakdown</h3>
 <p>Not all replies are created equal. Across our dataset, cold email replies break down as:</p>
 <ul>
 <li><strong>31% positive</strong> (interested, want to talk, book a meeting)</li>
@@ -464,7 +500,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#6b7280" font-size="11" x="504" y="285">Not interested, hostile</text>
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="390">75% of replies represent some form of engagement</text>
 </svg>
-<h2>Bounce Rate &amp; Deliverability</h2>
+<h2 id="bounce-rate-deliverability">Bounce Rate &amp; Deliverability</h2>
 <div class="stat-callout">
 <div class="big-number">&lt;2%</div>
 <div class="stat-label">Target bounce rate for healthy cold email campaigns</div>
@@ -475,7 +511,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li><strong>Soft bounces</strong> (full mailbox, temporary server issues) hover around 0.5-1%.</li>
 <li><strong>Spam complaint rate</strong>: Keep it under 0.1%. Google and Microsoft now enforce this threshold aggressively.</li>
 </ul>
-<h3>Inbox Placement Rate by Industry</h3>
+<h3 id="inbox-placement-rate-by-industry">Inbox Placement Rate by Industry</h3>
 <p>The overall inbox placement rate for cold email is <strong>87.6%</strong>. That means roughly 1 in 8 cold emails never reaches the primary inbox. Placement varies by sector:</p>
 <table class="table-keep">
 <thead>
@@ -507,7 +543,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 </tr>
 </tbody>
 </table>
-<h3>What Causes Bounces</h3>
+<h3 id="what-causes-bounces">What Causes Bounces</h3>
 <p>When emails bounce, the root causes break down like this:</p>
 <ul>
 <li><strong>49%</strong> from invalid or outdated email addresses</li>
@@ -547,7 +583,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="390">72% of bounces are preventable with verification + authentication</text>
 </svg>
 <p>Use Overloop's <a href="/tools/infrastructure-calculator">infrastructure calculator</a> to estimate how many sending accounts you need to maintain safe volume per domain.</p>
-<h2>Best Send Times for Cold Email</h2>
+<h2 id="best-send-times-for-cold-email">Best Send Times for Cold Email</h2>
 <p>Timing affects open rates by 10-20%. Here is what the data shows:</p>
 <table class="table-keep">
 <thead>
@@ -688,7 +724,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 </svg>
 <p>Tuesday at 9 AM in the prospect's local timezone is the single highest-performing slot across our dataset. Tuesdays see a <strong>28.2% open rate</strong>, followed by Wednesdays at 27.5%. Wednesday also has the highest reply rate at <strong>5.8%</strong>.</p>
 <p>But because everyone knows Tuesday morning works, it is also the most competitive slot. If you want less inbox competition, try <strong>Thursday at 8 AM</strong> or <strong>Wednesday at 1 PM</strong>. Avoid late-night sends: reply rates drop <strong>27%</strong> for emails arriving after 9 PM.</p>
-<h2>Subject Line Statistics</h2>
+<h2 id="subject-line-statistics">Subject Line Statistics</h2>
 <p>The subject line decides whether your email gets opened or ignored. Here are the numbers:</p>
 <ul>
 <li><strong>Personalized subject lines</strong> (with the prospect's name or company): +30.5% open rate vs. generic. Including the company name specifically adds 22%.</li>
@@ -699,7 +735,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li><strong>70% of recipients</strong> decide to mark an email as spam based on the subject line alone.</li>
 <li><strong>Avoid trigger words</strong>: "free," "guaranteed," "urgent" increase spam filter hits by 17%. Check our list of <a href="/blog/500-trigger-words">500 trigger words to avoid</a>.</li>
 </ul>
-<h2>Follow-Up Statistics</h2>
+<h2 id="follow-up-statistics">Follow-Up Statistics</h2>
 <div class="stat-callout">
 <div class="big-number">55%</div>
 <div class="stat-label">Percentage of all replies that come from follow-up emails, not the first touch</div>
@@ -770,7 +806,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#6b7280" font-size="11" text-anchor="middle" transform="rotate(-90 20 190)" x="20" y="190">Cumulative % of total replies</text>
 </svg>
 <p>The optimal gap between emails is 3-5 days for the first two follow-ups, then stretching to 7-14 days for later touches. Sending follow-ups too quickly (within 24 hours) increases unsubscribe rates by 35%. High-frequency follow-ups cause 44% of recipients to unsubscribe.</p>
-<h2>Cold Email Statistics by Industry</h2>
+<h2 id="cold-email-statistics-by-industry">Cold Email Statistics by Industry</h2>
 <table class="table-keep">
 <thead>
 <tr>
@@ -912,7 +948,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="438">Source: Overloop analysis of 12.4M cold emails across 8 industries (2026)</text>
 </svg>
 <p>Recruiting consistently tops the charts because candidates actively want to hear about new opportunities. Healthcare sits at the bottom due to strict email security policies at hospitals and clinics. Environmental services, when measured separately, can reach open rates as high as 48%.</p>
-<h2>Email Length and Performance</h2>
+<h2 id="email-length-and-performance">Email Length and Performance</h2>
 <p>Shorter emails win. The data is clear on this point:</p>
 <ul>
 <li><strong>50-125 words</strong>: highest reply rate (5.8%)</li>
@@ -921,14 +957,14 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li><strong>300+ words</strong>: significantly lower engagement (1.9%)</li>
 </ul>
 <p>The sweet spot is <strong>50-125 words</strong>. That is roughly 4-8 sentences. Enough to state who you are, why you are reaching out, and what you want them to do. Nothing more. For first-touch emails, aim even tighter: <strong>50-80 words</strong>. Read more about <a href="/blog/whats-the-best-email-length-for-sales-outreach">optimal email length for sales outreach</a>.</p>
-<h2>Click-Through Rate Statistics</h2>
+<h2 id="click-through-rate-statistics">Click-Through Rate Statistics</h2>
 <div class="stat-callout">
 <div class="big-number">3.9%</div>
 <div class="stat-label">Average click-through rate for cold emails with a link</div>
 </div>
 <p>The average cold email click-through rate is <strong>3.9%</strong>. 26% of recipients say they always click links in cold emails. 12% say they never do. The remaining 62% decide based on the email content and sender credibility.</p>
 <p>One important detail: <strong>83% of B2B decision-makers Google the sender's company before clicking any link</strong>. Your website, LinkedIn presence, and online reviews matter as much as the email itself. If your digital footprint looks thin, your click rate will suffer regardless of how good the email is.</p>
-<h2>Campaign Size and Segmentation</h2>
+<h2 id="campaign-size-and-segmentation">Campaign Size and Segmentation</h2>
 <div class="stat-callout">
 <div class="big-number">5.5%</div>
 <div class="stat-label">Reply rate for campaigns under 100 recipients (vs. 2.1% for 1,000+)</div>
@@ -1015,7 +1051,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#1a1a1a" font-size="11" text-anchor="middle" x="515" y="107">Smaller lists = 2.8x higher reply rate</text>
 <text fill="#6b7280" font-size="10" text-anchor="middle" x="515" y="123">Send fewer, better emails to tighter lists</text>
 </svg>
-<h2>Cold Email Conversion Rate and ROI</h2>
+<h2 id="cold-email-conversion-rate-and-roi">Cold Email Conversion Rate and ROI</h2>
 <div class="stat-callout">
 <div class="big-number">$36-42</div>
 <div class="stat-label">Return per $1 spent on email outreach (compared to $2.80 for paid social)</div>
@@ -1064,7 +1100,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#EF4444" font-size="14" font-weight="600" x="201" y="239">$2.80</text>
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="310">Cold email returns 13-15x more than paid social per dollar invested</text>
 </svg>
-<h2>AI in Cold Email (2026 Data)</h2>
+<h2 id="ai-in-cold-email-2026-data">AI in Cold Email (2026 Data)</h2>
 <div class="stat-callout">
 <div class="big-number">80%</div>
 <div class="stat-label">Percentage of elite cold email teams using AI for research and sequencing</div>
@@ -1078,7 +1114,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li>Teams using <strong>multi-inbox sending strategies</strong> see 2.1x better results than single-inbox senders</li>
 </ul>
 <p>The shift is not about replacing human judgment. It is about removing the manual work (list building, research, writing first drafts) so reps spend their time on the 20% of work that actually moves deals forward.</p>
-<h2>Cold Email vs. Other Outbound Channels</h2>
+<h2 id="cold-email-vs-other-outbound-channels">Cold Email vs. Other Outbound Channels</h2>
 <table class="table-keep">
 <thead>
 <tr>
@@ -1174,9 +1210,9 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <text fill="#F59E0B" font-size="10" x="658" y="317">Med</text>
 <text fill="#6b7280" font-size="11" text-anchor="middle" x="350" y="370">Cold email is the most cost-effective outbound channel at scale</text>
 </svg>
-<h2>The Legal Side: Is Cold Email Legal?</h2>
+<h2 id="the-legal-side-is-cold-email-legal">The Legal Side: Is Cold Email Legal?</h2>
 <p>Yes, B2B cold email is legal in most jurisdictions, with conditions. CAN-SPAM (US) requires a physical address and opt-out link. GDPR (EU) allows cold email under "legitimate interest" if your message is relevant to the recipient's professional role. 19% of companies have increased outreach investment specifically due to compliance requirements making it harder for non-compliant competitors. Learn the specifics in our guide: <a href="/blog/cold-email-illegal">Is cold email illegal?</a></p>
-<h2>B2B Buyer Behavior and Cold Email</h2>
+<h2 id="b2b-buyer-behavior-and-cold-email">B2B Buyer Behavior and Cold Email</h2>
 <p>Understanding how buyers interact with cold email helps you calibrate expectations:</p>
 <ul>
 <li><strong>61% of B2B decision-makers</strong> prefer email as the channel for initial cold outreach</li>
@@ -1190,7 +1226,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li><strong>36% use cold outreach</strong> as a way to discover new solutions they were not actively searching for</li>
 </ul>
 <p>The pattern is clear: buyers are open to cold email, but only when it demonstrates real understanding of their situation. Generic blasts get ignored. Relevant, specific outreach gets meetings.</p>
-<h2>Unsubscribe and Opt-Out Statistics</h2>
+<h2 id="unsubscribe-and-opt-out-statistics">Unsubscribe and Opt-Out Statistics</h2>
 <div class="stat-callout">
 <div class="big-number">0.38%</div>
 <div class="stat-label">Average unsubscribe rate for cold email campaigns</div>
@@ -1202,7 +1238,7 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li>Sending follow-ups within 24 hours increases unsubscribe rates by <strong>35%</strong></li>
 <li>Negative follow-up phrasing ("Just checking in...", "Did you see my last email?") causes a <strong>14% decrease</strong> in engagement</li>
 </ul>
-<h2>How to Use These Statistics</h2>
+<h2 id="how-to-use-these-statistics">How to Use These Statistics</h2>
 <p>Numbers are only useful if they change how you operate. Here is what to do with this data:</p>
 <ol>
 <li><strong>Benchmark your campaigns.</strong> If your open rate is below 25%, fix your subject lines and sender reputation first. If your reply rate is below 3%, work on personalization and offer clarity.</li>
@@ -1212,22 +1248,22 @@ Features: hero stat cards (gradient big numbers), source citations, quotable car
 <li><strong>Keep emails short.</strong> Under 125 words. One clear CTA. No walls of text.</li>
 </ol>
 <p>If you need a structured approach to cold email, start with our <a href="/blog/cold-email-stats-2018">5-step cold email strategy guide</a>.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>What is a good cold email open rate in 2026?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-a-good-cold-email-open-rate-in-2026">What is a good cold email open rate in 2026?</h3>
 <p>A good cold email open rate in 2026 is <strong>25-35%</strong>. The industry average sits at 27.7%, though Apple Mail Privacy Protection inflates this number. Top performers hit 40-60%. If your open rate is below 25%, focus on subject line optimization and sender reputation.</p>
-<h3>What is a good cold email reply rate?</h3>
+<h3 id="what-is-a-good-cold-email-reply-rate">What is a good cold email reply rate?</h3>
 <p>The average cold email reply rate is <strong>3.4-5.1%</strong> across all industries. A good reply rate is 5-8%. Top performers consistently exceed 10%. The biggest lever is personalization: advanced personalization (referencing specific company details) pushes reply rates to 17-18%, compared to 7% for generic templates.</p>
-<h3>How many follow-ups should I send for cold email?</h3>
+<h3 id="how-many-follow-ups-should-i-send-for-cold-email">How many follow-ups should I send for cold email?</h3>
 <p>Send <strong>4-5 follow-up emails</strong> per sequence. 55% of all positive replies come from follow-ups, not the first email. Running 3-5 follow-ups pushes the overall reply rate to 8.3%, compared to 4.1% with no follow-ups. Space them 3-5 days apart for the first two, then 7-14 days for later touches.</p>
-<h3>What is the best day and time to send cold emails?</h3>
+<h3 id="what-is-the-best-day-and-time-to-send-cold-emails">What is the best day and time to send cold emails?</h3>
 <p><strong>Tuesday through Thursday</strong> are the best days. Tuesday has the highest open rate at 28.2%, while Wednesday has the highest reply rate at 5.8%. The best time is <strong>8:00-10:00 AM</strong> in the recipient's timezone, with a secondary peak at 1:00-2:00 PM.</p>
-<h3>How long should a cold email be?</h3>
+<h3 id="how-long-should-a-cold-email-be">How long should a cold email be?</h3>
 <p>The optimal cold email length is <strong>50-125 words</strong> (4-8 sentences). This range produces the highest reply rate at 5.8%. For first-touch emails, aim for 50-80 words. Emails over 300 words see reply rates drop to 1.9%.</p>
-<h3>Is cold email still effective in 2026?</h3>
+<h3 id="is-cold-email-still-effective-in-2026">Is cold email still effective in 2026?</h3>
 <p>Yes. Cold email returns <strong>$36-42 per $1 spent</strong>, making it one of the highest-ROI B2B channels. It is 40x more effective at customer acquisition than Facebook and Twitter combined. 43% of sales teams rank it as their most effective prospecting channel. The key difference in 2026 is that personalization and deliverability matter more than volume.</p>
-<h3>What is an acceptable bounce rate for cold email?</h3>
+<h3 id="what-is-an-acceptable-bounce-rate-for-cold-email">What is an acceptable bounce rate for cold email?</h3>
 <p>Keep your bounce rate <strong>under 2%</strong>. Above 3%, sender reputation degrades. Above 5%, expect inbox placement problems within days. The average bounce rate is 3.3%. Hard bounces (invalid addresses) should stay under 1%. Always verify your email list before sending.</p>
-<h3>How does cold email compare to LinkedIn outreach?</h3>
+<h3 id="how-does-cold-email-compare-to-linkedin-outreach">How does cold email compare to LinkedIn outreach?</h3>
 <p>LinkedIn outreach has a higher response rate per message (~10% vs. 3-8% for cold email) but lower scalability due to daily connection limits. Cold email costs $0.10-0.50 per contact compared to $1.50-3.00 for LinkedIn. The best-performing teams combine both channels in multichannel sequences.</p>
 
 </main>

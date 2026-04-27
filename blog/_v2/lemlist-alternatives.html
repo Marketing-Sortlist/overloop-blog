@@ -318,6 +318,66 @@ Tested-by banner KEPT (product comparison template)
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .alt-card__head { flex-direction: column; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -373,22 +433,21 @@ Tested-by banner KEPT (product comparison template)
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#why-switch" class="active"><span class="ch-num">—</span>Why teams switch</a></li>
-          <li><a href="#matrix"><span class="ch-num">—</span>Comparison matrix</a></li>
-          <li><a href="#alt-1"><span class="ch-num">01</span>Overloop</a></li>
-          <li><a href="#alt-2"><span class="ch-num">02</span>Cognism</a></li>
-          <li><a href="#alt-3"><span class="ch-num">03</span>Clay</a></li>
-          <li><a href="#alt-4"><span class="ch-num">04</span>ZoomInfo</a></li>
-          <li><a href="#alt-5"><span class="ch-num">05</span>Lusha</a></li>
-          <li><a href="#alt-6"><span class="ch-num">06</span>Seamless.ai</a></li>
-          <li><a href="#alt-7"><span class="ch-num">07</span>Hunter.io</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#migration">Migration checklist</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#why-teams-leave-lemlist">Why Teams Leave Lemlist</a></li>
+    <li><a href="#quick-comparison-table">Quick Comparison Table</a></li>
+    <li><a href="#1-overloop">1. Overloop</a></li>
+    <li><a href="#2-apolloio">2. Apollo.io</a></li>
+    <li><a href="#3-instantly">3. Instantly</a></li>
+    <li><a href="#4-replyio">4. Reply.io</a></li>
+    <li><a href="#5-saleshandy">5. Saleshandy</a></li>
+    <li><a href="#6-smartlead">6. Smartlead</a></li>
+    <li><a href="#7-woodpecker">7. Woodpecker</a></li>
+    <li><a href="#8-klenty">8. Klenty</a></li>
+    <li><a href="#9-mailshake">9. Mailshake</a></li>
+    <li><a href="#which-lemlist-alternative-should-you-pick">Which Lemlist Alternative Should You Pick?</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <main class="prose">
@@ -396,14 +455,14 @@ Tested-by banner KEPT (product comparison template)
 <p><strong>Disclosure: We built Overloop, which competes with Lemlist. We'll be upfront about where we think we're better and where we're not. You'll get the full picture either way.</strong></p>
 <p>Lemlist has built a solid reputation in cold outreach. Their image personalization was genuinely innovative when it launched. But in 2026, the tool has grown into something that frustrates a lot of teams. The Email Pro plan costs $69/user/month ($55 annual). The Multichannel Expert tier jumps to $99/user/month ($79 annual). Pricing went up by $10/user in February 2026. The UI has layers of complexity that slow down onboarding. And while Lemlist offers AI-assisted email writing, it still requires you to provide a draft or template first.</p>
 <p>If you're reading this, you've probably hit one of those walls. Here are 9 alternatives worth evaluating, starting with ours.</p>
-<h2>Why Teams Leave Lemlist</h2>
+<h2 id="why-teams-leave-lemlist">Why Teams Leave Lemlist</h2>
 <p>Three patterns keep coming up in conversations with teams switching away from Lemlist:</p>
 <ul>
 <li><strong>Pricing jumps at the multichannel tier.</strong> The Email Pro plan at $55/mo (annual) handles email-only outreach. But the moment you need LinkedIn steps or calling, you're at $79/user/month annual ($99 monthly). For a team of 5 SDRs, that's over $4,700/year just on the multichannel upgrade.</li>
 <li><strong>UI complexity.</strong> Lemlist added a lead database (450M+ contacts), warm-up, CRM sync, and multichannel sequences. Each feature is decent on its own. Together, the interface feels cluttered and the learning curve is steep for new reps.</li>
 <li><strong>AI writing limitations.</strong> Lemlist's AI helps you rewrite or improve existing copy. It doesn't generate outreach sequences from scratch based on a prospect's profile. That's a meaningful gap if you're running high-volume, personalized campaigns.</li>
 </ul>
-<h2>Quick Comparison Table</h2>
+<h2 id="quick-comparison-table">Quick Comparison Table</h2>
 <div style="margin: 1.5rem 0; overflow-x: auto;">
 <svg aria-label="Pricing comparison of 9 Lemlist alternatives showing monthly starting prices" role="img" viewbox="0 0 720 400" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#f9fafb" height="400" rx="8" width="720"></rect>
@@ -551,11 +610,11 @@ Tested-by banner KEPT (product comparison template)
 </tr>
 </tbody>
 </table>
-<h2><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
+<h2 id="1-overloop"><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
 <p>Overloop is an AI-powered outbound platform that combines LinkedIn automation, cold email, and calling in one tool. The AI doesn't just tweak your copy. It generates entire outreach sequences from scratch, based on your prospect's LinkedIn profile and company data.</p>
 <p>Pricing starts at $69/mo with multichannel included from the start. There's no separate tier gate for LinkedIn or phone. You get email warm-up, sequence automation, and CRM integrations in every plan.</p>
 <p>Where Overloop falls short compared to Lemlist: the contact database is smaller. Lemlist claims 450M+ contacts. If prospecting inside the tool matters more to you than outreach execution, that's a real difference.</p>
-<h3>Key strengths</h3>
+<h3 id="key-strengths">Key strengths</h3>
 <ul>
 <li>AI writes full sequences from prospect data, not just rewrites</li>
 <li>Multichannel (email + LinkedIn + calls) on every plan</li>
@@ -606,23 +665,23 @@ Tested-by banner KEPT (product comparison template)
 </div>
 </div>
 </div>
-<h2><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Apollo.io</h2>
+<h2 id="2-apolloio"><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Apollo.io</h2>
 <p>Apollo is part contact database, part outreach tool. Its 275M+ contact database is the main draw. You can find leads, enrich them, and run email sequences without leaving the platform. The Basic plan starts at $49/user/month (annual) with 900 mobile credits/year.</p>
 <p>The catch: Apollo's credit system adds up fast. Phone numbers cost 8 credits each. Once you burn through your allocation, overages run $0.20/credit. Teams doing heavy prospecting report actual costs of $150-400/user/month.</p>
 <p>Apollo added LinkedIn and calling features, but they're not as polished as dedicated tools. If you need a prospecting database first and outreach second, Apollo is strong. If outreach quality is your priority, look elsewhere.</p>
 <p>Read more: <a href="/blog/apollo-alternatives">Apollo.io Alternatives</a></p>
-<h2><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Instantly</h2>
+<h2 id="3-instantly"><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Instantly</h2>
 <p>Instantly does one thing well: high-volume cold email. The Growth plan at $37.60/month (annual) gives you unlimited email accounts and warm-up. That's hard to beat on pure volume per dollar.</p>
 <p>The limitation is right there in the name of the product category: email only. No LinkedIn automation. No calling. If your prospects respond better to multichannel sequences (and the data consistently shows they do), Instantly leaves money on the table.</p>
 <p>There's also a growing number of deliverability complaints from users running at high volume. Shared IP infrastructure has that risk built in.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
+<h2 id="4-replyio"><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
 <p>Reply.io offers genuine multichannel outreach across email, LinkedIn, calls, and SMS. Their Jason AI SDR feature (starting at $800/month) can autonomously handle initial prospect engagement.</p>
 <p>The base Multichannel plan at $89/month looks reasonable until you add channels. LinkedIn automation is $69/month extra. Calling is $29/month extra. A rep who actually uses all channels pays $187/month. That's nearly double Lemlist's multichannel tier.</p>
 <p>Reply.io has strong API access and agency features. If you're running outreach for multiple clients, the agency plan at $210/month with unlimited clients is worth a look.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/saleshandy.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Saleshandy</h2>
+<h2 id="5-saleshandy"><img alt="" height="28" src="/assets/images/logos/saleshandy.com.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Saleshandy</h2>
 <p>Saleshandy is the budget option. The Starter plan at $25/month (annual) gets you in the door with 6,000 emails/month. The Pro plan at $69/month gives you unlimited team members and 150,000 emails/month.</p>
 <p>It's email only. No LinkedIn, no calling. The credit system for lead enrichment adds hidden costs ($0.03-0.05 per credit). But if you need affordable email outreach at scale and don't care about other channels, Saleshandy delivers solid value.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/smartlead.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Smartlead</h2>
+<h2 id="6-smartlead"><img alt="" height="28" src="/assets/images/logos/smartlead.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Smartlead</h2>
 <p>Smartlead starts at $39/month for the Basic plan with unlimited mailboxes, unlimited warmup, and up to 6,000 emails/month. The Pro plan at $94/month adds API access, webhooks, and higher volume limits. It's built for agencies and teams managing multiple sending accounts.</p>
 <p>Like Instantly, Smartlead is email-only. The real draw is the warmup infrastructure and inbox rotation across unlimited mailboxes. The advertised price undersells the actual cost: once you add domains, mailboxes, and verification, serious users report $150-250/month. But for agencies running outreach across 10+ client accounts, the per-client math is competitive.</p>
 <div style="margin: 1.5rem 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; font-family: Inter, system-ui, sans-serif;">
@@ -667,16 +726,16 @@ Tested-by banner KEPT (product comparison template)
 </div>
 </div>
 </div>
-<h2><img alt="" height="28" src="/assets/images/logos/woodpecker.co.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Woodpecker</h2>
+<h2 id="7-woodpecker"><img alt="" height="28" src="/assets/images/logos/woodpecker.co.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. Woodpecker</h2>
 <p>Woodpecker charges based on contacted prospects, not emails sent or team size. The Starter plan at $29/month covers 500 prospects. LinkedIn automation is available as a $29/month add-on.</p>
 <p>The agency panel ($27/client/month) makes Woodpecker popular with outreach agencies. The tool is reliable for email and has good deliverability features. It won't blow you away with AI or advanced automation, but it does the basics well.</p>
-<h2>8. Klenty</h2>
+<h2 id="8-klenty">8. Klenty</h2>
 <p>Klenty's Startup plan at $50/user/month (annual) is email-only. You need the Growth plan at $70/user/month for multichannel and CRM sync. The AI features live on higher tiers.</p>
 <p>Klenty's strongest point is its CRM integration depth, particularly with Salesforce and HubSpot. If your sales process is CRM-centric and you want outreach that stays tightly synced, Klenty handles that well. The UI is clean but the feature set on lower tiers feels thin.</p>
-<h2>9. Mailshake</h2>
+<h2 id="9-mailshake">9. Mailshake</h2>
 <p>Mailshake now offers three tiers. The Starter plan at $29/user/month is email tracking only, no sequences. The Email Outreach plan at $59/user/month includes Shakespeare AI writing, automated sequences, and deliverability tools. LinkedIn automation and phone dialing only come with the $99/month Sales Engagement plan.</p>
 <p>Despite advertising monthly rates, all Mailshake plans require annual prepayment. That means you're committing $348-1,188 upfront depending on the tier. The tool works well for straightforward email campaigns but lacks the depth for complex multichannel workflows.</p>
-<h2>Which Lemlist Alternative Should You Pick?</h2>
+<h2 id="which-lemlist-alternative-should-you-pick">Which Lemlist Alternative Should You Pick?</h2>
 <p>It depends on what's actually driving you away from Lemlist:</p>
 <ul>
 <li><strong>Too expensive for multichannel?</strong> Overloop includes all channels from $69/mo. No tier gating.</li>
@@ -687,16 +746,16 @@ Tested-by banner KEPT (product comparison template)
 </ul>
 <p>Every tool on this list has trade-offs. The right choice depends on your team size, budget, and whether you need multichannel or email-only. If you want to see how Overloop handles it, the free trial doesn't require a credit card.</p>
 <p>Also worth reading: <a href="/blog/best-ai-sales-tools">Best AI Sales Tools</a> and <a href="/blog/9-best-ai-email-outreach-tools">9 Best AI Email Outreach Tools</a> for a broader view of the landscape.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>What is the best free alternative to Lemlist?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="what-is-the-best-free-alternative-to-lemlist">What is the best free alternative to Lemlist?</h3>
 <p>Apollo.io offers the most capable free plan. You get access to the contact database, basic email sequencing, and CRM integration at no cost. The free tier has strict credit limits (60 mobile credits/year, 120 export credits/year), but it's enough to test the workflow before committing budget.</p>
-<h3>Is Lemlist worth it in 2026?</h3>
+<h3 id="is-lemlist-worth-it-in-2026">Is Lemlist worth it in 2026?</h3>
 <p>Lemlist is still a solid tool for teams that value image personalization and creative outbound. The Email Pro plan at $69/user/month ($55 annual) is reasonable for email-only. The problem is the jump to $99/user/month ($79 annual) for multichannel. If you need LinkedIn and calling, tools like Overloop include all channels from $69/mo without tier gating.</p>
-<h3>Why is Lemlist so expensive?</h3>
+<h3 id="why-is-lemlist-so-expensive">Why is Lemlist so expensive?</h3>
 <p>Lemlist's per-seat pricing adds up fast for growing teams. A 10-person team on the Multichannel Expert plan pays $790/month (annual). The platform also uses a credit system for its lead database and AI features, which creates additional costs beyond the base subscription. Pricing increased by $10/user in February 2026.</p>
-<h3>Can I use Lemlist for LinkedIn outreach?</h3>
+<h3 id="can-i-use-lemlist-for-linkedin-outreach">Can I use Lemlist for LinkedIn outreach?</h3>
 <p>Yes, but only on the Multichannel Expert plan at $99/user/month ($79 annual). The Email Pro plan is email-only. Alternatives like Overloop and Reply.io also offer LinkedIn automation, with Overloop including it on every plan.</p>
-<h3>What is Lemlist's G2 rating?</h3>
+<h3 id="what-is-lemlists-g2-rating">What is Lemlist's G2 rating?</h3>
 <p>Lemlist is rated 4.6/5 on G2 from 1,270+ reviews. Users praise the image personalization and ease of building email sequences. Common complaints include per-seat pricing, the credit system adding hidden costs, and occasional bugs in the workflow builder.</p>
 
 </main>

@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#1what-does-your-best-customer-look-like">1.What Does Your Best Customer Look Like?</a></li>
+    <li><a href="#2-qualify-before-prospecting">2. Qualify Before Prospecting</a></li>
+    <li><a href="#3-can-you-serve-the-prospect">3. Can You Serve The Prospect?</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -444,7 +496,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><span>But more than acquiring the prospect, the most tedious task is to discern who the right prospects are. After all, it’s highly likely that you are surrounded by way too many potential prospects. And sometimes you might give in to the temptation and start prospecting so that your sales pipeline is inundated with potential prospects and you can eventually </span><a href="https://aeroleads.com/social-media-strategies/?ref=quuu&amp;utm_source=quuu" rel="external noopener"><span>boost your sales</span></a><span>. But this approach doesn’t serve the purpose. Because in the end only half of the prospects will turn out to be relevant. </span></p>
 <p><span>Thus, rather than going at it like a rat-race focus on who is the right prospect and where to find the right prospects. </span></p>
 <p><span>In this post we are going to give you a perfect checklist that you must consider to analyse who to prospect and where to find them.</span></p>
-<h2><span>1. </span>What Does Your Best Customer Look Like?</h2>
+<h2 id="1what-does-your-best-customer-look-like"><span>1. </span>What Does Your Best Customer Look Like?</h2>
 <p><span>The best way to go about it is by creating an </span><span>Ideal Customer Profile (ICP)</span><span>, a strategy that plays a central role when it comes to prospecting. </span></p>
 <p><span>Aren’t we grappling with the question, Whom to prospect and whom to avoid? Well, here’s your answer. </span></p>
 <p><span>But what exactly Ideal Customer Profile is? Ideal Customer Profile basically helps in filtering out and negating unproductive prospects. </span></p>
@@ -464,7 +516,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p><span>Once you have made side-by-side comparison, note everything down clearly. The hard part is over. (And it wasn’t really that hard, was it?)</span></p>
 <p><span>Now you can streamline your prospects accordingly. Prospect the enterprises that have similar attributes as your existing customers.</span></p>
-<h2>2. Qualify Before Prospecting</h2>
+<h2 id="2-qualify-before-prospecting">2. Qualify Before Prospecting</h2>
 <p><span>Sure, most people </span><span>qualify the leads</span><span> after acquiring them. But do you really think this is the right approach? </span></p>
 <p><span>Not sure about it? </span></p>
 <p><span>Think of it this way - you’ve a considerable amount of resources, time and energy in acquiring, say 100 leads. Now, after acquiring the leads, you will qualify them. And after qualifying only 40 leads turn out to be relevant. Turn out, you wasted all the time and resources for nothing in acquiring those 60 irrelevant leads. </span></p>
@@ -477,7 +529,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><b><b><b>Does The Prospect Need Your Services? <span>How can you say that the prospect needs your services. Is the prospect similar to your existing customers? What are they aiming for? Would you be able to cater to their need? Ask yourself these questions, right down the answers and you will surely realise whom to prospect and whom to not.</span></b></b></b></li>
 <li><b>Urgency - </b><span>Say, for example, you are prospecting an enterprise that needs the task to be done within 24 hours. If you can meet this demand, then you are welcome to prospect them. However, if you are unable to meet that sort of demand, what would be the point in prospecting the enterprise? Therefore, before prospecting get to know about the urgency of the need.</span></li>
 </ul>
-<h2>3. Can You Serve The Prospect?</h2>
+<h2 id="3-can-you-serve-the-prospect">3. Can You Serve The Prospect?</h2>
 <p><span>We have saved the best for the last. </span></p>
 <p><span>Everything aside, the ideal prospect is one whose pain points you can address. When all is said and done, everything is manageable to some extent. </span></p>
 <p><span>You can manage the budget, time or even the resources. However, the point is - does you product help your prospect? Can you product or services address the pan points of your potential prospect? </span></p>
@@ -486,7 +538,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><b>Here Are Some Places Where You Can Find The Right Prospects.</b></p>
 <ul>
 <li>
-<h3><b>Job Boards </b></h3>
+<h3 id="job-boards"><b>Job Boards </b></h3>
 </li>
 </ul>
 <p><span>You’d think that how is it possible to find prospects in a place where the prospects themselves are finding potential employees. But, that’s exactly the point. </span></p>
@@ -499,7 +551,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><span>Indeed </span></li>
 <li><span>AngelList </span><span><br/></span></li>
 <li>
-<h3><b>Quora  </b></h3>
+<h3 id="quora"><b>Quora  </b></h3>
 </li>
 </ul>
 <p><span>Quora</span><span> is a Q&amp;A forum that has an answer to all your queries. And also your answer to where to find your prospects. </span></p>
@@ -508,7 +560,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><span>However, don’t forget to make use of the aforementioned ways to filter out unproductive prospects and analyse who to prospect. </span><span><br/></span></p>
 <ul>
 <li>
-<h3><b>Blogs and Forums </b></h3>
+<h3 id="blogs-and-forums"><b>Blogs and Forums </b></h3>
 </li>
 </ul>
 <p><span>It may sound absurd in the beginning but subscribing to some relevant blogs and forums may come in handy. Simply because these newsletters would help you stay up to date with everything that goes on in the market. </span></p>
@@ -517,12 +569,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><span>Suppose, the enterprises in your industry are struggling with some data breach. And luckily you are a cyber security consultancy agency. Next you can google about this supposed breach further, research a bit more and start contacting the prospects with possible solutions. </span></p>
 <ul>
 <li>
-<h3><b>Business Journals </b></h3>
+<h3 id="business-journals"><b>Business Journals </b></h3>
 </li>
 </ul>
 <p><span>Business Journals serve somewhat the same purpose as the blogs and forums. However, these journals cover bigger events and have a better insight about the businesses and the problems that they are facing. </span></p>
 <p><span>And you can leverage such coverage by contacting the company (if they are an ideal prospect). Also, you might get to know of some business you have never heard of before and discover some new prospects this way.</span></p>
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 <p><span>So there were some ways using which you can discern whom to prospect and where to find your prospects. If you follow the above points without rushing out things then you will be able to build a mutually beneficial relation with your prospects that may later cement in profitable sales.</span></p>
 
 </main>

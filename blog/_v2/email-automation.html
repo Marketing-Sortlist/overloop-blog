@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,17 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#what-is-email-automation-for-outbound">What is email automation for outbound?</a></li>
+    <li><a href="#how-does-email-automation-boost-productivity">How does email automation boost productivity?</a></li>
+    <li><a href="#maximize-results-with-email-automation">Maximize results with email automation</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -437,7 +488,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       <main class="prose">
 
 <p>Are you looking to enhance productivity and streamline your business efforts? Look no further! Let's dive into the world of outbound email automation and discover how it can revolutionize your sales process.</p>
-<h2>What is email automation for outbound?</h2>
+<h2 id="what-is-email-automation-for-outbound">What is email automation for outbound?</h2>
 <p>Email automation used predefined rules to send personalized emails to prospects or customers based on their actions. Email automation handles repetitive tasks by setting up specific workflows and triggers and gives you more time to focus on growing your business or closing deals. Examples of automated emails include:</p>
 <ul>
 <li>Automated cold emails</li>
@@ -445,22 +496,22 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Follow-up emails</li>
 </ul>
 <p>Email automation isn't just a buzzword; it's a game-changer that simplifies your workflow. By setting up predefined workflows and triggers, email automation handles repetitive tasks and gives you more time to focus on growing your business.</p>
-<h2>How does email automation boost productivity?</h2>
-<h3>Save time and focus on value-adding tasks</h3>
+<h2 id="how-does-email-automation-boost-productivity">How does email automation boost productivity?</h2>
+<h3 id="save-time-and-focus-on-value-adding-tasks">Save time and focus on value-adding tasks</h3>
 <p>With email automation, the days of manually sending out individual emails are a thing of the past. Instead of spending precious hours drafting and sending emails individually, you can set up your campaigns once and let automation take care of the rest. By automating your email workflows, you free up valuable time to focus on tasks where you can truly add value to your business. Automation sets the stage for growth and success in today's competitive landscape by saving time for strategic initiatives, innovation, and relationship-building.</p>
 <p>In addition, automation provides the opportunity to innovate and experiment with new ideas. With the time saved from manual email sending, you can explore new marketing channels, test different messaging strategies, and continuously optimize your campaigns for better results. This culture of innovation and experimentation is essential for staying ahead of the competition and driving continuous improvement in your sales &amp; marketing efforts.</p>
-<h3>Personalize customer experience and strengthen relationships</h3>
+<h3 id="personalize-customer-experience-and-strengthen-relationships">Personalize customer experience and strengthen relationships</h3>
 <p>Automation empowers you to prioritize leads and focus your efforts where they matter most.  Free up your team to concentrate on building relationships and nurturing leads effectively. Email automation allows you to personalize your messages to resonate with each recipient. Whether addressing them by name, tailoring content based on their preferences, or sending targeted offers based on their past interactions, automation allows you to deliver a personalized experience at scale.</p>
 <p>Are you curious how Overloop takes care of the grunt work for you? Our platform offers powerful features to streamline  email workflows and supercharge results. Overloop empowers you to unlock the full potential of email automation without the hassle.</p>
-<h3>Foster collaboration thanks to automation approach</h3>
+<h3 id="foster-collaboration-thanks-to-automation-approach">Foster collaboration thanks to automation approach</h3>
 <p>Sharing the entire lead journey with your team has never been easier, thanks to automation tools. You can smoothly coordinate efforts across various channels, including LinkedIn, email, and phone calls. This integrated approach ensures a cohesive and streamlined experience for your team and customers.</p>
 <p> Overloop empowers businesses to share the entire lead journey with their team effortlessly. With our multi-channel outbound campaigns, intuitive drag-and-drop editor, and advanced segmentation capabilities, you can streamline your marketing efforts, drive better results, and take your business to new heights. Say goodbye to siloed communication and hello to a unified approach to customer engagement with Overloop!</p>
-<h3>Improve activity reporting</h3>
+<h3 id="improve-activity-reporting">Improve activity reporting</h3>
 <p>Email automation allows you to track key metrics such as email opens, clicks, responses, and conversions to gain valuable insights into the effectiveness of your campaigns. With detailed reporting, you can make informed, data-driven decisions to optimize your strategies and drive tangible results for your business.</p>
 <p>Overloop allows you to analyze each step of your scenarios to get a comprehensive view of your performance metrics. Whether you're evaluating the success of a specific email sequence's success or assessing your campaigns' overall impact, our platform provides the tools you need to dive deep into your data and uncover actionable insights.</p>
-<h2>Maximize results with email automation</h2>
+<h2 id="maximize-results-with-email-automation">Maximize results with email automation</h2>
 <p>Email automation isn't just about immediate productivity gains but long-term success. As you fine-tune your campaigns and refine your messaging over time, you'll build stronger relationships with your audience and foster brand loyalty. By delivering timely and relevant content to your subscribers, you'll position your business as a trusted advisor in your industry, driving long-term customer engagement and retention.</p>
-<h3>Take your email automation to the next level with Overloop!</h3>
+<h3 id="take-your-email-automation-to-the-next-level-with-overloop">Take your email automation to the next level with Overloop!</h3>
 <p>What if we told you Overloop could also find and add email addresses to your database? Our Email Finder retrieves information from LinkedIn, Excel files, and other websites with a single click! Launch cold email campaigns straight from your browser quickly and easily!</p>
 <p>Don't worry about getting the wrong emails: our advanced email verification feature checks whether the provided email address is active and reachable, reducing the likelihood of your emails bouncing. Integrate with Gmail, Outlook, and much more!</p>
 <p>In conclusion, email automation isn't just a tool for streamlining workflows – it's a catalyst for growth and success in today's digital landscape. With Overloop as your partner, you can harness the power of automation to elevate your marketing efforts, drive tangible results, and unlock new opportunities for your business. Why would you waste another minute on manual email sending when you can embrace the power of automation and take your business to new heights?</p>

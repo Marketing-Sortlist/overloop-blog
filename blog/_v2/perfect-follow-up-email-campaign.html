@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,19 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#how-to-pick-and-set-up-a-follow-up-email-sequence">How to pick and set up a follow-up email sequence?</a></li>
+    <li><a href="#the-minimum-sequence">The minimum sequence</a></li>
+    <li><a href="#the-business-sequence">The business sequence</a></li>
+    <li><a href="#longer-cycles">Longer cycles</a></li>
+    <li><a href="#adapt-and-execute">Adapt and execute</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -440,14 +493,14 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>What I'm going to tell you, however, is that I receive enough cold emails to know that most of them aren't followed up on. What I'm also going to tell you is that we at <a href="https://overloop.com">Overloop</a> help hundreds of customers write their follow-up email sequences, because most of the time, they're pretty bad.</p>
 <p>Is following up always worth it, though? Based on our experience and data, <strong>70% of responses come from the 2nd to 4th email of the sequence</strong>. So without a doubt, I'd say yes.</p>
 <p>While there's no "one size fits all" model to writing a cold email sequence, there are a few rules you can rely on to get things moving.</p>
-<h2>How to pick and set up a follow-up email sequence?</h2>
+<h2 id="how-to-pick-and-set-up-a-follow-up-email-sequence">How to pick and set up a follow-up email sequence?</h2>
 <p>Here's what your workflow should look like:</p>
 <p>Step 1: Determine the goal of the campaign<br/>Step 2: Research your prospect<br/>Step 3: Pick a sequence type and customize it<br/>Step 4: Launch the campaign<br/>Step 5: Measure your results</p>
-<h2>The minimum sequence</h2>
+<h2 id="the-minimum-sequence">The minimum sequence</h2>
 <p>This is the AK-47 of email sequences. Easy to set up, efficient in most cases, and scalable.</p>
 <p>It allowed me to land four guest posts in less than two weeks (a 22% success rate).</p>
 <p>Every cold email sequence should include at least these three steps:</p>
-<h3>1) An opening cold email</h3>
+<h3 id="1-an-opening-cold-email">1) An opening cold email</h3>
 <p>Without going too deep into details about <a href="/blog/how-to-write-a-successful-follow-up-email">how to write a cold email</a>, keep it <strong>short</strong> and include the following elements:</p>
 <ul>
 <li><strong>Grab</strong> the attention</li>
@@ -458,10 +511,10 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p>Keep a <strong>conversational</strong> tone, <strong>personalize</strong> your content, add <strong>value</strong> and make it <strong>clear</strong> what it is you want.</p>
 <p>Also, it's always good to <strong>warm up</strong> a cold email recipient with a personalized <strong>LinkedIn contact request</strong>.</p>
-<h3>2) A gentle but firm reminder (2-3 days after the initial email)</h3>
+<h3 id="2-a-gentle-but-firm-reminder-2-3-days-after-the-initial-email">2) A gentle but firm reminder (2-3 days after the initial email)</h3>
 <p>Emails tend to be overlooked; your prospect might be busy, not in a good mood to answer, or simply out of office for a few days. You'd be amazed at the power of a simple reminder.</p>
 <p><strong>Don't</strong> repeat yourself, though. <a href="https://www.goprospero.com/blog/how-to-write-killer-sales-follow-up-emails-that-close-deals/">Follow up</a> in the same thread and simply <strong>ask</strong> if they saw your previous email, if they got a chance to think about your offer, etc.</p>
-<h3>3) A break-up email (4-5 days after the previous email)</h3>
+<h3 id="3-a-break-up-email-4-5-days-after-the-previous-email">3) A break-up email (4-5 days after the previous email)</h3>
 <p>I'm about to let you in on a secret.</p>
 <p>Seriously, this is the formula for a break-up email that gets a response.</p>
 <p>You know how no one wants to <strong>miss out</strong>, and most people want to <strong>help</strong>. And also how some people simply need a <strong>second reminder</strong>?</p>
@@ -469,7 +522,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><em>"<strong>What could have changed your mind?</strong>"</em></p>
 <p>Try to use that as your subject line (or as part of your subject line) and ask in your body text if they can point you to a couple things that might have swayed their decision.</p>
 <p><strong>Why is so powerful?</strong> It makes the reader think about your offer and the reasons they wouldn't give you an answer. And suddenly, when they type those out, they don't seem so compelling anymore.</p>
-<h2>The business sequence</h2>
+<h2 id="the-business-sequence">The business sequence</h2>
 <p>Depending on the importance of the decision, the risk, and the reputation of the company, some follow-up sequences may require more than a few emails and demand more persuasion.</p>
 <p>This sequence involves more work but also drives much more value. It helped us recruit our first 175 customers.</p>
 <p>It runs over a two-week period and looks something like this:</p>
@@ -481,7 +534,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Break-up email (4-5 days after the previous email)</strong></li>
 </ul>
 <p>Now, the question is...</p>
-<h3>...how do you bring undeniable value to cold emails?</h3>
+<h3 id="how-do-you-bring-undeniable-value-to-cold-emails">...how do you bring undeniable value to cold emails?</h3>
 <p>There are five main ways to make your emails incredibly valuable and help your prospect take an action that will move the sales process forward.</p>
 <h4>1. Case studies</h4>
 <p>Case studies are powerful because they show how one of your customers solved a specific problem successfully and with measurable results. Neil Patel, co-founder of KISSmetrics and Crazy Egg, managed to increase his sales by 70% by including case studies in his emails!</p>
@@ -501,12 +554,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <h4>5. Relevant content</h4>
 <p>If you don't have any customer data to share--or none that would be relevant to your prospect--you can still offer value by including a piece of valuable content.</p>
 <p>It's easy and it provides you with an opportunity to prove you took the time to understand a prospect's challenge and find something that could help them solve it without necessarily including your product in the process.</p>
-<h2>Longer cycles</h2>
+<h2 id="longer-cycles">Longer cycles</h2>
 <p>Whereas small transactions may lead to fast decisions, big or complex transactions may need you to establish extra credibility and persistence in order for your prospect to wrap their head around the idea of responding to your messages.</p>
 <p>Keep in mind that these longer sequences must be integrated in multichannel approaches that will allow you to build a more meaningful relationship.</p>
 <p>You can't be an expert in all outreach methods but you also can't stick to only one way of reaching out. Sales are about creating relationships and the more natural you are about it, the more successful you'll be in winning new clients.</p>
 <p>Here's the approach Phill Keene implements at <a href="https://andcostello.com/">Costello</a>; it uses six different methods over the course of a month before going into nurturing phase. It might seem aggressive -it <em>is</em> called the Crazy Ex Sequence- but hey, it works.</p>
-<h2>Adapt and execute</h2>
+<h2 id="adapt-and-execute">Adapt and execute</h2>
 <p>Find out as much as possible about your prospect, know what you're expecting from them, and tailor a sequence based on that!</p>
 
 </main>

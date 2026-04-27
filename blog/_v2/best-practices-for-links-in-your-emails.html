@@ -285,6 +285,66 @@ No TOC sidebar (too short — in-article links only).
       .point__head { flex-direction: column; }
       .point__num { width: 36px; height: 36px; font-size: 13px; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -333,38 +393,38 @@ No TOC sidebar (too short — in-article links only).
 <p>That link that you want the prospect to click? It can get you sent straight to the spam folder. Even when your email gets through to the prospects’s inbox, the links you’ve included may cause them to eye it suspiciously.</p>
 <p>Armed with a handful of best practices, though, you’ll be set up to deliver value and nurture the recipient onto the next step of your sales pipeline.</p>
 <p>Here we’ll answer your most pressing questions about including links in emails.</p>
-<h2>How many links should you include in a sales email?</h2>
+<h2 id="how-many-links-should-you-include-in-a-sales-email">How many links should you include in a sales email?</h2>
 <p>The short answer: None. Or one. It depends.</p>
 <p>If you’re sending cold outreach emails, then we recommend you <a href="/blog/ab-testing-email-drip-campaigns">don’t use any links</a>, especially in early stages. This is because someone who doesn’t know you is unlikely to trust your link. If you hope to make the sale, you need to build trust first.</p>
 <p>But at some point you may want to direct the prospect to a resource or action they can take. Then, using only one link is probably your best bet.</p>
-<h3>Help your prospect stay focused</h3>
+<h3 id="help-your-prospect-stay-focused">Help your prospect stay focused</h3>
 <p>Why only one link? Because you want to give the prospect only one thing to do in your email. Each email you send should have one goal, and your link should support that goal.</p>
 <p>Consider <a href="https://genoo.com/links-in-emails-how-many-should-i-have/" rel="external noopener">link fatigue</a> when including links in your emails. The more links you present, the greater the chance that the recipient will not click on any. They’ve got seconds to process your email, and by offering choices, you’re adding more work to their already overloaded brain.</p>
 <p>It’s easier for them to hit delete than to make one more decision that frankly they didn’t ask for.</p>
-<h3>Ignore misleading studies</h3>
+<h3 id="ignore-misleading-studies">Ignore misleading studies</h3>
 <p>Some people say <a href="https://genoo.com/links-in-emails-how-many-should-i-have/" rel="external noopener">3-5 links are fine</a> to include in an email, because psychology shows folks will still make a choice when we’re given that many options. But do you really want to take your chances on which link they will click? Better to offer up the one link that will be most meaningful for your prospect, so they aren’t distracted by other options.</p>
 <p>One popular study found that clicks from emails declined after including <a href="https://www.campaignmonitor.com/blog/email-marketing/2019/01/less-links-are-better/" rel="external noopener">more than 11 links</a>.</p>
 <p>But before you conclude you need more links, you should know that the emails in the study were HTML campaigns, which often feature ecommerce products or newsletter articles. These are not the kinds of emails we’re talking about here. At Overloop, we’re focused on sales automations to help people close deals.</p>
 <p>Furthermore, including a lot of links in your outreach email can trigger spam filters. And it also gives off a spammy vibe—not what you’re going for, obviously.</p>
-<h2>Should you include the same link twice?</h2>
+<h2 id="should-you-include-the-same-link-twice">Should you include the same link twice?</h2>
 <p>Prolific digital marketing author Neil Patel is a fan of linking to the same place two times in an email. This lets you attract two different types of people to click the link, the thinking goes.</p>
 <p>The anchor text can be different, even when both links go to the same place. In fact, to the reader, it appears as if there are two different links. The reasoning behind this has to do with psychological triggers. One finely worded benefit may persuade one email recipient while phrasing it another way may resonate more with another.</p>
 <p>We say give it a try and check your results. We expect it may vary with the <a href="/blog/whats-the-best-email-length-for-sales-outreach">length of your email</a>.</p>
-<h2>Where should you place your link in an email?</h2>
+<h2 id="where-should-you-place-your-link-in-an-email">Where should you place your link in an email?</h2>
 <p>If you’re using two links that point to the same place, that’s easy. Include one in the first or second paragraph and the other closer to the end. That way, the reader always has a way to take action within their view.</p>
 <p>If you’re going with the one-link rule, your link should be easy to spot rather than placed in a specific position. The typical blue underlined link draws the eye and tells the reader what they’re expected to do. If they need to return to your email, you want them to be able to find the link easily.</p>
 <p>The P.S. at the bottom of your email may be a good spot to include your link, especially if it points to a resource or additional piece of information that they might find useful.</p>
-<h2>Should you use a URL string or anchor text? Or a tiny URL?</h2>
+<h2 id="should-you-use-a-url-string-or-anchor-text-or-a-tiny-url">Should you use a URL string or anchor text? Or a tiny URL?</h2>
 <p>It’s easy to see why you might think that including the complete URL string is a good idea. It’s transparent, because it shows where the link is going. It’s also easy for people to copy and paste if they can’t click to open email links for whatever reason.</p>
 <p>But on the flip side, URL strings look messy. They can be really long. And to many, they’re difficult to understand. All of this adds to the cognitive load you’re placing on your reader.</p>
 <p>Instead, make it simple and use descriptive and engaging link text. Don’t make them guess what they’ll get on the other side of the link.</p>
 <p>Avoid URL shorteners. Spammers have spoiled it for everyone by using them, and now <a href="/blog/10-pro-tips-avoid-spam-folder">the use of a shortened link can trigger spam filters</a>.</p>
-<h2>Use links instead of attaching files</h2>
+<h2 id="use-links-instead-of-attaching-files">Use links instead of attaching files</h2>
 <p>Attaching unsolicited files, especially large ones, can trigger spam filters. Not to mention clog up the recipient’s email if they have mailbox limitations. Now there are many options for linking to documents. Set up your documents in Google Drive or Dropbox and <a href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy">send the link instead of attaching a document</a>.</p>
-<h2>Don’t forget the unsubscribe link</h2>
+<h2 id="dont-forget-the-unsubscribe-link">Don’t forget the unsubscribe link</h2>
 <p>Of course no one wants people to unsubscribe from their emails. But trying to keep them from unsubscribing will only backfire.</p>
 <p>Including your unsubscribe link can actually help you improve deliverability by lowering your chances of being marked as spam. Allowing people to click to unsubscribe also helps with GDPR compliance and saves you time from removing people manually. So don’t forget to include an unsubscribe link in your outreach emails.</p>
-<h2>Customize and track your links</h2>
+<h2 id="customize-and-track-your-links">Customize and track your links</h2>
 <p>Overloop lets you customize the link in each email to prospects even when you’re using a template. This helps you send semi-personalized emails at scale.</p>
 <p>This personalization can come in handy for outreach activities that require you include a link, such as SEO link building outreach. See how Gabka Koščová from Spotibo was able to <a href="/blog/cold-emailing-link-building">streamline efforts in cold email outreach</a> by using customizable templates.</p>
 <p>And if you’re using Overloop to send your sales emails, you can <a href="/blog/email-automation">see when a prospect clicks a link</a>. In fact, you’ll know if they’ve come back to check out your email again, and how many times they click on a link. This data lets you segment your prospects so you can nurture along those who are more engaged, and try a different approach with those who are not responding.</p>

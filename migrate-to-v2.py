@@ -71,6 +71,9 @@ AUTHORS = {
 # Source: column O of Content Calendar 2026 (sheet) + manual review of legacy article types
 SLUG_TO_TEMPLATE = {
     # === BEST TOOLS LISTICLE ===
+    # NOTE: data-list and swipe-files V2 templates require highly structured data
+    # that legacy markdown bodies don't fit. We re-map their slugs to pillar-guide
+    # which is the most flexible long-form template.
     "10-best-ai-sales-assistant-tools": "best-tools.html",
     "10-essential-sales-tools-every-b2b-team-needs-in-2025": "best-tools.html",
     "11-best-ai-bdr-tools": "best-tools.html",
@@ -121,9 +124,9 @@ SLUG_TO_TEMPLATE = {
     "how-to-write-a-successful-follow-up-email": "how-to.html",
     "get-email-from-linkedin-profile": "how-to.html",
     "following-up-surefire-techniques": "how-to.html",
-    # === DATA LIST / DIRECTORY ===
-    "455-email-spam-trigger-words-avoid-2018": "data-list.html",
-    "500-trigger-words": "data-list.html",
+    # === DATA LIST / DIRECTORY (re-mapped to pillar-guide for legacy fit) ===
+    "455-email-spam-trigger-words-avoid-2018": "pillar-guide.html",
+    "500-trigger-words": "pillar-guide.html",
     # === STATISTICS & BENCHMARKS ===
     "cold-email-stats-2018": "statistics.html",
     # === X vs Y ===
@@ -143,8 +146,9 @@ SLUG_TO_TEMPLATE = {
     "9-reasons-never-buy-email-lists": "tactical.html",
     "ab-testing-email-drip-campaigns": "tactical.html",
     "best-practices-for-links-in-your-emails": "tactical.html",
-    "best-sales-email-template": "swipe-files.html",  # template type
-    "best-subject-lines-for-sales-emails": "swipe-files.html",
+    # swipe-files re-mapped to pillar-guide (structured tabs don't fit legacy body)
+    "best-sales-email-template": "pillar-guide.html",
+    "best-subject-lines-for-sales-emails": "pillar-guide.html",
     "common-sales-automation-mistakes-and-how-to-avoid-them": "tactical.html",
     "sales-email-tips-to-help-you-close-more-deals": "tactical.html",
     "seasonal-sales": "tactical.html",
@@ -271,6 +275,57 @@ class LegacyArticle:
                 return main.decode_contents()
             return "<p>(content extraction failed — manual fix needed)</p>"
         return a.decode_contents()
+
+
+# ============================================================================
+# TOC BUILDER — slugify legacy headings + generate TOC HTML
+# ============================================================================
+def slugify(text: str) -> str:
+    """URL-safe slug from heading text."""
+    s = re.sub(r"[^\w\s-]", "", text.lower())
+    s = re.sub(r"[\s_-]+", "-", s)
+    return s.strip("-") or "section"
+
+
+def add_ids_and_build_toc(body_html: str) -> tuple[str, str]:
+    """Parse body, add slugified IDs to all H2/H3 missing them.
+    Return (modified_body_html, toc_inner_html)."""
+    soup = BeautifulSoup(body_html, "html.parser")
+    seen = set()
+    toc_items = []
+
+    for h in soup.find_all(["h2", "h3"]):
+        text = h.get_text(strip=True)
+        if not text:
+            continue
+        # Use existing id if present, else slugify
+        if h.get("id"):
+            slug = h["id"]
+        else:
+            slug = slugify(text)
+            # Dedupe across the doc
+            base = slug
+            i = 2
+            while slug in seen:
+                slug = f"{base}-{i}"
+                i += 1
+            h["id"] = slug
+        seen.add(slug)
+        toc_items.append({"level": int(h.name[1]), "text": text, "id": slug})
+
+    # Build TOC inner HTML — include only H2s for cleanliness (skip H3s in sidebar)
+    toc_lines = []
+    for item in toc_items:
+        if item["level"] != 2:
+            continue
+        # Truncate long titles for the sidebar
+        label = item["text"]
+        if len(label) > 50:
+            label = label[:47] + "…"
+        toc_lines.append(f'    <li><a href="#{item["id"]}">{label}</a></li>')
+    toc_inner = "\n".join(toc_lines) if toc_lines else '    <li><em>No sections found.</em></li>'
+
+    return str(soup), toc_inner
 
 
 # ============================================================================
@@ -493,9 +548,12 @@ class V2TemplateMigrator:
         )
 
     def patch_main_content(self) -> None:
-        """Replace V2 template's main content body with legacy article body."""
-        body = self.article.article_body
-        # Find <main class="prose"> ... </main> OR <main class="main-wrap"> ... </main> OR <main class="data-main">
+        """Replace V2 main content body with legacy article body (with slugified H2 IDs)
+        AND replace the sidebar TOC with one generated from the legacy H2s."""
+        # 1) Inject IDs into legacy body + build TOC
+        modified_body, toc_inner = add_ids_and_build_toc(self.article.article_body)
+
+        # 2) Replace main content
         main_match = re.search(
             r'(<main class="(?:prose|main-wrap|data-main)"[^>]*>)(.*?)(</main>)',
             self.html,
@@ -504,8 +562,48 @@ class V2TemplateMigrator:
         if not main_match:
             print("  ⚠ <main> container not found — can't inject body")
             return
-        new_main = f'{main_match.group(1)}\n{body}\n{main_match.group(3)}'
+        new_main = f'{main_match.group(1)}\n{modified_body}\n{main_match.group(3)}'
         self.html = self.html[:main_match.start()] + new_main + self.html[main_match.end():]
+
+        # 3) Replace TOC <ul> contents (only first <ul> inside <aside class="toc">)
+        # Some templates have a "toc__group" extra <ul> after — leave that alone.
+        toc_replaced = re.sub(
+            r'(<aside class="toc"[^>]*>.*?<ul>)(.*?)(</ul>)',
+            lambda m: f'{m.group(1)}\n{toc_inner}\n  {m.group(3)}',
+            self.html,
+            count=1,
+            flags=re.DOTALL,
+        )
+        if toc_replaced != self.html:
+            self.html = toc_replaced
+        # If template has an extra "toc__group" section (Extras/FAQ/etc), strip it
+        # because its anchors point to V2-template hardcoded sections that don't exist here
+        self.html = re.sub(
+            r'<div class="toc__group">.*?</div>',
+            "",
+            self.html,
+            flags=re.DOTALL,
+        )
+
+    def strip_decorative_blocks(self) -> None:
+        """Remove decorative content between </header> (article-hero close) and the
+        first <main> or <div class="article-layout">. These are V2 template
+        showcase blocks (chapter-nav, definition box, hero stats, vs-head, etc.)
+        that don't apply to migrated articles."""
+        # Match: </header> ... up to (but not including) <div class="article-layout">
+        # OR <main class="main-wrap"> OR <main class="data-main">
+        # The non-decorative wrapper elements are: <article>, the hero header itself.
+        # We strip ONLY content that's inside <article> but before the layout/main.
+        pattern = re.compile(
+            r'(</header>)\s*'
+            r'((?:(?!<div class="article-layout">|<main class="(?:main-wrap|data-main)").)*?)'
+            r'(\s*(?:<div class="article-layout">|<main class="(?:main-wrap|data-main)"))',
+            flags=re.DOTALL,
+        )
+        m = pattern.search(self.html)
+        if m and m.group(2).strip():
+            # Replace the decorative chunk with nothing (just keep clean break)
+            self.html = self.html[:m.start()] + m.group(1) + "\n\n    " + m.group(3).lstrip() + self.html[m.end():]
 
     def patch_jsonld(self) -> None:
         """Replace V2 template's JSON-LD blocks with: our Article + BreadcrumbList + preserved (FAQ + ItemList)."""
@@ -559,7 +657,8 @@ class V2TemplateMigrator:
         self.patch_article_meta()
         self.patch_author_intro_card()
         self.patch_bottom_author_card()
-        self.patch_main_content()
+        self.strip_decorative_blocks()  # NEW: strip V2 template demo blocks before injecting body
+        self.patch_main_content()       # injects body + slugified IDs + dynamic TOC
         self.patch_jsonld()
         self.remove_migration_banner()
         return self.html

@@ -318,6 +318,66 @@ Tested-by banner KEPT (product comparison template)
       .footer-grid { grid-template-columns: 1fr 1fr; }
       .alt-card__head { flex-direction: column; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -373,22 +433,20 @@ Tested-by banner KEPT (product comparison template)
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#why-switch" class="active"><span class="ch-num">—</span>Why teams switch</a></li>
-          <li><a href="#matrix"><span class="ch-num">—</span>Comparison matrix</a></li>
-          <li><a href="#alt-1"><span class="ch-num">01</span>Overloop</a></li>
-          <li><a href="#alt-2"><span class="ch-num">02</span>Cognism</a></li>
-          <li><a href="#alt-3"><span class="ch-num">03</span>Clay</a></li>
-          <li><a href="#alt-4"><span class="ch-num">04</span>ZoomInfo</a></li>
-          <li><a href="#alt-5"><span class="ch-num">05</span>Lusha</a></li>
-          <li><a href="#alt-6"><span class="ch-num">06</span>Seamless.ai</a></li>
-          <li><a href="#alt-7"><span class="ch-num">07</span>Hunter.io</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#migration">Migration checklist</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#the-post-merger-situation">The Post-Merger Situation</a></li>
+    <li><a href="#feature-comparison-table">Feature Comparison Table</a></li>
+    <li><a href="#1-overloop">1. Overloop</a></li>
+    <li><a href="#2-outreachio">2. Outreach.io</a></li>
+    <li><a href="#3-apolloio">3. Apollo.io</a></li>
+    <li><a href="#4-replyio">4. Reply.io</a></li>
+    <li><a href="#5-lemlist">5. Lemlist</a></li>
+    <li><a href="#6-instantly">6. Instantly</a></li>
+    <li><a href="#7-hubspot-sales-hub">7. HubSpot Sales Hub</a></li>
+    <li><a href="#8-groove-by-clari">8. Groove (by Clari)</a></li>
+    <li><a href="#making-the-decision">Making the Decision</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
       </aside>
 
       <main class="prose">
@@ -397,7 +455,7 @@ Tested-by banner KEPT (product comparison template)
 <p>Salesloft merged with Clari in 2025. Before that, they acquired Drift (the conversational AI platform) in 2024. The product is now positioned as a "Predictive Revenue System" that bundles sales engagement, deal management, revenue forecasting, and AI chat.</p>
 <p>For some enterprise teams, that consolidation is exactly what they want. For others, it raises questions. Will pricing go up as Clari monetizes the combined platform? Will the engagement features get less attention as the company focuses on revenue intelligence? Will existing workflows break during integration?</p>
 <p>If you're evaluating alternatives, whether proactively or because your contract is up, here are 8 options across different price points and use cases.</p>
-<h2>The Post-Merger Situation</h2>
+<h2 id="the-post-merger-situation">The Post-Merger Situation</h2>
 <p>Here's what changed after the Clari-Salesloft merger and why teams are exploring alternatives:</p>
 <ul>
 <li><strong>Pricing uncertainty.</strong> Salesloft already required custom quotes starting around $125/user/month. Multi-year contracts include 5-8% annual escalators. Post-merger, early renewal quotes suggest prices are trending upward as Clari bundles more features into required packages.</li>
@@ -405,7 +463,7 @@ Tested-by banner KEPT (product comparison template)
 <li><strong>Minimum seat requirements.</strong> Typically 10-15 users minimum depending on tier and region. Small teams can't buy Salesloft even if they want to.</li>
 <li><strong>Annual contracts only.</strong> No monthly billing. No easy way to test the platform with a real workflow before committing budget.</li>
 </ul>
-<h2>Feature Comparison Table</h2>
+<h2 id="feature-comparison-table">Feature Comparison Table</h2>
 <div style="margin: 1.5rem 0; overflow-x: auto;">
 <svg aria-label="Pricing comparison of Salesloft alternatives after the Clari merger" role="img" viewbox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#f9fafb" height="420" rx="8" width="720"></rect>
@@ -553,10 +611,10 @@ Tested-by banner KEPT (product comparison template)
 </tr>
 </tbody>
 </table>
-<h2><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
+<h2 id="1-overloop"><img alt="" height="28" src="/assets/images/logos/overloop.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>1. Overloop</h2>
 <p>Overloop is built for teams of 1-50 reps who want multichannel outreach without enterprise pricing or complexity. Every plan includes email, LinkedIn automation, and calling. The AI generates full outreach sequences from prospect data, not just subject line suggestions.</p>
 <p>Compared to Salesloft, Overloop is dramatically simpler. No minimum seats. No annual contract required. No custom quotes. You sign up, connect your email and LinkedIn, and start sending. The trade-off is that Overloop doesn't do deal management, revenue forecasting, or conversation intelligence. It's a focused outreach tool.</p>
-<h3>Key strengths</h3>
+<h3 id="key-strengths">Key strengths</h3>
 <ul>
 <li>All channels included on every plan, from $49/mo</li>
 <li>AI writes complete sequences from scratch</li>
@@ -642,31 +700,31 @@ Tested-by banner KEPT (product comparison template)
 </div>
 </div>
 </div>
-<h2><img alt="" height="28" src="/assets/images/logos/outreach.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Outreach.io</h2>
+<h2 id="2-outreachio"><img alt="" height="28" src="/assets/images/logos/outreach.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>2. Outreach.io</h2>
 <p>If Salesloft is one side of the enterprise sales engagement coin, Outreach is the other. Pricing is similarly opaque (expect $100-160/user/month), contracts are annual, and the platform is built for large teams with dedicated RevOps support.</p>
 <p>The main reason to switch from Salesloft to Outreach is specific feature preferences or better terms. Outreach has stronger A/B testing and analytics in some areas. But this is a lateral move between platforms at the same tier. If your problem with Salesloft is price or complexity, Outreach won't solve it.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Apollo.io</h2>
+<h2 id="3-apolloio"><img alt="" height="28" src="/assets/images/logos/apollo.io.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>3. Apollo.io</h2>
 <p>Apollo gives you a 275M+ contact database and outreach sequencing in one platform. The Basic plan at $49/user/month (annual) includes email sequences, 900 mobile credits/year, and CRM integration.</p>
 <p>For teams that currently use Salesloft for engagement and a separate tool (like ZoomInfo or Lusha) for prospecting, Apollo can replace both. The credit system means heavy users pay more than the sticker price, but the combined value often beats paying for two separate platforms.</p>
 <p>Read more: <a href="/blog/apollo-alternatives">Apollo.io Alternatives</a></p>
-<h2><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
+<h2 id="4-replyio"><img alt="" height="28" src="/assets/images/logos/reply.io.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>4. Reply.io</h2>
 <p>Reply.io is the most feature-complete multichannel tool in the mid-market bracket. The base Multichannel plan at $89/month covers email, with LinkedIn ($69/mo extra) and calling ($29/mo extra) as add-ons. The Jason AI SDR ($800/month) can run autonomous outreach.</p>
 <p>Reply.io's strength is its breadth: email, LinkedIn, phone, SMS, and WhatsApp, plus agency features and a solid API. The weakness is that full multichannel gets expensive fast ($187/user/month for everything). Still significantly less than Salesloft, and with transparent pricing.</p>
-<h2><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Lemlist</h2>
+<h2 id="5-lemlist"><img alt="" height="28" src="/assets/images/logos/lemlist.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>5. Lemlist</h2>
 <p>Lemlist's Email Pro plan starts at $55/user/month (annual), or $69 monthly. The Multichannel Expert plan at $79/user/month (annual) adds LinkedIn automation, calling, and access to the 450M+ lead database. Both tiers went up $10/user in February 2026. The standout feature is image and video personalization in emails, which consistently drives above-average reply rates. G2 rating: 4.6/5 from 1,270+ reviews.</p>
 <p>Compared to Salesloft, Lemlist is dramatically cheaper and faster to set up. No minimum seats, no custom quotes, no multi-month onboarding. The trade-off: no deal management, no conversation intelligence, and limited reporting. For teams under 20 reps focused on creative outbound, Lemlist delivers strong value per dollar.</p>
 <p>Read more: <a href="/blog/lemlist-alternatives">Lemlist Alternatives</a></p>
-<h2><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Instantly</h2>
+<h2 id="6-instantly"><img alt="" height="28" src="/assets/images/logos/instantly.ai.svg" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>6. Instantly</h2>
 <p>Instantly is the budget end of this list. The Growth plan at $37.60/month (annual) gives you unlimited email accounts, unlimited warm-up, and 5,000 emails/month. No per-seat pricing. If your team does email-only outreach and Salesloft's $125+/user/month feels like overkill, Instantly cuts costs by 70-80%.</p>
 <p>The obvious limitation: email only. No LinkedIn, no calling, no deal management. If you need multichannel sequences or enterprise features, look at Overloop, Reply.io, or Outreach instead. But for teams where cold email is the primary motion and budget matters, Instantly is a legitimate option.</p>
 <p>Read more: <a href="/blog/instantly-alternatives">Instantly Alternatives</a></p>
-<h2><img alt="" height="28" src="/assets/images/logos/hubspot.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. HubSpot Sales Hub</h2>
+<h2 id="7-hubspot-sales-hub"><img alt="" height="28" src="/assets/images/logos/hubspot.com.png" style="vertical-align: middle; margin-right: 10px; border-radius: 6px;" width="28"/>7. HubSpot Sales Hub</h2>
 <p>HubSpot Sales Hub Starter costs $20/seat/month. Professional costs $90/seat/month (annual). If your team already runs HubSpot CRM, adding Sales Hub is the simplest migration path from Salesloft.</p>
 <p>Sequences, templates, calling, and basic automation are all built into the CRM. No data sync issues, no separate platform to maintain. The downside is that HubSpot's outbound capabilities are less sophisticated than Salesloft's. No LinkedIn automation. Simpler sequence logic. But for teams where outbound is one part of a broader sales motion (not the entire motion), HubSpot covers the bases.</p>
-<h2>8. Groove (by Clari)</h2>
+<h2 id="8-groove-by-clari">8. Groove (by Clari)</h2>
 <p>This one is ironic: Groove was already part of Clari before the Salesloft merger. It's the Salesforce-native sales engagement option within the Clari ecosystem. Pricing ranges from $50-150/user/month.</p>
 <p>If you're on Salesforce and you want activity data to live entirely within your CRM, Groove does that better than anything else. The catch: it's now part of the same company as Salesloft, and how Clari positions these two products against each other long-term is still unclear. You could end up facing the same consolidation concerns that drove you to look at alternatives in the first place.</p>
-<h2>Making the Decision</h2>
+<h2 id="making-the-decision">Making the Decision</h2>
 <ul>
 <li><strong>Downsizing from enterprise?</strong> Overloop. Get multichannel at a fraction of the cost, set up in a day.</li>
 <li><strong>Switching at the same tier?</strong> Outreach. Direct competitor, similar capabilities.</li>
@@ -678,20 +736,20 @@ Tested-by banner KEPT (product comparison template)
 </ul>
 <p>The Clari-Salesloft merger created a window where many teams are re-evaluating their stack. Use it. Most of these tools offer free trials, and testing a focused tool against an enterprise platform often reveals how much complexity you were paying for but not using.</p>
 <p>Related reading: <a href="/blog/best-ai-sales-tools">Best AI Sales Tools</a>, <a href="/blog/apollo-alternatives">Apollo.io Alternatives</a>, and <a href="/blog/outreach-alternatives">Outreach.io Alternatives</a>.</p>
-<h2>Frequently Asked Questions</h2>
-<h3>How much does Salesloft cost in 2026?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="how-much-does-salesloft-cost-in-2026">How much does Salesloft cost in 2026?</h3>
 <p>Salesloft does not publish pricing. Industry estimates and renewal quotes put it around $125/user/month, with annual contracts required and minimum seat counts of 10-15 users. Multi-year deals include 5-8% annual price escalators. Post-Clari merger, early renewal quotes suggest prices are trending upward. G2 rating: 4.5/5 from 4,260+ reviews.</p>
-<h3>What happened with the Salesloft Clari merger?</h3>
+<h3 id="what-happened-with-the-salesloft-clari-merger">What happened with the Salesloft Clari merger?</h3>
 <p>Clari acquired Salesloft in 2025. The combined platform is now positioned as a "Predictive Revenue System" bundling sales engagement, deal management, revenue forecasting, and AI chat (from the 2024 Drift acquisition). For teams that only need outreach sequencing, this means paying for features they don't use.</p>
-<h3>What is the best Salesloft alternative for small teams?</h3>
+<h3 id="what-is-the-best-salesloft-alternative-for-small-teams">What is the best Salesloft alternative for small teams?</h3>
 <p>Overloop</p><td>Multichannel outbound (email + LinkedIn)</td><td>$69/user/month annual) is also a good option if you need a prospecting database alongside outreach.
 
-            <h3>Is Outreach better than Salesloft?</h3>
+            <h3 id="is-outreach-better-than-salesloft">Is Outreach better than Salesloft?</h3>
 <p>They compete at the same enterprise tier. Outreach (G2: 4.3/5) has stronger analytics and A/B testing. Salesloft (G2: 4.5/5) is generally rated easier to use. Both require custom quotes, annual contracts, and enterprise-level onboarding. If your issue with Salesloft is price or complexity, switching to Outreach won't fix either.</p>
-<h3>Can I try Salesloft without an annual contract?</h3>
+<h3 id="can-i-try-salesloft-without-an-annual-contract">Can I try Salesloft without an annual contract?</h3>
 <p>No. Salesloft requires annual contracts with no monthly billing option. Most alternatives on this list offer monthly billing: Overloop, Apollo, Reply.io, Lemlist, and Instantly all let you pay month-to-month.</p>
 <div class="cta-box">
-<h3>Sales engagement without the enterprise baggage</h3>
+<h3 id="sales-engagement-without-the-enterprise-baggage">Sales engagement without the enterprise baggage</h3>
 <p>Multichannel outreach, AI sequence generation, and pricing you can see before you talk to sales.</p>
 <a class="cta-button" href="https://app.overloop.ai/session/signup">Try Overloop Free</a>
 </div>
@@ -704,7 +762,7 @@ Tested-by banner KEPT (product comparison template)
 </div>
 </div>
 <div class="related-posts">
-<h3>Related articles</h3>
+<h3 id="related-articles">Related articles</h3>
 <a href="/blog/outreach-alternatives">Best Outreach.io Alternatives</a>
 <a href="/blog/lemlist-alternatives">Best Lemlist Alternatives</a>
 <a href="/blog/apollo-alternatives">Best Apollo.io Alternatives</a>

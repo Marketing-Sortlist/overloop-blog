@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,20 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#how-to-automate-your-sales-call-follow-up-process-with-ai">How To Automate Your Sales Call Follow-up Proce…</a></li>
+    <li><a href="#benefits-of-using-ai-for-follow-up-scheduling">Benefits of Using AI for Follow-Up Scheduling</a></li>
+    <li><a href="#ai-tools-that-improve-follow-up-scheduling">AI Tools That Improve Follow-Up Scheduling</a></li>
+    <li><a href="#how-ai-improves-sales-team-productivity">How AI Improves Sales Team Productivity</a></li>
+    <li><a href="#tips-for-adding-ai-to-follow-up-scheduling">Tips for Adding AI to Follow-Up Scheduling</a></li>
+    <li><a href="#conclusion-improving-sales-with-ai-follow-up-scheduling">Conclusion: Improving Sales with AI Follow-Up S…</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -443,29 +497,29 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>No Missed Opportunities</strong>: <a href="https://support.overloop.com/en/collections/2379682-campaigns-and-workflows">Automated workflows</a> keep communication steady, even when sales reps are busy.</li>
 </ul>
 <p>Tools like <a href="https://overloop.com/">Overloop AI</a>, Reply.io, and <a href="https://www.apollo.io/" target="_blank">Apollo.io</a> integrate with CRMs to streamline processes, track interactions, and provide actionable insights. By using AI, teams can focus on building relationships while improving productivity and results.</p>
-<h2>How To Automate Your Sales Call Follow-up Process with AI</h2>
-<iframe allowfullscreen="" class="sb-iframe" frameborder="0" loading="lazy" src="https://www.youtube-nocookie.com/embed/jg5ztxvCuKQ" style="width: 100%; height: auto; aspect-ratio: 16/9;"></iframe><h2>Benefits of Using AI for Follow-Up Scheduling</h2>
+<h2 id="how-to-automate-your-sales-call-follow-up-process-with-ai">How To Automate Your Sales Call Follow-up Process with AI</h2>
+<iframe allowfullscreen="" class="sb-iframe" frameborder="0" loading="lazy" src="https://www.youtube-nocookie.com/embed/jg5ztxvCuKQ" style="width: 100%; height: auto; aspect-ratio: 16/9;"></iframe><h2 id="benefits-of-using-ai-for-follow-up-scheduling">Benefits of Using AI for Follow-Up Scheduling</h2>
 <p>AI-driven follow-up scheduling has transformed the way sales teams handle prospect communication. Here’s how it boosts sales efficiency and effectiveness.</p>
-<h3>Personalized Follow-Ups for Stronger Connections</h3>
+<h3 id="personalized-follow-ups-for-stronger-connections">Personalized Follow-Ups for Stronger Connections</h3>
 <p>AI analyzes customer behavior - like email opens and link clicks - to help create messages that truly connect <a href="https://www.attention.com/blog-posts/ways-ai-follow-up-emails-closes-more-sales-deals" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>. <a href="https://support.overloop.com/en/articles/8657102-personalize-your-campaign-emails-with-manual-review">Personalized emails</a>, for instance, see 26% higher open rates <a href="https://www.attention.com/blog-posts/ways-ai-follow-up-emails-closes-more-sales-deals" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>. By focusing on what resonates with each prospect, sales teams can improve conversion rates while cutting down on wasted effort.</p>
-<h3>Perfect Timing for Better Responses</h3>
+<h3 id="perfect-timing-for-better-responses">Perfect Timing for Better Responses</h3>
 <p>Timing is everything in sales, and AI uses historical engagement data to pinpoint the best moments to reach out <a href="https://www.intelemark.com/blog/ai-integration-in-b2b-sales-automation/" style="text-decoration: none;" target="_blank"><sup>[1]</sup></a>. This data-driven precision boosts response rates and improves lead qualification. Plus, consistent follow-ups - another critical factor in closing deals - become much easier to manage.</p>
-<h3>Never Miss a Follow-Up Again</h3>
+<h3 id="never-miss-a-follow-up-again">Never Miss a Follow-Up Again</h3>
 <p>Research from <a href="https://www.marketingdonut.co.uk/" target="_blank">Marketing Donut</a> shows that 80% of sales require at least five follow-up calls, yet 44% of sales reps quit after just one <a href="https://www.attention.com/blog-posts/ways-ai-follow-up-emails-closes-more-sales-deals" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>. AI tackles this issue by automating follow-ups, ensuring a steady communication flow and no missed opportunities.</p>
 <p>With AI, follow-up timing is automated, interactions are tracked in real time, and responses are triggered instantly. For example, if a lead revisits your website or downloads new content, the system can automatically send a relevant follow-up <sup>[2]</sup>. This frees up sales reps to focus on meaningful conversations and building relationships <a href="https://www.attention.com/blog-posts/ways-ai-follow-up-emails-closes-more-sales-deals" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>.</p>
-<h2>AI Tools That Improve Follow-Up Scheduling</h2>
+<h2 id="ai-tools-that-improve-follow-up-scheduling">AI Tools That Improve Follow-Up Scheduling</h2>
 <p>Sales teams today depend on AI tools to make follow-up scheduling easier and more efficient. Here’s a look at some top solutions reshaping how follow-ups are managed.</p>
-<h3><a href="https://overloop.com">Overloop AI</a>: Smarter Follow-Ups with Automation</h3>
+<h3 id="overloop-ai-smarter-follow-ups-with-automation"><a href="https://overloop.com">Overloop AI</a>: Smarter Follow-Ups with Automation</h3>
 <p><img alt="Overloop AI" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2fc_overloop.com-c7f1352ae441b37983135869c26c67b7.jpeg"/></p>
 <p>Overloop AI simplifies follow-up management by automating tasks like sending personalized emails and running multi-channel campaigns. It integrates seamlessly with platforms like LinkedIn, <a href="https://www.salesforce.com/" target="_blank">Salesforce</a>, and <a href="https://www.google.com/gmail/about/" target="_blank">Gmail</a>, ensuring all your data stays connected.</p>
 <p>The tool uses AI to fine-tune message timing, tailor content to each recipient, and adapt sequences based on how prospects respond. This approach helps businesses strike the right balance between automation and personalization. Companies using Overloop AI have reported up to a 30% increase in response rates and better conversions through its scheduling features.</p>
-<h3>Other Tools: Reply.io and <a href="https://www.apollo.io/" target="_blank">Apollo.io</a></h3>
+<h3 id="other-tools-replyio-andapolloio">Other Tools: Reply.io and <a href="https://www.apollo.io/" target="_blank">Apollo.io</a></h3>
 <p><img alt="Reply.io" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68667bc308e446ef81c3fad0_reply.io-f4aecd336722d194530943960544a639.jpeg"/></p>
 <p>Reply.io specializes in email automation with tools designed for advanced sequencing, while Apollo.io goes a step further by combining lead scoring, follow-up automation, and pipeline management. Both tools leverage AI to ensure follow-ups are sent at the right time and align with where prospects are in the sales process.</p>
 <p>For sales teams aiming to scale their efforts without losing the personal touch, these tools are game-changers. They not only simplify the follow-up process but also help boost team productivity and effectiveness.</p>
-<h2>How AI Improves Sales Team Productivity</h2>
+<h2 id="how-ai-improves-sales-team-productivity">How AI Improves Sales Team Productivity</h2>
 <p>AI-driven tools have transformed the way sales teams operate, streamlining repetitive tasks and offering actionable insights. This allows teams to focus on activities that directly lead to more conversions, saving time and boosting productivity.</p>
-<h3>Using Data to Refine Follow-Up Strategies</h3>
+<h3 id="using-data-to-refine-follow-up-strategies">Using Data to Refine Follow-Up Strategies</h3>
 <p>AI uses performance metrics to craft smarter follow-up strategies. For instance, emails with personalized subject lines see a 26% higher open rate, showing how AI can elevate performance tracking <a href="https://www.attention.com/blog-posts/ways-ai-follow-up-emails-closes-more-sales-deals" style="text-decoration: none;" target="_blank"><sup>[3]</sup></a>.</p>
 <div class="table-container"><table class="content-table">
 <thead class="table-header-cell">
@@ -493,7 +547,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tr>
 </tbody>
 </table></div>
-<h3>Adapting Follow-Ups to Customer Behavior</h3>
+<h3 id="adapting-follow-ups-to-customer-behavior">Adapting Follow-Ups to Customer Behavior</h3>
 <p>AI adjusts follow-ups in real-time based on customer interactions. This ensures sales reps stay on track and avoid missing opportunities due to inconsistent follow-up efforts.</p>
 <blockquote>
 <p>"AI schedules interactions precisely, boosting conversion rates." - Intelemark <a href="https://www.intelemark.com/blog/ai-integration-in-b2b-sales-automation/" style="text-decoration: none;" target="_blank"><sup>[1]</sup></a></p>
@@ -505,9 +559,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Ensure consistency</strong>: Automated workflows prevent missed opportunities, keeping leads engaged.</li>
 </ul>
 <p>Platforms like Overloop AI and similar tools make these results achievable by integrating advanced automation into sales workflows. By analyzing data and adjusting strategies on the fly, these tools help teams work smarter and more efficiently.</p>
-<h2>Tips for Adding AI to Follow-Up Scheduling</h2>
+<h2 id="tips-for-adding-ai-to-follow-up-scheduling">Tips for Adding AI to Follow-Up Scheduling</h2>
 <p>Using AI for follow-up scheduling can make a big difference, but it requires attention to two key areas: integrating it with your systems and preparing your team to use it effectively.</p>
-<h3>Connecting AI Tools with CRM Systems</h3>
+<h3 id="connecting-ai-tools-with-crm-systems">Connecting AI Tools with CRM Systems</h3>
 <p>Integrating AI tools with your CRM ensures data flows smoothly and workflows are automated, saving time and effort. A well-integrated system sets the stage for smarter, data-driven follow-ups.</p>
 <div class="table-container"><table class="content-table">
 <thead class="table-header-cell">
@@ -531,7 +585,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table></div>
 <p>Once your systems are connected, the next step is to make sure your sales team knows how to use these tools.</p>
-<h3>Training Sales Teams to Use AI Tools</h3>
+<h3 id="training-sales-teams-to-use-ai-tools">Training Sales Teams to Use AI Tools</h3>
 <p>Training should focus on real-world applications rather than just theory. Hands-on practice helps teams understand how AI can improve their daily tasks.</p>
 <blockquote>
 <p>"AI helps develop effective strategies for future engagements by analyzing previous interactions." - Attention <a href="https://www.intelemark.com/blog/ai-integration-in-b2b-sales-automation/" style="text-decoration: none;" target="_blank"><sup>[1]</sup></a></p>
@@ -543,7 +597,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Maintaining accurate data to maximize AI's potential</li>
 </ul>
 <p>Regular support and updates ensure your team stays informed and confident in using AI tools. The goal is to make these tools a natural part of their day-to-day work, enhancing both efficiency and customer relationships.</p>
-<h2>Conclusion: Improving Sales with AI Follow-Up Scheduling</h2>
+<h2 id="conclusion-improving-sales-with-ai-follow-up-scheduling">Conclusion: Improving Sales with AI Follow-Up Scheduling</h2>
 <p>AI follow-up scheduling is changing the game for sales teams by improving efficiency and delivering better results. Did you know that responding to leads within an hour makes companies seven times more likely to qualify them? On top of that, AI-driven personalization boosts email open rates by 26%. Automated tools also ensure consistent communication, which is key to closing deals.</p>
 <p>By integrating AI into the sales process, teams can handle personalized communication at scale while focusing on more impactful tasks. This approach doesn’t just streamline individual tasks - it redefines how the entire sales journey unfolds, from the first contact to the final handshake.</p>
 <p>Modern AI platforms are at the forefront of this shift. They help sales teams stay consistent and personal in their outreach while making the most of their time and resources. When paired with data insights, these tools create a smoother and more effective sales workflow.</p>

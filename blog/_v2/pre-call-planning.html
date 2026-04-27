@@ -175,6 +175,66 @@ AEO-CRITICAL: definition-first layout optimized for LLM citation. -->
     .footer-bottom{border-top:1px solid #374151;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;gap:20px}
     @media (max-width:991px){:root{--page-px:24px}.article-layout{grid-template-columns:1fr;gap:32px}.sidebar{position:static}.examples-grid,.in-this-guide ol{grid-template-columns:1fr}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr 1fr}}
     @media (max-width:639px){.article-hero{padding:40px var(--page-px-mobile) 28px}.article-hero h1{font-size:28px}.definition__term{font-size:24px}.definition__text{font-size:16px}.nav-links{display:none}.newsletter form{flex-direction:column}.related-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -202,39 +262,26 @@ AEO-CRITICAL: definition-first layout optimized for LLM citation. -->
       </div>
     </header>
 
-    <!-- DEFINITION BOX (AEO-critical) -->
-    <div class="definition">
-      <div class="definition__box">
-        <div class="definition__label"><i data-lucide="quote"></i> Definition</div>
-        <h2 class="definition__term">B2B <em>lead generation</em></h2>
-        <p class="definition__text"><strong>B2B lead generation is the process of identifying and attracting potential business buyers (leads) who show interest in a company's product or service, then converting them into qualified opportunities for sales.</strong> It combines targeting (defining who to reach), reach (channels like email, LinkedIn, content), and conversion (moving interest to pipeline).</p>
-        <div class="definition__meta">
-          <span><i data-lucide="shield-check"></i> Sourced from industry research + Overloop data</span>
-          <span><i data-lucide="calendar"></i> Updated Apr 2026</span>
-        </div>
-      </div>
-    </div>
-
     <div class="article-layout">
       <main class="prose">
 
 <div>
 <p>Making calls is probably among the most difficult tasks a salesperson must deal with in their job. In just a few minutes, you must arouse interest, convince, create a connection with your prospect. That task requires intensive planning to be productive. In short, preparation is as critical as the execution! In this situation, pre call planning is one of your most powerful allies. It’s a systematic approach to preparing for sales calls that will significantly increase your chances of success. Let’s dive into what pre call planning is, why it matters, and how you can execute it effectively!</p>
 </div>
-<h2>What is pre-call planning?</h2>
+<h2 id="what-is-pre-call-planning">What is pre-call planning?</h2>
 <p>All athletes need preparation, and that’s also the case for salespeople! Pre-call planning involves detailed preparation before making a sales call. It implies researching the prospect, setting clear objectives for your call, preparing a personalized script, and anticipating potential objections. In short, pre-call planning is the foundation of any successful sales call!</p>
-<h2>The benefits of pre-call planning</h2>
-<h3>Call efficiency</h3>
+<h2 id="the-benefits-of-pre-call-planning">The benefits of pre-call planning</h2>
+<h3 id="call-efficiency">Call efficiency</h3>
 <p>By having a clear plan, sales calls become more focused, efficient and to the point. Communication with your prospect will be more effective, and both you them will leave the call with all questions answered. Pre-call planning ensures that every call serves a purpose at every stage of your sales process, whether it’s to gather more information, make a sale, or move a prospect further along the sales funnel. </p>
-<h3>Higher conversion rate</h3>
+<h3 id="higher-conversion-rate">Higher conversion rate</h3>
 <p>A well-prepared salesperson is more likely to convert prospects into customers. Knowing your prospect’s needs, challenges, and how your product can solve those challenges can significantly increase your prospects’ trust… and your conversion rates! Pre-call planning will help you answer the prospects’ answers and potential objections more easily. </p>
-<h3>Enhanced customer relationship</h3>
+<h3 id="enhanced-customer-relationship">Enhanced customer relationship</h3>
 <p>When you show up well-prepared, it demonstrates respect for the prospect's time and a genuine interest in their needs, laying the foundation for a strong, trust-based relationship. Pre-call planning allows you to collect specific information about each prospect, helping you take a personalized approach to their different problems.</p>
-<h3>Higher self confidence</h3>
+<h3 id="higher-self-confidence">Higher self confidence</h3>
 <p>Preparation leads to confidence. Knowing your material, understanding the prospect, and being ready for objections makes you more confident and less stressed during the call, which is often reflected in your tone and delivery.</p>
-<h2>How to prepare for a call: our pre-call checklist</h2>
+<h2 id="how-to-prepare-for-a-call-our-pre-call-checklist">How to prepare for a call: our pre-call checklist</h2>
 <p>The number of elements to prepare for a call can be depressing. Take time to create your very own pre-call checklist to be ready for your call. Need some help? Here’s our own checklist to help you build your personalized one! </p>
-<h3>Research information on the prospect</h3>
+<h3 id="research-information-on-the-prospect">Research information on the prospect</h3>
 <p>Make sure the information you have is correct and reliable. <br/>
 Think “human”: who’s the person you are talking to? By which name do they go by? What’s their function and position in the company? Do you have some common points with them? Sometimes, a little personal attention can change the outcome of a call!</p>
 <p>There are many sources that can help you increase your knowledge of the prospect and their industry:</p>
@@ -245,43 +292,43 @@ Think “human”: who’s the person you are talking to? By which name do they 
 </ul>
 <p>While researching  information, think about what you want to know: what does their company do? Which industry is it? Who are their customers? Do they use competitors’ tools or solutions? How is their industry right now? What are their pains and gains?</p>
 <p>Be careful to look for the right pieces of information for every call: if you’re having a discovery call, you won’t need the same data as if you’re making a demo call. </p>
-<h3>Set objectives</h3>
+<h3 id="set-objectives">Set objectives</h3>
 <p>Determine what you want to achieve with the call. Are you planning to organize a meeting, close a sale, have the prospect subscribe to something, or secure an appointment with a decision maker?
 Think about the step you’re at in your sales funnel. What’s the next logical step? What’s the goal of this call in your overall funnel? </p>
-<h3>Create a personalized call script</h3>
+<h3 id="create-a-personalized-call-script">Create a personalized call script</h3>
 <p>Tailor your script based on the prospect's industry, behavior, their competitors, and any recent news about their company. This shows you’ve done your homework and that you know them well!</p>
-<h3>Prepare questions</h3>
+<h3 id="prepare-questions">Prepare questions</h3>
 <p>As we said earlier, preparation is key! It’s the occasion to write down questions you’ll ask your prospect. Develop insightful questions that will encourage your prospect to talk about their needs and challenges. It will also help you determine their pains and gains. Try to think “out of the box” and ask more personalized, specific questions alongside the more “generic” ones. Asking questions will also help reinforce your position of expertise. </p>
-<h3>Have necessary information at hand</h3>
+<h3 id="have-necessary-information-at-hand">Have necessary information at hand</h3>
 <p>Ensure you have all the critical information you need during the call easily accessible. There’s nothing more embarrassing and threatening in a sales call than a salesperson looking frantically for information with a prospect waiting on the phone. </p>
-<h3>Prepare for objections and any possible outcome</h3>
+<h3 id="prepare-for-objections-and-any-possible-outcome">Prepare for objections and any possible outcome</h3>
 <p>Anticipate common objections you might face and have thoughtful responses ready. To find them, ask your customer service for the biggest complaints and read your FAQ for the most asked questions.</p>
 <p>Moreover, don’t forget to consider all possible outcomes for your sales call, both positive and negative. You can’t allow a decision of not buying by a customer to flabbergast you and making you go blank. A good pre-call planning will allow you to better answer any question a prospect could ask, but also to investigate their possible refusal. Do not see refusals as dead ends, but rather as obstacles or events that’ll help you improve yourself.</p>
-<h3>Prepare technically</h3>
+<h3 id="prepare-technically">Prepare technically</h3>
 
 Avoid any technical issue. Check your equipment beforehand. Ensure your computer, microphone, and phone are in working order, and that you have the correct phone number or meeting link. Find a quiet environment to make your call. 
 
-<h3>Post call analysis</h3>
+<h3 id="post-call-analysis">Post call analysis</h3>
 
 Reflect on the call to understand what worked, what didn’t, and how you can improve for next time. Did you come upon unexpected questions or objections? How di you react to them? 
 
-<h3>Follow-up</h3>
+<h3 id="follow-up">Follow-up</h3>
 
 Organize how you'll follow up after the call to maintain momentum. This could involve scheduling another meeting, sending additional information, or entering notes into a CRM system for future reference.
 
-<h2>Discover how Overloop can help you in pre call planning</h2>
-<h3>Automation at your service!</h3>
+<h2 id="discover-how-overloop-can-help-you-in-pre-call-planning">Discover how Overloop can help you in pre call planning</h2>
+<h3 id="automation-at-your-service">Automation at your service!</h3>
 <p>Overloop can be a vital tool in your pre-call planning arsenal. It automatically connects with your CRM to make sure you’re always talking to the right person. Your data is always up to date!</p>
 <a href="https://overloop.com/features">Multi channel campaigns</a> and automated sequences make sure you always connect with the prospect at the step they’re most likely to engage. It offers you a personalized approach and enhances your conversion rates!
 
-<h3>Build trust</h3>
+<h3 id="build-trust">Build trust</h3>
 <p>Overloop’s local presence dialing features help you build more trust with your prospects by displaying local numbers, regardless of your actual location. This helps create a trustful connection with your audience, and boosts pick-up rates, enhancing the likelihood of engagement.</p>
-<h3>Save time</h3>
+<h3 id="save-time">Save time</h3>
 <p>No need to switch between apps anymore! Directly make your calls from Overloop using our Aircall integration!
 Overloop automates many prospecting tasks, such as adding and verifying email addresses, allowing you to focus on preparation and less on administrative tasks. Moreover, you can fully rely on the data Overloop found: it checks them for you!</p>
-<h3>Improve your skills</h3>
+<h3 id="improve-your-skills">Improve your skills</h3>
 <p>Overloop’s call tracking features allows you to analyze your call and generates performance reports to refine your strategies.</p>
-<h3>Integrate</h3>
+<h3 id="integrate">Integrate</h3>
 <p><a href="https://overloop.com/integrations">Overloop integrates</a> with all the main CRM’s on the market: Hubspot, Zoho, Salesforce, ensuring your data are always in sync!</p>
 <p>Pre call planning is more than just preparation, it’s a part of bigger strategic plan that’ll help you improve your sales call outcomes! By dedicating time to your preparation, you not only pave your way to successful interactions, but also cultivate better relationships and close more deals. Overloop integrates smoothly into your sales strategy, enhancing productivity and making your sales effort more impactful. Pre-call planning becomes a piece of cake!</p>
 

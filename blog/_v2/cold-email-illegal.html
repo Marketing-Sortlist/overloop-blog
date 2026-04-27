@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,35 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#cold-email-vs-spam-the-legal-difference">Cold Email vs Spam: The Legal Difference</a></li>
+    <li><a href="#quick-comparison-cold-email-laws-by-country">Quick Comparison: Cold Email Laws by Country</a></li>
+    <li><a href="#united-states-can-spam-act">United States: CAN-SPAM Act</a></li>
+    <li><a href="#european-union-gdpr-eprivacy-directive">European Union: GDPR + ePrivacy Directive</a></li>
+    <li><a href="#united-kingdom-pecr-uk-gdpr">United Kingdom: PECR + UK GDPR</a></li>
+    <li><a href="#canada-casl-canadas-anti-spam-legislation">Canada: CASL (Canada's Anti-Spam Legislation)</a></li>
+    <li><a href="#australia-spam-act-2003">Australia: Spam Act 2003</a></li>
+    <li><a href="#singapore-spam-control-act-2007">Singapore: Spam Control Act (2007)</a></li>
+    <li><a href="#japan-act-on-regulation-of-transmission-of-specified-electronic-mail">Japan: Act on Regulation of Transmission of Spe…</a></li>
+    <li><a href="#india-it-act-2000-trai-regulations">India: IT Act 2000 + TRAI Regulations</a></li>
+    <li><a href="#brazil-lgpd-lei-geral-de-protecao-de-dados">Brazil: LGPD (Lei Geral de Protecao de Dados)</a></li>
+    <li><a href="#south-korea-pipa-network-act">South Korea: PIPA + Network Act</a></li>
+    <li><a href="#uae-unsolicited-electronic-communications-regulation-ruec">UAE: Unsolicited Electronic Communications Regu…</a></li>
+    <li><a href="#south-africa-popia-protection-of-personal-information-act">South Africa: POPIA (Protection of Personal Inf…</a></li>
+    <li><a href="#china-measures-for-internet-email-services">China: Measures for Internet Email Services</a></li>
+    <li><a href="#b2b-vs-b2c-the-most-important-distinction">B2B vs B2C: The Most Important Distinction</a></li>
+    <li><a href="#decision-framework-can-you-send-this-cold-email">Decision Framework: Can You Send This Cold Email?</a></li>
+    <li><a href="#universal-compliance-rules-all-countries">Universal Compliance Rules (All Countries)</a></li>
+    <li><a href="#how-to-send-cold-email-the-right-way">How to Send Cold Email the Right Way</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+    <li><a href="#the-bottom-line">The Bottom Line</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -439,12 +508,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p><strong>Cold email is legal in most countries when you follow specific rules about sender identification, opt-out mechanisms, and consent.</strong> It is not illegal by default. But every major market regulates what you can send, to whom, and how. Break those rules and you face fines from $25 per email (Singapore) to $53,088 per email (United States) to AED 10 million (UAE).</p>
 <p>This guide covers the actual laws in 14 jurisdictions: the United States (including state-level laws), the European Union (with a country-by-country breakdown of member state differences), the United Kingdom, Canada, Australia, Singapore, Japan, India, Brazil, South Korea, the UAE, South Africa, and China. For each one, you get what's legal, what's illegal, the penalties, real enforcement cases, and a compliance checklist you can hand to your sales team today.</p>
 <p>One critical distinction first: B2B and B2C cold email are treated very differently in most jurisdictions. This matters more than most people realize.</p>
-<h2>Cold Email vs Spam: The Legal Difference</h2>
+<h2 id="cold-email-vs-spam-the-legal-difference">Cold Email vs Spam: The Legal Difference</h2>
 <p>Cold email and spam are not the same thing. The distinction matters legally because regulators treat them differently.</p>
 <p><strong>Cold email</strong> is a targeted, one-to-one commercial message sent to a specific person you have a reason to contact. It identifies the sender, contains relevant content, and includes a way to opt out.</p>
 <p><strong>Spam</strong> is bulk unsolicited email sent indiscriminately, usually with no sender identification, no relevance to the recipient, and no opt-out mechanism.</p>
 <p>Every law covered in this guide regulates commercial email. None of them ban cold outreach outright. They ban the behaviors associated with spam: deception, hiding your identity, ignoring opt-out requests, and sending irrelevant bulk messages. A well-targeted B2B cold email that follows the rules is legal everywhere on this list.</p>
-<h2>Quick Comparison: Cold Email Laws by Country</h2>
+<h2 id="quick-comparison-cold-email-laws-by-country">Quick Comparison: Cold Email Laws by Country</h2>
 <table class="table-keep">
 <thead>
 <tr><th>Country/Region</th><th>Law</th><th>B2B Cold Email</th><th>B2C Cold Email</th><th>Max Penalty</th></tr>
@@ -466,9 +535,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <tr><td>China</td><td>Internet Email Measures</td><td>Consent required</td><td>Consent required</td><td>CNY 10,000-30,000 per email</td></tr>
 </tbody>
 </table>
-<h2>United States: CAN-SPAM Act</h2>
+<h2 id="united-states-can-spam-act">United States: CAN-SPAM Act</h2>
 <p>The US has the most permissive cold email law in the world. CAN-SPAM does not require prior consent for commercial emails. You can email anyone, B2B or B2C, as long as you follow the rules. The law regulates the behavior, not the act of sending.</p>
-<h3>What CAN-SPAM Requires</h3>
+<h3 id="what-can-spam-requires">What CAN-SPAM Requires</h3>
 <ul>
 <li><strong>Accurate header information.</strong> Your "From," "To," and "Reply-To" fields must be truthful. No fake sender names or misleading domains.</li>
 <li><strong>Non-deceptive subject lines.</strong> The subject line must reflect the content of the email. "Re:" on a first email is a violation.</li>
@@ -477,7 +546,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Working unsubscribe mechanism.</strong> Every email must include a way to opt out. You must honor unsubscribe requests within 10 business days.</li>
 <li><strong>Monitor third parties.</strong> If someone sends email on your behalf, you are still responsible for compliance.</li>
 </ul>
-<h3>What's Illegal Under CAN-SPAM</h3>
+<h3 id="whats-illegal-under-can-spam">What's Illegal Under CAN-SPAM</h3>
 <ul>
 <li>Sending email without a physical address</li>
 <li>Deceptive subject lines</li>
@@ -486,14 +555,14 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Harvesting email addresses from websites without permission</li>
 <li>Using automated tools to generate email addresses by combining names and domains</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties">Penalties</h3>
 <p>Up to $53,088 per individual email that violates the law (adjusted for inflation as of January 2025; the FTC updates this figure annually). The FTC, state attorneys general, and ISPs can all bring enforcement actions. In practice, penalties are usually aggregated, but a campaign of 10,000 non-compliant emails creates enormous theoretical liability.</p>
-<h3>State-Level Laws: Washington CEMA</h3>
+<h3 id="state-level-laws-washington-cema">State-Level Laws: Washington CEMA</h3>
 <p>Federal CAN-SPAM is not the only law that applies. Washington State's Commercial Electronic Mail Act (CEMA, RCW 19.190) adds a layer that catches many senders off guard.</p>
 <p>In April 2025, the Washington Supreme Court ruled that CEMA imposes statutory damages of $500 per email containing any false or misleading information in the subject line. Unlike CAN-SPAM, CEMA allows private lawsuits. Any Washington resident who receives a non-compliant email can sue directly, no government enforcement needed.</p>
 <p>Starting June 11, 2026, HB 2274 reduces the per-email penalty from $500 to $100. Lawsuits filed before that date still use the original $500 figure.</p>
 <p>The practical takeaway: do not use "Re:" or "Fwd:" on first-touch emails. Do not use subject lines that imply a prior relationship when none exists. These are the exact patterns driving CEMA litigation.</p>
-<h3>CAN-SPAM Compliance Checklist</h3>
+<h3 id="can-spam-compliance-checklist">CAN-SPAM Compliance Checklist</h3>
 <ul>
 <li>Real sender name and email address</li>
 <li>Subject line matches email content</li>
@@ -502,9 +571,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Unsubscribe requests processed within 10 days</li>
 <li>No purchased lists from email harvesters</li>
 </ul>
-<h2>European Union: GDPR + ePrivacy Directive</h2>
+<h2 id="european-union-gdpr-eprivacy-directive">European Union: GDPR + ePrivacy Directive</h2>
 <p>GDPR is where most outbound teams get confused. The short version: B2B cold email is legal in the EU under the "legitimate interest" legal basis. B2C cold email requires prior consent. But the details matter, and they vary by EU member state.</p>
-<h3>The B2B vs B2C Distinction (Critical)</h3>
+<h3 id="the-b2b-vs-b2c-distinction-critical">The B2B vs B2C Distinction (Critical)</h3>
 <p>GDPR Article 6(1)(f) allows processing personal data when you have a "legitimate interest" that is not overridden by the individual's rights. For B2B cold email, this means you can contact a professional at their work email about a relevant business topic, as long as:</p>
 <ul>
 <li>You have a genuine business reason to contact them (not random blasting)</li>
@@ -514,7 +583,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>You document your Legitimate Interest Assessment (LIA)</li>
 </ul>
 <p>B2C is different. Sending unsolicited commercial email to consumers requires prior consent under the ePrivacy Directive (Article 13). No exceptions.</p>
-<h3>What You Must Do for GDPR-Compliant Cold Email</h3>
+<h3 id="what-you-must-do-for-gdpr-compliant-cold-email">What You Must Do for GDPR-Compliant Cold Email</h3>
 <ul>
 <li><strong>Document your legitimate interest.</strong> Write a Legitimate Interest Assessment. It does not need to be long. It needs to explain why your outreach serves a genuine business purpose and why it does not harm the recipient.</li>
 <li><strong>Use professional emails only.</strong> Contact people at their work addresses about work topics.</li>
@@ -523,15 +592,15 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Minimize data.</strong> Only collect and store the data you actually need for outreach.</li>
 <li><strong>Respond to data requests.</strong> If someone asks what data you hold on them, you must respond within 30 days.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-2">Penalties</h3>
 <p>Up to 20 million EUR or 4% of annual global turnover, whichever is higher. In practice, cold email violations typically result in fines of 10,000-500,000 EUR. But enforcement is increasing sharply. European DPAs imposed over 3 billion EUR in total GDPR fines in the first half of 2025 alone.</p>
-<h3>Real Enforcement Cases</h3>
+<h3 id="real-enforcement-cases">Real Enforcement Cases</h3>
 <ul>
 <li><strong>Orange SA (France, 2024):</strong> CNIL fined Orange 50 million EUR. The investigation found that promotional messages placed in user inboxes were indistinguishable from regular emails, violating consent requirements under the ePrivacy Directive.</li>
 <li><strong>Enel Energia (Italy, 2022):</strong> Italy's Garante fined Enel 26.5 million EUR for aggressive telemarketing and email campaigns without valid consent.</li>
 <li><strong>Spain (AEPD):</strong> Spain's DPA has issued over 1,000 GDPR fines totaling roughly 120 million EUR as of late 2025, many related to marketing without consent.</li>
 </ul>
-<h3>EU Member State Differences (Critical for B2B)</h3>
+<h3 id="eu-member-state-differences-critical-for-b2b">EU Member State Differences (Critical for B2B)</h3>
 <p>GDPR applies everywhere in the EU. But each member state implemented the ePrivacy Directive into its own national law, and these implementations differ on whether B2B cold email requires opt-in consent. This is the detail most guides miss.</p>
 <table>
 <thead>
@@ -551,7 +620,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table>
 <p><strong>Practical implication:</strong> If you are targeting prospects across Europe, you cannot treat the EU as one jurisdiction. A cold email that is legal in France is illegal in Germany. Most teams solve this by either (a) building country-specific workflows or (b) defaulting to the strictest standard (Germany) for all EU prospects.</p>
-<h3>GDPR Compliance Checklist for Cold Email</h3>
+<h3 id="gdpr-compliance-checklist-for-cold-email">GDPR Compliance Checklist for Cold Email</h3>
 <ul>
 <li>Legitimate Interest Assessment documented</li>
 <li>Professional email addresses only</li>
@@ -562,9 +631,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Data processing records maintained</li>
 <li>No B2C emails without consent</li>
 </ul>
-<h2>United Kingdom: PECR + UK GDPR</h2>
+<h2 id="united-kingdom-pecr-uk-gdpr">United Kingdom: PECR + UK GDPR</h2>
 <p>Post-Brexit, the UK has its own version of GDPR (UK GDPR) plus the Privacy and Electronic Communications Regulations (PECR). For cold email, PECR is the one that matters most.</p>
-<h3>The UK B2B Exception</h3>
+<h3 id="the-uk-b2b-exception">The UK B2B Exception</h3>
 <p>PECR Regulation 22 requires consent for unsolicited marketing emails to individuals. But there is a "corporate subscriber" exception. If you email a business email address (like name@company.co.uk), PECR consent requirements apply differently. You can send unsolicited email to corporate subscribers if:</p>
 <ul>
 <li>You send to a corporate email address (not a personal one like name@gmail.com)</li>
@@ -573,9 +642,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>You provide a valid opt-out</li>
 </ul>
 <p>Sole traders and partnerships are treated as individuals, not corporate subscribers. You need consent to cold email them.</p>
-<h3>Penalties</h3>
+<h3 id="penalties-3">Penalties</h3>
 <p>The ICO (Information Commissioner's Office) can issue fines up to 500,000 GBP under PECR. Under UK GDPR, fines can reach 17.5 million GBP or 4% of annual global turnover.</p>
-<h3>UK Compliance Checklist</h3>
+<h3 id="uk-compliance-checklist">UK Compliance Checklist</h3>
 <ul>
 <li>Corporate email addresses only (not sole traders)</li>
 <li>Clear sender identification</li>
@@ -584,9 +653,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>UK GDPR data processing requirements met</li>
 <li>Privacy policy accessible</li>
 </ul>
-<h2>Canada: CASL (Canada's Anti-Spam Legislation)</h2>
+<h2 id="canada-casl-canadas-anti-spam-legislation">Canada: CASL (Canada's Anti-Spam Legislation)</h2>
 <p>CASL is the strictest cold email law among the countries covered here. It is consent-first by default. But there are important exceptions for B2B outreach that make cold email possible.</p>
-<h3>Consent Types Under CASL</h3>
+<h3 id="consent-types-under-casl">Consent Types Under CASL</h3>
 <p>CASL recognizes two types of consent:</p>
 <ul>
 <li><strong>Express consent:</strong> The recipient explicitly agreed to receive emails from you. This is the gold standard and never expires (unless withdrawn).</li>
@@ -599,7 +668,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 </li>
 </ul>
-<h3>What CASL Requires</h3>
+<h3 id="what-casl-requires">What CASL Requires</h3>
 <ul>
 <li>Sender identification (name, business name, mailing address)</li>
 <li>Contact information (phone, email, or web address)</li>
@@ -607,10 +676,10 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Unsubscribe processed within 10 business days</li>
 <li>Clear purpose of the email</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-4">Penalties</h3>
 <p>Up to $10 million CAD per violation for businesses, $1 million CAD for individuals. CASL also includes a private right of action, meaning individuals can sue.</p>
 <p><strong>Enforcement examples:</strong> Compu-Finder was fined $1.1M CAD for sending commercial emails without consent. Blackstone Learning received a $100K CAD penalty. The CRTC continues active enforcement with multiple actions per year. Consent does not transfer when you buy a list: this is one of the most common mistakes that triggers CASL fines.</p>
-<h3>CASL Compliance Checklist</h3>
+<h3 id="casl-compliance-checklist">CASL Compliance Checklist</h3>
 <ul>
 <li>Implied or express consent documented</li>
 <li>Full sender identification in email</li>
@@ -619,22 +688,22 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Consent records maintained and timestamped</li>
 <li>No purchased lists (consent does not transfer)</li>
 </ul>
-<h2>Australia: Spam Act 2003</h2>
+<h2 id="australia-spam-act-2003">Australia: Spam Act 2003</h2>
 <p>Australia's Spam Act is consent-based, similar to CASL. You generally cannot send unsolicited commercial electronic messages without consent. But the B2B angle has nuances.</p>
-<h3>Consent Under the Spam Act</h3>
+<h3 id="consent-under-the-spam-act">Consent Under the Spam Act</h3>
 <ul>
 <li><strong>Express consent:</strong> The recipient opted in to receive your emails.</li>
 <li><strong>Inferred consent:</strong> You can infer consent from an existing business relationship or from a published business email address. If someone publishes their work email on a company website, and your message is relevant to their role, the ACMA (Australian Communications and Media Authority) considers this inferred consent.</li>
 </ul>
-<h3>Three Rules of the Spam Act</h3>
+<h3 id="three-rules-of-the-spam-act">Three Rules of the Spam Act</h3>
 <ol>
 <li><strong>Consent:</strong> You need express or inferred consent before sending.</li>
 <li><strong>Identify:</strong> The sender must be clearly identified with accurate contact details.</li>
 <li><strong>Unsubscribe:</strong> Every commercial email must include a functional unsubscribe mechanism. Process within 5 business days.</li>
 </ol>
-<h3>Penalties</h3>
+<h3 id="penalties-5">Penalties</h3>
 <p>The ACMA can issue fines up to $2.22 million AUD per day for serious and ongoing violations. Infringement notices start at $111,000 AUD per violation. The ACMA has been active in enforcement, with significant penalties issued to both local and international companies.</p>
-<h3>Australia Compliance Checklist</h3>
+<h3 id="australia-compliance-checklist">Australia Compliance Checklist</h3>
 <ul>
 <li>Express or inferred consent obtained</li>
 <li>Clear sender identification</li>
@@ -643,18 +712,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Unsubscribe honored within 5 business days</li>
 <li>Consent records maintained</li>
 </ul>
-<h2>Singapore: Spam Control Act (2007)</h2>
+<h2 id="singapore-spam-control-act-2007">Singapore: Spam Control Act (2007)</h2>
 <p>Singapore's Spam Control Act follows an opt-out model similar to the US. You can send unsolicited commercial email as long as you comply with the rules. No prior consent is required.</p>
-<h3>What the Spam Control Act Requires</h3>
+<h3 id="what-the-spam-control-act-requires">What the Spam Control Act Requires</h3>
 <ul>
 <li><strong>Clear subject line labeling.</strong> The subject must include "<adv>" (or similar identifier) before any other text if the message is an advertisement.</adv></li>
 <li><strong>Sender identification.</strong> Legal name or business name, plus a valid physical address in Singapore.</li>
 <li><strong>Functional unsubscribe.</strong> Every email must include an unsubscribe mechanism. You must honor opt-out requests within 10 business days.</li>
 <li><strong>No address harvesting.</strong> You cannot use automated tools to scrape email addresses from websites or directories.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-6">Penalties</h3>
 <p>$25 SGD per unsolicited email, up to a maximum of $1 million SGD. Enforcement is civil, not criminal. Recipients can bring private lawsuits. The Infocomm Media Development Authority (IMDA) oversees compliance.</p>
-<h3>Singapore Compliance Checklist</h3>
+<h3 id="singapore-compliance-checklist">Singapore Compliance Checklist</h3>
 <ul>
 <li>"<adv>" label in subject line</adv></li>
 <li>Sender name and Singapore address included</li>
@@ -662,18 +731,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Opt-outs honored within 10 business days</li>
 <li>No harvested email addresses</li>
 </ul>
-<h2>Japan: Act on Regulation of Transmission of Specified Electronic Mail</h2>
+<h2 id="japan-act-on-regulation-of-transmission-of-specified-electronic-mail">Japan: Act on Regulation of Transmission of Specified Electronic Mail</h2>
 <p>Japan requires opt-in consent for commercial email. This is one of the stricter regimes globally. You cannot send commercial email to someone who has not requested or consented to receive it, with limited exceptions for existing business relationships.</p>
-<h3>What Japan's Email Law Requires</h3>
+<h3 id="what-japans-email-law-requires">What Japan's Email Law Requires</h3>
 <ul>
 <li><strong>Prior consent (opt-in).</strong> You need the recipient's request or consent before sending any commercial email. Exceptions exist for recipients with whom you have an existing transaction relationship.</li>
 <li><strong>Sender identification.</strong> The email must include the sender's name, email address, and a URL for opt-out.</li>
 <li><strong>No dictionary attacks.</strong> Generating email addresses by combining random names and domains is explicitly prohibited.</li>
 <li><strong>Record keeping.</strong> Senders must maintain records of consent for each recipient.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-7">Penalties</h3>
 <p>Individuals face up to 1 year imprisonment or a fine of up to JPY 1 million. Corporations face fines up to JPY 30 million. The Ministry of Internal Affairs and Communications and the Consumer Affairs Agency share enforcement authority.</p>
-<h3>Japan Compliance Checklist</h3>
+<h3 id="japan-compliance-checklist">Japan Compliance Checklist</h3>
 <ul>
 <li>Documented opt-in consent for every recipient</li>
 <li>Sender name and contact details in email</li>
@@ -681,17 +750,17 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Consent records maintained and accessible</li>
 <li>No auto-generated email addresses</li>
 </ul>
-<h2>India: IT Act 2000 + TRAI Regulations</h2>
+<h2 id="india-it-act-2000-trai-regulations">India: IT Act 2000 + TRAI Regulations</h2>
 <p>India does not have a single anti-spam law for email. B2B cold email is largely unregulated and enforcement is minimal. The Telecom Regulatory Authority of India (TRAI) runs a Do Not Disturb (DND) registry, but it primarily targets phone calls and SMS, not email.</p>
-<h3>What Applies to Cold Email in India</h3>
+<h3 id="what-applies-to-cold-email-in-india">What Applies to Cold Email in India</h3>
 <ul>
 <li><strong>IT Act 2000, Section 66A</strong> (struck down in 2015 for being overly broad) previously covered annoying electronic messages. There is no direct replacement for email spam.</li>
 <li><strong>TRAI DND Registry.</strong> Covers calls and SMS. Email is not explicitly included, but sending commercial email to someone who has asked not to be contacted could invite complaints.</li>
 <li><strong>Digital Personal Data Protection Act (2023).</strong> India's newer privacy law introduces consent requirements for processing personal data. B2B email using business contact information falls into a gray area with no enforcement precedent yet.</li>
 </ul>
-<h3>Practical Reality</h3>
+<h3 id="practical-reality">Practical Reality</h3>
 <p>B2B cold email in India is common and rarely faces legal action. The risk is reputational and deliverability-based, not legal. ISPs and email providers (Google, Microsoft) enforce their own policies, which function as the de facto rules. Follow standard best practices: identify yourself, include an opt-out, send relevant content.</p>
-<h3>India Compliance Checklist</h3>
+<h3 id="india-compliance-checklist">India Compliance Checklist</h3>
 <ul>
 <li>Clear sender identification</li>
 <li>Working unsubscribe mechanism</li>
@@ -699,9 +768,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Respect opt-out requests immediately</li>
 <li>Follow email provider policies (Google Workspace, Microsoft 365)</li>
 </ul>
-<h2>Brazil: LGPD (Lei Geral de Protecao de Dados)</h2>
+<h2 id="brazil-lgpd-lei-geral-de-protecao-de-dados">Brazil: LGPD (Lei Geral de Protecao de Dados)</h2>
 <p>Brazil's LGPD, in effect since 2020, mirrors GDPR in many ways. B2B cold email is possible under the legitimate interest legal basis. B2C cold email requires prior consent. The law applies to any company processing data of individuals in Brazil, regardless of where the company is based.</p>
-<h3>What LGPD Requires for Cold Email</h3>
+<h3 id="what-lgpd-requires-for-cold-email">What LGPD Requires for Cold Email</h3>
 <ul>
 <li><strong>Legal basis.</strong> You need either consent or a legitimate interest justification. For B2B outreach to professional email addresses, legitimate interest applies.</li>
 <li><strong>Transparency.</strong> Recipients must be informed about how their data is being used. Include a link to your privacy policy.</li>
@@ -709,9 +778,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Data minimization.</strong> Only collect and process data that is necessary for the purpose of outreach.</li>
 <li><strong>Sender identification.</strong> Full name and contact details of the sender organization.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-8">Penalties</h3>
 <p>Up to 2% of annual revenue in Brazil, capped at 50 million BRL per violation. The ANPD (Autoridade Nacional de Protecao de Dados) is still building its enforcement capacity, but fines are increasing. The first administrative sanctions were issued in 2023.</p>
-<h3>Brazil Compliance Checklist</h3>
+<h3 id="brazil-compliance-checklist">Brazil Compliance Checklist</h3>
 <ul>
 <li>Legitimate interest documented for B2B outreach</li>
 <li>Professional email addresses only</li>
@@ -720,9 +789,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Data processing records maintained</li>
 <li>No B2C emails without consent</li>
 </ul>
-<h2>South Korea: PIPA + Network Act</h2>
+<h2 id="south-korea-pipa-network-act">South Korea: PIPA + Network Act</h2>
 <p>South Korea requires explicit opt-in consent for commercial email. The rules come from two laws: the Personal Information Protection Act (PIPA) and the Act on Promotion of Information and Communication Network Utilization (Network Act). This is one of the strictest regimes in Asia.</p>
-<h3>What South Korean Law Requires</h3>
+<h3 id="what-south-korean-law-requires">What South Korean Law Requires</h3>
 <ul>
 <li><strong>Explicit consent required.</strong> You must obtain verifiable consent before sending any commercial email. Consent must be renewed every 2 years.</li>
 <li><strong>Implied consent window.</strong> If you completed a transaction with the recipient, implied consent lasts 6 months after the sale concluded.</li>
@@ -730,9 +799,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Sender identification.</strong> Full name, contact details, and business registration information.</li>
 <li><strong>Unsubscribe mechanism.</strong> Every email must include a functional opt-out.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-9">Penalties</h3>
 <p>Fines up to KRW 5 million. The Korea Communications Commission (KCC) oversees enforcement. South Korea also applies the Network Act extraterritorially: if your domain is Korean or you conduct business in South Korea, you fall under the law regardless of where your company is incorporated.</p>
-<h3>South Korea Compliance Checklist</h3>
+<h3 id="south-korea-compliance-checklist">South Korea Compliance Checklist</h3>
 <ul>
 <li>Documented opt-in consent for every recipient</li>
 <li>Consent renewal tracked (2-year expiry)</li>
@@ -741,18 +810,18 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Functional unsubscribe mechanism</li>
 <li>Consent records stored and accessible</li>
 </ul>
-<h2>UAE: Unsolicited Electronic Communications Regulation (RUEC)</h2>
+<h2 id="uae-unsolicited-electronic-communications-regulation-ruec">UAE: Unsolicited Electronic Communications Regulation (RUEC)</h2>
 <p>The UAE is one of the strictest jurisdictions globally for cold email. Cold emailing without explicit prior consent is illegal. There are no implied consent exceptions, no legitimate interest carve-outs, and no B2B exemptions. Every recipient must actively opt in before you send.</p>
-<h3>What UAE Law Requires</h3>
+<h3 id="what-uae-law-requires">What UAE Law Requires</h3>
 <ul>
 <li><strong>Explicit prior consent.</strong> No exceptions. No "published email address" loophole. No implied consent from business relationships.</li>
 <li><strong>Sender identification.</strong> Full business details including physical address in the UAE.</li>
 <li><strong>Unsubscribe mechanism.</strong> Working opt-out in every message.</li>
 <li><strong>Data retention records.</strong> You must retain records of how personal data was collected, processed, and used.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-10">Penalties</h3>
 <p>Up to AED 10 million (roughly USD 2.7 million). The Telecommunications and Digital Government Regulatory Authority (TDRA, formerly TRA) enforces the regulation. The RUEC applies to anyone sending electronic communications to UAE recipients.</p>
-<h3>UAE Compliance Checklist</h3>
+<h3 id="uae-compliance-checklist">UAE Compliance Checklist</h3>
 <ul>
 <li>Documented explicit consent from every recipient</li>
 <li>Full sender identification with UAE address</li>
@@ -760,9 +829,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Data collection and processing records maintained</li>
 <li>No cold outreach without prior opt-in</li>
 </ul>
-<h2>South Africa: POPIA (Protection of Personal Information Act)</h2>
+<h2 id="south-africa-popia-protection-of-personal-information-act">South Africa: POPIA (Protection of Personal Information Act)</h2>
 <p>South Africa's POPIA, fully enforced since July 2021, follows a consent-and-legitimate-interest model similar to GDPR. B2B cold email is possible under the "legitimate interest" justification. B2C requires consent.</p>
-<h3>What POPIA Requires for Cold Email</h3>
+<h3 id="what-popia-requires-for-cold-email">What POPIA Requires for Cold Email</h3>
 <ul>
 <li><strong>Legal basis.</strong> Consent or legitimate interest. B2B outreach to corporate email addresses about relevant professional topics falls under legitimate interest.</li>
 <li><strong>Purpose specification.</strong> Data must be collected for a specific, explicitly defined, and lawful purpose.</li>
@@ -770,9 +839,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Sender identification.</strong> Name, contact details, and organization.</li>
 <li><strong>Data subject rights.</strong> Recipients can request access to, correction of, or deletion of their personal data.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-11">Penalties</h3>
 <p>Unlimited fines plus up to 12 months imprisonment for serious violations. The Information Regulator oversees enforcement. Enforcement is still ramping up, but the legal framework is in place and the penalties are severe.</p>
-<h3>South Africa Compliance Checklist</h3>
+<h3 id="south-africa-compliance-checklist">South Africa Compliance Checklist</h3>
 <ul>
 <li>Legitimate interest documented for B2B outreach</li>
 <li>Corporate email addresses only</li>
@@ -781,9 +850,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Data subject request process in place</li>
 <li>No B2C emails without consent</li>
 </ul>
-<h2>China: Measures for Internet Email Services</h2>
+<h2 id="china-measures-for-internet-email-services">China: Measures for Internet Email Services</h2>
 <p>China requires opt-in consent for commercial email under the Measures for Internet Email Services (2006). The law applies to all email sent to Chinese recipients. Combined with the Personal Information Protection Law (PIPL, 2021), this creates one of the more restrictive environments globally.</p>
-<h3>What Chinese Law Requires</h3>
+<h3 id="what-chinese-law-requires">What Chinese Law Requires</h3>
 <ul>
 <li><strong>Opt-in consent.</strong> You need the recipient's verifiable consent before sending commercial email. Consent must be recorded.</li>
 <li><strong>Clear labeling.</strong> Commercial emails must be identifiable as advertisements.</li>
@@ -791,9 +860,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Unsubscribe mechanism.</strong> Functional opt-out in every message.</li>
 <li><strong>Cross-border data transfer rules (PIPL).</strong> If you are sending from outside China and processing data of Chinese residents, additional data transfer requirements under PIPL apply.</li>
 </ul>
-<h3>Penalties</h3>
+<h3 id="penalties-12">Penalties</h3>
 <p>CNY 10,000 to 30,000 per email under the Internet Email Measures. Under PIPL, violations can result in fines up to 50 million CNY or 5% of annual revenue, plus potential blacklisting by Chinese ISPs. Enforcement is primarily through the Ministry of Industry and Information Technology (MIIT).</p>
-<h3>China Compliance Checklist</h3>
+<h3 id="china-compliance-checklist">China Compliance Checklist</h3>
 <ul>
 <li>Documented opt-in consent for every Chinese recipient</li>
 <li>Commercial email clearly labeled</li>
@@ -802,7 +871,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li>Cross-border data transfer compliance if sending from outside China</li>
 <li>Consent records stored and accessible</li>
 </ul>
-<h2>B2B vs B2C: The Most Important Distinction</h2>
+<h2 id="b2b-vs-b2c-the-most-important-distinction">B2B vs B2C: The Most Important Distinction</h2>
 <p>If you only remember one thing from this guide, make it this: B2B and B2C cold email are different legal categories in most jurisdictions.</p>
 <table>
 <thead>
@@ -825,7 +894,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table>
 <p>For B2B outbound sales, cold email is legal in most markets covered here, as long as you follow the rules. The US and Singapore are the most permissive (opt-out models). Japan, South Korea, the UAE, and China are the most restrictive (opt-in only). Canada, Australia, the EU, the UK, Brazil, and South Africa sit in the middle with various consent or legitimate interest frameworks. India is effectively unregulated for B2B email.</p>
-<h2>Decision Framework: Can You Send This Cold Email?</h2>
+<h2 id="decision-framework-can-you-send-this-cold-email">Decision Framework: Can You Send This Cold Email?</h2>
 <p>Use this framework before sending any cold email campaign to a new market. Walk through it for each recipient country.</p>
 <figure style="margin: 2rem 0;">
 <svg aria-label="Decision flowchart: Can You Send This Cold Email?" role="img" style="width: 100%; max-width: 720px; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; background: #fafafa;" viewbox="0 0 720 520" xmlns="http://www.w3.org/2000/svg">
@@ -910,7 +979,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Run the compliance checklist for that country.</strong> Every jurisdiction has specific requirements beyond consent (physical address, labeling, unsubscribe timing). Use the checklists in this guide.</li>
 <li><strong>When in doubt, default to the strictest standard.</strong> If you are emailing prospects across multiple countries, build your email to meet GDPR + Germany/CASL standards. That covers you everywhere.</li>
 </ol>
-<h2>Universal Compliance Rules (All Countries)</h2>
+<h2 id="universal-compliance-rules-all-countries">Universal Compliance Rules (All Countries)</h2>
 <p>No matter where you send, these rules apply everywhere:</p>
 <ol>
 <li><strong>Include a real unsubscribe link.</strong> Not a "reply STOP" workaround. A proper, one-click unsubscribe.</li>
@@ -921,7 +990,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Monitor your sender reputation.</strong> High bounce rates and spam complaints can trigger ISP blocks and draw regulatory attention. Use a <a href="/tools/domain-health-checker">domain health checker</a> to stay on top of it.</li>
 <li><strong>Avoid <a href="/blog/455-email-spam-trigger-words-avoid-2018">spam trigger words</a></strong> that get your emails filtered before they reach anyone.</li>
 </ol>
-<h2>How to Send Cold Email the Right Way</h2>
+<h2 id="how-to-send-cold-email-the-right-way">How to Send Cold Email the Right Way</h2>
 <p>Legal compliance is the floor, not the ceiling. Here are the <a href="/blog/cold-email-stats-2018">cold email best practices</a> that keep you compliant and effective:</p>
 <ul>
 <li><strong>Verify every email address.</strong> High bounce rates damage your sender reputation and can signal to regulators that you're not maintaining clean lists.</li>
@@ -931,32 +1000,32 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Send from a real person.</strong> "John at Acme" gets more trust than "Acme Sales Team."</li>
 <li><strong>Follow up thoughtfully.</strong> 3-4 follow-ups is acceptable. 15 follow-ups is harassment.</li>
 </ul>
-<h2>Frequently Asked Questions</h2>
-<h3>Is cold email illegal?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-cold-email-illegal">Is cold email illegal?</h3>
 <p>Cold email is legal in most countries when you follow specific rules. In the US, CAN-SPAM requires accurate headers, a physical address, and an unsubscribe option. In the EU, GDPR allows B2B cold email under legitimate interest but requires consent for B2C. Each country has different requirements, but no major market bans B2B cold email outright.</p>
-<h3>Can I send cold emails under GDPR?</h3>
+<h3 id="can-i-send-cold-emails-under-gdpr">Can I send cold emails under GDPR?</h3>
 <p>Yes. B2B cold email is possible under GDPR using the legitimate interest legal basis (Article 6(1)(f)). You must demonstrate a genuine business reason, use professional email addresses, provide easy opt-out, and document your Legitimate Interest Assessment. B2C cold email requires prior consent under the ePrivacy Directive.</p>
-<h3>What are the penalties for illegal cold email?</h3>
+<h3 id="what-are-the-penalties-for-illegal-cold-email">What are the penalties for illegal cold email?</h3>
 <p>Penalties vary by country. CAN-SPAM (US): up to $53,088 per email. GDPR (EU): up to 20M EUR or 4% of global revenue. CASL (Canada): up to $10M CAD per violation. Australia Spam Act: up to $2.22M AUD per day. Washington State CEMA: $500 per email in private lawsuits (reducing to $100 after June 2026). Singapore: $25 per email up to $1M SGD. Japan: up to JPY 30M for corporations. Brazil LGPD: up to 50M BRL. UAE: up to AED 10M. South Korea: up to KRW 5M. South Africa: unlimited fines plus up to 12 months imprisonment. China: CNY 10,000-30,000 per email (up to 50M CNY or 5% revenue under PIPL).</p>
-<h3>Do I need consent to send cold emails?</h3>
+<h3 id="do-i-need-consent-to-send-cold-emails">Do I need consent to send cold emails?</h3>
 <p>It depends on the country. The US and Singapore use opt-out models, meaning you do not need prior consent but must include an unsubscribe mechanism. Japan requires opt-in consent. The EU, UK, Canada, and Australia allow B2B cold email under various legitimate interest or implied consent frameworks, but require consent for B2C emails.</p>
-<h3>Is B2B cold email legal?</h3>
+<h3 id="is-b2b-cold-email-legal">Is B2B cold email legal?</h3>
 <p>B2B cold email is legal in every major market covered in this guide. The US is the most permissive. The EU and UK allow it under legitimate interest. Canada and Australia allow it under implied or inferred consent. Singapore uses an opt-out model. Japan requires consent but makes exceptions for existing business relationships. The key across all markets: identify yourself, send relevant content, and provide an opt-out.</p>
-<h3>Can I send the same cold email to prospects in different countries?</h3>
+<h3 id="can-i-send-the-same-cold-email-to-prospects-in-different-countries">Can I send the same cold email to prospects in different countries?</h3>
 <p>You can, but you must comply with the laws of the recipient's country, not your own. If you send to a Canadian prospect, CASL applies. If you send to a German prospect, GDPR applies. In practice, building your email to meet the strictest standard you target (usually GDPR or CASL) means you will be compliant everywhere.</p>
-<h3>Is using "Re:" in a cold email subject line illegal?</h3>
+<h3 id="is-using-re-in-a-cold-email-subject-line-illegal">Is using "Re:" in a cold email subject line illegal?</h3>
 <p>Under CAN-SPAM, using "Re:" on a first-touch email is deceptive because it implies a prior conversation that does not exist. Under Washington State's CEMA, this can trigger $500 per email in statutory damages through private lawsuits. It is one of the most common compliance mistakes in outbound sales.</p>
-<h3>What is the difference between cold email and spam?</h3>
+<h3 id="what-is-the-difference-between-cold-email-and-spam">What is the difference between cold email and spam?</h3>
 <p>Cold email is a targeted, one-to-one commercial message sent to a specific person with sender identification, relevant content, and an opt-out. Spam is bulk unsolicited email sent indiscriminately without identification or relevance. Regulators treat them differently. Cold email that follows the rules is legal. Spam is not.</p>
-<h3>Which EU countries allow B2B cold email without opt-in?</h3>
+<h3 id="which-eu-countries-allow-b2b-cold-email-without-opt-in">Which EU countries allow B2B cold email without opt-in?</h3>
 <p>France, the Netherlands, Ireland, and Sweden allow B2B cold email to corporate addresses without prior opt-in consent, as long as you include sender identification and an opt-out. Germany, Spain, Italy, Poland, Austria, and Belgium require opt-in consent even for B2B. Each EU member state implemented the ePrivacy Directive differently. See the EU member state table above for the full breakdown.</p>
-<h3>Can I send cold email to Brazil under LGPD?</h3>
+<h3 id="can-i-send-cold-email-to-brazil-under-lgpd">Can I send cold email to Brazil under LGPD?</h3>
 <p>Yes. Brazil's LGPD allows B2B cold email under the legitimate interest legal basis, similar to GDPR. You must identify yourself, include an opt-out, and send content relevant to the recipient's professional role. B2C cold email requires prior consent. Penalties reach up to 2% of annual revenue, capped at 50 million BRL per violation.</p>
-<h3>Is cold email legal in the UAE?</h3>
+<h3 id="is-cold-email-legal-in-the-uae">Is cold email legal in the UAE?</h3>
 <p>No. The UAE prohibits cold email without explicit prior consent under its Unsolicited Electronic Communications Regulation (RUEC). There are no implied consent exceptions, no legitimate interest carve-outs, and no B2B exemptions. Penalties reach AED 10 million. Do not cold email UAE prospects without documented opt-in consent.</p>
-<h3>Which law applies when my company and the recipient are in different countries?</h3>
+<h3 id="which-law-applies-when-my-company-and-the-recipient-are-in-different-countries">Which law applies when my company and the recipient are in different countries?</h3>
 <p>The recipient's country determines which law applies. If your company is in the US but you email a prospect in Germany, German law (UWG Section 7) applies. If you email a Canadian prospect, CASL applies. The safest approach is to build your email to meet the strictest standard among all the countries you target.</p>
-<h2>The Bottom Line</h2>
+<h2 id="the-bottom-line">The Bottom Line</h2>
 <p>Cold email is not illegal. It is regulated. Most major markets allow B2B outbound email with guardrails. The exceptions are markets like the UAE, South Korea, and China, where opt-in consent is mandatory with no B2B exemption. Everywhere else, the rules are not complicated: identify yourself, send relevant content, let people opt out, and keep records.</p>
 <p>Companies that get in trouble are not the ones doing careful B2B outreach. They are the ones buying shady lists, hiding their identity, and ignoring unsubscribe requests. Do the basics right and cold email is one of the most effective and fully legal B2B sales channels in the majority of the world's markets. Know the specific rules for each country you target, use the checklists in this guide, and you will stay on the right side of the law.</p>
 

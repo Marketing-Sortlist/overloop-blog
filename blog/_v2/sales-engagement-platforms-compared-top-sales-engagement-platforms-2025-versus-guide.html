@@ -952,6 +952,66 @@ Applied changes from design-system-overloop.md:
       .related-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -1012,30 +1072,20 @@ Applied changes from design-system-overloop.md:
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">On this page</div>
         <ul>
-          <li><a href="#how-tested" class="active">How we tested</a></li>
-          <li><a href="#categories">The six categories</a></li>
-          <li><a href="#category-bdr">1 · AI BDR Tools</a></li>
-          <li><a href="#category-email">2 · AI Email Outreach</a></li>
-          <li><a href="#category-linkedin">3 · AI LinkedIn Outreach</a></li>
-          <li><a href="#category-enrichment">4 · Data Enrichment</a></li>
-          <li><a href="#category-intelligence">5 · Conversation Intelligence</a></li>
-          <li><a href="#category-coaching">6 · AI Email Coaching</a></li>
-        </ul>
-        <div class="toc__group">
-          <ul>
-            <li><a href="#comparison">Full comparison</a></li>
-            <li><a href="#how-to-choose">How to choose</a></li>
-            <li><a href="#pitfalls">What to watch for</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
+    <li><a href="#how-to-evaluate-sales-engagement-platforms-key-criteria">How to Evaluate Sales Engagement Platforms: Key…</a></li>
+    <li><a href="#overloop-ai-powered-sales-engagement-for-modern-teams">Overloop: AI-Powered Sales Engagement for Moder…</a></li>
+    <li><a href="#top-sales-engagement-platforms-2025-notable-alternatives">Top Sales Engagement Platforms 2025: Notable Al…</a></li>
+    <li><a href="#sales-engagement-platform-comparison-features-side-by-side">Sales Engagement Platform Comparison: Features …</a></li>
+    <li><a href="#which-sales-engagement-solution-is-right-for-you-key-considerations">Which Sales Engagement Solution Is Right for Yo…</a></li>
+    <li><a href="#frequently-asked-questions-about-sales-engagement-platforms">Frequently Asked Questions About Sales Engageme…</a></li>
+  </ul>
+        
       </aside>
 
       <!-- Main -->
@@ -1044,39 +1094,39 @@ Applied changes from design-system-overloop.md:
 <p>Modern B2B sales teams face major challenges: sourcing high-quality leads, building effective outreach campaigns, and making sure every touchpoint counts. Sales engagement platforms simplify these processes by combining automation, data, and communication tools in one place.</p>
 <p>These platforms automate tasks that used to take hours: identifying potential prospects, sending personalized emails and LinkedIn messages, and tracking every interaction. This automation directly addresses common pain points such as <em>manual prospecting</em> and disconnected sales workflows, letting teams focus on building relationships and closing deals rather than on time-consuming admin work.</p>
 <p>For companies working to scale, a strong sales engagement platform increases campaign efficiency and outbound productivity, guiding sales teams through the right steps at the right time. Tools like Overloop bring advanced AI to lead sourcing and <em>multi-channel outreach</em>, helping ensure higher response rates and fewer missed opportunities. By centralizing the entire outbound process, these platforms reduce the risk of errors and gaps between sales and marketing systems. This structure now forms the backbone for successful, systematic B2B sales efforts.</p>
-<h2>How to Evaluate Sales Engagement Platforms: Key Criteria</h2>
+<h2 id="how-to-evaluate-sales-engagement-platforms-key-criteria">How to Evaluate Sales Engagement Platforms: Key Criteria</h2>
 <p>Assessing sales engagement platforms calls for a focused look at how each tool helps drive efficient and scalable outbound sales, especially for B2B teams that want to reduce manual tasks and unify their workflow. Below, we outline the most significant criteria that can help distinguish one platform from another in terms of capability and fit.</p>
-<h3>AI Capabilities and Automation</h3>
+<h3 id="ai-capabilities-and-automation">AI Capabilities and Automation</h3>
 <p>Modern platforms increasingly rely on AI to spot and surface promising leads, craft outreach, and optimize campaign timing. <em>AI-driven lead sourcing</em> eliminates the hours spent sifting through databases, especially when paired with automation that handles list building, message sequencing, and follow-ups. Overloop uses AI to automate prospect identification and personalize outreach, which reduces manual effort and improves targeting efficiency for B2B teams.</p>
-<h3>Multi-Channel Outreach</h3>
+<h3 id="multi-channel-outreach">Multi-Channel Outreach</h3>
 <p>Effective platforms support consistent messaging across multiple channels, including email, phone, and social networks such as LinkedIn. Teams should look for features that unify campaigns, so they do not have to jump between tools. Multi-channel approaches reach prospects where they prefer to engage, improving overall response rates.</p>
-<h3>Email Deliverability and Personalization</h3>
+<h3 id="email-deliverability-and-personalization">Email Deliverability and Personalization</h3>
 <p>Email continues as a central outreach method, so platforms must maintain high deliverability and avoid spam traps. Personalization at scale is also critical. The platform should allow individualized messages that adapt to prospect data, role, and pain points. Overloop's AI messaging engine creates <em>ultra-personalized emails</em> that help stand out in crowded inboxes, while its deliverability safeguards prevent account blocks and spam issues.</p>
-<h3>CRM and Workflow Integration</h3>
+<h3 id="crm-and-workflow-integration">CRM and Workflow Integration</h3>
 <p>Teams benefit most when their sales engagement platform does not sit isolated from other core systems. Direct integrations with major CRMs, calendar tools, and communication channels keep prospect data synchronized and remove the need for duplicate entries. Overloop integrates natively with Salesforce, HubSpot, Pipedrive, and Slack to streamline the entire sales workflow.</p>
-<h3>Analytics and Reporting</h3>
+<h3 id="analytics-and-reporting">Analytics and Reporting</h3>
 <p>Insightful reporting highlights which channels, messages, and campaigns drive results. The platform should offer visibility into performance metrics, conversion rates, bounce rates, and response patterns. Comprehensive analytics help sales managers adjust tactics with precision based on concrete data rather than assumptions.</p>
-<h2>Overloop: AI-Powered Sales Engagement for Modern Teams</h2>
+<h2 id="overloop-ai-powered-sales-engagement-for-modern-teams">Overloop: AI-Powered Sales Engagement for Modern Teams</h2>
 <figure><img alt="Screenshot of Overloop workspace" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68e62802a004bf471deb0657_8o3idng9pixgwuinyp3kog5lfr0j.jpeg"/></figure>
 <p>Many B2B sales teams switch to platforms that streamline every phase of prospecting and outreach. Overloop focuses on removing friction from lead generation and campaign management, using artificial intelligence to connect reps with the right buyers quickly.</p>
-<h3>AI-Driven Lead Sourcing</h3>
+<h3 id="ai-driven-lead-sourcing">AI-Driven Lead Sourcing</h3>
 <p>Manual list building slows most outbound efforts. With Overloop, users define criteria such as role, industry, or location, and the platform instantly surfaces high-potential contacts. Its database draws from over 450 million B2B profiles for accurate, up-to-date information. Verified emails reduce bounce rates while AI smarts keep the quality of leads high at all times.</p>
-<h3>Automated, Personalized Outreach</h3>
+<h3 id="automated-personalized-outreach">Automated, Personalized Outreach</h3>
 <p>Generic messages rarely win replies. Overloop addresses this with AI-generated, ultra-personalized messages. It scans public signals and social data to customize each email for the recipient, whether the campaign runs in English or over 80 supported languages. Campaign launch is fully automated: the platform sequences multi-step touchpoints, including both email and LinkedIn, to match modern buyer habits. <a href="https://overloop.com/features">Learn more about Overloop's platform features.</a></p>
-<h3>Multi-Channel Campaigns on One Platform</h3>
+<h3 id="multi-channel-campaigns-on-one-platform">Multi-Channel Campaigns on One Platform</h3>
 <p>B2B teams often juggle tools for email, social, and reporting. Overloop centralizes this into a single workflow. Users can create, schedule, and track every outreach step without leaving the platform. The system manages deliverability with spam protection and controlled sending volumes, lowering the risk of messages landing in the spam folder or accounts being blocked. Integration with major CRMs like Salesforce, HubSpot, and Pipedrive lets teams update records without double entry or data loss.</p>
 <p>This unified approach means teams spend less time assembling databases or switching apps for different tasks. Overloop aims to boost productivity and generate new sales opportunities with less manual work. For growing B2B teams, centralizing outreach, analytics, and lead sourcing can reclaim hours each week while improving overall outbound results.</p>
-<h2>Top Sales Engagement Platforms 2025: Notable Alternatives</h2>
+<h2 id="top-sales-engagement-platforms-2025-notable-alternatives">Top Sales Engagement Platforms 2025: Notable Alternatives</h2>
 <p>Sales engagement technology continues to evolve rapidly in 2025, providing B2B sales teams with more choices than ever. Several platforms stand out by addressing common pain points like fragmented campaigns, manual list management, and lack of integration with core CRMs. While Overloop leads in AI-powered lead sourcing and multi-channel outreach, several alternatives offer strengths worth considering depending on your team's priorities and workflow requirements.</p>
-<h3>Outreach</h3>
+<h3 id="outreach">Outreach</h3>
 <p>Outreach remains a leading choice for enterprise teams that require advanced workflow customization, performance analytics, and robust integration with tools like Salesforce. Its focus on revenue intelligence allows large sales organizations to monitor every interaction and optimize messaging at scale. <em>Key differentiator: powerful automation workflows and pipeline forecasting.</em></p>
-<h3>Salesloft</h3>
+<h3 id="salesloft">Salesloft</h3>
 <p>Salesloft is recognized for its streamlined user experience and broad set of integrations. It supports sales professionals at every stage, offering automated schedule cadences, integrated dialer capabilities, and clear visibility into deal progress. <em>Its conversation intelligence features surface buyer intent signals for better follow-up.</em></p>
-<h3>HubSpot Sales Hub</h3>
+<h3 id="hubspot-sales-hub">HubSpot Sales Hub</h3>
 <p>HubSpot Sales Hub integrates natively with the HubSpot CRM, making it a natural fit for organizations running their marketing and sales from one dashboard. The platform simplifies tracking of outreach, enforces consistency across touchpoints, and enables personalized email sequences. <em>Simplicity and cross-platform data sharing set it apart.</em></p>
-<h3>Apollo.io</h3>
+<h3 id="apolloio">Apollo.io</h3>
 <p>Apollo.io stands out for its built-in B2B contact database and affordable pricing for growing teams. The platform combines prospect sourcing with multi-channel campaign sequencing, verified emails, and basic analytics. <em>This makes Apollo.io especially popular among startups seeking scalability at a lower cost.</em></p>
-<h3>Comparison Snapshot</h3>
+<h3 id="comparison-snapshot">Comparison Snapshot</h3>
 <ul>
 <li><strong>Outreach:</strong> Enterprise-grade, workflow automation, deep analytics</li>
 <li><strong>Salesloft:</strong> User-friendly, conversation signals, cross-channel outreach</li>
@@ -1084,9 +1134,9 @@ Applied changes from design-system-overloop.md:
 <li><strong>Apollo.io:</strong> Data-rich, affordable, multi-channel sequencing</li>
 </ul>
 <p>Each of these tools strengthens outbound sales by removing manual steps and providing actionable data. For teams focused on minimizing manual prospecting and building highly personalized campaigns, platforms like Overloop and its competitors raise the bar for productivity and efficiency in B2B sales engagement.</p>
-<h2>Sales Engagement Platform Comparison: Features Side-by-Side</h2>
+<h2 id="sales-engagement-platform-comparison-features-side-by-side">Sales Engagement Platform Comparison: Features Side-by-Side</h2>
 <p>Comparing sales engagement platforms helps identify which tool best matches your needs for outbound automation, multi-channel outreach, and integration with daily workflows. Each platform comes with strengths in specific areas like AI, deliverability, or analytics. Below, see a breakdown of Overloop and other leading platforms that B2B sales teams consider in 2025.</p>
-<h3>Side-by-Side Sales Engagement Platform Comparison Table</h3>
+<h3 id="side-by-side-sales-engagement-platform-comparison-table">Side-by-Side Sales Engagement Platform Comparison Table</h3>
 <table class="table-keep">
 <thead>
 <tr>
@@ -1150,38 +1200,38 @@ Applied changes from design-system-overloop.md:
 </tbody>
 </table>
 <p><em>This overview clarifies which platforms fit specific priorities, such as managing multi-channel campaigns, driving AI-driven personalization, or providing deep reporting alongside solid integrations.</em></p>
-<h2>Which Sales Engagement Solution Is Right for You? Key Considerations</h2>
+<h2 id="which-sales-engagement-solution-is-right-for-you-key-considerations">Which Sales Engagement Solution Is Right for You? Key Considerations</h2>
 <p>Each sales engagement platform offers strengths based on different team structures, processes, and goals. Deciding which tool fits best starts with a clear picture of how your team works and what matters most to your sales outcomes.</p>
-<h3>Team Size and Structure</h3>
+<h3 id="team-size-and-structure">Team Size and Structure</h3>
 <p>Smaller teams often prioritize ease of use and cost-effectiveness. Platforms like Apollo.io provide low entry costs and simple onboarding that benefits startups or companies with just a few sales reps. Larger teams, especially those spanning multiple territories or segments, frequently require advanced workflow management and collaboration. For these cases, Outreach and Salesloft offer granular controls, performance analytics, and reporting suited for managing high sales volumes across distributed teams.</p>
-<h3>Sales Process Complexity</h3>
+<h3 id="sales-process-complexity">Sales Process Complexity</h3>
 <p>If your outreach involves multiple steps across various channels, look for tools that centralize multi-channel campaigns in one platform. Overloop and Salesloft can handle email and LinkedIn sequencing in cohesive workflows, which reduces toggling between apps and lowers the risk of disconnected conversations. Teams following simpler sales cycles may favor solutions like HubSpot Sales Hub, which emphasizes clean workflows integrated directly with contact records.</p>
-<h3>Integration Requirements</h3>
+<h3 id="integration-requirements">Integration Requirements</h3>
 <p>Most B2B teams rely on a CRM for customer history, pipeline visibility, and reporting. Choosing a platform that seamlessly integrates with your CRM is critical for keeping lead data accurate and sales efforts aligned. All top platforms, including Overloop, Outreach, and HubSpot Sales Hub, support native integrations with leading CRMs like Salesforce, Pipedrive, and HubSpot CRM. Prioritize platforms with out-of-the-box support for your essential tools to avoid custom setup work.</p>
-<h3>Budget Constraints</h3>
+<h3 id="budget-constraints">Budget Constraints</h3>
 <ul>
 <li><strong>Apollo.io</strong>: Flexible plans for early-stage teams or organizations growing headcount without large upfront costs.</li>
 <li><strong>Overloop</strong>: Tiered pricing reflects usage and feature access. Its lead sourcing accuracy and automation can save time, which makes the investment worthwhile for scaling teams. <a href="https://overloop.com/pricing">See Overloop pricing options.</a></li>
 <li><strong>Enterprise solutions</strong>: Outreach and Salesloft are geared toward larger budgets but offer deep analytics and user management for bigger organizations.</li>
 </ul>
 <p>Consider how platform pricing aligns with improved response rates, saved hours, and the potential for greater outbound sales. The decision should reflect both current team needs and future growth plans, ensuring the tool helps your workflows today and scales for tomorrow.</p>
-<h2>Frequently Asked Questions About Sales Engagement Platforms</h2>
+<h2 id="frequently-asked-questions-about-sales-engagement-platforms">Frequently Asked Questions About Sales Engagement Platforms</h2>
 <p>Sales engagement platforms help B2B teams increase outbound efficiency and reduce repetitive tasks. Buyers often ask practical questions about using these tools, understanding their value, and what it takes to achieve results quickly. Here are some of the most common queries with clear explanations.</p>
-<h3>What Is the Main Benefit of Using a Sales Engagement Platform for My Team?</h3>
+<h3 id="what-is-the-main-benefit-of-using-a-sales-engagement-platform-for-my-team">What Is the Main Benefit of Using a Sales Engagement Platform for My Team?</h3>
 <p>The main value of a sales engagement platform is <em>centralization and automation of outreach workflows</em>. Teams can source prospects, schedule personalized messages, and run multi-channel campaigns from one place. This reduces manual data entry, increases the number of outbound touches, and improves consistency. For example, Overloop automates prospect sourcing and follow-ups, removing hours of research and setup from the sales process.</p>
-<h3>How Does AI Improve Sales Outreach in These Platforms?</h3>
+<h3 id="how-does-ai-improve-sales-outreach-in-these-platforms">How Does AI Improve Sales Outreach in These Platforms?</h3>
 <p>AI features remove guesswork by helping you surface high-potential leads and generate targeted messages. These tools adapt outreach sequences based on previous performance, learning which channels or touchpoints work best. Overloop applies AI to identify the right contacts and tailor communication to each recipient's context, increasing the chances of getting replies from your target audience.</p>
-<h3>Is Multi-Channel Outreach Really More Effective Than Single-Channel?</h3>
+<h3 id="is-multi-channel-outreach-really-more-effective-than-single-channel">Is Multi-Channel Outreach Really More Effective Than Single-Channel?</h3>
 <p>Yes, using more than one outreach channel (like email and LinkedIn) typically improves response rates and prospect engagement. People have different communication preferences and react to different triggers. Multi-channel campaigns coordinate messages across email, LinkedIn, and even calls in a single workflow, helping maximize your reach and visibility.</p>
-<h3>What Do I Need for a Smooth Onboarding With a Sales Engagement Platform?</h3>
+<h3 id="what-do-i-need-for-a-smooth-onboarding-with-a-sales-engagement-platform">What Do I Need for a Smooth Onboarding With a Sales Engagement Platform?</h3>
 <p>The onboarding process is faster if your chosen platform integrates easily with tools you already use. Overloop connects with Salesforce, HubSpot, and Pipedrive out of the box, accelerating the startup phase for most teams.</p>
-<h3>How Soon Can I Expect Results After Implementing a Platform?</h3>
+<h3 id="how-soon-can-i-expect-results-after-implementing-a-platform">How Soon Can I Expect Results After Implementing a Platform?</h3>
 <p>Most B2B sales teams notice improvements in efficiency and campaign output in the first few weeks, mainly due to automation of data entry and follow-ups. Actual results in new deals and conversions generally depend on campaign design, prospect fit, and team adoption. The more consistently the workflow is used and monitored, the clearer the improvement in key metrics such as response and meeting rates.</p>
-<h3>How Secure Is Prospect Data on These Platforms?</h3>
+<h3 id="how-secure-is-prospect-data-on-these-platforms">How Secure Is Prospect Data on These Platforms?</h3>
 <p>Reputable platforms abide by GDPR and maintain strict policies on prospect data privacy and security. You should check each provider's compliance standards. Many services offer additional security features or allow for custom user roles and access limits, keeping sensitive information accessible only to authorized team members. <a href="https://overloop.com/security">Read about Overloop's security and data protection.</a></p>
-<h3>Do These Tools Replace a CRM or Work Alongside?</h3>
+<h3 id="do-these-tools-replace-a-crm-or-work-alongside">Do These Tools Replace a CRM or Work Alongside?</h3>
 <p>Sales engagement platforms usually work <em>with</em> existing CRMs by syncing prospect and activity data. They handle outreach and engagement, then log activities, notes, or status changes back into your CRM. The result is a more streamlined workflow where campaign execution and reporting stay connected to your core sales system.</p>
-<h3>What Support Is Available During Setup or Troubleshooting?</h3>
+<h3 id="what-support-is-available-during-setup-or-troubleshooting">What Support Is Available During Setup or Troubleshooting?</h3>
 <p>Most platforms offer in-app help articles, live chat, and onboarding sessions for new users. Some provide dedicated customer success managers or onboarding specialists for team accounts. Timely support improves implementation and helps teams configure advanced workflows or automation rules.</p>
 <p>If you have questions beyond these, most vendors host monthly webinars or have help centers for deeper technical details. Choosing the ideal platform often depends on team goals, preferred integrations, and the need for support as you roll out new outbound processes.</p>
 

@@ -359,6 +359,66 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -406,26 +466,28 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
       </div>
     </header>
 
-    <!-- 2-col layout -->
     <div class="article-layout">
 
       <!-- TOC -->
       <aside class="toc" role="navigation" aria-label="Table of contents">
         <div class="toc__label">Chapters</div>
         <ul>
-          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
-          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
-          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
-          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
-          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
-          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
-          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
-          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
-          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
-          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
-        </ul>
-        <div class="toc__group">
-          <div class="toc__label">Extras</div>
+    <li><a href="#why-cold-email-for-link-building">Why Cold Email for Link Building</a></li>
+    <li><a href="#the-campaign-setup-what-we-did">The Campaign Setup: What We Did</a></li>
+    <li><a href="#the-results-every-number">The Results: Every Number</a></li>
+    <li><a href="#what-worked-and-what-did-not">What Worked (and What Did Not)</a></li>
+    <li><a href="#subject-lines-that-worked-for-link-building-outreach">Subject Lines That Worked for Link Building Out…</a></li>
+    <li><a href="#how-to-automate-link-building-outreach-with-overloop">How to Automate Link Building Outreach with Ove…</a></li>
+    <li><a href="#link-building-email-mistakes-that-kill-response-rates">Link Building Email Mistakes That Kill Response…</a></li>
+    <li><a href="#response-rate-benchmarks-for-link-building-outreach">Response Rate Benchmarks for Link Building Outr…</a></li>
+    <li><a href="#scaling-from-23-backlinks-to-100-per-month">Scaling: From 23 Backlinks to 100+ Per Month</a></li>
+    <li><a href="#what-this-means-for-your-seo">What This Means for Your SEO</a></li>
+    <li><a href="#5-more-cold-email-templates-for-different-link-building-angles">5 More Cold Email Templates for Different Link …</a></li>
+    <li><a href="#how-to-find-link-building-prospects-google-search-operators">How to Find Link Building Prospects: Google Sea…</a></li>
+    <li><a href="#email-deliverability-checklist-for-link-building-outreach">Email Deliverability Checklist for Link Buildin…</a></li>
+    <li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li>
+  </ul>
+        
           <ul>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#experts">Meet the experts</a></li>
@@ -443,12 +505,12 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <div class="big-number">4.6%</div>
 <div class="stat-label">Email-to-backlink conversion rate from our 500-email campaign</div>
 </div>
-<h2>Why Cold Email for Link Building</h2>
+<h2 id="why-cold-email-for-link-building">Why Cold Email for Link Building</h2>
 <p>There are plenty of link building tactics: guest posting, broken link building, HARO, digital PR, creating linkable assets. Cold email is the thread that connects most of them. You still need to reach the person who controls the page. Email is how you do that at scale.</p>
 <p>The math is simple. If you can send 100 personalized emails per day and convert 4-5% into links, that is 4-5 backlinks per day. Over a month, that is 80-100 new referring domains. No other manual tactic comes close to that throughput.</p>
 <p>But the emphasis is on "personalized." Mass-blasting a generic template to 10,000 people does not work for link building. Webmasters and editors are savvy. They spot templates instantly. The approach that works is targeted, researched, and specific to each recipient.</p>
-<h2>The Campaign Setup: What We Did</h2>
-<h3>Step 1: Find link-worthy content</h3>
+<h2 id="the-campaign-setup-what-we-did">The Campaign Setup: What We Did</h2>
+<h3 id="step-1-find-link-worthy-content">Step 1: Find link-worthy content</h3>
 <p>Before writing a single email, we needed something worth linking to. We picked our <a href="/blog/cold-email-stats-2018">cold email statistics</a> page because it contains original data that other writers reference. If your content is generic advice that exists on 50 other blogs, link building outreach will fail regardless of how good your emails are.</p>
 <p>Linkable assets that work for outreach:</p>
 <ul>
@@ -457,7 +519,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Free tools and calculators</strong> (interactive resources people want to reference)</li>
 <li><strong>Infographics with original statistics</strong></li>
 </ul>
-<h3>Step 2: Build the prospect list</h3>
+<h3 id="step-2-build-the-prospect-list">Step 2: Build the prospect list</h3>
 <p>We needed people who had already written about cold email, outbound sales, or email marketing. They are the ones most likely to find our data useful and link to it.</p>
 <p>Here is how we built the list:</p>
 <ol>
@@ -501,7 +563,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </div>
 </div>
 </div>
-<h3>Step 3: Write the email sequence</h3>
+<h3 id="step-3-write-the-email-sequence">Step 3: Write the email sequence</h3>
 <p>We tested two approaches: a "resource mention" angle and a "broken link" angle. The resource mention angle outperformed by 2x.</p>
 <div class="template-box">
 <div class="template-label">Template: Initial outreach (resource mention)</div>
@@ -538,11 +600,11 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>If it's useful for your readers, feel free to reference it. If not, no hard feelings.</p>
 <p>Nicolas</p>
 </div>
-<h3>Step 4: Load into Overloop and send</h3>
+<h3 id="step-4-load-into-overloop-and-send">Step 4: Load into Overloop and send</h3>
 <p>We imported the 500 contacts into Overloop, set up a 3-step sequence with the templates above, and configured sending at 50 emails per day across 3 sending accounts. This kept us well under provider limits and maintained strong deliverability.</p>
 <p>Overloop handles the personalization variables ({{first_name}}, {{article_title}}, {{topic}}) automatically from the CSV import. Each email looked hand-written because the variables pulled in real data for each prospect.</p>
 <p>We also used Overloop's sending schedule to deliver emails Tuesday through Thursday between 8 and 10 AM in each recipient's timezone. Based on our <a href="/blog/cold-email-stats-2018">cold email statistics</a>, this window produces the highest open rates.</p>
-<h2>The Results: Every Number</h2>
+<h2 id="the-results-every-number">The Results: Every Number</h2>
 <table>
 <thead>
 <tr>
@@ -631,21 +693,21 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </div>
 <p>The 62.4% open rate is much higher than typical cold outreach. That is because we targeted content creators and editors who actively check email and are used to receiving pitches. The subject line referencing their specific article also drove curiosity.</p>
 <p>Of the 47 replies, 31 were positive ("send me the link," "happy to update," "great resource"). 8 of those positive replies never followed through despite agreeing. That is normal. Budget for a 25% drop-off between "yes" and actual link placement.</p>
-<h2>What Worked (and What Did Not)</h2>
-<h3>Wins</h3>
+<h2 id="what-worked-and-what-did-not">What Worked (and What Did Not)</h2>
+<h3 id="wins">Wins</h3>
 <ul>
 <li><strong>Personalization on article title was the top driver.</strong> Emails that referenced the exact article outperformed generic "I noticed you write about X" by 3.1x on reply rate.</li>
 <li><strong>No link in the first email.</strong> Our A/B test showed that including the URL in email #1 dropped reply rates from 9.4% to 5.1%. Spam filters and human suspicion both penalize links in cold first touches.</li>
 <li><strong>Follow-up #1 generated 38% of all replies.</strong> Consistent with broader cold email data showing that follow-ups produce more than half of all responses.</li>
 <li><strong>Smaller sites (DR 20-40) converted at 2x the rate of large sites.</strong> Big publishers have formal editorial processes. Smaller blogs are run by one person who can add a link in five minutes.</li>
 </ul>
-<h3>Losses</h3>
+<h3 id="losses">Losses</h3>
 <ul>
 <li><strong>The "broken link" angle flopped.</strong> We tested a broken link approach with 100 contacts. Reply rate: 3.2%. Conversion to link: 0.8%. Most people just removed the broken link instead of replacing it.</li>
 <li><strong>Targeting pages older than 2 years underperformed.</strong> If an article has not been updated since 2023, the author has probably moved on. Fresh content (published in the last 12 months) converted 2.4x better.</li>
 <li><strong>Generic subject lines killed opens.</strong> "Link building opportunity" got a 24% open rate. The personalized version got 62%. That is not a marginal difference.</li>
 </ul>
-<h2>Subject Lines That Worked for Link Building Outreach</h2>
+<h2 id="subject-lines-that-worked-for-link-building-outreach">Subject Lines That Worked for Link Building Outreach</h2>
 <p>We tested 8 subject line variations. Here are the top performers:</p>
 <table>
 <thead>
@@ -705,7 +767,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <text fill="#6b7280" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" x="360" y="374">Personalized subject lines outperform generic pitches by 2.6x</text>
 </svg>
 </figure>
-<h2>How to Automate Link Building Outreach with Overloop</h2>
+<h2 id="how-to-automate-link-building-outreach-with-overloop">How to Automate Link Building Outreach with Overloop</h2>
 <p>Running this campaign manually would be painful. Finding emails one by one, writing individual messages, tracking who replied, following up on the right day. That is exactly the kind of repetitive workflow that Overloop automates.</p>
 <p>Here is the setup we used:</p>
 <ol>
@@ -716,7 +778,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>Manage replies in the Overloop inbox.</strong> All replies from the campaign feed into one unified inbox. We tagged replies as "positive," "negative," or "maybe" and handled each accordingly.</li>
 </ol>
 <p>Total time to set up the campaign in Overloop: about 45 minutes. The tool did the rest over three weeks.</p>
-<h2>Link Building Email Mistakes That Kill Response Rates</h2>
+<h2 id="link-building-email-mistakes-that-kill-response-rates">Link Building Email Mistakes That Kill Response Rates</h2>
 <p>We have run dozens of these campaigns. Here are the mistakes we see most often:</p>
 <ul>
 <li><strong>Asking for a link in the first sentence.</strong> Build rapport first. Lead with what you can offer them (data, a resource, a quote).</li>
@@ -726,7 +788,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>No follow-up.</strong> 38% of our backlinks came from follow-up emails. If you stop after one email, you leave over a third of your potential results on the table.</li>
 <li><strong>Ignoring domain authority.</strong> Prioritize outreach to higher-DR sites. A single DR 70 backlink is worth more than ten DR 15 links.</li>
 </ul>
-<h2>Response Rate Benchmarks for Link Building Outreach</h2>
+<h2 id="response-rate-benchmarks-for-link-building-outreach">Response Rate Benchmarks for Link Building Outreach</h2>
 <p>Link building outreach performs differently from sales outreach. Here is what to expect:</p>
 <table>
 <thead>
@@ -760,7 +822,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </tbody>
 </table>
 <p>Link building outreach gets higher engagement because you are not asking people to spend money. You are offering them something useful for their content. The ask is small. That is why it converts well.</p>
-<h2>Scaling: From 23 Backlinks to 100+ Per Month</h2>
+<h2 id="scaling-from-23-backlinks-to-100-per-month">Scaling: From 23 Backlinks to 100+ Per Month</h2>
 <p>Our 500-email campaign was a proof of concept. Here is how to scale it:</p>
 <ol>
 <li><strong>Expand your linkable assets.</strong> One stats page brought us 23 links. Three to five assets running simultaneously could bring 70-100+ links per month.</li>
@@ -769,7 +831,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>A/B test continuously.</strong> We improved our reply rate from 6.8% to 9.4% over three iterations by testing subject lines, opening sentences, and follow-up timing.</li>
 <li><strong>Track links, not just replies.</strong> A "yes" reply does not always turn into a link. Follow up politely 7 days after a positive reply if the link has not appeared.</li>
 </ol>
-<h2>What This Means for Your SEO</h2>
+<h2 id="what-this-means-for-your-seo">What This Means for Your SEO</h2>
 <p>23 backlinks from a single campaign might not sound like a lot. But consider the context:</p>
 <ul>
 <li>Average DR of linking sites: 41</li>
@@ -779,9 +841,9 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </ul>
 <p>Over 6 months of running this campaign monthly, we accumulated 130+ new referring domains. Our target page went from position 14 to position 4 for "cold email statistics." That traffic increase directly feeds our signup funnel.</p>
 <p>Cold email link building is not glamorous. It is repetitive, data-driven work. But it is one of the few link building methods that scales predictably and produces genuine editorial links that Google values.</p>
-<h2>5 More Cold Email Templates for Different Link Building Angles</h2>
+<h2 id="5-more-cold-email-templates-for-different-link-building-angles">5 More Cold Email Templates for Different Link Building Angles</h2>
 <p>The resource mention approach worked best for our campaign, but it is not the only play. Here are five more templates we use for different situations. Each one targets a specific link building opportunity.</p>
-<h3>Guest post pitch</h3>
+<h3 id="guest-post-pitch">Guest post pitch</h3>
 <p>Use this when a site accepts contributors and you want an in-content link from a high-DR domain. The key: pitch a specific headline, not a vague topic.</p>
 <div class="template-box">
 <div class="template-label">Template: Guest post pitch</div>
@@ -794,7 +856,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>Nicolas</p>
 </div>
 <p>Conversion rate from our guest post campaigns: 3.1%. Lower than resource mentions because the ask is bigger (they need to review and publish an article). But the links are stronger because they sit inside long-form content on high-authority sites.</p>
-<h3>Skyscraper technique</h3>
+<h3 id="skyscraper-technique">Skyscraper technique</h3>
 <p>Find a popular article in your niche, create something significantly better, then email everyone who links to the original. This works because you are not asking for a favor. You are offering an upgrade.</p>
 <div class="template-box">
 <div class="template-label">Template: Skyscraper outreach</div>
@@ -806,7 +868,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>If you think it is a better fit for your readers, feel free to swap it in. Either way, enjoyed your piece.</p>
 <p>Nicolas</p>
 </div>
-<h3>Unlinked brand mention</h3>
+<h3 id="unlinked-brand-mention">Unlinked brand mention</h3>
 <p>Set up a Google Alert or use Ahrefs Content Explorer to find pages that mention your brand or product but do not link to you. This is the easiest link building email to write because they already know you.</p>
 <div class="template-box">
 <div class="template-label">Template: Unlinked mention</div>
@@ -818,7 +880,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>Nicolas</p>
 </div>
 <p>This angle converts at 8-12% in our experience. The person already chose to mention you. Adding a link is a 30-second edit for them.</p>
-<h3>Resource page outreach</h3>
+<h3 id="resource-page-outreach">Resource page outreach</h3>
 <p>Many blogs maintain "best tools" or "top resources" lists. If your product or content belongs on those lists, ask to be included.</p>
 <div class="template-box">
 <div class="template-label">Template: Resource page inclusion</div>
@@ -829,7 +891,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>Here is the link if you want to take a look: [URL]</p>
 <p>Nicolas</p>
 </div>
-<h3>Expert roundup or data citation</h3>
+<h3 id="expert-roundup-or-data-citation">Expert roundup or data citation</h3>
 <p>If you have original data, research, or a unique perspective, pitch it to journalists and bloggers writing roundups or trend pieces. They need sources. You need links. Clean exchange.</p>
 <div class="template-box">
 <div class="template-label">Template: Data/expert pitch</div>
@@ -840,7 +902,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <p>Happy to provide more context or a quote if it fits your article. No strings attached.</p>
 <p>Nicolas</p>
 </div>
-<h2>How to Find Link Building Prospects: Google Search Operators</h2>
+<h2 id="how-to-find-link-building-prospects-google-search-operators">How to Find Link Building Prospects: Google Search Operators</h2>
 <p>The quality of your prospect list determines the quality of your results. Here are the exact Google search operators we use to find outreach targets fast.</p>
 <table>
 <thead>
@@ -905,15 +967,15 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
                     Tip: Export these results, check DR in Ahrefs, filter for DR 20+, and import into Overloop for outreach.
                 </div>
 </div>
-<h2>Email Deliverability Checklist for Link Building Outreach</h2>
+<h2 id="email-deliverability-checklist-for-link-building-outreach">Email Deliverability Checklist for Link Building Outreach</h2>
 <p>None of your templates matter if your emails land in spam. Link building outreach is especially vulnerable because you are emailing people who did not opt in. Here is the technical setup that kept our 500-email campaign at a 62.4% open rate.</p>
-<h3>Domain authentication (non-negotiable)</h3>
+<h3 id="domain-authentication-non-negotiable">Domain authentication (non-negotiable)</h3>
 <ul>
 <li><strong>SPF record:</strong> Tells receiving servers which IPs are allowed to send on behalf of your domain. Without it, Gmail and Outlook flag your emails as suspicious.</li>
 <li><strong>DKIM signing:</strong> Cryptographically signs each email so recipients can verify it was not tampered with in transit.</li>
 <li><strong>DMARC policy:</strong> Ties SPF and DKIM together and tells receivers what to do with emails that fail authentication. Start with p=none to monitor, then move to p=quarantine.</li>
 </ul>
-<h3>Sending hygiene</h3>
+<h3 id="sending-hygiene">Sending hygiene</h3>
 <ul>
 <li><strong>Warm up new accounts.</strong> Do not send 50 emails on day one from a fresh domain. Ramp from 5/day to 50/day over two weeks. Overloop's sending schedules make this easy to configure.</li>
 <li><strong>Keep bounce rate under 3%.</strong> Verify every email address before importing. A single campaign with a 10% bounce rate can tank your domain reputation for months.</li>
@@ -921,7 +983,7 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 <li><strong>No link in email #1.</strong> We proved this in our A/B test: including a URL in the first touch dropped reply rates from 9.4% to 5.1%. Spam filters treat unknown senders with links differently.</li>
 <li><strong>Monitor spam complaint rate.</strong> Google penalizes senders above 0.1% complaint rate. If you hit 0.3%, you are in serious trouble. Track this in Google Postmaster Tools.</li>
 </ul>
-<h3>CAN-SPAM and GDPR compliance</h3>
+<h3 id="can-spam-and-gdpr-compliance">CAN-SPAM and GDPR compliance</h3>
 <p>Cold email for link building is legal in the US under CAN-SPAM as long as you include a physical address, a clear way to opt out, and accurate sender information. In the EU, GDPR requires a legitimate interest basis for B2B cold email. Linking to a webmaster about their published content qualifies, but you must honor removal requests immediately and never email personal (non-business) addresses without consent.</p>
 <p>The fine for CAN-SPAM violations is up to $50,120 per email. GDPR fines can reach 20 million euros. These are not theoretical risks. Include an unsubscribe option in every sequence and process opt-outs within 24 hours.</p>
 <figure style="margin: 1.5rem 0;">
@@ -987,22 +1049,22 @@ NO tested-by banner (per feedback — reserved for product-comparison templates)
 </svg>
 <figcaption style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; text-align: center;">Email authentication flow: all three records (SPF, DKIM, DMARC) must pass for reliable inbox delivery.</figcaption>
 </figure>
-<h2>Frequently Asked Questions</h2>
-<h3>Is cold email for link building legal?</h3>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<h3 id="is-cold-email-for-link-building-legal">Is cold email for link building legal?</h3>
 <p>Yes. In the US, the CAN-SPAM Act permits cold email as long as you include a physical address, honest subject lines, and a working opt-out mechanism. In the EU, GDPR allows B2B cold email under the "legitimate interest" basis, but you must process opt-out requests immediately. Emailing a webmaster about their published content is generally considered legitimate interest, but always include an unsubscribe link.</p>
-<h3>How many cold emails should I send per day for link building?</h3>
+<h3 id="how-many-cold-emails-should-i-send-per-day-for-link-building">How many cold emails should I send per day for link building?</h3>
 <p>Between 30 and 50 per sending account. Going above 50 increases the risk of deliverability problems, especially with Gmail and Outlook. If you need higher volume, add more sending accounts and rotate between them. Our 500-email campaign used 3 accounts at 50 emails/day each and maintained a 62.4% open rate.</p>
-<h3>What is a good response rate for link building outreach?</h3>
+<h3 id="what-is-a-good-response-rate-for-link-building-outreach">What is a good response rate for link building outreach?</h3>
 <p>A reply rate between 8% and 12% is strong for link building cold email. Our campaign achieved 9.4%. The email-to-backlink conversion rate (the number that actually matters) should be 3-5%. We hit 4.6%. If you are below 3%, your prospect list quality or email personalization needs work.</p>
-<h3>How many follow-ups should I send for link building emails?</h3>
+<h3 id="how-many-follow-ups-should-i-send-for-link-building-emails">How many follow-ups should I send for link building emails?</h3>
 <p>Two to three follow-ups is the sweet spot. In our campaign, follow-up #1 generated 38% of all replies. Follow-up #2 added another 14%. A third follow-up gets diminishing returns and risks annoying the recipient. Space them 3-7 days apart.</p>
-<h3>What is the best day and time to send link building outreach emails?</h3>
+<h3 id="what-is-the-best-day-and-time-to-send-link-building-outreach-emails">What is the best day and time to send link building outreach emails?</h3>
 <p>Tuesday through Thursday, between 8 AM and 10 AM in the recipient's local timezone. Our data across 12M+ emails shows Tuesday consistently produces the highest open rates. Avoid Mondays (inbox overload) and Fridays (people are wrapping up for the weekend).</p>
-<h3>Does cold email link building still work in 2026?</h3>
+<h3 id="does-cold-email-link-building-still-work-in-2026">Does cold email link building still work in 2026?</h3>
 <p>It works better than most alternatives. The key shift in 2026 is that generic blasts are dead. Webmasters and editors receive more outreach than ever, so personalization quality is the differentiator. Our 4.6% conversion rate came from referencing each recipient's specific article. Mass templates with mail-merge first names no longer cut it.</p>
-<h3>Should I use AI to write link building outreach emails?</h3>
+<h3 id="should-i-use-ai-to-write-link-building-outreach-emails">Should I use AI to write link building outreach emails?</h3>
 <p>AI is useful for drafting initial templates and researching prospects, but do not send AI-generated emails without editing them. Webmasters can spot AI-written pitches, and they get ignored. Use AI to speed up the research phase (finding prospects, summarizing their articles) and write the final email yourself. The human touch is what converts.</p>
-<h3>What tools do I need for cold email link building?</h3>
+<h3 id="what-tools-do-i-need-for-cold-email-link-building">What tools do I need for cold email link building?</h3>
 <p>You need three things: a prospecting tool to find email addresses (Overloop's built-in email finder, Hunter, or Snov.io), a sending platform that handles sequences and follow-ups automatically (Overloop), and a backlink checker to find prospects and track results (Ahrefs or SEMrush). Overloop covers the first two, so most campaigns need just two tools total.</p>
 
 </main>

@@ -237,6 +237,66 @@ No tested-by banner (strategic/methodological — not product comparison)
       .related-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr}
     }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
@@ -264,17 +324,6 @@ No tested-by banner (strategic/methodological — not product comparison)
       </div>
     </header>
 
-    <!-- Framework flow visualization -->
-    <div style="max-width:var(--container-blog);margin:0 auto;padding:24px var(--page-px) 0">
-      <div class="framework-flow">
-        <div class="ff-step"><div class="ff-step__circle">1</div><div class="ff-step__name">Define ICP<span class="ff-step__tag">Targeting</span></div></div>
-        <div class="ff-step"><div class="ff-step__circle">2</div><div class="ff-step__name">Source data<span class="ff-step__tag">Prospecting</span></div></div>
-        <div class="ff-step"><div class="ff-step__circle">3</div><div class="ff-step__name">Craft message<span class="ff-step__tag">Messaging</span></div></div>
-        <div class="ff-step"><div class="ff-step__circle">4</div><div class="ff-step__name">Send + sequence<span class="ff-step__tag">Delivery</span></div></div>
-        <div class="ff-step"><div class="ff-step__circle">5</div><div class="ff-step__name">Iterate<span class="ff-step__tag">Optimization</span></div></div>
-      </div>
-    </div>
-
     <main class="main-wrap">
 
 <div>
@@ -286,7 +335,7 @@ In a previous post, we explained <a href="/blog/how-to-write-a-successful-cold-e
 <p>
 Today I am going to give you some keys to integrate your cold email into your marketing strategy and convert your cold contacts into sales. Because this is one of the most powerful tools to establish new business contacts and create lasting relationships with your future clients, but only if there is an adequate strategy and a series of steps that I will present below are followed.
 </p>
-<h2>Basics: leave nothing to chance.</h2>
+<h2 id="basics-leave-nothing-to-chance">Basics: leave nothing to chance.</h2>
 <p>
 Before carrying out your cold email marketing campaign, you should optimize three fundamental questions:
 </p>
@@ -304,7 +353,7 @@ Before carrying out your cold email marketing campaign, you should optimize thre
     Another interesting piece of advice in this section is that you <strong>warm up your email account</strong>. Don't just create a new email account and start cold email blasting, because the result can be quite painful. Instead, it is important that the account you are going to use for your marketing strategies has a previous walkthrough and, so to speak, proves that there is a real person behind it, not a malicious bot. There are different tools that can help you warm up your email account and, of course, the sending rate will also depend on the age of your email account. If you have questions about this matter, do not hesitate to contact the <a href="https://overloop.com">Overloop</a> team and we will be happy to answer your questions.
   </li>
 </ol>
-<h2>Optimize your mailing list before you start cold emailing</h2>
+<h2 id="optimize-your-mailing-list-before-you-start-cold-emailing">Optimize your mailing list before you start cold emailing</h2>
 <p>
   Once your email account is set up and you've made sure all the details are ready to work with it, it's time to work on your contact database. Avoid just sending emails to all your contacts, because the disaster will be guaranteed.
 </p>
@@ -321,7 +370,7 @@ Before carrying out your cold email marketing campaign, you should optimize thre
     At this point, Overloop will make your life much easier when it comes to organizing your contact lists and preparing your cold email campaigns. I encourage you again to create a test account and see all that Overloop can offer you for sales email automation.
   </li>
 </ol>
-<h2>Plan your cold email campaigns well, don't rush</h2>
+<h2 id="plan-your-cold-email-campaigns-well-dont-rush">Plan your cold email campaigns well, don't rush</h2>
 <p>You now have your email database clean and all the tools are ready to start sending emails. And now that? Before clicking on “send”, spend some time planning your campaign well, based on the marketing objectives you want to achieve with it. A cold email will always be focused on meeting several goals, which we can summarize in two: </p>
 <ol>
 <li>
@@ -333,7 +382,7 @@ Before carrying out your cold email marketing campaign, you should optimize thre
 </ol>
 <p>
 	To increase the probability of achieving these two stages, it is essential that your campaign is well planned from the beginning. First of all, segment your database and try to define specific audiences, which will allow you to send more personalized and relevant emails to your recipients. Take some time to analyze the data of the companies or people you are going to contact and, from there, segment them to adapt the messages to their needs. </p>
-<h2>Personalize the content of your cold emails and take care of the details</h2>
+<h2 id="personalize-the-content-of-your-cold-emails-and-take-care-of-the-details">Personalize the content of your cold emails and take care of the details</h2>
 <p>Once you have detected the characteristics of your target prospect, it will be easier for you to adapt the subject and content of the message to their needs. So the next step will be to plan the content of the message well, always keeping in mind the 4 main points of all cold emails: </p>
 <ol>
 <li>Sender</li>
@@ -343,7 +392,7 @@ Before carrying out your cold email marketing campaign, you should optimize thre
 </ol>
 <p>We have already talked about these sections in our blog before, but in summary, always remember to focus on the prospect and their needs, instead of making texts that are excessively commercial or focused on direct sales. If, in addition, that message and that value proposition are personalized for a segmented audience, the probability of success will increase significantly.</p>
 <p>It is also important that you take care of the details throughout the message. Good spelling, proper writing, an appropriate tone when addressing your prospect... remember that your cold email will be your future customer's first contact with your company. Everything must be taken care of, down to the smallest detail.</p>
-<h2>Measure, analyze and make decisions. Don't be discouraged.</h2>
+<h2 id="measure-analyze-and-make-decisions-dont-be-discouraged">Measure, analyze and make decisions. Don't be discouraged.</h2>
 <p>Sometimes, as much as we have planned and optimized our cold email campaign, we may not get the desired results. Perhaps the bounce rate has been too high, or the responses obtained have not been as expected. This is a possibility that is there and should not be ruled out. But you should not be discouraged because of this, but learn from it and make decisions that improve your future results.</p>
 <p>Cold mail tools like Overloop offer you multiple metrics that will help you review the performance of your email marketing campaigns. Be critical and make decisions, but always in a constructive way. Experience itself will help you optimize your email marketing campaigns better than anything else. Don't be afraid to do A/B tests to determine which versions of your emails work best. Also, do not rule out testing with a part of your audience, as a previous step to the definitive massive sending of cold emails. Both tools will help you measure the impact and response that your mass mailings can achieve in advance, so you should definitely include them in your email marketing strategy.</p>
 <p>In conclusion, I recommend you pay attention to all the phases of an email marketing campaign for your cold campaigns: technical aspects, database, planning, personalization, writing, tests and sending. All of them are important and require attention.</p>
