@@ -237,7 +237,36 @@
     .footer a:hover { color: #fff; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
 
+    /* Layout 2-col (TOC + content) */
+    .article-layout {
+      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
+      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
+    }
+    .toc {
+      position: sticky; top: 96px; padding: 8px 0;
+      max-height: calc(100vh - 120px); overflow-y: auto;
+    }
+    .toc__label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
+    }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a {
+      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
+      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
+      transition: var(--t); text-decoration: none !important;
+    }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active {
+      color: var(--color-primary); background: var(--color-primary-50);
+      border-left-color: var(--color-primary); font-weight: 600;
+    }
+
     @media (max-width: 991px) {
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
       :root { --page-px: 24px; }
       .point__body { padding-left: 0; }
       .related-grid { grid-template-columns: 1fr 1fr; }
@@ -408,7 +437,12 @@
       </div>
     </header>
     <!-- Content -->
-    <main class="prose" style="max-width:var(--container-blog);margin:0 auto;padding:40px var(--page-px,48px);">
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list"></ul>
+      </aside>
+      <main class="prose">
 <p>An important part of my job at Overloop is to help customers write cold email campaigns.</p>
 <p>While some of them write impactful case study material level emails, you'd be amazed at how many salespeople think that the sentences mentioned below are okay to use.</p>
 <p>Want to learn 17 different ways to kill your own sales?</p>
@@ -555,6 +589,7 @@
 <p>It's okay, you can say it, you've used some of these. I know I have!</p>
 <p>Now go clean up those sales emails!</p>
     </main>
+    </div>
 
     <!-- End CTA -->
     <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
@@ -567,11 +602,12 @@
     </section>
 
     <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:center;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
+    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
       <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">FP</div>
       <div>
         <div style="font-size:17px;font-weight:700;color:var(--color-text);">Forster Perelsztejn</div>
-        <div style="font-size:14px;color:var(--color-text-secondary);">Overloop</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Marketing Lead, Overloop</div>
+        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Marketing lead at Overloop. Covers cold email best practices, sales tactics, and outbound strategy.</p>
       </div>
     </section>
 
@@ -639,6 +675,43 @@
       }
       window.addEventListener('scroll', update, { passive: true });
       update();
+    })();
+  
+
+    // Auto-generate TOC from h2 elements in .prose
+    (function() {
+      var prose = document.querySelector('.prose');
+      var tocList = document.getElementById('toc-list');
+      if (!prose || !tocList) return;
+      var headings = prose.querySelectorAll('h2');
+      headings.forEach(function(h, i) {
+        if (!h.id) h.id = 'section-' + i;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      // Scroll-spy
+      var tocLinks = tocList.querySelectorAll('a');
+      var targets = Array.from(tocLinks).map(function(a) {
+        var id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(function(t) { return t.section; });
+
+      function onScroll() {
+        var scrollY = window.scrollY + 120;
+        var active = targets[0];
+        for (var j = 0; j < targets.length; j++) {
+          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
+        }
+        tocLinks.forEach(function(a) { a.classList.remove('active'); });
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     })();
   </script>
 

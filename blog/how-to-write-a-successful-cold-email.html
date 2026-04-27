@@ -471,7 +471,12 @@
       </div>
     </header>
     <!-- Content -->
-    <main class="prose" style="max-width:var(--container-blog);margin:0 auto;padding:40px var(--page-px,48px);">
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list"></ul>
+      </aside>
+      <main class="prose">
 <p>Cold emails continue to play a key role in B2B sales because they open doors to new business relationships and steady streams of leads. These messages can connect companies that might never cross paths and spark valuable conversations with decision makers. Whether you are aiming to reach a potential client, partner, or stakeholder, an effective cold email gets your offer in front of the right people without waiting for inbound interest.</p>
 
 <p>Many B2B sales teams rely on email outreach because it gives them direct control over their pipeline. Unlike methods like paid ads or social media, cold emails do not depend on algorithms or audiences that you do not own. With the right strategy, you can consistently generate outbound leads, share your value in a clear way, and start meaningful interactions that drive growth.</p>
@@ -791,6 +796,7 @@
 
 <p>A high-performing cold email strategy adapts to recipient feedback and market trends. Keep refining your sequences, personalize at every touchpoint, and leverage AI-powered tools to maintain both relevance and efficiency. Focus on creating value in every message, act on actionable data, and let thoughtful automation support your outreach at scale. These practices convert cold conversations into lasting revenue streams.</p>
     </main>
+    </div>
 
     <!-- End CTA -->
     <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
@@ -803,11 +809,12 @@
     </section>
 
     <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:center;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
+    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
       <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">VR</div>
       <div>
         <div style="font-size:17px;font-weight:700;color:var(--color-text);">Vincenzo Ruggiero</div>
-        <div style="font-size:14px;color:var(--color-text-secondary);">Overloop</div>
+        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Founder, Overloop</div>
+        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Founded Overloop in 2015. 10+ years building sales automation software. Personally tests every outbound tool on the market.</p>
       </div>
     </section>
 
@@ -875,6 +882,43 @@
       }
       window.addEventListener('scroll', update, { passive: true });
       update();
+    })();
+  
+
+    // Auto-generate TOC from h2 elements in .prose
+    (function() {
+      var prose = document.querySelector('.prose');
+      var tocList = document.getElementById('toc-list');
+      if (!prose || !tocList) return;
+      var headings = prose.querySelectorAll('h2');
+      headings.forEach(function(h, i) {
+        if (!h.id) h.id = 'section-' + i;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      // Scroll-spy
+      var tocLinks = tocList.querySelectorAll('a');
+      var targets = Array.from(tocLinks).map(function(a) {
+        var id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(function(t) { return t.section; });
+
+      function onScroll() {
+        var scrollY = window.scrollY + 120;
+        var active = targets[0];
+        for (var j = 0; j < targets.length; j++) {
+          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
+        }
+        tocLinks.forEach(function(a) { a.classList.remove('active'); });
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     })();
   </script>
 
