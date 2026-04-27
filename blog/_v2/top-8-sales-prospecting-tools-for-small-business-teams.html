@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<!--
+================================================================
+TEMPLATE V2: Best [Tool Type] in 2026
+DESIGN SYSTEM: Overloop canonical (landing Webflow)
+UPGRADED FROM: templates/best-tools.html (Onze v1)
+
+Applied changes from design-system-overloop.md:
+- Primary palette: #6366F1 → #A855F7 gradient (landing canonical) instead of flat #4F46E5
+- Font stack: Epilogue + JetBrains Mono + Playfair Display italic (vs Inter)
+- Added: reading progress bar, TL;DR summary card, <article> semantic, structured author meta
+- Added: FAQ accordion with <details>/<summary> (AEO-optimized)
+- Added: callouts (tip/warn/info/fact), methodology card, gradient text on stats
+- Fixed: H1 is properly H1 (was styled as H2), loads Epilogue 400-800 (no font synthesis)
+- Kept from Onze: TOC sticky + scroll-spy, tool-card featured, pros/cons, case study, CTAs
+- Test content: live copy from https://overloop.com/blog/best-ai-sales-tools
+================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8 Best Prospecting Tools for SMBs (Free &amp; Paid) | Overloop</title>
+  <meta name="description" content="Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.">
+  <link rel="canonical" href="https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams">
+  <link href="https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams" hreflang="en" rel="alternate"/>
+  <link href="https://overloop.com/de/blog/prospecting-tools-kleinunternehmen" hreflang="de" rel="alternate"/>
+  <link href="https://overloop.com/fr/blog/meilleurs-outils-prospection-pme" hreflang="fr" rel="alternate"/>
+  <link href="https://overloop.com/es/blog/herramientas-prospeccion-pymes" hreflang="es" rel="alternate"/>
+  <link href="https://overloop.com/it/blog/strumenti-prospezione-pmi" hreflang="it" rel="alternate"/>
+  <link href="https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams" hreflang="x-default" rel="alternate"/>
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent fallback) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="8 Best Prospecting Tools for SMBs (Free &amp; Paid)">
+  <meta property="og:description" content="Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.">
+  <meta property="og:image" content="https://overloop.com/assets/images/og/top-8-sales-prospecting-tools-for-small-business-teams.png">
+  <meta property="og:url" content="https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="8 Best Prospecting Tools for SMBs (Free &amp; Paid)">
+  <meta name="twitter:description" content="Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.">
+  <meta name="twitter:image" content="https://overloop.com/assets/images/og/top-8-sales-prospecting-tools-for-small-business-teams.png">
+
+  <style>
+    /* ==========================================================================
+       Overloop design system — canonical tokens (from overloop.com landing)
+       ========================================================================== */
+    :root {
+      /* Brand */
+      --color-primary:        #6366F1;
+      --color-primary-dark:   #4F46E5;
+      --color-primary-light:  #818CF8;
+      --color-primary-50:     #EEF2FF;
+      --color-primary-100:    #E0E7FF;
+      --color-secondary:      #A855F7;
+      --color-secondary-dark: #9333EA;
+      --color-secondary-50:   #FAF5FF;
+      --gradient-brand:       linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft:  linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg:     linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+
+      /* Neutrals */
+      --color-bg:             #FAFAFA;
+      --color-surface:        #F3F4F6;
+      --color-surface-alt:    #F8FAFC;
+      --color-white:          #FFFFFF;
+      --color-border:         #E5E7EB;
+      --color-border-light:   #F3F4F6;
+      --color-text:           #1A1A2E;
+      --color-text-body:      #374151;
+      --color-text-secondary: #64748B;
+      --color-muted:          #94A3B8;
+      --color-dark:           #1F2937;
+
+      /* Status */
+      --color-success:        #10B981;
+      --color-success-dark:   #059669;
+      --color-success-50:     #ECFDF5;
+      --color-warning:        #F59E0B;
+      --color-warning-50:     #FFFBEB;
+      --color-danger:         #EF4444;
+      --color-danger-50:      #FEF2F2;
+
+      /* Typography */
+      --font-sans:    'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent:  'Playfair Display', Georgia, serif;
+      --font-mono:    'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+      /* Radius */
+      --r-sm:   8px;
+      --r:      12px;
+      --r-lg:   16px;
+      --r-xl:   24px;
+      --r-pill: 100px;
+
+      /* Shadows */
+      --shadow-sm:   0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md:   0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg:   0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl:   0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow:        0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+
+      /* Layout */
+      --container-max:  1200px;
+      --container-blog: 800px;
+      --page-px:        48px;
+      --page-px-mobile: 16px;
+
+      /* Motion */
+      --t:      200ms ease;
+    }
+
+    /* Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text-body);
+      background: var(--color-bg);
+      line-height: 1.7;
+      font-size: 17px;
+    }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Utility: gradient text */
+    .gradient-text {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==========================================================================
+       Reading progress bar
+       ========================================================================== */
+    .reading-progress {
+      position: fixed; top: 0; left: 0; height: 3px; width: 0%;
+      background: var(--gradient-brand);
+      z-index: 1000; transition: width 100ms linear;
+    }
+
+    /* ==========================================================================
+       Nav
+       ========================================================================== */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; gap: 2rem;
+      height: 72px; padding: 0 var(--page-px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border-light);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* ==========================================================================
+       Buttons
+       ========================================================================== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 24px;
+      background: var(--color-primary); color: #fff;
+      border: none; border-radius: var(--r);
+      font-family: var(--font-sans); font-size: 15px; font-weight: 600;
+      text-decoration: none !important; cursor: pointer;
+      box-shadow: var(--shadow-md); transition: var(--t);
+    }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 16px 40px;
+      background: var(--gradient-brand); color: #fff;
+      border: none; border-radius: var(--r-lg);
+      font-family: var(--font-sans); font-size: 16px; font-weight: 600;
+      text-decoration: none !important; cursor: pointer;
+      box-shadow: var(--shadow-glow); transition: var(--t);
+    }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost {
+      background: transparent; color: var(--color-text); border: 1px solid var(--color-border);
+      box-shadow: none;
+    }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* ==========================================================================
+       Article hero
+       ========================================================================== */
+    .article-hero {
+      background: var(--gradient-hero-bg);
+      padding: 64px var(--page-px) 56px;
+      position: relative; overflow: hidden;
+    }
+    .article-hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%);
+      pointer-events: none;
+    }
+    .article-hero-inner {
+      max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: var(--r-pill);
+      background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20);
+      color: var(--color-primary);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .pill--glass {
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15);
+    }
+    .pill--dark { background: var(--color-text); color: #fff; border: none; }
+    .article-hero h1 {
+      font-size: clamp(32px, 5vw, 48px); font-weight: 800;
+      color: var(--color-text); line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead {
+      font-size: 19px; line-height: 1.6; color: var(--color-text-secondary);
+      max-width: 640px; margin: 0 auto 32px;
+    }
+
+    /* Article meta */
+    .article-meta {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 10px 18px; border-radius: var(--r-pill);
+      background: rgba(255,255,255,0.8); backdrop-filter: blur(8px);
+      border: 1px solid var(--color-border-light);
+    }
+    .article-meta__avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gradient-brand);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 700; font-size: 13px;
+    }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* ==========================================================================
+       Layout 2-col (TOC + content)
+       ========================================================================== */
+    .article-layout {
+      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
+      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
+    }
+
+    /* TOC */
+    .toc {
+      position: sticky; top: 96px; padding: 8px 0;
+      max-height: calc(100vh - 120px); overflow-y: auto;
+    }
+    .toc__label {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-primary); margin-bottom: 12px;
+    }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a {
+      display: block; padding: 8px 12px;
+      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
+      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
+      transition: var(--t); text-decoration: none !important;
+    }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active {
+      color: var(--color-primary); background: var(--color-primary-50);
+      border-left-color: var(--color-primary); font-weight: 600;
+    }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Main content */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 {
+      font-size: 30px; font-weight: 800; color: var(--color-text);
+      letter-spacing: -0.01em; line-height: 1.2;
+      margin: 48px 0 16px; scroll-margin-top: 96px;
+    }
+    .prose h3 {
+      font-size: 22px; font-weight: 700; color: var(--color-text);
+      margin: 32px 0 10px; line-height: 1.3;
+    }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* ==========================================================================
+       TL;DR summary card (new — AEO-critical)
+       ========================================================================== */
+    .tldr {
+      background: var(--gradient-brand-soft);
+      border: 1px solid rgba(99,102,241,0.15);
+      border-radius: var(--r-lg);
+      padding: 28px 32px;
+      margin: 0 0 32px;
+    }
+    .tldr__label {
+      display: inline-block;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-primary); margin-bottom: 10px;
+    }
+    .tldr__title { font-size: 20px; font-weight: 700; color: var(--color-text); margin-bottom: 14px; line-height: 1.3; }
+    .tldr p { font-size: 16px; color: var(--color-text-body); margin: 0; line-height: 1.65; }
+    .tldr strong { color: var(--color-text); }
+
+    /* ==========================================================================
+       Callouts (tip / warn / info / fact)
+       ========================================================================== */
+    .callout {
+      display: grid; grid-template-columns: auto 1fr; gap: 16px;
+      padding: 18px 22px; border-radius: var(--r-lg);
+      border-left: 4px solid; margin: 24px 0;
+    }
+    .callout__icon {
+      width: 32px; height: 32px; border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* Author intro section */
+    .author-intro {
+      background: var(--gradient-brand-soft);
+      border: 1px solid var(--color-primary-100);
+      border-radius: var(--radius-xl);
+      padding: 28px 32px;
+      margin: 32px 0;
+    }
+    .author-intro__header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-primary-100);
+    }
+    .author-intro__photo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-primary-light);
+      flex-shrink: 0;
+    }
+    .author-intro__info {
+      display: flex;
+      flex-direction: column;
+    }
+    .author-intro__info strong {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .author-intro__info span {
+      font-size: 14px;
+      color: var(--color-text-muted);
+      margin-top: 2px;
+    }
+    .author-intro__text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      margin: 0 0 12px;
+    }
+    .author-intro__text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Expert callout (replaces generic tip for named expert quotes) */
+    .callout--expert {
+      background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%);
+      border-left-color: var(--color-success);
+      grid-template-columns: auto 1fr;
+      gap: 18px; padding: 22px 26px;
+      align-items: start;
+    }
+    .callout--expert .callout__avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-success);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+      flex-shrink: 0;
+    }
+    .callout--expert .callout__author {
+      display: block; font-size: 13px; font-weight: 700; color: var(--color-text);
+      margin-bottom: 2px;
+    }
+    .callout--expert .callout__author-role {
+      display: block; font-family: var(--font-mono); font-size: 11px;
+      color: var(--color-success-dark); letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    /* Tested-by banner (trust signal after article-meta) */
+    .tested-banner {
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-top: 18px;
+      padding: 10px 20px;
+      background: var(--color-primary-50);
+      border: 1px solid rgba(16, 185, 129, 0.20);
+      border-radius: var(--r-pill);
+      font-size: 13px; font-weight: 600; color: var(--color-success-dark);
+    }
+    .tested-banner__avatars {
+      display: flex; align-items: center;
+    }
+    .tested-banner__avatars img {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 2px solid #fff; object-fit: cover;
+      margin-left: -8px;
+    }
+    .tested-banner__avatars img:first-child { margin-left: 0; }
+    .tested-banner i { width: 14px; height: 14px; color: var(--color-success); }
+
+    /* Expert panel section */
+    .expert-panel {
+      max-width: var(--container-blog); margin: 56px auto;
+      padding: 0 var(--page-px);
+    }
+    .expert-panel__header {
+      text-align: center; margin-bottom: 32px;
+    }
+    .expert-panel__header h3 {
+      font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px;
+    }
+    .expert-panel__header p {
+      font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto;
+    }
+    .expert-panel__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .expert-bio {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl);
+      padding: 28px 24px;
+      text-align: center;
+      transition: var(--t);
+    }
+    .expert-bio:hover {
+      border-color: var(--color-primary);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .expert-bio__photo {
+      width: 80px; height: 80px; border-radius: 50%;
+      object-fit: cover; margin: 0 auto 16px;
+      border: 3px solid transparent;
+      background: linear-gradient(var(--color-white), var(--color-white)) padding-box,
+                  var(--gradient-brand) border-box;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15);
+      display: block;
+    }
+    .expert-bio__name {
+      font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px;
+    }
+    .expert-bio__role {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+      color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .expert-bio__text {
+      font-size: 13px; line-height: 1.6; color: var(--color-text-body);
+      margin-bottom: 16px; text-align: left;
+    }
+    .expert-bio__linkedin {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600; color: var(--color-primary);
+      text-decoration: none;
+    }
+    .expert-bio__linkedin:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    @media (max-width: 991px) {
+      .expert-panel__grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    }
+
+    /* Compare link on tool cards */
+    .tool-card__compare {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; padding: 8px 16px;
+      background: var(--gradient-brand-soft);
+      border: 1px solid rgba(99,102,241,0.18);
+      border-radius: var(--r-pill);
+      font-size: 13px; font-weight: 600; color: var(--color-primary);
+      text-decoration: none !important; transition: var(--t);
+    }
+    .tool-card__compare:hover {
+      background: rgba(99,102,241,0.12); border-color: var(--color-primary);
+      box-shadow: var(--shadow-sm); transform: translateX(2px);
+    }
+    .tool-card__compare i { width: 14px; height: 14px; }
+
+    /* ==========================================================================
+       Methodology card (adapted from landing)
+       ========================================================================== */
+    .methodology {
+      background: linear-gradient(135deg, #EEF2FF 0%, #FAF5FF 50%, #ECFDF5 100%);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      border-radius: var(--r-xl); padding: 36px;
+      box-shadow: var(--shadow-lg);
+      margin: 24px 0 32px;
+      position: relative;
+    }
+    .methodology::before {
+      content: ''; position: absolute; inset: -2px; border-radius: var(--r-xl);
+      background: var(--gradient-brand); z-index: -1;
+    }
+    .methodology__head {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+      padding-bottom: 20px; border-bottom: 1px solid rgba(99,102,241,0.15);
+    }
+    .methodology__badge {
+      width: 52px; height: 52px; border-radius: var(--r);
+      background: var(--gradient-brand);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .methodology__badge svg { color: #fff; width: 24px; height: 24px; }
+    .methodology__title { font-size: 20px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .methodology__title span { display: block; font-size: 12px; font-weight: 600; color: var(--color-text-secondary); font-family: var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .methodology__pills {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;
+    }
+    .methodology__pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 12px; border-radius: var(--r-pill);
+      background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20);
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      color: var(--color-primary); letter-spacing: 0.02em;
+    }
+    .methodology__pill i { width: 12px; height: 12px; }
+    .methodology__list { display: grid; gap: 14px; }
+    .methodology__item {
+      display: grid; grid-template-columns: 28px 1fr; gap: 12px; align-items: start;
+      font-size: 14px; line-height: 1.55;
+    }
+    .methodology__item svg {
+      color: var(--color-success); flex-shrink: 0; margin-top: 2px;
+      width: 18px; height: 18px;
+    }
+    .methodology__item strong { color: var(--color-text); }
+    .methodology__expand {
+      margin-top: 18px; border-top: 1px solid rgba(99,102,241,0.12); padding-top: 14px;
+    }
+    .methodology__expand summary {
+      cursor: pointer; list-style: none;
+      font-size: 13px; font-weight: 700; color: var(--color-primary);
+      display: flex; align-items: center; gap: 6px;
+    }
+    .methodology__expand summary::-webkit-details-marker { display: none; }
+    .methodology__expand summary::after {
+      content: "+"; font-size: 16px; font-weight: 700;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(99,102,241,0.10); color: var(--color-primary);
+      display: flex; align-items: center; justify-content: center;
+      line-height: 22px; text-align: center; transition: var(--t);
+    }
+    .methodology__expand details[open] summary::after {
+      content: "\2212"; background: var(--color-primary); color: #fff;
+    }
+    .methodology__expand .methodology__detail-body {
+      padding-top: 14px; font-size: 14px; line-height: 1.65; color: var(--color-text-body);
+    }
+
+    /* ==========================================================================
+       TL;DR comparison table
+       ========================================================================== */
+    .tldr-table-wrap {
+      overflow-x: auto; border-radius: var(--r-lg);
+      border: 1px solid var(--color-border);
+      margin: 24px 0 40px;
+    }
+    .tldr-table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      font-size: 14px; background: #fff;
+    }
+    .tldr-table thead th {
+      position: sticky; top: 0;
+      background: var(--color-text); color: #fff;
+      padding: 14px 18px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+      text-align: left; text-transform: uppercase;
+    }
+    .tldr-table tbody td {
+      padding: 14px 18px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .tldr-table tbody tr:last-child td { border-bottom: none; }
+    .tldr-table tbody tr:hover { background: var(--color-primary-50); }
+    .tldr-table tbody tr.featured {
+      background: linear-gradient(90deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+    }
+    .tldr-table tbody tr.featured:hover {
+      background: linear-gradient(90deg, var(--color-primary-100) 0%, #F3E8FF 100%);
+    }
+    .tldr-table .tool-cell {
+      display: inline-flex; align-items: center; gap: 10px;
+    }
+    .tldr-table .tool-logo {
+      width: 28px; height: 28px; border-radius: 6px;
+      background: var(--color-surface); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-weight: 700; font-size: 10px;
+      color: var(--color-text-secondary);
+    }
+    .tldr-table .tool-name { font-weight: 700; color: var(--color-text); }
+    .tldr-table .badge {
+      display: inline-block; background: var(--gradient-brand); color: #fff;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+      padding: 2px 8px; border-radius: var(--r-pill); margin-left: 6px;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .tldr-table .price, .tldr-table .rating { font-family: var(--font-mono); font-size: 13px; }
+    .tldr-table .rating strong { color: var(--color-text); }
+
+    /* ==========================================================================
+       Category jump pills
+       ========================================================================== */
+    .jump-nav {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      padding: 18px; background: var(--color-surface);
+      border-radius: var(--r-lg); margin: 24px 0 40px;
+    }
+    .jump-nav a {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 14px; background: #fff;
+      border: 1px solid var(--color-border-light); border-radius: var(--r-pill);
+      font-size: 13px; font-weight: 600; color: var(--color-text-body);
+      text-decoration: none !important; transition: var(--t);
+    }
+    .jump-nav a:hover {
+      border-color: var(--color-primary); color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .jump-nav a .num { font-family: var(--font-mono); color: var(--color-primary); font-weight: 700; font-size: 11px; }
+
+    /* ==========================================================================
+       Tool card
+       ========================================================================== */
+    .tool-card {
+      background: var(--color-white); border: 1px solid var(--color-border);
+      border-radius: var(--r-xl); padding: 36px 32px;
+      margin: 28px 0;
+      transition: var(--t);
+    }
+    .tool-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+    .tool-card.featured {
+      border: 2px solid transparent;
+      background:
+        linear-gradient(var(--color-white), var(--color-white)) padding-box,
+        var(--gradient-brand) border-box;
+      position: relative;
+    }
+    .tool-card.featured::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gradient-brand-soft);
+      border-radius: var(--r-xl); z-index: 0; pointer-events: none;
+    }
+    .tool-card.featured > * { position: relative; z-index: 1; }
+    .tool-card__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .tool-card__title { display: flex; align-items: center; gap: 14px; }
+    .tool-card__logo {
+      width: 52px; height: 52px; border-radius: var(--r);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-mono); font-weight: 700; font-size: 12px;
+      color: #fff; background: var(--color-muted); flex-shrink: 0;
+    }
+    .tool-card.featured .tool-card__logo { background: var(--gradient-brand); box-shadow: var(--shadow-glow); }
+    .tool-card__info h3 { font-size: 24px !important; font-weight: 800 !important; margin: 0 0 4px !important; }
+    .tool-card__rank { font-family: var(--font-mono); font-size: 12px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .tool-card__rating { text-align: right; flex-shrink: 0; }
+    .tool-card__rating .stars { color: var(--color-warning); font-size: 14px; letter-spacing: 1px; }
+    .tool-card__rating .rating-text { font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary); margin-top: 4px; }
+    .tool-card__best-for {
+      display: inline-block; margin: 8px 0 18px;
+      padding: 6px 14px; background: var(--color-surface);
+      border: 1px solid var(--color-border-light); border-radius: var(--r-pill);
+      font-size: 13px; font-weight: 600; color: var(--color-text-body);
+    }
+    .tool-card.featured .tool-card__best-for {
+      background: rgba(99,102,241,0.10); border-color: rgba(99,102,241,0.25); color: var(--color-primary);
+    }
+    .tool-card p { font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Pros / cons */
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    .pros-col, .cons-col { padding: 18px 20px; border-radius: var(--r-lg); }
+    .pros-col { background: var(--color-success-50); }
+    .cons-col { background: var(--color-danger-50); }
+    .pros-col h4, .cons-col h4 {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .pros-col h4 { color: var(--color-success-dark); }
+    .cons-col h4 { color: #B91C1C; }
+    .pros-col ul, .cons-col ul { list-style: none; padding: 0; margin: 0; }
+    .pros-col li, .cons-col li { padding: 4px 0 4px 22px; font-size: 14px; position: relative; line-height: 1.55; }
+    .pros-col li::before { content: "✓"; position: absolute; left: 0; color: var(--color-success-dark); font-weight: 700; }
+    .cons-col li::before { content: "×"; position: absolute; left: 0; color: #B91C1C; font-weight: 700; font-size: 18px; line-height: 1; top: 4px; }
+
+    /* Case study box */
+    .case-study {
+      background: var(--color-text);
+      border-radius: var(--r-lg);
+      padding: 32px 34px; margin: 22px 0;
+      position: relative; overflow: hidden;
+      border-left: 4px solid var(--color-primary-light);
+    }
+    .case-study::before {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%);
+    }
+    .case-study__label {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--color-primary-light); margin-bottom: 10px; position: relative;
+    }
+    .case-study__metric {
+      font-size: 54px; font-weight: 800; line-height: 1;
+      margin-bottom: 8px; position: relative;
+      background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text;
+      color: transparent; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 18px rgba(99, 102, 241, 0.35));
+    }
+    .case-study__desc { font-size: 15px; color: rgba(255,255,255,0.95); margin: 0; position: relative; line-height: 1.55; }
+
+    /* User quote */
+    .user-quote {
+      background: var(--color-surface); border-radius: var(--r); padding: 18px 22px;
+      margin: 18px 0; font-size: 15px; color: var(--color-text-body);
+      font-style: italic; line-height: 1.6;
+      border-left: 3px solid var(--color-primary);
+    }
+    .user-quote cite {
+      display: block; font-style: normal; font-family: var(--font-mono);
+      font-size: 12px; color: var(--color-text-secondary); margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* G2 inline source */
+    .g2-source { display: inline; font-size: 12px; color: var(--color-text-secondary); font-style: italic; }
+    .g2-source a { font-size: 12px; color: var(--color-primary); }
+
+    /* ==========================================================================
+       CTA blocks
+       ========================================================================== */
+    .cta-inline {
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+      padding: 20px 24px; margin: 28px 0;
+      background: var(--color-primary-50);
+      border: 1px solid rgba(99,102,241,0.20);
+      border-radius: var(--r-lg);
+    }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+
+    .cta-banner {
+      padding: 40px; border-radius: var(--r-xl);
+      margin: 40px 0;
+      background: var(--gradient-brand);
+      color: #fff;
+      position: relative; overflow: hidden;
+      box-shadow: var(--shadow-glow);
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; top: -50%; right: -10%;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    }
+    .cta-banner__inner { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+    .cta-banner h3 { font-size: 24px; font-weight: 800; color: #fff !important; margin: 0 0 8px !important; }
+    .cta-banner p { font-size: 15px; color: rgba(255,255,255,0.9); margin: 0; }
+    .cta-banner .btn {
+      background: #fff; color: var(--color-primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .cta-banner .btn:hover { background: #fff; color: var(--color-primary-dark); box-shadow: 0 8px 30px rgba(0,0,0,0.25); transform: translateY(-2px); }
+
+    /* End-of-article hard CTA */
+    .cta-hard {
+      max-width: var(--container-blog); margin: 56px auto;
+      padding: 56px 40px;
+      background: var(--color-text); color: #fff;
+      border-radius: var(--r-xl);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-hard::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%),
+                  radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%);
+    }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* ==========================================================================
+       Comparison / decision framework
+       ========================================================================== */
+    .framework-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .framework-card {
+      padding: 22px 24px; background: var(--color-white);
+      border: 1px solid var(--color-border-light); border-radius: var(--r-lg);
+      transition: var(--t);
+    }
+    .framework-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+    .framework-card h4 { font-size: 15px; font-weight: 700; color: var(--color-text); margin-bottom: 8px; }
+    .framework-card p { font-size: 14px; line-height: 1.6; color: var(--color-text-body); margin: 0; }
+    .framework-card .rec { color: var(--color-primary); font-weight: 700; }
+
+    /* ==========================================================================
+       FAQ accordion (AEO-critical)
+       ========================================================================== */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details {
+      border-bottom: 1px solid var(--color-border-light);
+    }
+    .faq summary {
+      list-style: none; cursor: pointer;
+      padding: 20px 0;
+      font-size: 17px; font-weight: 700; color: var(--color-text);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      transition: var(--t);
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+"; flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--color-surface); color: var(--color-primary);
+      font-size: 18px; font-weight: 700; line-height: 28px; text-align: center;
+      transition: var(--t);
+    }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* ==========================================================================
+       Author card + related
+       ========================================================================== */
+    .author-card {
+      max-width: var(--container-blog); margin: 48px auto;
+      padding: 28px 32px;
+      background: var(--color-white); border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl);
+      display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;
+    }
+    .author-card__avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--gradient-brand); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow);
+    }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card {
+      display: block; padding: 20px; background: #fff;
+      border: 1px solid var(--color-border-light); border-radius: var(--r-lg);
+      text-decoration: none !important; transition: var(--t);
+    }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+
+    /* Newsletter */
+    .newsletter {
+      max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px;
+      background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15);
+      border-radius: var(--r-xl);
+      text-align: center;
+    }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input {
+      flex: 1; padding: 14px 18px; border-radius: var(--r);
+      border: 1px solid var(--color-border); background: #fff;
+      font-family: var(--font-sans); font-size: 14px;
+    }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+
+    /* ==========================================================================
+       Footer
+       ========================================================================== */
+    .footer {
+      background: var(--color-text); color: rgba(255,255,255,0.7);
+      padding: 48px var(--page-px) 32px; margin-top: 64px;
+    }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* ==========================================================================
+       Responsive
+       ========================================================================== */
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .cta-banner__inner { grid-template-columns: 1fr; text-align: center; }
+      .framework-grid, .pros-cons { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .prose h2 { font-size: 24px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Reading progress -->
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       ARTICLE
+       ========================================================================= -->
+  <article>
+
+    <!-- Hero -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Buyer's Guide
+        </span>
+        <h1>8 Best Prospecting Tools for SMBs (Free &amp; Paid)</h1>
+        <p class="lead">Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.</p>
+        <div class="article-meta">
+          <div class="article-meta__avatar">VR</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Vincenzo Ruggiero</div>
+            <div class="article-meta__dates">Published Feb 6, 2025 · Updated Apr 27, 2026 · 10 min read</div>
+          </div>
+        </div>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts · 47,000+ emails · 6 months of data
+        </div>
+      </div>
+    </header>
+
+    <!-- 2-col layout -->
+    <div class="article-layout">
+
+      <!-- TOC -->
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul>
+          <li><a href="#how-tested" class="active">How we tested</a></li>
+          <li><a href="#categories">The six categories</a></li>
+          <li><a href="#category-bdr">1 · AI BDR Tools</a></li>
+          <li><a href="#category-email">2 · AI Email Outreach</a></li>
+          <li><a href="#category-linkedin">3 · AI LinkedIn Outreach</a></li>
+          <li><a href="#category-enrichment">4 · Data Enrichment</a></li>
+          <li><a href="#category-intelligence">5 · Conversation Intelligence</a></li>
+          <li><a href="#category-coaching">6 · AI Email Coaching</a></li>
+        </ul>
+        <div class="toc__group">
+          <ul>
+            <li><a href="#comparison">Full comparison</a></li>
+            <li><a href="#how-to-choose">How to choose</a></li>
+            <li><a href="#pitfalls">What to watch for</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="prose">
+
+<p>Struggling to find leads or manage outreach with limited resources? These <strong>8 sales prospecting tools</strong> can help small business teams simplify workflows, automate tasks, and close more deals. From <a href="https://overloop.com/features">AI-driven lead generation</a> to CRM integration, these tools are designed to save time and improve productivity. Here's a quick look.</p><ul>
+<li><strong><a href="https://overloop.com/">Overloop AI</a></strong>: Automates outreach with a database of 450M+ contacts.</li>
+<li><strong><a href="https://business.linkedin.com/sales-solutions/sales-navigator" target="_blank">LinkedIn Sales Navigator</a></strong>: Leverages LinkedIn’s network for targeted B2B outreach.</li>
+<li><strong><a href="https://www.apollo.io/" target="_blank">Apollo.io</a></strong>: Multi-channel outreach with data enrichment and CRM sync.</li>
+<li><strong>ZoomInfo</strong>: Real-time contact data and <a href="https://support.overloop.com/en/articles/3343552-crm-integrations-settings">seamless CRM integration</a>.</li>
+<li><strong>G2 Buyer Intent Data</strong>: Tracks buyer behavior to prioritize high-interest leads.</li>
+<li><strong><a href="https://www.storylane.io/" target="_blank">Storylane</a></strong>: Creates personalized product demos in minutes.</li>
+<li><strong><a href="https://www.lusha.com/" target="_blank">Lusha</a></strong>: Provides verified contact details for accurate targeting.</li>
+<li><strong><a href="https://www.hubspot.com/products/crm" target="_blank">HubSpot</a> Sales</strong>: Combines CRM with automation for streamlined prospecting.</li>
+</ul><p>Use these tools individually or together to generate leads, automate repetitive tasks, and focus on closing deals. Below, you'll find detailed insights into each tool and how they can help your team.</p><h2 id="1.-overloop-ai">1. <a href="https://overloop.com/">Overloop AI</a></h2><p><img alt="Overloop AI" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2fc_overloop.com-c7f1352ae441b37983135869c26c67b7.jpeg"/></p><p>Overloop AI is an <a href="https://overloop.com/partners">AI-powered sales prospecting</a> tool designed to help small business teams expand their outreach efforts efficiently. With access to a massive B2B database of over 450 million contacts, it opens up a world of potential leads for small businesses.</p><p>Overloop AI combines affordability with powerful features, making it a go-to solution for small teams aiming to grow their sales pipeline. Its AI-driven tools handle personalization and outreach with minimal manual effort, which is a huge plus for teams with limited resources. In fact, businesses using Overloop AI report an <strong>average 25% growth in their sales pipeline</strong>.</p><p>Here’s what makes Overloop AI a strong choice for small teams:</p><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>How It Helps Small Teams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI-Powered Lead Management</td>
+<td>Simplifies lead identification, segmentation, and outreach</td>
+</tr>
+<tr>
+<td>High-Quality Contact Data</td>
+<td>Reduces bounce rates with accurate information</td>
+</tr>
+<tr>
+<td><a href="https://support.overloop.com/en/collections/2379682-campaigns-and-workflows">Automated Campaigns</a></td>
+<td>Creates tailored outreach sequences with little manual work</td>
+</tr>
+<tr>
+<td>CRM Integration</td>
+<td>Works seamlessly with tools like <a href="https://www.salesforce.com/" target="_blank">Salesforce</a> and HubSpot</td>
+</tr>
+<tr>
+<td>Global Reach</td>
+<td>Supports outreach in over 80 languages for international efforts</td>
+</tr>
+</tbody>
+</table><p>Small businesses have seen real results. For example, a tech startup using Overloop AI's <a href="https://support.overloop.com/en/collections/3427126-linkedin-outreach-automation">automated outreach features</a> achieved a <strong>30% boost in qualified leads</strong> within just three months.</p><p>The platform also includes a Chrome extension that integrates with LinkedIn, making it easy to combine social selling with email campaigns. This multi-channel approach, paired with automation, helps small teams stay on top of prospecting without burning out.</p><blockquote>
+<p>"Overloop AI streamlines sales processes for small teams, reducing manual tasks and enabling focus on relationship-building", says founder Vincenzo Ruggiero.</p>
+</blockquote><p>Overloop AI offers flexible, credit-based pricing that makes advanced prospecting tools accessible to growing businesses. While it’s a strong choice for automation and multi-channel outreach, tools like LinkedIn Sales Navigator can complement it for more focused social selling strategies.</p><h2 id="2.-linkedin-sales-navigator">2. <a href="https://business.linkedin.com/sales-solutions/sales-navigator" target="_blank">LinkedIn Sales Navigator</a></h2><p><img alt="LinkedIn Sales Navigator" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2f9_business.linkedin.com-52a1121061217cf80f6b3dbb4c4e3144.jpeg"/></p><p>LinkedIn Sales Navigator is a prospecting tool designed to help sales teams tap into LinkedIn's extensive professional network. Its advanced search features and targeted tools are particularly useful for small business teams aiming to optimize their outreach efforts.</p><p>The platform's <strong>advanced search filters</strong> allow teams to zero in on decision-makers based on industry, role, or company size. Another standout feature, <strong>TeamLink</strong>, uses LinkedIn's network to identify potential warm introductions, making it ideal for B2B outreach.</p><h3 id="key-features-and-their-benefits">Key Features and Their Benefits</h3><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>How It Helps Your Business</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Advanced Search Filters</td>
+<td>Pinpoint industries, company sizes, and decision-makers</td>
+</tr>
+<tr>
+<td>InMail Credits</td>
+<td>Send direct messages to prospects outside your network</td>
+</tr>
+<tr>
+<td>SmartLinks</td>
+<td>Monitor engagement with shared content for better follow-ups</td>
+</tr>
+<tr>
+<td>CRM Integration</td>
+<td>Automates contact updates and simplifies lead management</td>
+</tr>
+<tr>
+<td>Live Prospect Activity Updates</td>
+<td>Keep track of prospect actions and company news</td>
+</tr>
+</tbody>
+</table><p>SmartLinks, for instance, let you track how prospects interact with shared content, giving your team actionable insights for more personalized follow-ups.</p><blockquote>
+<p>"LinkedIn Sales Navigator streamlines lead management and enables teams to efficiently track and handle leads within their familiar CRM interface, automatically updating contact details to keep information current", according to a recent platform analysis <a href="https://dripify.io/linkedin-sales-navigator-benefits/" target="_blank"><sup>[1]</sup></a><a href="https://evaboot.com/blog/linkedin-sales-navigator-benefits" target="_blank"><sup>[3]</sup></a>.</p>
+</blockquote><p>The tool's advanced search removes limitations, allowing consistent prospecting. When integrated with a CRM, Sales Navigator ensures lead data stays updated, creating a smooth and efficient workflow.</p><p>While LinkedIn Sales Navigator shines in leveraging professional networks, tools like Apollo.io provide additional multi-channel outreach options <a href="https://www.bardeen.ai/answers/what-is-apollo-io" target="_blank"><sup>[2]</sup></a><a href="https://www.uplead.com/how-to-use-apollo-io/" target="_blank"><sup>[4]</sup></a>.</p><h2 id="3.-apollo.io">3. <a href="https://www.apollo.io/" target="_blank">Apollo.io</a></h2><p><img alt="Apollo.io" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded302_www.apollo.io-b51123d1c3a3c295c38ca46f71e8cce0.jpeg"/></p><p>Apollo.io takes LinkedIn Sales Navigator's networking capabilities a step further by offering tools for data enrichment and multi-channel outreach. With access to an extensive database of professionals and companies, the platform uses AI-powered prospecting tools to help small teams expand their reach efficiently.</p><p>Apollo.io stands out for its ability to target prospects with precision. <a href="https://support.overloop.com/en/articles/4501456-filters">Advanced filters</a> - such as seniority, industry, and company size - make it easy to narrow down and find the right leads. Its all-in-one interface supports communication across multiple channels, including email, phone, LinkedIn, and text, making outreach seamless.</p><p>For small teams with limited resources, Apollo.io offers tools that simplify and enhance their efforts:</p><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>How It Helps Small Teams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chrome Extension</strong></td>
+<td>Quickly pulls verified contact details from LinkedIn profiles</td>
+</tr>
+<tr>
+<td><strong>Data Enrichment</strong></td>
+<td>Ensures prospect information stays accurate and current</td>
+</tr>
+<tr>
+<td><strong><a href="https://support.overloop.com/en/articles/4104056-about-workflows">Automated Workflows</a></strong></td>
+<td>Enables personalized outreach at scale</td>
+</tr>
+<tr>
+<td><strong>CRM Integration</strong></td>
+<td>Syncs data with platforms like Salesforce and HubSpot</td>
+</tr>
+<tr>
+<td><strong>Real-time Alerts</strong></td>
+<td>Keeps teams engaged without extra manual work</td>
+</tr>
+</tbody>
+</table><blockquote>
+<p>"Apollo.io's data enrichment tools seamlessly update and enhance existing CRM and contact data, ensuring that sales teams have access to accurate and up-to-date information about their prospects" <a href="https://www.bardeen.ai/answers/what-is-apollo-io" target="_blank"><sup>[2]</sup></a><a href="https://www.uplead.com/how-to-use-apollo-io/" target="_blank"><sup>[4]</sup></a>.</p>
+</blockquote><p>When paired with tools like ZoomInfo for deeper market insights, Apollo.io becomes a strong resource for small teams looking to optimize their outreach efforts.</p><h2 id="4.-zoominfo">4. ZoomInfo</h2><p><img alt="ZoomInfo" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2ff_www.zoominfo.com-7bb12eeaf25117f4fb34ad40dcc7f92f.jpeg"/></p><p>ZoomInfo stands out by offering precise data and smooth CRM integrations, making it a go-to tool for small business prospecting. This sales intelligence platform provides real-time contact information and advanced prospecting tools, backed by an AI-powered database that processes over 100,000 updates daily.</p><p>With its real-time updates and CRM integrations, ZoomInfo helps small teams work more efficiently. By syncing directly with popular platforms like Salesforce, HubSpot, and <a href="https://www.microsoft.com/en-us/dynamics-365" target="_blank">Microsoft Dynamics</a>, it eliminates the need for manual data entry, ensuring information is always accurate and consistent.</p><table>
+<thead>
+<tr>
+<th>Feature Category</th>
+<th>Benefits for Small Teams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Enrichment</strong></td>
+<td>Keeps contact information current with daily updates</td>
+</tr>
+<tr>
+<td><strong>Prospecting Tools</strong></td>
+<td>Enables <a href="https://support.overloop.com/en/articles/3343676-tips-tricks-for-successful-email-outreach">outreach via email</a>, phone, and social media</td>
+</tr>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Simplifies workflows and repetitive tasks</td>
+</tr>
+<tr>
+<td><strong>CRM Integration</strong></td>
+<td>Seamlessly connects with major CRM systems</td>
+</tr>
+<tr>
+<td><strong>Search Features</strong></td>
+<td>Precisely identifies target audiences</td>
+</tr>
+</tbody>
+</table><p>For small business teams, ZoomInfo's advanced search capabilities make it easier to find and connect with key decision-makers. Its automation tools handle repetitive tasks, freeing up time for building meaningful connections.</p><blockquote>
+<p>"ZoomInfo streamlines prospecting and boosts conversion rates." - Mary Shea, Principal Analyst at Forrester <a href="https://evaboot.com/blog/linkedin-sales-navigator-benefits" target="_blank"><sup>[3]</sup></a></p>
+</blockquote><p>ZoomInfo also offers a <a href="https://support.overloop.com/en/articles/3343530-do-you-have-a-free-trial">free trial</a>, giving small teams the chance to test its features before committing. When paired with tools like Apollo.io's outreach capabilities, ZoomInfo becomes a powerful asset for crafting an effective sales prospecting strategy.</p><h2 id="5.-g2-buyer-intent-data">5. G2 Buyer Intent Data</h2><p><img alt="G2" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded305_www.g2.com-b0c54346319a1ebe853fea0391a7f720.jpeg"/></p><p>G2 Buyer Intent Data changes the way small business sales teams find and engage with potential customers. By analyzing millions of B2B buyer activities, the platform highlights high-interest leads - tracking when prospects research products, compare options, and more - and turns these actions into clear, actionable insights.</p><table>
+<thead>
+<tr>
+<th>Intent Signal Type</th>
+<th>What It Tells You</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Research Activity</strong></td>
+<td>Identifies prospects exploring solutions or researching categories</td>
+</tr>
+<tr>
+<td><strong>Competitor Analysis</strong></td>
+<td>Highlights chances to engage buyers comparing your product to others</td>
+</tr>
+<tr>
+<td><strong>Content Downloads</strong></td>
+<td>Pinpoints areas of interest or specific challenges prospects face</td>
+</tr>
+<tr>
+<td><strong>Review Engagement</strong></td>
+<td>Signals serious consideration of a purchase</td>
+</tr>
+</tbody>
+</table><p>For small business teams, this means focusing their time and resources on leads most likely to convert. G2 Buyer Intent Data integrates with CRM systems, adding real-time signals that help prioritize efforts on high-value opportunities.</p><p>When a prospect engages in several activities, real-time alerts notify teams, ensuring timely follow-up. G2's scoring system brings it all together, combining different intent signals into a clear picture of how ready a lead is to buy.</p><p>Small businesses can take it a step further by pairing G2 Buyer Intent Data with tools like ZoomInfo for accurate contact details. This combination creates a strong prospecting system, enabling precise and timely outreach that boosts conversion rates.</p><p>While G2 Buyer Intent Data helps identify top leads, solutions like Storylane can assist in crafting personalized experiences that turn those leads into loyal customers.</p><h2 id="6.-storylane">6. <a href="https://www.storylane.io/" target="_blank">Storylane</a></h2><p><img alt="Storylane" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710be1fd4bb8ecded3bb_www.storylane.io-4c5aed05c304260644da7ac83e014adb.jpeg"/></p><p>Storylane takes the leads identified by G2 Buyer Intent Data and turns them into personalized, interactive product experiences. With this platform, teams can create custom product demos in as little as 10 minutes - no technical skills required.</p><p>The platform offers various demo options, from simple screenshot overviews to fully editable HTML demos. It also includes a centralized Demo Hub, making it easy to manage and access all demos. One standout feature, "Demo Reveal", provides actionable insights such as company details and engagement metrics, helping teams focus on the most promising leads and craft personalized follow-ups.</p><blockquote>
+<p>"Storylane helps our prospects test the product at their own pace. It also enables more people to actually assess the product during the proof of concept stage, leading to much higher conversions." - Matthew Weisberg, Ex-Director, Solution Consulting</p>
+</blockquote><p>Storylane delivers tangible results, including a 45% increase in sales velocity and demo-to-customer conversion rates of up to 10%. It integrates seamlessly with CRM tools like Salesforce and HubSpot, ensuring smoother workflows. Pricing starts at $40 per user per month, with a free plan available for beginners.</p><p>When combined with tools like G2 Buyer Intent Data, Storylane helps small teams turn intent signals into targeted demos that speed up the sales cycle. For those looking to further boost lead generation, tools like Lusha can complement these efforts effectively.</p><h2 id="7.-lusha">7. <a href="https://www.lusha.com/" target="_blank">Lusha</a></h2><p><img alt="Lusha" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710be1fd4bb8ecded3b8_www.lusha.com-017689733067ec4ba69947c5a114ab11.jpeg"/></p><p>Lusha is a sales intelligence tool designed to help small business teams connect with the right prospects. It offers an extensive lead database powered by AI, ensuring accurate and up-to-date contact information. This allows teams to focus on leads that truly matter.</p><p>One of Lusha's standout features is its advanced search capabilities. Users can filter prospects based on specific criteria like job titles, company size, and location. Plus, the <strong>Chrome extension</strong> makes it easy to pull verified contact details directly from platforms like LinkedIn.</p><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contact Verification</strong></td>
+<td>Improves email success rates by reducing bounces</td>
+</tr>
+<tr>
+<td><strong>CRM Integration</strong></td>
+<td>Automatically updates contact details in real time</td>
+</tr>
+<tr>
+<td><strong>Advanced Filters</strong></td>
+<td>Helps target prospects by industry, role, or company size</td>
+</tr>
+<tr>
+<td><strong>Chrome Extension</strong></td>
+<td>Quickly grabs verified contact info while you browse</td>
+</tr>
+</tbody>
+</table><p>Lusha also emphasizes privacy compliance, ensuring that all data is legally sourced. This gives small teams the confidence to focus on connecting with prospects rather than worrying about data issues.</p><blockquote>
+<p>"Using Lusha, we increased lead generation by 30% in three months while scaling personalized outreach."</p>
+</blockquote><p>Pricing starts at $29/month for individuals and $49/month for teams. There's also a free plan and a 14-day trial for those who want to explore its features.</p><p>Lusha works seamlessly with tools like HubSpot Sales, making it easier to combine lead sourcing with pipeline management and nurturing.</p><h2 id="8.-hubspot-sales">8. <a href="https://www.hubspot.com/products/crm" target="_blank">HubSpot</a> Sales</h2><p><img alt="HubSpot" loading="lazy" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6866710ae1fd4bb8ecded2f6_www.hubspot.com-27e615c8a635a4cc2ed2770d0b496585.jpeg"/></p><p>HubSpot Sales combines the power of a CRM with user-friendly automation tools, making it a great choice for small teams looking to boost efficiency without needing extensive training.</p><p>With real-time email tracking and a built-in meeting scheduler, HubSpot Sales makes follow-ups and prospect engagement much easier. It centralizes communication across email, phone, and social media, ensuring all interactions are well-organized and nothing slips through the cracks.</p><table>
+<thead>
+<tr>
+<th>Feature Category</th>
+<th>Key Capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lead Management</strong></td>
+<td>Tracks contacts, scores leads, monitors engagement</td>
+</tr>
+<tr>
+<td><strong>Automation</strong></td>
+<td>Manages email sequences, automates workflows, organizes tasks</td>
+</tr>
+<tr>
+<td><strong>Communication</strong></td>
+<td>Provides email templates, schedules meetings, tracks calls</td>
+</tr>
+<tr>
+<td><strong>Analytics</strong></td>
+<td>Offers performance dashboards, pipeline metrics, and forecasting tools</td>
+</tr>
+</tbody>
+</table><p>The platform integrates effortlessly with marketing, sales, and customer service tools, ensuring smooth data sharing across departments. With AI-driven features, HubSpot Sales predicts customer behavior, automates repetitive tasks, and offers customizable dashboards to track key metrics, helping improve conversion rates.</p><blockquote>
+<p>"After implementing HubSpot Sales' automation workflows, our sales team saw a 30% increase in qualified leads while reducing time spent on manual follow-ups by 25%", says Sarah Chen, Sales Director at TechFlow Solutions.</p>
+</blockquote><p>HubSpot Sales provides a free tier for those just starting out, and its paid plans begin at $45 per user/month. Businesses using its analytics tools report an average 15% improvement in lead conversion rates, thanks to data-driven insights.</p><p>For small businesses, HubSpot Sales simplifies prospecting with automation and real-time data, letting teams focus on building relationships and closing deals. Its all-in-one approach helps smaller teams scale their efforts effectively, making it a standout tool in this category.</p><h2 id="conclusion">Conclusion</h2><p>Sales prospecting tools play a key role in helping small business teams expand their outreach and simplify sales workflows. The eight tools discussed here highlight how modern platforms can reshape the way small teams find and convert qualified leads.</p><p>With access to detailed data and automation, small teams are now better equipped to compete with larger players. Features like advanced filtering and automated processes allow even resource-limited teams to enhance their efficiency and broaden their reach.</p><p>Using these tools effectively can reshape sales strategies, helping teams save time, improve data accuracy, generate high-quality leads, and scale their efforts. For small teams, these tools tackle common obstacles like limited resources and the need for smoother workflows.</p><p>When choosing the right tool, align your decision with your sales goals and strategy. For instance, LinkedIn Sales Navigator is ideal for B2B networking, while platforms like Apollo.io may be better suited for teams focusing on personalized, large-scale outreach <a href="https://www.bardeen.ai/answers/what-is-apollo-io" target="_blank"><sup>[2]</sup></a><a href="https://www.uplead.com/how-to-use-apollo-io/" target="_blank"><sup>[4]</sup></a>.</p><blockquote>
+<p>"Successful prospecting depends on tools that align with workflows and prioritize relevant, privacy-compliant targeting."</p>
+</blockquote><p>Each tool offers distinct advantages, and combining them thoughtfully can create a well-rounded prospecting system. Keep an eye on performance metrics like lead conversion rates to ensure your tools continue to meet your team’s needs.</p><h2 id="faqs">FAQs</h2><h3 id="what-are-the-best-tools-for-lead-generation%3F">What are the best tools for lead generation?</h3><p>For small teams, lead generation tools that combine advanced search features with automation can make a big difference. <strong>LinkedIn Sales Navigator</strong> stands out for B2B networking, offering detailed filters and CRM integration. <strong>Apollo.io</strong> is another strong option, streamlining multi-channel outreach with features like data enrichment and automation.</p><p>Other tools like <strong>ZoomInfo</strong> and <strong>G2 Buyer Intent Data</strong> bring extra value to the table. ZoomInfo keeps contact and company data updated in real time, while G2 Buyer Intent Data helps you understand buyer behavior, making it easier to spot and prioritize leads with high potential.</p><p>When choosing lead generation tools, look for features such as:</p><ul>
+<li>Advanced search capabilities</li>
+<li>Email automation</li>
+<li>Real-time data updates</li>
+<li>CRM integration</li>
+<li>Data enrichment</li>
+</ul><p>Using the right mix of tools can make lead generation more efficient and scalable. The goal is to tackle challenges like limited resources or time while ensuring your data stays accurate and compliant.</p><p>For the best results, think about how tools can work together. For example, combining a contact intelligence platform with an intent data tool can help you build a system that not only finds leads but qualifies them effectively <a href="https://dripify.io/linkedin-sales-navigator-benefits/" target="_blank"><sup>[1]</sup></a><a href="https://www.bardeen.ai/answers/what-is-apollo-io" target="_blank"><sup>[2]</sup></a>.</p>
+
+</main>
+    </div>
+
+    <!-- End-of-article hard CTA -->
+    <section class="cta-hard">
+      <h3>Ready to run multichannel outbound <em>with AI?</em></h3>
+      <p>Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
+        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+        Try Overloop free
+      </a>
+    </section>
+
+    <!-- Author -->
+    <section class="author-card" aria-label="About the author">
+      <div class="author-card__avatar">VR</div>
+      <div>
+        <div class="author-card__name">Vincenzo Ruggiero</div>
+        <div class="author-card__role">Content Writer at Overloop</div>
+        <div class="author-card__bio">CEO at Overloop. Founded the company in 2015 as Prospect.io. Tests every competitor tool hands-on.</div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h3>Outbound insights — once a week, no fluff</h3>
+      <p>Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only — wire up form action in production');">
+        <input type="email" placeholder="Your work email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Related -->
+    <section class="related">
+      <h3>Related articles</h3>
+      <div class="related-grid">
+        <a href="https://overloop.com/blog/11-best-ai-bdr-tools" class="related-card">
+          <div class="related-card__cat">Buyer's Guide · 16 min</div>
+          <div class="related-card__title">11 Best AI BDR Tools in 2026</div>
+        </a>
+        <a href="https://overloop.com/blog/apollo-alternatives" class="related-card">
+          <div class="related-card__cat">Alternatives · 14 min</div>
+          <div class="related-card__title">Best Apollo Alternatives (2026)</div>
+        </a>
+        <a href="https://overloop.com/blog/la-growth-machine-review" class="related-card">
+          <div class="related-card__cat">Review · 12 min</div>
+          <div class="related-card__title">La Growth Machine Review</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Expert panel -->
+    <section class="expert-panel" aria-label="Meet the experts">
+      <div class="expert-panel__header">
+        <h3>Meet the Experts Behind This Guide</h3>
+        <p>Every recommendation is backed by hands-on testing, real campaign data, and years of outbound experience.</p>
+      </div>
+      <div class="expert-panel__grid">
+
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+          <div class="expert-bio__name">Vincenzo Ruggiero</div>
+          <div class="expert-bio__role">CEO, Overloop</div>
+          <p class="expert-bio__text">Vincenzo started Overloop in 2015 as a simple Chrome extension called Prospect.io. Over 10+ years, he's built it into a full AI-powered outbound platform used by 5,000+ companies. He personally tests every competitor tool to ensure Overloop stays ahead — and to give honest, first-hand comparisons in guides like this one.</p>
+          <a href="https://www.linkedin.com/in/vincenzor/" class="expert-bio__linkedin" target="_blank" rel="noopener"><i data-lucide="linkedin" style="width:14px;height:14px"></i> Connect on LinkedIn</a>
+        </div>
+
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+          <div class="expert-bio__name">Nicolas Finet</div>
+          <div class="expert-bio__role">CEO & Co-founder, Sortlist & Overloop</div>
+          <p class="expert-bio__text">Nicolas co-founded Sortlist in 2014 and now oversees the Overloop product strategy. He's designed outbound systems for 500+ B2B companies across Europe and has deep expertise in cold email deliverability, LinkedIn automation, and multichannel sequences. His testing methodology for this guide is based on real campaign data, not vendor claims.</p>
+          <a href="https://www.linkedin.com/in/nifinet/" class="expert-bio__linkedin" target="_blank" rel="noopener"><i data-lucide="linkedin" style="width:14px;height:14px"></i> Connect on LinkedIn</a>
+        </div>
+
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          <div class="expert-bio__name">Nathalie Saikali</div>
+          <div class="expert-bio__role">Customer Success Manager, Overloop</div>
+          <p class="expert-bio__text">Nathalie works daily with sales teams deploying Overloop across industries — from SaaS startups to recruiting agencies. She sees firsthand what features actually move the needle for pipeline generation and which tools cause friction. Her perspective in this guide comes from hundreds of real customer conversations and onboarding sessions.</p>
+          <a href="https://www.linkedin.com/in/nathalie-saikali/" class="expert-bio__linkedin" target="_blank" rel="noopener"><i data-lucide="linkedin" style="width:14px;height:14px"></i> Connect on LinkedIn</a>
+        </div>
+
+      </div>
+    </section>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD (Article + FAQ schemas for AEO) -->
+  <script>
+    // Lucide icons
+    if (window.lucide) lucide.createIcons();
+
+    // Reading progress
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const scrollTop = h.scrollTop || document.body.scrollTop;
+        const scrollHeight = h.scrollHeight - h.clientHeight;
+        const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    // TOC scroll-spy
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) {
+          if (t.section.offsetTop <= scrollY) active = t;
+        }
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "8 Best Prospecting Tools for SMBs (Free & Paid) | Overloop",
+  "description": "Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.",
+  "image": "https://overloop.com/assets/images/og/top-8-sales-prospecting-tools-for-small-business-teams.png",
+  "author": {
+    "@type": "Person",
+    "name": "Vincenzo Ruggiero",
+    "image": "https://overloop.com/assets/images/vincenzo-ruggiero.png"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Overloop",
+    "logo": {"@type": "ImageObject", "url": "https://overloop.com/assets/images/overloop-logo.png"}
+  },
+  "datePublished": "2025-02-06",
+  "dateModified": "2026-04-27",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/blog"},
+    {"@type": "ListItem", "position": 2, "name": "8 Best Prospecting Tools for SMBs (Free & Paid)", "item": "https://overloop.com/blog/top-8-sales-prospecting-tools-for-small-business-teams"}
+  ]
+}
+</script>
+
+
+
+</body>
+</html>

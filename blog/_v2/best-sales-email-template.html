@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!--
+================================================================
+TEMPLATE #6: Templates & Swipe Files (P1 — 101 articles)
+Example: "14 Cold Email Templates That Get 50%+ Open Rates (2026)"
+
+Template-specific sections:
+- Hero with swipe-file pill + scope badges (14 templates · 4 categories)
+- Category tabs (Email / LinkedIn / Follow-up / Subject lines)
+- Template cards per category:
+  - Category tag + persona tag
+  - Performance stats (open rate, reply rate)
+  - Subject line (for email)
+  - Body in mono with <mark> variables
+  - One-click copy button
+- "When to use each template" section
+- Download-all PDF CTA
+- Variables legend at top
+================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Sales Email Template for SDRs (2026) | Overloop</title>
+  <meta name="description" content="A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.">
+  <link rel="canonical" href="https://overloop.com/blog/best-sales-email-template">
+  <link href="https://overloop.com/blog/best-sales-email-template" hreflang="en" rel="alternate"/>
+  <link href="https://overloop.com/de/blog/verkaufs-e-mail-vorlage-sdr" hreflang="de" rel="alternate"/>
+  <link href="https://overloop.com/fr/blog/modele-email-vente" hreflang="fr" rel="alternate"/>
+  <link href="https://overloop.com/es/blog/plantilla-correo-electronico-ventas" hreflang="es" rel="alternate"/>
+  <link href="https://overloop.com/it/blog/template-email-vendita-sdr" hreflang="it" rel="alternate"/>
+  <link href="https://overloop.com/blog/best-sales-email-template" hreflang="x-default" rel="alternate"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Best Sales Email Template for SDRs (2026)">
+  <meta property="og:description" content="A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.">
+  <meta property="og:image" content="https://overloop.com/assets/images/og/best-sales-email-template.png">
+  <meta property="og:url" content="https://overloop.com/blog/best-sales-email-template">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best Sales Email Template for SDRs (2026)">
+  <meta name="twitter:description" content="A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.">
+  <meta name="twitter:image" content="https://overloop.com/assets/images/og/best-sales-email-template.png">
+
+  <style>
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 840px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 64px var(--page-px) 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: var(--color-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 640px; margin: 0 auto 24px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Hero swipe-file stats */
+    .swipe-stats { display: flex; justify-content: center; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .swipe-stats__item { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-text); box-shadow: var(--shadow-sm); }
+    .swipe-stats__item strong { color: var(--color-primary); font-size: 15px; }
+
+    /* Main */
+    .main-wrap { max-width: var(--container-blog); margin: 0 auto; padding: 40px var(--page-px); }
+    .main-wrap > * { margin-bottom: 20px; }
+    .main-wrap p { line-height: 1.75; }
+    .main-wrap h2 { font-size: 28px; font-weight: 800; color: var(--color-text); letter-spacing: -0.01em; line-height: 1.2; margin: 40px 0 16px; scroll-margin-top: 96px; }
+    .main-wrap h3 { font-size: 20px; font-weight: 700; color: var(--color-text); margin: 24px 0 10px; }
+    .main-wrap ul, .main-wrap ol { padding-left: 24px; margin-bottom: 20px; }
+    .main-wrap ul li, .main-wrap ol li { margin-bottom: 8px; line-height: 1.6; }
+    .main-wrap strong { color: var(--color-text); font-weight: 700; }
+
+    /* Variables legend */
+    .var-legend {
+      background: var(--color-white); border: 1px solid var(--color-border-light);
+      border-radius: var(--r-lg); padding: 20px 24px; margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .var-legend__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+    .var-legend__label svg { width: 14px; height: 14px; }
+    .var-legend__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px 20px; }
+    .var-legend__item { font-size: 13px; line-height: 1.5; color: var(--color-text-body); }
+    .var-legend__item mark { background: var(--color-primary-50); color: var(--color-primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; font-family: var(--font-mono); font-size: 12px; }
+
+    /* Tabs */
+    .tabs {
+      display: flex; gap: 0;
+      background: var(--color-surface);
+      border-radius: var(--r); padding: 4px;
+      margin: 28px 0 20px;
+      position: sticky; top: 88px; z-index: 10;
+      box-shadow: var(--shadow-sm);
+    }
+    .tab {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 18px; border-radius: calc(var(--r) - 4px);
+      background: transparent; border: none; cursor: pointer;
+      font-family: var(--font-sans); font-size: 13.5px; font-weight: 600; color: var(--color-text-secondary);
+      transition: var(--t);
+    }
+    .tab svg { width: 14px; height: 14px; }
+    .tab:hover { color: var(--color-text); }
+    .tab.is-active { background: #fff; color: var(--color-primary); box-shadow: var(--shadow-sm); font-weight: 700; }
+    .tab .count { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; padding: 2px 6px; border-radius: 4px; background: rgba(0,0,0,0.05); }
+    .tab.is-active .count { background: var(--color-primary-50); color: var(--color-primary); opacity: 1; }
+
+    .tab-panel { display: none; }
+    .tab-panel.is-active { display: block; }
+
+    /* Template card */
+    .tpl {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 24px 28px;
+      margin: 20px 0;
+      transition: var(--t);
+    }
+    .tpl:hover { border-color: var(--color-primary-light); box-shadow: var(--shadow-md); }
+    .tpl__head {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      padding-bottom: 16px; margin-bottom: 16px;
+      border-bottom: 1px dashed var(--color-border);
+    }
+    .tpl__titleblock { flex: 1; min-width: 0; }
+    .tpl__kicker { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .tpl__number { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; }
+    .tpl__tag { display: inline-block; padding: 2px 10px; border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+    .tpl__tag--persona { background: var(--color-primary-50); color: var(--color-primary); }
+    .tpl__tag--cat { background: var(--color-secondary-50); color: var(--color-secondary); }
+    .tpl__name { font-size: 18px; font-weight: 800; color: var(--color-text); line-height: 1.3; margin-bottom: 4px; }
+    .tpl__desc { font-size: 13.5px; color: var(--color-text-secondary); line-height: 1.5; }
+    .tpl__stats { display: flex; gap: 12px; flex-shrink: 0; }
+    .tpl__stat { text-align: center; padding: 8px 14px; border-radius: var(--r); background: var(--gradient-brand-soft); border: 1px solid rgba(99,102,241,0.15); min-width: 72px; }
+    .tpl__stat strong { display: block; font-size: 18px; font-weight: 800; color: var(--color-primary); line-height: 1; margin-bottom: 2px; font-family: var(--font-mono); }
+    .tpl__stat span { font-family: var(--font-mono); font-size: 10px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    /* Template body */
+    .tpl__subject { font-size: 14px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; padding: 10px 14px; background: var(--color-surface-alt); border-radius: var(--r-sm); border-left: 3px solid var(--color-primary); }
+    .tpl__subject span { font-family: var(--font-mono); font-weight: 400; color: var(--color-text-secondary); font-size: 12px; margin-right: 8px; }
+    .tpl__body {
+      position: relative;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.65;
+      color: var(--color-text-body); white-space: pre-wrap;
+      background: var(--color-text); color: #E5E7EB;
+      border-radius: var(--r-sm);
+      padding: 16px 18px;
+    }
+    .tpl__body mark { background: rgba(168,85,247,0.20); color: #C4B5FD; padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+    .tpl__actions { display: flex; gap: 8px; margin-top: 14px; }
+    .tpl__copy {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: var(--r-sm);
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      font-family: var(--font-sans); font-size: 13px; font-weight: 600; color: var(--color-text);
+      cursor: pointer; transition: var(--t);
+    }
+    .tpl__copy:hover { background: var(--color-primary-50); border-color: var(--color-primary); color: var(--color-primary); }
+    .tpl__copy.is-copied { background: var(--color-success-50); border-color: var(--color-success); color: var(--color-success-dark); }
+    .tpl__copy svg { width: 14px; height: 14px; }
+
+    /* Subject-line version (compact, no body) */
+    .subject-list { display: grid; gap: 10px; margin: 20px 0; }
+    .subject-list__item {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: center;
+      padding: 14px 18px; background: var(--color-white);
+      border: 1px solid var(--color-border-light); border-radius: var(--r);
+      transition: var(--t);
+    }
+    .subject-list__item:hover { border-color: var(--color-primary-light); }
+    .subject-list__num { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); width: 24px; text-align: right; }
+    .subject-list__line { font-family: var(--font-sans); font-weight: 600; font-size: 14.5px; color: var(--color-text); }
+    .subject-list__line mark { background: rgba(99,102,241,0.10); color: var(--color-primary); padding: 1px 5px; border-radius: 3px; font-weight: 700; font-family: var(--font-mono); font-size: 12px; }
+    .subject-list__stat { font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); white-space: nowrap; font-weight: 700; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+
+    /* Download banner + CTA dark + author + newsletter + related + footer (reused) */
+    .download-banner { background: var(--gradient-brand); color: #fff; border-radius: var(--r-xl); padding: 28px 32px; margin: 28px 0; display: grid; grid-template-columns: auto 1fr auto; gap: 22px; align-items: center; box-shadow: var(--shadow-glow); position: relative; overflow: hidden; }
+    .download-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .download-banner > * { position: relative; }
+    .download-banner__icon { width: 56px; height: 56px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .download-banner__icon svg { color: #fff; width: 24px; height: 24px; }
+    .download-banner__body h4 { font-size: 17px; font-weight: 800; color: #fff; margin: 0 0 4px; }
+    .download-banner__body p { font-size: 13.5px; color: rgba(255,255,255,0.9); margin: 0; }
+    .download-banner .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .download-banner .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .tabs { flex-wrap: wrap; top: 80px; }
+      .tab { flex: 1 1 calc(50% - 4px); }
+      .tpl__head { flex-direction: column; gap: 12px; }
+      .tpl__stats { align-self: flex-start; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .download-banner { grid-template-columns: 1fr; text-align: center; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 30px; }
+      .nav-links { display: none; }
+      .tab span:not(.count) { display: none; }
+      .tpl__stats { flex-direction: column; gap: 6px; }
+      .newsletter form { flex-direction: column; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
+
+  <article>
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="copy" style="width:12px;height:12px"></i>
+          Swipe File · 14 templates
+        </span>
+        <h1>Best Sales Email Template for SDRs (2026)</h1>
+        <p class="lead">A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.</p>
+        <div class="article-meta">
+          <div class="article-meta__avatar">VR</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Forster Perelsztejn</div>
+            <div class="article-meta__dates">Published Apr 17, 2018 · Updated Apr 27, 2026 · 10 min read</div>
+          </div>
+        </div>
+        <div class="swipe-stats">
+          <span class="swipe-stats__item"><strong>14</strong> templates</span>
+          <span class="swipe-stats__item"><strong>4</strong> categories</span>
+          <span class="swipe-stats__item"><strong>47K+</strong> sends tested</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-wrap">
+
+<p>If you have ever been in... any business ever, you've received your fair share of terrible cold emails. You know, those emails that are so clearly a poorly written and adapted sales email template?</p>
+<p>Here's the deal: you can work with a sales email template and <strong>still</strong> make it personal, personalized and highly relevant.</p>
+<p>I know because writing sales emails is my job, so I'm not easily impressed. But this email I got not so long ago was a masterpiece of targeting <strong>and</strong> scalability.</p>
+<p>Because that's what a good sales email template is all about: <strong>scaling a tedious process while getting it just right</strong>.</p>
+<h2>How to Work with Email Templates</h2>
+<p>I would <strong>hate</strong> for you to dive into this and start blasting emails without the right preparation.</p>
+<p>Here's what you should do before logging into your <a href="https://overloop.com">sales automation tool</a>:</p>
+<p><strong>Step 1:</strong> Research and qualify your prospects while building your list</p>
+<p><strong>Step 2:</strong> Segment your list according to relevant targeting criteria</p>
+<p><strong>Step 3:</strong> Pick and customize the right sales email template for each list</p>
+<p><strong>Step 4:</strong> Send away to a sample-sized list (test and then invest!)</p>
+<p><strong>Step 5:</strong> Measure and decide</p>
+<h2>The Best Sales Email Template</h2>
+<p>The original email came from Matt Hartill at Sumo, who thought we could use the help of their conversion optimization tools.</p>
+<p>Obviously if you're not selling online services, you may have to tweak the template but there's a high chance you <strong>can</strong> use it for your business!</p>
+<h3>The Original Email</h3>
+<h4>Why Is This Email Awesome?</h4>
+<ol>
+<li>The subject line is personalized and establishes a link between people from both companies</li>
+<li>The first sentence establishes a clear link between you and the company</li>
+<li>Matt inserts a humorous line, which is always good if it's short and in good taste</li>
+<li>He gets to the point and singles out your company while teasing the why</li>
+<li>He offers value and personalization by mentioning improvement possibilities</li>
+<li>The call to action is clear and easy to respond to</li>
+<li>They have this unmissable big friendly logo burned into your head</li>
+</ol>
+<h3>The Recipe</h3>
+<p>I'm going to lay out the recipe and then apply it to give you 5 replicable, customizable sales email templates based on it!</p>
+<p>Here we go:</p>
+<blockquote>
+<p>[GREETING]</p>
+<p>[INSERT SOMETHING PERSONAL TO ESTABLISH RAPPORT AND RELEVANCE]</p>
+<p>[MENTION THEIR COMPANY AND THE FACT THAT SOMEONE AT YOURS REVIEWED IT]</p>
+<p>[LET THEM KNOW THEY'RE DOING A GREAT JOB BUT THERE ARE A COUPLE THINGS THEY COULD FIX]</p>
+<p>[OFFER A NO-PRESSURE PERSONALIZED PRESENTATION AND ASK FOR A CALL]</p>
+<p>[SPECIAL BRANDED SIGN-OFF]</p>
+</blockquote>
+<p><strong>Note:</strong> Sumo is big enough that they don't have to worry about providing <strong>social proof</strong> in the first email, which might not be your case if you're a smaller company! More about that in the templates below.</p>
+<p><strong>Note 2:</strong> Feel free to exploit your sign-off and signature even more by personalizing them. If your emailing tool doesn't allow lots of personalization, tools like <a href="https://www.wisestamp.com/" rel="noopener" target="_blank">Wisestamp</a> can help build gorgeous signatures!</p>
+<h2>THE Sales Email Template: 5 Variants</h2>
+<p>Now, here's how <strong>you</strong> can use that sales email template in various situations to start nailing more sales!</p>
+<h3>1. Retargeting Template</h3>
+<blockquote>
+<p>Hey {{prospect_firstname}},</p>
+<p>It looks like you checked out {{user_company_name}} some time ago.</p>
+<p>Our [INSERT WHAT YOU DO] expert combed through a ton of sites and hand picked {{prospect_company_name}}.</p>
+<p>Why?</p>
+<p>Because we love what you do BUT, we also saw 2 things you should fix.</p>
+<p>So we can show you exactly how to fix it at [INSERT TIME AND DATE]! :)</p>
+<p>Are you up for a quick screen-share to see what I mean?</p>
+<p>[INSERT SIGN OFF],</p>
+<p>{{user_firstname}}</p>
+</blockquote>
+<h3>2. Retargeting Template + Social Proof</h3>
+<blockquote>
+<p>Hey {{prospect_firstname}},</p>
+<p>It looks like you checked out {{user_company_name}} some time ago.</p>
+<p>Our [INSERT WHAT YOU DO] expert combed through a ton of sites and hand picked {{prospect_company_name}}.</p>
+<p>Why?</p>
+<p>Because we love what you do BUT, we also saw 2 things you should fix.</p>
+<p>We already helped companies like [INSERT LIST OF HAPPY CUSTOMERS] with this and we're pretty sure it'll work for you too!</p>
+<p>SO, we can show you exactly how to fix it at [INSERT TIME AND DATE]! :)</p>
+<p>Are you up for a quick screen-share to see what I mean?</p>
+<p>[INSERT SIGN OFF],</p>
+<p>{{user_firstname}}</p>
+</blockquote>
+<h3>3. Content Approach Template</h3>
+<blockquote>
+<p>Hey {{prospect_firstname}},</p>
+<p>I spent some time on your blog a while ago and I really liked your take on [INSERT SPECIFIC SUBJECT].</p>
+<p>Our [INSERT WHAT YOU DO] expert combed through a ton of sites and hand picked {{prospect_company_name}}.</p>
+<p>Why?</p>
+<p>Because we love what you do BUT, we also saw 2 things you should fix.</p>
+<p>So we can show you exactly how to fix it at [INSERT TIME AND DATE]! :)</p>
+<p>Are you up for a quick screen-share to see what I mean?</p>
+<p>[INSERT SIGN OFF],</p>
+<p>{{user_firstname}}</p>
+</blockquote>
+<p><strong>Note:</strong> you need to go <strong>very niche/specific</strong> on that one so as not to seem too generic in your original comment.</p>
+<p>For example:</p>
+<p><strong>WRONG:</strong> <em>I spent some time on your blog a while ago and I really liked your take on <strong>sales</strong>.</em></p>
+<p><strong>RIGHT:</strong> <em>I spent some time on your blog a while ago, I really liked your take on <strong>how to write sales emails that get a response</strong>.</em></p>
+<h3>4. New Job Approach Template</h3>
+<blockquote>
+<p>Hey {{prospect_firstname}},</p>
+<p>I see you just started working as {{prospect_jobtitle}} at {{prospect_company_name}}, congratulations!</p>
+<p>We'd like to help you settle in. Our [INSERT WHAT YOU DO] expert combed through a ton of sites and hand picked {{prospect_company_name}}.</p>
+<p>Why?</p>
+<p>Because we love what you're already doing BUT, we also saw 2 things you should fix.</p>
+<p>So we can show you exactly how to fix it at [INSERT TIME AND DATE]! :)</p>
+<p>Are you up for a quick screen-share to see what I mean?</p>
+<p>[INSERT SIGN OFF],</p>
+<p>{{user_firstname}}</p>
+</blockquote>
+<p><strong>Note:</strong> reaching out to someone as they <strong>just landed a new job</strong> is always a good approach since they will need to start putting together the right tools to do their job!</p>
+<h3>5. Funding Round Approach Template</h3>
+<blockquote>
+<p>Hey {{prospect_firstname}},</p>
+<p>I see you guys at {{prospect_company_name}} just managed to raise some money, congratulations!</p>
+<p>It's a new start and we'd like to help you make the best of it.</p>
+<p>Our [INSERT WHAT YOU DO] expert combed through a ton of sites and hand picked {{prospect_company_name}}.</p>
+<p>Why?</p>
+<p>Because we love what you're already doing BUT, we also saw 2 things you should fix.</p>
+<p>So we can show you exactly how to fix it at [INSERT TIME AND DATE]! :)</p>
+<p>Are you up for a quick screen-share to see what I mean?</p>
+<p>[INSERT SIGN OFF],</p>
+<p>{{user_firstname}}</p>
+</blockquote>
+<p>I hope these templates will help you start more meaningful conversations in a scalable way; try them and tell us what you think!</p>
+<p><strong>Ready to start using these templates and scale your campaigns? <a href="https://overloop.com/pricing">Get started with Overloop</a>.</strong></p>
+<p>For more on writing cold emails that convert, see our <a href="/blog/how-to-write-a-successful-cold-email">2026 cold email guide</a> or our deep-dive on <a href="/blog/how-to-write-personalized-sales-emails-at-scale">writing personalized sales emails at scale</a>.</p>
+
+</main>
+
+    <section class="cta-hard">
+      <h3>Templates that <em>personalize themselves</em></h3>
+      <p>Overloop's AI reads each prospect's LinkedIn, company, and recent activity — then writes the opening line uniquely per contact. No more copy-paste.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
+        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+        Try Overloop free
+      </a>
+    </section>
+
+    <section class="author-card">
+      <div class="author-card__avatar">VR</div>
+      <div>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">CEO at Overloop. Founded the company in 2015 as Prospect.io. Tests every competitor tool hands-on.</div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h3>New templates in your inbox weekly</h3>
+      <p>Join 8,400+ B2B operators getting our tested templates and campaigns.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only');">
+        <input type="email" placeholder="Your work email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <section class="related">
+      <h3>More swipe files</h3>
+      <div class="related-grid">
+        <a href="#" class="related-card">
+          <div class="related-card__cat">Swipe file · 6 min</div>
+          <div class="related-card__title">42 Cold Email Subject Lines</div>
+        </a>
+        <a href="#" class="related-card">
+          <div class="related-card__cat">Swipe file · 7 min</div>
+          <div class="related-card__title">LinkedIn InMail Scripts</div>
+        </a>
+        <a href="#" class="related-card">
+          <div class="related-card__cat">Swipe file · 5 min</div>
+          <div class="related-card__title">Cold Call Scripts That Work</div>
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform.</p>
+        </div>
+        <div><h4>Platform</h4><a href="#">Features</a><br><a href="#">Pricing</a><br><a href="#">Integrations</a></div>
+        <div><h4>Resources</h4><a href="#">Blog</a><br><a href="#">Playbooks</a><br><a href="#">Free tools</a></div>
+        <div><h4>Company</h4><a href="#">About</a><br><a href="#">Careers</a><br><a href="#">Contact</a></div>
+        <div><h4>Legal</h4><a href="#">Privacy</a><br><a href="#">Terms</a><br><a href="#">Security</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) lucide.createIcons();
+    // Reading progress
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
+    // Tabs
+    (function(){
+      const tabs = document.querySelectorAll('.tab');
+      const panels = document.querySelectorAll('.tab-panel');
+      tabs.forEach(t => t.addEventListener('click', () => {
+        tabs.forEach(x => x.classList.remove('is-active'));
+        panels.forEach(p => p.classList.remove('is-active'));
+        t.classList.add('is-active');
+        const target = document.getElementById(t.getAttribute('data-target'));
+        if (target) target.classList.add('is-active');
+      }));
+    })();
+    // Copy template
+    function copyTpl(btn) {
+      const card = btn.closest('.tpl');
+      const body = card.querySelector('.tpl__body');
+      const subject = card.querySelector('.tpl__subject');
+      let txt = '';
+      if (subject) {
+        // Extract just the subject line without the "Subject:" label
+        const s = subject.cloneNode(true);
+        const lbl = s.querySelector('span'); if (lbl) lbl.remove();
+        txt += 'Subject: ' + s.textContent.trim() + '\n\n';
+      }
+      txt += body.textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(txt).then(() => {
+          btn.classList.add('is-copied');
+          btn.innerHTML = '<i data-lucide="check"></i> Copied';
+          if (window.lucide) lucide.createIcons();
+          setTimeout(() => {
+            btn.classList.remove('is-copied');
+            btn.innerHTML = '<i data-lucide="copy"></i> Copy template';
+            if (window.lucide) lucide.createIcons();
+          }, 2000);
+        });
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best Sales Email Template for SDRs (2026) | Overloop",
+  "description": "A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proof, and clear CTAs.",
+  "image": "https://overloop.com/assets/images/og/best-sales-email-template.png",
+  "author": {
+    "@type": "Person",
+    "name": "Forster Perelsztejn",
+    "image": "https://overloop.com/assets/images/vincenzo-ruggiero.png"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Overloop",
+    "logo": {"@type": "ImageObject", "url": "https://overloop.com/assets/images/overloop-logo.png"}
+  },
+  "datePublished": "2018-04-17",
+  "dateModified": "2026-04-27",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://overloop.com/blog/best-sales-email-template"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/blog"},
+    {"@type": "ListItem", "position": 2, "name": "Best Sales Email Template for SDRs (2026)", "item": "https://overloop.com/blog/best-sales-email-template"}
+  ]
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<!--
+================================================================
+TEMPLATE #3: Pillar / Ultimate Guide (P0 — 288 articles)
+DESIGN SYSTEM: Overloop canonical (indigo #6366F1 → purple #A855F7)
+
+Example topic: B2B Lead Generation — The Complete Guide (2026)
+Covers: cold email, LinkedIn, content, paid, tools, KPIs, mistakes, scaling
+
+Template-specific sections:
+- Chapter navigation (visual, numbered circles)
+- Sub-TOC per chapter (`.sub-toc`)
+- Key takeaways card per chapter (`.key-takeaways`)
+- Downloadable PDF / checklist CTA (`.downloadable`)
+- Expert quote scattered per chapter (expert-callout reused)
+- Internal-link grid per chapter (`.chapter-links`)
+- Longer TOC with chapter groupings
+
+NO tested-by banner (per feedback — reserved for product-comparison templates)
+================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Is Cold Email Illegal? Legal Guide (2026) | Overloop</title>
+  <meta name="description" content="Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance checklists included.">
+  <link rel="canonical" href="https://overloop.com/blog/cold-email-illegal">
+  <link href="https://overloop.com/blog/cold-email-illegal" hreflang="en" rel="alternate"/>
+  <link href="https://overloop.com/de/blog/cold-email-legal-erlaubt" hreflang="de" rel="alternate"/>
+  <link href="https://overloop.com/fr/blog/cold-email-est-il-illegal" hreflang="fr" rel="alternate"/>
+  <link href="https://overloop.com/es/blog/email-frio-es-ilegal" hreflang="es" rel="alternate"/>
+  <link href="https://overloop.com/it/blog/cold-email-legale" hreflang="it" rel="alternate"/>
+  <link href="https://overloop.com/blog/cold-email-illegal" hreflang="x-default" rel="alternate"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Is Cold Email Illegal? Legal Guide (2026)">
+  <meta property="og:description" content="Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance checklists included.">
+  <meta property="og:image" content="https://overloop.com/assets/images/og/cold-email-illegal.png">
+  <meta property="og:url" content="https://overloop.com/blog/cold-email-illegal">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Is Cold Email Illegal? Legal Guide (2026)">
+  <meta name="twitter:description" content="Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance checklists included.">
+  <meta name="twitter:image" content="https://overloop.com/assets/images/og/cold-email-illegal.png">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
+
+  <article>
+
+    <!-- Hero -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="library" style="width:12px;height:12px"></i>
+          Ultimate Guide · 10 chapters
+        </span>
+        <h1>Is Cold Email Illegal? Legal Guide (2026)</h1>
+        <p class="lead">Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance checklists included.</p>
+        <div class="article-meta">
+          <div class="article-meta__avatar">VR</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Forster Perelsztejn</div>
+            <div class="article-meta__dates">Published Jan 3, 2024 · Updated Apr 27, 2026 · 33 min read</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2-col layout -->
+    <div class="article-layout">
+
+      <!-- TOC -->
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">Chapters</div>
+        <ul>
+          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
+          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
+          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
+          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
+          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
+          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
+          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
+          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
+          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
+          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
+        </ul>
+        <div class="toc__group">
+          <div class="toc__label">Extras</div>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#experts">Meet the experts</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="prose">
+
+<p><strong>Cold email is legal in most countries when you follow specific rules about sender identification, opt-out mechanisms, and consent.</strong> It is not illegal by default. But every major market regulates what you can send, to whom, and how. Break those rules and you face fines from $25 per email (Singapore) to $53,088 per email (United States) to AED 10 million (UAE).</p>
+<p>This guide covers the actual laws in 14 jurisdictions: the United States (including state-level laws), the European Union (with a country-by-country breakdown of member state differences), the United Kingdom, Canada, Australia, Singapore, Japan, India, Brazil, South Korea, the UAE, South Africa, and China. For each one, you get what's legal, what's illegal, the penalties, real enforcement cases, and a compliance checklist you can hand to your sales team today.</p>
+<p>One critical distinction first: B2B and B2C cold email are treated very differently in most jurisdictions. This matters more than most people realize.</p>
+<h2>Cold Email vs Spam: The Legal Difference</h2>
+<p>Cold email and spam are not the same thing. The distinction matters legally because regulators treat them differently.</p>
+<p><strong>Cold email</strong> is a targeted, one-to-one commercial message sent to a specific person you have a reason to contact. It identifies the sender, contains relevant content, and includes a way to opt out.</p>
+<p><strong>Spam</strong> is bulk unsolicited email sent indiscriminately, usually with no sender identification, no relevance to the recipient, and no opt-out mechanism.</p>
+<p>Every law covered in this guide regulates commercial email. None of them ban cold outreach outright. They ban the behaviors associated with spam: deception, hiding your identity, ignoring opt-out requests, and sending irrelevant bulk messages. A well-targeted B2B cold email that follows the rules is legal everywhere on this list.</p>
+<h2>Quick Comparison: Cold Email Laws by Country</h2>
+<table class="table-keep">
+<thead>
+<tr><th>Country/Region</th><th>Law</th><th>B2B Cold Email</th><th>B2C Cold Email</th><th>Max Penalty</th></tr>
+</thead>
+<tbody>
+<tr><td>United States</td><td>CAN-SPAM Act</td><td>Legal (with rules)</td><td>Legal (with rules)</td><td>$53,088 per email</td></tr>
+<tr><td>US (Washington State)</td><td>CEMA</td><td>Legal (stricter subject lines)</td><td>Legal (stricter subject lines)</td><td>$500 per email (private suit)</td></tr>
+<tr><td>European Union</td><td>GDPR + ePrivacy</td><td>Legal (legitimate interest)</td><td>Requires consent</td><td>20M EUR or 4% revenue</td></tr>
+<tr><td>United Kingdom</td><td>PECR + UK GDPR</td><td>Legal (corporate subscribers)</td><td>Requires consent</td><td>500K GBP (ICO)</td></tr>
+<tr><td>Canada</td><td>CASL</td><td>Limited (implied consent)</td><td>Requires consent</td><td>$10M CAD</td></tr>
+<tr><td>Australia</td><td>Spam Act 2003</td><td>Legal (inferred consent)</td><td>Requires consent</td><td>$2.22M AUD/day</td></tr>
+<tr><td>Singapore</td><td>Spam Control Act</td><td>Legal (with opt-out)</td><td>Legal (with opt-out)</td><td>$25/email up to $1M SGD</td></tr>
+<tr><td>Japan</td><td>Specified Electronic Mail Act</td><td>Consent required</td><td>Consent required</td><td>JPY 30M (corporate)</td></tr>
+<tr><td>India</td><td>IT Act 2000 + TRAI</td><td>Legal (limited enforcement)</td><td>Regulated (TRAI DND)</td><td>No fixed penalty for email</td></tr>
+<tr><td>Brazil</td><td>LGPD</td><td>Legal (legitimate interest)</td><td>Requires consent</td><td>50M BRL or 2% revenue</td></tr>
+<tr><td>South Korea</td><td>PIPA + Network Act</td><td>Consent required (renew every 2 years)</td><td>Consent required</td><td>KRW 5M</td></tr>
+<tr><td>UAE</td><td>RUEC</td><td>Consent required</td><td>Consent required</td><td>AED 10M</td></tr>
+<tr><td>South Africa</td><td>POPIA</td><td>Legal (legitimate interest)</td><td>Requires consent</td><td>Unlimited fines + 12 months prison</td></tr>
+<tr><td>China</td><td>Internet Email Measures</td><td>Consent required</td><td>Consent required</td><td>CNY 10,000-30,000 per email</td></tr>
+</tbody>
+</table>
+<h2>United States: CAN-SPAM Act</h2>
+<p>The US has the most permissive cold email law in the world. CAN-SPAM does not require prior consent for commercial emails. You can email anyone, B2B or B2C, as long as you follow the rules. The law regulates the behavior, not the act of sending.</p>
+<h3>What CAN-SPAM Requires</h3>
+<ul>
+<li><strong>Accurate header information.</strong> Your "From," "To," and "Reply-To" fields must be truthful. No fake sender names or misleading domains.</li>
+<li><strong>Non-deceptive subject lines.</strong> The subject line must reflect the content of the email. "Re:" on a first email is a violation.</li>
+<li><strong>Clear identification as an ad.</strong> If the email is commercial, it must be identifiable as such. This does not mean you need a disclaimer, but the commercial nature should be clear.</li>
+<li><strong>Physical postal address.</strong> Every email must include a valid physical address: your office, a registered PO box, or a commercial mail receiving agency.</li>
+<li><strong>Working unsubscribe mechanism.</strong> Every email must include a way to opt out. You must honor unsubscribe requests within 10 business days.</li>
+<li><strong>Monitor third parties.</strong> If someone sends email on your behalf, you are still responsible for compliance.</li>
+</ul>
+<h3>What's Illegal Under CAN-SPAM</h3>
+<ul>
+<li>Sending email without a physical address</li>
+<li>Deceptive subject lines</li>
+<li>No unsubscribe option</li>
+<li>Ignoring unsubscribe requests beyond 10 days</li>
+<li>Harvesting email addresses from websites without permission</li>
+<li>Using automated tools to generate email addresses by combining names and domains</li>
+</ul>
+<h3>Penalties</h3>
+<p>Up to $53,088 per individual email that violates the law (adjusted for inflation as of January 2025; the FTC updates this figure annually). The FTC, state attorneys general, and ISPs can all bring enforcement actions. In practice, penalties are usually aggregated, but a campaign of 10,000 non-compliant emails creates enormous theoretical liability.</p>
+<h3>State-Level Laws: Washington CEMA</h3>
+<p>Federal CAN-SPAM is not the only law that applies. Washington State's Commercial Electronic Mail Act (CEMA, RCW 19.190) adds a layer that catches many senders off guard.</p>
+<p>In April 2025, the Washington Supreme Court ruled that CEMA imposes statutory damages of $500 per email containing any false or misleading information in the subject line. Unlike CAN-SPAM, CEMA allows private lawsuits. Any Washington resident who receives a non-compliant email can sue directly, no government enforcement needed.</p>
+<p>Starting June 11, 2026, HB 2274 reduces the per-email penalty from $500 to $100. Lawsuits filed before that date still use the original $500 figure.</p>
+<p>The practical takeaway: do not use "Re:" or "Fwd:" on first-touch emails. Do not use subject lines that imply a prior relationship when none exists. These are the exact patterns driving CEMA litigation.</p>
+<h3>CAN-SPAM Compliance Checklist</h3>
+<ul>
+<li>Real sender name and email address</li>
+<li>Subject line matches email content</li>
+<li>Physical address in email footer</li>
+<li>One-click unsubscribe link</li>
+<li>Unsubscribe requests processed within 10 days</li>
+<li>No purchased lists from email harvesters</li>
+</ul>
+<h2>European Union: GDPR + ePrivacy Directive</h2>
+<p>GDPR is where most outbound teams get confused. The short version: B2B cold email is legal in the EU under the "legitimate interest" legal basis. B2C cold email requires prior consent. But the details matter, and they vary by EU member state.</p>
+<h3>The B2B vs B2C Distinction (Critical)</h3>
+<p>GDPR Article 6(1)(f) allows processing personal data when you have a "legitimate interest" that is not overridden by the individual's rights. For B2B cold email, this means you can contact a professional at their work email about a relevant business topic, as long as:</p>
+<ul>
+<li>You have a genuine business reason to contact them (not random blasting)</li>
+<li>The email is relevant to their professional role</li>
+<li>You use their professional email address, not personal</li>
+<li>You provide a clear and easy way to opt out</li>
+<li>You document your Legitimate Interest Assessment (LIA)</li>
+</ul>
+<p>B2C is different. Sending unsolicited commercial email to consumers requires prior consent under the ePrivacy Directive (Article 13). No exceptions.</p>
+<h3>What You Must Do for GDPR-Compliant Cold Email</h3>
+<ul>
+<li><strong>Document your legitimate interest.</strong> Write a Legitimate Interest Assessment. It does not need to be long. It needs to explain why your outreach serves a genuine business purpose and why it does not harm the recipient.</li>
+<li><strong>Use professional emails only.</strong> Contact people at their work addresses about work topics.</li>
+<li><strong>Be transparent.</strong> Your first email should mention how you got their information and link to your privacy policy.</li>
+<li><strong>Provide an opt-out.</strong> Every email needs an unsubscribe mechanism. Honor it immediately.</li>
+<li><strong>Minimize data.</strong> Only collect and store the data you actually need for outreach.</li>
+<li><strong>Respond to data requests.</strong> If someone asks what data you hold on them, you must respond within 30 days.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Up to 20 million EUR or 4% of annual global turnover, whichever is higher. In practice, cold email violations typically result in fines of 10,000-500,000 EUR. But enforcement is increasing sharply. European DPAs imposed over 3 billion EUR in total GDPR fines in the first half of 2025 alone.</p>
+<h3>Real Enforcement Cases</h3>
+<ul>
+<li><strong>Orange SA (France, 2024):</strong> CNIL fined Orange 50 million EUR. The investigation found that promotional messages placed in user inboxes were indistinguishable from regular emails, violating consent requirements under the ePrivacy Directive.</li>
+<li><strong>Enel Energia (Italy, 2022):</strong> Italy's Garante fined Enel 26.5 million EUR for aggressive telemarketing and email campaigns without valid consent.</li>
+<li><strong>Spain (AEPD):</strong> Spain's DPA has issued over 1,000 GDPR fines totaling roughly 120 million EUR as of late 2025, many related to marketing without consent.</li>
+</ul>
+<h3>EU Member State Differences (Critical for B2B)</h3>
+<p>GDPR applies everywhere in the EU. But each member state implemented the ePrivacy Directive into its own national law, and these implementations differ on whether B2B cold email requires opt-in consent. This is the detail most guides miss.</p>
+<table>
+<thead>
+<tr><th>Country</th><th>B2B Opt-In Required?</th><th>National Law</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>France</td><td>No</td><td>LCEN + CNIL guidance</td><td>B2B email to corporate addresses about professional topics is allowed without opt-in. Must include opt-out and sender ID.</td></tr>
+<tr><td>Germany</td><td>Yes</td><td>UWG Section 7</td><td>Strictest in the EU. Requires double opt-in. Even B2B email to corporate addresses needs prior consent.</td></tr>
+<tr><td>Spain</td><td>Yes</td><td>LSSI-CE</td><td>Explicit consent required for all commercial email. AEPD enforces aggressively.</td></tr>
+<tr><td>Italy</td><td>Yes</td><td>Legislative Decree 196/2003</td><td>Consent required. Garante actively fines for unsolicited marketing.</td></tr>
+<tr><td>Netherlands</td><td>No</td><td>Telecommunicatiewet</td><td>B2B cold email to published corporate addresses is permitted without prior consent.</td></tr>
+<tr><td>Belgium</td><td>Yes (single opt-in)</td><td>WER</td><td>Single opt-in consent required. Less strict than Germany but stricter than France.</td></tr>
+<tr><td>Ireland</td><td>No</td><td>SI 336/2011</td><td>B2B corporate email is permitted. Similar to UK approach.</td></tr>
+<tr><td>Sweden</td><td>No</td><td>Marketing Practices Act</td><td>B2B cold email is permitted to corporate addresses. Must include opt-out.</td></tr>
+<tr><td>Poland</td><td>Yes</td><td>Telecommunications Law</td><td>Prior consent required for all commercial electronic messages.</td></tr>
+<tr><td>Austria</td><td>Yes</td><td>TKG 2003</td><td>Follows German-style approach. Opt-in required for B2B.</td></tr>
+</tbody>
+</table>
+<p><strong>Practical implication:</strong> If you are targeting prospects across Europe, you cannot treat the EU as one jurisdiction. A cold email that is legal in France is illegal in Germany. Most teams solve this by either (a) building country-specific workflows or (b) defaulting to the strictest standard (Germany) for all EU prospects.</p>
+<h3>GDPR Compliance Checklist for Cold Email</h3>
+<ul>
+<li>Legitimate Interest Assessment documented</li>
+<li>Professional email addresses only</li>
+<li>Relevant outreach (role-based targeting)</li>
+<li>Privacy policy link in email</li>
+<li>Easy opt-out in every email</li>
+<li>Data subject request process in place</li>
+<li>Data processing records maintained</li>
+<li>No B2C emails without consent</li>
+</ul>
+<h2>United Kingdom: PECR + UK GDPR</h2>
+<p>Post-Brexit, the UK has its own version of GDPR (UK GDPR) plus the Privacy and Electronic Communications Regulations (PECR). For cold email, PECR is the one that matters most.</p>
+<h3>The UK B2B Exception</h3>
+<p>PECR Regulation 22 requires consent for unsolicited marketing emails to individuals. But there is a "corporate subscriber" exception. If you email a business email address (like name@company.co.uk), PECR consent requirements apply differently. You can send unsolicited email to corporate subscribers if:</p>
+<ul>
+<li>You send to a corporate email address (not a personal one like name@gmail.com)</li>
+<li>The content is relevant to the recipient's professional role</li>
+<li>You identify yourself clearly</li>
+<li>You provide a valid opt-out</li>
+</ul>
+<p>Sole traders and partnerships are treated as individuals, not corporate subscribers. You need consent to cold email them.</p>
+<h3>Penalties</h3>
+<p>The ICO (Information Commissioner's Office) can issue fines up to 500,000 GBP under PECR. Under UK GDPR, fines can reach 17.5 million GBP or 4% of annual global turnover.</p>
+<h3>UK Compliance Checklist</h3>
+<ul>
+<li>Corporate email addresses only (not sole traders)</li>
+<li>Clear sender identification</li>
+<li>Relevant to recipient's role</li>
+<li>Opt-out mechanism in every email</li>
+<li>UK GDPR data processing requirements met</li>
+<li>Privacy policy accessible</li>
+</ul>
+<h2>Canada: CASL (Canada's Anti-Spam Legislation)</h2>
+<p>CASL is the strictest cold email law among the countries covered here. It is consent-first by default. But there are important exceptions for B2B outreach that make cold email possible.</p>
+<h3>Consent Types Under CASL</h3>
+<p>CASL recognizes two types of consent:</p>
+<ul>
+<li><strong>Express consent:</strong> The recipient explicitly agreed to receive emails from you. This is the gold standard and never expires (unless withdrawn).</li>
+<li><strong>Implied consent:</strong> This is what makes B2B cold email possible. You have implied consent when:
+                    <ul>
+<li>The recipient published their email address without a "no unsolicited email" statement (e.g., on their company website)</li>
+<li>You have an existing business relationship (purchased within last 2 years, inquiry within last 6 months)</li>
+<li>You received a referral (implied consent lasts 6 months)</li>
+<li>The recipient belongs to a professional association and you are a member too</li>
+</ul>
+</li>
+</ul>
+<h3>What CASL Requires</h3>
+<ul>
+<li>Sender identification (name, business name, mailing address)</li>
+<li>Contact information (phone, email, or web address)</li>
+<li>Working unsubscribe mechanism</li>
+<li>Unsubscribe processed within 10 business days</li>
+<li>Clear purpose of the email</li>
+</ul>
+<h3>Penalties</h3>
+<p>Up to $10 million CAD per violation for businesses, $1 million CAD for individuals. CASL also includes a private right of action, meaning individuals can sue.</p>
+<p><strong>Enforcement examples:</strong> Compu-Finder was fined $1.1M CAD for sending commercial emails without consent. Blackstone Learning received a $100K CAD penalty. The CRTC continues active enforcement with multiple actions per year. Consent does not transfer when you buy a list: this is one of the most common mistakes that triggers CASL fines.</p>
+<h3>CASL Compliance Checklist</h3>
+<ul>
+<li>Implied or express consent documented</li>
+<li>Full sender identification in email</li>
+<li>Physical mailing address included</li>
+<li>Working unsubscribe processed within 10 days</li>
+<li>Consent records maintained and timestamped</li>
+<li>No purchased lists (consent does not transfer)</li>
+</ul>
+<h2>Australia: Spam Act 2003</h2>
+<p>Australia's Spam Act is consent-based, similar to CASL. You generally cannot send unsolicited commercial electronic messages without consent. But the B2B angle has nuances.</p>
+<h3>Consent Under the Spam Act</h3>
+<ul>
+<li><strong>Express consent:</strong> The recipient opted in to receive your emails.</li>
+<li><strong>Inferred consent:</strong> You can infer consent from an existing business relationship or from a published business email address. If someone publishes their work email on a company website, and your message is relevant to their role, the ACMA (Australian Communications and Media Authority) considers this inferred consent.</li>
+</ul>
+<h3>Three Rules of the Spam Act</h3>
+<ol>
+<li><strong>Consent:</strong> You need express or inferred consent before sending.</li>
+<li><strong>Identify:</strong> The sender must be clearly identified with accurate contact details.</li>
+<li><strong>Unsubscribe:</strong> Every commercial email must include a functional unsubscribe mechanism. Process within 5 business days.</li>
+</ol>
+<h3>Penalties</h3>
+<p>The ACMA can issue fines up to $2.22 million AUD per day for serious and ongoing violations. Infringement notices start at $111,000 AUD per violation. The ACMA has been active in enforcement, with significant penalties issued to both local and international companies.</p>
+<h3>Australia Compliance Checklist</h3>
+<ul>
+<li>Express or inferred consent obtained</li>
+<li>Clear sender identification</li>
+<li>Accurate contact details</li>
+<li>Functional unsubscribe link</li>
+<li>Unsubscribe honored within 5 business days</li>
+<li>Consent records maintained</li>
+</ul>
+<h2>Singapore: Spam Control Act (2007)</h2>
+<p>Singapore's Spam Control Act follows an opt-out model similar to the US. You can send unsolicited commercial email as long as you comply with the rules. No prior consent is required.</p>
+<h3>What the Spam Control Act Requires</h3>
+<ul>
+<li><strong>Clear subject line labeling.</strong> The subject must include "<adv>" (or similar identifier) before any other text if the message is an advertisement.</adv></li>
+<li><strong>Sender identification.</strong> Legal name or business name, plus a valid physical address in Singapore.</li>
+<li><strong>Functional unsubscribe.</strong> Every email must include an unsubscribe mechanism. You must honor opt-out requests within 10 business days.</li>
+<li><strong>No address harvesting.</strong> You cannot use automated tools to scrape email addresses from websites or directories.</li>
+</ul>
+<h3>Penalties</h3>
+<p>$25 SGD per unsolicited email, up to a maximum of $1 million SGD. Enforcement is civil, not criminal. Recipients can bring private lawsuits. The Infocomm Media Development Authority (IMDA) oversees compliance.</p>
+<h3>Singapore Compliance Checklist</h3>
+<ul>
+<li>"<adv>" label in subject line</adv></li>
+<li>Sender name and Singapore address included</li>
+<li>Functional unsubscribe in every email</li>
+<li>Opt-outs honored within 10 business days</li>
+<li>No harvested email addresses</li>
+</ul>
+<h2>Japan: Act on Regulation of Transmission of Specified Electronic Mail</h2>
+<p>Japan requires opt-in consent for commercial email. This is one of the stricter regimes globally. You cannot send commercial email to someone who has not requested or consented to receive it, with limited exceptions for existing business relationships.</p>
+<h3>What Japan's Email Law Requires</h3>
+<ul>
+<li><strong>Prior consent (opt-in).</strong> You need the recipient's request or consent before sending any commercial email. Exceptions exist for recipients with whom you have an existing transaction relationship.</li>
+<li><strong>Sender identification.</strong> The email must include the sender's name, email address, and a URL for opt-out.</li>
+<li><strong>No dictionary attacks.</strong> Generating email addresses by combining random names and domains is explicitly prohibited.</li>
+<li><strong>Record keeping.</strong> Senders must maintain records of consent for each recipient.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Individuals face up to 1 year imprisonment or a fine of up to JPY 1 million. Corporations face fines up to JPY 30 million. The Ministry of Internal Affairs and Communications and the Consumer Affairs Agency share enforcement authority.</p>
+<h3>Japan Compliance Checklist</h3>
+<ul>
+<li>Documented opt-in consent for every recipient</li>
+<li>Sender name and contact details in email</li>
+<li>Opt-out URL included in every message</li>
+<li>Consent records maintained and accessible</li>
+<li>No auto-generated email addresses</li>
+</ul>
+<h2>India: IT Act 2000 + TRAI Regulations</h2>
+<p>India does not have a single anti-spam law for email. B2B cold email is largely unregulated and enforcement is minimal. The Telecom Regulatory Authority of India (TRAI) runs a Do Not Disturb (DND) registry, but it primarily targets phone calls and SMS, not email.</p>
+<h3>What Applies to Cold Email in India</h3>
+<ul>
+<li><strong>IT Act 2000, Section 66A</strong> (struck down in 2015 for being overly broad) previously covered annoying electronic messages. There is no direct replacement for email spam.</li>
+<li><strong>TRAI DND Registry.</strong> Covers calls and SMS. Email is not explicitly included, but sending commercial email to someone who has asked not to be contacted could invite complaints.</li>
+<li><strong>Digital Personal Data Protection Act (2023).</strong> India's newer privacy law introduces consent requirements for processing personal data. B2B email using business contact information falls into a gray area with no enforcement precedent yet.</li>
+</ul>
+<h3>Practical Reality</h3>
+<p>B2B cold email in India is common and rarely faces legal action. The risk is reputational and deliverability-based, not legal. ISPs and email providers (Google, Microsoft) enforce their own policies, which function as the de facto rules. Follow standard best practices: identify yourself, include an opt-out, send relevant content.</p>
+<h3>India Compliance Checklist</h3>
+<ul>
+<li>Clear sender identification</li>
+<li>Working unsubscribe mechanism</li>
+<li>Relevant content targeted to professional role</li>
+<li>Respect opt-out requests immediately</li>
+<li>Follow email provider policies (Google Workspace, Microsoft 365)</li>
+</ul>
+<h2>Brazil: LGPD (Lei Geral de Protecao de Dados)</h2>
+<p>Brazil's LGPD, in effect since 2020, mirrors GDPR in many ways. B2B cold email is possible under the legitimate interest legal basis. B2C cold email requires prior consent. The law applies to any company processing data of individuals in Brazil, regardless of where the company is based.</p>
+<h3>What LGPD Requires for Cold Email</h3>
+<ul>
+<li><strong>Legal basis.</strong> You need either consent or a legitimate interest justification. For B2B outreach to professional email addresses, legitimate interest applies.</li>
+<li><strong>Transparency.</strong> Recipients must be informed about how their data is being used. Include a link to your privacy policy.</li>
+<li><strong>Opt-out mechanism.</strong> Every email must include an unsubscribe option.</li>
+<li><strong>Data minimization.</strong> Only collect and process data that is necessary for the purpose of outreach.</li>
+<li><strong>Sender identification.</strong> Full name and contact details of the sender organization.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Up to 2% of annual revenue in Brazil, capped at 50 million BRL per violation. The ANPD (Autoridade Nacional de Protecao de Dados) is still building its enforcement capacity, but fines are increasing. The first administrative sanctions were issued in 2023.</p>
+<h3>Brazil Compliance Checklist</h3>
+<ul>
+<li>Legitimate interest documented for B2B outreach</li>
+<li>Professional email addresses only</li>
+<li>Privacy policy link included</li>
+<li>Working unsubscribe mechanism</li>
+<li>Data processing records maintained</li>
+<li>No B2C emails without consent</li>
+</ul>
+<h2>South Korea: PIPA + Network Act</h2>
+<p>South Korea requires explicit opt-in consent for commercial email. The rules come from two laws: the Personal Information Protection Act (PIPA) and the Act on Promotion of Information and Communication Network Utilization (Network Act). This is one of the strictest regimes in Asia.</p>
+<h3>What South Korean Law Requires</h3>
+<ul>
+<li><strong>Explicit consent required.</strong> You must obtain verifiable consent before sending any commercial email. Consent must be renewed every 2 years.</li>
+<li><strong>Implied consent window.</strong> If you completed a transaction with the recipient, implied consent lasts 6 months after the sale concluded.</li>
+<li><strong>Clear labeling.</strong> Commercial emails must be clearly marked as advertisements.</li>
+<li><strong>Sender identification.</strong> Full name, contact details, and business registration information.</li>
+<li><strong>Unsubscribe mechanism.</strong> Every email must include a functional opt-out.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Fines up to KRW 5 million. The Korea Communications Commission (KCC) oversees enforcement. South Korea also applies the Network Act extraterritorially: if your domain is Korean or you conduct business in South Korea, you fall under the law regardless of where your company is incorporated.</p>
+<h3>South Korea Compliance Checklist</h3>
+<ul>
+<li>Documented opt-in consent for every recipient</li>
+<li>Consent renewal tracked (2-year expiry)</li>
+<li>Advertisement label on commercial emails</li>
+<li>Sender identification with business registration</li>
+<li>Functional unsubscribe mechanism</li>
+<li>Consent records stored and accessible</li>
+</ul>
+<h2>UAE: Unsolicited Electronic Communications Regulation (RUEC)</h2>
+<p>The UAE is one of the strictest jurisdictions globally for cold email. Cold emailing without explicit prior consent is illegal. There are no implied consent exceptions, no legitimate interest carve-outs, and no B2B exemptions. Every recipient must actively opt in before you send.</p>
+<h3>What UAE Law Requires</h3>
+<ul>
+<li><strong>Explicit prior consent.</strong> No exceptions. No "published email address" loophole. No implied consent from business relationships.</li>
+<li><strong>Sender identification.</strong> Full business details including physical address in the UAE.</li>
+<li><strong>Unsubscribe mechanism.</strong> Working opt-out in every message.</li>
+<li><strong>Data retention records.</strong> You must retain records of how personal data was collected, processed, and used.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Up to AED 10 million (roughly USD 2.7 million). The Telecommunications and Digital Government Regulatory Authority (TDRA, formerly TRA) enforces the regulation. The RUEC applies to anyone sending electronic communications to UAE recipients.</p>
+<h3>UAE Compliance Checklist</h3>
+<ul>
+<li>Documented explicit consent from every recipient</li>
+<li>Full sender identification with UAE address</li>
+<li>Functional unsubscribe mechanism</li>
+<li>Data collection and processing records maintained</li>
+<li>No cold outreach without prior opt-in</li>
+</ul>
+<h2>South Africa: POPIA (Protection of Personal Information Act)</h2>
+<p>South Africa's POPIA, fully enforced since July 2021, follows a consent-and-legitimate-interest model similar to GDPR. B2B cold email is possible under the "legitimate interest" justification. B2C requires consent.</p>
+<h3>What POPIA Requires for Cold Email</h3>
+<ul>
+<li><strong>Legal basis.</strong> Consent or legitimate interest. B2B outreach to corporate email addresses about relevant professional topics falls under legitimate interest.</li>
+<li><strong>Purpose specification.</strong> Data must be collected for a specific, explicitly defined, and lawful purpose.</li>
+<li><strong>Opt-out mechanism.</strong> Every commercial email must include an unsubscribe option. Honor it immediately.</li>
+<li><strong>Sender identification.</strong> Name, contact details, and organization.</li>
+<li><strong>Data subject rights.</strong> Recipients can request access to, correction of, or deletion of their personal data.</li>
+</ul>
+<h3>Penalties</h3>
+<p>Unlimited fines plus up to 12 months imprisonment for serious violations. The Information Regulator oversees enforcement. Enforcement is still ramping up, but the legal framework is in place and the penalties are severe.</p>
+<h3>South Africa Compliance Checklist</h3>
+<ul>
+<li>Legitimate interest documented for B2B outreach</li>
+<li>Corporate email addresses only</li>
+<li>Purpose of data collection defined</li>
+<li>Functional unsubscribe mechanism</li>
+<li>Data subject request process in place</li>
+<li>No B2C emails without consent</li>
+</ul>
+<h2>China: Measures for Internet Email Services</h2>
+<p>China requires opt-in consent for commercial email under the Measures for Internet Email Services (2006). The law applies to all email sent to Chinese recipients. Combined with the Personal Information Protection Law (PIPL, 2021), this creates one of the more restrictive environments globally.</p>
+<h3>What Chinese Law Requires</h3>
+<ul>
+<li><strong>Opt-in consent.</strong> You need the recipient's verifiable consent before sending commercial email. Consent must be recorded.</li>
+<li><strong>Clear labeling.</strong> Commercial emails must be identifiable as advertisements.</li>
+<li><strong>Sender identification.</strong> Real sender name, email address, and organization details.</li>
+<li><strong>Unsubscribe mechanism.</strong> Functional opt-out in every message.</li>
+<li><strong>Cross-border data transfer rules (PIPL).</strong> If you are sending from outside China and processing data of Chinese residents, additional data transfer requirements under PIPL apply.</li>
+</ul>
+<h3>Penalties</h3>
+<p>CNY 10,000 to 30,000 per email under the Internet Email Measures. Under PIPL, violations can result in fines up to 50 million CNY or 5% of annual revenue, plus potential blacklisting by Chinese ISPs. Enforcement is primarily through the Ministry of Industry and Information Technology (MIIT).</p>
+<h3>China Compliance Checklist</h3>
+<ul>
+<li>Documented opt-in consent for every Chinese recipient</li>
+<li>Commercial email clearly labeled</li>
+<li>Full sender identification</li>
+<li>Functional unsubscribe mechanism</li>
+<li>Cross-border data transfer compliance if sending from outside China</li>
+<li>Consent records stored and accessible</li>
+</ul>
+<h2>B2B vs B2C: The Most Important Distinction</h2>
+<p>If you only remember one thing from this guide, make it this: B2B and B2C cold email are different legal categories in most jurisdictions.</p>
+<table>
+<thead>
+<tr><th>Jurisdiction</th><th>B2B Cold Email</th><th>B2C Cold Email</th></tr>
+</thead>
+<tbody>
+<tr><td>US (CAN-SPAM)</td><td>Legal with compliance</td><td>Legal with compliance</td></tr>
+<tr><td>EU (GDPR)</td><td>Legal via legitimate interest</td><td>Consent required</td></tr>
+<tr><td>UK (PECR)</td><td>Legal to corporate subscribers</td><td>Consent required</td></tr>
+<tr><td>Canada (CASL)</td><td>Legal with implied consent</td><td>Consent required</td></tr>
+<tr><td>Australia (Spam Act)</td><td>Legal with inferred consent</td><td>Consent required</td></tr>
+<tr><td>Singapore (Spam Control Act)</td><td>Legal with opt-out</td><td>Legal with opt-out</td></tr>
+<tr><td>Japan (Specified Electronic Mail)</td><td>Consent required</td><td>Consent required</td></tr>
+<tr><td>India (IT Act / TRAI)</td><td>Legal (limited enforcement)</td><td>Gray area (TRAI DND)</td></tr>
+<tr><td>Brazil (LGPD)</td><td>Legal via legitimate interest</td><td>Consent required</td></tr>
+<tr><td>South Korea (PIPA)</td><td>Consent required</td><td>Consent required</td></tr>
+<tr><td>UAE (RUEC)</td><td>Consent required</td><td>Consent required</td></tr>
+<tr><td>South Africa (POPIA)</td><td>Legal via legitimate interest</td><td>Consent required</td></tr>
+<tr><td>China (Internet Email Measures)</td><td>Consent required</td><td>Consent required</td></tr>
+</tbody>
+</table>
+<p>For B2B outbound sales, cold email is legal in most markets covered here, as long as you follow the rules. The US and Singapore are the most permissive (opt-out models). Japan, South Korea, the UAE, and China are the most restrictive (opt-in only). Canada, Australia, the EU, the UK, Brazil, and South Africa sit in the middle with various consent or legitimate interest frameworks. India is effectively unregulated for B2B email.</p>
+<h2>Decision Framework: Can You Send This Cold Email?</h2>
+<p>Use this framework before sending any cold email campaign to a new market. Walk through it for each recipient country.</p>
+<figure style="margin: 2rem 0;">
+<svg aria-label="Decision flowchart: Can You Send This Cold Email?" role="img" style="width: 100%; max-width: 720px; height: auto; border: 1px solid #e5e7eb; border-radius: 8px; background: #fafafa;" viewbox="0 0 720 520" xmlns="http://www.w3.org/2000/svg">
+<text fill="#1a1a1a" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="360" y="30">Can You Send This Cold Email?</text>
+<!-- Start node -->
+<rect fill="#4F46E5" height="40" rx="20" width="170" x="275" y="50"></rect>
+<text fill="#fff" font-family="Inter, sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="360" y="75">START: New campaign</text>
+<!-- Arrow down -->
+<line marker-end="url(#arrowCE)" stroke="#4F46E5" stroke-width="2" x1="360" x2="360" y1="90" y2="110"></line>
+<!-- Decision 1: B2B or B2C? -->
+<polygon fill="#EEF2FF" points="360,110 480,150 360,190 240,150" stroke="#4F46E5" stroke-width="1.5"></polygon>
+<text fill="#4F46E5" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="360" y="148">B2B or B2C?</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" x="360" y="162">(recipient type)</text>
+<!-- B2C branch (right) -->
+<line stroke="#EF4444" stroke-width="1.5" x1="480" x2="580" y1="150" y2="150"></line>
+<text fill="#EF4444" font-family="Inter, sans-serif" font-size="10" font-weight="600" x="530" y="143">B2C</text>
+<rect fill="#FEF2F2" height="40" rx="6" stroke="#EF4444" stroke-width="1.5" width="120" x="580" y="130"></rect>
+<text fill="#EF4444" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="640" y="148">Need explicit</text>
+<text fill="#EF4444" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="640" y="162">consent first</text>
+<!-- B2B branch (down) -->
+<line marker-end="url(#arrowCE)" stroke="#4F46E5" stroke-width="2" x1="360" x2="360" y1="190" y2="220"></line>
+<text fill="#4F46E5" font-family="Inter, sans-serif" font-size="10" font-weight="600" x="370" y="210">B2B</text>
+<!-- Decision 2: What consent model? -->
+<polygon fill="#EEF2FF" points="360,220 510,265 360,310 210,265" stroke="#4F46E5" stroke-width="1.5"></polygon>
+<text fill="#4F46E5" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="360" y="260">Recipient country</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" x="360" y="274">consent model?</text>
+<!-- Left branch: Opt-out (US, Singapore) -->
+<line stroke="#10B981" stroke-width="1.5" x1="210" x2="80" y1="265" y2="265"></line>
+<line marker-end="url(#arrowCE)" stroke="#10B981" stroke-width="1.5" x1="80" x2="80" y1="265" y2="340"></line>
+<text fill="#10B981" font-family="Inter, sans-serif" font-size="9" font-weight="600" x="145" y="255">Opt-out</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" x="145" y="267">(US, Singapore)</text>
+<rect fill="#F0FDF4" height="70" rx="8" stroke="#10B981" stroke-width="1.5" width="130" x="15" y="340"></rect>
+<text fill="#10B981" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="80" y="362">SEND FREELY</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="80" y="378">Include unsubscribe</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="80" y="390">+ physical address</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="80" y="402">+ honest sender ID</text>
+<!-- Middle branch: Legitimate interest (GDPR B2B) -->
+<line marker-end="url(#arrowCE)" stroke="#6366F1" stroke-width="1.5" x1="360" x2="360" y1="310" y2="340"></line>
+<text fill="#6366F1" font-family="Inter, sans-serif" font-size="9" font-weight="600" x="372" y="330">Legitimate interest</text>
+<rect fill="#EEF2FF" height="70" rx="8" stroke="#6366F1" stroke-width="1.5" width="160" x="280" y="340"></rect>
+<text fill="#4F46E5" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="360" y="360">SEND WITH CARE</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="360" y="376">GDPR B2B: FR, NL, IE, SE, UK</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="360" y="388">Document legitimate interest</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="360" y="400">+ opt-out in every email</text>
+<!-- Right branch: Opt-in required -->
+<line stroke="#EF4444" stroke-width="1.5" x1="510" x2="620" y1="265" y2="265"></line>
+<line marker-end="url(#arrowCE)" stroke="#EF4444" stroke-width="1.5" x1="620" x2="620" y1="265" y2="340"></line>
+<text fill="#EF4444" font-family="Inter, sans-serif" font-size="9" font-weight="600" x="565" y="255">Opt-in required</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" x="565" y="267">(DE, ES, IT, JP, KR)</text>
+<rect fill="#FEF2F2" height="70" rx="8" stroke="#EF4444" stroke-width="1.5" width="150" x="545" y="340"></rect>
+<text fill="#EF4444" font-family="Inter, sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="620" y="360">NEED CONSENT</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="620" y="376">Get explicit permission</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="620" y="388">before sending any email.</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="8" text-anchor="middle" x="620" y="400">No cold email allowed.</text>
+<!-- Bottom note -->
+<rect fill="#F9FAFB" height="50" rx="8" stroke="#E5E7EB" stroke-width="1" width="440" x="140" y="440"></rect>
+<text fill="#1a1a1a" font-family="Inter, sans-serif" font-size="10" font-weight="600" text-anchor="middle" x="360" y="460">When in doubt, default to the strictest standard.</text>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="9" text-anchor="middle" x="360" y="476">Build every campaign to meet GDPR + Germany/CASL standards. That covers you everywhere.</text>
+<line stroke="#E5E7EB" stroke-dasharray="4" stroke-width="1" x1="80" x2="80" y1="410" y2="440"></line>
+<line stroke="#E5E7EB" stroke-dasharray="4" stroke-width="1" x1="360" x2="360" y1="410" y2="440"></line>
+<line stroke="#E5E7EB" stroke-dasharray="4" stroke-width="1" x1="620" x2="620" y1="410" y2="440"></line>
+<text fill="#6b7280" font-family="Inter, sans-serif" font-size="10" text-anchor="middle" x="360" y="510">overloop.com/blog/cold-email-illegal</text>
+<defs>
+<marker id="arrowCE" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
+<polygon fill="#4F46E5" points="0 0, 10 3.5, 0 7"></polygon>
+</marker>
+</defs>
+</svg>
+<figcaption style="font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; text-align: center;">Decision flowchart: walk through this for each recipient country before launching a cold email campaign.</figcaption>
+</figure>
+<ol>
+<li><strong>Identify the recipient's country.</strong> The law that applies is based on where the recipient is located, not where your company is based.</li>
+<li><strong>Is this B2B or B2C?</strong> If B2C, you need explicit consent in almost every jurisdiction except the US and Singapore.</li>
+<li><strong>Check the consent model.</strong>
+<ul>
+<li><strong>Opt-out countries</strong> (US, Singapore): You can send without prior consent. Include unsubscribe and sender ID.</li>
+<li><strong>Legitimate interest countries</strong> (France, Netherlands, Ireland, Sweden, Brazil, South Africa, UK for corporate subscribers): You can send B2B cold email if you have a genuine reason, target by role, and include opt-out. Document your legitimate interest assessment.</li>
+<li><strong>Implied consent countries</strong> (Canada, Australia): You can send if the email address is published or you have a prior business relationship. Document the consent basis.</li>
+<li><strong>Opt-in required countries</strong> (Germany, Spain, Italy, Japan, South Korea, UAE, China, Poland, Austria, Belgium): You need prior explicit consent. Do not cold email prospects in these markets without it.</li>
+</ul>
+</li>
+<li><strong>Run the compliance checklist for that country.</strong> Every jurisdiction has specific requirements beyond consent (physical address, labeling, unsubscribe timing). Use the checklists in this guide.</li>
+<li><strong>When in doubt, default to the strictest standard.</strong> If you are emailing prospects across multiple countries, build your email to meet GDPR + Germany/CASL standards. That covers you everywhere.</li>
+</ol>
+<h2>Universal Compliance Rules (All Countries)</h2>
+<p>No matter where you send, these rules apply everywhere:</p>
+<ol>
+<li><strong>Include a real unsubscribe link.</strong> Not a "reply STOP" workaround. A proper, one-click unsubscribe.</li>
+<li><strong>Honor opt-outs fast.</strong> 10 business days maximum in most jurisdictions. Best practice: instant.</li>
+<li><strong>Identify yourself.</strong> Real name, real company, real address. No hiding behind aliases.</li>
+<li><strong>Send relevant content.</strong> Targeting matters legally, not just for conversion.</li>
+<li><strong>Maintain records.</strong> Keep proof of how you got each contact and their consent status.</li>
+<li><strong>Monitor your sender reputation.</strong> High bounce rates and spam complaints can trigger ISP blocks and draw regulatory attention. Use a <a href="/tools/domain-health-checker">domain health checker</a> to stay on top of it.</li>
+<li><strong>Avoid <a href="/blog/455-email-spam-trigger-words-avoid-2018">spam trigger words</a></strong> that get your emails filtered before they reach anyone.</li>
+</ol>
+<h2>How to Send Cold Email the Right Way</h2>
+<p>Legal compliance is the floor, not the ceiling. Here are the <a href="/blog/cold-email-stats-2018">cold email best practices</a> that keep you compliant and effective:</p>
+<ul>
+<li><strong>Verify every email address.</strong> High bounce rates damage your sender reputation and can signal to regulators that you're not maintaining clean lists.</li>
+<li><strong>Warm up new domains.</strong> Sending 500 cold emails from a brand-new domain is a red flag for ISPs.</li>
+<li><strong>Personalize at scale.</strong> Generic mass emails look like spam to recipients and regulators. Personalization shows relevance.</li>
+<li><strong>Keep <a href="/blog/whats-the-best-email-length-for-sales-outreach">links in your emails</a> clean.</strong> No link shorteners. No tracking pixels from sketchy domains.</li>
+<li><strong>Send from a real person.</strong> "John at Acme" gets more trust than "Acme Sales Team."</li>
+<li><strong>Follow up thoughtfully.</strong> 3-4 follow-ups is acceptable. 15 follow-ups is harassment.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Is cold email illegal?</h3>
+<p>Cold email is legal in most countries when you follow specific rules. In the US, CAN-SPAM requires accurate headers, a physical address, and an unsubscribe option. In the EU, GDPR allows B2B cold email under legitimate interest but requires consent for B2C. Each country has different requirements, but no major market bans B2B cold email outright.</p>
+<h3>Can I send cold emails under GDPR?</h3>
+<p>Yes. B2B cold email is possible under GDPR using the legitimate interest legal basis (Article 6(1)(f)). You must demonstrate a genuine business reason, use professional email addresses, provide easy opt-out, and document your Legitimate Interest Assessment. B2C cold email requires prior consent under the ePrivacy Directive.</p>
+<h3>What are the penalties for illegal cold email?</h3>
+<p>Penalties vary by country. CAN-SPAM (US): up to $53,088 per email. GDPR (EU): up to 20M EUR or 4% of global revenue. CASL (Canada): up to $10M CAD per violation. Australia Spam Act: up to $2.22M AUD per day. Washington State CEMA: $500 per email in private lawsuits (reducing to $100 after June 2026). Singapore: $25 per email up to $1M SGD. Japan: up to JPY 30M for corporations. Brazil LGPD: up to 50M BRL. UAE: up to AED 10M. South Korea: up to KRW 5M. South Africa: unlimited fines plus up to 12 months imprisonment. China: CNY 10,000-30,000 per email (up to 50M CNY or 5% revenue under PIPL).</p>
+<h3>Do I need consent to send cold emails?</h3>
+<p>It depends on the country. The US and Singapore use opt-out models, meaning you do not need prior consent but must include an unsubscribe mechanism. Japan requires opt-in consent. The EU, UK, Canada, and Australia allow B2B cold email under various legitimate interest or implied consent frameworks, but require consent for B2C emails.</p>
+<h3>Is B2B cold email legal?</h3>
+<p>B2B cold email is legal in every major market covered in this guide. The US is the most permissive. The EU and UK allow it under legitimate interest. Canada and Australia allow it under implied or inferred consent. Singapore uses an opt-out model. Japan requires consent but makes exceptions for existing business relationships. The key across all markets: identify yourself, send relevant content, and provide an opt-out.</p>
+<h3>Can I send the same cold email to prospects in different countries?</h3>
+<p>You can, but you must comply with the laws of the recipient's country, not your own. If you send to a Canadian prospect, CASL applies. If you send to a German prospect, GDPR applies. In practice, building your email to meet the strictest standard you target (usually GDPR or CASL) means you will be compliant everywhere.</p>
+<h3>Is using "Re:" in a cold email subject line illegal?</h3>
+<p>Under CAN-SPAM, using "Re:" on a first-touch email is deceptive because it implies a prior conversation that does not exist. Under Washington State's CEMA, this can trigger $500 per email in statutory damages through private lawsuits. It is one of the most common compliance mistakes in outbound sales.</p>
+<h3>What is the difference between cold email and spam?</h3>
+<p>Cold email is a targeted, one-to-one commercial message sent to a specific person with sender identification, relevant content, and an opt-out. Spam is bulk unsolicited email sent indiscriminately without identification or relevance. Regulators treat them differently. Cold email that follows the rules is legal. Spam is not.</p>
+<h3>Which EU countries allow B2B cold email without opt-in?</h3>
+<p>France, the Netherlands, Ireland, and Sweden allow B2B cold email to corporate addresses without prior opt-in consent, as long as you include sender identification and an opt-out. Germany, Spain, Italy, Poland, Austria, and Belgium require opt-in consent even for B2B. Each EU member state implemented the ePrivacy Directive differently. See the EU member state table above for the full breakdown.</p>
+<h3>Can I send cold email to Brazil under LGPD?</h3>
+<p>Yes. Brazil's LGPD allows B2B cold email under the legitimate interest legal basis, similar to GDPR. You must identify yourself, include an opt-out, and send content relevant to the recipient's professional role. B2C cold email requires prior consent. Penalties reach up to 2% of annual revenue, capped at 50 million BRL per violation.</p>
+<h3>Is cold email legal in the UAE?</h3>
+<p>No. The UAE prohibits cold email without explicit prior consent under its Unsolicited Electronic Communications Regulation (RUEC). There are no implied consent exceptions, no legitimate interest carve-outs, and no B2B exemptions. Penalties reach AED 10 million. Do not cold email UAE prospects without documented opt-in consent.</p>
+<h3>Which law applies when my company and the recipient are in different countries?</h3>
+<p>The recipient's country determines which law applies. If your company is in the US but you email a prospect in Germany, German law (UWG Section 7) applies. If you email a Canadian prospect, CASL applies. The safest approach is to build your email to meet the strictest standard among all the countries you target.</p>
+<h2>The Bottom Line</h2>
+<p>Cold email is not illegal. It is regulated. Most major markets allow B2B outbound email with guardrails. The exceptions are markets like the UAE, South Korea, and China, where opt-in consent is mandatory with no B2B exemption. Everywhere else, the rules are not complicated: identify yourself, send relevant content, let people opt out, and keep records.</p>
+<p>Companies that get in trouble are not the ones doing careful B2B outreach. They are the ones buying shady lists, hiding their identity, and ignoring unsubscribe requests. Do the basics right and cold email is one of the most effective and fully legal B2B sales channels in the majority of the world's markets. Know the specific rules for each country you target, use the checklists in this guide, and you will stay on the right side of the law.</p>
+
+</main>
+    </div>
+
+    <!-- End-of-article PDF download (bottom) -->
+    <section style="max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px);">
+      <div class="downloadable">
+        <div class="downloadable__icon"><i data-lucide="file-down"></i></div>
+        <div class="downloadable__body">
+          <h4>Take this guide with you</h4>
+          <p>62-page PDF · Print-ready · Includes the complete checklist + cold email templates + LinkedIn sequences</p>
+        </div>
+        <a href="#" class="btn"><i data-lucide="download" style="width:16px;height:16px"></i> Download PDF</a>
+      </div>
+    </section>
+
+    <!-- End CTA -->
+    <section class="cta-hard">
+      <h3>Ready to build your <em>B2B lead gen engine?</em></h3>
+      <p>Overloop combines AI prospecting, multichannel sequencing, and native CRM sync. Everything in this guide, in one platform. No annual contract.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
+        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+        Try Overloop free
+      </a>
+    </section>
+
+    <!-- Expert panel -->
+    <section class="expert-panel" id="experts" aria-label="Meet the experts">
+      <div class="expert-panel__header">
+        <h3>Meet the Experts Behind This Guide</h3>
+        <p>Every chapter is backed by hands-on testing, real campaign data, and years of B2B lead gen experience.</p>
+      </div>
+      <div class="expert-panel__grid">
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+          <div class="expert-bio__name">Vincenzo Ruggiero</div>
+          <div class="expert-bio__role">CEO, Overloop</div>
+          <p class="expert-bio__text">Founded Overloop in 2015 as Prospect.io. 10+ years building sales automation for B2B SaaS. Personally tests every competitor tool.</p>
+          <a href="https://www.linkedin.com/in/vincenzor/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+          <div class="expert-bio__name">Nicolas Finet</div>
+          <div class="expert-bio__role">CEO & Co-founder, Sortlist & Overloop</div>
+          <p class="expert-bio__text">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies. Deep expertise in cold email, LinkedIn automation, and multichannel.</p>
+          <a href="https://www.linkedin.com/in/nifinet/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          <div class="expert-bio__name">Nathalie Saikali</div>
+          <div class="expert-bio__role">Customer Success Manager, Overloop</div>
+          <p class="expert-bio__text">Works daily with sales teams deploying Overloop. Sees firsthand what moves the needle for pipeline generation across industries.</p>
+          <a href="https://www.linkedin.com/in/nathalie-saikali/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author card -->
+    <section class="author-card" aria-label="About the author">
+      <div class="author-card__avatar">VR</div>
+      <div>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">CEO at Overloop. Founded the company in 2015 as Prospect.io. Tests every competitor tool hands-on.</div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h3>B2B lead gen insights — once a week, no fluff</h3>
+      <p>Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only — wire up form action in production');">
+        <input type="email" placeholder="Your work email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Related -->
+    <section class="related">
+      <h3>Related guides</h3>
+      <div class="related-grid">
+        <a href="https://overloop.com/blog/best-ai-sales-tools" class="related-card">
+          <div class="related-card__cat">Buyer's guide · 22 min</div>
+          <div class="related-card__title">Best AI Sales Tools in 2026</div>
+        </a>
+        <a href="#" class="related-card">
+          <div class="related-card__cat">Industry playbook · 11 min</div>
+          <div class="related-card__title">Lead Generation for SaaS</div>
+        </a>
+        <a href="https://overloop.com/blog/apollo-alternatives" class="related-card">
+          <div class="related-card__cat">Alternatives · 14 min</div>
+          <div class="related-card__title">Apollo Alternatives (2026)</div>
+        </a>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD -->
+  <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Is Cold Email Illegal? Legal Guide (2026) | Overloop",
+  "description": "Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance checklists included.",
+  "image": "https://overloop.com/assets/images/og/cold-email-illegal.png",
+  "author": {
+    "@type": "Person",
+    "name": "Forster Perelsztejn",
+    "image": "https://overloop.com/assets/images/vincenzo-ruggiero.png"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Overloop",
+    "logo": {"@type": "ImageObject", "url": "https://overloop.com/assets/images/overloop-logo.png"}
+  },
+  "datePublished": "2024-01-03",
+  "dateModified": "2026-04-27",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://overloop.com/blog/cold-email-illegal"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/blog"},
+    {"@type": "ListItem", "position": 2, "name": "Is Cold Email Illegal? Legal Guide (2026)", "item": "https://overloop.com/blog/cold-email-illegal"}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is cold email illegal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cold email is legal in most countries when you follow specific rules. In the US, CAN-SPAM requires accurate headers, a physical address, and an unsubscribe option. In the EU, GDPR allows B2B cold email under legitimate interest but requires consent for B2C. Each country has different requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I send cold emails under GDPR?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, B2B cold email is possible under GDPR using the legitimate interest legal basis (Article 6(1)(f)). You must demonstrate a genuine business reason, use professional email addresses, provide easy opt-out, and document your legitimate interest assessment. B2C cold email requires prior consent."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the penalties for illegal cold email?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Penalties vary by country. CAN-SPAM (US): up to $53,088 per email. GDPR (EU): up to 20M EUR or 4% of global revenue. CASL (Canada): up to $10M CAD per violation. Australia Spam Act: up to $2.22M AUD per day. Brazil LGPD: up to 50M BRL. UAE: up to AED 10M. South Korea: up to KRW 5M. South Africa: unlimited fines plus up to 12 months imprisonment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which EU countries allow B2B cold email without opt-in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "France, the Netherlands, Ireland, and the UK allow B2B cold email to corporate addresses without prior opt-in consent. Germany, Spain, Italy, and Belgium require opt-in consent even for B2B. Each EU member state implemented the ePrivacy Directive differently, so rules vary country by country."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I send cold emails to Brazil under LGPD?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Brazil's LGPD allows B2B cold email under the legitimate interest legal basis, similar to GDPR. You must identify yourself, include an opt-out, and send content relevant to the recipient's professional role. B2C cold email requires prior consent. Penalties reach up to 2% of annual revenue, capped at 50 million BRL per violation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is cold email legal in the Middle East?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The UAE prohibits cold email without explicit prior consent under its Unsolicited Electronic Communications Regulation. No implied consent or legitimate interest exceptions exist. Penalties reach AED 10 million. Other Middle Eastern countries have varying or minimal regulation, but the UAE is the strictest in the region."
+                }
+            }
+        ]
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--
+================================================================
+TEMPLATE #3: Pillar / Ultimate Guide (P0 — 288 articles)
+DESIGN SYSTEM: Overloop canonical (indigo #6366F1 → purple #A855F7)
+
+Example topic: B2B Lead Generation — The Complete Guide (2026)
+Covers: cold email, LinkedIn, content, paid, tools, KPIs, mistakes, scaling
+
+Template-specific sections:
+- Chapter navigation (visual, numbered circles)
+- Sub-TOC per chapter (`.sub-toc`)
+- Key takeaways card per chapter (`.key-takeaways`)
+- Downloadable PDF / checklist CTA (`.downloadable`)
+- Expert quote scattered per chapter (expert-callout reused)
+- Internal-link grid per chapter (`.chapter-links`)
+- Longer TOC with chapter groupings
+
+NO tested-by banner (per feedback — reserved for product-comparison templates)
+================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Motivation: Stop Obsessing Over Results | Overloop</title>
+  <meta name="description" content="Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales.">
+  <link rel="canonical" href="https://overloop.com/blog/boost-sales-motivation">
+  <link href="https://overloop.com/blog/boost-sales-motivation" hreflang="en" rel="alternate"/>
+  <link href="https://overloop.com/de/blog/verkaeufer-nicht-ergebnisbesessen-interview" hreflang="de" rel="alternate"/>
+  <link href="https://overloop.com/fr/blog/motivation-ventes" hreflang="fr" rel="alternate"/>
+  <link href="https://overloop.com/es/blog/vendedores-no-obsesionarse-resultados" hreflang="es" rel="alternate"/>
+  <link href="https://overloop.com/it/blog/motivazione-venditori" hreflang="it" rel="alternate"/>
+  <link href="https://overloop.com/blog/boost-sales-motivation" hreflang="x-default" rel="alternate"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <meta property="og:title" content="Sales Motivation: Stop Obsessing Over Results">
+  <meta property="og:description" content="Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales.">
+  <meta property="og:image" content="https://overloop.com/assets/images/og/boost-sales-motivation.png">
+  <meta property="og:url" content="https://overloop.com/blog/boost-sales-motivation">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sales Motivation: Stop Obsessing Over Results">
+  <meta name="twitter:description" content="Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales.">
+  <meta name="twitter:image" content="https://overloop.com/assets/images/og/boost-sales-motivation.png">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <div class="reading-progress" id="reading-progress"></div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
+
+  <article>
+
+    <!-- Hero -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="library" style="width:12px;height:12px"></i>
+          Ultimate Guide · 10 chapters
+        </span>
+        <h1>Sales Motivation <em>Stop Obsessing Over Results</em></h1>
+        <p class="lead">Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales.</p>
+        <div class="article-meta">
+          <div class="article-meta__avatar">VR</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Forster Perelsztejn</div>
+            <div class="article-meta__dates">Published Jan 2, 2018 · Updated Apr 27, 2026 · 10 min read</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2-col layout -->
+    <div class="article-layout">
+
+      <!-- TOC -->
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">Chapters</div>
+        <ul>
+          <li><a href="#chapter-1" class="active"><span class="ch-num">01</span> What is B2B lead gen?</a></li>
+          <li><a href="#chapter-2"><span class="ch-num">02</span> The modern funnel</a></li>
+          <li><a href="#chapter-3"><span class="ch-num">03</span> Channel: Cold email</a></li>
+          <li><a href="#chapter-4"><span class="ch-num">04</span> Channel: LinkedIn</a></li>
+          <li><a href="#chapter-5"><span class="ch-num">05</span> Channel: Content & SEO</a></li>
+          <li><a href="#chapter-6"><span class="ch-num">06</span> Channel: Paid acquisition</a></li>
+          <li><a href="#chapter-7"><span class="ch-num">07</span> Tools & tech stack</a></li>
+          <li><a href="#chapter-8"><span class="ch-num">08</span> KPIs & benchmarks</a></li>
+          <li><a href="#chapter-9"><span class="ch-num">09</span> Mistakes to avoid</a></li>
+          <li><a href="#chapter-10"><span class="ch-num">10</span> Scaling 0 → $1M ARR</a></li>
+        </ul>
+        <div class="toc__group">
+          <div class="toc__label">Extras</div>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#experts">Meet the experts</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="prose">
+
+<p>2018 is starting strong since we're kicking off with this great conversation I had with Carson Heady! We talked about appreciation, sales motivation and how processes matter more than results.</p>
+<p><em>Carson is a sales leader and a published author, check out his book series <a href="https://www.amazon.com/Birth-Salesman-Against-World/dp/1495499332/" rel="external noopener">Birth Of A Salesman</a> as well as his content on <a href="https://www.linkedin.com/in/carsonvheady/" rel="external noopener">LinkedIn</a>!</em></p>
+<h3>Hey Carson, thank you so much for taking the time to do this!</h3>
+<p>My absolute pleasure. I'm excited for the opportunity to chat. I love your content. I think we're mutual fans of one another.</p>
+<h3>Awesome! Could you maybe start by introducing yourself to our readers?</h3>
+<p>Carson Heady. I am an author and sales leader and blogger and just really passionate about selling and business relationships. I've been in sales for my entire career and just enjoyed writing about it, blogging about it, and having conversations about it. I spend a fair amount of time on social media and having conversations like this about different aspects of selling and leadership.</p>
+<h3>When I look at your job description on LinkedIn, it looks like you have a lot of responsibilities. How do you manage not to sacrifice quality to quantity?</h3>
+<p>That's a great question. I definitely found if you'd have asked me that ten years ago, I thought I was busy then in the roles that I was doing. Nowadays it's almost fever pitch. I think the key piece is to always <strong>take a step back</strong> and not get caught up in all of the fires that pop up, really to <strong>prioritize</strong> and think about what are the mission critical things that need to be done today.</p>
+<p>How can I really impact my business today? What needs response? What are the high-level things?</p>
+<p>It's all about prioritization. You can really prioritize that in a number of ways.</p>
+<p>I have a day job. I work for a great company and have a lot of very critical relationships not only with clients but also with partners who deliver the crux of our business. It's very important that I prioritize clients and partners above all else. I have other members of my team that are also in that mix as well. It's really about management of that team dynamic of peers, of other people that I'm working with day-to-day, but also of other resources that are available.</p>
+<p>Again, it's a constant barrage because I've got messages all day every day from different folks with varying levels of need. Some can impact their entire business, and then others might be relatively minor compared to the mission critical statement, but they're all important. The key piece from what I find is responsiveness. I think that's what has helped me be successful in selling and leadership over the years is always being responsive.</p>
+<p>Even if you don't know the answer, even if you don't know the answer right away, even if you've got to pull in additional resources, as long as folks see that you're responding and you're active on their request, it will further the relationship. A lot of times clients will do business because of that fact. <strong>I've had many people tell me over the years that they have done business with me because I responded, and I got them the answers that they needed.</strong> They knew I was working on it. Even if I didn't have the answer right away, I'd send a daily update.</p>
+<p>Think about it, it takes just a couple of seconds to just send a quick note to a client letting them know that they're top of mind and that you're working on it. I think it comes back to prioritization. Sure, there are a lot of functions in my job. There's a lot of functions in my side hustle where I spend a lot of time blogging or as much as I can. I'm also a dad, and I have two kids and a wife. There's a lot of things in my life, and it all comes down to priorities, but making sure that you're responsive and in tune with the needs of the folks that you're working with.</p>
+<h2>Training Salespeople and Selling Change</h2>
+<h3>Let's talk about being a sales leader. I see that part of your job is training sales people. What is the main point you want to get across when you're training these people?</h3>
+<p>Everybody has their way of learning and their own way of doing and their own things that motivate them and their own reasons why they are in the game, as it were. I think before you can train anyone, it's imperative to understand them. Just like your relationship with a potential customer or with a client or with a partner, it's important to understand their motivations because ultimately that's what you're going to play to. You want to add value in any way you can to the relationship. Ultimately, that's what's going to bring results.</p>
+<p>When you're training someone, it's very important to <strong>understand their motivation</strong>. Why are they there? What are their strengths? What are the components that they have recognized they want improvement on and need improvement? A lot of times they're going to be very receptive to those areas of the business.</p>
+<p>The other piece to that is understanding and knowing <strong>how to diagnose</strong> just like you're diagnosing a customer and their gaps in process, but diagnose the person that you're training and what gaps they may have in their current process. Not everybody is going to come to the table with every single tool in the tool bag to be a successful seller or a sales leader. The key piece is to understand what they bring to the table, what areas you can work with, and what are those gaps in process. I call it the sales food chain.</p>
+<p>I think <strong>we're all connected</strong> in the sales stratosphere and atmosphere, whether it's working with a customer, whether it's working with a partner, or whether it's training someone or managing someone. We're all connected. All of those relationships require understanding of the person on the other end, what their motivations are, and how to best add value for them.</p>
+<p>When you are training someone, especially from a sales vantage point, it's paramount to understand what they're bringing to the table and then also that ability to diagnose those gaps. Ultimately, <strong>you're selling change</strong>. Just like you're selling to a customer, you're selling a sales person on change. Why should they change? Why should they get rid of or jettison comfortable ways of failing?</p>
+<p>A lot of us do what feels natural or what's comfortable to us. Frankly, even when we see something that is maybe an excellent change in our sales process, we may change it. It feels a little uncomfortable. If we botch it a couple of times, we can go back to that comfortable way of failing.</p>
+<p>We also need to understand what their <strong>desired end goal</strong> is because that's ultimately how you're going to sell change. People will change when they fear the parade going by, when they fear the change less than they fear the ramification of not changing. When you're training someone, you want to make sure that they see that path. They see what they want. They've outlined their goals and what their motivations are and why they're in it so that you can continually coach them toward the change that will better them.</p>
+<p>Ultimately, you can only go so far. You can lead the horse to water. You can't force them to drink, but you can show them why they should change based on what they indicated is their goal. It's very easy to go to a sales rep or a sales leader and say you've indicated these are your goals.</p>
+<p><strong>This is the conversation that we had last month.</strong> We talked about why you should make this change, what possible benefits that it would have. We agreed on a course of action. They've made the change. Great job. Now let's work on this or you didn't make the change. Why is that?</p>
+<p>Where did we miss one another because obviously we agreed that this was a good course of action. We wanted to avoid the trajectory that you are still on. I think those are the most critical pieces of training is to understand the motivation and make sure that you're adequately selling change.</p>
+<h3>That was a very thorough answer, thanks! So you work at Microsoft. As a leader, how do you make people feel important in such a big company?</h3>
+<p>It's funny because I've never been in a company where I've been more surrounded by just sheer brilliance. It's easy to make them feel good and make them feel special because they absolutely are. I think it's important to always look for ways that you can add value, but make sure you're calling out just how appreciative you are of the value that they are adding as well. Make a concerted effort, even if it's just the most basic of emails that I'm sending, make a personal touch, ask them how such and such that they've shared with me went.</p>
+<p>Maybe they took a trip or they had a situation with their kid. Their kid was sick or just anything. When they do exemplary work, I find a way to call that out, whether it's sending a note to their boss, whether it is finding a very public forum in which to do that.</p>
+<p>In this day and age with social media, it's very easy to call out great performance where a lot of people can see it. You can write recommendations for people. You can do different things to endorse them. I think there's a lot of different ways.</p>
+<p>Again, take a step back because it's very easy to get caught up in the day-to-day and just realize how grateful you are or should be for some of the value that folks are bringing. I do everything that I can to try to call out how much I appreciate everyone that I work with, people that are bringing value. I've always tried to do that, especially as a sales leader. I think that's so important.</p>
+<p>It's so easy to get caught up in the day-to-day and all the fires that are constantly popping up. That's why I think it's so important to make sure that you're making time to call out and recognize people that are doing great work. They appreciate it.</p>
+<h2>Building B2B Relationships With Large Organizations</h2>
+<h3>Let's talk about B2B sales. I imagine you deal with all kinds of organizations, including pretty large ones. I'm not a sales person. I'm a marketing guy, so I'm wondering: how do you get in touch and build a relationship with these kind of big machines?</h3>
+<p>It's a great question. You've got to look at your own process and your own solution, and you've got to see what value does it bring, what potential business problems does it solve, what gaps in process do you address? Then you find your target audience. Who can you help within that business?</p>
+<p>Again, we're in a world where I can go out and target by geography, I can target by industry, I can target by size of business, I can target by title of the individual at the organization, and I can find just about anybody. It's a beautiful thing. I think what's important for sellers to understand is that just because we have all of these magical tools at our disposal, nothing replaces the face-to-face and the in-person and the relationship. Again, that's your end goal.</p>
+<p>You're not looking right out of the shoot to sell your entire suite of services. What you're looking for is <strong>forging a relationship</strong>. You're looking to add value, but you're looking to ultimately sell a meeting. You want to get in front of the person.</p>
+<p>You need to realize the immediate goal rather than trying to put the cart before the horse and try to sell everything that you have. I've seen a lot of different variations of this, doing outreach or cold calling, sending emails, and trying to send every bit of information that you want. It's almost like vomiting every bit of information that you have, just hoping that a client will see something they like and respond. That's not the right approach. Again, you want to look at whether it's a small company or whether it's a very large company. You think about the potential value, the thing that is probably most intriguing that you could bring to them, and then you find the right target audience.</p>
+<p>Cast a wide net because sales is a wonderful science. There's a lot of mathematics probability to it. It's very important that you understand that it is a numbers game. Rather than just targeting one person at a client, target ten.</p>
+<p>Go with: I feel we have solutions around different gaps. I've seen this in your industry. I'd be interested in your thoughts on how this potential solution could fit in your industry. I'd be interested in some of the pain points that you're having. I've just started working in this industry. I'd love to understand some of the things that are going well and how you see the landscape.</p>
+<p>Start a conversation. Ask for advice. Don't necessarily go in straight and sound like every other sales person that has come and failed at the footstep of that person in the past. Frankly, if you sound like every other salesperson, you're going to be treated like every other salesperson. That's why you want to differentiate yourself, but you want to add value.</p>
+<p>There's oftentimes where I can go considerable amounts of time, especially the longer my sales cycles are, where you don't necessarily talk to your client. There are ways to stay top of mind as well. A lot of customers want to digest things on their timetable. Say you send them an article and you say hey, what are your thoughts on this? I saw this, and I thought of you.</p>
+<p>Perhaps you find different ways to send them a newsletter. It's more passive. They can respond when they want to. I think that's the era that we're in. At the same time, be sure you are diligent in follow up.</p>
+<p>Just like we were talking before when you're training and when you're leading, you're leading these conversations and you're training them to make a decision that you want them to make. There's very similar philosophies to training in leadership. You're ultimately trying to coach change in this situation. You want to bring to light the gaps in process that exist, so you're going to know some of those things by being in sales and by working with customers of their ilk and those industries that they're in. You're going to gain a lot of knowledge just in that regard.</p>
+<p>I think it's important to utilize that knowledge, and you're growing knowledge, but also be very open minded to what this new potential client may bring to bear and what they may tell you about their industry or their circumstance. It doesn't really matter who you're targeting. In fact, it's almost of no consequence what size the business is. I think once you start thinking about sales in that way, it's a game changer.</p>
+<p>Really, all you're looking to do is how can I add value for this potential client? How can I get the meeting? What are the most effective ways to do it? Look at their history.</p>
+<p>We're in a beautiful era where you can see almost everything about this person that you want to talk to via social media. You can look at their history. Maybe you went to the same school. Maybe you're in the same groups. There's a lot of different ways where you can forge a connection and have a personal touch.</p>
+<p>The best sales relationships that I've ever formed were ones where I was able to make a <strong>personal touch</strong>, even with people who don't inherently like sales people. They told me to my face they don't like sales people. I was able to make personal touches with them, and we were able to maintain a rapport. They understand what we have to do. They understand that at the end of the day we're working to market a product. If you look at adding value and you find the right processes and you follow that process and you pivot on process when things change and you're able to adapt and you're able to really listen to your customer, you can sell to anybody.</p>
+<h2>Sales Motivation and Pipeline Management</h2>
+<h3>Great answer. I'm also guessing you have a large pool of prospects, lots of deals along the funnel. You just said you had long cycles. How do you keep things from getting messy along the pipeline?</h3>
+<p>There are a lot of different tools for doing that. Obviously, my company sells some of them. I think it's important whether you're tracking on a spreadsheet or some type of CRM database, it's paramount to visit that every day and really look at how can I best impact my business today or how can I best impact each of these deals today. Looking through each of them and keeping them top of mind and if there's any action that you need to do to further them along the process, take that action, even if it's just a quick note to a client to stay top of mind.</p>
+<p>Avoid some of the cliches like I'm checking in or I'm just following up. I always like to say I want to make sure I'm still on your timeline that we established and just figure out how I can add value to you at this stage. Is there any additional support that I can add? Is there any additional information?</p>
+<p>Find those additional ways to make passive touches, whether it's a newsletter -- I saw an article the other day on a website. Let's say I do a keyword search and have articles sent to me. I saw something that I talked to a client about the other day, so I send it over to them. There's ways to make these touches that will motivate these clients to respond. They'll realize I owe him a response.</p>
+<p>Marketing statistics will tell you nowadays you've got to touch these customers in some way, sometimes five to eight times before they'll even make a decision. A lot of us as sales people will give up after one or two tries. It goes back to <em>Think and Grow Rich</em> by Napoleon Hill. Traditionally we give up right before we would have won.</p>
+<p>I think that's why it's important to continue to look at your pipeline every day. Pipeline management is really all about looking at each deal and asking yourself how can I impact it today? I've always tried to maintain a very strong and very honest and healthy pipeline. The way to really manage that is manage up or out.</p>
+<p>I don't gain anything by having fake deals in my pipeline. That's not going to make me look good to leadership when I'm calling a forecast. If I have something with any type of probability to close whatsoever, it's important that I'm moving that along the process. Visit your pipeline, visit it daily, ask yourself how can I impact these deals today, and take action.</p>
+<h3>As we speak, we're getting near the end of the year -but this is relevant all year long- which in B2B sales can be important both because salespeople are going after leftover budget and because budgets for next year are being set. How do you adapt to that?</h3>
+<p>Know your customers, understand their cycles, understand their fiscal year versus calendar year. A lot of them will run calendar year, but understand their fiscal year. Have that conversation with them. If you know a client well and you work with them or if you're just prospecting, just to be able to understand their budget. Are there ways that I can work within your budget?</p>
+<p>Are there ways that your business can set it up where if they can't afford to buy anything more this year, you're staking out claim to next year's budget, asking about next year's budget. What have they budgeted for? Are there ways they can make room in budget for something that you can show them that they feel would be of value?</p>
+<p>Just as important to selling right now in fourth quarter is selling in next year's first quarter and looking at planting seeds. The deals that you're closing right now in Q4, hopefully you found them in Q1, Q2, Q3 of this year. Again, sales cycles are all over the place. I've worked in environments where if you didn't close the deal in one call, the likelihood of you closing anything drops substantially.</p>
+<p>I've also worked in environments where the average sales cycle was six months to a year. Your sales cycle is all over the place, but at the end of the day it all comes back to understanding your clients, understanding their cycle, understanding their budget, where it is, where it sits. If there's additional investments that they can and want to make right now, if there's room for that in creating that solution, if it's something that you want to stake claim to and show them the value as to why they should budget for it next year, to your point, Forster, they are looking right now to potentially make budget for next year.</p>
+<p>Part of that process may be passed.</p>
+<p>I've got a lot of clients who were making their budgets in September, October, November, but <strong>I knew that about them</strong>. I was having those conversations and understanding the changes that they wanted to make in 2018 back then. I was having those conversations with them then so that they could budget for those changes. The golden rule of selling is understand the customer. If you do understand those things and you understand their budgeting and their selling cycles, you'll be sitting pretty in fourth quarter.</p>
+<h3>Again, it's the end of the year -and again this is relevant all year long- so it can be tough, mentally, for sales people running behind. How do you help them keep that sales motivation up until the deadline?</h3>
+<p>That's an awesome question. <strong>The most important thing about selling process is to not let yourself break from the process.</strong> I've seen people get desperate. They will change their process to try to get any sale they can.</p>
+<p>If they do sell something, they get a small sale, and they look at that as a victory. They may have gotten a small sale when if they'd invested additional time and resources, they could have got something very substantial and brokered a very long-term relationship because they showed true value around a solution. Let's be real. <strong>If a client doesn't see the long-term value in what you've sold, they are going to elsewhere.</strong> They may cancel.</p>
+<p><strong>You've got to always stay focused on the long term. What's going to get you to the long term is the process.</strong> Stay focused and cognizant of the long term, but stay focused also on the short term of the process and the execution of process that you uncovered will lead to the end result you want. I'm a big fan of taking a step back, optimize the conversation that you're on, look at the ways that you can really impact that.</p>
+<p>I've seen so many people that do hours and hours of research before just one conversation only to see it not ever come to fruition. The customer doesn't answer the call or it gets pushed or it gets cancelled or they go in a different direction. You've spent a lot of this time almost in vain. You don't want to go in completely blind to these conversations, but you do want to have a working knowledge.</p>
+<p>What you're looking to do is having conversation. Sales is about relationships, and you want to understand what's the clients' situation? What are their gaps in process? What's working for them? What are they happy about? What do they like about what they're doing right now, and what do they dislike?</p>
+<p>Maybe there's complete pieces of their business that you can address with a business solution that they hadn't even thought of. Maybe there's additional products or services that your solution could open up for them or additional offerings. Take a step back, take a breath, stop thinking so much about the number, and think about the process.</p>
+<p>I always talk about how you shouldn't obsess over results. <strong>Obsess over process, and the results will always be there. It's been the philosophy I've lived by my entire career, and it has never let me down.</strong></p>
+<h2>Delivering Value After the Sale</h2>
+<h3>That's a great one, obsess over the process! Talking about the process, from what I've read in your LinkedIn articles and posts, you say that the process isn't finished after the sale is closed. How do you keep delivering undeniable value after the sale?</h3>
+<p>That's a great question. I think where a lot of times we as sales people will falter in the relationship. Where we may miss out on the bigger picture is by not continuing the relationship after the sale. Don't get me wrong. I know that a lot of times our own roles can kind of lead to some of that.</p>
+<p>Obviously, we have to continue to prospect. We have to continue to look for new business to put in our funnel. Again, just like it takes five seconds to send an email to somebody telling them that you appreciate them or just like it takes five seconds to recognize somebody on your team, it takes five seconds to send a quick note over to a client asking them how things are going and if they'd benefit from a conversation, if there's any questions about what they've invested in, if there's any ways that you can help them optimize their investment.</p>
+<p><strong>Customers take their investment very seriously, so you should as well.</strong> I like to tell clients all the time not only is it important to me to show you the potential solutions, but also <strong>I want to make sure we're optimizing your investment</strong>. You're investing substantially in our business. How can I best help you to make sure that that's working for you? Maybe there's additional resources you can bring to bear. Maybe there are different questions that you can answer, things that you can address.</p>
+<p>If you maintain that long-term relationship and you are their go-to person, they're going to continue to reach out to you. As things change, as you have different offerings within your business, whereas your customers' business changes and adapts, they may have different needs. You will be plugged in when those things happen.</p>
+<p>Something else I'm a big proponent of too, I've referred people to people that I know at competitors because I knew that I didn't have the solution, but I knew somebody at the competitor. I knew that they'd be able to take good care of them. It's a nice cycle because they've reciprocated. When that competitor said I know that I can't take care of this need, but you can, so they make the same introduction.</p>
+<p>Always look for ways to add value, whether it's pre-sales or post-sales. That will further the relationship, and the relationship will yield results and dividends. That's not always in money. I've had some really great relationships with clients, even on a personal level, where I can tell we genuinely care about what transpires in the other person's life. Those are the people that you want to be in business with.</p>
+<p><strong>I think that if you continue to foster that relationship after the sale, it will yield dividends.</strong> Not every one of them is going to turn around and buy everything under the sun, but they may refer you to somebody that they know because they respect you and the value you brought to their relationship. It could open up different avenues in ways that you never imagined.</p>
+<h3>There's one thing we haven't talked about yet. You're an author. You have a book series titled <a href="https://www.amazon.com/Birth-Salesman-Against-World/dp/1495499332" rel="external noopener"><em>Birth of a Salesman</em></a>. Most sales oriented books are purely nonfiction. Why did you decide to create a fictional narrator?</h3>
+<p>I wanted to write my entire life. When I was in third grade, I was writing these time travel stories with people in my class. I was writing these outer space stories of people in my class and being the commanding crew of a starship. I've written all my life, and I kind of like to be the theatrical element of doing the fictional take.</p>
+<p>I used to at a previous company to write a division newsletter. All of the topics were about sales. I never intended to get into sales. I thought I was taking a customer service role. It was actually very aggressive sales.</p>
+<p>As luck would have it, I turned out to be a good performer. I rose to the ranks and did different roles. I really enjoyed writing about training, selling, having conversations around selling. Writing about a lot of different topics was fun, but the desire to write something in fiction never went away.</p>
+<p>If you look today, there are so many different sales books out there. I will say this, I didn't write a book to make money. I wrote a book for the experience and for the opportunity to just interact with folks. I've been able to talk with people like you, with people like <a href="https://www.gitomer.com/" rel="external noopener">Jeffrey Gitomer</a> and <a href="https://jebblount.com/" rel="external noopener">Jeb Blount</a> in recent weeks. It's unbelievable.</p>
+<p>These guys have written sales books that are about fundamentals and process and how to execute better. It's been done so many times, and it's been done so many times well. I asked myself because I'm always looking for ways to differentiate myself in selling process and in leadership, how can I differentiate myself? I created a fictional author of a sales book. My fictional character actually writes a sales book that is featured within a novel about his experiences and how he gained the experiences that he writes about. I created this story, and it went from there.</p>
+<h3>You said that the book is loaded with advice you wish you had received back when you were starting out. What advice is that?</h3>
+<p>I think there's a lot of things that we're not necessarily prepared for when we start in our careers or when we start in sales or when we get out of college or when we go to college. There's a lot of things in business like playing politics. You're not always going to be able to do things the way you see fit. It's important to make sure that you are following -- you're paid to follow the company directive if you work for an organization. If you work for yourself, you set those rules, but there's a lot of fundamentals that you need to bring to the table.</p>
+<p>You're going to come to the table with a great idea, but how do you compliment that great idea with process. How do you adapt and pivot when things change? I think that's a lot of it. When inevitable storms come in your life and in your career, how do you adapt so that it isn't catastrophic?</p>
+<p>We've all had things that have happened to us in our lives and in our careers that are almost debilitating. It's how we come back from that that will really define our success. There's also a lot of times where you have success, and then you lose it. Then how can you continue to adapt and reinvent and recreate yourself so that you're adding value, whether it's at the company that you thought you were going to retire from that you didn't or whether it's in a new venture that you're moving onto.</p>
+<p><strong>You can't be afraid to take risk.</strong> It's got to be strategic risk, but you're going to learn a lot of times by doing. I think that's a lot of what's in this book.</p>
+<h3>Thank you so much for doing this, that was super interesting. Thanks for taking the time!</h3>
+<p>Forster, it was a blast. I think very highly of you and the content you share, so keep up the excellent work.</p>
+<p>I definitely enjoyed the conversation. You ask great questions and very thought provoking stuff. I'm very passionate about this stuff, so I hope it shows. Thanks again for the opportunity!</p>
+
+</main>
+    </div>
+
+    <!-- End-of-article PDF download (bottom) -->
+    <section style="max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px);">
+      <div class="downloadable">
+        <div class="downloadable__icon"><i data-lucide="file-down"></i></div>
+        <div class="downloadable__body">
+          <h4>Take this guide with you</h4>
+          <p>62-page PDF · Print-ready · Includes the complete checklist + cold email templates + LinkedIn sequences</p>
+        </div>
+        <a href="#" class="btn"><i data-lucide="download" style="width:16px;height:16px"></i> Download PDF</a>
+      </div>
+    </section>
+
+    <!-- End CTA -->
+    <section class="cta-hard">
+      <h3>Ready to build your <em>B2B lead gen engine?</em></h3>
+      <p>Overloop combines AI prospecting, multichannel sequencing, and native CRM sync. Everything in this guide, in one platform. No annual contract.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
+        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+        Try Overloop free
+      </a>
+    </section>
+
+    <!-- Expert panel -->
+    <section class="expert-panel" id="experts" aria-label="Meet the experts">
+      <div class="expert-panel__header">
+        <h3>Meet the Experts Behind This Guide</h3>
+        <p>Every chapter is backed by hands-on testing, real campaign data, and years of B2B lead gen experience.</p>
+      </div>
+      <div class="expert-panel__grid">
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+          <div class="expert-bio__name">Vincenzo Ruggiero</div>
+          <div class="expert-bio__role">CEO, Overloop</div>
+          <p class="expert-bio__text">Founded Overloop in 2015 as Prospect.io. 10+ years building sales automation for B2B SaaS. Personally tests every competitor tool.</p>
+          <a href="https://www.linkedin.com/in/vincenzor/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+          <div class="expert-bio__name">Nicolas Finet</div>
+          <div class="expert-bio__role">CEO & Co-founder, Sortlist & Overloop</div>
+          <p class="expert-bio__text">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies. Deep expertise in cold email, LinkedIn automation, and multichannel.</p>
+          <a href="https://www.linkedin.com/in/nifinet/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+        <div class="expert-bio">
+          <img class="expert-bio__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          <div class="expert-bio__name">Nathalie Saikali</div>
+          <div class="expert-bio__role">Customer Success Manager, Overloop</div>
+          <p class="expert-bio__text">Works daily with sales teams deploying Overloop. Sees firsthand what moves the needle for pipeline generation across industries.</p>
+          <a href="https://www.linkedin.com/in/nathalie-saikali/" class="expert-bio__linkedin" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Author card -->
+    <section class="author-card" aria-label="About the author">
+      <div class="author-card__avatar">VR</div>
+      <div>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">CEO at Overloop. Founded the company in 2015 as Prospect.io. Tests every competitor tool hands-on.</div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <h3>B2B lead gen insights — once a week, no fluff</h3>
+      <p>Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
+      <form onsubmit="event.preventDefault(); alert('Demo only — wire up form action in production');">
+        <input type="email" placeholder="Your work email" required>
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Related -->
+    <section class="related">
+      <h3>Related guides</h3>
+      <div class="related-grid">
+        <a href="https://overloop.com/blog/best-ai-sales-tools" class="related-card">
+          <div class="related-card__cat">Buyer's guide · 22 min</div>
+          <div class="related-card__title">Best AI Sales Tools in 2026</div>
+        </a>
+        <a href="#" class="related-card">
+          <div class="related-card__cat">Industry playbook · 11 min</div>
+          <div class="related-card__title">Lead Generation for SaaS</div>
+        </a>
+        <a href="https://overloop.com/blog/apollo-alternatives" class="related-card">
+          <div class="related-card__cat">Alternatives · 14 min</div>
+          <div class="related-card__title">Apollo Alternatives (2026)</div>
+        </a>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD -->
+  <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sales Motivation: Stop Obsessing Over Results | Overloop",
+  "description": "Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales.",
+  "image": "https://overloop.com/assets/images/og/boost-sales-motivation.png",
+  "author": {
+    "@type": "Person",
+    "name": "Forster Perelsztejn",
+    "image": "https://overloop.com/assets/images/vincenzo-ruggiero.png"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Overloop",
+    "logo": {"@type": "ImageObject", "url": "https://overloop.com/assets/images/overloop-logo.png"}
+  },
+  "datePublished": "2018-01-02",
+  "dateModified": "2026-04-27",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://overloop.com/blog/boost-sales-motivation"}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://overloop.com/blog"},
+    {"@type": "ListItem", "position": 2, "name": "Sales Motivation: Stop Obsessing Over Results", "item": "https://overloop.com/blog/boost-sales-motivation"}
+  ]
+}
+</script>
+
+
+
+</body>
+</html>
