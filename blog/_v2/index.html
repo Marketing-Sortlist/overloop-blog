@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V2 Migration Preview · 75 articles | Overloop Blog</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:'Epilogue',-apple-system,sans-serif;color:#374151;background:#FAFAFA;line-height:1.6;font-size:16px}
+    a{color:#6366F1;text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:64px;padding:0 32px;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6}
+    .nav-logo{display:flex;align-items:center;gap:12px;font-weight:800;color:#1A1A2E}
+    .nav-logo img{height:24px}
+    .nav-badge{padding:4px 10px;background:linear-gradient(135deg,#6366F1,#A855F7);color:#fff;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:6px}
+    .nav-stat{font-family:'JetBrains Mono',monospace;font-size:12px;color:#64748B}
+
+    .hero{padding:64px 32px 40px;background:linear-gradient(180deg,#FFFFFF 0%,#EEF2FF 50%,#FAFAFA 100%);text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-100px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,.12) 0%,transparent 70%)}
+    .hero-inner{position:relative;max-width:880px;margin:0 auto}
+    .hero h1{font-size:clamp(28px,4vw,40px);font-weight:800;color:#1A1A2E;line-height:1.15;margin-bottom:14px;letter-spacing:-.02em}
+    .hero h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:400;background:linear-gradient(135deg,#6366F1,#A855F7);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+    .hero p{font-size:17px;color:#64748B;max-width:620px;margin:0 auto 22px}
+    .hero-stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .hero-stat{padding:8px 14px;background:#fff;border:1px solid #F3F4F6;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:#1A1A2E;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .hero-stat strong{background:linear-gradient(135deg,#6366F1,#A855F7);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-size:14px;margin-right:4px}
+
+    .container{max-width:1280px;margin:0 auto;padding:32px}
+    .filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;padding:16px;background:#fff;border:1px solid #F3F4F6;border-radius:12px}
+    .filter-bar__label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#64748B;letter-spacing:.05em;text-transform:uppercase;align-self:center;margin-right:6px}
+    .filter-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;background:#F8FAFC;border:1px solid #F3F4F6;border-radius:100px;font-size:12.5px;font-weight:600;color:#374151;cursor:pointer;transition:all 200ms;font-family:inherit}
+    .filter-chip:hover{border-color:#6366F1;color:#6366F1}
+    .filter-chip.is-active{background:linear-gradient(135deg,#6366F1,#A855F7);color:#fff;border-color:transparent}
+
+    .group{margin-bottom:48px}
+    .group__h{display:flex;align-items:center;gap:14px;margin-bottom:18px;padding:14px 18px;background:var(--bg);border-left:4px solid var(--c);border-radius:8px}
+    .group__badge{font-size:18px;font-weight:800;color:var(--c)}
+    .group__count{font-family:'JetBrains Mono',monospace;font-size:12px;color:#64748B;font-weight:600}
+    .group__tmpl{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:11px;color:#94A3B8}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+    .card{display:block;padding:18px 20px;background:#fff;border:1px solid #F3F4F6;border-radius:12px;color:#1A1A2E;transition:all 200ms;text-decoration:none!important;border-left:3px solid var(--c)}
+    .card:hover{box-shadow:0 4px 12px rgba(0,0,0,.06);transform:translateY(-2px);border-color:var(--c);text-decoration:none}
+    .card__title{font-size:15px;font-weight:700;line-height:1.35;margin-bottom:6px;color:#1A1A2E}
+    .card__desc{font-size:13px;color:#64748B;line-height:1.5;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .card__meta{display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:11px;color:#94A3B8;flex-wrap:wrap}
+    .card__author{font-weight:600;color:#374151}
+    .card__sep{opacity:.5}
+    .card__slug{color:var(--c);font-weight:600}
+
+    .footer{padding:32px;text-align:center;color:#94A3B8;font-size:13px;font-family:'JetBrains Mono',monospace;border-top:1px solid #F3F4F6;margin-top:32px}
+    .footer a{color:#6366F1}
+
+    @media(max-width:639px){
+      .nav{padding:0 16px}
+      .container{padding:16px}
+      .hero{padding:48px 16px 32px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-logo">
+      <img src="https://overloop.com/assets/images/overloop-logo.png" alt="Overloop">
+      <span>Overloop Blog</span>
+      <span class="nav-badge">V2 Preview</span>
+    </div>
+    <div class="nav-stat">75 articles · 9 templates</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>V2 Migration <em>Preview</em></h1>
+      <p>Browse the 75 EN articles migrated to the new design system. Click any card to open the V2 version. Compare with the live legacy version at <a href="https://overloop.com/blog">overloop.com/blog</a>.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>75</strong>articles migrated</div>
+        <div class="hero-stat"><strong>9</strong>templates</div>
+        <div class="hero-stat"><strong>0</strong>migration errors</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="filter-bar" id="filter-bar">
+      <span class="filter-bar__label">Filter</span>
+      <button class="filter-chip is-active" data-filter="all">All (75)</button>
+      <button class="filter-chip" data-filter="tactical.html" style="--c:#EF4444">Tactical (58)</button>
+      <button class="filter-chip" data-filter="how-to.html" style="--c:#10B981">How-To (7)</button>
+      <button class="filter-chip" data-filter="data-list.html" style="--c:#8B5CF6">Data List (2)</button>
+      <button class="filter-chip" data-filter="versus.html" style="--c:#F59E0B">X vs Y (2)</button>
+      <button class="filter-chip" data-filter="tool-review.html" style="--c:#DC2626">Tool Review (2)</button>
+      <button class="filter-chip" data-filter="strategy.html" style="--c:#F97316">Strategy (1)</button>
+      <button class="filter-chip" data-filter="statistics.html" style="--c:#3B82F6">Statistics (1)</button>
+      <button class="filter-chip" data-filter="lead-gen-industry.html" style="--c:#06B6D4">Lead Gen / X (1)</button>
+      <button class="filter-chip" data-filter="what-is.html" style="--c:#84CC16">What is X? (1)</button>
+    </div>
+
+    
+        <section class="group">
+          <h2 class="group__h" style="--c:#EF4444;--bg:#FEE2E2">
+            <span class="group__badge">Tactical</span>
+            <span class="group__count">58 articles</span>
+            <span class="group__tmpl">tactical.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="10-best-ai-sales-assistant-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Best AI Sales Assistant Tools</div>
+              <div class="card__desc">We tested 10 AI sales assistant tools for B2B teams. Compare features, pricing from free to $99/mo, G2 ratings, and AI capabilities to pick …</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-best-ai-sales-assistant-tools</span>
+              </div>
+            </a>
+            <a class="card" href="10-best-practices-for-multi-channel-sales-campaigns.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Multi-Channel Sales Campaign Best Practices</div>
+              <div class="card__desc">Learn effective strategies for running successful multi-channel sales campaigns, from audience understanding to leveraging AI tools.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-best-practices-for-multi-channel-sales-campaigns</span>
+              </div>
+            </a>
+            <a class="card" href="10-essential-sales-tools-every-b2b-team-needs-in-2025.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Essential B2B Sales Tools for 2026</div>
+              <div class="card__desc">Discover the 10 must-have sales tools for B2B companies in 2025 to save time, boost productivity, and close more deals.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-essential-sales-tools-every-b2b-team-needs-in-2025</span>
+              </div>
+            </a>
+            <a class="card" href="10-favourite-sales-movies.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Top Salespeople's Favourite Sales Movies</div>
+              <div class="card__desc">10 top salespeople share their favourite sales movies -- from motivational classics to surprising picks -- with insights on what makes each …</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-favourite-sales-movies</span>
+              </div>
+            </a>
+            <a class="card" href="10-pro-tips-avoid-spam-folder.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Pro Tips to Avoid the Spam Folder</div>
+              <div class="card__desc">Discover 10 proven tips to keep your emails out of the spam folder, from subject line best practices to sender reputation and list hygiene.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-pro-tips-avoid-spam-folder</span>
+              </div>
+            </a>
+            <a class="card" href="10-proven-sales-prospecting-tips-to-boost-your-pipeline-fast.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Sales Prospecting Tips to Boost Pipeline</div>
+              <div class="card__desc">Unlock top 10 sales prospecting tips and discover how automation with Overloop saves time and grows your pipeline efficiently.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/10-proven-sales-prospecting-tips-to-boost-your-pipeline-fast</span>
+              </div>
+            </a>
+            <a class="card" href="11-best-ai-bdr-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">14 Best AI BDR Tools in 2026 (Tested &amp; Compared)</div>
+              <div class="card__desc">We tested 14 AI BDR tools head-to-head. Real pricing, real pros/cons, honest verdicts. Overloop, Artisan, 11x, Clay, Instantly, Amplemarket,…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">25 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/11-best-ai-bdr-tools</span>
+              </div>
+            </a>
+            <a class="card" href="11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">11 Best LinkedIn Automation Tools (2026)</div>
+              <div class="card__desc">Discover the top 11 LinkedIn automation tools of 2025. Compare features and boost B2B lead generation with AI-driven sales automation.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">15 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/11-best-linkedin-automation-tools-to-accelerate-your-b2b-outreach-in-2025-6b690</span>
+              </div>
+            </a>
+            <a class="card" href="17-sentences-never-use-sales-email.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">17 Phrases to Never Use in Sales Emails</div>
+              <div class="card__desc">Discover the 17 most common sentences that kill your sales emails and learn what to write instead to grab attention, build trust, and close …</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/17-sentences-never-use-sales-email</span>
+              </div>
+            </a>
+            <a class="card" href="5-rules-more-successful-salespeople.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">5 Rules of Top-Performing Salespeople</div>
+              <div class="card__desc">Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations, persistence, an…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/5-rules-more-successful-salespeople</span>
+              </div>
+            </a>
+            <a class="card" href="6-reasons-sales-process-broken.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">6 Reasons Why Your Sales Process is Broken</div>
+              <div class="card__desc">Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation, and learn how to …</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/6-reasons-sales-process-broken</span>
+              </div>
+            </a>
+            <a class="card" href="7-ai-sales-prospecting-tools-that-boost-lead-generation.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">7 AI Sales Prospecting Tools for 2026</div>
+              <div class="card__desc">Explore seven AI tools that enhance sales prospecting, automate tasks, and improve lead generation for businesses of all sizes.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/7-ai-sales-prospecting-tools-that-boost-lead-generation</span>
+              </div>
+            </a>
+            <a class="card" href="7-reasons-emails-bounce.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">7 Reasons Emails Bounce And How to Avoid It</div>
+              <div class="card__desc">Discover the 7 most common reasons your emails bounce and learn actionable strategies to reduce bounces and protect your sender reputation.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/7-reasons-emails-bounce</span>
+              </div>
+            </a>
+            <a class="card" href="8-best-ai-linkedin-outreach-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">13 Best AI LinkedIn Outreach Tools (2026)</div>
+              <div class="card__desc">Tested 13 AI LinkedIn outreach tools on safety, daily limits, and ban risk. Real data on connection limits, SSI scores, and G2 ratings for e…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">32 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/8-best-ai-linkedin-outreach-tools</span>
+              </div>
+            </a>
+            <a class="card" href="9-best-ai-agent-tools-for-sales.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">9 Best AI Agent Tools for Sales</div>
+              <div class="card__desc">We reviewed 9 AI agent tools for sales teams handling prospecting, outreach, and follow-ups. Compare features, pricing, and user ratings.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/9-best-ai-agent-tools-for-sales</span>
+              </div>
+            </a>
+            <a class="card" href="9-best-ai-email-outreach-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">12 Best AI Email Outreach Tools (2026)</div>
+              <div class="card__desc">Tested 12 AI email outreach tools head-to-head with real campaigns. Compare AI writing quality, deliverability scores, warm-up, and pricing …</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">28 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/9-best-ai-email-outreach-tools</span>
+              </div>
+            </a>
+            <a class="card" href="9-best-ai-multichannel-outreach-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">9 Best AI Multichannel Outreach Tools</div>
+              <div class="card__desc">Compared 9 AI multichannel outreach tools for email, LinkedIn, and calling. See pricing, G2 ratings, and which ones actually automate the fu…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/9-best-ai-multichannel-outreach-tools</span>
+              </div>
+            </a>
+            <a class="card" href="9-reasons-never-buy-email-lists.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">9 Reasons Why You Should Never Buy Email Lists</div>
+              <div class="card__desc">Discover the 9 critical reasons why buying email lists destroys your deliverability, reputation, and sales results. Build your list the righ…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/9-reasons-never-buy-email-lists</span>
+              </div>
+            </a>
+            <a class="card" href="ab-testing-email-drip-campaigns.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Our Guide to A/B Testing Email Drip Campaigns</div>
+              <div class="card__desc">Learn how to A/B test email drip campaigns effectively. Optimize subject lines, send times, and CTAs to boost open rates and replies.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/ab-testing-email-drip-campaigns</span>
+              </div>
+            </a>
+            <a class="card" href="ai-generated-value-propositions-guide.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">AI-Generated Value Propositions: A Complete Guide</div>
+              <div class="card__desc">Explore how AI can enhance sales outreach by creating personalized, data-driven value propositions that resonate with customers.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/ai-generated-value-propositions-guide</span>
+              </div>
+            </a>
+            <a class="card" href="ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">AI Sales Tool Adoption in B2B (2026 Report)</div>
+              <div class="card__desc">Discover key trends, insights, and user sentiment for AI Sales Tool adoption in 2025 with expert reviews and actionable analysis.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">6 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis</span>
+              </div>
+            </a>
+            <a class="card" href="ai-sales-tools-roi-key-metrics-to-track.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">AI Sales Tools ROI: Key Metrics to Track</div>
+              <div class="card__desc">Learn how to measure the ROI of AI sales tools through cost savings, revenue growth, and efficiency improvements for better business outcome…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/ai-sales-tools-roi-key-metrics-to-track</span>
+              </div>
+            </a>
+            <a class="card" href="apollo-alternatives.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">20 Best Apollo Alternatives (2026)</div>
+              <div class="card__desc">Tested 20 Apollo.io alternatives on real outbound campaigns. Compare Overloop, ZoomInfo, Cognism, and Instantly on data accuracy and pricing…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">36 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/apollo-alternatives</span>
+              </div>
+            </a>
+            <a class="card" href="automations.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Automation for Cold Outreach (Guide)</div>
+              <div class="card__desc">A huge update in the Overloop platform, which completely changed the way you do your cold outreach. Discover the new Automations feature.</div>
+              <div class="card__meta">
+                <span class="card__author">Carina Gotovcenco</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">2 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/automations</span>
+              </div>
+            </a>
+            <a class="card" href="b2b-cold-email-germany-gdpr-compliance.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">B2B Cold Email in Germany: GDPR Guide</div>
+              <div class="card__desc">Can you send B2B cold emails in Germany? Complete legal guide covering GDPR, UWG Section 7, double opt-in requirements, the existing custome…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/b2b-cold-email-germany-gdpr-compliance</span>
+              </div>
+            </a>
+            <a class="card" href="best-ai-sales-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Best AI Sales Tools 2026: Buyer's Guide</div>
+              <div class="card__desc">Tested 30+ AI sales tools across 6 categories: BDR, email, LinkedIn, enrichment, and more. Comparison table with pricing, G2 ratings, and a …</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">22 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/best-ai-sales-tools</span>
+              </div>
+            </a>
+            <a class="card" href="best-lead-generation-tools.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">10 Best Lead Generation Tools for B2B</div>
+              <div class="card__desc">The 10 best lead generation tools for B2B teams in 2026: Overloop AI, Apollo.io, ZoomInfo, and more. Pricing from free to $49/mo, compared s…</div>
+              <div class="card__meta">
+                <span class="card__author">Jazmin Villarino</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">14 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/best-lead-generation-tools</span>
+              </div>
+            </a>
+            <a class="card" href="best-practices-for-links-in-your-emails.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Best Practices for Links In Your Emails</div>
+              <div class="card__desc">Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the nex…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/best-practices-for-links-in-your-emails</span>
+              </div>
+            </a>
+            <a class="card" href="best-sales-email-template.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Best Sales Email Template for SDRs (2026)</div>
+              <div class="card__desc">A proven sales email template with 5 ready-to-use variants. Learn the recipe behind high-converting cold emails with merge tags, social proo…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/best-sales-email-template</span>
+              </div>
+            </a>
+            <a class="card" href="best-subject-lines-for-sales-emails.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Best Subject Lines for Sales Emails (2026)</div>
+              <div class="card__desc">The subject line of an email is the first visible text from the inbox by the subscriber, which will indicate what the content of the receive…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">5 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/best-subject-lines-for-sales-emails</span>
+              </div>
+            </a>
+            <a class="card" href="boost-sales-motivation.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Motivation: Stop Obsessing Over Results</div>
+              <div class="card__desc">Carson V. Heady on sales motivation: why process beats results, and how appreciation and responsiveness drive long-term success in B2B sales…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/boost-sales-motivation</span>
+              </div>
+            </a>
+            <a class="card" href="cold-email-illegal.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Is Cold Email Illegal? Legal Guide (2026)</div>
+              <div class="card__desc">Is cold email illegal? Legal guide covering 14 jurisdictions: CAN-SPAM, GDPR, CASL, and more. B2B vs B2C rules, penalties, and compliance ch…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">33 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/cold-email-illegal</span>
+              </div>
+            </a>
+            <a class="card" href="cold-emailing-link-building.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Cold Email Link Building: 23 Backlinks Guide</div>
+              <div class="card__desc">We sent 500 cold emails for link building and earned 23 backlinks (4.6% conversion). Get 8 copy-paste templates and the full campaign playbo…</div>
+              <div class="card__meta">
+                <span class="card__author">Gabka Ko-Ov</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">30 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/cold-emailing-link-building</span>
+              </div>
+            </a>
+            <a class="card" href="common-sales-automation-mistakes-and-how-to-avoid-them.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Automation Mistakes to Avoid (2026)</div>
+              <div class="card__desc">Learn how to navigate common sales automation pitfalls to enhance efficiency and maintain meaningful customer interactions.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/common-sales-automation-mistakes-and-how-to-avoid-them</span>
+              </div>
+            </a>
+            <a class="card" href="deal-objections.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Handling Deal Objections: When to Push Back</div>
+              <div class="card__desc">Learn how to handle sales objections like a pro. From generic no's to real objections on price, timing, and authority, turn resistance into …</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/deal-objections</span>
+              </div>
+            </a>
+            <a class="card" href="email-automation.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Email Automation for Sales Teams (Guide)</div>
+              <div class="card__desc">Discover how email automation can revolutionize your sales process. Save time, personalize at scale, and maximize results with Overloop.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">4 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/email-automation</span>
+              </div>
+            </a>
+            <a class="card" href="how-ai-follow-up-scheduling-boosts-sales-efficiency.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">AI Follow-Up Scheduling for Sales Teams</div>
+              <div class="card__desc">AI-driven follow-up scheduling enhances sales efficiency by automating personalized outreach and timing, ensuring no opportunities are misse…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-ai-follow-up-scheduling-boosts-sales-efficiency</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-build-scalable-lead-generation-workflows.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">How to Build Scalable Lead Generation Workflows</div>
+              <div class="card__desc">Learn how to create scalable lead generation workflows that improve efficiency, lead quality, and save time through automation and templates…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-build-scalable-lead-generation-workflows</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-write-personalized-sales-emails-at-scale.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Personalized Sales Emails at Scale (2026)</div>
+              <div class="card__desc">Write Personalized Sales Email that actually gets replies. Proven structure, real personalization tactics, and examples to close more deals.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-write-personalized-sales-emails-at-scale</span>
+              </div>
+            </a>
+            <a class="card" href="increase-reply-rate.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">31% Reply Rate on Sales Emails [Case Study]</div>
+              <div class="card__desc">Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation, personalization, and follow-ups.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/increase-reply-rate</span>
+              </div>
+            </a>
+            <a class="card" href="increase-saas-sales-growth-system.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">SaaS Sales Growth: Repeatable System Guide</div>
+              <div class="card__desc">Stop doing more and start building a repeatable SaaS sales growth system. Learn how to fix your pipeline, ICP, offer, and scale every month.</div>
+              <div class="card__meta">
+                <span class="card__author">Jazmin Villarino</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/increase-saas-sales-growth-system</span>
+              </div>
+            </a>
+            <a class="card" href="instantly-alternatives.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">7 Best Instantly Alternatives (2026)</div>
+              <div class="card__desc">Instantly is email-only. Need LinkedIn or calling? Compare 7 Instantly alternatives on pricing, G2 ratings, deliverability, and AI features.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">16 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/instantly-alternatives</span>
+              </div>
+            </a>
+            <a class="card" href="kickstart-sales-career-2.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Kickstart Your Sales Career [Expert Tips]</div>
+              <div class="card__desc">Sales coach Marcus Cauchi from Sandler Training shares advice on launching a sales career, hiring great salespeople, and becoming a better s…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/kickstart-sales-career-2</span>
+              </div>
+            </a>
+            <a class="card" href="know-prospect-find.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Prospecting: Who to Target &amp; Where</div>
+              <div class="card__desc">Learn how to identify your ideal prospects and discover the best channels to find them for effective B2B sales prospecting.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/know-prospect-find</span>
+              </div>
+            </a>
+            <a class="card" href="lemlist-alternatives.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">9 Best Lemlist Alternatives in 2026</div>
+              <div class="card__desc">Looking for a Lemlist alternative? We compare 9 tools on pricing, multichannel features, AI writing, and G2 ratings. Find the best fit for y…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">16 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/lemlist-alternatives</span>
+              </div>
+            </a>
+            <a class="card" href="outreach-alternatives.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">8 Best Outreach.io Alternatives (2026)</div>
+              <div class="card__desc">Outreach.io too expensive or too complex? Compare 8 alternatives with transparent pricing, G2 ratings, and multichannel features for SMBs an…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">14 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/outreach-alternatives</span>
+              </div>
+            </a>
+            <a class="card" href="overloop-joins-sortlist.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Overloop Joins Forces with Sortlist</div>
+              <div class="card__desc">Overloop joins Sortlist, the leading marketplace connecting companies with agencies. Learn what this acquisition means for our users and pro…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/overloop-joins-sortlist</span>
+              </div>
+            </a>
+            <a class="card" href="perfect-follow-up-email-campaign.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Perfect Follow-Up Email Sequence [Blueprint]</div>
+              <div class="card__desc">Write the perfect follow-up email sequence with 3 proven blueprints: minimum, business, and value-driven. Templates and timing strategies th…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/perfect-follow-up-email-campaign</span>
+              </div>
+            </a>
+            <a class="card" href="sales-appointment-setting.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Appointment Setting: Book More Meetings</div>
+              <div class="card__desc">A practical playbook for sales appointment setting: qualification frameworks, scripts that earn a yes, follow-up systems, and metrics that p…</div>
+              <div class="card__meta">
+                <span class="card__author">Jazmin Villarino</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">16 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/sales-appointment-setting</span>
+              </div>
+            </a>
+            <a class="card" href="sales-email-tips-to-help-you-close-more-deals.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Sales Email Tips to Help You Close More Deals</div>
+              <div class="card__desc">Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, A/B testing, and personalizat…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/sales-email-tips-to-help-you-close-more-deals</span>
+              </div>
+            </a>
+            <a class="card" href="sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Top Sales Engagement Platforms (2026 Guide)</div>
+              <div class="card__desc">Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide</span>
+              </div>
+            </a>
+            <a class="card" href="sales-presentations.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Kill the Generic Sales Presentation (Guide)</div>
+              <div class="card__desc">As a salesperson, it’s your job to advise prospects on the ways your offering is uniquely positioned to address their unique needs.</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/sales-presentations</span>
+              </div>
+            </a>
+            <a class="card" href="salesloft-alternatives.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">8 Best Salesloft Alternatives (2026)</div>
+              <div class="card__desc">Salesloft merged with Clari in 2025. If you're rethinking your sales engagement stack, here are 8 alternatives compared on pricing, G2 ratin…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">14 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/salesloft-alternatives</span>
+              </div>
+            </a>
+            <a class="card" href="seasonal-sales.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Seasonal Sales: How to Survive Slow Periods</div>
+              <div class="card__desc">Seasonal businesses can still make money year-round. Learn practical strategies for prospecting, cross-selling, and staying visible during t…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/seasonal-sales</span>
+              </div>
+            </a>
+            <a class="card" href="the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Best AI SDR Tools: Selection Checklist (2026)</div>
+              <div class="card__desc">Use this AI SDR checklist to find the best AI SDR tools for 2025. Ensure efficiency, personalization, and seamless integration for your team…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025</span>
+              </div>
+            </a>
+            <a class="card" href="the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">LinkedIn Automation Guide (2026): Tools &amp; Limits</div>
+              <div class="card__desc">LinkedIn Automation Guide 2025 reveals what's safe, what gets banned, and the exact tools and limits to automate without risking your accoun…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/the-ultimate-guide-to-linkedin-automation-boost-b2b-sales-in-2025</span>
+              </div>
+            </a>
+            <a class="card" href="top-8-sales-prospecting-tools-for-small-business-teams.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">8 Best Prospecting Tools for SMBs (Free &amp; Paid)</div>
+              <div class="card__desc">Best Prospecting Tools for SMBs compared: 8 tools to find leads faster, cut costs, and scale outreach. Free and paid options included.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/top-8-sales-prospecting-tools-for-small-business-teams</span>
+              </div>
+            </a>
+            <a class="card" href="whats-the-best-email-length-for-sales-outreach.html" style="--c:#EF4444;--bg:#FEE2E2">
+              <div class="card__title">Ideal Cold Email Length (Data-Driven Guide)</div>
+              <div class="card__desc">What's the ideal cold email length? Data shows 50-125 words get the best response rates. See the stats, examples, and best practices for eve…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">7 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/whats-the-best-email-length-for-sales-outreach</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#10B981;--bg:#ECFDF5">
+            <span class="group__badge">How-To</span>
+            <span class="group__count">7 articles</span>
+            <span class="group__tmpl">how-to.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="following-up-surefire-techniques.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">Follow-Up Techniques Most Salespeople Skip</div>
+              <div class="card__desc">Master the art of following up with proven email templates for every situation. From post-trial to long-term nurturing, get scripts that act…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/following-up-surefire-techniques</span>
+              </div>
+            </a>
+            <a class="card" href="get-email-from-linkedin-profile.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">Get Emails from LinkedIn Profiles (9 Ways)</div>
+              <div class="card__desc">9 proven ways to get someone's email from their LinkedIn profile. Free methods, Chrome extensions, Google operators, and Sales Navigator tri…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">27 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/get-email-from-linkedin-profile</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-compose-a-follow-up-email.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">How to Compose a Follow-Up Email: Our Guide</div>
+              <div class="card__desc">Running out of email inspiration? We teach you how to compose a follow-up email your prospects will remember! Boost your responses with Over…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">4 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-compose-a-follow-up-email</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-find-someone-email-address-efficiently.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">Find Anyone's Email Address (17 Methods)</div>
+              <div class="card__desc">17 proven methods to find anyone's email address in 2026. Free tools, paid finders, LinkedIn tricks, GitHub commits, Chrome extensions, and …</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">31 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-find-someone-email-address-efficiently</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">How to Find B2B Emails (Fast &amp; GDPR-Safe Methods)</div>
+              <div class="card__desc">How to Find B2B Emails without wasting hours or risking compliance. Proven tools, smart tactics, and methods that actually work in 2025.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">12 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-write-a-successful-cold-email.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">How to Write Cold Emails That Get Replies</div>
+              <div class="card__desc">The 2026 Cold Email Guide shows exactly how to write emails that get replies, not ignored: updated tactics, real examples, and zero fluff.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">17 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-write-a-successful-cold-email</span>
+              </div>
+            </a>
+            <a class="card" href="how-to-write-a-successful-follow-up-email.html" style="--c:#10B981;--bg:#ECFDF5">
+              <div class="card__title">How to Write a Follow-Up Email (Guide)</div>
+              <div class="card__desc">The most important parts of cold email is the follow-up email. We'll help you write a successful follow up email, step by step.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">5 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/how-to-write-a-successful-follow-up-email</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#8B5CF6;--bg:#F3E8FF">
+            <span class="group__badge">Data List</span>
+            <span class="group__count">2 articles</span>
+            <span class="group__tmpl">data-list.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="455-email-spam-trigger-words-avoid-2018.html" style="--c:#8B5CF6;--bg:#F3E8FF">
+              <div class="card__title">600+ Email Spam Trigger Words (2026 List)</div>
+              <div class="card__desc">The most comprehensive list of 600+ email spam trigger words organized by 18 categories with risk levels and safer alternatives. Updated for…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">47 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/455-email-spam-trigger-words-avoid-2018</span>
+              </div>
+            </a>
+            <a class="card" href="500-trigger-words.html" style="--c:#8B5CF6;--bg:#F3E8FF">
+              <div class="card__title">1000+ Cold Email Trigger Words (2026)</div>
+              <div class="card__desc">1000+ trigger words organized by 12 emotions for cold emails: urgency, curiosity, trust, FOMO, and more. Each word includes a ready-to-use e…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">44 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/500-trigger-words</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#F59E0B;--bg:#FFFBEB">
+            <span class="group__badge">X vs Y</span>
+            <span class="group__count">2 articles</span>
+            <span class="group__tmpl">versus.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="inside-sales-outside-sales.html" style="--c:#F59E0B;--bg:#FFFBEB">
+              <div class="card__title">Inside Sales vs Outside Sales: How to Choose</div>
+              <div class="card__desc">Compare inside sales vs outside sales to find the best approach for your business. Explore key differences in tools, costs, sales cycles, an…</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/inside-sales-outside-sales</span>
+              </div>
+            </a>
+            <a class="card" href="linkedin-vs-email-which-performs-better-for-b2b-outreach.html" style="--c:#F59E0B;--bg:#FFFBEB">
+              <div class="card__title">LinkedIn vs Email for B2B Outreach (2026)</div>
+              <div class="card__desc">Explore the strengths and weaknesses of LinkedIn and email for B2B outreach, and learn how to combine both for optimal results.</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">10 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/linkedin-vs-email-which-performs-better-for-b2b-outreach</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#DC2626;--bg:#FEE2E2">
+            <span class="group__badge">Tool Review</span>
+            <span class="group__count">2 articles</span>
+            <span class="group__tmpl">tool-review.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="la-growth-machine-review.html" style="--c:#DC2626;--bg:#FEE2E2">
+              <div class="card__title">La Growth Machine Review (2026): Full Guide</div>
+              <div class="card__desc">Honest La Growth Machine (LGM) review from a competitor. Multichannel outreach, voice messages, pricing in EUR, and how it compares to Overl…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">32 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/la-growth-machine-review</span>
+              </div>
+            </a>
+            <a class="card" href="linkedin-helper-review.html" style="--c:#DC2626;--bg:#FEE2E2">
+              <div class="card__title">LinkedIn Helper Review (2026): Full Guide</div>
+              <div class="card__desc">Honest LinkedIn Helper review from a competitor. We tested it for 30 days. Features, pricing ($15-45/mo), ban risk, and how it compares to O…</div>
+              <div class="card__meta">
+                <span class="card__author">Nicolas Finet</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">30 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/linkedin-helper-review</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#F97316;--bg:#FFEDD5">
+            <span class="group__badge">Strategy</span>
+            <span class="group__count">1 article</span>
+            <span class="group__tmpl">strategy.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="5-main-steps-for-an-effective-cold-email-marketing-strategy.html" style="--c:#F97316;--bg:#FFEDD5">
+              <div class="card__title">Cold Email Marketing Strategy: 5 Steps</div>
+              <div class="card__desc">Master cold email marketing in 5 steps: targeting, subject lines, body copy, CTAs, and follow-ups. Proven practices to boost your reply rate…</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">5 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/5-main-steps-for-an-effective-cold-email-marketing-strategy</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#3B82F6;--bg:#DBEAFE">
+            <span class="group__badge">Statistics</span>
+            <span class="group__count">1 article</span>
+            <span class="group__tmpl">statistics.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="cold-email-stats-2018.html" style="--c:#3B82F6;--bg:#DBEAFE">
+              <div class="card__title">55+ Cold Email Statistics for 2026</div>
+              <div class="card__desc">55+ cold email statistics for 2026: open rates, reply rates, conversion rates, ROI, deliverability, and industry benchmarks. Data from 12M+ …</div>
+              <div class="card__meta">
+                <span class="card__author">Forster Perelsztejn</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">51 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/cold-email-stats-2018</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#06B6D4;--bg:#CFFAFE">
+            <span class="group__badge">Lead Gen / X</span>
+            <span class="group__count">1 article</span>
+            <span class="group__tmpl">lead-gen-industry.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="lead-generation-strategies-every-saas-business-should-try-today.html" style="--c:#06B6D4;--bg:#CFFAFE">
+              <div class="card__title">Lead Generation Strategies for SaaS (2026)</div>
+              <div class="card__desc">Discover proven lead generation strategies for SaaS businesses and boost B2B sales with Overloop's powerful automation tools.</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">11 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/lead-generation-strategies-every-saas-business-should-try-today</span>
+              </div>
+            </a></div></section>
+        <section class="group">
+          <h2 class="group__h" style="--c:#84CC16;--bg:#ECFCCB">
+            <span class="group__badge">What is X?</span>
+            <span class="group__count">1 article</span>
+            <span class="group__tmpl">what-is.html</span>
+          </h2>
+          <div class="grid">
+            <a class="card" href="pre-call-planning.html" style="--c:#84CC16;--bg:#ECFCCB">
+              <div class="card__title">Pre-Call Planning for Better Sales Calls</div>
+              <div class="card__desc">Discover the importance of pre call planning in sales. Enhance your sales conversations with our effective tips and planning techniques!</div>
+              <div class="card__meta">
+                <span class="card__author">Vincenzo Ruggiero</span>
+                <span class="card__sep">·</span>
+                <span class="card__time">4 min</span>
+                <span class="card__sep">·</span>
+                <span class="card__slug">/pre-call-planning</span>
+              </div>
+            </a></div></section>
+  </main>
+
+  <footer class="footer">
+    Generated 75 cards · <a href="https://github.com/Marketing-Sortlist/overloop-blog/pull/1">Source PR</a> · <a href="https://overloop.com/blog">Live blog</a>
+  </footer>
+
+  <script>
+    // Filter
+    document.getElementById('filter-bar').addEventListener('click', e => {
+      const b = e.target.closest('.filter-chip');
+      if (!b) return;
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('is-active'));
+      b.classList.add('is-active');
+      const f = b.dataset.filter;
+      document.querySelectorAll('.group').forEach(g => {
+        if (f === 'all') { g.style.display = ''; return; }
+        const tmpl = g.querySelector('.group__tmpl').textContent.trim();
+        g.style.display = (tmpl === f) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
