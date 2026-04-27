@@ -26,9 +26,10 @@ Purpose: Editorial hub at https://overloop.com/blog
   <link rel="canonical" href="https://overloop.com/blog">
 
   <link rel="alternate" hreflang="en" href="https://overloop.com/blog">
-  <link rel="alternate" hreflang="de" href="https://overloop.com/blog/de">
-  <link rel="alternate" hreflang="fr" href="https://overloop.com/blog/fr">
-  <link rel="alternate" hreflang="es" href="https://overloop.com/blog/es">
+  <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog">
+  <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog">
+  <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog">
+  <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog">
   <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog">
 
   <meta property="og:title" content="Overloop Blog — Insights from Building Better Outbound">
@@ -232,17 +233,6 @@ Purpose: Editorial hub at https://overloop.com/blog
     .pillar-viewall a { color: var(--color-primary); font-size: 14px; font-weight: 600; text-decoration: none; }
     .pillar-viewall a:hover { text-decoration: underline; }
 
-    /* ============= COMPACT TIER ============= */
-    .compact-tier { max-width: var(--container-max); margin: 0 auto; padding: 56px var(--page-px); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; border-top: 1px solid var(--color-border-light); }
-    .compact-pillar { background: #fff; border-radius: var(--r-xl); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--color-border-light); scroll-margin-top: 160px; }
-    .compact-pillar h3 { font-size: 24px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.015em; color: var(--color-text); }
-    .compact-pillar h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
-    .compact-pillar p { color: var(--color-text-secondary); margin: 0 0 20px; font-size: 14px; }
-    .compact-list { list-style: none; padding: 0; margin: 0 0 24px; border-top: 1px solid var(--color-border-light); }
-    .compact-list li { padding: 12px 0; border-bottom: 1px solid var(--color-border-light); font-size: 14px; }
-    .compact-list a { color: var(--color-text); }
-    .compact-list a:hover { color: var(--color-primary); text-decoration: none; }
-
     /* ============= VERSUS BAND (BOFU) ============= */
     .versus-band { max-width: var(--container-max); margin: 64px auto 0; padding: 0 var(--page-px); }
     .versus-card { background: linear-gradient(135deg, #1A1A2E 0%, #2D1B69 100%); color: #fff; border-radius: var(--r-xl); padding: 48px; position: relative; overflow: hidden; }
@@ -311,7 +301,7 @@ Purpose: Editorial hub at https://overloop.com/blog
       .featured-strip { grid-template-columns: 1fr; }
       .pillar-grid { grid-template-columns: repeat(2, 1fr); }
       .pillar-grid-5 { grid-template-columns: repeat(2, 1fr); }
-      .compact-tier, .experts-grid { grid-template-columns: 1fr; }
+      .experts-grid { grid-template-columns: 1fr; }
       .index-cols { grid-template-columns: 1fr; gap: 32px; }
       .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
       .versus-right { grid-template-columns: repeat(2, 1fr); }
@@ -401,44 +391,6 @@ Purpose: Editorial hub at https://overloop.com/blog
     </div>
   </header>
 
-  <!-- ============= EXPERTS BAND (E-E-A-T) ============= -->
-  <section class="experts-band">
-    <div class="experts-head">
-      <div>
-        <h2>Written and tested by <em>real practitioners</em>.</h2>
-        <p>Every article is authored or reviewed by one of our three in-house experts who run outbound campaigns daily for B2B SaaS teams.</p>
-      </div>
-      <a href="https://overloop.com/about">Meet the team &rarr;</a>
-    </div>
-    <div class="experts-grid">
-      <div class="expert-card">
-        <img class="expert-photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="expert-photo-fallback" style="display:none;" aria-label="Vincenzo Ruggiero avatar">VR</div>
-        <div class="expert-info">
-          <strong>Vincenzo Ruggiero</strong>
-          <span class="role">Head of AI Sales · 8 yrs</span>
-          <p>Runs AI sales prospecting playbooks for B2B SaaS. Tested 100+ outbound tools across 30+ campaigns since 2018.</p>
-        </div>
-      </div>
-      <div class="expert-card">
-        <img class="expert-photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
-        <div class="expert-photo-fallback" style="display:none;" aria-label="Nicolas Finet avatar">NF</div>
-        <div class="expert-info">
-          <strong>Nicolas Finet</strong>
-          <span class="role">Co-founder · 12 yrs</span>
-          <p>Co-founded Sortlist (acquired Overloop 2024). Built outbound engines that closed 1,000+ B2B clients across Europe.</p>
-        </div>
-      </div>
-      <div class="expert-card">
-        <img class="expert-photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="expert-photo-fallback" style="display:none;" aria-label="Nathalie Saikali avatar">NS</div>
-        <div class="expert-info">
-          <strong>Nathalie Saikali</strong>
-          <span class="role">Email Deliverability Lead · 6 yrs</span>
-          <p>Specialist in email deliverability, GDPR compliance, and inbox placement. Manages sender reputation for 500+ domains.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ============= STICKY PILLAR NAV ============= -->
   <nav class="pillar-nav" aria-label="Blog pillar sections">
     <div class="pillar-nav-inner">
@@ -447,7 +399,8 @@ Purpose: Editorial hub at https://overloop.com/blog
       <a class="pillar-anchor" href="#linkedin">LinkedIn Automation <span class="count">(5)</span></a>
       <a class="pillar-anchor" href="#contact-db">Contact Database <span class="count">(4)</span></a>
       <a class="pillar-anchor" href="#verification">Email Verification <span class="count">(6)</span></a>
-      <a class="pillar-anchor" href="#versus">Compare tools <span class="count">(14)</span></a>
+      <a class="pillar-anchor" href="#versus-section">Versus <span class="count">(9)</span></a>
+      <a class="pillar-anchor" href="#playbooks-section">Playbooks <span class="count">(14)</span></a>
       <a class="pillar-anchor" href="#all">All articles <span class="count">(75)</span></a>
     </div>
   </nav>
@@ -632,37 +585,350 @@ Purpose: Editorial hub at https://overloop.com/blog
     </div>
   </section>
 
-  <!-- ============= COMPACT TIER ============= -->
-  <div class="compact-tier">
-    <div class="compact-pillar" id="contact-db">
-      <div class="pillar-kicker">Pillar 04</div>
-      <h3><em>B2B Contact Database.</em></h3>
-      <p>Find emails, build prospect lists, and enrich your CRM with verified data.</p>
-      <ul class="compact-list">
-        <li><a href="/blog/how-to-find-someone-email-address-efficiently">How to Find Someone's Email Address Efficiently</a></li>
-        <li><a href="/blog/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation">How to Use Overloop Email Finder Step by Step</a></li>
-        <li><a href="/blog/get-email-from-linkedin-profile">Get Email From LinkedIn Profile</a></li>
-        <li><a href="/blog/9-reasons-never-buy-email-lists">9 Reasons You Should Never Buy Email Lists</a></li>
-      </ul>
-      <a class="btn btn-ghost btn-sm" href="https://overloop.com/f/b2b-contact-database">Discover the product &rarr;</a>
-      <a href="/blog/contact-database/" style="margin-left:12px; font-size:13px; color:var(--color-primary); font-weight:600; text-decoration:none;">Browse all 4 articles &rarr;</a>
+  <!-- ============= PILLAR 04 — Contact Database ============= -->
+  <section class="pillar-section" id="contact-db">
+    <div class="pillar-header">
+      <div>
+        <div class="pillar-kicker">Pillar 04</div>
+        <h2 class="pillar-title"><em>B2B Contact Database.</em></h2>
+        <p class="pillar-desc">Find emails, build prospect lists, and enrich your CRM with verified data.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://overloop.com/f/b2b-contact-database">Discover the product &rarr;</a>
     </div>
-    <div class="compact-pillar" id="verification">
-      <div class="pillar-kicker">Pillar 05</div>
-      <h3><em>Email Verification.</em></h3>
-      <p>Stay out of spam. Avoid bounces. Maintain sender reputation.</p>
-      <ul class="compact-list">
-        <li><a href="/blog/10-pro-tips-avoid-spam-folder">10 Pro Tips to Avoid the Spam Folder</a></li>
-        <li><a href="/blog/500-trigger-words">500 Email Trigger Words to Avoid</a></li>
-        <li><a href="/blog/7-reasons-emails-bounce">7 Reasons Emails Bounce</a></li>
-        <li><a href="/blog/b2b-cold-email-germany-gdpr-compliance">B2B Cold Email Germany GDPR Compliance</a></li>
-        <li><a href="/blog/cold-email-illegal">Is Cold Email Illegal? What the Law Says</a></li>
-        <li><a href="/blog/455-email-spam-trigger-words-avoid-2018">455 Email Spam Trigger Words to Avoid</a></li>
-      </ul>
-      <a class="btn btn-ghost btn-sm" href="https://overloop.com/f/email-verification">Discover the product &rarr;</a>
-      <a href="/blog/email-verification/" style="margin-left:12px; font-size:13px; color:var(--color-primary); font-weight:600; text-decoration:none;">Browse all 6 articles &rarr;</a>
+    <div class="pillar-grid">
+      <a class="post-card pc-howto" href="/blog/how-to-find-someone-email-address-efficiently">
+        <div class="post-body">
+          <div class="post-pill">How-To</div>
+          <h3 class="post-title">How to Find Someone's Email Address Efficiently</h3>
+          <p class="post-excerpt">8 proven methods to track down professional emails — from LinkedIn tricks to domain-guessing tools — ranked by accuracy and speed.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 15, 2025 · 10 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-howto" href="/blog/how-to-use-overloop-email-finder-step-by-step-for-effortless-lead-generation">
+        <div class="post-body">
+          <div class="post-pill">How-To</div>
+          <h3 class="post-title">How to Use Overloop Email Finder Step by Step</h3>
+          <p class="post-excerpt">A visual walkthrough of Overloop's email finder — from single lookups to bulk enrichment — with tips to maximize hit rate.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 10, 2025 · 8 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-tactical" href="/blog/get-email-from-linkedin-profile">
+        <div class="post-body">
+          <div class="post-pill">Tactical</div>
+          <h3 class="post-title">Get Email From LinkedIn Profile</h3>
+          <p class="post-excerpt">4 ways to extract a verified email from any LinkedIn profile — without violating LinkedIn's terms of service.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">VR</div><div class="author-mini__text"><span class="author-mini__name">Vincenzo Ruggiero</span><span class="author-mini__date">Jan 5, 2025 · 7 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-strategy" href="/blog/9-reasons-never-buy-email-lists">
+        <div class="post-body">
+          <div class="post-pill">Strategy</div>
+          <h3 class="post-title">9 Reasons You Should Never Buy Email Lists</h3>
+          <p class="post-excerpt">Why purchased lists tank deliverability, violate GDPR, and cost more than building your own — with the math to prove it.</p>
+          <div class="author-mini"><div class="author-mini__photo-fallback">FP</div><div class="author-mini__text"><span class="author-mini__name">Forster Perelsztejn</span><span class="author-mini__date">Nov 28, 2017 · 9 min</span></div></div>
+        </div>
+      </a>
     </div>
-  </div>
+    <div class="pillar-viewall"><a href="/blog/contact-database/">View all 4 articles in this pillar &rarr;</a></div>
+  </section>
+
+  <!-- ============= PILLAR 05 — Email Verification ============= -->
+  <section class="pillar-section" id="verification">
+    <div class="pillar-header">
+      <div>
+        <div class="pillar-kicker">Pillar 05</div>
+        <h2 class="pillar-title"><em>Email Verification.</em></h2>
+        <p class="pillar-desc">Stay out of spam. Avoid bounces. Maintain sender reputation.</p>
+      </div>
+      <a class="btn btn-ghost" href="https://overloop.com/f/email-verification">Discover the product &rarr;</a>
+    </div>
+    <div class="pillar-grid">
+      <a class="post-card pc-tactical" href="/blog/10-pro-tips-avoid-spam-folder">
+        <div class="post-body">
+          <div class="post-pill">Tactical</div>
+          <h3 class="post-title">10 Pro Tips to Avoid the Spam Folder</h3>
+          <p class="post-excerpt">Technical and copywriting fixes that keep your cold emails out of spam — from authentication records to content patterns.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Jan 20, 2025 · 11 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/blog/500-trigger-words">
+        <div class="post-body">
+          <div class="post-pill">Templates</div>
+          <h3 class="post-title">500 Email Trigger Words to Avoid</h3>
+          <p class="post-excerpt">The definitive list of words and phrases that trip spam filters — organized by category with safe alternatives.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Dec 15, 2024 · 14 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-tactical" href="/blog/7-reasons-emails-bounce">
+        <div class="post-body">
+          <div class="post-pill">Tactical</div>
+          <h3 class="post-title">7 Reasons Emails Bounce (And How to Fix Each)</h3>
+          <p class="post-excerpt">Hard bounces vs soft bounces explained — with root causes and step-by-step fixes to protect your sender score.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Sep 27, 2017 · 8 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-pillar" href="/blog/b2b-cold-email-germany-gdpr-compliance">
+        <div class="post-body">
+          <div class="post-pill">Pillar Guide</div>
+          <h3 class="post-title">B2B Cold Email Germany GDPR Compliance</h3>
+          <p class="post-excerpt">Legal requirements for cold-emailing German businesses under GDPR and UWG — with compliant templates and opt-out rules.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Jan 8, 2025 · 12 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-tactical" href="/blog/cold-email-illegal">
+        <div class="post-body">
+          <div class="post-pill">Tactical</div>
+          <h3 class="post-title">Is Cold Email Illegal? What the Law Says</h3>
+          <p class="post-excerpt">CAN-SPAM, GDPR, CASL, and PECR decoded — what's legal, what's not, and how to stay compliant across jurisdictions.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Oct 12, 2022 · 10 min</span></div></div>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/blog/455-email-spam-trigger-words-avoid-2018">
+        <div class="post-body">
+          <div class="post-pill">Templates</div>
+          <h3 class="post-title">455 Email Spam Trigger Words to Avoid</h3>
+          <p class="post-excerpt">An expanded reference list of words that flag spam filters — updated with 2025 AI-era patterns and workarounds.</p>
+          <div class="author-mini"><img class="author-mini__photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="28" height="28" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NS</div><div class="author-mini__text"><span class="author-mini__name">Nathalie Saikali</span><span class="author-mini__date">Feb 22, 2018 · 16 min</span></div></div>
+        </div>
+      </a>
+    </div>
+    <div class="pillar-viewall"><a href="/blog/email-verification/">View all 6 articles in this pillar &rarr;</a></div>
+  </section>
+
+  <!-- ============= TOOL COMPARISONS (VERSUS) ============= -->
+  <section class="pillar-section" id="versus-section">
+    <div class="pillar-header">
+      <div>
+        <div class="pillar-kicker">Versus</div>
+        <h2 class="pillar-title"><em>Tool Comparisons.</em></h2>
+        <p class="pillar-desc">Head-to-head comparisons to help you choose the right outbound sales platform.</p>
+      </div>
+      <a class="btn btn-ghost" href="/versus">View all comparisons &rarr;</a>
+    </div>
+    <div class="pillar-grid">
+      <a class="post-card pc-versus" href="/versus/overloop-vs-apollo">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Apollo</h3>
+          <p class="post-excerpt">Full-stack outbound comparison: AI personalization, data quality, and multichannel sequences side by side.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-lemlist">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Lemlist</h3>
+          <p class="post-excerpt">Multichannel outreach showdown: email warm-up, LinkedIn steps, and pricing compared feature by feature.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-instantly">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Instantly</h3>
+          <p class="post-excerpt">Cold email volume vs AI personalization: which approach closes more deals for your team size?</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-reply">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Reply.io</h3>
+          <p class="post-excerpt">Multichannel sequences, AI SDR agents, and CRM integrations compared for mid-market sales teams.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-saleshandy">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Saleshandy</h3>
+          <p class="post-excerpt">Email-first outreach compared: deliverability, sender rotation, and agency features head to head.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-hubspot">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs HubSpot</h3>
+          <p class="post-excerpt">Dedicated outbound platform vs all-in-one CRM: when each makes sense for your sales workflow.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/overloop-vs-artisan">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Overloop vs Artisan</h3>
+          <p class="post-excerpt">Human-guided AI outreach vs fully autonomous AI sales agent: which delivers better results?</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/lemlist-vs-apollo">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Lemlist vs Apollo</h3>
+          <p class="post-excerpt">Two popular prospecting platforms compared on data, deliverability, and multichannel capabilities.</p>
+        </div>
+      </a>
+      <a class="post-card pc-versus" href="/versus/instantly-vs-lemlist">
+        <div class="post-body">
+          <div class="post-pill">Versus</div>
+          <h3 class="post-title">Instantly vs Lemlist</h3>
+          <p class="post-excerpt">High-volume sending vs creative personalization: which cold email tool fits your outbound strategy?</p>
+        </div>
+      </a>
+    </div>
+    <div class="pillar-viewall"><a href="/versus">Browse all comparisons &rarr;</a></div>
+  </section>
+
+  <!-- ============= PLAYBOOKS ============= -->
+  <section class="pillar-section" id="playbooks-section">
+    <div class="pillar-header">
+      <div>
+        <div class="pillar-kicker">Playbooks</div>
+        <h2 class="pillar-title"><em>Cold Email Playbooks.</em></h2>
+        <p class="pillar-desc">Ready-to-run outbound strategies by industry. Pick your vertical, steal the sequences.</p>
+      </div>
+      <a class="btn btn-ghost" href="/playbooks">View all playbooks &rarr;</a>
+    </div>
+
+    <h3 style="font-size:18px; font-weight:700; color:var(--color-text); margin-bottom:20px; letter-spacing:-0.01em;">For Agencies</h3>
+    <div class="pillar-grid">
+      <a class="post-card pc-templates" href="/playbooks/digital-web-agencies">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Digital &amp; Web Agencies</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/marketing-agencies">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Marketing Agencies</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/seo-agencies">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">SEO Agencies</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/branding-design">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Branding &amp; Design</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/content-marketing">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Content Marketing</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/performance-paid-media">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Performance &amp; Paid Media</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/pr-communications">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">PR &amp; Communications</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/social-media">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Social Media</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/dev-product-studios">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Dev &amp; Product Studios</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+    </div>
+
+    <h3 style="font-size:18px; font-weight:700; color:var(--color-text); margin:40px 0 20px; letter-spacing:-0.01em;">By Industry</h3>
+    <div class="pillar-grid">
+      <a class="post-card pc-templates" href="/playbooks/saas-b2b">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">SaaS B2B</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/ecommerce-b2b">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">E-commerce B2B</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/fintech">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Fintech</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/consulting-firms">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Consulting Firms</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+      <a class="post-card pc-templates" href="/playbooks/recruiting-staffing">
+        <div class="post-body">
+          <div class="post-pill">Playbook</div>
+          <h3 class="post-title">Recruiting &amp; Staffing</h3>
+          <p class="post-excerpt">Open playbook &rarr;</p>
+        </div>
+      </a>
+    </div>
+    <div class="pillar-viewall"><a href="/playbooks">Browse all playbooks &rarr;</a></div>
+  </section>
+
+  <!-- ============= EXPERTS BAND (E-E-A-T) ============= -->
+  <section class="experts-band">
+    <div class="experts-head">
+      <div>
+        <h2>Written and tested by <em>real practitioners</em>.</h2>
+        <p>Every article is authored or reviewed by one of our three in-house experts who run outbound campaigns daily for B2B SaaS teams.</p>
+      </div>
+      <a href="https://overloop.com/about">Meet the team &rarr;</a>
+    </div>
+    <div class="experts-grid">
+      <div class="expert-card">
+        <img class="expert-photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="expert-photo-fallback" style="display:none;" aria-label="Vincenzo Ruggiero avatar">VR</div>
+        <div class="expert-info">
+          <strong>Vincenzo Ruggiero</strong>
+          <span class="role">Head of AI Sales · 8 yrs</span>
+          <p>Runs AI sales prospecting playbooks for B2B SaaS. Tested 100+ outbound tools across 30+ campaigns since 2018.</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="expert-photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.feat-card')?.classList.add('has-fallback');">
+        <div class="expert-photo-fallback" style="display:none;" aria-label="Nicolas Finet avatar">NF</div>
+        <div class="expert-info">
+          <strong>Nicolas Finet</strong>
+          <span class="role">Co-founder · 12 yrs</span>
+          <p>Co-founded Sortlist (acquired Overloop 2024). Built outbound engines that closed 1,000+ B2B clients across Europe.</p>
+        </div>
+      </div>
+      <div class="expert-card">
+        <img class="expert-photo" src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali" width="56" height="56" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="expert-photo-fallback" style="display:none;" aria-label="Nathalie Saikali avatar">NS</div>
+        <div class="expert-info">
+          <strong>Nathalie Saikali</strong>
+          <span class="role">Email Deliverability Lead · 6 yrs</span>
+          <p>Specialist in email deliverability, GDPR compliance, and inbox placement. Manages sender reputation for 500+ domains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============= VERSUS BAND (BOFU CONVERSION) ============= -->
   <div class="versus-band" id="versus">
