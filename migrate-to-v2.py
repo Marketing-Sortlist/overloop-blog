@@ -340,8 +340,20 @@ class V2TemplateMigrator:
         self.html = template_path.read_text(encoding="utf-8")
 
     def author_block(self) -> dict:
-        """Lookup the AUTHOR registry for the article's author."""
-        return AUTHORS.get(self.article.author_name, AUTHORS["Vincenzo Ruggiero"])
+        """Lookup the AUTHOR registry for the article's author.
+        For unknown authors (legacy contributors not in 3-experts registry), build
+        a dynamic block with initials from the name + generic role + no photo URL."""
+        if self.article.author_name in AUTHORS:
+            return AUTHORS[self.article.author_name]
+        # Dynamic fallback for legacy authors
+        name = self.article.author_name.strip()
+        initials = "".join(p[0].upper() for p in name.split()[:2]) if name else "—"
+        return {
+            "initials": initials or "—",
+            "photo": "",  # no photo for legacy authors — handled in patch_author_intro_card
+            "role_intro": "Contributing writer at Overloop",
+            "bio_short": f"Writes about outbound sales and B2B growth at Overloop.",
+        }
 
     def hreflang_html(self) -> str:
         """Build the hreflang block from the legacy article (preserve only existing locales)."""
@@ -510,13 +522,21 @@ class V2TemplateMigrator:
         )
 
     def patch_author_intro_card(self) -> None:
-        """Update the author-intro card (photo, name, role)."""
+        """Update the author-intro card (photo, name, role).
+        For legacy authors without a photo, replace the <img> with an initials avatar div."""
         author = self.author_block()
-        # Photo
-        self._replace(
-            r'<img[^>]*class="author-intro__photo"[^>]*>',
-            f'<img src="{author["photo"]}" alt="{self._escape_attr(self.article.author_name)}" class="author-intro__photo">',
-        )
+        if author["photo"]:
+            # Real photo — replace src
+            self._replace(
+                r'<img[^>]*class="author-intro__photo"[^>]*>',
+                f'<img src="{author["photo"]}" alt="{self._escape_attr(self.article.author_name)}" class="author-intro__photo">',
+            )
+        else:
+            # Legacy author without photo — replace img with initials avatar div
+            self._replace(
+                r'<img[^>]*class="author-intro__photo"[^>]*>',
+                f'<div class="author-intro__photo" style="display:flex;align-items:center;justify-content:center;background:var(--gradient-brand);color:#fff;font-weight:700;font-size:18px">{author["initials"]}</div>',
+            )
         # Name
         self._replace(
             r'(<div class="author-intro__info">\s*<strong>)[^<]+(</strong>)',
@@ -586,14 +606,16 @@ class V2TemplateMigrator:
         )
 
     def strip_decorative_blocks(self) -> None:
-        """Remove decorative content between </header> (article-hero close) and the
-        first <main> or <div class="article-layout">. These are V2 template
-        showcase blocks (chapter-nav, definition box, hero stats, vs-head, etc.)
-        that don't apply to migrated articles."""
-        # Match: </header> ... up to (but not including) <div class="article-layout">
-        # OR <main class="main-wrap"> OR <main class="data-main">
-        # The non-decorative wrapper elements are: <article>, the hero header itself.
-        # We strip ONLY content that's inside <article> but before the layout/main.
+        """Remove decorative content from the migrated article. This includes:
+
+        a) Content BETWEEN </header> and <main>/article-layout (chapter-nav,
+           definition box, hero stats, vs-head, verdict-box, role-overview,
+           framework-flow, ICP card, channel-grid, etc.)
+        b) Demo blocks INSIDE the hero (after article-meta) — howto-meta badges,
+           swipe-stats, data-stats, tested-banner. These were specific to the
+           template's example article and don't apply to migrated content.
+        """
+        # === a) Strip between </header> and main/layout ===
         pattern = re.compile(
             r'(</header>)\s*'
             r'((?:(?!<div class="article-layout">|<main class="(?:main-wrap|data-main)").)*?)'
@@ -602,8 +624,24 @@ class V2TemplateMigrator:
         )
         m = pattern.search(self.html)
         if m and m.group(2).strip():
-            # Replace the decorative chunk with nothing (just keep clean break)
             self.html = self.html[:m.start()] + m.group(1) + "\n\n    " + m.group(3).lstrip() + self.html[m.end():]
+
+        # === b) Strip in-hero demo blocks ===
+        # Each is a self-contained <div class="X">...</div> with a known class name
+        in_hero_classes = [
+            "howto-meta",       # how-to template: time/difficulty/steps badges
+            "swipe-stats",      # swipe-files template: count badges
+            "data-stats",       # data-list template: scope badges
+            "tested-banner",    # any template: 3-expert avatars + bogus stats
+        ]
+        for cls in in_hero_classes:
+            # Match <div class="X">...</div> — single level, balanced via greedy-then-backtrack
+            self.html = re.sub(
+                rf'<div class="{cls}"[^>]*>.*?</div>',
+                "",
+                self.html,
+                flags=re.DOTALL,
+            )
 
     def patch_jsonld(self) -> None:
         """Replace V2 template's JSON-LD blocks with: our Article + BreadcrumbList + preserved (FAQ + ItemList)."""
