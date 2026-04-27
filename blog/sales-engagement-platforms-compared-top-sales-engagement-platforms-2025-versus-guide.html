@@ -1,35 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Sales Engagement Platforms (2026 Guide) | Overloop</title>
-    <meta name="description" content="Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.">
-    <link rel="canonical" href="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Sales Engagement Platforms (2026 Guide) | Overloop</title>
+  <meta name="description" content="Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.">
+  <link rel="canonical" href="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
 
-    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
+  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/vertriebsengagement-plattformen-vergleich">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/comparaison-plateformes-engagement-commercial">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/comparativa-plataformas-ventas-engagement">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/piattaforme-sales-engagement-confronto">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
 
-    <meta property="og:title" content="Top Sales Engagement Platforms (2026 Guide)">
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 900px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    .article-hero { background: var(--gradient-hero-bg); padding: 56px var(--page-px) 48px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(32px, 5vw, 46px); font-weight: 800; color: var(--color-text); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 18px; line-height: 1.6; color: var(--color-text-secondary); max-width: 640px; margin: 0 auto 24px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+    .tested-banner { display: inline-flex; align-items: center; gap: 14px; margin-top: 18px; padding: 10px 20px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-pill); font-size: 13px; font-weight: 600; color: var(--color-primary-dark); }
+    .tested-banner__avatars { display: flex; align-items: center; }
+    .tested-banner__avatars img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; object-fit: cover; margin-left: -8px; }
+    .tested-banner__avatars img:first-child { margin-left: 0; }
+    .tested-banner i { width: 14px; height: 14px; color: var(--color-primary); }
+
+    /* VS head-to-head card */
+    .vs-head { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; margin: 28px 0; max-width: var(--container-blog); margin-left: auto; margin-right: auto; }
+    .vs-head__card { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 22px; text-align: center; box-shadow: var(--shadow-sm); }
+    .vs-head__logo { width: 56px; height: 56px; border-radius: var(--r); background: var(--color-surface); color: var(--color-text-secondary); display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 800; font-size: 13px; margin: 0 auto 10px; }
+    .vs-head__name { font-size: 20px; font-weight: 800; color: var(--color-text); margin-bottom: 4px; }
+    .vs-head__one-liner { font-size: 13.5px; color: var(--color-text-secondary); line-height: 1.5; }
+    .vs-head__sep { display: flex; align-items: center; justify-content: center; font-family: var(--font-accent); font-style: italic; font-size: 22px; color: var(--color-primary); font-weight: 400; }
+
+    .main-wrap { max-width: var(--container-blog); margin: 0 auto; padding: 40px var(--page-px); }
+    .main-wrap > * { margin-bottom: 20px; }
+    .main-wrap p { line-height: 1.75; }
+    .main-wrap h2 { font-size: 26px; font-weight: 800; color: var(--color-text); letter-spacing: -0.01em; line-height: 1.2; margin: 40px 0 16px; scroll-margin-top: 96px; }
+    .main-wrap h3 { font-size: 19px; font-weight: 700; color: var(--color-text); margin: 24px 0 10px; }
+    .main-wrap ul, .main-wrap ol { padding-left: 24px; margin-bottom: 20px; }
+    .main-wrap ul li, .main-wrap ol li { margin-bottom: 8px; line-height: 1.6; }
+    .main-wrap strong { color: var(--color-text); font-weight: 700; }
+
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 24px 28px; margin: 28px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info strong { font-size: 16px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { display: block; font-size: 13.5px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 15.5px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 10px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Feature matrix */
+    .matrix-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--color-border); margin: 24px 0 32px; }
+    .matrix { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px; background: #fff; }
+    .matrix thead th { background: var(--color-text); color: #fff; padding: 14px 18px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; }
+    .matrix thead th:first-child { text-align: left; }
+    .matrix thead th.is-overloop { background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); position: relative; }
+    .matrix thead th.is-overloop::after { content: "Editor's pick"; display: block; font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.06em; opacity: 0.9; margin-top: 3px; }
+    .matrix tbody td { padding: 14px 18px; border-bottom: 1px solid var(--color-border-light); vertical-align: middle; text-align: center; font-size: 14px; }
+    .matrix tbody td:first-child { text-align: left; }
+    .matrix tbody tr:last-child td { border-bottom: none; }
+    .matrix tbody tr:hover { background: var(--color-surface-alt); }
+    .matrix .row-label { font-weight: 700; color: var(--color-text); }
+    .matrix .row-label__sub { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+    .matrix .cell-ov { background: var(--color-primary-50); font-weight: 600; }
+    .matrix .check { color: var(--color-success); font-size: 18px; font-weight: 700; }
+    .matrix .cross { color: var(--color-danger); font-size: 18px; font-weight: 700; }
+    .matrix .partial { color: var(--color-warning); font-size: 18px; font-weight: 700; }
+    .matrix .mono { font-family: var(--font-mono); font-size: 12.5px; }
+
+    /* Pricing side-by-side */
+    .price-side { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+    .price-card { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 24px 26px; }
+    .price-card h4 { font-size: 17px; font-weight: 800; color: var(--color-text); margin-bottom: 12px; }
+    .price-card__amount { font-size: 32px; font-weight: 800; color: var(--color-text); font-family: var(--font-mono); line-height: 1; margin-bottom: 4px; }
+    .price-card__amount .currency { font-size: 18px; color: var(--color-text-secondary); font-weight: 500; }
+    .price-card__amount .per { font-size: 12px; color: var(--color-text-secondary); font-weight: 500; letter-spacing: 0.03em; }
+    .price-card__note { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 14px; }
+    .price-card ul { list-style: none; padding: 0; margin: 0 0 8px; }
+    .price-card ul li { padding: 3px 0 3px 22px; font-size: 14px; position: relative; line-height: 1.5; }
+    .price-card ul li::before { content: "✓"; position: absolute; left: 0; color: var(--color-success); font-weight: 700; }
+
+    /* Decision matrix (when to choose which) */
+    .decision { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .decision-card { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 22px 24px; transition: var(--t); }
+    .decision-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); }
+    .decision-card__tool { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .decision-card h4 { font-size: 16px; font-weight: 700; color: var(--color-text); margin-bottom: 10px; line-height: 1.4; }
+    .decision-card ul { list-style: none; padding: 0; margin: 0; }
+    .decision-card ul li { position: relative; padding: 3px 0 3px 22px; font-size: 14px; line-height: 1.55; color: var(--color-text-body); margin: 0 !important; }
+    .decision-card ul li::before { content: "→"; position: absolute; left: 0; top: 3px; color: var(--color-primary); font-weight: 700; }
+
+    /* Verdict banner */
+    .verdict-banner {
+      background: linear-gradient(135deg, var(--color-text) 0%, #2E1065 100%);
+      color: #fff; border-radius: var(--r-xl);
+      padding: 36px 36px; margin: 36px 0;
+      position: relative; overflow: hidden;
+    }
+    .verdict-banner::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.25) 0%, transparent 70%); }
+    .verdict-banner > * { position: relative; }
+    .verdict-banner__label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: #C4B5FD; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .verdict-banner h3 { font-size: 24px !important; font-weight: 800 !important; color: #fff !important; margin: 0 0 10px !important; line-height: 1.3; }
+    .verdict-banner h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .verdict-banner p { font-size: 15px; color: rgba(255,255,255,0.9); margin: 0 0 16px; line-height: 1.65; }
+    .verdict-banner .btn { background: #fff; color: var(--color-primary); }
+    .verdict-banner .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16,185,129,0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* CTA + FAQ + reused footer */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 48px auto; padding: 48px 36px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 26px; font-weight: 800; color: #fff !important; margin: 0 0 10px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 15px; color: rgba(255,255,255,0.95); margin: 0 0 22px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    .author-card { max-width: var(--container-blog); margin: 40px auto; padding: 24px 30px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; }
+    .author-card__avatar { width: 60px; height: 60px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 11.5px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+    .author-card__bio { font-size: 13.5px; color: var(--color-text-body); line-height: 1.55; }
+    .related { max-width: var(--container-blog); margin: 40px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 20px; font-weight: 800; color: var(--color-text); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .related-card { display: block; padding: 18px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 6px; }
+    .related-card__title { font-size: 14.5px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 40px auto; padding: 32px 28px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 20px; font-weight: 800; color: var(--color-text); margin-bottom: 6px; }
+    .newsletter p { font-size: 13.5px; color: var(--color-text-secondary); margin-bottom: 18px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 440px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 12px 16px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 56px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .vs-head { grid-template-columns: 1fr; }
+      .vs-head__sep { transform: rotate(90deg); padding: 8px 0; }
+      .price-side, .decision { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 36px var(--page-px-mobile) 28px; }
+      .article-hero h1 { font-size: 28px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  </style>
+
+  <meta property="og:title" content="Top Sales Engagement Platforms (2026 Guide)">
     <meta property="og:description" content="Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide.png">
     <meta property="og:url" content="https://overloop.com/blog/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide">
     <meta property="og:type" content="article">
-    <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Top Sales Engagement Platforms (2026 Guide)">
     <meta name="twitter:description" content="Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/sales-engagement-platforms-compared-top-sales-engagement-platforms-2025-versus-guide.png">
-<script type="application/ld+json">
+  <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +345,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,119 +355,56 @@
         ]
     }
     </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
+  <!-- Reading progress -->
+  <div class="reading-progress" id="reading-progress"></div>
 
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo"><img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop"></a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><div class="breadcrumb-bar">
-    <div class="container">
-        <a href="https://overloop.com">Overloop</a>
-        <span class="sep">/</span>
-        <a href="/blog/">Blog</a>
-        <span class="sep">/</span>
-        <span class="current">Sales Engagement Platforms Compared</span>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
     </div>
-</div>
+  </nav>
 
-<header class="article-header">
-    <span class="header-badge">Sales Tools</span>
-    <h1>Sales Engagement Platforms Compared: Top Sales Engagement Platforms 2025 Versus Guide</h1>
-    <p class="subtitle">Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.</p>
-</header>
+  <!-- Article -->
+  <article>
 
-<main class="article-body">
-    <div class="container">
-
+    <!-- Hero -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="scale" style="width:12px;height:12px"></i>
+          Comparison
+        </span>
+        <h1>Top Sales Engagement Platforms (2026 Guide)</h1>
+        <p class="lead">Compare top sales engagement platforms in 2025. Discover features, strengths, and find the best fit for your B2B sales team today.</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                <strong>Nicolas Finet</strong>
-                <span>|</span> October 17, 2025
-                <span>|</span> 7 min read
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Published Oct 17, 2025 · Updated Apr 17, 2026</div>
+          </div>
         </div>
-
-        <article class="article-content">
+      </div>
+    </header>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list"></ul>
+      </aside>
+      <main class="prose">
 <p>Modern B2B sales teams face major challenges: sourcing high-quality leads, building effective outreach campaigns, and making sure every touchpoint counts. Sales engagement platforms simplify these processes by combining automation, data, and communication tools in one place.</p>
 <p>These platforms automate tasks that used to take hours: identifying potential prospects, sending personalized emails and LinkedIn messages, and tracking every interaction. This automation directly addresses common pain points such as <em>manual prospecting</em> and disconnected sales workflows, letting teams focus on building relationships and closing deals rather than on time-consuming admin work.</p>
 <p>For companies working to scale, a strong sales engagement platform increases campaign efficiency and outbound productivity, guiding sales teams through the right steps at the right time. Tools like Overloop bring advanced AI to lead sourcing and <em>multi-channel outreach</em>, helping ensure higher response rates and fewer missed opportunities. By centralizing the entire outbound process, these platforms reduce the risk of errors and gaps between sales and marketing systems. This structure now forms the backbone for successful, systematic B2B sales efforts.</p>
@@ -358,80 +582,127 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <h3>What Support Is Available During Setup or Troubleshooting?</h3>
 <p>Most platforms offer in-app help articles, live chat, and onboarding sessions for new users. Some provide dedicated customer success managers or onboarding specialists for team accounts. Timely support improves implementation and helps teams configure advanced workflows or automation rules.</p>
 <p>If you have questions beyond these, most vendors host monthly webinars or have help centers for deeper technical details. Choosing the ideal platform often depends on team goals, preferred integrations, and the need for support as you roll out new outbound processes.</p>
-        </article>
-
-        <div class="cta-box">
-            <h3>Ready to automate your outbound?</h3>
-            <p>Overloop AI gives you a 450M+ database, AI-native email writing, and multichannel sequences. From $69/user/month.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Try Overloop Free</a>
-        </div>
-
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO at Overloop</div>
-                <div class="role">CEO of Sortlist & Overloop. Built outbound systems for 500+ B2B companies.</div>
-            </div>
-        </div>
-
-        <div class="related-posts">
-            <h3>Related articles</h3>
-            <a href="/blog/best-ai-sales-tools">Best AI Sales Tools in 2026</a>
-            <a href="/blog/outreach-alternatives">Outreach Alternatives</a>
-            <a href="/blog/salesloft-alternatives">Salesloft Alternatives</a>
-        </div>
-
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <!-- End CTA -->
+    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
+      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
+      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
+        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
+        Try Overloop free
+      </a>
+    </section>
+
+    <!-- Author -->
+    <section class="author-card" style="display:flex;align-items:center;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
+      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">NF</div>
+      <div>
+        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Nicolas Finet</div>
+        <div style="font-size:14px;color:var(--color-text-secondary);">Overloop</div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
+      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
+      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
+      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
+        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
+        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
+      </form>
+    </section>
+
+    <!-- Related -->
+    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
+      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+        <a href="/blog/best-ai-sales-tools" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
+          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Best AI Sales Tools in 2026</div>
+        </a>
+        <a href="/blog/outreach-alternatives" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
+          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Outreach Alternatives</div>
+        </a>
+        <a href="/blog/salesloft-alternatives" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
+          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Salesloft Alternatives</div>
+        </a>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
-        </div>
+        <div><h4>Platform</h4><a href="#">Features</a><br><a href="#">Pricing</a><br><a href="#">Integrations</a></div>
+        <div><h4>Resources</h4><a href="#">Blog</a><br><a href="#">Playbooks</a><br><a href="#">Free tools</a></div>
+        <div><h4>Company</h4><a href="#">About</a><br><a href="#">Careers</a><br><a href="#">Contact</a></div>
+        <div><h4>Legal</h4><a href="#">Privacy</a><br><a href="#">Terms</a><br><a href="#">Security</a></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Overloop.</span><span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span></div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+  <script>
+    // Lucide icons
+    if (window.lucide) lucide.createIcons();
+
+    // Reading progress
+    (function() {
+      var bar = document.getElementById('reading-progress');
+      function update() {
+        var h = document.documentElement;
+        var scrollTop = h.scrollTop || document.body.scrollTop;
+        var scrollHeight = h.scrollHeight - h.clientHeight;
+        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    // Auto-generate TOC from h2 elements in .prose
+    (function() {
+      var prose = document.querySelector('.prose');
+      var tocList = document.getElementById('toc-list');
+      if (!prose || !tocList) return;
+      var headings = prose.querySelectorAll('h2');
+      headings.forEach(function(h, i) {
+        if (!h.id) h.id = 'section-' + i;
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        tocList.appendChild(li);
+      });
+
+      // Scroll-spy
+      var tocLinks = tocList.querySelectorAll('a');
+      var targets = Array.from(tocLinks).map(function(a) {
+        var id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(function(t) { return t.section; });
+
+      function onScroll() {
+        var scrollY = window.scrollY + 120;
+        var active = targets[0];
+        for (var j = 0; j < targets.length; j++) {
+          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
+        }
+        tocLinks.forEach(function(a) { a.classList.remove('active'); });
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
 </body>
 </html>

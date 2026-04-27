@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!--
+================================================================
+PILLAR PAGE: AI Multichannel Sequence
+URL: /blog/multichannel-sequence/
+NOINDEX: yes (thin content phase — switch to index when 50+ articles)
+================================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Multichannel Sequence — Overloop Blog</title>
+  <meta name="description" content="Cold email templates, follow-up sequences, and multi-channel outreach automation. Tested tactics that move replies, not spam folders.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://overloop.com/blog/multichannel-sequence/">
+
+  <meta property="og:title" content="AI Multichannel Sequence — Overloop Blog">
+  <meta property="og:description" content="Cold email templates, follow-up sequences, and multi-channel outreach automation. Tested tactics that move replies, not spam folders.">
+  <meta property="og:image" content="https://overloop.com/assets/images/og/blog-multichannel-sequence.png">
+  <meta property="og:url" content="https://overloop.com/blog/multichannel-sequence/">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --container-max: 1200px;
+      --page-px: 48px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    /* ============= NAV ============= */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* ============= BUTTONS ============= */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1.5px solid var(--color-text); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-text); color: #fff; box-shadow: none; transform: none; }
+
+    /* ============= HERO ============= */
+    .blog-hero { background: var(--gradient-hero-bg); padding: 80px var(--page-px) 56px; position: relative; overflow: hidden; }
+    .blog-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .blog-hero-inner { max-width: var(--container-max); margin: 0 auto; position: relative; z-index: 1; }
+    .breadcrumb { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 20px; font-family: var(--font-mono); letter-spacing: 0.02em; }
+    .breadcrumb a { color: var(--color-text-secondary); }
+    .breadcrumb a:hover { color: var(--color-primary); text-decoration: none; }
+    .blog-hero h1 { font-size: clamp(40px, 5.5vw, 64px); font-weight: 800; color: var(--color-text); line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 20px; max-width: 880px; }
+    .blog-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .blog-hero .lead { font-size: 20px; line-height: 1.5; color: var(--color-text-secondary); max-width: 640px; margin: 0 0 28px; }
+    .trust-line { display: inline-flex; gap: 14px; flex-wrap: wrap; align-items: center; padding: 10px 16px; background: rgba(255,255,255,0.65); border: 1px solid var(--color-border-light); border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-text-secondary); }
+    .trust-line .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--color-success); box-shadow: 0 0 0 4px rgba(16,185,129,0.15); }
+    .trust-line span { color: var(--color-text-secondary); }
+    .trust-line span strong { color: var(--color-text); font-weight: 700; }
+    .trust-line span + span::before { content: '·'; margin-right: 14px; color: var(--color-muted); }
+
+    /* ============= EXPERTS BAND (E-E-A-T) ============= */
+    .experts-band { max-width: var(--container-max); margin: 0 auto; padding: 56px var(--page-px) 24px; }
+    .experts-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px; gap: 32px; flex-wrap: wrap; }
+    .experts-head h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.018em; color: var(--color-text); margin: 0 0 6px; }
+    .experts-head h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .experts-head p { color: var(--color-text-secondary); font-size: 15px; margin: 0; max-width: 540px; }
+    .experts-head a { font-size: 14px; font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+    .experts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-card { background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 22px; display: flex; gap: 16px; align-items: flex-start; transition: var(--t); }
+    .expert-card:hover { box-shadow: var(--shadow-md); border-color: var(--color-primary-100); }
+    .expert-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .expert-photo-fallback { width: 56px; height: 56px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    .expert-info strong { font-size: 15px; font-weight: 700; color: var(--color-text); display: block; margin-bottom: 2px; }
+    .expert-info .role { font-family: var(--font-mono); font-size: 11px; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .expert-info p { font-size: 13px; line-height: 1.55; color: var(--color-text-secondary); margin: 0; }
+
+    /* ============= FEATURED STRIP ============= */
+    .featured-strip { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 24px; max-width: var(--container-max); margin: 0 auto; padding: 32px var(--page-px) 80px; }
+    .feat-card { background: #fff; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; transition: var(--t); border: 1px solid var(--color-border-light); }
+    .feat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); text-decoration: none; }
+    .feat-img { aspect-ratio: 16/9; background: var(--gradient-brand-soft); position: relative; overflow: hidden; }
+    .feat-card.small .feat-img { aspect-ratio: 4/3; }
+    .feat-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .feat-img-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: var(--gradient-brand); color: rgba(255,255,255,0.85); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; }
+    .feat-body { padding: 24px 26px 22px; flex: 1; display: flex; flex-direction: column; }
+    .feat-pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; align-self: flex-start; }
+    .feat-title { font-size: 24px; line-height: 1.25; font-weight: 700; color: var(--color-text); margin-bottom: 10px; letter-spacing: -0.015em; }
+    .feat-card.small .feat-title { font-size: 17px; }
+    .feat-excerpt { font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); margin-bottom: 18px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .feat-card:not(.small) .feat-excerpt { -webkit-line-clamp: 3; }
+
+    /* ============= AUTHOR MINI ============= */
+    .author-mini { display: flex; align-items: center; gap: 10px; padding-top: 14px; border-top: 1px solid var(--color-border-light); }
+    .author-mini__photo { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .author-mini__photo-fallback { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 11px; flex-shrink: 0; }
+    .author-mini__text { display: flex; flex-direction: column; line-height: 1.25; }
+    .author-mini__name { font-size: 12px; font-weight: 700; color: var(--color-text); }
+    .author-mini__date { font-size: 11px; color: var(--color-muted); font-family: var(--font-mono); }
+
+    /* ============= STICKY PILLAR NAV ============= */
+    .pillar-nav { background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); position: sticky; top: 72px; z-index: 90; padding: 14px 0; }
+    .pillar-nav-inner { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--page-px); display: flex; gap: 24px; overflow-x: auto; scrollbar-width: none; }
+    .pillar-nav-inner::-webkit-scrollbar { display: none; }
+    .pillar-anchor { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); text-decoration: none !important; white-space: nowrap; padding: 6px 0; border-bottom: 2px solid transparent; transition: var(--t); }
+    .pillar-anchor:hover { color: var(--color-text); }
+    .pillar-anchor.active { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+    .pillar-anchor .count { color: var(--color-muted); font-family: var(--font-mono); font-size: 12px; font-weight: 400; margin-left: 4px; }
+
+    /* ============= PILLAR SECTION ============= */
+    .pillar-section { padding: 80px var(--page-px) 32px; max-width: var(--container-max); margin: 0 auto; scroll-margin-top: 160px; }
+    .pillar-section + .pillar-section { border-top: 1px solid var(--color-border-light); }
+    .pillar-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px; gap: 32px; flex-wrap: wrap; }
+    .pillar-kicker { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 10px; }
+    .pillar-title { font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; font-weight: 800; color: var(--color-text); margin: 0 0 8px; }
+    .pillar-title em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .pillar-desc { font-size: 16px; color: var(--color-text-secondary); margin: 0; max-width: 580px; }
+
+    .pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pillar-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+    .post-card { background: #fff; border-radius: var(--r); border: 1px solid var(--color-border-light); border-top: 4px solid var(--color-text); display: flex; flex-direction: column; transition: var(--t); overflow: hidden; }
+    .post-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); text-decoration: none; border-color: var(--color-primary-100); }
+    .post-card.pc-tactical { border-top-color: #6366F1; }
+    .post-card.pc-howto { border-top-color: #A855F7; }
+    .post-card.pc-pillar { border-top-color: #1A1A2E; }
+    .post-card.pc-versus { border-top-color: #C026D3; }
+    .post-card.pc-besttools { border-top-color: #4F46E5; }
+    .post-card.pc-templates { border-top-color: #818CF8; }
+    .post-card.pc-strategy { border-top-color: #2D1B69; }
+    .post-card.pc-review { border-top-color: #C084FC; }
+    .post-body { padding: 26px 24px 22px; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+    .post-pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 14px; align-self: flex-start; }
+    .post-title { font-size: 18px; line-height: 1.3; font-weight: 700; color: var(--color-text); margin: 0 0 10px; letter-spacing: -0.01em; }
+    .pillar-grid-5 .post-title { font-size: 15px; }
+    .post-excerpt { font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); margin: 0 0 18px; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .pillar-grid-5 .post-excerpt { -webkit-line-clamp: 2; font-size: 12.5px; line-height: 1.5; }
+    .pillar-grid-5 .post-body { padding: 22px 18px 18px; }
+    .post-img-fallback.fb-howto::before { background: linear-gradient(135deg, #A855F7 0%, #6366F1 100%); }
+    .post-img-fallback.fb-tactical::before { background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%); }
+    .post-img-fallback.fb-pillar::before { background: linear-gradient(135deg, #1A1A2E 0%, #4F46E5 100%); }
+    .post-img-fallback.fb-versus::before { background: linear-gradient(135deg, #A855F7 0%, #C026D3 100%); }
+    .post-img-fallback.fb-besttools::before { background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%); }
+    .post-img-fallback.fb-templates::before { background: linear-gradient(135deg, #818CF8 0%, #A855F7 100%); }
+    .post-img-fallback.fb-strategy::before { background: linear-gradient(135deg, #2D1B69 0%, #818CF8 100%); }
+    .post-img-fallback.fb-review::before { background: linear-gradient(135deg, #4F46E5 0%, #C026D3 100%); }
+    .feat-img-fallback { padding: 28px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; color: #fff; background: var(--gradient-brand); overflow: hidden; }
+    .feat-img-fallback::after { content: ''; position: absolute; top: -30%; right: -15%; width: 60%; height: 130%; background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 60%); pointer-events: none; }
+    .feat-img-fallback .fb-pill { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.85); position: relative; z-index: 1; }
+    .feat-img-fallback .fb-title { font-family: var(--font-accent); font-style: italic; font-size: 32px; font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; color: #fff; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; position: relative; z-index: 1; max-width: 95%; }
+    .feat-card.small .feat-img-fallback { padding: 20px; }
+    .feat-card.small .feat-img-fallback .fb-title { font-size: 22px; }
+    .feat-img-fallback .fb-mono { position: absolute; bottom: 18px; right: 20px; font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; z-index: 1; }
+    .post-body { padding: 18px 20px 18px; flex: 1; display: flex; flex-direction: column; }
+    .post-pill { display: inline-block; font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 10px; align-self: flex-start; }
+    .post-title { font-size: 16px; line-height: 1.35; font-weight: 600; color: var(--color-text); margin: 0 0 8px; letter-spacing: -0.005em; }
+    .pillar-grid-5 .post-title { font-size: 14px; }
+    .post-excerpt { font-size: 13px; line-height: 1.5; color: var(--color-text-secondary); margin: 0 0 14px; flex: 1; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .pillar-grid-5 .post-excerpt { -webkit-line-clamp: 2; font-size: 12px; }
+    .pillar-viewall { text-align: right; margin-top: 28px; }
+    .pillar-viewall a { color: var(--color-primary); font-size: 14px; font-weight: 600; text-decoration: none; }
+    .pillar-viewall a:hover { text-decoration: underline; }
+
+    /* ============= COMPACT TIER ============= */
+    .compact-tier { max-width: var(--container-max); margin: 0 auto; padding: 56px var(--page-px); display: grid; grid-template-columns: 1fr 1fr; gap: 32px; border-top: 1px solid var(--color-border-light); }
+    .compact-pillar { background: #fff; border-radius: var(--r-xl); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--color-border-light); scroll-margin-top: 160px; }
+    .compact-pillar h3 { font-size: 24px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.015em; color: var(--color-text); }
+    .compact-pillar h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .compact-pillar p { color: var(--color-text-secondary); margin: 0 0 20px; font-size: 14px; }
+    .compact-list { list-style: none; padding: 0; margin: 0 0 24px; border-top: 1px solid var(--color-border-light); }
+    .compact-list li { padding: 12px 0; border-bottom: 1px solid var(--color-border-light); font-size: 14px; }
+    .compact-list a { color: var(--color-text); }
+    .compact-list a:hover { color: var(--color-primary); text-decoration: none; }
+
+    /* ============= VERSUS BAND (BOFU) ============= */
+    .versus-band { max-width: var(--container-max); margin: 64px auto 0; padding: 0 var(--page-px); }
+    .versus-card { background: linear-gradient(135deg, #1A1A2E 0%, #2D1B69 100%); color: #fff; border-radius: var(--r-xl); padding: 48px; position: relative; overflow: hidden; }
+    .versus-card::before { content: ''; position: absolute; bottom: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.30) 0%, transparent 70%); pointer-events: none; }
+    .versus-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .versus-left h3 { font-size: 32px; line-height: 1.15; margin: 0 0 14px; letter-spacing: -0.02em; font-weight: 800; }
+    .versus-left h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .versus-left p { color: rgba(255,255,255,0.75); font-size: 15px; margin: 0 0 24px; line-height: 1.6; }
+    .versus-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .versus-cta-row .btn { background: #fff; color: var(--color-text); }
+    .versus-cta-row .btn:hover { background: var(--color-primary-50); color: var(--color-primary); }
+    .versus-cta-row .btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); box-shadow: none; }
+    .versus-cta-row .btn-secondary:hover { background: rgba(255,255,255,0.1); color: #fff; box-shadow: none; }
+    .versus-right { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .versus-tile { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.10); border-radius: var(--r); padding: 14px 12px; text-align: center; transition: var(--t); text-decoration: none !important; color: #fff; }
+    .versus-tile:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); transform: translateY(-2px); color: #fff; }
+    .versus-tile-name { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+    .versus-tile-label { font-size: 10px; color: rgba(255,255,255,0.55); font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* ============= ALL ARTICLES INDEX ============= */
+    .index-section { background: #fff; padding: 80px 0; margin-top: 64px; border-top: 1px solid var(--color-border-light); scroll-margin-top: 160px; }
+    .index-section .wrap { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--page-px); }
+    .index-section h2 { font-size: 36px; letter-spacing: -0.02em; margin: 0 0 8px; font-weight: 800; color: var(--color-text); }
+    .index-section h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .index-sub { color: var(--color-text-secondary); margin: 0 0 32px; font-size: 16px; }
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 36px; padding-bottom: 28px; border-bottom: 1px solid var(--color-border-light); }
+    .chip { background: #fff; border: 1px solid var(--color-border); color: var(--color-text); font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: var(--r-pill); cursor: pointer; transition: var(--t); user-select: none; }
+    .chip:hover { border-color: var(--color-primary); color: var(--color-primary); }
+    .chip.active { background: var(--color-text); color: #fff; border-color: var(--color-text); }
+    .index-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 56px; }
+    .index-pillar h4 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin: 0 0 14px; font-weight: 700; }
+    .index-pillar ul { list-style: none; padding: 0; margin: 0; }
+    .index-pillar li { padding: 10px 0; border-bottom: 1px dashed var(--color-border-light); font-size: 14px; line-height: 1.5; }
+    .index-pillar li:last-child { border-bottom: none; }
+    .index-pillar a { color: var(--color-text); }
+    .index-pillar a:hover { color: var(--color-primary); text-decoration: none; }
+
+    /* ============= NEWSLETTER ============= */
+    .newsletter-band { max-width: var(--container-max); margin: 64px auto; padding: 0 var(--page-px); }
+    .newsletter-card { background: var(--gradient-brand); color: #fff; border-radius: var(--r-xl); padding: 56px 48px; text-align: center; box-shadow: var(--shadow-glow); }
+    .newsletter-card h3 { font-size: 32px; margin-bottom: 12px; font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+    .newsletter-card h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .newsletter-card p { opacity: 0.92; margin-bottom: 28px; font-size: 16px; }
+    .newsletter-card form { display: flex; gap: 10px; max-width: 480px; margin: 0 auto 14px; }
+    .newsletter-card input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: none; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter-card input:focus { outline: none; box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
+    .newsletter-card button { background: var(--color-text); color: #fff; padding: 14px 28px; border-radius: var(--r); border: none; font-weight: 600; cursor: pointer; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter-card button:hover { background: #000; }
+    .newsletter-privacy { font-size: 12px; opacity: 0.75; font-family: var(--font-mono); }
+
+    /* ============= FOOTER ============= */
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 0; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* ============= RESPONSIVE ============= */
+    @media (max-width: 1100px) {
+      .pillar-grid-5 { grid-template-columns: repeat(3, 1fr); }
+      .versus-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 960px) {
+      .featured-strip { grid-template-columns: 1fr; }
+      .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+      .pillar-grid-5 { grid-template-columns: repeat(2, 1fr); }
+      .compact-tier, .experts-grid { grid-template-columns: 1fr; }
+      .index-cols { grid-template-columns: 1fr; gap: 32px; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .versus-right { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      :root { --page-px: 16px; }
+      .blog-hero { padding: 56px var(--page-px) 32px; }
+      .blog-hero h1 { font-size: 36px; }
+      .blog-hero .lead { font-size: 17px; }
+      .pillar-grid, .pillar-grid-5 { grid-template-columns: 1fr; }
+      .pillar-section { padding: 56px var(--page-px) 24px; }
+      .pillar-title { font-size: 28px; }
+      .newsletter-card, .versus-card { padding: 40px 24px; }
+      .newsletter-card form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="blog-hero-inner">
+      <div class="breadcrumb"><a href="https://overloop.com">Home</a> &nbsp;›&nbsp; <a href="/blog">Blog</a> &nbsp;›&nbsp; AI Multichannel Sequence</div>
+      <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 14px;">Pillar 02</div>
+      <h1>AI <em>Multichannel Sequence</em></h1>
+      <p class="lead">Cold email writing, follow-ups, and automation across email + LinkedIn channels.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+        <a class="btn" href="https://overloop.com/f/multi-channel-outreach">Discover the product &rarr;</a>
+        <span class="trust-line"><span class="dot"></span><span><strong>19 articles</strong></span><span>Reviewed quarterly</span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="featured-strip">
+    <a class="feat-card" href="/blog/how-to-write-a-successful-cold-email">
+      <div class="feat-img">
+        <img src="https://overloop.com/assets/images/og/how-to-write-a-successful-cold-email.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="feat-img-fallback fb-howto" style="display:none;">
+          <div class="fb-pill">How-To</div>
+          <div class="fb-title">How to Write a Successful Cold Email</div>
+          <div class="fb-mono">OL</div>
+        </div>
+      </div>
+      <div class="feat-body">
+        <span class="feat-pill">How-To</span>
+        <h2 class="feat-title">How to Write a Successful Cold Email</h2>
+        <p class="feat-excerpt">The 5-line template that turns cold prospects into replies — broken down line by line with examples and anti-patterns.</p>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">UPDATED APR 27, 2026 · 11 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="feat-card small" href="/blog/best-sales-email-template">
+      <div class="feat-img">
+        <img src="https://overloop.com/assets/images/og/best-sales-email-template.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="feat-img-fallback fb-templates" style="display:none;">
+          <div class="fb-pill">Templates</div>
+          <div class="fb-title">Best Sales Email Templates That Get Replies</div>
+          <div class="fb-mono">OL</div>
+        </div>
+      </div>
+      <div class="feat-body">
+        <span class="feat-pill">Templates</span>
+        <h2 class="feat-title">Best Sales Email Templates That Get Replies</h2>
+        <p class="feat-excerpt">15 templates organized by funnel stage — cold open, warm follow-up, last-chance, and post-meeting recap.</p>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">UPDATED APR 27, 2026 · 15 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="feat-card small" href="/blog/how-to-write-personalized-sales-emails-at-scale">
+      <div class="feat-img">
+        <img src="https://overloop.com/assets/images/og/how-to-write-personalized-sales-emails-at-scale.png" alt="" width="720" height="405" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="feat-img-fallback fb-howto" style="display:none;">
+          <div class="fb-pill">How-To</div>
+          <div class="fb-title">How to Write Personalized Sales Emails at Scale</div>
+          <div class="fb-mono">OL</div>
+        </div>
+      </div>
+      <div class="feat-body">
+        <span class="feat-pill">How-To</span>
+        <h2 class="feat-title">How to Write Personalized Sales Emails at Scale</h2>
+        <p class="feat-excerpt">A repeatable framework for AI-personalized cold emails that don't sound like AI — proven on 50,000+ sends.</p>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">UPDATED APR 27, 2026 · 9 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <section class="pillar-section" id="all-pillar-articles" style="border-top: 1px solid var(--color-border-light); padding-top: 56px;">
+    <div class="pillar-header">
+      <div>
+        <div class="pillar-kicker">All articles</div>
+        <h2 class="pillar-title"><em>Browse the AI Multichannel Sequence library.</em></h2>
+        <p class="pillar-desc">19 articles, sorted by relevance.</p>
+      </div>
+    </div>
+    <div class="pillar-grid">
+      <a class="post-card pc-templates" href="/blog/17-sentences-never-use-sales-email">
+      <div class="post-body">
+        <div class="post-pill">Templates</div>
+        <h3 class="post-title">17 Sentences to Never Use in a Sales Email</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 6 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-pillar" href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy">
+      <div class="post-body">
+        <div class="post-pill">Pillar Guide</div>
+        <h3 class="post-title">5 Main Steps for an Effective Cold Email Strategy</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 12 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-besttools" href="/blog/9-best-ai-multichannel-outreach-tools">
+      <div class="post-body">
+        <div class="post-pill">Best Tools</div>
+        <h3 class="post-title">9 Best AI Multichannel Outreach Tools</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 13 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-pillar" href="/blog/ab-testing-email-drip-campaigns">
+      <div class="post-body">
+        <div class="post-pill">Pillar Guide</div>
+        <h3 class="post-title">A/B Testing Email Drip Campaigns</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">NS</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nathalie Saikali</span>
+            <span class="author-mini__date">APR 27 · 13 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-pillar" href="/blog/automations">
+      <div class="post-body">
+        <div class="post-pill">Pillar Guide</div>
+        <h3 class="post-title">Automations</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 9 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-templates" href="/blog/best-sales-email-template">
+      <div class="post-body">
+        <div class="post-pill">Templates</div>
+        <h3 class="post-title">Best Sales Email Templates</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 15 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-templates" href="/blog/best-subject-lines-for-sales-emails">
+      <div class="post-body">
+        <div class="post-pill">Templates</div>
+        <h3 class="post-title">Best Subject Lines for Sales Emails</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">NS</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nathalie Saikali</span>
+            <span class="author-mini__date">APR 27 · 12 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-tactical" href="/blog/cold-email-stats-2018">
+      <div class="post-body">
+        <div class="post-pill">Statistics</div>
+        <h3 class="post-title">Cold Email Stats 2018</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">NS</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nathalie Saikali</span>
+            <span class="author-mini__date">APR 27 · 7 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-tactical" href="/blog/cold-emailing-link-building">
+      <div class="post-body">
+        <div class="post-pill">Tactical</div>
+        <h3 class="post-title">Cold Emailing for Link Building</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 8 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-tactical" href="/blog/common-sales-automation-mistakes-and-how-to-avoid-them">
+      <div class="post-body">
+        <div class="post-pill">Tactical</div>
+        <h3 class="post-title">Common Sales Automation Mistakes</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 9 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-pillar" href="/blog/email-automation">
+      <div class="post-body">
+        <div class="post-pill">Pillar Guide</div>
+        <h3 class="post-title">Email Automation</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 11 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-howto" href="/blog/how-ai-follow-up-scheduling-boosts-sales-efficiency">
+      <div class="post-body">
+        <div class="post-pill">How-To</div>
+        <h3 class="post-title">How AI Follow-Up Scheduling Boosts Sales Efficiency</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 10 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-howto" href="/blog/how-to-compose-a-follow-up-email">
+      <div class="post-body">
+        <div class="post-pill">How-To</div>
+        <h3 class="post-title">How to Compose a Follow-Up Email</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 8 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-howto" href="/blog/how-to-write-a-successful-cold-email">
+      <div class="post-body">
+        <div class="post-pill">How-To</div>
+        <h3 class="post-title">How to Write a Successful Cold Email</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 11 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-howto" href="/blog/how-to-write-a-successful-follow-up-email">
+      <div class="post-body">
+        <div class="post-pill">How-To</div>
+        <h3 class="post-title">How to Write a Successful Follow-Up Email</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 9 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-howto" href="/blog/how-to-write-personalized-sales-emails-at-scale">
+      <div class="post-body">
+        <div class="post-pill">How-To</div>
+        <h3 class="post-title">How to Write Personalized Sales Emails at Scale</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 9 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-tactical" href="/blog/increase-reply-rate">
+      <div class="post-body">
+        <div class="post-pill">Tactical</div>
+        <h3 class="post-title">Increase Reply Rate</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">NS</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nathalie Saikali</span>
+            <span class="author-mini__date">APR 27 · 8 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-pillar" href="/blog/perfect-follow-up-email-campaign">
+      <div class="post-body">
+        <div class="post-pill">Pillar Guide</div>
+        <h3 class="post-title">Perfect Follow-Up Email Campaign</h3>
+        <div class="author-mini">
+          <img class="author-mini__photo" src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="32" height="32" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="author-mini__photo-fallback" style="display:none;">NF</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Nicolas Finet</span>
+            <span class="author-mini__date">APR 27 · 12 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+      <a class="post-card pc-tactical" href="/blog/sales-email-tips-to-help-you-close-more-deals">
+      <div class="post-body">
+        <div class="post-pill">Tactical</div>
+        <h3 class="post-title">Sales Email Tips to Close More Deals</h3>
+        <div class="author-mini">
+          <div class="author-mini__photo-fallback">VR</div>
+          <div class="author-mini__text">
+            <span class="author-mini__name">Vincenzo Ruggiero</span>
+            <span class="author-mini__date">APR 27 · 8 MIN</span>
+          </div>
+        </div>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <div class="newsletter-band">
+    <section class="newsletter-card">
+      <h3>Get the <em>Outbound Edge</em> in your inbox.</h3>
+      <p>One email per week. Tested cold-email tactics, AI sales-tool reviews, no fluff.</p>
+      <form action="https://overloop.com/api/newsletter/subscribe" method="POST">
+        <input type="email" placeholder="you@company.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div class="newsletter-privacy">No spam. Unsubscribe in 1 click. GDPR-compliant.</div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
+        </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/about#editorial-standards">Editorial standards</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with &hearts; in Brussels</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Multichannel Sequence — Overloop Blog",
+    "description": "Cold email templates, follow-up sequences, and multi-channel outreach automation. Tested tactics that move replies, not spam folders.",
+    "url": "https://overloop.com/blog/multichannel-sequence/",
+    "isPartOf": { "@type": "Blog", "name": "Overloop Blog", "url": "https://overloop.com/blog" },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://overloop.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://overloop.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "AI Multichannel Sequence", "item": "https://overloop.com/blog/multichannel-sequence/" }
+    ]
+  }
+  </script>
+
+</body>
+</html>
