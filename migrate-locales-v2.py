@@ -22,8 +22,8 @@ from html import unescape
 
 BLOG_DIR = Path(__file__).parent / "blog"
 LOCALES = ["fr", "de", "es", "it"]
-# Reference EN article to extract V2 CSS shell
-REFERENCE_EN = BLOG_DIR / "b2b-cold-email-germany-gdpr-compliance.html"
+# Reference EN article to extract V2 CSS shell (must have ALL component CSS: tested-banner, tool-card, etc.)
+REFERENCE_EN = BLOG_DIR / "best-ai-sales-tools.html"
 
 
 # ─── V2 Shell extraction ─────────────────────────────────────────────────────
