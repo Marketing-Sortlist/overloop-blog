@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alternativas a Apollo: 13 opciones (2025) | Overloop</title>
-    <meta name="description" content="Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.">
-    <link rel="canonical" href="https://overloop.com/es/blog/alternativas-apollo">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alternativas a Apollo: 13 opciones (2025) | Overloop</title>
+  <meta name="description" content="Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.">
+  <link rel="canonical" href="https://overloop.com/es/blog/alternativas-apollo">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/apollo-alternatives">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/alternatives-apollo-prospection-b2b">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/apollo-alternativen">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/alternativas-apollo">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/alternative-apollo-vendite">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/apollo-alternatives">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="Alternativas a Apollo: 13 opciones (2025)">
     <meta property="og:description" content="Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="Alternativas a Apollo: 13 opciones (2025)">
     <meta name="twitter:description" content="Descubra las mejores alternativas a Apollo para ventas. Compare 13 competidores y encuentre la opción ideal para su prospección.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/alternativas-apollo.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,170 +445,136 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><main class="blog-post">
-    <div class="container">
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
 
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="https://overloop.com">Overloop</a> &rsaquo;
-            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
-            <span>Alternativas a Apollo: 13 opciones (2025)</span>
-        </nav>
-
-        <header class="article-header">
-            <h1>Alternativas a Apollo: 13 opciones (2025)</h1>
-        </header>
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>Alternativas a Apollo: 13 opciones (2025)</h1>
+        <p class="lead">Muchos equipos de ventas B2B que utilizan Apollo.io reportan desafíos a medida que aumentan sus necesidades. Estos incluyen las limitaciones en la calidad de los datos de los clientes potenciales, …</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                <strong>Nicolas Finet</strong>
-                <span>|</span> 16 de diciembre de 2025
-                <span>|</span> 10 min de lectura
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Dec 16, 2025 &middot; Updated Apr 17, 2026</div>
+          </div>
         </div>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
+        </div>
+      </div>
+    </header>
 
-        <article class="article-content">
-<p>Muchos equipos de ventas B2B que utilizan Apollo.io reportan desafíos a medida que aumentan sus necesidades. Estos incluyen las limitaciones en la calidad de los datos de los clientes potenciales, la rígida automatización multicanal y el aumento de los costos a gran escala. En 2025, las empresas esperan integraciones más completas, estándares de cumplimiento mejorados y soluciones capaces de lograr un alcance preciso basado en la IA y obtener resultados confiables.</p><p>La búsqueda de herramientas alternativas refleja la necesidad de funciones más avanzadas, control de costos y soporte para el crecimiento global. Los equipos suelen querer unificar la gestión de las campañas, obtener datos más sólidos sobre los clientes potenciales, garantizar un alcance personalizado a gran escala y evitar la fragmentación de las pilas de herramientas. Por ejemplo, plataformas como Overloop ahora automatizan la búsqueda de clientes potenciales, escriben mensajes de divulgación y coordinan el correo electrónico y LinkedIn en un solo lugar, lo que ahorra horas de trabajo manual. Para obtener más información, consulta la lista completa de funciones de Overloop.</p><h2>Comparación de características y precios de las principales alternativas de Apollo (2025)</h2>Características principales de la herramienta Precio inicial (mensual) Overloop Prospección de IA, divulgación multicanal, automatización, integraciones profundas 39€/usuario/usuarioVentas Loft Cadencias avanzadas, análisis, sincronización de CRM Personalizado (ventas por contacto) Alcance de ventas, automatización del flujo de trabajo, análisis personalizado (ventas por contacto) HubSpot Sales Hub CRM, secuencias, flujo de trabajo integrado 20 dólares/usuario LushaEnriquecimiento de datos en tiempo real, extensión de navegador 36$/usuario ZoomInfo SalesOSGlobal, datos de intención, filtros avanzados Personalizado (contacta con ventas) Cumple con el GDPR de Cognism, complemento de LinkedIn, activadores de intenciones Personalizado (contacta con ventas) ClearBit en tiempo real enriquecimiento, análisis, integraciones A partir de 50 dólares, creación de listas de IQ, sincronización de CRM, validación de contactos 75 dólares/UsersNov.io Goteos de correo electrónico, validación de direcciones, herramientas de automatización, 39€/UserReply.IO Multichannel, pruebas A/B, administración de bandejas de entrada, 60 dólares/UserGrooveIntegración de Gmail/Outlook, seguimiento de canalizaciones Personalizado (ventas por contacto) PersistiQ Power Secuencias, sincronización de CRM, ligero 59 dólares por usuario<h2>1. Overloop: solución de salida impulsada por inteligencia artificial</h2><p>Overloop se ha convertido en una de las principales alternativas de Apollo al combinar la prospección impulsada por la inteligencia artificial con herramientas prácticas para automatizar cada paso de las ventas salientes entre empresas. Los equipos que utilizan Overloop pueden ir más allá de la prospección manual, que requiere mucho tiempo. En su lugar, definen sus cuentas objetivo y Overloop obtiene continuamente clientes potenciales de una base de datos de más de 450 millones de contactos B2B verificados. Este proceso reduce el tiempo de creación de listas de horas a minutos, lo que garantiza que los canales de ventas estén siempre llenos de clientes potenciales de calidad.</p><h3>Cómo Overloop optimiza las campañas salientes</h3><p>Overloop ofrece campañas de divulgación multicanal totalmente automatizadas que abarcan tanto el correo electrónico como LinkedIn. Su motor de mensajería basado en inteligencia artificial crea correos electrónicos altamente personalizados para cada cliente potencial, lo que aumenta las tasas de respuesta. En lugar de escribir cientos de correos electrónicos genéricos, los representantes de ventas permiten que la plataforma genere mensajes personalizados que reflejen la antigüedad, los detalles de la empresa y el comportamiento de los clientes potenciales. Esto se traduce en una mayor interacción con los clientes potenciales y reduce el riesgo de que los mensajes se marquen como spam.</p><ul>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#1-overloop-soluci-n-de-salida-impulsada-por-inteligencia-artificial"><span class="ch-num">01</span> 1. Overloop: solución de salida impul…</a></li>
+          <li><a href="#2-salesloft-automatizaci-n-de-cadencia-avanzada"><span class="ch-num">02</span> 2. Salesloft: automatización de caden…</a></li>
+          <li><a href="#3-outreach-plataforma-integrada-de-participaci-n-de-ventas"><span class="ch-num">03</span> 3. Outreach: plataforma integrada de …</a></li>
+          <li><a href="#4-hubspot-sales-hub-combinaci-n-de-crm-y-prospecci-n"><span class="ch-num">04</span> 4. HubSpot Sales Hub: combinación de …</a></li>
+          <li><a href="#5-lusha-enriquecimiento-simplificado-de-datos-de-contacto"><span class="ch-num">05</span> 5. Lusha: enriquecimiento simplificad…</a></li>
+          <li><a href="#6-zoominfo-salesos-inteligencia-de-mercado-a-escala"><span class="ch-num">06</span> 6. ZoomInfo SalesOS: inteligencia de …</a></li>
+          <li><a href="#7-cognism-base-de-datos-de-prospectos-compatible-con-el-rgpd"><span class="ch-num">07</span> 7. Cognism: base de datos de prospect…</a></li>
+          <li><a href="#9-leadiq-creaci-n-eficiente-de-listas-para-sdr"><span class="ch-num">08</span> 9. LeadIQ: creación eficiente de list…</a></li>
+          <li><a href="#10-snov-io-plataforma-vers-til-de-divulgaci-n-por-correo-electr-nico"><span class="ch-num">09</span> 10. Snov.io: plataforma versátil de d…</a></li>
+          <li><a href="#11-reply-io-automatizaci-n-de-secuencias-multicanal"><span class="ch-num">10</span> 11. Reply.io — Automatización de secu…</a></li>
+          <li><a href="#12-groove-compromiso-de-ventas-sencillo-para-equipos"><span class="ch-num">11</span> 12. Groove: compromiso de ventas senc…</a></li>
+          <li><a href="#13-persistiq-salida-inteligente-para-equipos-peque-os"><span class="ch-num">12</span> 13. PersistIQ: salida inteligente par…</a></li>
+          <li><a href="#qu-alternativa-de-apollo-es-mejor-para-ti"><span class="ch-num">13</span> ¿Qué alternativa de Apollo es mejor p…</a></li>
+        </ul>
+      </aside>
+
+      <main class="prose">
+
+<p>Muchos equipos de ventas B2B que utilizan Apollo.io reportan desafíos a medida que aumentan sus necesidades. Estos incluyen las limitaciones en la calidad de los datos de los clientes potenciales, la rígida automatización multicanal y el aumento de los costos a gran escala. En 2025, las empresas esperan integraciones más completas, estándares de cumplimiento mejorados y soluciones capaces de lograr un alcance preciso basado en la IA y obtener resultados confiables.</p><p>La búsqueda de herramientas alternativas refleja la necesidad de funciones más avanzadas, control de costos y soporte para el crecimiento global. Los equipos suelen querer unificar la gestión de las campañas, obtener datos más sólidos sobre los clientes potenciales, garantizar un alcance personalizado a gran escala y evitar la fragmentación de las pilas de herramientas. Por ejemplo, plataformas como Overloop ahora automatizan la búsqueda de clientes potenciales, escriben mensajes de divulgación y coordinan el correo electrónico y LinkedIn en un solo lugar, lo que ahorra horas de trabajo manual. Para obtener más información, consulta la lista completa de funciones de Overloop.</p><h2 id="comparaci-n-de-caracter-sticas-y-precios-de-las-principales-alternativas-de-apollo-2025">Comparación de características y precios de las principales alternativas de Apollo (2025)</h2>Características principales de la herramienta Precio inicial (mensual) Overloop Prospección de IA, divulgación multicanal, automatización, integraciones profundas 39€/usuario/usuarioVentas Loft Cadencias avanzadas, análisis, sincronización de CRM Personalizado (ventas por contacto) Alcance de ventas, automatización del flujo de trabajo, análisis personalizado (ventas por contacto) HubSpot Sales Hub CRM, secuencias, flujo de trabajo integrado 20 dólares/usuario LushaEnriquecimiento de datos en tiempo real, extensión de navegador 36$/usuario ZoomInfo SalesOSGlobal, datos de intención, filtros avanzados Personalizado (contacta con ventas) Cumple con el GDPR de Cognism, complemento de LinkedIn, activadores de intenciones Personalizado (contacta con ventas) ClearBit en tiempo real enriquecimiento, análisis, integraciones A partir de 50 dólares, creación de listas de IQ, sincronización de CRM, validación de contactos 75 dólares/UsersNov.io Goteos de correo electrónico, validación de direcciones, herramientas de automatización, 39€/UserReply.IO Multichannel, pruebas A/B, administración de bandejas de entrada, 60 dólares/UserGrooveIntegración de Gmail/Outlook, seguimiento de canalizaciones Personalizado (ventas por contacto) PersistiQ Power Secuencias, sincronización de CRM, ligero 59 dólares por usuario<h2 id="1-overloop-soluci-n-de-salida-impulsada-por-inteligencia-artificial">1. Overloop: solución de salida impulsada por inteligencia artificial</h2><p>Overloop se ha convertido en una de las principales alternativas de Apollo al combinar la prospección impulsada por la inteligencia artificial con herramientas prácticas para automatizar cada paso de las ventas salientes entre empresas. Los equipos que utilizan Overloop pueden ir más allá de la prospección manual, que requiere mucho tiempo. En su lugar, definen sus cuentas objetivo y Overloop obtiene continuamente clientes potenciales de una base de datos de más de 450 millones de contactos B2B verificados. Este proceso reduce el tiempo de creación de listas de horas a minutos, lo que garantiza que los canales de ventas estén siempre llenos de clientes potenciales de calidad.</p><h3>Cómo Overloop optimiza las campañas salientes</h3><p>Overloop ofrece campañas de divulgación multicanal totalmente automatizadas que abarcan tanto el correo electrónico como LinkedIn. Su motor de mensajería basado en inteligencia artificial crea correos electrónicos altamente personalizados para cada cliente potencial, lo que aumenta las tasas de respuesta. En lugar de escribir cientos de correos electrónicos genéricos, los representantes de ventas permiten que la plataforma genere mensajes personalizados que reflejen la antigüedad, los detalles de la empresa y el comportamiento de los clientes potenciales. Esto se traduce en una mayor interacción con los clientes potenciales y reduce el riesgo de que los mensajes se marquen como spam.</p><ul>
  <li>La IA identifica y verifica los correos electrónicos en múltiples fuentes para garantizar una alta capacidad de entrega</li>
  <li>La compatibilidad con más de 80 idiomas aumenta el alcance global de los equipos de ventas internacionales</li>
  <li>La programación, los seguimientos y la administración de tareas automatizados mantienen las campañas al día</li>
-</ul><h3>Administración unificada y sincronización del flujo de trabajo</h3><p>Cada campaña se puede rastrear, analizar y mejorar en un solo panel, lo que elimina la necesidad de hacer malabares con múltiples herramientas. Overloop se integra de forma nativa con plataformas de CRM como Salesforce, HubSpot y Pipedrive, lo que permite una sincronización perfecta de los contactos y el seguimiento de las oportunidades junto con las actividades de ventas. Los equipos obtienen una visión centralizada del flujo de trabajo, las actividades y los resultados, lo que les permite optimizar las estrategias basándose en datos de rendimiento reales. Para las organizaciones de ventas que buscan un equilibrio entre la automatización impulsada por la inteligencia artificial y los resultados confiables, Overloop se destaca como el mejor sustituto de Apollo. Puedes leer historias de éxito reales de equipos de ventas con Overloop.</p><h2>2. Salesloft: automatización de cadencia avanzada</h2><p>Salesloft se destaca como una plataforma líder de compromiso de ventas, conocida por su enfoque en la automatización de la cadencia de ventas y la colaboración en equipo. Los equipos utilizan Salesloft para crear y gestionar secuencias de divulgación estructuradas, lo que reduce las tareas manuales mediante la automatización y refuerza el seguimiento constante de los clientes potenciales.</p><h3>Características clave que mejoran la cadencia de ventas del equipo</h3><ul>
+</ul><h3>Administración unificada y sincronización del flujo de trabajo</h3><p>Cada campaña se puede rastrear, analizar y mejorar en un solo panel, lo que elimina la necesidad de hacer malabares con múltiples herramientas. Overloop se integra de forma nativa con plataformas de CRM como Salesforce, HubSpot y Pipedrive, lo que permite una sincronización perfecta de los contactos y el seguimiento de las oportunidades junto con las actividades de ventas. Los equipos obtienen una visión centralizada del flujo de trabajo, las actividades y los resultados, lo que les permite optimizar las estrategias basándose en datos de rendimiento reales. Para las organizaciones de ventas que buscan un equilibrio entre la automatización impulsada por la inteligencia artificial y los resultados confiables, Overloop se destaca como el mejor sustituto de Apollo. Puedes leer historias de éxito reales de equipos de ventas con Overloop.</p><h2 id="2-salesloft-automatizaci-n-de-cadencia-avanzada">2. Salesloft: automatización de cadencia avanzada</h2><p>Salesloft se destaca como una plataforma líder de compromiso de ventas, conocida por su enfoque en la automatización de la cadencia de ventas y la colaboración en equipo. Los equipos utilizan Salesloft para crear y gestionar secuencias de divulgación estructuradas, lo que reduce las tareas manuales mediante la automatización y refuerza el seguimiento constante de los clientes potenciales.</p><h3>Características clave que mejoran la cadencia de ventas del equipo</h3><ul>
 <li>La automatización avanzada convierte los envíos manuales repetidos en campañas programadas de varios pasos, lo que permite a los representantes concentrarse en las conversaciones, no en las tareas administrativas.</li>
 <li>Las colas de trabajo dinámicas y los recordatorios garantizan que los representantes sepan exactamente con quién deben contactar a continuación, lo que reduce el tiempo de respuesta y mejora el ritmo de los procesos.</li>
 <li>La interacción multicanal permite un movimiento fluido entre el teléfono, el correo electrónico y los puntos de contacto sociales en un único entorno de flujo de trabajo.</li>
 </ul><h3>Colaboración y análisis</h3><ul>
 <li>Las notas, las plantillas compartidas y los comentarios del flujo de trabajo de Salesloft permiten alinear los equipos en tiempo real, lo que facilita a los gerentes guiar a los nuevos representantes y mejorar los mensajes de divulgación.</li>
 <li>La suite de análisis proporciona paneles que cubren el rendimiento de las secuencias, las tasas de respuesta, las estadísticas de la clasificación de los equipos y las métricas de conversión, y ofrecen información detallada sobre los factores que impulsan el éxito.</li>
-</ul><p>En comparación con Apollo, Salesloft pone más énfasis en las cadencias configurables y los análisis exhaustivos para las organizaciones de ventas más grandes. Los flujos de trabajo automatizados ceden clientes potenciales en función de las señales y guían a los representantes de ventas a través de las etapas de contratación priorizadas.</p><p>Si bien Apollo también incluye funciones de cadencia e informes, muchos usuarios señalan que las herramientas de equipo y el seguimiento de los paneles en tiempo real de Salesloft ofrecen más personalización y visibilidad de los procesos a gran escala. Para las empresas que buscan una solución centrada en la gestión avanzada de los procesos de ventas, Salesloft ofrece una experiencia de usuario diseñada para la colaboración y la ejecución continua de los procesos de venta.</p><h2>3. Outreach: plataforma integrada de participación de ventas</h2><p>Outreach ha consolidado su reputación entre los equipos de ventas con el objetivo de ampliar los esfuerzos de salida y mejorar la rendición de cuentas. La plataforma proporciona un centro centralizado donde los representantes de ventas crean, automatizan y rastrean la participación de los clientes potenciales a través del correo electrónico, la voz y los puntos de contacto sociales en un solo flujo de trabajo. Este enfoque unificado agiliza la comunicación, lo que permite a los equipos grandes evitar la falta de seguimiento y reducir las interrupciones manuales.</p><h3>Administración de tareas y automatización del flujo de trabajo</h3><p>La suite de administración de tareas de Outreach va más allá de la asignación de tareas individuales. Permite a los usuarios secuenciar los pasos de divulgación, establecer recordatorios y activar acciones automatizadas en función de la participación de los clientes potenciales. Por ejemplo, si un cliente potencial abre un correo electrónico, Outreach puede programar inmediatamente una llamada de seguimiento o enviar el siguiente correo electrónico de forma continua. El soporte de integración con Salesforce y otros CRM importantes garantiza que los datos de contacto y la correspondencia se mantengan actualizados automáticamente.</p><ul>
+</ul><p>En comparación con Apollo, Salesloft pone más énfasis en las cadencias configurables y los análisis exhaustivos para las organizaciones de ventas más grandes. Los flujos de trabajo automatizados ceden clientes potenciales en función de las señales y guían a los representantes de ventas a través de las etapas de contratación priorizadas.</p><p>Si bien Apollo también incluye funciones de cadencia e informes, muchos usuarios señalan que las herramientas de equipo y el seguimiento de los paneles en tiempo real de Salesloft ofrecen más personalización y visibilidad de los procesos a gran escala. Para las empresas que buscan una solución centrada en la gestión avanzada de los procesos de ventas, Salesloft ofrece una experiencia de usuario diseñada para la colaboración y la ejecución continua de los procesos de venta.</p><h2 id="3-outreach-plataforma-integrada-de-participaci-n-de-ventas">3. Outreach: plataforma integrada de participación de ventas</h2><p>Outreach ha consolidado su reputación entre los equipos de ventas con el objetivo de ampliar los esfuerzos de salida y mejorar la rendición de cuentas. La plataforma proporciona un centro centralizado donde los representantes de ventas crean, automatizan y rastrean la participación de los clientes potenciales a través del correo electrónico, la voz y los puntos de contacto sociales en un solo flujo de trabajo. Este enfoque unificado agiliza la comunicación, lo que permite a los equipos grandes evitar la falta de seguimiento y reducir las interrupciones manuales.</p><h3>Administración de tareas y automatización del flujo de trabajo</h3><p>La suite de administración de tareas de Outreach va más allá de la asignación de tareas individuales. Permite a los usuarios secuenciar los pasos de divulgación, establecer recordatorios y activar acciones automatizadas en función de la participación de los clientes potenciales. Por ejemplo, si un cliente potencial abre un correo electrónico, Outreach puede programar inmediatamente una llamada de seguimiento o enviar el siguiente correo electrónico de forma continua. El soporte de integración con Salesforce y otros CRM importantes garantiza que los datos de contacto y la correspondencia se mantengan actualizados automáticamente.</p><ul>
  <li>Los usuarios pueden crear flujos de trabajo de varios pasos y adaptar el alcance en función de las interacciones en tiempo real</li>
  <li>Los recordatorios y notificaciones automatizados ayudan a mantener un seguimiento rápido sin esfuerzo manual</li>
  <li>Las acciones masivas y las plantillas personalizables permiten a los equipos estandarizar y escalar la mensajería de manera eficiente</li>
-</ul><h3>Análisis e informes detallados</h3><p>Los análisis exhaustivos son fundamentales para la oferta de Outreach, ya que proporcionan métricas sobre las aperturas de correos electrónicos, las tasas de respuesta, las reservas de reuniones y el progreso de las ofertas. Los paneles personalizables permiten a los administradores hacer un seguimiento del rendimiento del equipo, identificar los cuellos de botella y optimizar las campañas sobre la marcha. Esta información permite una mejora continua a medida que las campañas evolucionan y permiten a los líderes asignar los recursos del equipo en función de los datos de conversión reales.</p><p>Para las organizaciones que priorizan la gestión escalable de las campañas salientes y los datos procesables, Outreach presenta una alternativa sólida a Apollo. Los equipos que buscan minimizar la duplicación de tareas y la elaboración de informes manuales suelen elegir Outreach por su marco de integración fiable y sus análisis en tiempo real basados en los resultados.</p><h2>4. HubSpot Sales Hub: combinación de CRM y prospección</h2><p>HubSpot Sales Hub ofrece una plataforma integral en la que las startups y las empresas pueden gestionar la automatización de las ventas, la gestión de clientes y las secuencias multitáctiles desde un panel de control unificado. Su CRM integrado permite almacenar el historial de las transacciones, el estado de los procesos y los registros de comunicaciones en un solo espacio de trabajo, ideal para los equipos que desean simplificar la tecnología y garantizar un registro de clientes uniforme.</p><h3>Automatización avanzada para equipos de ventas modernos</h3><p>Los representantes de ventas pueden iniciar secuencias de prospección inscribiendo a los contactos en seguimientos, llamadas y correos electrónicos programados. El generador de automatización de la herramienta admite la lógica condicional, que ayuda a personalizar la interacción en función de la respuesta de los clientes potenciales. Los equipos pueden combinar las llamadas, los toques sociales y las reservas de calendario en un flujo de trabajo fluido. La visualización de las canalizaciones y el seguimiento de las ofertas son interactivos y proporcionan información instantánea sobre el estado de las oportunidades y la previsión de ingresos.</p><ul>
+</ul><h3>Análisis e informes detallados</h3><p>Los análisis exhaustivos son fundamentales para la oferta de Outreach, ya que proporcionan métricas sobre las aperturas de correos electrónicos, las tasas de respuesta, las reservas de reuniones y el progreso de las ofertas. Los paneles personalizables permiten a los administradores hacer un seguimiento del rendimiento del equipo, identificar los cuellos de botella y optimizar las campañas sobre la marcha. Esta información permite una mejora continua a medida que las campañas evolucionan y permiten a los líderes asignar los recursos del equipo en función de los datos de conversión reales.</p><p>Para las organizaciones que priorizan la gestión escalable de las campañas salientes y los datos procesables, Outreach presenta una alternativa sólida a Apollo. Los equipos que buscan minimizar la duplicación de tareas y la elaboración de informes manuales suelen elegir Outreach por su marco de integración fiable y sus análisis en tiempo real basados en los resultados.</p><h2 id="4-hubspot-sales-hub-combinaci-n-de-crm-y-prospecci-n">4. HubSpot Sales Hub: combinación de CRM y prospección</h2><p>HubSpot Sales Hub ofrece una plataforma integral en la que las startups y las empresas pueden gestionar la automatización de las ventas, la gestión de clientes y las secuencias multitáctiles desde un panel de control unificado. Su CRM integrado permite almacenar el historial de las transacciones, el estado de los procesos y los registros de comunicaciones en un solo espacio de trabajo, ideal para los equipos que desean simplificar la tecnología y garantizar un registro de clientes uniforme.</p><h3>Automatización avanzada para equipos de ventas modernos</h3><p>Los representantes de ventas pueden iniciar secuencias de prospección inscribiendo a los contactos en seguimientos, llamadas y correos electrónicos programados. El generador de automatización de la herramienta admite la lógica condicional, que ayuda a personalizar la interacción en función de la respuesta de los clientes potenciales. Los equipos pueden combinar las llamadas, los toques sociales y las reservas de calendario en un flujo de trabajo fluido. La visualización de las canalizaciones y el seguimiento de las ofertas son interactivos y proporcionan información instantánea sobre el estado de las oportunidades y la previsión de ingresos.</p><ul>
  <li>La estrecha integración de CRM garantiza que todas las actividades de ventas se actualicen automáticamente para cada contacto</li>
  <li>El seguimiento del correo electrónico muestra cuándo se abren los mensajes para que los representantes sepan cuál es el mejor momento para hacer un seguimiento</li>
  <li>Las plantillas, los fragmentos y la programación de reuniones están integrados para una rápida participación de los clientes potenciales</li>
  <li>La integración con el ecosistema de HubSpot permite a los equipos de marketing y soporte trabajar con los mismos datos</li>
-</ul><h3>Idoneidad y comparación</h3><p>HubSpot Sales Hub se adapta a las empresas que desean funciones sólidas de CRM junto con salidas automatizadas, especialmente si otros departamentos de la empresa utilizan HubSpot para marketing o soporte. En comparación con Apollo, HubSpot ofrece una visibilidad más estrecha de los procesos y una configuración más sencilla para los equipos pequeños y medianos. Para aquellos que priorizan la calidad de los datos o el alcance global, la integración de HubSpot con proveedores como Overloop puede añadir una captación de leads basada en la inteligencia artificial y una personalización más avanzada de los clientes potenciales en el mismo entorno.</p><h2>5. Lusha: enriquecimiento simplificado de datos de contacto</h2><p>Lusha se centra en ofrecer información de contacto B2B precisa y actualizada justo cuando los representantes de ventas la necesitan. El enriquecimiento rápido de los datos es fundamental para su plataforma: los usuarios pueden revelar al instante correos electrónicos directos, números de teléfono, funciones y gráficos empresariales mientras navegan por LinkedIn y los sitios de la empresa. Este acceso inmediato a los contactos verificados permite a los equipos de prospección crear rápidamente listas de clientes potenciales de alta calidad con un mínimo de abastecimiento manual.</p><h3>Enriquecimiento de datos de contactos en tiempo real</h3><p>Los equipos de ventas suelen tener problemas con información incompleta u obsoleta sobre sus clientes potenciales. Lusha aborda este problema extrayendo datos en tiempo real de una base de datos global que se actualiza periódicamente. Como resultado, los representantes no necesitan buscar en varios sitios para verificar los datos de contacto. La extensión del navegador muestra datos procesables directamente en redes populares como LinkedIn, lo que reduce el tiempo de investigación y garantiza el acceso directo a los responsables de la toma de decisiones correctos.</p><ul>
+</ul><h3>Idoneidad y comparación</h3><p>HubSpot Sales Hub se adapta a las empresas que desean funciones sólidas de CRM junto con salidas automatizadas, especialmente si otros departamentos de la empresa utilizan HubSpot para marketing o soporte. En comparación con Apollo, HubSpot ofrece una visibilidad más estrecha de los procesos y una configuración más sencilla para los equipos pequeños y medianos. Para aquellos que priorizan la calidad de los datos o el alcance global, la integración de HubSpot con proveedores como Overloop puede añadir una captación de leads basada en la inteligencia artificial y una personalización más avanzada de los clientes potenciales en el mismo entorno.</p><h2 id="5-lusha-enriquecimiento-simplificado-de-datos-de-contacto">5. Lusha: enriquecimiento simplificado de datos de contacto</h2><p>Lusha se centra en ofrecer información de contacto B2B precisa y actualizada justo cuando los representantes de ventas la necesitan. El enriquecimiento rápido de los datos es fundamental para su plataforma: los usuarios pueden revelar al instante correos electrónicos directos, números de teléfono, funciones y gráficos empresariales mientras navegan por LinkedIn y los sitios de la empresa. Este acceso inmediato a los contactos verificados permite a los equipos de prospección crear rápidamente listas de clientes potenciales de alta calidad con un mínimo de abastecimiento manual.</p><h3>Enriquecimiento de datos de contactos en tiempo real</h3><p>Los equipos de ventas suelen tener problemas con información incompleta u obsoleta sobre sus clientes potenciales. Lusha aborda este problema extrayendo datos en tiempo real de una base de datos global que se actualiza periódicamente. Como resultado, los representantes no necesitan buscar en varios sitios para verificar los datos de contacto. La extensión del navegador muestra datos procesables directamente en redes populares como LinkedIn, lo que reduce el tiempo de investigación y garantiza el acceso directo a los responsables de la toma de decisiones correctos.</p><ul>
  <li>El enriquecimiento con un solo clic rellena las direcciones de correo electrónico y los números de teléfono que faltan.</li>
  <li>La calidad de los contactos se actualiza continuamente mediante señales de fuentes públicas y bases de datos de la empresa.</li>
  <li>Las herramientas se adaptan perfectamente a los procesos de prospección actuales, sin necesidad de una configuración o integración extensas.</li>
-</ul><h3>Beneficios para los equipos de prospección</h3><p>La plataforma de Lusha es ampliamente reconocida por generar <em>B2B de alta calidad lidera rápidamente</em>. Los filtros integrados permiten a los equipos de ventas segmentar los clientes potenciales en función del puesto, la ubicación, la industria o el tamaño de la empresa, lo que permite un alcance más centrado. Este nivel de segmentación aumenta las tasas de respuesta y la eficacia de la campaña. Muchas organizaciones de ventas de rápido crecimiento utilizan la extensión de Lusha para Chrome para combinar la investigación y la divulgación en un solo flujo de trabajo.</p><p>En comparación con Apollo, Lusha ofrece una solución simplificada para los equipos que priorizan los datos oportunos y confiables y la simplicidad en su proceso de generación de leads. Si bien Lusha cubre las necesidades de enriquecimiento de datos, los equipos que buscan una ejecución automatizada de campañas multicanal y una mensajería basada en inteligencia artificial pueden integrar soluciones adicionales que respalden las ventas salientes de principio a fin.</p><h2>6. ZoomInfo SalesOS: inteligencia de mercado a escala</h2><p>ZoomInfo SalesOS se ha forjado una sólida reputación por proporcionar inteligencia de mercado B2B de alto impacto. Los equipos de ventas que buscan una base de datos a gran escala y una segmentación granular suelen optar por ZoomInfo por su profundidad y precisión incomparables en la información de contacto y empresarial. Con acceso a más de 100 millones de perfiles empresariales y a los datos de contacto directos de más de 260 millones de profesionales de todo el mundo, los usuarios pueden identificar rápidamente a los responsables de la toma de decisiones adecuados y conectarse con ellos.</p><h3>Datos exhaustivos y señales de intención</h3><p>Una característica destacada es la de ZoomInfo <em>datos de intención</em>, que rastrea las señales de comportamiento de los compradores en la web. Esto ayuda a los representantes de ventas a detectar cuentas que están buscando activamente soluciones similares, lo que les permite priorizar la divulgación allí donde el potencial de interacción es mayor. Los equipos pueden filtrar a los clientes potenciales según docenas de criterios, incluidos los cambios de trabajo, la adopción de la tecnología, los ingresos, la ubicación, la intención del comprador y el tamaño del departamento, lo que lleva a unos esfuerzos de ventas muy específicos.</p><ul>
+</ul><h3>Beneficios para los equipos de prospección</h3><p>La plataforma de Lusha es ampliamente reconocida por generar <em>B2B de alta calidad lidera rápidamente</em>. Los filtros integrados permiten a los equipos de ventas segmentar los clientes potenciales en función del puesto, la ubicación, la industria o el tamaño de la empresa, lo que permite un alcance más centrado. Este nivel de segmentación aumenta las tasas de respuesta y la eficacia de la campaña. Muchas organizaciones de ventas de rápido crecimiento utilizan la extensión de Lusha para Chrome para combinar la investigación y la divulgación en un solo flujo de trabajo.</p><p>En comparación con Apollo, Lusha ofrece una solución simplificada para los equipos que priorizan los datos oportunos y confiables y la simplicidad en su proceso de generación de leads. Si bien Lusha cubre las necesidades de enriquecimiento de datos, los equipos que buscan una ejecución automatizada de campañas multicanal y una mensajería basada en inteligencia artificial pueden integrar soluciones adicionales que respalden las ventas salientes de principio a fin.</p><h2 id="6-zoominfo-salesos-inteligencia-de-mercado-a-escala">6. ZoomInfo SalesOS: inteligencia de mercado a escala</h2><p>ZoomInfo SalesOS se ha forjado una sólida reputación por proporcionar inteligencia de mercado B2B de alto impacto. Los equipos de ventas que buscan una base de datos a gran escala y una segmentación granular suelen optar por ZoomInfo por su profundidad y precisión incomparables en la información de contacto y empresarial. Con acceso a más de 100 millones de perfiles empresariales y a los datos de contacto directos de más de 260 millones de profesionales de todo el mundo, los usuarios pueden identificar rápidamente a los responsables de la toma de decisiones adecuados y conectarse con ellos.</p><h3>Datos exhaustivos y señales de intención</h3><p>Una característica destacada es la de ZoomInfo <em>datos de intención</em>, que rastrea las señales de comportamiento de los compradores en la web. Esto ayuda a los representantes de ventas a detectar cuentas que están buscando activamente soluciones similares, lo que les permite priorizar la divulgación allí donde el potencial de interacción es mayor. Los equipos pueden filtrar a los clientes potenciales según docenas de criterios, incluidos los cambios de trabajo, la adopción de la tecnología, los ingresos, la ubicación, la intención del comprador y el tamaño del departamento, lo que lleva a unos esfuerzos de ventas muy específicos.</p><ul>
  <li>Base de datos global actualizada en tiempo real desde múltiples fuentes confiables</li>
  <li>Jerarquías empresariales detalladas, información sobre el conjunto de tecnologías e información sobre cumplimiento</li>
  <li>Las integraciones de API con los principales CRM y herramientas de salida respaldan la automatización del flujo de trabajo</li>
-</ul><h3>Automatización avanzada de filtrado y divulgación</h3><p>El sistema de consulta avanzada de ZoomInfo permite a los equipos segmentar las listas a cualquier escala. Con Instant Enrich, las operaciones de ventas pueden rellenar los campos que faltan y validar los clientes potenciales directamente en las plataformas de CRM. Para los equipos que necesitan lanzar campañas rápidamente, las herramientas de automatización integradas programan flujos de varios pasos y sincronizan las actualizaciones a medida que los clientes potenciales avanzan por las etapas, aunque algunos usuarios afirman que los flujos de trabajo son menos personalizables que los de plataformas especializadas como Overloop.</p><p>Para las organizaciones que priorizan la cobertura de datos y la divulgación basada en la intención, ZoomInfo SalesOS proporciona una base confiable para las estrategias de salida en 2025. Sus capacidades de inteligencia de mercado y enriquecimiento permiten a los equipos grandes llegar a los mercados globales y acelerar los resultados de los procesos.</p><h2>7. Cognism: base de datos de prospectos compatible con el RGPD</h2><p>Cognism se especializa en soluciones de datos de clientes potenciales que cumplen estrictamente con los requisitos de privacidad y del RGPD, lo que la convierte en la primera opción para los equipos que operan en los mercados del Reino Unido y Europa. El cumplimiento de los datos es fundamental para la plataforma. Cognism genera, procesa y actualiza los contactos de acuerdo con las normativas de datos locales e internacionales. A medida que se implementan normas de privacidad más estrictas en toda Europa, disponer de datos fiables y conformes ayuda a las organizaciones de ventas a evitar riesgos legales y garantiza que sus actividades externas lleguen a los responsables de la toma de decisiones válidos. Puedes obtener más información sobre los procedimientos de cumplimiento en Overloop <a href="https://overloop.com/gdpr">Política de GDPR</a>.</p><h3>Características que respaldan el cumplimiento y el rendimiento</h3><p>La plataforma de Cognism filtra automáticamente los registros de contactos desactualizados o que no cumplen con las normas. Su base de datos se centra en las oportunidades B2B globales y regionales, pero es más conocida por su profundidad y precisión en las regiones del Reino Unido y EMEA. Los equipos pueden priorizar a las empresas o a los responsables de la toma de decisiones en función del sector, la ubicación o el puesto de trabajo, sabiendo que cada contacto cumple con los estándares actuales de consentimiento de datos. </p><ul>
+</ul><h3>Automatización avanzada de filtrado y divulgación</h3><p>El sistema de consulta avanzada de ZoomInfo permite a los equipos segmentar las listas a cualquier escala. Con Instant Enrich, las operaciones de ventas pueden rellenar los campos que faltan y validar los clientes potenciales directamente en las plataformas de CRM. Para los equipos que necesitan lanzar campañas rápidamente, las herramientas de automatización integradas programan flujos de varios pasos y sincronizan las actualizaciones a medida que los clientes potenciales avanzan por las etapas, aunque algunos usuarios afirman que los flujos de trabajo son menos personalizables que los de plataformas especializadas como Overloop.</p><p>Para las organizaciones que priorizan la cobertura de datos y la divulgación basada en la intención, ZoomInfo SalesOS proporciona una base confiable para las estrategias de salida en 2025. Sus capacidades de inteligencia de mercado y enriquecimiento permiten a los equipos grandes llegar a los mercados globales y acelerar los resultados de los procesos.</p><h2 id="7-cognism-base-de-datos-de-prospectos-compatible-con-el-rgpd">7. Cognism: base de datos de prospectos compatible con el RGPD</h2><p>Cognism se especializa en soluciones de datos de clientes potenciales que cumplen estrictamente con los requisitos de privacidad y del RGPD, lo que la convierte en la primera opción para los equipos que operan en los mercados del Reino Unido y Europa. El cumplimiento de los datos es fundamental para la plataforma. Cognism genera, procesa y actualiza los contactos de acuerdo con las normativas de datos locales e internacionales. A medida que se implementan normas de privacidad más estrictas en toda Europa, disponer de datos fiables y conformes ayuda a las organizaciones de ventas a evitar riesgos legales y garantiza que sus actividades externas lleguen a los responsables de la toma de decisiones válidos. Puedes obtener más información sobre los procedimientos de cumplimiento en Overloop <a href="https://overloop.com/gdpr">Política de GDPR</a>.</p><h3>Características que respaldan el cumplimiento y el rendimiento</h3><p>La plataforma de Cognism filtra automáticamente los registros de contactos desactualizados o que no cumplen con las normas. Su base de datos se centra en las oportunidades B2B globales y regionales, pero es más conocida por su profundidad y precisión en las regiones del Reino Unido y EMEA. Los equipos pueden priorizar a las empresas o a los responsables de la toma de decisiones en función del sector, la ubicación o el puesto de trabajo, sabiendo que cada contacto cumple con los estándares actuales de consentimiento de datos. </p><ul>
 <li>
 <em>Integración con LinkedIn:</em> La extensión de Chrome superpone los datos de contacto verificados de Cognism en LinkedIn Sales Navigator, de modo que los usuarios pueden recopilar clientes potenciales directamente de los perfiles de empresas o clientes potenciales.</li>
 <li>
 <em>Señales de intención y desencadenantes:</em> Los usuarios reciben notificaciones cuando los clientes potenciales demuestran su intención de compra, como una actividad reciente de financiación o contratación. Esto permite a los SDR interactuar con los clientes potenciales en el mejor momento.</li>
 <li>
 <em>Actualizaciones automáticas de registros:</em> Los datos de la empresa y de los contactos se actualizan con regularidad para reducir las tasas de rebote y el desperdicio de esfuerzos de divulgación.</li>
-</ul><p>Cognism se recomienda para los equipos de ventas que requieren las mejores prácticas de privacidad de datos, desean dirigirse a los mercados de EMEA con confianza o necesitan señales basadas en la intención para una prospección más inteligente. Si bien Overloop ofrece automatización escalable de campañas e interacciones multicanal basadas en inteligencia artificial, muchos equipos utilizan la base de datos y los datos de intención compatibles con las normas de Cognism junto con plataformas de automatización para mejorar la eficiencia de las salidas sin correr el riesgo de perder datos.</p><h2>8. Clearbit: puntuación de clientes potenciales en tiempo real para equipos de SaaS</h2><p>Clearbit se ha convertido en uno de los favoritos entre los equipos de ventas de SaaS por ofrecer un enriquecimiento de datos rápido y preciso y una puntuación de clientes potenciales en tiempo real dentro de los flujos de trabajo existentes. Al enriquecer a cada cliente potencial con datos firmográficos, tecnográficos y de comportamiento actualizados tan pronto como ingresan al CRM, Clearbit ayuda a los equipos <em>priorice la divulgación con confianza</em> y evite perder tiempo en cuentas de bajo potencial. La plataforma se actualiza continuamente a partir de cientos de fuentes públicas y privadas, lo que garantiza que la información se mantenga actualizada a medida que cambian las empresas y el personal.</p><h3>Puntuación de clientes potenciales en tiempo real para centrar los esfuerzos de ventas</h3><p>Con Clearbit, los equipos de ventas se benefician de una puntuación instantánea de los clientes potenciales basada en factores críticos como el tamaño de la empresa, las interacciones anteriores con los productos y el comportamiento en la web. Las reglas de puntuación automática dirigen los clientes potenciales más aptos directamente al departamento de ventas, mientras que los contactos de menor prioridad se pueden fomentar mediante campañas automatizadas. Este enfoque específico significa que los SDR pueden centrar la atención en los clientes potenciales con más probabilidades de convertirse, lo que mejora tanto la velocidad de respuesta como las tasas de conversión.</p><h3>Poderosas integraciones y aceleración de oleoductos</h3><p>Las organizaciones integran Clearbit con plataformas de CRM como Salesforce y HubSpot, así como con herramientas de automatización de marketing como Marketo. Los datos se transfieren instantáneamente a todos los canales, lo que permite a los equipos de marketing y ventas mantener actualizados los perfiles de los clientes potenciales y las etapas del proceso de procesamiento en cada contacto. La limpieza y el enriquecimiento de datos integrados eliminan el trabajo manual de buscar o verificar los correos electrónicos, los números de teléfono y los atributos de la empresa. Como resultado, las oportunidades avanzan por etapas más rápido y con menos fricciones.</p><ul>
+</ul><p>Cognism se recomienda para los equipos de ventas que requieren las mejores prácticas de privacidad de datos, desean dirigirse a los mercados de EMEA con confianza o necesitan señales basadas en la intención para una prospección más inteligente. Si bien Overloop ofrece automatización escalable de campañas e interacciones multicanal basadas en inteligencia artificial, muchos equipos utilizan la base de datos y los datos de intención compatibles con las normas de Cognism junto con plataformas de automatización para mejorar la eficiencia de las salidas sin correr el riesgo de perder datos.</p><h2 id="8-clearbit-puntuaci-n-de-clientes-potenciales-en-tiempo-real-para-equipos-de-saas">8. Clearbit: puntuación de clientes potenciales en tiempo real para equipos de SaaS</h2><p>Clearbit se ha convertido en uno de los favoritos entre los equipos de ventas de SaaS por ofrecer un enriquecimiento de datos rápido y preciso y una puntuación de clientes potenciales en tiempo real dentro de los flujos de trabajo existentes. Al enriquecer a cada cliente potencial con datos firmográficos, tecnográficos y de comportamiento actualizados tan pronto como ingresan al CRM, Clearbit ayuda a los equipos <em>priorice la divulgación con confianza</em> y evite perder tiempo en cuentas de bajo potencial. La plataforma se actualiza continuamente a partir de cientos de fuentes públicas y privadas, lo que garantiza que la información se mantenga actualizada a medida que cambian las empresas y el personal.</p><h3>Puntuación de clientes potenciales en tiempo real para centrar los esfuerzos de ventas</h3><p>Con Clearbit, los equipos de ventas se benefician de una puntuación instantánea de los clientes potenciales basada en factores críticos como el tamaño de la empresa, las interacciones anteriores con los productos y el comportamiento en la web. Las reglas de puntuación automática dirigen los clientes potenciales más aptos directamente al departamento de ventas, mientras que los contactos de menor prioridad se pueden fomentar mediante campañas automatizadas. Este enfoque específico significa que los SDR pueden centrar la atención en los clientes potenciales con más probabilidades de convertirse, lo que mejora tanto la velocidad de respuesta como las tasas de conversión.</p><h3>Poderosas integraciones y aceleración de oleoductos</h3><p>Las organizaciones integran Clearbit con plataformas de CRM como Salesforce y HubSpot, así como con herramientas de automatización de marketing como Marketo. Los datos se transfieren instantáneamente a todos los canales, lo que permite a los equipos de marketing y ventas mantener actualizados los perfiles de los clientes potenciales y las etapas del proceso de procesamiento en cada contacto. La limpieza y el enriquecimiento de datos integrados eliminan el trabajo manual de buscar o verificar los correos electrónicos, los números de teléfono y los atributos de la empresa. Como resultado, las oportunidades avanzan por etapas más rápido y con menos fricciones.</p><ul>
  <li>Enriquecimiento de datos en tiempo real basado en más de 100 atributos únicos por registro</li>
  <li>Puntuación y segmentación flexibles para impulsar campañas de ventas específicas</li>
  <li>Las integraciones prediseñadas mantienen sincronizados los datos de los clientes potenciales en toda la pila de ventas</li>
-</ul><p>En comparación con muchas alternativas, Clearbit se destaca por la calidad de los datos, el enriquecimiento en tiempo real y la automatización fluida del flujo de trabajo, que acelera la calificación y el alcance de los equipos centrados en SaaS. Para aquellos que buscan una automatización aún más escalonada, soluciones como Overloop permiten a los equipos de ventas combinar el enriquecimiento de datos con campañas multicanal personalizadas y una segmentación basada en inteligencia artificial desde el primer punto de contacto.</p><h2>9. LeadIQ: creación eficiente de listas para SDR</h2><p>Los representantes de desarrollo de ventas (SDR) utilizan LeadIQ para reducir el tiempo necesario para la creación de listas y la validación precisa de los contactos. La función principal de la plataforma es recopilar direcciones de correo electrónico y números de teléfono verificados de los sitios web de LinkedIn y de la empresa, lo que elimina las conjeturas y permite realizar campañas salientes específicas. Los equipos ahorran horas porque el software verifica los datos de contacto a medida que se capturan y permite a los SDR guardar los nuevos clientes potenciales directamente en listas personalizadas.</p><h3>Captura de datos de contacto y gestión de listas</h3><p>Con LeadIQ, los SDR identifican a los clientes potenciales en LinkedIn o sitios web corporativos y capturan su información con un solo clic. El motor de LeadIQ hace una referencia cruzada automática de los datos para garantizar su precisión antes de añadirlos a la lista de clientes potenciales. Esto reduce las tasas de rebote y garantiza que el alcance se dirija a tomadores de decisiones reales y actualizados. A medida que los equipos acumulan clientes potenciales, se benefician de las herramientas de segmentación de listas que agrupan los contactos por empresa, sector o fase de participación.</p><h3>Prospección multicanal e integración de CRM</h3><p>LeadIQ cubre todos los canales salientes con su extensión para Chrome y la sincronización multiplataforma. Tras crear una lista, los SDR pueden exportar datos a Salesforce, HubSpot y otros CRM importantes sin necesidad de complejos procesos manuales. La asignación de secuencias se acelera porque los nuevos clientes potenciales aparecen directamente en los flujos de trabajo de CRM. Para los equipos salientes que ya utilizan soluciones de automatización, LeadIQ se integra de forma sencilla para que las listas de Overloop y plataformas similares puedan actualizarse periódicamente y enriquecerse aún más. Esto permite llevar a cabo actividades más coordinadas y basadas en datos a través del correo electrónico en blanco, la venta en redes sociales o las llamadas.</p><p>Las empresas que buscan eliminar la entrada manual de datos y reducir la fricción entre la prospección y la venta real confían en el flujo de trabajo optimizado de LeadIQ. Sus datos verificados ayudan a que el equipo se concentre en las actividades de alta conversión. Para las organizaciones de ventas que combinan la validación de datos con la salida automatizada, LeadIQ ofrece una sólida combinación de precisión y velocidad.</p><h2>10. Snov.io: plataforma versátil de divulgación por correo electrónico</h2><p>Snov.io está diseñado para los equipos de ventas que desean automatizar y personalizar el alcance del correo electrónico rápidamente. Su plataforma reúne las herramientas esenciales para ejecutar campañas eficaces de correo electrónico en frío, empezando por un flujo de trabajo intuitivo para configurar las secuencias de envío de correos electrónicos. Los usuarios programan múltiples seguimientos que se adaptan en función de las acciones de los clientes potenciales, lo que se traduce en más respuestas y en un menor esfuerzo manual. Cada campaña se puede adaptar con una personalización dinámica, lo que garantiza que los mensajes sean relevantes para cada cliente potencial.</p><h3>Automatización, seguimiento y validación del correo electrónico</h3><p>La principal fortaleza de Snov.io reside en su capacidad para automatizar grandes volúmenes de difusión por correo electrónico y, al mismo tiempo, realizar un seguimiento del rendimiento en tiempo real. Las funciones de seguimiento del correo electrónico permiten a los usuarios ver los correos electrónicos abiertos y los clics en los enlaces, lo que proporciona información instantánea sobre los clientes potenciales que interactúan. La plataforma ofrece análisis detallados sobre la entrega, las tasas de rebote y las respuestas para que los equipos puedan refinar los mensajes y optimizar los tiempos.</p><ul>
+</ul><p>En comparación con muchas alternativas, Clearbit se destaca por la calidad de los datos, el enriquecimiento en tiempo real y la automatización fluida del flujo de trabajo, que acelera la calificación y el alcance de los equipos centrados en SaaS. Para aquellos que buscan una automatización aún más escalonada, soluciones como Overloop permiten a los equipos de ventas combinar el enriquecimiento de datos con campañas multicanal personalizadas y una segmentación basada en inteligencia artificial desde el primer punto de contacto.</p><h2 id="9-leadiq-creaci-n-eficiente-de-listas-para-sdr">9. LeadIQ: creación eficiente de listas para SDR</h2><p>Los representantes de desarrollo de ventas (SDR) utilizan LeadIQ para reducir el tiempo necesario para la creación de listas y la validación precisa de los contactos. La función principal de la plataforma es recopilar direcciones de correo electrónico y números de teléfono verificados de los sitios web de LinkedIn y de la empresa, lo que elimina las conjeturas y permite realizar campañas salientes específicas. Los equipos ahorran horas porque el software verifica los datos de contacto a medida que se capturan y permite a los SDR guardar los nuevos clientes potenciales directamente en listas personalizadas.</p><h3>Captura de datos de contacto y gestión de listas</h3><p>Con LeadIQ, los SDR identifican a los clientes potenciales en LinkedIn o sitios web corporativos y capturan su información con un solo clic. El motor de LeadIQ hace una referencia cruzada automática de los datos para garantizar su precisión antes de añadirlos a la lista de clientes potenciales. Esto reduce las tasas de rebote y garantiza que el alcance se dirija a tomadores de decisiones reales y actualizados. A medida que los equipos acumulan clientes potenciales, se benefician de las herramientas de segmentación de listas que agrupan los contactos por empresa, sector o fase de participación.</p><h3>Prospección multicanal e integración de CRM</h3><p>LeadIQ cubre todos los canales salientes con su extensión para Chrome y la sincronización multiplataforma. Tras crear una lista, los SDR pueden exportar datos a Salesforce, HubSpot y otros CRM importantes sin necesidad de complejos procesos manuales. La asignación de secuencias se acelera porque los nuevos clientes potenciales aparecen directamente en los flujos de trabajo de CRM. Para los equipos salientes que ya utilizan soluciones de automatización, LeadIQ se integra de forma sencilla para que las listas de Overloop y plataformas similares puedan actualizarse periódicamente y enriquecerse aún más. Esto permite llevar a cabo actividades más coordinadas y basadas en datos a través del correo electrónico en blanco, la venta en redes sociales o las llamadas.</p><p>Las empresas que buscan eliminar la entrada manual de datos y reducir la fricción entre la prospección y la venta real confían en el flujo de trabajo optimizado de LeadIQ. Sus datos verificados ayudan a que el equipo se concentre en las actividades de alta conversión. Para las organizaciones de ventas que combinan la validación de datos con la salida automatizada, LeadIQ ofrece una sólida combinación de precisión y velocidad.</p><h2 id="10-snov-io-plataforma-vers-til-de-divulgaci-n-por-correo-electr-nico">10. Snov.io: plataforma versátil de divulgación por correo electrónico</h2><p>Snov.io está diseñado para los equipos de ventas que desean automatizar y personalizar el alcance del correo electrónico rápidamente. Su plataforma reúne las herramientas esenciales para ejecutar campañas eficaces de correo electrónico en frío, empezando por un flujo de trabajo intuitivo para configurar las secuencias de envío de correos electrónicos. Los usuarios programan múltiples seguimientos que se adaptan en función de las acciones de los clientes potenciales, lo que se traduce en más respuestas y en un menor esfuerzo manual. Cada campaña se puede adaptar con una personalización dinámica, lo que garantiza que los mensajes sean relevantes para cada cliente potencial.</p><h3>Automatización, seguimiento y validación del correo electrónico</h3><p>La principal fortaleza de Snov.io reside en su capacidad para automatizar grandes volúmenes de difusión por correo electrónico y, al mismo tiempo, realizar un seguimiento del rendimiento en tiempo real. Las funciones de seguimiento del correo electrónico permiten a los usuarios ver los correos electrónicos abiertos y los clics en los enlaces, lo que proporciona información instantánea sobre los clientes potenciales que interactúan. La plataforma ofrece análisis detallados sobre la entrega, las tasas de rebote y las respuestas para que los equipos puedan refinar los mensajes y optimizar los tiempos.</p><ul>
  <li>Las campañas se pueden pausar, ajustar o reiniciar en función de las acciones de los destinatarios, lo que reduce el riesgo de recibir quejas de spam</li>
  <li>La integración de Google y SMTP permite el envío fiable desde las bandejas de entrada personales y de equipo</li>
-</ul><h3>Verificación de direcciones confiable para una mayor capacidad de entrega</h3><p>Snov.io incluye una sólida verificación de direcciones para mantener bajas las tasas de rebote. La plataforma comprueba la validez de los correos electrónicos antes de lanzar una campaña para que los mensajes lleguen a bandejas de entrada reales, no a callejones sin salida. Este proceso de validación aumenta la reputación del remitente y garantiza una tasa de entrega más alta, lo cual es fundamental para el éxito de las ventas salientes.</p><p>Los equipos de ventas disfrutan de cómo Snov.io simplifica la importación de contactos, la gestión de listas y la programación del seguimiento en un solo espacio de trabajo. Para las empresas que buscan unificar la prospección basada en la inteligencia artificial con una automatización perfecta de las campañas, combinar las secuencias y herramientas de verificación de Snov.io con plataformas como Overloop crea un paquete de correo saliente moderno preparado para recibir correos electrónicos de gran volumen y altamente personalizados en 2025.</p><h2>11. Reply.io — Automatización de secuencias multicanal</h2><p>Reply.io ayuda a los equipos salientes a automatizar y optimizar las secuencias de ventas multicanal en correo electrónico, voz, LinkedIn y SMS. La herramienta es excelente a la hora de eliminar la fricción de los flujos de trabajo de las campañas, ya que permite a los usuarios crear secuencias personalizadas que activan acciones basadas en la participación de los clientes potenciales, lo que permite tasas de respuesta más altas y una progresión más rápida de los procesos.</p><h3>Impulsar los resultados de las secuencias con la automatización multicanal</h3><p>Con Reply.io, los representantes de ventas coordinan la comunicación entre los canales y envían mensajes o llamadas personalizados en la etapa correcta del proceso de compra. La automatización de la plataforma permite a los usuarios configurar seguimientos complejos, combinar pasos manuales y automáticos y reaccionar al instante a las acciones de los destinatarios. <em>Este nivel de versatilidad de secuencia significa que cada cliente potencial puede recibir el punto de contacto correcto sin una supervisión manual constante.</em>.</p><h3>Herramientas de entregabilidad y pruebas A/B</h3><ul>
+</ul><h3>Verificación de direcciones confiable para una mayor capacidad de entrega</h3><p>Snov.io incluye una sólida verificación de direcciones para mantener bajas las tasas de rebote. La plataforma comprueba la validez de los correos electrónicos antes de lanzar una campaña para que los mensajes lleguen a bandejas de entrada reales, no a callejones sin salida. Este proceso de validación aumenta la reputación del remitente y garantiza una tasa de entrega más alta, lo cual es fundamental para el éxito de las ventas salientes.</p><p>Los equipos de ventas disfrutan de cómo Snov.io simplifica la importación de contactos, la gestión de listas y la programación del seguimiento en un solo espacio de trabajo. Para las empresas que buscan unificar la prospección basada en la inteligencia artificial con una automatización perfecta de las campañas, combinar las secuencias y herramientas de verificación de Snov.io con plataformas como Overloop crea un paquete de correo saliente moderno preparado para recibir correos electrónicos de gran volumen y altamente personalizados en 2025.</p><h2 id="11-reply-io-automatizaci-n-de-secuencias-multicanal">11. Reply.io — Automatización de secuencias multicanal</h2><p>Reply.io ayuda a los equipos salientes a automatizar y optimizar las secuencias de ventas multicanal en correo electrónico, voz, LinkedIn y SMS. La herramienta es excelente a la hora de eliminar la fricción de los flujos de trabajo de las campañas, ya que permite a los usuarios crear secuencias personalizadas que activan acciones basadas en la participación de los clientes potenciales, lo que permite tasas de respuesta más altas y una progresión más rápida de los procesos.</p><h3>Impulsar los resultados de las secuencias con la automatización multicanal</h3><p>Con Reply.io, los representantes de ventas coordinan la comunicación entre los canales y envían mensajes o llamadas personalizados en la etapa correcta del proceso de compra. La automatización de la plataforma permite a los usuarios configurar seguimientos complejos, combinar pasos manuales y automáticos y reaccionar al instante a las acciones de los destinatarios. <em>Este nivel de versatilidad de secuencia significa que cada cliente potencial puede recibir el punto de contacto correcto sin una supervisión manual constante.</em>.</p><h3>Herramientas de entregabilidad y pruebas A/B</h3><ul>
  <li>Las comprobaciones de entregabilidad y las funciones de calentamiento integradas reducen el riesgo de que los correos electrónicos inactivos lleguen a las carpetas de spam.</li>
  <li>Los usuarios pueden hacer pruebas A/B de los mensajes de divulgación para identificar las líneas de asunto o el contenido con mejor rendimiento, refinando las secuencias para lograr la máxima participación.</li>
  <li>La rotación y la programación de la bandeja de entrada controlan el volumen y el tiempo de los mensajes, lo que permite cumplir con las normas de divulgación y mejorar las tasas de respuesta.</li>
-</ul><h3>Administración de bandeja de entrada unificada</h3><p>Reply.io consolida las respuestas de todos los canales en una única bandeja de entrada, lo que ayuda a los equipos a evitar la pérdida de oportunidades y a responder con rapidez. <em>La detección y clasificación de respuestas automatizadas permiten un seguimiento rápido o la asignación a los compañeros de equipo, lo que facilita la ampliación de las campañas personalizadas con menos filtrado manual</em>.</p><p>Si bien soluciones como Overloop integran la automatización de campañas con la personalización de mensajes basada en inteligencia artificial, Reply.io destaca entre los equipos que buscan un control profundo sobre la ejecución multicanal y la capacidad de entrega. Su enfoque en la creación automatizada de flujos de trabajo, la optimización de los mensajes y la gestión eficiente de las bandejas de entrada la posiciona como una opción práctica para los líderes de SDR que desean maximizar las interacciones con cada cliente potencial.</p><h2>12. Groove: compromiso de ventas sencillo para equipos</h2><p>Groove ofrece una plataforma de participación de ventas enfocada y optimizada para pequeñas y medianas empresas (PYMES). Su principal atractivo radica en su fácil adopción con un mínimo de problemas, lo que permite a los equipos de ventas empezar a optimizar el alcance sin necesidad de una compleja incorporación. La integración con Gmail y Outlook es nativa, por lo que los miembros del equipo pueden automatizar los flujos de trabajo y sincronizar las actividades directamente desde su plataforma de correo electrónico preferida. Esto garantiza un mantenimiento constante de los registros y actualizaciones fluidas de todas las interacciones de los clientes potenciales.</p><h3>Características principales que respaldan la eficiencia de las ventas diarias</h3><p>La función de registro de llamadas de Groove permite a los usuarios rastrear cada interacción, ya sea por voz o correo electrónico, directamente desde el panel de control. Los equipos pueden registrar las llamadas, añadir notas contextuales y asociar automáticamente los puntos de contacto con ofertas de venta específicas. Esta función añade responsabilidad y transparencia a todas las actividades de divulgación, lo que ayuda a los gerentes a supervisar el progreso y a apoyar la formación cuando sea necesario.</p><p>Las herramientas de administración de canalizaciones de Groove están diseñadas para brindar claridad. Los representantes ven las etapas de oportunidad, las tareas pendientes y las reuniones programadas en una vista intuitiva. Los recordatorios automáticos garantizan que ningún acuerdo pase desapercibido. Los administradores y líderes pueden personalizar las estrategias de ventas, actualizar las secuencias y obtener informes instantáneos con solo unos pocos clics, lo que ayuda a los equipos en crecimiento a tomar decisiones informadas.</p><ul>
+</ul><h3>Administración de bandeja de entrada unificada</h3><p>Reply.io consolida las respuestas de todos los canales en una única bandeja de entrada, lo que ayuda a los equipos a evitar la pérdida de oportunidades y a responder con rapidez. <em>La detección y clasificación de respuestas automatizadas permiten un seguimiento rápido o la asignación a los compañeros de equipo, lo que facilita la ampliación de las campañas personalizadas con menos filtrado manual</em>.</p><p>Si bien soluciones como Overloop integran la automatización de campañas con la personalización de mensajes basada en inteligencia artificial, Reply.io destaca entre los equipos que buscan un control profundo sobre la ejecución multicanal y la capacidad de entrega. Su enfoque en la creación automatizada de flujos de trabajo, la optimización de los mensajes y la gestión eficiente de las bandejas de entrada la posiciona como una opción práctica para los líderes de SDR que desean maximizar las interacciones con cada cliente potencial.</p><h2 id="12-groove-compromiso-de-ventas-sencillo-para-equipos">12. Groove: compromiso de ventas sencillo para equipos</h2><p>Groove ofrece una plataforma de participación de ventas enfocada y optimizada para pequeñas y medianas empresas (PYMES). Su principal atractivo radica en su fácil adopción con un mínimo de problemas, lo que permite a los equipos de ventas empezar a optimizar el alcance sin necesidad de una compleja incorporación. La integración con Gmail y Outlook es nativa, por lo que los miembros del equipo pueden automatizar los flujos de trabajo y sincronizar las actividades directamente desde su plataforma de correo electrónico preferida. Esto garantiza un mantenimiento constante de los registros y actualizaciones fluidas de todas las interacciones de los clientes potenciales.</p><h3>Características principales que respaldan la eficiencia de las ventas diarias</h3><p>La función de registro de llamadas de Groove permite a los usuarios rastrear cada interacción, ya sea por voz o correo electrónico, directamente desde el panel de control. Los equipos pueden registrar las llamadas, añadir notas contextuales y asociar automáticamente los puntos de contacto con ofertas de venta específicas. Esta función añade responsabilidad y transparencia a todas las actividades de divulgación, lo que ayuda a los gerentes a supervisar el progreso y a apoyar la formación cuando sea necesario.</p><p>Las herramientas de administración de canalizaciones de Groove están diseñadas para brindar claridad. Los representantes ven las etapas de oportunidad, las tareas pendientes y las reuniones programadas en una vista intuitiva. Los recordatorios automáticos garantizan que ningún acuerdo pase desapercibido. Los administradores y líderes pueden personalizar las estrategias de ventas, actualizar las secuencias y obtener informes instantáneos con solo unos pocos clics, lo que ayuda a los equipos en crecimiento a tomar decisiones informadas.</p><ul>
  <li>Automatización del flujo de trabajo integrada en el correo electrónico para minimizar las interrupciones</li>
  <li>Fácil intercambio de plantillas y secuencias entre los miembros del equipo </li>
  <li>Paneles flexibles de informes y actividades accesibles tanto para los representantes como para los gerentes</li>
  <li>Soporte multicanal: las llamadas, los correos electrónicos y las tareas se pueden rastrear automáticamente</li>
-</ul><p>Para las pymes que priorizan la simplicidad, la configuración rápida y la integración en las herramientas diarias existentes, Groove presenta una alternativa sólida a las plataformas más complejas o costosas como Apollo. Si, más adelante, un equipo quiere incorporar una automatización adicional basada en la inteligencia artificial, soluciones como Overloop pueden ampliar la gestión básica de los procesos de Groove mediante la prospección hiperpersonalizada y la secuenciación avanzada de las campañas para aumentar la productividad de las salidas. Puedes <a href="https://overloop.com/book-demo">reserve una demostración con Overloop</a> para ver estas integraciones en acción.</p><h2>13. PersistIQ: salida inteligente para equipos pequeños</h2><p>PersistIQ atrae a los equipos de ventas pequeños y en crecimiento que valoran un flujo de trabajo saliente sencillo. La plataforma está diseñada para una configuración rápida y resultados inmediatos, lo que elimina la curva de aprendizaje y el esfuerzo manual que suponen una carga para muchas alternativas. Los usuarios pueden crear secuencias poderosas en cuestión de minutos, segmentar listas rápidamente e iniciar campañas automatizadas que reflejen un alcance humano efectivo.</p><h3>Principales beneficios para los equipos de ventas pequeños</h3><p>La asequibilidad es una característica destacada. PersistiQ ofrece un modelo de precios transparente sin extras ocultos, lo que hace que los costos continuos sean predecibles incluso para las empresas emergentes o las agencias en expansión. Los usuarios crean y envían campañas de divulgación personalizadas que se adaptan a la participación de los destinatarios, con solo cambiar la lógica de ramificación o pausar la campaña. Los equipos se benefician de funciones como:</p><ul>
+</ul><p>Para las pymes que priorizan la simplicidad, la configuración rápida y la integración en las herramientas diarias existentes, Groove presenta una alternativa sólida a las plataformas más complejas o costosas como Apollo. Si, más adelante, un equipo quiere incorporar una automatización adicional basada en la inteligencia artificial, soluciones como Overloop pueden ampliar la gestión básica de los procesos de Groove mediante la prospección hiperpersonalizada y la secuenciación avanzada de las campañas para aumentar la productividad de las salidas. Puedes <a href="https://overloop.com/book-demo">reserve una demostración con Overloop</a> para ver estas integraciones en acción.</p><h2 id="13-persistiq-salida-inteligente-para-equipos-peque-os">13. PersistIQ: salida inteligente para equipos pequeños</h2><p>PersistIQ atrae a los equipos de ventas pequeños y en crecimiento que valoran un flujo de trabajo saliente sencillo. La plataforma está diseñada para una configuración rápida y resultados inmediatos, lo que elimina la curva de aprendizaje y el esfuerzo manual que suponen una carga para muchas alternativas. Los usuarios pueden crear secuencias poderosas en cuestión de minutos, segmentar listas rápidamente e iniciar campañas automatizadas que reflejen un alcance humano efectivo.</p><h3>Principales beneficios para los equipos de ventas pequeños</h3><p>La asequibilidad es una característica destacada. PersistiQ ofrece un modelo de precios transparente sin extras ocultos, lo que hace que los costos continuos sean predecibles incluso para las empresas emergentes o las agencias en expansión. Los usuarios crean y envían campañas de divulgación personalizadas que se adaptan a la participación de los destinatarios, con solo cambiar la lógica de ramificación o pausar la campaña. Los equipos se benefician de funciones como:</p><ul>
  <li>Carga instantánea de listas de CSV o CRM con deduplicación automática</li>
  <li>Plantillas de secuencia prediseñadas para cadencias de correo electrónico</li>
  <li>Rotación automatizada de la bandeja de entrada para proteger la capacidad de entrega</li>
  <li>Recordatorios de tareas y seguimiento del estado para cada paso del flujo</li>
-</ul><h3>Integración y sincronización de flujos de trabajo nativos</h3><p>PersistIQ se conecta a la perfección con plataformas como Salesforce y Pipedrive, lo que garantiza que el seguimiento del contexto y la actividad se mantenga uniforme tanto en la prospección como en la gestión de oleoductos. Gracias a la interfaz ligera, los usuarios no se ven abrumados por los complejos paneles de control, y los nuevos miembros del equipo pueden contribuir de forma productiva con una incorporación mínima.</p><p>El enfoque sencillo se adapta a los equipos que desean lanzar o escalar el formato saliente rápidamente, sin dedicar personal a administrar la herramienta. El flujo de trabajo transparente de PersistiQ y la compatibilidad con la sincronización del flujo de trabajo entre las herramientas de ventas permiten a los fundadores y representantes centrarse directamente en las conversaciones que cierran los acuerdos. Para quienes buscan una organización de campañas más avanzada, opciones como Overloop proporcionan una automatización más profunda de la IA y una gestión multicanal, pero PersistIQ destaca cuando la asequibilidad y la facilidad de uso son prioritarias.</p><h2>¿Qué alternativa de Apollo es mejor para ti?</h2><p>Encontrar la alternativa adecuada a Apollo depende de las prioridades, la escala y las necesidades de flujo de trabajo de su equipo. Cada plataforma descrita en esta guía se destaca en diferentes áreas, por lo que hacer coincidir sus puntos fuertes principales con su estrategia de ventas es clave para el éxito en 2025.</p><h3>Quick Match: ¿Qué solución se ajusta a sus objetivos?</h3><ul>
+</ul><h3>Integración y sincronización de flujos de trabajo nativos</h3><p>PersistIQ se conecta a la perfección con plataformas como Salesforce y Pipedrive, lo que garantiza que el seguimiento del contexto y la actividad se mantenga uniforme tanto en la prospección como en la gestión de oleoductos. Gracias a la interfaz ligera, los usuarios no se ven abrumados por los complejos paneles de control, y los nuevos miembros del equipo pueden contribuir de forma productiva con una incorporación mínima.</p><p>El enfoque sencillo se adapta a los equipos que desean lanzar o escalar el formato saliente rápidamente, sin dedicar personal a administrar la herramienta. El flujo de trabajo transparente de PersistiQ y la compatibilidad con la sincronización del flujo de trabajo entre las herramientas de ventas permiten a los fundadores y representantes centrarse directamente en las conversaciones que cierran los acuerdos. Para quienes buscan una organización de campañas más avanzada, opciones como Overloop proporcionan una automatización más profunda de la IA y una gestión multicanal, pero PersistIQ destaca cuando la asequibilidad y la facilidad de uso son prioritarias.</p><h2 id="qu-alternativa-de-apollo-es-mejor-para-ti">¿Qué alternativa de Apollo es mejor para ti?</h2><p>Encontrar la alternativa adecuada a Apollo depende de las prioridades, la escala y las necesidades de flujo de trabajo de su equipo. Cada plataforma descrita en esta guía se destaca en diferentes áreas, por lo que hacer coincidir sus puntos fuertes principales con su estrategia de ventas es clave para el éxito en 2025.</p><h3>Quick Match: ¿Qué solución se ajusta a sus objetivos?</h3><ul>
  <li>
 <strong>Overloop:</strong> Automatiza tanto el descubrimiento de clientes potenciales como la comunicación multicanal personalizada mediante la IA integrada. Ideal para equipos que desean ahorrar tiempo en la contratación manual, unificar la gestión de campañas y ampliar la interacción hiperpersonalizada a través del correo electrónico y LinkedIn desde un único panel de control. Obtén más información en <a href="https://overloop.com/blog/">Blog de Overloop</a>.</li>
  <li>
@@ -264,73 +607,86 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <li>Compruebe el cumplimiento y las regiones: si las leyes de privacidad o las regiones de interés guían su proceso, es esencial contar con herramientas como Cognism o ZoomInfo con datos verificados y conformes con las normas.</li>
 <li>Evalúe la complejidad de la divulgación: los equipos que buscan un equilibrio entre voz, correo electrónico y LinkedIn o que necesitan campañas de alta respuesta deberían buscar plataformas como Reply.io, Outreach o Overloop, que automatizan y personalizan los distintos canales.</li>
 </ul><p>Seleccionar la mejor alternativa a Apollo significa evaluar no solo las funciones, sino también la facilidad con la que una herramienta se adapta a su canal de ingresos. Overloop ofrece una vía eficaz para los equipos que desean automatizar la generación de clientes potenciales, adaptar la mensajería a gran escala y optimizar la participación sin necesidad de un trabajo manual interminable ni de herramientas fragmentadas. Compara las ventajas específicas de cada plataforma con las que te bloquean actualmente y alinéalas con el flujo de trabajo de tu equipo para lograr el máximo impacto en 2025.</p>
-        </article>
 
-        <div class="cta-box">
-            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
-            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
-        </div>
-
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO en Overloop</div>
-                <div class="role">CEO de Sortlist & Overloop. Ha construido sistemas outbound para mas de 500 empresas B2B.</div>
-            </div>
-        </div>
-
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

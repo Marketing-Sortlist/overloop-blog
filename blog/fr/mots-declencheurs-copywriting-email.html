@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>500+ mots déclencheurs pour votre copywriting | Overloop</title>
-    <meta name="description" content="Découvrez plus de 500 mots déclencheurs pour dynamiser vos textes commerciaux et lignes d&#x27;objet. Boostez engagement et conversions.">
-    <link rel="canonical" href="https://overloop.com/fr/blog/mots-declencheurs-copywriting-email">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500+ mots déclencheurs pour votre copywriting | Overloop</title>
+  <meta name="description" content="Découvrez plus de 500 mots déclencheurs pour dynamiser vos textes commerciaux et lignes d&#x27;objet. Boostez engagement et conversions.">
+  <link rel="canonical" href="https://overloop.com/fr/blog/mots-declencheurs-copywriting-email">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/500-trigger-words">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/triggerwoerter-e-mail-texte">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/mots-declencheurs-copywriting-email">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/500-palabras-detonantes">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/parole-trigger-copywriting">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/500-trigger-words">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="500+ mots déclencheurs pour votre copywriting">
     <meta property="og:description" content="Découvrez plus de 500 mots déclencheurs pour dynamiser vos textes commerciaux et lignes d&#x27;objet. Boostez engagement et conversions.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="500+ mots déclencheurs pour votre copywriting">
     <meta name="twitter:description" content="Découvrez plus de 500 mots déclencheurs pour dynamiser vos textes commerciaux et lignes d&#x27;objet. Boostez engagement et conversions.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/mots-declencheurs-copywriting-email.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,187 +445,155 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><div class="breadcrumb-bar">
-    <div class="container">
-        <a href="https://overloop.com">Overloop</a>
-        <span class="sep">/</span>
-        <a href="/fr/blog/">Blog</a>
-        <span class="sep">/</span>
-        <span class="current">500+ mots déclencheurs pour votre...</span>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
     </div>
-</div>
+  </nav>
 
-<header class="article-header">
-    <span class="header-badge">Ventes</span>
-    <h1>500+ mots déclencheurs pour votre copywriting</h1>
-</header>
-
-<main class="article-body">
-    <div class="container">
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>500+ mots déclencheurs pour votre copywriting</h1>
+        <p class="lead">Croyez-le ou non, l'émotion guidera chaque décision que vous prendrez aujourd'hui.</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                Par <a href="https://www.linkedin.com/in/nicolasfinet/">Nicolas Finet</a> &middot;
-                Publié le 23 octobre 2017 &middot;
-                10 min de lecture
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Oct 23, 2017 &middot; Updated Apr 15, 2026</div>
+          </div>
         </div>
-
-        <article class="article-content">
-<p>Croyez-le ou non, l'émotion guidera chaque décision que vous prendrez aujourd'hui.</p><p>Ce <a href="http://bigthink.com/experts-corner/decisions-are-emotional-not-logical-the-neuroscience-behind-decision-making">article</a> du célèbre négociateur et auteur Jim Camp met en lumière les faits neuroscientifiques qui se cachent derrière les choix que nous faisons. La logique et l'information sont importantes, mais elles ne valent rien si elles ne comportent pas d'émotions.</p><p>En tant qu'homme d'affaires, il est essentiel de prendre en compte les émotions lors de la réalisation de transactions, et vous devez utiliser tous les outils à votre disposition pour y parvenir.</p><h3>Alors, qu'en est-il des mots déclencheurs émotionnels&nbsp;?</h3><p>Il a été scientifiquement prouvé que les mots sont <strong>puissant</strong>.</p><ul><li>Les mots peuvent modifier la perception. Selon un <a href="https://news.wisc.edu/language-can-reveal-the-invisible-study-shows/">étude</a> publié en 2013 par l'université du Wisconsin-Madison, la langue a le pouvoir de remodeler nos connaissances et nos attentes à l'égard du monde que nous voyons.</li><li>Plusieurs <a href="https://www.medicalnewstoday.com/articles/264902.php">études</a> prouvent abondamment que la consultation des réseaux sociaux déclenche des libérations de dopamine et d'ocytocine en fonction du type de publications que vous rencontrez.</li></ul><p>L'utilisation des bons mots spécifiques de manière consciente et sensée peut avoir une incidence considérable sur le succès de vos efforts commerciaux, alors pourquoi ne pas essayer&nbsp;?</p><p>Cet article vous fournira une liste complète de mots déclencheurs que vous pouvez commencer à utiliser <strong>aujourd'hui</strong> pour faire la différence&nbsp;!</p><p><strong>Connexe&nbsp;:</strong> <a href="/blog/500-trigger-words">7 sujets éprouvés qui ont généré 720 000$ en ARR</a></p><h2>Motivation</h2><p>Tirez-le de la marque de sport la plus appréciée sur Facebook et du <a href="https://www.mavrck.co/the-most-influential-brands-on-facebook-in-2016/">8e plus influente</a> Dans l'ensemble, inspirer les gens est un excellent moyen de les inciter à passer à l'action&nbsp;!</p><p>En outre, combien de temps pouvez-vous faire défiler votre fil Facebook vers le bas sans tomber sur une citation motivante ou inspirante&nbsp;? Exactement, les gens prospèrent grâce à leur motivation.</p><ul>  <li>Action</li>  <li>Actionnement</li>  <li>Défenseur</li>  <li><strong>Afflatus</strong></li>  <li>Angle</li>  <li><strong>Animus</strong></li>  <li>Applaudissez</li>  <li>Approche</li>  <li>Assister</li>  <li><strong>Éveil</strong></li>  <li><strong>Booster</strong></li>  <li><strong>Une idée</strong></li>  <li>Buck-up</li>  <li>Bouée</li>  <li>Catalyseur</li>  <li>Champion</li>  <li>Réjouissez-vous</li>  <li>Créativité</li>  <li><strong>Pensée profonde</strong></li>  <li>Désir</li>  <li>Disposition</li>  <li>Conduire</li>  <li>Oeuf sur</li>  <li><strong>Enhardi</strong></li>  <li>Encouragement</li>  <li>Enthousiasme</li>  <li>Exciter</li>  <li>Incendie</li>  <li>Galvaniser</li>  <li><strong>Génie</strong></li>  <li>Lève-toi et pars</li>  <li>Gadget</li>  <li>aiguillon</li>  <li><strong>Réconforter</strong></li>  <li>Intuition</li>  <li>Faim</li>  <li>Idée</li>  <li><strong>Éclairage</strong></li>  <li>Impulsion</li>  <li>Impulsion</li>  <li>Impulsion</li>  <li>Incitatif</li>  <li>Incitation</li>  <li><strong>Inciter</strong></li>  <li>Incitation</li>  <li>Inclinaison</li>  <li>Incitation</li>  <li>Influence</li>  <li>Perspicacité</li>  <li><strong>Inspirite</strong></li>  <li>Inciter</li>  <li>Instigation</li>  <li>Intérêt</li>  <li>Kick</li>  <li>Kindle</li>  <li>Motivation</li>  <li>Motif</li>  <li>Motifs</li>  <li><strong>Muse</strong></li>  <li>Notion</li>  <li>Persuasion</li>  <li>Éloge</li>  <li>Prédétermination</li>  <li>Prédisposition</li>  <li>Promouvoir</li>  <li><strong>Prop up</strong></li>  <li>Proposer</li>  <li>Provocation</li>  <li><strong>Psychiatrie</strong> <strong>en haut</strong></li>  <li>Poussez</li>  <li>Motif</li>  <li>Rassurer</li>  <li>Recommander</li>  <li>Actualiser</li>  <li><strong>révélation</strong></li>  <li><strong>Revivifier</strong></li>  <li>Les bonnes choses</li>  <li>Réveiller</li>  <li><strong>Étincelle</strong></li>  <li><strong>Éperon</strong></li>  <li>Stimulus</li>  <li>Remuer</li>  <li><strong>Renforcez</strong></li>  <li>Suggestion</li>  <li>Pensée</li>  <li>Vision</li>  <li><strong>Un caprice</strong></li>  <li>Souhait</li></ul><h2>Curiosité</h2><p>Les gros titres des clickbait existent depuis un certain temps déjà. Mais pourquoi fonctionnent-ils si merveilleusement&nbsp;? Parce que cela joue sur l'inclination naturelle des gens à vouloir savoir ce qui leur est caché.</p><p>Mais ne le faites pas comme ça, faites-le à la manière d'un chapeau blanc, utilisez de jolis mots déclencheurs et livrez <strong>valeur réelle</strong>.</p><ul>  <li>Analytique</li>  <li><strong>Porte dérobée</strong></li>  <li><strong>Interdit</strong></li>  <li>Dans les coulisses</li>  <li>Marché noir</li>  <li>Sur liste noire</li>  <li>Bootleg</li>  <li>Censuré</li>  <li><strong>Dissimulé</strong></li>  <li>Inquiétude</li>  <li>Aveux</li>  <li>Confidentiel</li>  <li><strong>Controversé</strong></li>  <li>Dissimulation</li>  <li>Couvert</li>  <li>Impatience</li>  <li>Écoute clandestine</li>  <li>Examiner</li>  <li>Interdit</li>  <li>Oublié</li>  <li>commérages</li>  <li>Caché</li>  <li>Accroché</li>  <li><strong>Illégal</strong></li>  <li>Immergé</li>  <li>Impertinent</li>  <li>Enquêtant</li>  <li>Esprit curieux</li>  <li>Curiosité</li>  <li>Initié</li>  <li>Intérêt</li>  <li>Intrusivité</li>  <li>Enquête</li>  <li>Keen</li>  <li><strong>Petit</strong> <strong>connu</strong></li>  <li>Ingérable</li>  <li>Journaliste</li>  <li>Bruit</li>  <li><strong>Hors-limites</strong></li>  <li>Officialité</li>  <li>Jeter un coup d'œil</li>  <li>Privé</li>  <li>indiscret</li>  <li>Interrogatoire</li>  <li>Respégard</li>  <li>Scruter</li>  <li>Recherche</li>  <li>Secrets</li>  <li><strong>Passés en contrebande</strong></li>  <li>Espionnage</li>  <li>Étrange</li>  <li>Pris</li>  <li>Soif de connaissances</li>  <li><strong>Non autorisé</strong></li>  <li><strong>Insolite</strong></li>  <li><strong>Retenu</strong></li>  <li>Je me demande</li></ul><h2>Luxure</h2><p><strong>DERNIÈRES NOUVELLES&nbsp;: Le sexe se vend&nbsp;!</strong></p><p>Même des mots sexuels. Qui l'aurait cru&nbsp;?</p><p>Le sexe a un moyen d'attirer et de capter l'attention qui fonctionne dans la plupart des situations. N'en abusez pas, ne soyez pas obscène et utilisez intelligemment les mots déclencheurs ci-dessous&nbsp;!</p><ul>  <li><strong>Animalisme</strong></li>  <li>Appétence</li>  <li>Appétit</li>  <li>Appétition</li>  <li>Effronté</li>  <li>Brûler</li>  <li>Couvre-tout</li>  <li>Envie</li>  <li>Envie</li>  <li>Cupidité</li>  <li><strong>Débauche</strong></li>  <li><strong>Dépravé</strong></li>  <li>Désir</li>  <li><strong>Sale</strong></li>  <li>Excitation</li>  <li>Exposé</li>  <li>Ferveur</li>  <li>Interdit</li>  <li>Faim</li>  <li>Hypnotique</li>  <li><strong>Lascif</strong></li>  <li>Licenciosité</li>  <li><strong>Lécher</strong></li>  <li>Solitaire</li>  <li>Désir</li>  <li>Luxure</li>  <li><strong>Nue</strong></li>  <li><strong>Vilain</strong></li>  <li>Nécessité</li>  <li>Passion</li>  <li>Provocateur</li>  <li>Scandaleux</li>  <li>L'indulgence personnelle</li>  <li>Sensuel</li>  <li><strong>Sexe</strong></li>  <li><strong>Sans vergogne</strong></li>  <li>Pécheur</li>  <li><strong>Sordide</strong></li>  <li>Dormir</li>  <li>Fessée</li>  <li>En sueur</li>  <li>Alléchant</li>  <li>Tawdry</li>  <li>Soif</li>  <li>Passionnant</li>  <li><strong>Non censuré</strong></li>  <li>Exhorter</li>  <li>Vouloir</li>  <li>Wanton</li>  <li>Insouciance</li>  <li>fouet</li>  <li>Aspirer</li></ul><h2>Bonheur</h2><p>Les gens partagent ce qui les rend heureux. Je veux dire, il suffit de regarder vos fils de réseaux sociaux.</p><p>Faites plaisir à vos lecteurs/clients/prospects et ils parleront de vous.</p><ul>  <li><strong>Incroyable</strong></li>  <li>Animé</li>  <li>À l'aise</li>  <li>Audace</li>  <li>Colonne vertébrale</li>  <li>Croyance</li>  <li>Béni</li>  <li><strong>Bienheureux</strong></li>  <li><strong>Blithe</strong></li>  <li>Abondant</li>  <li>Bravoure</li>  <li><strong>époustouflant</strong></li>  <li>Brillant</li>  <li>Acclamez</li>  <li>Joyeux</li>  <li>Comme un enfant</li>  <li>Déchiqueteuse</li>  <li>Chirpy</li>  <li>Confortable</li>  <li>Conquérir</li>  <li>Constructif</li>  <li>Contenu</li>  <li>Courage</li>  <li>Courageux</li>  <li>Créatif</li>  <li><strong>Osé</strong></li>  <li>Défiance</li>  <li>Délice</li>  <li><strong>Dédié</strong></li>  <li>En extase</li>  <li>Exalté</li>  <li>Encouragé</li>  <li>Énergique</li>  <li>Euphorique</li>  <li><strong>Excité</strong></li>  <li>Exalté</li>  <li>Exultant</li>  <li><strong>révélateur</strong></li>  <li>Foi</li>  <li>Intrépide</li>  <li>Festif</li>  <li>Voler haut</li>  <li>Frisky</li>  <li><strong>Satisfaisant</strong></li>  <li>Aimant s'amuser</li>  <li>Amusant</li>  <li>Contente</li>  <li><strong>Joyeux</strong></li>  <li>Glorieux</li>  <li>rougeoyant</li>  <li>Reconnaissante</li>  <li>Satisfait</li>  <li>Du cran</li>  <li><strong>Les tripes</strong></li>  <li>Heureux</li>  <li>Coeur</li>  <li><strong>Sincère</strong></li>  <li>Utile</li>  <li>Héros</li>  <li>Innocent</li>  <li>Intelligent</li>  <li>Jovial</li>  <li><strong>Joyeux</strong></li>  <li><strong>Jubilant</strong></li>  <li>Libéré</li>  <li>En plus de</li>  <li>Optimiste</li>  <li>Fou de joie</li>  <li>Ludique</li>  <li>Satisfait</li>  <li>Débrouillard</li>  <li>Satisfait</li>  <li>Serein</li>  <li>Enfougueux</li>  <li>Spunky</li>  <li>Ensoleillé</li>  <li>Surpris</li>  <li>Remerciante</li>  <li><strong>Enchanté</strong></li>  <li>Chatouillé</li>  <li><strong>Triomphe</strong></li>  <li>Optimiste</li>  <li><strong>Exaltant</strong></li>  <li><strong>Vaillance</strong></li>  <li>Vibrant</li>  <li><strong>Victoire</strong></li>  <li>Vigoureux</li>  <li><strong>Magnifique</strong></li>  <li>Merveilleux</li></ul><h2>Colère</h2><p>Avaaz utilise un langage fort pour susciter <strong>indignation</strong> ou <strong>se révolter</strong>, et incitez les gens à agir pour les causes qu'ils soutiennent. La propagande de guerre est également pleine de ce genre de discours. <a href="https://www.sparringmind.com/viral-content/">Recherche</a> montre que le fait d'appuyer sur les boutons d'un sujet qui leur tient à cœur leur donnera envie de s'engager, car maintenant c'est une question de valeurs, et c'est personnel&nbsp;!</p><p>Voici quelques mots que vous pouvez utiliser à cette fin&nbsp;:</p><ul>  <li><strong>Maltraitance</strong></li>  <li>Animosité</li>  <li>Antagoniste</li>  <li>Arrogant</li>  <li>coup de pied au cul</li>  <li><strong>Poignardage dans le dos</strong></li>  <li>Battre</li>  <li>Amertume</li>  <li>Explosez</li>  <li><strong>Des foutaises</strong></li>  <li><strong>intimidateur</strong></li>  <li>Chagrin</li>  <li>Conniption</li>  <li><strong>Lâche</strong></li>  <li><strong>Tordu</strong></li>  <li><strong>Écrasement</strong></li>  <li>Dégoûtant</li>  <li>Inimitié</li>  <li><strong>Maléfique</strong></li>  <li>Alimenté de force</li>  <li>Faute</li>  <li>Fureur</li>  <li>Galle</li>  <li><strong>Haine</strong></li>  <li>Coupe sifflante</li>  <li>Indignation</li>  <li>Ire</li>  <li>Irritation</li>  <li>Tout savoir</li>  <li><strong>Mensonges</strong></li>  <li>répugnant</li>  <li><strong>Perdant</strong></li>  <li><strong>Mentir</strong></li>  <li>Fou</li>  <li>Maul</li>  <li><strong>Extorsion d'argent</strong></li>  <li><strong>Nazi</strong></li>  <li><strong>Pas bon</strong></li>  <li>Pas bon</li>  <li>Odieux</li>  <li>Indignation</li>  <li><strong>Remboursement</strong></li>  <li><strong>livre</strong></li>  <li>C'est absurde</li>  <li><strong>Punir</strong></li>  <li>Colère</li>  <li>Rankle</li>  <li>Rancœur</li>  <li>Révoltant</li>  <li><strong>Impitoyable</strong></li>  <li>Malade et fatigué</li>  <li>Simplant</li>  <li>pleurnicher</li>  <li>Snob</li>  <li>Snooty</li>  <li>Coincé</li>  <li>Ombrage</li>  <li>En sournois</li>  <li>Vexation</li>  <li><strong>Violence</strong></li>  <li><strong>Colère</strong></li></ul><p><strong>Connexe&nbsp;: </strong><a href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy">6 règles de cold email basées sur 10 615 314 e-mails envoyés</a></p><h2>Cupidité</h2><p>Je ne sais pas exactement combien d'exemplaires de son livre Ramit Sethi se sont vendus jusqu'à présent. Mais je suis sûr que le titre a contribué à en faire un best-seller #1.</p><p>Qui ne voudrait pas avoir plus d'argent, payer moins cher ou obtenir des choses gratuitement&nbsp;? C'est vrai&nbsp;: pas de corps effréné&nbsp;! Si vous parvenez à faire percevoir à votre lecteur la valeur financière de ce que vous avez à offrir, il se sentira comme Scrooge McDuck avant même qu'il n'ait commencé à agir.</p><p>C'est ce que <strong>celles-ci</strong> les mots déclencheurs sont là pour&nbsp;:</p><ul>  <li><strong>Bonne affaire</strong></li>  <li>Meilleur</li>  <li>Milliard</li>  <li>Bonanza</li>  <li>En espèces</li>  <li>Pas cher</li>  <li>Rabais</li>  <li>Dollar</li>  <li>Double</li>  <li><strong>Exploser</strong></li>  <li>Supplémentaire</li>  <li>Festin</li>  <li><strong>Fortune</strong></li>  <li>Gratuit</li>  <li>Freebie</li>  <li>Frénésie</li>  <li>Frugal</li>  <li>Cadeau</li>  <li>Le plus grand</li>  <li>Peu coûteux</li>  <li><strong>Jackpot</strong></li>  <li>Luxueux</li>  <li>Marqué vers le bas</li>  <li>Massif</li>  <li>Argent</li>  <li>Œuf de pécule</li>  <li>Payez zéro</li>  <li>Prix</li>  <li>Bénéfice</li>  <li><strong>Quadruple</strong></li>  <li>Réduit</li>  <li>Riche</li>  <li>Économies</li>  <li>Six chiffres</li>  <li><strong>Montée en flèche</strong></li>  <li>En plein essor</li>  <li>Surtension</li>  <li>Trésor</li>  <li>Triple</li>  <li>énorme</li></ul><h2>Peur</h2><p>Maintenant, pourquoi voudrions-nous semer la peur dans l'esprit de nos lecteurs&nbsp;?</p><p>Parce que le stimulus stressant provoque une réaction dans une partie du cerveau appelée amygdale, qui déclenche la fameuse réaction de combat ou de fuite. En quoi est-ce intéressant pour nous&nbsp;?</p><p>Cela vous permet de convaincre votre prospect qu'il est confronté à un problème auquel vous avez la solution. Maintenant, soyez éthique avec ces mots déclencheurs et n'y allez que s'ils ont réellement ce problème et que cela pourrait leur causer des problèmes. Sinon, ça s'appelle <strong>manipulation</strong>, et tu n'es pas ce genre de personne, n'est-ce pas&nbsp;?</p><ul>  <li>Agonie</li>  <li>Anxiété</li>  <li>Apocalypse</li>  <li><strong>Armageddon</strong></li>  <li>Agression</li>  <li>Réaction</li>  <li>Battement</li>  <li>Méfiez-vous</li>  <li>Aveuglé</li>  <li><strong>Sang</strong></li>  <li><strong>Bain de sang</strong></li>  <li>À glacer le sang</li>  <li>Sanglante</li>  <li>Bombe</li>  <li>Bouffon</li>  <li><strong>Bourdonnement</strong></li>  <li>Bourdonnement</li>  <li>Catastrophe</li>  <li>Attention</li>  <li>Effondrement</li>  <li>Inquiétude</li>  <li><strong>Fou</strong></li>  <li>Creeps</li>  <li><strong>Invalide</strong></li>  <li>Crise</li>  <li>Danger</li>  <li><strong>Mortel</strong></li>  <li><strong>Détruire</strong></li>  <li>Dévastateur</li>  <li>Catastrophique</li>  <li>Détresse</li>  <li>Doute</li>  <li><strong>Noyade</strong></li>  <li><strong>Stupide</strong></li>  <li>Embarrasser</li>  <li>Échouer</li>  <li><strong>faible</strong></li>  <li>Licencié</li>  <li><strong>Trompé</strong></li>  <li>Prémonitoire</li>  <li>Frénétique</li>  <li><strong>Effrayant</strong></li>  <li>Jeux de hasard</li>  <li>Nullible</li>  <li>Pirater</li>  <li>dangereux</li>  <li>Canular</li>  <li><strong>Horrible</strong></li>  <li>Horrible</li>  <li>Ouragan</li>  <li>Insidieux</li>  <li>Invasion</li>  <li>IRS</li>  <li>Prison</li>  <li>Jeopardy</li>  <li>Poursuite</li>  <li>À l'horizon</li>  <li><strong>Fou</strong></li>  <li>Fou</li>  <li>Se cache</li>  <li><strong>Fusion</strong></li>  <li>Enlisé</li>  <li>Erreur</li>  <li><strong>Cauchemar</strong></li>  <li>Douloureux</li>  <li>Pâle</li>  <li>Panique</li>  <li>péril</li>  <li>Phobie</li>  <li>Piranha</li>  <li>Piège</li>  <li>Peste</li>  <li>Joué</li>  <li>Dégringolade</li>  <li>Plongez</li>  <li>Poison</li>  <li>Pauvre</li>  <li>Prison</li>  <li>Pommel</li>  <li>Plus</li>  <li>Compter</li>  <li>Revenge</li>  <li>Risqué</li>  <li>Effrayant</li>  <li>Crier</li>  <li>Saisissant</li>  <li>Briser</li>  <li>Shellackage</li>  <li>Stupide</li>  <li>Massacre</li>  <li><strong>Esclave</strong></li>  <li>Smash</li>  <li>Étrangler</li>  <li><strong>Stupide</strong></li>  <li>Suce</li>  <li>Tailspin</li>  <li>Réservoir</li>  <li>Ciblé</li>  <li>VACILLANT</li>  <li><strong>Terreur</strong></li>  <li>Terroriste</li>  <li><strong>Toxique</strong></li>  <li>Piège</li>  <li>Inquiétude</li>  <li>Vaporiser</li>  <li><strong>Victime</strong></li>  <li>Volatil</li>  <li>vulnérable</li>  <li>Avertissement</li>  <li>Inquiétude</li>  <li>Blessé</li></ul><h2>Sûreté</h2><p>Dans tout ce qui concerne les affaires, si vous voulez gagner de l'argent, vous devez d'abord gagner la confiance. Outre la qualité de votre produit/service et la réputation de votre marque, vous devez faire en sorte qu'ils se sentent en sécurité grâce à votre communication. Voici quelques mots déclencheurs pour vous aider à y parvenir&nbsp;!</p><ul>  <li>Anonyme</li>  <li>Assurance</li>  <li><strong>Authentique</strong></li>  <li><strong>Soutenu</strong></li>  <li><strong>Le plus vendu</strong></li>  <li>Annulez à tout moment</li>  <li>Certitude</li>  <li>Certifié</li>  <li>Couvercle</li>  <li>Défense</li>  <li>Fiabilité</li>  <li>Durabilité</li>  <li><strong>Approuvé</strong></li>  <li>Fidélité</li>  <li>Liberté</li>  <li>Garantie</li>  <li>Immunité</li>  <li>Imprégnabilité</li>  <li>Infaillibilité</li>  <li>Isolation</li>  <li>Assurance</li>  <li>Inviolabilité</li>  <li><strong>Ironclad</strong></li>  <li><strong>Durée de vie</strong></li>  <li>À long terme</li>  <li><strong>Remboursement</strong></li>  <li>Aucune obligation</li>  <li>Aucune question n'a été posée</li>  <li>Aucun risque</li>  <li>Aucune condition</li>  <li><strong>Officiel</strong></li>  <li>Perpétuation</li>  <li>Préserver</li>  <li><strong>Confidentialité</strong></li>  <li>Promesse</li>  <li><strong>Protégé</strong></li>  <li><strong>Prouvé</strong></li>  <li><strong>Résistant à la récession</strong></li>  <li><strong>Remboursement</strong></li>  <li>Fiabilité</li>  <li><strong>Recherche</strong></li>  <li><strong>Résultats</strong></li>  <li>Gardiennage</li>  <li>Gardiennage</li>  <li>Sûreté</li>  <li>Sécurité</li>  <li>Refuge</li>  <li>Bouclier</li>  <li>soutien</li>  <li>Caution</li>  <li><strong>Testé</strong></li>  <li>Transparence</li>  <li>Fiabilité</li>  <li>Essayez avant d'acheter</li>  <li><strong>Inconditionnel</strong></li>  <li>Soutenant</li>  <li><strong>Vérifié</strong></li>  <li>Garantie</li></ul><h3>Donnez-leur de l'émotion&nbsp;!</h3><p>Toutes les marques puissantes, non... toutes les marques le savent&nbsp;: vous devez faire appel à l'émotion de votre public si vous voulez créer un lien avec lui et, par conséquent, l'intéresser à ce que vous avez à offrir.</p>
-        </article>
-
-        <div class="cta-box">
-            <h3>Prêt à automatiser votre prospection ?</h3>
-            <p>Overloop AI vous donne accès à une base de 450M+ contacts, la rédaction d'emails par IA et des séquences multicanales. À partir de 69$/utilisateur/mois.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Essayer Overloop gratuitement</a>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
         </div>
+      </div>
+    </header>
 
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO at Overloop</div>
-                <div class="role">CEO of Sortlist & Overloop. Built outbound systems for 500+ B2B companies.</div>
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#motivation"><span class="ch-num">01</span> Motivation</a></li>
+          <li><a href="#curiosit"><span class="ch-num">02</span> Curiosité</a></li>
+          <li><a href="#luxure"><span class="ch-num">03</span> Luxure</a></li>
+          <li><a href="#bonheur"><span class="ch-num">04</span> Bonheur</a></li>
+          <li><a href="#col-re"><span class="ch-num">05</span> Colère</a></li>
+          <li><a href="#cupidit"><span class="ch-num">06</span> Cupidité</a></li>
+          <li><a href="#peur"><span class="ch-num">07</span> Peur</a></li>
+          <li><a href="#s-ret"><span class="ch-num">08</span> Sûreté</a></li>
+        </ul>
+      </aside>
 
+      <main class="prose">
+
+<p>Croyez-le ou non, l'émotion guidera chaque décision que vous prendrez aujourd'hui.</p><p>Ce <a href="http://bigthink.com/experts-corner/decisions-are-emotional-not-logical-the-neuroscience-behind-decision-making">article</a> du célèbre négociateur et auteur Jim Camp met en lumière les faits neuroscientifiques qui se cachent derrière les choix que nous faisons. La logique et l'information sont importantes, mais elles ne valent rien si elles ne comportent pas d'émotions.</p><p>En tant qu'homme d'affaires, il est essentiel de prendre en compte les émotions lors de la réalisation de transactions, et vous devez utiliser tous les outils à votre disposition pour y parvenir.</p><h3>Alors, qu'en est-il des mots déclencheurs émotionnels&nbsp;?</h3><p>Il a été scientifiquement prouvé que les mots sont <strong>puissant</strong>.</p><ul><li>Les mots peuvent modifier la perception. Selon un <a href="https://news.wisc.edu/language-can-reveal-the-invisible-study-shows/">étude</a> publié en 2013 par l'université du Wisconsin-Madison, la langue a le pouvoir de remodeler nos connaissances et nos attentes à l'égard du monde que nous voyons.</li><li>Plusieurs <a href="https://www.medicalnewstoday.com/articles/264902.php">études</a> prouvent abondamment que la consultation des réseaux sociaux déclenche des libérations de dopamine et d'ocytocine en fonction du type de publications que vous rencontrez.</li></ul><p>L'utilisation des bons mots spécifiques de manière consciente et sensée peut avoir une incidence considérable sur le succès de vos efforts commerciaux, alors pourquoi ne pas essayer&nbsp;?</p><p>Cet article vous fournira une liste complète de mots déclencheurs que vous pouvez commencer à utiliser <strong>aujourd'hui</strong> pour faire la différence&nbsp;!</p><p><strong>Connexe&nbsp;:</strong> <a href="/blog/500-trigger-words">7 sujets éprouvés qui ont généré 720 000$ en ARR</a></p><h2 id="motivation">Motivation</h2><p>Tirez-le de la marque de sport la plus appréciée sur Facebook et du <a href="https://www.mavrck.co/the-most-influential-brands-on-facebook-in-2016/">8e plus influente</a> Dans l'ensemble, inspirer les gens est un excellent moyen de les inciter à passer à l'action&nbsp;!</p><p>En outre, combien de temps pouvez-vous faire défiler votre fil Facebook vers le bas sans tomber sur une citation motivante ou inspirante&nbsp;? Exactement, les gens prospèrent grâce à leur motivation.</p><ul>  <li>Action</li>  <li>Actionnement</li>  <li>Défenseur</li>  <li><strong>Afflatus</strong></li>  <li>Angle</li>  <li><strong>Animus</strong></li>  <li>Applaudissez</li>  <li>Approche</li>  <li>Assister</li>  <li><strong>Éveil</strong></li>  <li><strong>Booster</strong></li>  <li><strong>Une idée</strong></li>  <li>Buck-up</li>  <li>Bouée</li>  <li>Catalyseur</li>  <li>Champion</li>  <li>Réjouissez-vous</li>  <li>Créativité</li>  <li><strong>Pensée profonde</strong></li>  <li>Désir</li>  <li>Disposition</li>  <li>Conduire</li>  <li>Oeuf sur</li>  <li><strong>Enhardi</strong></li>  <li>Encouragement</li>  <li>Enthousiasme</li>  <li>Exciter</li>  <li>Incendie</li>  <li>Galvaniser</li>  <li><strong>Génie</strong></li>  <li>Lève-toi et pars</li>  <li>Gadget</li>  <li>aiguillon</li>  <li><strong>Réconforter</strong></li>  <li>Intuition</li>  <li>Faim</li>  <li>Idée</li>  <li><strong>Éclairage</strong></li>  <li>Impulsion</li>  <li>Impulsion</li>  <li>Impulsion</li>  <li>Incitatif</li>  <li>Incitation</li>  <li><strong>Inciter</strong></li>  <li>Incitation</li>  <li>Inclinaison</li>  <li>Incitation</li>  <li>Influence</li>  <li>Perspicacité</li>  <li><strong>Inspirite</strong></li>  <li>Inciter</li>  <li>Instigation</li>  <li>Intérêt</li>  <li>Kick</li>  <li>Kindle</li>  <li>Motivation</li>  <li>Motif</li>  <li>Motifs</li>  <li><strong>Muse</strong></li>  <li>Notion</li>  <li>Persuasion</li>  <li>Éloge</li>  <li>Prédétermination</li>  <li>Prédisposition</li>  <li>Promouvoir</li>  <li><strong>Prop up</strong></li>  <li>Proposer</li>  <li>Provocation</li>  <li><strong>Psychiatrie</strong> <strong>en haut</strong></li>  <li>Poussez</li>  <li>Motif</li>  <li>Rassurer</li>  <li>Recommander</li>  <li>Actualiser</li>  <li><strong>révélation</strong></li>  <li><strong>Revivifier</strong></li>  <li>Les bonnes choses</li>  <li>Réveiller</li>  <li><strong>Étincelle</strong></li>  <li><strong>Éperon</strong></li>  <li>Stimulus</li>  <li>Remuer</li>  <li><strong>Renforcez</strong></li>  <li>Suggestion</li>  <li>Pensée</li>  <li>Vision</li>  <li><strong>Un caprice</strong></li>  <li>Souhait</li></ul><h2 id="curiosit">Curiosité</h2><p>Les gros titres des clickbait existent depuis un certain temps déjà. Mais pourquoi fonctionnent-ils si merveilleusement&nbsp;? Parce que cela joue sur l'inclination naturelle des gens à vouloir savoir ce qui leur est caché.</p><p>Mais ne le faites pas comme ça, faites-le à la manière d'un chapeau blanc, utilisez de jolis mots déclencheurs et livrez <strong>valeur réelle</strong>.</p><ul>  <li>Analytique</li>  <li><strong>Porte dérobée</strong></li>  <li><strong>Interdit</strong></li>  <li>Dans les coulisses</li>  <li>Marché noir</li>  <li>Sur liste noire</li>  <li>Bootleg</li>  <li>Censuré</li>  <li><strong>Dissimulé</strong></li>  <li>Inquiétude</li>  <li>Aveux</li>  <li>Confidentiel</li>  <li><strong>Controversé</strong></li>  <li>Dissimulation</li>  <li>Couvert</li>  <li>Impatience</li>  <li>Écoute clandestine</li>  <li>Examiner</li>  <li>Interdit</li>  <li>Oublié</li>  <li>commérages</li>  <li>Caché</li>  <li>Accroché</li>  <li><strong>Illégal</strong></li>  <li>Immergé</li>  <li>Impertinent</li>  <li>Enquêtant</li>  <li>Esprit curieux</li>  <li>Curiosité</li>  <li>Initié</li>  <li>Intérêt</li>  <li>Intrusivité</li>  <li>Enquête</li>  <li>Keen</li>  <li><strong>Petit</strong> <strong>connu</strong></li>  <li>Ingérable</li>  <li>Journaliste</li>  <li>Bruit</li>  <li><strong>Hors-limites</strong></li>  <li>Officialité</li>  <li>Jeter un coup d'œil</li>  <li>Privé</li>  <li>indiscret</li>  <li>Interrogatoire</li>  <li>Respégard</li>  <li>Scruter</li>  <li>Recherche</li>  <li>Secrets</li>  <li><strong>Passés en contrebande</strong></li>  <li>Espionnage</li>  <li>Étrange</li>  <li>Pris</li>  <li>Soif de connaissances</li>  <li><strong>Non autorisé</strong></li>  <li><strong>Insolite</strong></li>  <li><strong>Retenu</strong></li>  <li>Je me demande</li></ul><h2 id="luxure">Luxure</h2><p><strong>DERNIÈRES NOUVELLES&nbsp;: Le sexe se vend&nbsp;!</strong></p><p>Même des mots sexuels. Qui l'aurait cru&nbsp;?</p><p>Le sexe a un moyen d'attirer et de capter l'attention qui fonctionne dans la plupart des situations. N'en abusez pas, ne soyez pas obscène et utilisez intelligemment les mots déclencheurs ci-dessous&nbsp;!</p><ul>  <li><strong>Animalisme</strong></li>  <li>Appétence</li>  <li>Appétit</li>  <li>Appétition</li>  <li>Effronté</li>  <li>Brûler</li>  <li>Couvre-tout</li>  <li>Envie</li>  <li>Envie</li>  <li>Cupidité</li>  <li><strong>Débauche</strong></li>  <li><strong>Dépravé</strong></li>  <li>Désir</li>  <li><strong>Sale</strong></li>  <li>Excitation</li>  <li>Exposé</li>  <li>Ferveur</li>  <li>Interdit</li>  <li>Faim</li>  <li>Hypnotique</li>  <li><strong>Lascif</strong></li>  <li>Licenciosité</li>  <li><strong>Lécher</strong></li>  <li>Solitaire</li>  <li>Désir</li>  <li>Luxure</li>  <li><strong>Nue</strong></li>  <li><strong>Vilain</strong></li>  <li>Nécessité</li>  <li>Passion</li>  <li>Provocateur</li>  <li>Scandaleux</li>  <li>L'indulgence personnelle</li>  <li>Sensuel</li>  <li><strong>Sexe</strong></li>  <li><strong>Sans vergogne</strong></li>  <li>Pécheur</li>  <li><strong>Sordide</strong></li>  <li>Dormir</li>  <li>Fessée</li>  <li>En sueur</li>  <li>Alléchant</li>  <li>Tawdry</li>  <li>Soif</li>  <li>Passionnant</li>  <li><strong>Non censuré</strong></li>  <li>Exhorter</li>  <li>Vouloir</li>  <li>Wanton</li>  <li>Insouciance</li>  <li>fouet</li>  <li>Aspirer</li></ul><h2 id="bonheur">Bonheur</h2><p>Les gens partagent ce qui les rend heureux. Je veux dire, il suffit de regarder vos fils de réseaux sociaux.</p><p>Faites plaisir à vos lecteurs/clients/prospects et ils parleront de vous.</p><ul>  <li><strong>Incroyable</strong></li>  <li>Animé</li>  <li>À l'aise</li>  <li>Audace</li>  <li>Colonne vertébrale</li>  <li>Croyance</li>  <li>Béni</li>  <li><strong>Bienheureux</strong></li>  <li><strong>Blithe</strong></li>  <li>Abondant</li>  <li>Bravoure</li>  <li><strong>époustouflant</strong></li>  <li>Brillant</li>  <li>Acclamez</li>  <li>Joyeux</li>  <li>Comme un enfant</li>  <li>Déchiqueteuse</li>  <li>Chirpy</li>  <li>Confortable</li>  <li>Conquérir</li>  <li>Constructif</li>  <li>Contenu</li>  <li>Courage</li>  <li>Courageux</li>  <li>Créatif</li>  <li><strong>Osé</strong></li>  <li>Défiance</li>  <li>Délice</li>  <li><strong>Dédié</strong></li>  <li>En extase</li>  <li>Exalté</li>  <li>Encouragé</li>  <li>Énergique</li>  <li>Euphorique</li>  <li><strong>Excité</strong></li>  <li>Exalté</li>  <li>Exultant</li>  <li><strong>révélateur</strong></li>  <li>Foi</li>  <li>Intrépide</li>  <li>Festif</li>  <li>Voler haut</li>  <li>Frisky</li>  <li><strong>Satisfaisant</strong></li>  <li>Aimant s'amuser</li>  <li>Amusant</li>  <li>Contente</li>  <li><strong>Joyeux</strong></li>  <li>Glorieux</li>  <li>rougeoyant</li>  <li>Reconnaissante</li>  <li>Satisfait</li>  <li>Du cran</li>  <li><strong>Les tripes</strong></li>  <li>Heureux</li>  <li>Coeur</li>  <li><strong>Sincère</strong></li>  <li>Utile</li>  <li>Héros</li>  <li>Innocent</li>  <li>Intelligent</li>  <li>Jovial</li>  <li><strong>Joyeux</strong></li>  <li><strong>Jubilant</strong></li>  <li>Libéré</li>  <li>En plus de</li>  <li>Optimiste</li>  <li>Fou de joie</li>  <li>Ludique</li>  <li>Satisfait</li>  <li>Débrouillard</li>  <li>Satisfait</li>  <li>Serein</li>  <li>Enfougueux</li>  <li>Spunky</li>  <li>Ensoleillé</li>  <li>Surpris</li>  <li>Remerciante</li>  <li><strong>Enchanté</strong></li>  <li>Chatouillé</li>  <li><strong>Triomphe</strong></li>  <li>Optimiste</li>  <li><strong>Exaltant</strong></li>  <li><strong>Vaillance</strong></li>  <li>Vibrant</li>  <li><strong>Victoire</strong></li>  <li>Vigoureux</li>  <li><strong>Magnifique</strong></li>  <li>Merveilleux</li></ul><h2 id="col-re">Colère</h2><p>Avaaz utilise un langage fort pour susciter <strong>indignation</strong> ou <strong>se révolter</strong>, et incitez les gens à agir pour les causes qu'ils soutiennent. La propagande de guerre est également pleine de ce genre de discours. <a href="https://www.sparringmind.com/viral-content/">Recherche</a> montre que le fait d'appuyer sur les boutons d'un sujet qui leur tient à cœur leur donnera envie de s'engager, car maintenant c'est une question de valeurs, et c'est personnel&nbsp;!</p><p>Voici quelques mots que vous pouvez utiliser à cette fin&nbsp;:</p><ul>  <li><strong>Maltraitance</strong></li>  <li>Animosité</li>  <li>Antagoniste</li>  <li>Arrogant</li>  <li>coup de pied au cul</li>  <li><strong>Poignardage dans le dos</strong></li>  <li>Battre</li>  <li>Amertume</li>  <li>Explosez</li>  <li><strong>Des foutaises</strong></li>  <li><strong>intimidateur</strong></li>  <li>Chagrin</li>  <li>Conniption</li>  <li><strong>Lâche</strong></li>  <li><strong>Tordu</strong></li>  <li><strong>Écrasement</strong></li>  <li>Dégoûtant</li>  <li>Inimitié</li>  <li><strong>Maléfique</strong></li>  <li>Alimenté de force</li>  <li>Faute</li>  <li>Fureur</li>  <li>Galle</li>  <li><strong>Haine</strong></li>  <li>Coupe sifflante</li>  <li>Indignation</li>  <li>Ire</li>  <li>Irritation</li>  <li>Tout savoir</li>  <li><strong>Mensonges</strong></li>  <li>répugnant</li>  <li><strong>Perdant</strong></li>  <li><strong>Mentir</strong></li>  <li>Fou</li>  <li>Maul</li>  <li><strong>Extorsion d'argent</strong></li>  <li><strong>Nazi</strong></li>  <li><strong>Pas bon</strong></li>  <li>Pas bon</li>  <li>Odieux</li>  <li>Indignation</li>  <li><strong>Remboursement</strong></li>  <li><strong>livre</strong></li>  <li>C'est absurde</li>  <li><strong>Punir</strong></li>  <li>Colère</li>  <li>Rankle</li>  <li>Rancœur</li>  <li>Révoltant</li>  <li><strong>Impitoyable</strong></li>  <li>Malade et fatigué</li>  <li>Simplant</li>  <li>pleurnicher</li>  <li>Snob</li>  <li>Snooty</li>  <li>Coincé</li>  <li>Ombrage</li>  <li>En sournois</li>  <li>Vexation</li>  <li><strong>Violence</strong></li>  <li><strong>Colère</strong></li></ul><p><strong>Connexe&nbsp;: </strong><a href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy">6 règles de cold email basées sur 10 615 314 e-mails envoyés</a></p><h2 id="cupidit">Cupidité</h2><p>Je ne sais pas exactement combien d'exemplaires de son livre Ramit Sethi se sont vendus jusqu'à présent. Mais je suis sûr que le titre a contribué à en faire un best-seller #1.</p><p>Qui ne voudrait pas avoir plus d'argent, payer moins cher ou obtenir des choses gratuitement&nbsp;? C'est vrai&nbsp;: pas de corps effréné&nbsp;! Si vous parvenez à faire percevoir à votre lecteur la valeur financière de ce que vous avez à offrir, il se sentira comme Scrooge McDuck avant même qu'il n'ait commencé à agir.</p><p>C'est ce que <strong>celles-ci</strong> les mots déclencheurs sont là pour&nbsp;:</p><ul>  <li><strong>Bonne affaire</strong></li>  <li>Meilleur</li>  <li>Milliard</li>  <li>Bonanza</li>  <li>En espèces</li>  <li>Pas cher</li>  <li>Rabais</li>  <li>Dollar</li>  <li>Double</li>  <li><strong>Exploser</strong></li>  <li>Supplémentaire</li>  <li>Festin</li>  <li><strong>Fortune</strong></li>  <li>Gratuit</li>  <li>Freebie</li>  <li>Frénésie</li>  <li>Frugal</li>  <li>Cadeau</li>  <li>Le plus grand</li>  <li>Peu coûteux</li>  <li><strong>Jackpot</strong></li>  <li>Luxueux</li>  <li>Marqué vers le bas</li>  <li>Massif</li>  <li>Argent</li>  <li>Œuf de pécule</li>  <li>Payez zéro</li>  <li>Prix</li>  <li>Bénéfice</li>  <li><strong>Quadruple</strong></li>  <li>Réduit</li>  <li>Riche</li>  <li>Économies</li>  <li>Six chiffres</li>  <li><strong>Montée en flèche</strong></li>  <li>En plein essor</li>  <li>Surtension</li>  <li>Trésor</li>  <li>Triple</li>  <li>énorme</li></ul><h2 id="peur">Peur</h2><p>Maintenant, pourquoi voudrions-nous semer la peur dans l'esprit de nos lecteurs&nbsp;?</p><p>Parce que le stimulus stressant provoque une réaction dans une partie du cerveau appelée amygdale, qui déclenche la fameuse réaction de combat ou de fuite. En quoi est-ce intéressant pour nous&nbsp;?</p><p>Cela vous permet de convaincre votre prospect qu'il est confronté à un problème auquel vous avez la solution. Maintenant, soyez éthique avec ces mots déclencheurs et n'y allez que s'ils ont réellement ce problème et que cela pourrait leur causer des problèmes. Sinon, ça s'appelle <strong>manipulation</strong>, et tu n'es pas ce genre de personne, n'est-ce pas&nbsp;?</p><ul>  <li>Agonie</li>  <li>Anxiété</li>  <li>Apocalypse</li>  <li><strong>Armageddon</strong></li>  <li>Agression</li>  <li>Réaction</li>  <li>Battement</li>  <li>Méfiez-vous</li>  <li>Aveuglé</li>  <li><strong>Sang</strong></li>  <li><strong>Bain de sang</strong></li>  <li>À glacer le sang</li>  <li>Sanglante</li>  <li>Bombe</li>  <li>Bouffon</li>  <li><strong>Bourdonnement</strong></li>  <li>Bourdonnement</li>  <li>Catastrophe</li>  <li>Attention</li>  <li>Effondrement</li>  <li>Inquiétude</li>  <li><strong>Fou</strong></li>  <li>Creeps</li>  <li><strong>Invalide</strong></li>  <li>Crise</li>  <li>Danger</li>  <li><strong>Mortel</strong></li>  <li><strong>Détruire</strong></li>  <li>Dévastateur</li>  <li>Catastrophique</li>  <li>Détresse</li>  <li>Doute</li>  <li><strong>Noyade</strong></li>  <li><strong>Stupide</strong></li>  <li>Embarrasser</li>  <li>Échouer</li>  <li><strong>faible</strong></li>  <li>Licencié</li>  <li><strong>Trompé</strong></li>  <li>Prémonitoire</li>  <li>Frénétique</li>  <li><strong>Effrayant</strong></li>  <li>Jeux de hasard</li>  <li>Nullible</li>  <li>Pirater</li>  <li>dangereux</li>  <li>Canular</li>  <li><strong>Horrible</strong></li>  <li>Horrible</li>  <li>Ouragan</li>  <li>Insidieux</li>  <li>Invasion</li>  <li>IRS</li>  <li>Prison</li>  <li>Jeopardy</li>  <li>Poursuite</li>  <li>À l'horizon</li>  <li><strong>Fou</strong></li>  <li>Fou</li>  <li>Se cache</li>  <li><strong>Fusion</strong></li>  <li>Enlisé</li>  <li>Erreur</li>  <li><strong>Cauchemar</strong></li>  <li>Douloureux</li>  <li>Pâle</li>  <li>Panique</li>  <li>péril</li>  <li>Phobie</li>  <li>Piranha</li>  <li>Piège</li>  <li>Peste</li>  <li>Joué</li>  <li>Dégringolade</li>  <li>Plongez</li>  <li>Poison</li>  <li>Pauvre</li>  <li>Prison</li>  <li>Pommel</li>  <li>Plus</li>  <li>Compter</li>  <li>Revenge</li>  <li>Risqué</li>  <li>Effrayant</li>  <li>Crier</li>  <li>Saisissant</li>  <li>Briser</li>  <li>Shellackage</li>  <li>Stupide</li>  <li>Massacre</li>  <li><strong>Esclave</strong></li>  <li>Smash</li>  <li>Étrangler</li>  <li><strong>Stupide</strong></li>  <li>Suce</li>  <li>Tailspin</li>  <li>Réservoir</li>  <li>Ciblé</li>  <li>VACILLANT</li>  <li><strong>Terreur</strong></li>  <li>Terroriste</li>  <li><strong>Toxique</strong></li>  <li>Piège</li>  <li>Inquiétude</li>  <li>Vaporiser</li>  <li><strong>Victime</strong></li>  <li>Volatil</li>  <li>vulnérable</li>  <li>Avertissement</li>  <li>Inquiétude</li>  <li>Blessé</li></ul><h2 id="s-ret">Sûreté</h2><p>Dans tout ce qui concerne les affaires, si vous voulez gagner de l'argent, vous devez d'abord gagner la confiance. Outre la qualité de votre produit/service et la réputation de votre marque, vous devez faire en sorte qu'ils se sentent en sécurité grâce à votre communication. Voici quelques mots déclencheurs pour vous aider à y parvenir&nbsp;!</p><ul>  <li>Anonyme</li>  <li>Assurance</li>  <li><strong>Authentique</strong></li>  <li><strong>Soutenu</strong></li>  <li><strong>Le plus vendu</strong></li>  <li>Annulez à tout moment</li>  <li>Certitude</li>  <li>Certifié</li>  <li>Couvercle</li>  <li>Défense</li>  <li>Fiabilité</li>  <li>Durabilité</li>  <li><strong>Approuvé</strong></li>  <li>Fidélité</li>  <li>Liberté</li>  <li>Garantie</li>  <li>Immunité</li>  <li>Imprégnabilité</li>  <li>Infaillibilité</li>  <li>Isolation</li>  <li>Assurance</li>  <li>Inviolabilité</li>  <li><strong>Ironclad</strong></li>  <li><strong>Durée de vie</strong></li>  <li>À long terme</li>  <li><strong>Remboursement</strong></li>  <li>Aucune obligation</li>  <li>Aucune question n'a été posée</li>  <li>Aucun risque</li>  <li>Aucune condition</li>  <li><strong>Officiel</strong></li>  <li>Perpétuation</li>  <li>Préserver</li>  <li><strong>Confidentialité</strong></li>  <li>Promesse</li>  <li><strong>Protégé</strong></li>  <li><strong>Prouvé</strong></li>  <li><strong>Résistant à la récession</strong></li>  <li><strong>Remboursement</strong></li>  <li>Fiabilité</li>  <li><strong>Recherche</strong></li>  <li><strong>Résultats</strong></li>  <li>Gardiennage</li>  <li>Gardiennage</li>  <li>Sûreté</li>  <li>Sécurité</li>  <li>Refuge</li>  <li>Bouclier</li>  <li>soutien</li>  <li>Caution</li>  <li><strong>Testé</strong></li>  <li>Transparence</li>  <li>Fiabilité</li>  <li>Essayez avant d'acheter</li>  <li><strong>Inconditionnel</strong></li>  <li>Soutenant</li>  <li><strong>Vérifié</strong></li>  <li>Garantie</li></ul><h3>Donnez-leur de l'émotion&nbsp;!</h3><p>Toutes les marques puissantes, non... toutes les marques le savent&nbsp;: vous devez faire appel à l'émotion de votre public si vous voulez créer un lien avec lui et, par conséquent, l'intéresser à ce que vous avez à offrir.</p>
+
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

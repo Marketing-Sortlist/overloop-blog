@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn Helper: test y alternativas 2025 | Overloop</title>
-    <meta name="description" content="¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.">
-    <link rel="canonical" href="https://overloop.com/es/blog/resena-linkedin-helper">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn Helper: test y alternativas 2025 | Overloop</title>
+  <meta name="description" content="¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.">
+  <link rel="canonical" href="https://overloop.com/es/blog/resena-linkedin-helper">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/linkedin-helper-review">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/linkedin-helper-review">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/linkedin-helper-review">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/resena-linkedin-helper">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/linkedin-helper-recensione">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/linkedin-helper-review">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="LinkedIn Helper: test y alternativas 2025">
     <meta property="og:description" content="¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="LinkedIn Helper: test y alternativas 2025">
     <meta name="twitter:description" content="¿Es LinkedIn Helper la mejor herramienta B2B? Descubre funciones, seguridad y cómo se compara con Overloop en nuestra reseña.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/resena-linkedin-helper.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,114 +445,73 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><main class="blog-post">
-    <div class="container">
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
 
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="https://overloop.com">Overloop</a> &rsaquo;
-            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
-            <span>LinkedIn Helper: test y alternativas 2025</span>
-        </nav>
-
-        <header class="article-header">
-            <h1>LinkedIn Helper: test y alternativas 2025</h1>
-        </header>
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>LinkedIn Helper: test y alternativas 2025</h1>
+        <p class="lead">La divulgación manual de LinkedIn puede llevar mucho tiempo y, a menudo, genera resultados inconsistentes para los equipos de ventas B2B. LinkedIn Helper es una herramienta especializada diseñada p…</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                <strong>Nicolas Finet</strong>
-                <span>|</span> 12 de diciembre de 2025
-                <span>|</span> 10 min de lectura
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Dec 12, 2025 &middot; Updated Apr 17, 2026</div>
+          </div>
         </div>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
+        </div>
+      </div>
+    </header>
 
-        <article class="article-content">
-<p>La divulgación manual de LinkedIn puede llevar mucho tiempo y, a menudo, genera resultados inconsistentes para los equipos de ventas B2B. LinkedIn Helper es una herramienta especializada diseñada para automatizar la divulgación en LinkedIn, ayudando a los profesionales de ventas a conectarse con clientes potenciales, enviar mensajes personalizados y rastrear las respuestas de manera más eficiente. Su interfaz optimiza los aspectos repetitivos de la generación de leads, liberando a los usuarios de las tareas manuales diarias.</p><p>El objetivo principal de LinkedIn Helper es ayudar a las empresas a crear conexiones a gran escala y, al mismo tiempo, mantener un toque personalizado. Se dirige principalmente a los equipos de ventas B2B, a los SDR y a los profesionales que desean llegar a más contactos con mayor rapidez, sin depender de la mensajería masiva, que corre el riesgo de reducir la participación. Al integrar la automatización con la segmentación inteligente, LinkedIn Helper mejora la productividad y reduce los errores humanos, lo que permite un seguimiento más cuidadoso.</p><p>Para los equipos que buscan una automatización aún más profunda en varios canales, las herramientas impulsadas por la inteligencia artificial, como Overloop, pueden simplificar aún más el proceso al combinar el alcance de LinkedIn con la prospección avanzada de correos electrónicos y la gestión de campañas, lo que ayuda a las empresas a maximizar el valor de cada contacto realizado en LinkedIn y más allá. <a href="https://overloop.com/features" target="_blank">Obtén más información sobre las funciones de Overloop aquí</a>.</p><h2>Características clave de LinkedIn Helper</h2><p>Después de comprender el objetivo principal y la audiencia de LinkedIn Helper, el siguiente paso lógico es examinar las características que permiten a esta herramienta facilitar un alcance efectivo de las ventas B2B. Cada una de las funciones principales se centra en los cuellos de botella más comunes en la prospección, la creación de conexiones y el seguimiento, y convierte las tareas que antes eran manuales en flujos automatizados gestionables. Así es como estas funciones permiten colectivamente a los usuarios ampliar sus esfuerzos de divulgación en LinkedIn.</p><h3>Automatización de conexiones para una prospección optimizada</h3><p>Una de las principales características son las solicitudes de conexión automatizadas. LinkedIn Helper permite a los usuarios identificar y dirigirse a clientes potenciales de acuerdo con filtros específicos y, a continuación, enviar una secuencia de solicitudes de conexión personalizadas directamente desde LinkedIn. Este proceso reduce en gran medida el tiempo dedicado a revisar manualmente los perfiles, lo que permite a los equipos de ventas B2B llegar a clientes potenciales más cualificados de manera eficiente. Los usuarios pueden personalizar cada solicitud de conexión con campos dinámicos, lo que garantiza que el mensaje siga siendo relevante para cada cliente potencial, lo que es fundamental para lograr altas tasas de aceptación.</p><h3>Secuencias de mensajería y seguimientos automatizados</h3><p>La plataforma ofrece un sistema sólido para programar y automatizar los mensajes de seguimiento. Los profesionales de ventas pueden configurar secuencias de varios pasos que se activan una vez que un cliente potencial acepta una conexión. Cada mensaje se puede personalizar, tanto en cuanto al contenido como a la temporalidad, lo que ayuda a crear la apariencia de un estilo de comunicación personalizado y reflexivo. Estas secuencias garantizan que ningún cliente potencial se olvide o quede a la espera de una respuesta manual. Las respuestas automatizadas a situaciones comunes, como las respuestas fuera de la oficina o las objeciones típicas, permiten a los equipos mantener un compromiso constante incluso cuando su alcance aumenta.</p><h3>Opciones de integración para flujos de trabajo multipropósito</h3><p>LinkedIn Helper reconoce la importancia de conectar los flujos de trabajo entre plataformas. Los usuarios pueden exportar la actividad de los clientes potenciales y los mensajes a hojas de cálculo para utilizarlas en las herramientas y los informes de CRM. La herramienta también admite plantillas que se pueden integrar con los clientes de correo más populares para una mayor difusión, lo que crea un puente entre las conversaciones de LinkedIn y las campañas de correo electrónico más amplias. Aunque las opciones de integración son más básicas en comparación con las plataformas integrales de interacción con las ventas, como Overloop, LinkedIn Helper sigue ofreciendo a los equipos la flexibilidad necesaria para organizar los datos en etapas posteriores.</p><h3>Gestión de perfiles y seguimiento de actividades</h3><p>La gestión de múltiples campañas de divulgación a menudo conduce a la pérdida de detalles y oportunidades. LinkedIn Helper incluye herramientas de gestión de perfiles que permiten a los usuarios segmentar los contactos, etiquetar a los clientes potenciales y supervisar las respuestas directamente desde el panel de control. Esto simplifica el seguimiento del progreso de cada interacción y centraliza la correspondencia para tomar decisiones de seguimiento rápidas. Los registros de actividad ofrecen visibilidad sobre los mensajes y solicitudes enviados, lo que ayuda a los equipos a refinar sus flujos de trabajo en función de los resultados anteriores.</p><h3>Características de personalización y seguridad</h3><p>La personalización sigue siendo la base de una prospección de ventas exitosa. LinkedIn Helper admite variables dinámicas en todos los mensajes, lo que permite incluir saludos personalizados, referencias a nombres de empresas y puestos de trabajo específicos para aumentar las tasas de participación. Además, el sistema aplica límites diarios y recomienda prácticas recomendadas para mantener el volumen de difusión dentro de las directrices de seguridad de LinkedIn, lo que reduce la probabilidad de que se restrinjan las cuentas y contribuye a la sostenibilidad de las campañas a largo plazo.</p><h3>Poner las características en perspectiva</h3><p>La automatización, la secuenciación estratégica y la organización son esenciales para escalar las campañas salientes sin sacrificar la personalización o el cumplimiento. Para los equipos que necesitan integraciones aún más profundas, una verificación avanzada de clientes potenciales o una organización de campañas que vaya más allá de LinkedIn, plataformas como Overloop combinan principios de automatización similares con una personalización basada en la inteligencia artificial y amplias capacidades de integración. <a href="https://overloop.com/pricing" target="_blank">Consulta las opciones de precios de Overloop</a>. La elección entre estas opciones depende de la complejidad del flujo de trabajo, los objetivos de ventas y la necesidad de equilibrar la supervisión manual con una potente automatización.</p><h2>Cómo LinkedIn Helper simplifica la generación de leads</h2><p>La prospección manual ocupa gran parte del tiempo del equipo de ventas, incluso antes de que comience la primera conversación real. LinkedIn Helper acorta este ciclo al automatizar las tareas de divulgación repetitivas y, al mismo tiempo, permite a los usuarios dar un toque personal a cada mensaje e interacción.</p><h3>Reducir las cargas de trabajo manuales y los errores humanos</h3><p>LinkedIn Helper se encarga de tareas que requieren mucha mano de obra, como la creación de listas de clientes potenciales, el envío de solicitudes de conexión y el seguimiento de los seguimientos. Los usuarios ya no tienen que desplazarse por los resultados de búsqueda ni enviar las invitaciones una por una. Así es como la herramienta mejora la eficiencia:</p><ul>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#caracter-sticas-clave-de-linkedin-helper"><span class="ch-num">01</span> Características clave de LinkedIn Helper</a></li>
+          <li><a href="#c-mo-linkedin-helper-simplifica-la-generaci-n-de-leads"><span class="ch-num">02</span> Cómo LinkedIn Helper simplifica la ge…</a></li>
+          <li><a href="#primeros-pasos-con-linkedin-helper-configuraci-n-y-mejores-pr-cticas"><span class="ch-num">03</span> Primeros pasos con LinkedIn Helper: c…</a></li>
+          <li><a href="#comparaci-n-de-linkedin-helper-con-overloop-elegir-la-soluci-n-adecuada"><span class="ch-num">04</span> Comparación de LinkedIn Helper con Ov…</a></li>
+          <li><a href="#historias-de-xito-resultados-reales-de-los-usuarios-de-linkedin-helper"><span class="ch-num">05</span> Historias de éxito: resultados reales…</a></li>
+          <li><a href="#reflexiones-finales-linkedin-helper-es-adecuado-para-ti"><span class="ch-num">06</span> Reflexiones finales: ¿LinkedIn Helper…</a></li>
+        </ul>
+      </aside>
+
+      <main class="prose">
+
+<p>La divulgación manual de LinkedIn puede llevar mucho tiempo y, a menudo, genera resultados inconsistentes para los equipos de ventas B2B. LinkedIn Helper es una herramienta especializada diseñada para automatizar la divulgación en LinkedIn, ayudando a los profesionales de ventas a conectarse con clientes potenciales, enviar mensajes personalizados y rastrear las respuestas de manera más eficiente. Su interfaz optimiza los aspectos repetitivos de la generación de leads, liberando a los usuarios de las tareas manuales diarias.</p><p>El objetivo principal de LinkedIn Helper es ayudar a las empresas a crear conexiones a gran escala y, al mismo tiempo, mantener un toque personalizado. Se dirige principalmente a los equipos de ventas B2B, a los SDR y a los profesionales que desean llegar a más contactos con mayor rapidez, sin depender de la mensajería masiva, que corre el riesgo de reducir la participación. Al integrar la automatización con la segmentación inteligente, LinkedIn Helper mejora la productividad y reduce los errores humanos, lo que permite un seguimiento más cuidadoso.</p><p>Para los equipos que buscan una automatización aún más profunda en varios canales, las herramientas impulsadas por la inteligencia artificial, como Overloop, pueden simplificar aún más el proceso al combinar el alcance de LinkedIn con la prospección avanzada de correos electrónicos y la gestión de campañas, lo que ayuda a las empresas a maximizar el valor de cada contacto realizado en LinkedIn y más allá. <a href="https://overloop.com/features" target="_blank">Obtén más información sobre las funciones de Overloop aquí</a>.</p><h2 id="caracter-sticas-clave-de-linkedin-helper">Características clave de LinkedIn Helper</h2><p>Después de comprender el objetivo principal y la audiencia de LinkedIn Helper, el siguiente paso lógico es examinar las características que permiten a esta herramienta facilitar un alcance efectivo de las ventas B2B. Cada una de las funciones principales se centra en los cuellos de botella más comunes en la prospección, la creación de conexiones y el seguimiento, y convierte las tareas que antes eran manuales en flujos automatizados gestionables. Así es como estas funciones permiten colectivamente a los usuarios ampliar sus esfuerzos de divulgación en LinkedIn.</p><h3>Automatización de conexiones para una prospección optimizada</h3><p>Una de las principales características son las solicitudes de conexión automatizadas. LinkedIn Helper permite a los usuarios identificar y dirigirse a clientes potenciales de acuerdo con filtros específicos y, a continuación, enviar una secuencia de solicitudes de conexión personalizadas directamente desde LinkedIn. Este proceso reduce en gran medida el tiempo dedicado a revisar manualmente los perfiles, lo que permite a los equipos de ventas B2B llegar a clientes potenciales más cualificados de manera eficiente. Los usuarios pueden personalizar cada solicitud de conexión con campos dinámicos, lo que garantiza que el mensaje siga siendo relevante para cada cliente potencial, lo que es fundamental para lograr altas tasas de aceptación.</p><h3>Secuencias de mensajería y seguimientos automatizados</h3><p>La plataforma ofrece un sistema sólido para programar y automatizar los mensajes de seguimiento. Los profesionales de ventas pueden configurar secuencias de varios pasos que se activan una vez que un cliente potencial acepta una conexión. Cada mensaje se puede personalizar, tanto en cuanto al contenido como a la temporalidad, lo que ayuda a crear la apariencia de un estilo de comunicación personalizado y reflexivo. Estas secuencias garantizan que ningún cliente potencial se olvide o quede a la espera de una respuesta manual. Las respuestas automatizadas a situaciones comunes, como las respuestas fuera de la oficina o las objeciones típicas, permiten a los equipos mantener un compromiso constante incluso cuando su alcance aumenta.</p><h3>Opciones de integración para flujos de trabajo multipropósito</h3><p>LinkedIn Helper reconoce la importancia de conectar los flujos de trabajo entre plataformas. Los usuarios pueden exportar la actividad de los clientes potenciales y los mensajes a hojas de cálculo para utilizarlas en las herramientas y los informes de CRM. La herramienta también admite plantillas que se pueden integrar con los clientes de correo más populares para una mayor difusión, lo que crea un puente entre las conversaciones de LinkedIn y las campañas de correo electrónico más amplias. Aunque las opciones de integración son más básicas en comparación con las plataformas integrales de interacción con las ventas, como Overloop, LinkedIn Helper sigue ofreciendo a los equipos la flexibilidad necesaria para organizar los datos en etapas posteriores.</p><h3>Gestión de perfiles y seguimiento de actividades</h3><p>La gestión de múltiples campañas de divulgación a menudo conduce a la pérdida de detalles y oportunidades. LinkedIn Helper incluye herramientas de gestión de perfiles que permiten a los usuarios segmentar los contactos, etiquetar a los clientes potenciales y supervisar las respuestas directamente desde el panel de control. Esto simplifica el seguimiento del progreso de cada interacción y centraliza la correspondencia para tomar decisiones de seguimiento rápidas. Los registros de actividad ofrecen visibilidad sobre los mensajes y solicitudes enviados, lo que ayuda a los equipos a refinar sus flujos de trabajo en función de los resultados anteriores.</p><h3>Características de personalización y seguridad</h3><p>La personalización sigue siendo la base de una prospección de ventas exitosa. LinkedIn Helper admite variables dinámicas en todos los mensajes, lo que permite incluir saludos personalizados, referencias a nombres de empresas y puestos de trabajo específicos para aumentar las tasas de participación. Además, el sistema aplica límites diarios y recomienda prácticas recomendadas para mantener el volumen de difusión dentro de las directrices de seguridad de LinkedIn, lo que reduce la probabilidad de que se restrinjan las cuentas y contribuye a la sostenibilidad de las campañas a largo plazo.</p><h3>Poner las características en perspectiva</h3><p>La automatización, la secuenciación estratégica y la organización son esenciales para escalar las campañas salientes sin sacrificar la personalización o el cumplimiento. Para los equipos que necesitan integraciones aún más profundas, una verificación avanzada de clientes potenciales o una organización de campañas que vaya más allá de LinkedIn, plataformas como Overloop combinan principios de automatización similares con una personalización basada en la inteligencia artificial y amplias capacidades de integración. <a href="https://overloop.com/pricing" target="_blank">Consulta las opciones de precios de Overloop</a>. La elección entre estas opciones depende de la complejidad del flujo de trabajo, los objetivos de ventas y la necesidad de equilibrar la supervisión manual con una potente automatización.</p><h2 id="c-mo-linkedin-helper-simplifica-la-generaci-n-de-leads">Cómo LinkedIn Helper simplifica la generación de leads</h2><p>La prospección manual ocupa gran parte del tiempo del equipo de ventas, incluso antes de que comience la primera conversación real. LinkedIn Helper acorta este ciclo al automatizar las tareas de divulgación repetitivas y, al mismo tiempo, permite a los usuarios dar un toque personal a cada mensaje e interacción.</p><h3>Reducir las cargas de trabajo manuales y los errores humanos</h3><p>LinkedIn Helper se encarga de tareas que requieren mucha mano de obra, como la creación de listas de clientes potenciales, el envío de solicitudes de conexión y el seguimiento de los seguimientos. Los usuarios ya no tienen que desplazarse por los resultados de búsqueda ni enviar las invitaciones una por una. Así es como la herramienta mejora la eficiencia:</p><ul>
   <li>Búsqueda e importación masivas de clientes potenciales calificados según los filtros establecidos por el usuario (como el cargo, la ubicación o el tamaño de la empresa)</li>
   <li>Solicitudes de conexión automatizadas con plantillas personalizables para llegar al primer contacto</li>
   <li>Sistemas de alertas y paneles de interfaz para notificarle sobre las respuestas o las tareas completadas</li>
@@ -187,7 +523,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
   <li>Seguimiento unificado de mensajes para ver dónde se encuentran los clientes potenciales en la secuencia</li>
   <li>Eliminación automática de clientes potenciales que responden o se vuelven irrelevantes, manteniendo limpias las listas</li>
   <li>Funciones de exportación para enviar clientes potenciales receptivos a otras herramientas de participación de ventas o CRM</li>
-</ul><h3>Permitir la prospección de clientes potenciales escalable y compatible</h3><p>El mantenimiento del volumen y la personalización también debe tener en cuenta el cumplimiento de las políticas de LinkedIn. LinkedIn Helper reduce los riesgos al respetar los límites de las invitaciones por día y establecer horarios aleatorios, lo que hace que la actividad de la cuenta parezca natural para los algoritmos de LinkedIn. Un ajuste cuidadoso de las opciones de velocidad de envío y la actualización periódica de las plantillas personalizadas de solicitud de conexión ayudan a evitar restricciones en las cuentas. Este enfoque equilibrado brinda a los equipos de ventas la confianza necesaria para crecer sin poner en riesgo las cuentas.</p><p>Para las organizaciones que buscan una gestión fluida de los clientes potenciales en múltiples plataformas, plataformas como Overloop ofrecen flujos de trabajo multifacéticos que combinan LinkedIn y el alcance por correo electrónico, rastrean la participación de los clientes potenciales en tiempo real y minimizan aún más la entrada manual. <a href="https://overloop.com/book-demo" target="_blank">Reserva una demostración de Overloop</a> para ver cómo la automatización multicanal puede transformar su proceso de ventas. Estas herramientas permiten a los equipos de ventas pasar sin problemas de las campañas de detección de clientes potenciales a las campañas multicanal, todo ello con una automatización personalizable que permite llegar rápidamente al mercado y, al mismo tiempo, mantener altas tasas de participación.</p><h2>Primeros pasos con LinkedIn Helper: configuración y mejores prácticas</h2><p>Gestionar el alcance de LinkedIn a gran escala requiere un equilibrio entre eficiencia y seguridad. Para garantizar que la automatización ayude en lugar de obstaculizar los resultados, es crucial iniciar LinkedIn Helper con el pie derecho. Una configuración inicial fluida y el conocimiento de las mejores prácticas pueden proteger tu cuenta y contribuir a una prospección constante.</p><h3>Pasos iniciales de configuración para LinkedIn Helper</h3><p>El proceso de instalación de LinkedIn Helper está diseñado para ser sencillo, de modo que los usuarios puedan empezar sin problemas técnicos. Comience por instalar la extensión LinkedIn Helper desde el sitio oficial, asegurándose de que está utilizando la versión de navegador recomendada. Una vez instalada, inicia sesión en tu cuenta de LinkedIn para conectar la herramienta directamente. Tras la sincronización inicial, recorre la interfaz para asegurarte de que los detalles y preferencias de tu cuenta son correctos. Dedica un momento a revisar los ajustes ajustables, como las zonas horarias y las opciones de notificación, ya que pueden afectar a la forma y el momento en que se lleva a cabo la comunicación.</p><ol>
+</ul><h3>Permitir la prospección de clientes potenciales escalable y compatible</h3><p>El mantenimiento del volumen y la personalización también debe tener en cuenta el cumplimiento de las políticas de LinkedIn. LinkedIn Helper reduce los riesgos al respetar los límites de las invitaciones por día y establecer horarios aleatorios, lo que hace que la actividad de la cuenta parezca natural para los algoritmos de LinkedIn. Un ajuste cuidadoso de las opciones de velocidad de envío y la actualización periódica de las plantillas personalizadas de solicitud de conexión ayudan a evitar restricciones en las cuentas. Este enfoque equilibrado brinda a los equipos de ventas la confianza necesaria para crecer sin poner en riesgo las cuentas.</p><p>Para las organizaciones que buscan una gestión fluida de los clientes potenciales en múltiples plataformas, plataformas como Overloop ofrecen flujos de trabajo multifacéticos que combinan LinkedIn y el alcance por correo electrónico, rastrean la participación de los clientes potenciales en tiempo real y minimizan aún más la entrada manual. <a href="https://overloop.com/book-demo" target="_blank">Reserva una demostración de Overloop</a> para ver cómo la automatización multicanal puede transformar su proceso de ventas. Estas herramientas permiten a los equipos de ventas pasar sin problemas de las campañas de detección de clientes potenciales a las campañas multicanal, todo ello con una automatización personalizable que permite llegar rápidamente al mercado y, al mismo tiempo, mantener altas tasas de participación.</p><h2 id="primeros-pasos-con-linkedin-helper-configuraci-n-y-mejores-pr-cticas">Primeros pasos con LinkedIn Helper: configuración y mejores prácticas</h2><p>Gestionar el alcance de LinkedIn a gran escala requiere un equilibrio entre eficiencia y seguridad. Para garantizar que la automatización ayude en lugar de obstaculizar los resultados, es crucial iniciar LinkedIn Helper con el pie derecho. Una configuración inicial fluida y el conocimiento de las mejores prácticas pueden proteger tu cuenta y contribuir a una prospección constante.</p><h3>Pasos iniciales de configuración para LinkedIn Helper</h3><p>El proceso de instalación de LinkedIn Helper está diseñado para ser sencillo, de modo que los usuarios puedan empezar sin problemas técnicos. Comience por instalar la extensión LinkedIn Helper desde el sitio oficial, asegurándose de que está utilizando la versión de navegador recomendada. Una vez instalada, inicia sesión en tu cuenta de LinkedIn para conectar la herramienta directamente. Tras la sincronización inicial, recorre la interfaz para asegurarte de que los detalles y preferencias de tu cuenta son correctos. Dedica un momento a revisar los ajustes ajustables, como las zonas horarias y las opciones de notificación, ya que pueden afectar a la forma y el momento en que se lleva a cabo la comunicación.</p><ol>
   <li>Instala la extensión oficial de LinkedIn Helper o la aplicación dedicada.</li>
   <li>Inicia sesión con tus credenciales de LinkedIn y autoriza la conexión.</li>
   <li>Establece tu zona horaria y revisa los permisos.</li>
@@ -205,78 +541,91 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
   <li>Respeta todas las solicitudes de exclusión o de no contacto recibidas a través de LinkedIn.</li>
   <li>Revisa periódicamente las últimas condiciones y políticas de uso aceptable de LinkedIn, que están disponibles en su centro de documentación y soporte.</li>
   <li>Controle las advertencias o los errores en la entrega de mensajes que puedan indicar que está superando los límites actuales.</li>
-</ul><p>Si necesitas flujos de trabajo automatizados tanto en el correo electrónico como en LinkedIn con controles de cumplimiento integrados, Overloop te permite llevar a cabo una comunicación multicanal con personalización asistida por IA. Este enfoque puede ayudarte a ampliar tus esfuerzos sin infringir las restricciones individuales de la plataforma ni poner en riesgo la seguridad de la cuenta, ya que Overloop alinea la divulgación automatizada con los protocolos de seguridad y entregabilidad verificados. <a href="https://overloop.com/gdpr" target="_blank">Revise el GDPR y las funciones de seguridad para verificar su cumplimiento</a>.</p><p>El uso responsable de las funciones de LinkedIn Helper permite a los equipos de ventas B2B lograr una mayor productividad de divulgación sin dejar de cumplir las reglas de la plataforma. Diseñe una configuración personalizada, aplique parámetros de campaña prudentes y actualice periódicamente sus prácticas de acuerdo con la política actual de LinkedIn. Esta base protege tanto tus resultados como tu reputación en LinkedIn.</p><h2>Comparación de LinkedIn Helper con Overloop: elegir la solución adecuada</h2><p>Los equipos de ventas suelen comparar LinkedIn Helper y Overloop cuando planifican automatizar la divulgación y la prospección. Ambas herramientas apoyan el desarrollo empresarial en LinkedIn, pero abordan los desafíos de manera diferente y ofrecen ventajas únicas que se adaptan a diversos objetivos y flujos de trabajo. La elección de la plataforma más útil se basa en comprender cómo cada una de ellas prioriza la automatización, la integración del flujo de trabajo y la personalización.</p><h3>Funcionalidad principal: automatización frente a participación multicanal</h3><p>LinkedIn Helper automatiza las acciones clave de LinkedIn, como las solicitudes de conexión, las secuencias de mensajes y los seguimientos, directamente dentro del ecosistema de LinkedIn. Los usuarios se centran en crear listas de clientes potenciales cualificados y en lanzar campañas programadas que mantengan la actividad en cumplimiento y, al mismo tiempo, maximicen los puntos de contacto. La personalización se logra mediante el uso de variables para insertar nombres y detalles de la empresa, y el sistema impone límites diarios por motivos de seguridad.</p><p>Overloop amplía este enfoque al territorio multicanal, combinando LinkedIn con la automatización del correo electrónico a gran escala. Las capacidades de inteligencia artificial integradas permiten captar nuevos clientes potenciales, verificar los correos electrónicos, crear mensajes ultrapersonalizados y coordinar la interacción a través de ambas plataformas sin problemas. Esto permite a los usuarios transferir clientes potenciales entre las campañas de LinkedIn y las de correo electrónico sin depender de múltiples herramientas de SaaS, lo que simplifica la gestión general de la divulgación. <a href="https://overloop.com/book-demo" target="_blank">Vea un vídeo de demostración de 5 minutos de Overloop</a>.</p><h3>Proceso de usabilidad y configuración</h3><p>Los profesionales de ventas eligen LinkedIn Helper para centrarse en la difusión en LinkedIn. La configuración implica descargar una extensión del navegador, conectar un perfil de LinkedIn y crear flujos de trabajo automatizados a través de un panel integrado. La interfaz es sencilla y prioriza la gestión de tareas paso a paso en LinkedIn.</p><p>Overloop ofrece una experiencia basada en la web con una incorporación guiada diseñada para equipos de todos los tamaños. Sin complementos de navegador, los usuarios gestionan los flujos de trabajo completamente en la nube. La captación de clientes potenciales basada en la inteligencia artificial gestiona el descubrimiento de clientes potenciales, mientras que las plantillas y las sugerencias de mejores prácticas aceleran la configuración de las campañas. La interfaz permite un escalado rápido para los equipos que trabajan en varios canales o con criterios de contacto amplios.</p><h3>Personalización y cumplimiento</h3><p>Ambas herramientas hacen hincapié en la personalización, un factor clave para mejorar las tasas de respuesta en LinkedIn. LinkedIn Helper aprovecha los campos de mensajes dinámicos a la vez que aloja plantillas para campañas individuales y masivas, y gestiona los volúmenes de envío para evitar problemas con la cuenta.</p><p>Overloop lleva la personalización a un nivel superior mediante el uso de la generación de texto basada en inteligencia artificial que adapta el contenido a cada destinatario. El sistema admite más de 80 idiomas e incluye un ritmo de entrega automatizado, protección antispam y funciones de cumplimiento tanto para LinkedIn como para la difusión por correo electrónico. Este diseño reduce el riesgo de que las cuentas se marquen o de que los mensajes pasen a ser spam con una supervisión manual mínima.</p><h3>Integración y automatización del flujo de trabajo</h3><p>La integración desempeña un papel importante en la determinación de la eficiencia. LinkedIn Helper permite exportar a hojas de cálculo básicas, que los usuarios procesan luego en plataformas CRM externas, pero las conexiones no son profundas ni nativas.</p><p>Overloop se conecta directamente con CRM populares como Salesforce, Pipedrive y HubSpot, así como con herramientas como Slack y Calendly. Esto agiliza el flujo de datos de ventas y los seguimientos. Las funciones de automatización de la plataforma permiten la búsqueda de clientes potenciales, la mensajería y el monitoreo de campañas en tiempo real, todo desde una interfaz consolidada. Los equipos pueden centralizar las actividades, gestionar los datos con facilidad e informar de los resultados con mayor rapidez y con menos fragmentación.</p><h3>Tabla comparativa característica por función</h3>Característica LinkedIn HelperOverloop Enfoque principal Automatización solo para LinkedIn Alcance multicanal (LinkedIn y correo electrónico) Personalización de IA limitada (variables de plantilla) Avanzado (divulgación escrita por IA, adaptable al contexto) Manual de abastecimiento de clientes potenciales o base de datos impulsada por IA basada en búsquedas de LinkedIn (más de 450 millones de contactos B2B) Integraciones Exportación nativa básica (CRM, Slack, Calendly y más) Extensión de navegador incorporada, configuración manual del flujo de trabajo Configuración guiada basada en la nube, sugerencias de automatización Alcance por correo electrónico Noyes Soporte lingüístico básico Más de 80 idiomas<h3>Resumen: ¿Cuál elegir?</h3><p>LinkedIn Helper es práctico para los equipos que se centran exclusivamente en aumentar la eficiencia dentro de LinkedIn con un control manual y unos informes sencillos. Simplifica la creación de conexiones y la mensajería a gran escala sin funciones de gestión de campañas más amplias.</p><p>Overloop se vuelve más valioso para las organizaciones que buscan una automatización sólida, una personalización basada en la inteligencia artificial y la integración con los ecosistemas de ventas. Es ideal para quienes desean eliminar la prospección manual, coordinar las actividades multicanal y optimizar las campañas desde un único paquete. <span>Comprender los puntos fuertes de cada plataforma puede ayudarlo a elegir la solución que mejor se adapte a su estrategia de prospección y sus objetivos de ventas. <a href="https://overloop.com/success-stories" target="_blank">Descubre historias de éxito de Overloop en el mundo real</a>.</span></p><h2>Historias de éxito: resultados reales de los usuarios de LinkedIn Helper</h2><p>Las empresas que utilizan LinkedIn Helper suelen registrar avances cuantificables tanto en el volumen de clientes potenciales como en las tasas de respuesta cuando automatizan su alcance. En lugar de gestionar una conexión a la vez, los equipos de ventas pueden centrarse en tareas de mayor valor, mientras que LinkedIn Helper gestiona el contacto inicial y los pasos de seguimiento por ellos. Las siguientes historias y cuentas de usuario muestran cómo diferentes empresas aplicaron las funciones de la herramienta y los resultados empresariales que obtuvieron.</p><h3>Tasas de respuesta mejoradas para una empresa de software B2B</h3><p>Un proveedor de software de tamaño mediano quería ampliar su cartera de productos para llegar a los responsables de la toma de decisiones en sectores específicos. Los esfuerzos de divulgación anteriores se basaban en la mensajería masiva, que rara vez conducía a conversaciones significativas. Una vez que el equipo implementó LinkedIn Helper, crearon campañas segmentadas con solicitudes de conexión personalizadas. Los flujos de trabajo de seguimiento automatizados aseguraron que cada cliente potencial recibiera una secuencia de mensajes adaptada a su perfil y participación. El equipo observó un aumento en la aceptación de las conexiones, con un aumento de las tasas de respuesta de más del 30%. Los clientes potenciales interactuaban con más frecuencia, ya que los mensajes hacían referencia a publicaciones recientes, cambios de trabajo y conexiones mutuas, lo que era posible gracias a las funciones de personalización dinámicas.</p><h3>Ahorro de tiempo para una agencia de contratación</h3><p>Los profesionales de contratación trabajan habitualmente con plazos ajustados y necesitan crear redes rápidamente. Una agencia adoptó LinkedIn Helper para agilizar el proceso de llegar a posibles candidatos y clientes. Al filtrar de forma masiva y enviar invitaciones personalizadas, los reclutadores ahorraron varias horas semanales que antes dedicaban a copiar y pegar mensajes. La verdadera ventaja residía en el panel de control, donde se registraban claramente las respuestas, los pasos de la campaña y las etiquetas de los candidatos. Los reclutadores comentaron que la reducción de la carga de trabajo manual les permitía prepararse para las entrevistas y forjar relaciones más profundas. Como resultado, el tiempo total de colocación disminuyó y la productividad de los reclutadores aumentó sin aumentar la plantilla.</p><h3>Coherencia en la mensajería para un equipo de ventas salientes</h3><p>Para un pequeño equipo de ventas salientes del sector de TI, el seguimiento incoherente era un problema persistente. Algunos clientes potenciales no respondieron a tiempo, mientras que otros recibieron mensajes duplicados. Las secuencias de mensajes de varios pasos de LinkedIn Helper abordaron estos problemas. Tras implementar el seguimiento programado y la eliminación automática de los clientes potenciales de las secuencias, la tasa de conversión de clientes potenciales entrantes a empresas de demostración se duplicó en tres meses. Los gerentes destacaron que el uso rutinario de plantillas automatizadas y personalizadas ayudaba a los miembros más jóvenes del equipo a igualar la calidad de comunicación del personal más experimentado, unificando así el enfoque general de divulgación.</p><h3>Creación eficiente de una cartera de prospectos para empresas emergentes en crecimiento</h3><p>Las empresas emergentes de rápido crecimiento se enfrentan a una intensa presión para demostrar la demanda y conseguir los primeros clientes. Los directores de marketing de una empresa emergente de tecnología financiera necesitaban una forma sencilla de identificar e involucrar a los responsables de la toma de decisiones en un segmento industrial especializado. La automatización de conexiones de LinkedIn Helper les permitía filtrar las listas por puesto de trabajo y ubicación, enviar mensajes de conexión y de seguimiento, hacer un seguimiento de las personas que respondían y avanzar en las conversaciones solo si mostraban interés. En la primera campaña, programaron nueve reuniones en menos de cuatro semanas, un ritmo que antes solo se lograba con especialistas especializados en el sector externo.</p><p>Muchas organizaciones ahora eligen paquetes de soluciones que mantienen el proceso sin interrupciones en todos los canales. Si bien LinkedIn Helper simplificó la comunicación con estos equipos, algunos han recurrido a plataformas impulsadas por la inteligencia artificial, como Overloop, para crear canales de ventas totalmente integrados que abarquen tanto LinkedIn como el correo electrónico. La contratación automatizada de clientes potenciales y la mensajería multicanal personalizada de Overloop pueden amplificar aún más los resultados al reducir la transferencia manual de clientes potenciales y datos entre los sistemas de ventas. <a href="https://overloop.com/success-stories/87seconds/" target="_blank">Descubre cómo 87seconds usa Overloop para mantener conversaciones significativas</a>. Estos estudios de casos demuestran que aprovechar la automatización específica permite la escalabilidad y la conexión individual, lo que brinda beneficios prácticos en todas las etapas de la prospección de ventas.</p><h2>Reflexiones finales: ¿LinkedIn Helper es adecuado para ti?</h2><p>La selección de la herramienta de automatización de prospección adecuada depende de tus objetivos de ventas específicos, tus necesidades de flujo de trabajo y los canales en los que tu audiencia esté más activa. LinkedIn Helper ofrece un valor indiscutible a los equipos de ventas que buscan optimizar la comunicación directa dentro de LinkedIn, reemplazar las actividades manuales que consumen mucho tiempo y garantizar que la personalización fomente las conexiones sostenidas. Hace que la divulgación cumpla con las restricciones de LinkedIn y simplifica el seguimiento, lo que hace que sea práctico para los equipos con una cartera de LinkedIn definida o con recursos limitados la gestión más amplia de las campañas.</p><p>Para los equipos de ventas B2B que trabajan principalmente a través de LinkedIn y que desean un mejor control sobre la cadencia de los mensajes, las solicitudes de conexión y la segmentación de clientes potenciales, LinkedIn Helper aporta eficiencia y reduce los errores. La herramienta es adecuada para colaboradores individuales, equipos pequeños y empresas que no requieren integraciones extensas o estrategias multicanal.</p><p>Por otro lado, muchas organizaciones necesitan agilizar la divulgación a través de múltiples canales, reducir la dependencia de las transferencias manuales de datos o impulsar el escalado rápido de campañas altamente personalizadas. En este caso, una plataforma como Overloop destaca por combinar el descubrimiento de clientes potenciales mediante inteligencia artificial, la generación de mensajes personalizados y la gestión automatizada de campañas tanto para el correo electrónico como para LinkedIn. Las integraciones CRM integradas de Overloop y el soporte para más de 80 idiomas permiten a los equipos más grandes y a las operaciones de ventas globales captar clientes potenciales de forma más eficaz sin perder la flexibilidad ni la supervisión de las campañas.</p><p>Revise su proceso de divulgación actual teniendo en cuenta estas preguntas:</p><ul>
+</ul><p>Si necesitas flujos de trabajo automatizados tanto en el correo electrónico como en LinkedIn con controles de cumplimiento integrados, Overloop te permite llevar a cabo una comunicación multicanal con personalización asistida por IA. Este enfoque puede ayudarte a ampliar tus esfuerzos sin infringir las restricciones individuales de la plataforma ni poner en riesgo la seguridad de la cuenta, ya que Overloop alinea la divulgación automatizada con los protocolos de seguridad y entregabilidad verificados. <a href="https://overloop.com/gdpr" target="_blank">Revise el GDPR y las funciones de seguridad para verificar su cumplimiento</a>.</p><p>El uso responsable de las funciones de LinkedIn Helper permite a los equipos de ventas B2B lograr una mayor productividad de divulgación sin dejar de cumplir las reglas de la plataforma. Diseñe una configuración personalizada, aplique parámetros de campaña prudentes y actualice periódicamente sus prácticas de acuerdo con la política actual de LinkedIn. Esta base protege tanto tus resultados como tu reputación en LinkedIn.</p><h2 id="comparaci-n-de-linkedin-helper-con-overloop-elegir-la-soluci-n-adecuada">Comparación de LinkedIn Helper con Overloop: elegir la solución adecuada</h2><p>Los equipos de ventas suelen comparar LinkedIn Helper y Overloop cuando planifican automatizar la divulgación y la prospección. Ambas herramientas apoyan el desarrollo empresarial en LinkedIn, pero abordan los desafíos de manera diferente y ofrecen ventajas únicas que se adaptan a diversos objetivos y flujos de trabajo. La elección de la plataforma más útil se basa en comprender cómo cada una de ellas prioriza la automatización, la integración del flujo de trabajo y la personalización.</p><h3>Funcionalidad principal: automatización frente a participación multicanal</h3><p>LinkedIn Helper automatiza las acciones clave de LinkedIn, como las solicitudes de conexión, las secuencias de mensajes y los seguimientos, directamente dentro del ecosistema de LinkedIn. Los usuarios se centran en crear listas de clientes potenciales cualificados y en lanzar campañas programadas que mantengan la actividad en cumplimiento y, al mismo tiempo, maximicen los puntos de contacto. La personalización se logra mediante el uso de variables para insertar nombres y detalles de la empresa, y el sistema impone límites diarios por motivos de seguridad.</p><p>Overloop amplía este enfoque al territorio multicanal, combinando LinkedIn con la automatización del correo electrónico a gran escala. Las capacidades de inteligencia artificial integradas permiten captar nuevos clientes potenciales, verificar los correos electrónicos, crear mensajes ultrapersonalizados y coordinar la interacción a través de ambas plataformas sin problemas. Esto permite a los usuarios transferir clientes potenciales entre las campañas de LinkedIn y las de correo electrónico sin depender de múltiples herramientas de SaaS, lo que simplifica la gestión general de la divulgación. <a href="https://overloop.com/book-demo" target="_blank">Vea un vídeo de demostración de 5 minutos de Overloop</a>.</p><h3>Proceso de usabilidad y configuración</h3><p>Los profesionales de ventas eligen LinkedIn Helper para centrarse en la difusión en LinkedIn. La configuración implica descargar una extensión del navegador, conectar un perfil de LinkedIn y crear flujos de trabajo automatizados a través de un panel integrado. La interfaz es sencilla y prioriza la gestión de tareas paso a paso en LinkedIn.</p><p>Overloop ofrece una experiencia basada en la web con una incorporación guiada diseñada para equipos de todos los tamaños. Sin complementos de navegador, los usuarios gestionan los flujos de trabajo completamente en la nube. La captación de clientes potenciales basada en la inteligencia artificial gestiona el descubrimiento de clientes potenciales, mientras que las plantillas y las sugerencias de mejores prácticas aceleran la configuración de las campañas. La interfaz permite un escalado rápido para los equipos que trabajan en varios canales o con criterios de contacto amplios.</p><h3>Personalización y cumplimiento</h3><p>Ambas herramientas hacen hincapié en la personalización, un factor clave para mejorar las tasas de respuesta en LinkedIn. LinkedIn Helper aprovecha los campos de mensajes dinámicos a la vez que aloja plantillas para campañas individuales y masivas, y gestiona los volúmenes de envío para evitar problemas con la cuenta.</p><p>Overloop lleva la personalización a un nivel superior mediante el uso de la generación de texto basada en inteligencia artificial que adapta el contenido a cada destinatario. El sistema admite más de 80 idiomas e incluye un ritmo de entrega automatizado, protección antispam y funciones de cumplimiento tanto para LinkedIn como para la difusión por correo electrónico. Este diseño reduce el riesgo de que las cuentas se marquen o de que los mensajes pasen a ser spam con una supervisión manual mínima.</p><h3>Integración y automatización del flujo de trabajo</h3><p>La integración desempeña un papel importante en la determinación de la eficiencia. LinkedIn Helper permite exportar a hojas de cálculo básicas, que los usuarios procesan luego en plataformas CRM externas, pero las conexiones no son profundas ni nativas.</p><p>Overloop se conecta directamente con CRM populares como Salesforce, Pipedrive y HubSpot, así como con herramientas como Slack y Calendly. Esto agiliza el flujo de datos de ventas y los seguimientos. Las funciones de automatización de la plataforma permiten la búsqueda de clientes potenciales, la mensajería y el monitoreo de campañas en tiempo real, todo desde una interfaz consolidada. Los equipos pueden centralizar las actividades, gestionar los datos con facilidad e informar de los resultados con mayor rapidez y con menos fragmentación.</p><h3>Tabla comparativa característica por función</h3>Característica LinkedIn HelperOverloop Enfoque principal Automatización solo para LinkedIn Alcance multicanal (LinkedIn y correo electrónico) Personalización de IA limitada (variables de plantilla) Avanzado (divulgación escrita por IA, adaptable al contexto) Manual de abastecimiento de clientes potenciales o base de datos impulsada por IA basada en búsquedas de LinkedIn (más de 450 millones de contactos B2B) Integraciones Exportación nativa básica (CRM, Slack, Calendly y más) Extensión de navegador incorporada, configuración manual del flujo de trabajo Configuración guiada basada en la nube, sugerencias de automatización Alcance por correo electrónico Noyes Soporte lingüístico básico Más de 80 idiomas<h3>Resumen: ¿Cuál elegir?</h3><p>LinkedIn Helper es práctico para los equipos que se centran exclusivamente en aumentar la eficiencia dentro de LinkedIn con un control manual y unos informes sencillos. Simplifica la creación de conexiones y la mensajería a gran escala sin funciones de gestión de campañas más amplias.</p><p>Overloop se vuelve más valioso para las organizaciones que buscan una automatización sólida, una personalización basada en la inteligencia artificial y la integración con los ecosistemas de ventas. Es ideal para quienes desean eliminar la prospección manual, coordinar las actividades multicanal y optimizar las campañas desde un único paquete. <span>Comprender los puntos fuertes de cada plataforma puede ayudarlo a elegir la solución que mejor se adapte a su estrategia de prospección y sus objetivos de ventas. <a href="https://overloop.com/success-stories" target="_blank">Descubre historias de éxito de Overloop en el mundo real</a>.</span></p><h2 id="historias-de-xito-resultados-reales-de-los-usuarios-de-linkedin-helper">Historias de éxito: resultados reales de los usuarios de LinkedIn Helper</h2><p>Las empresas que utilizan LinkedIn Helper suelen registrar avances cuantificables tanto en el volumen de clientes potenciales como en las tasas de respuesta cuando automatizan su alcance. En lugar de gestionar una conexión a la vez, los equipos de ventas pueden centrarse en tareas de mayor valor, mientras que LinkedIn Helper gestiona el contacto inicial y los pasos de seguimiento por ellos. Las siguientes historias y cuentas de usuario muestran cómo diferentes empresas aplicaron las funciones de la herramienta y los resultados empresariales que obtuvieron.</p><h3>Tasas de respuesta mejoradas para una empresa de software B2B</h3><p>Un proveedor de software de tamaño mediano quería ampliar su cartera de productos para llegar a los responsables de la toma de decisiones en sectores específicos. Los esfuerzos de divulgación anteriores se basaban en la mensajería masiva, que rara vez conducía a conversaciones significativas. Una vez que el equipo implementó LinkedIn Helper, crearon campañas segmentadas con solicitudes de conexión personalizadas. Los flujos de trabajo de seguimiento automatizados aseguraron que cada cliente potencial recibiera una secuencia de mensajes adaptada a su perfil y participación. El equipo observó un aumento en la aceptación de las conexiones, con un aumento de las tasas de respuesta de más del 30%. Los clientes potenciales interactuaban con más frecuencia, ya que los mensajes hacían referencia a publicaciones recientes, cambios de trabajo y conexiones mutuas, lo que era posible gracias a las funciones de personalización dinámicas.</p><h3>Ahorro de tiempo para una agencia de contratación</h3><p>Los profesionales de contratación trabajan habitualmente con plazos ajustados y necesitan crear redes rápidamente. Una agencia adoptó LinkedIn Helper para agilizar el proceso de llegar a posibles candidatos y clientes. Al filtrar de forma masiva y enviar invitaciones personalizadas, los reclutadores ahorraron varias horas semanales que antes dedicaban a copiar y pegar mensajes. La verdadera ventaja residía en el panel de control, donde se registraban claramente las respuestas, los pasos de la campaña y las etiquetas de los candidatos. Los reclutadores comentaron que la reducción de la carga de trabajo manual les permitía prepararse para las entrevistas y forjar relaciones más profundas. Como resultado, el tiempo total de colocación disminuyó y la productividad de los reclutadores aumentó sin aumentar la plantilla.</p><h3>Coherencia en la mensajería para un equipo de ventas salientes</h3><p>Para un pequeño equipo de ventas salientes del sector de TI, el seguimiento incoherente era un problema persistente. Algunos clientes potenciales no respondieron a tiempo, mientras que otros recibieron mensajes duplicados. Las secuencias de mensajes de varios pasos de LinkedIn Helper abordaron estos problemas. Tras implementar el seguimiento programado y la eliminación automática de los clientes potenciales de las secuencias, la tasa de conversión de clientes potenciales entrantes a empresas de demostración se duplicó en tres meses. Los gerentes destacaron que el uso rutinario de plantillas automatizadas y personalizadas ayudaba a los miembros más jóvenes del equipo a igualar la calidad de comunicación del personal más experimentado, unificando así el enfoque general de divulgación.</p><h3>Creación eficiente de una cartera de prospectos para empresas emergentes en crecimiento</h3><p>Las empresas emergentes de rápido crecimiento se enfrentan a una intensa presión para demostrar la demanda y conseguir los primeros clientes. Los directores de marketing de una empresa emergente de tecnología financiera necesitaban una forma sencilla de identificar e involucrar a los responsables de la toma de decisiones en un segmento industrial especializado. La automatización de conexiones de LinkedIn Helper les permitía filtrar las listas por puesto de trabajo y ubicación, enviar mensajes de conexión y de seguimiento, hacer un seguimiento de las personas que respondían y avanzar en las conversaciones solo si mostraban interés. En la primera campaña, programaron nueve reuniones en menos de cuatro semanas, un ritmo que antes solo se lograba con especialistas especializados en el sector externo.</p><p>Muchas organizaciones ahora eligen paquetes de soluciones que mantienen el proceso sin interrupciones en todos los canales. Si bien LinkedIn Helper simplificó la comunicación con estos equipos, algunos han recurrido a plataformas impulsadas por la inteligencia artificial, como Overloop, para crear canales de ventas totalmente integrados que abarquen tanto LinkedIn como el correo electrónico. La contratación automatizada de clientes potenciales y la mensajería multicanal personalizada de Overloop pueden amplificar aún más los resultados al reducir la transferencia manual de clientes potenciales y datos entre los sistemas de ventas. <a href="https://overloop.com/success-stories/87seconds/" target="_blank">Descubre cómo 87seconds usa Overloop para mantener conversaciones significativas</a>. Estos estudios de casos demuestran que aprovechar la automatización específica permite la escalabilidad y la conexión individual, lo que brinda beneficios prácticos en todas las etapas de la prospección de ventas.</p><h2 id="reflexiones-finales-linkedin-helper-es-adecuado-para-ti">Reflexiones finales: ¿LinkedIn Helper es adecuado para ti?</h2><p>La selección de la herramienta de automatización de prospección adecuada depende de tus objetivos de ventas específicos, tus necesidades de flujo de trabajo y los canales en los que tu audiencia esté más activa. LinkedIn Helper ofrece un valor indiscutible a los equipos de ventas que buscan optimizar la comunicación directa dentro de LinkedIn, reemplazar las actividades manuales que consumen mucho tiempo y garantizar que la personalización fomente las conexiones sostenidas. Hace que la divulgación cumpla con las restricciones de LinkedIn y simplifica el seguimiento, lo que hace que sea práctico para los equipos con una cartera de LinkedIn definida o con recursos limitados la gestión más amplia de las campañas.</p><p>Para los equipos de ventas B2B que trabajan principalmente a través de LinkedIn y que desean un mejor control sobre la cadencia de los mensajes, las solicitudes de conexión y la segmentación de clientes potenciales, LinkedIn Helper aporta eficiencia y reduce los errores. La herramienta es adecuada para colaboradores individuales, equipos pequeños y empresas que no requieren integraciones extensas o estrategias multicanal.</p><p>Por otro lado, muchas organizaciones necesitan agilizar la divulgación a través de múltiples canales, reducir la dependencia de las transferencias manuales de datos o impulsar el escalado rápido de campañas altamente personalizadas. En este caso, una plataforma como Overloop destaca por combinar el descubrimiento de clientes potenciales mediante inteligencia artificial, la generación de mensajes personalizados y la gestión automatizada de campañas tanto para el correo electrónico como para LinkedIn. Las integraciones CRM integradas de Overloop y el soporte para más de 80 idiomas permiten a los equipos más grandes y a las operaciones de ventas globales captar clientes potenciales de forma más eficaz sin perder la flexibilidad ni la supervisión de las campañas.</p><p>Revise su proceso de divulgación actual teniendo en cuenta estas preguntas:</p><ul>
   <li>¿Tus resultados de ventas están limitados por la actividad manual de LinkedIn o por herramientas de software desconectadas?</li>
   <li>¿Los miembros de su equipo necesitan mover a los clientes potenciales sin problemas de LinkedIn al correo electrónico y viceversa?</li>
   <li>¿Las personalizaciones integradas, la integración con los principales CRM y el cumplimiento automatizado aumentarían los resultados de su campaña?</li>
 </ul><p>Si la respuesta es afirmativa, es probable que la evaluación de plataformas avanzadas impulsadas por la IA multicanal produzca resultados más escalables. Para casos de uso específicos que giran en torno a la prospección eficiente de LinkedIn, LinkedIn Helper puede ayudar a simplificar y escalar tus flujos de trabajo actuales de manera eficiente.</p><p>Independientemente de la ruta que elija, la principal ventaja radica en eliminar las tareas repetitivas, mejorar la calidad de la participación y liberar tiempo para priorizar las conversaciones de ventas reales. Adoptar la herramienta adecuada puede hacer que la generación de leads deje de ser un cuello de botella manual para convertirse en un flujo simplificado y predecible de nuevas oportunidades. <a href="https://overloop.com/blog/" target="_blank">Manténgase actualizado con las mejores prácticas a través de nuestro blog</a>. Hacer coincidir sus requisitos con estas diferencias ayuda a garantizar una solución duradera para un crecimiento sostenible de las ventas.</p>
-        </article>
 
-        <div class="cta-box">
-            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
-            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
-        </div>
-
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO en Overloop</div>
-                <div class="role">CEO de Sortlist & Overloop. Ha construido sistemas outbound para mas de 500 empresas B2B.</div>
-            </div>
-        </div>
-
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

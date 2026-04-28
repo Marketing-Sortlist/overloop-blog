@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendedores: no te obsesiones con los KPIs | Overloop</title>
-    <meta name="description" content="Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.">
-    <link rel="canonical" href="https://overloop.com/es/blog/vendedores-no-obsesionarse-resultados">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendedores: no te obsesiones con los KPIs | Overloop</title>
+  <meta name="description" content="Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.">
+  <link rel="canonical" href="https://overloop.com/es/blog/vendedores-no-obsesionarse-resultados">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/boost-sales-motivation">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/motivation-ventes">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/verkaeufer-nicht-ergebnisbesessen-interview">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/vendedores-no-obsesionarse-resultados">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/motivazione-venditori">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/boost-sales-motivation">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="Vendedores: no te obsesiones con los KPIs">
     <meta property="og:description" content="Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="Vendedores: no te obsesiones con los KPIs">
     <meta name="twitter:description" content="Descubre por qué los vendedores no deben obsesionarse con los resultados. Consejos de Carson V. Heady sobre motivación en ventas.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/vendedores-no-obsesionarse-resultados.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,191 +445,155 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><main class="blog-post">
-    <div class="container">
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
 
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="https://overloop.com">Overloop</a> &rsaquo;
-            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
-            <span>Vendedores: no te obsesiones con los KPIs</span>
-        </nav>
-
-        <header class="article-header">
-            <h1>Vendedores: no te obsesiones con los KPIs</h1>
-        </header>
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>Vendedores: no te obsesiones con los KPIs</h1>
+        <p class="lead">¡2018 está empezando con fuerza, ya que empezamos con esta gran conversación que tuve con Carson Heady! Hablamos sobre el aprecio, la motivación de las ventas y cómo los procesos importan más que l…</p>
         <div class="article-meta">
-            <svg width="44" height="44" viewBox="0 0 44 44" style="border-radius:50%;flex-shrink:0;">
-  <rect width="44" height="44" rx="22" fill="#7C3AED"/>
-  <text x="22" y="23" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="16">FP</text>
-</svg>
-            <div class="meta-info">
-                <strong>Forster Perelsztejn</strong>
-                <span>|</span> 1 de enero de 2018
-                <span>|</span> 10 min de lectura
-            </div>
+          <div class="article-meta__avatar">FP</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Forster Perelsztejn</div>
+            <div class="article-meta__dates">Jan 01, 2018 &middot; Updated Apr 17, 2026</div>
+          </div>
         </div>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
+        </div>
+      </div>
+    </header>
 
-        <article class="article-content">
-<p>¡2018 está empezando con fuerza, ya que empezamos con esta gran conversación que tuve con Carson Heady! Hablamos sobre el aprecio, la motivación de las ventas y cómo los procesos importan más que los resultados.</p><p><em>Carson es líder de ventas y autor publicado, consulte su serie de libros<a href="https://www.amazon.com/Birth-Salesman-Against-World/dp/1495499332/" rel="external noopener"> Nacimiento de un vendedor</a> así como su contenido sobre <a href="https://www.linkedin.com/in/carsonvheady/" rel="external noopener">LinkedIn</a>!</em></p><h3>Hola Carson, ¡muchas gracias por tomarte el tiempo para hacer esto!</h3><p>Es un placer absoluto. Estoy emocionada por tener la oportunidad de charlar. Me encanta tu contenido. Creo que somos fanáticos el uno del otro.</p><h3>¡Impresionante! ¿Podrías empezar por presentarte a nuestros lectores?</h3><p>Carson Heady. Soy autor, líder de ventas y bloguero y me apasionan las ventas y las relaciones comerciales. He estado en ventas durante toda mi carrera y disfruté escribiendo sobre ello, blogueando sobre ello y teniendo conversaciones al respecto. Paso bastante tiempo en las redes sociales y mantengo conversaciones como esta sobre diferentes aspectos de las ventas y el liderazgo.</p><h3>Cuando miro la descripción de tu trabajo en LinkedIn, parece que tienes muchas responsabilidades. ¿Cómo se las arregla para no sacrificar la calidad por la cantidad?</h3><p>Esa es una gran pregunta. Si me lo hubieras preguntado hace diez años, definitivamente descubrí que estaba ocupado en los roles que estaba desempeñando. Hoy en día es casi un punto álgido. Creo que la pieza clave es estar siempre <strong>dar un paso atrás</strong> y no quedar atrapado en todos los incendios que se producen, realmente para <strong>priorizar</strong> y piense cuáles son las cosas de misión crítica que deben hacerse hoy.</p><p>¿Cómo puedo tener un impacto real en mi negocio hoy en día? ¿Qué necesita respuesta? ¿Cuáles son las cosas de alto nivel?</p><p>Todo gira en torno a la priorización. Realmente puedes priorizar eso de varias maneras.</p><p>Tengo un trabajo diurno. Trabajo para una gran empresa y tengo muchas relaciones muy importantes no solo con los clientes sino también con los socios que representan el meollo de nuestro negocio. Es muy importante que priorice a los clientes y socios por encima de todo. Tengo otros miembros de mi equipo que también están en esa mezcla. En realidad, se trata de gestionar esa dinámica de equipo formada por compañeros, de otras personas con las que trabajo día a día, pero también de otros recursos disponibles.</p><p>Una vez más, es un aluvión constante porque recibo mensajes todo el día de diferentes personas con diferentes niveles de necesidad. Algunos pueden afectar a toda su empresa, y otros pueden ser relativamente menores en comparación con la declaración de misión crítica, pero todos son importantes. La pieza clave de lo que he descubierto es la capacidad de respuesta. Creo que eso es lo que me ha ayudado a tener éxito en ventas y, a lo largo de los años, el liderazgo ha sido siempre la capacidad de respuesta.</p><p>Incluso si no sabes la respuesta, incluso si no la sabes de inmediato, incluso si tienes que recurrir a recursos adicionales, siempre y cuando las personas vean que estás respondiendo y estás activo en cuanto a su solicitud, esto promoverá la relación. Muchas veces los clientes hacen negocios por ese hecho.<strong> Muchas personas me han dicho a lo largo de los años que han hecho negocios conmigo porque respondí y les he dado las respuestas que necesitaban.</strong> Sabían que estaba trabajando en ello. Incluso si no tuviera la respuesta de inmediato, enviaría una actualización diaria.</p><p>Piénsalo, solo se necesitan un par de segundos para enviar una nota rápida a un cliente para hacerle saber que es lo más importante y que estás trabajando en ello. Creo que todo vuelve a la priorización. Claro, hay muchas funciones en mi trabajo. Hay muchas funciones en mi actividad secundaria en las que paso mucho tiempo blogueando o todo lo que puedo. También soy padre y tengo dos hijos y una esposa. Hay muchas cosas en mi vida, y todo se reduce a las prioridades, pero me aseguro de que respondes y estás en sintonía con las necesidades de las personas con las que trabajas.</p><h2>Formar vendedores y vender el cambio</h2>
-<h3>Hablemos de ser un líder de ventas. Veo que parte de su trabajo consiste en capacitar a los vendedores. ¿Cuál es el punto principal que quieres transmitir cuando capacitas a estas personas?</h3><p>Cada uno tiene su forma de aprender y su propia forma de hacer y sus propias cosas que lo motivan y sus propias razones por las que participa en el juego, por así decirlo. Creo que antes de poder entrenar a alguien, es imprescindible entenderlo. Al igual que en tu relación con un cliente potencial, con un cliente o con un socio, es importante entender sus motivaciones porque, en última instancia, es lo que vas a conseguir. Quieres añadir valor a la relación de cualquier forma que puedas. En última instancia, eso es lo que va a traer resultados.</p><p>Cuando estás entrenando a alguien, es muy importante <strong>entender su motivación</strong>. ¿Por qué están ahí? ¿Cuáles son sus puntos fuertes? ¿Cuáles son los componentes en los que han reconocido que quieren mejorar y necesitan mejorar? Muchas veces van a ser muy receptivos a esas áreas de la empresa.</p><p>La otra parte de eso es entender y saber <strong>cómo diagnosticar</strong> del mismo modo que estás diagnosticando a un cliente y sus brechas en el proceso, pero diagnostica a la persona a la que estás capacitando y qué brechas puede tener en su proceso actual. No todo el mundo se va a sentar con todas las herramientas disponibles para convertirse en vendedores exitosos o líderes de ventas. La clave es entender qué aportan, en qué áreas puedes trabajar y cuáles son esas brechas en el proceso. Yo lo llamo cadena alimentaria de ventas.</p><p>Creo <strong>estamos todos conectados</strong> en la estratosfera y el ambiente de ventas, ya sea trabajando con un cliente, trabajando con un socio o capacitando a alguien o administrando a alguien. Todos estamos conectados. Todas esas relaciones requieren comprender a la persona del otro lado, cuáles son sus motivaciones y cuál es la mejor manera de agregarle valor.</p><p>Cuando se entrena a alguien, especialmente desde el punto de vista de las ventas, es fundamental entender lo que aporta y, además, la capacidad de diagnosticar esas brechas. En última instancia, <strong>estás vendiendo cambio</strong>. Al igual que le vendes a un cliente, vendes a un vendedor con cambio. ¿Por qué deberían cambiar? ¿Por qué deberían deshacerse o abandonar las formas cómodas de fracasar?</p><p>Muchos de nosotros hacemos lo que nos parece natural o lo que nos resulta cómodo. Francamente, incluso cuando vemos algo que puede ser un cambio excelente en nuestro proceso de ventas, es posible que lo cambiemos. Se siente un poco incómodo. Si lo estropeamos un par de veces, podemos volver a esa cómoda forma de fallar.</p><p>También necesitamos entender cuáles son sus <strong>objetivo final deseado</strong> es porque, en última instancia, así es como vas a vender el cambio. Las personas cambiarán cuando teman el desfile que se avecina, cuando teman menos el cambio que las consecuencias de no cambiar. Cuando entrenas a alguien, quieres asegurarte de que vea ese camino. Ven lo que quieren. Han delineado sus objetivos, cuáles son sus motivaciones y por qué lo hacen, de modo que puedas guiarlos continuamente para que logren el cambio que los mejorará.</p><p>En última instancia, solo puedes llegar hasta cierto punto. Puedes llevar al caballo al agua. No puedes obligarlos a beber, pero puedes mostrarles por qué deben cambiar en función de lo que hayan indicado que es su objetivo. Es muy fácil acudir a un representante de ventas o a un líder de ventas y decirle que has indicado que estos son tus objetivos.</p><p><strong>Esta es la conversación que tuvimos el mes pasado. </strong>Hablamos sobre por qué deberías hacer este cambio y los posibles beneficios que tendría. Acordamos un plan de acción. Han hecho el cambio. Buen trabajo. Ahora trabajemos en esto o no hiciste el cambio. ¿Por qué es eso?</p><p>¿Dónde nos echamos de menos? Porque obviamente estuvimos de acuerdo en que este era un buen curso de acción. Queríamos evitar la trayectoria en la que todavía estáis. Creo que esas son las partes más importantes de la formación: entender la motivación y asegurarnos de que vendes el cambio de forma adecuada.</p><h2>Construir relaciones B2B con grandes organizaciones</h2>
-<h3>Esa fue una respuesta muy completa, ¡gracias! Así que trabajas en Microsoft. Como líder, ¿cómo haces que las personas se sientan importantes en una empresa tan grande?</h3><p>Es curioso porque nunca he estado en una empresa en la que haya estado tan rodeado de pura brillantez. Es fácil hacer que se sientan bien y hacer que se sientan especiales porque definitivamente lo son. Creo que es importante buscar siempre formas de añadir valor, pero asegúrate también de hacerles saber lo mucho que aprecias el valor que ellos aportan. Haz un esfuerzo concertado, aunque solo envíes los correos electrónicos más básicos, dale un toque personal y pregúntales qué tal o cual han sido las cosas que han compartido conmigo.</p><p>Tal vez se fueron de viaje o tuvieron un problema con su hijo. Su hijo estaba enfermo o algo así. Cuando hacen un trabajo ejemplar, encuentro la manera de denunciarlo, ya sea enviando una nota a su jefe o buscando un foro muy público en el que hacerlo.</p><p>Hoy en día con las redes sociales, es muy fácil destacar una gran actuación donde mucha gente puede verla. Puedes escribir recomendaciones para las personas. Puedes hacer diferentes cosas para respaldarlas. Creo que hay muchas maneras diferentes.</p><p>Una vez más, da un paso atrás porque es muy fácil quedar atrapado en el día a día y darte cuenta de lo agradecido que estás o deberías estar por parte del valor que aportan las personas. Hago todo lo que puedo para intentar demostrar cuánto aprecio a todas las personas con las que trabajo, a las personas que aportan valor. Siempre he intentado hacerlo, especialmente como líder de ventas. Creo que es muy importante.</p><p>Es muy fácil quedar atrapado en el día a día y en todos los incendios que se producen constantemente. Por eso creo que es tan importante asegurarse de dedicar tiempo a destacar y reconocer a las personas que están haciendo un gran trabajo. Lo aprecian.</p><h3><strong>Hablemos de las ventas B2B. Me imagino que trabajas con todo tipo de organizaciones, incluidas las bastante grandes. No soy vendedor. Me dedico al marketing, así que me pregunto: ¿cómo puedes ponerte en contacto y construir una relación con este tipo de grandes máquinas?</strong></h3><p>Es una gran pregunta. Tienes que analizar tu propio proceso y tu propia solución, y tienes que ver qué valor aporta, qué posibles problemas empresariales resuelve, qué brechas en el proceso solucionas. Luego encontrarás a tu público objetivo. ¿A quién puedes ayudar en ese negocio?</p><p>Una vez más, estamos en un mundo en el que puedo segmentar por ubicación geográfica, por sector, por tamaño de empresa, por título de la persona de la organización y puedo encontrar a casi cualquier persona. Es algo hermoso. Creo que lo que es importante que los vendedores entiendan es que solo porque tenemos todas estas herramientas mágicas a nuestra disposición, nada reemplaza la relación cara a cara y en persona. De nuevo, ese es tu objetivo final.</p><p>No estás pensando en vender toda tu gama de servicios desde el principio. Lo que estás buscando es <strong>forjar una relación</strong>. Quiere añadir valor, pero, en última instancia, quiere vender una reunión. Quieres ponerte delante de la persona.</p><p>Tienes que alcanzar el objetivo inmediato en lugar de intentar poner el carro delante de los caballos e intentar vender todo lo que tienes. He visto muchas variaciones diferentes de esto, haciendo campañas de divulgación o llamadas en frío, enviando correos electrónicos e intentando enviar toda la información que quieras. Es casi como vomitar toda la información que tienes con la esperanza de que un cliente vea algo que le guste y responda. Ese no es el enfoque correcto. Una vez más, hay que ver si se trata de una empresa pequeña o si se trata de una empresa muy grande. Piensas en el valor potencial, en lo que probablemente sea más intrigante que podrías aportarles, y luego encuentras al público objetivo adecuado.</p><p>Eche una red amplia porque las ventas son una ciencia maravillosa. Tiene mucha probabilidad matemática. Es muy importante que entiendas que es un juego de números. En lugar de apuntar solo a una persona a un cliente, apunta a diez.</p><p>Continúe: creo que tenemos soluciones para diferentes brechas. He visto esto en su industria. Me interesaría conocer su opinión sobre cómo esta posible solución podría adaptarse a su sector. Me interesaría conocer algunos de los puntos débiles que tiene. Acabo de empezar a trabajar en esta industria. Me encantaría entender algunas de las cosas que van bien y cómo ves el paisaje.</p><p>Inicie una conversación. Pide consejo. No sea necesariamente sincero y hable como cualquier otro vendedor que haya fracasado siguiendo los pasos de esa persona en el pasado. Francamente, si hablas como cualquier otro vendedor, te tratarán como a cualquier otro vendedor. Por eso quieres diferenciarte, pero quieres añadir valor.</p><p>A menudo puedo dedicar una cantidad considerable de tiempo, especialmente cuanto más largos son mis ciclos de ventas, en los que no necesariamente hablas con tu cliente. También hay maneras de ser lo más importante. Muchos clientes quieren asimilar las cosas según su horario. Supongamos que les envías un artículo y dices: oye, ¿qué opinas al respecto? Vi esto y pensé en ti.</p><p>Quizás encuentres diferentes formas de enviarles un boletín informativo. Es más pasivo. Pueden responder cuando quieran. Creo que esa es la era en la que estamos. Al mismo tiempo, asegúrese de hacer un seguimiento diligente.</p><p>Al igual que hablamos antes, cuando estás entrenando y cuando lideras, lideras estas conversaciones y los capacitas para que tomen la decisión que quieres que tomen. Hay filosofías muy similares a las de la formación en liderazgo. En última instancia, estás intentando impulsar el cambio en esta situación. Quieres sacar a la luz las brechas que existen en los procesos, por lo que conocerás algunas de esas cosas al dedicarte al departamento de ventas y al trabajar con clientes de su clase y con los sectores en los que se encuentran. Vas a adquirir muchos conocimientos solo en ese sentido.</p><p>Creo que es importante utilizar ese conocimiento, y estás aumentando tus conocimientos, pero también tener una mente muy abierta a lo que este nuevo cliente potencial pueda aportar y a lo que pueda decirte sobre su industria o sus circunstancias. En realidad, no importa a quién te dirijas. De hecho, casi no importa el tamaño de la empresa. Creo que una vez que empiezas a pensar en las ventas de esa manera, es un punto de inflexión.</p><p>En serio, lo único que quieres hacer es ¿cómo puedo añadir valor a este cliente potencial? ¿Cómo puedo conseguir la reunión? ¿Cuáles son las formas más eficaces de hacerlo? Mira su historia.</p><p>Estamos en una era hermosa en la que puedes ver casi todo sobre esta persona con la que quieres hablar a través de las redes sociales. Puedes ver su historia. Puede que hayas ido a la misma escuela. Tal vez estén en los mismos grupos. Hay muchas maneras diferentes en las que puedes establecer una conexión y tener un toque personal.</p><p>Las mejores relaciones de ventas que he establecido fueron aquellas en las que pude establecer un <strong>toque personal</strong>, incluso con personas a las que no les gustan intrínsecamente los vendedores. Me dijeron a la cara que no les gustan los vendedores. Pude hacer contactos personales con ellos y pudimos mantener una buena relación. Entienden lo que tenemos que hacer. Entienden que, al final del día, estamos trabajando para comercializar un producto. Si buscas añadir valor y encuentras los procesos correctos, sigues ese proceso y te basas en el proceso cuando las cosas cambian y eres capaz de adaptarte y escuchar realmente a tu cliente, puedes vender a cualquiera.</p><h2>Motivación comercial y gestión del pipeline</h2>
-<h3>Excelente respuesta. También me imagino que tienes una gran cantidad de prospectos, muchas ofertas a lo largo del camino. Acabas de decir que tenías ciclos largos. ¿Cómo se evita que las cosas se estropeen a lo largo del oleoducto?</h3><p>Hay muchas herramientas diferentes para hacerlo. Obviamente, mi empresa vende algunas de ellas. Creo que es importante, ya sea que hagas el seguimiento en una hoja de cálculo o en algún tipo de base de datos de CRM, es fundamental visitarla todos los días y ver realmente cómo puedo lograr un mejor impacto en mi negocio hoy en día o cómo puedo influir mejor en cada una de estas ofertas en la actualidad. Revisa cada una de ellas y tenlas en cuenta, y si hay alguna acción que necesites hacer para que avance en el proceso, toma esa acción, incluso si solo se trata de una nota rápida para un cliente para que la tenga en cuenta.</p><p>Evita algunos clichés, como que me estoy registrando o simplemente estoy haciendo un seguimiento. Siempre me gusta decir que quiero asegurarme de cumplir con los plazos que hemos establecido y simplemente averiguar cómo puedo añadirles valor en este momento. ¿Hay algún tipo de soporte adicional que pueda añadir? ¿Hay información adicional?</p><p>Encuentra esas formas adicionales de hacer toques pasivos, ya sea un boletín informativo. El otro día vi un artículo en un sitio web. Supongamos que hago una búsqueda por palabra clave y me envían artículos. El otro día vi algo sobre lo que hablé con un cliente, así que se lo envío. Hay formas de hacer estos toques que motivarán a estos clientes a responder. Se darán cuenta de que le debo una respuesta.</p><p>Las estadísticas de marketing te dirán que hoy en día tienes que llegar a estos clientes de alguna manera, a veces de cinco a ocho veces antes de que tomen una decisión. Muchos de nosotros, como vendedores, nos daremos por vencidos después de uno o dos intentos. Se remonta a <em>Piense y hágase rico</em> de Napoleon Hill. Tradicionalmente nos damos por vencidos justo antes de haber ganado.</p><p>Creo que por eso es importante seguir revisando tu cartera todos los días. En realidad, la gestión de los oleoductos consiste en analizar cada operación y preguntarse cómo puedo influir en ella en la actualidad. Siempre he intentado mantener un oleoducto muy sólido, honesto y saludable. La forma de gestionarlo realmente es gestionarlo hacia arriba o hacia fuera.</p><p>No gano nada con tener ofertas falsas en trámite. Eso no me va a hacer quedar bien ante los líderes a la hora de hacer un pronóstico. Si tengo alguna probabilidad de cerrar algo, es importante que vaya avanzando a lo largo del proceso. Visita tu cartera, visítala a diario, pregúntate cómo puedo influir en estas ofertas en la actualidad y toma medidas.</p><h3>En estos momentos, nos acercamos al final del año, pero esto es relevante durante todo el año, lo que en las ventas B2B puede ser importante tanto porque los vendedores buscan el presupuesto sobrante como porque se están fijando los presupuestos para el año que viene. ¿Cómo te adaptas a eso?</h3><p>Conozca a sus clientes, comprenda sus ciclos, comprenda su año fiscal en comparación con el año calendario. Muchos de ellos se basarán en el año calendario, pero entienden su año fiscal. Tenga esa conversación con ellos. Si conoces bien a un cliente y trabajas con él o si solo estás haciendo prospecciones, solo para poder entender su presupuesto. ¿Hay formas en las que pueda trabajar sin salirme de tu presupuesto?</p><p>¿Hay formas en las que su empresa pueda configurarlo para que, si no puede permitirse comprar nada más este año, esté reclamando el presupuesto del año que viene y pregunte por el presupuesto del año que viene? ¿Qué han presupuestado? ¿Hay formas en las que puedan dejar espacio dentro del presupuesto para algo que usted pueda mostrarles y que, en su opinión, sería valioso?</p><p>Igual de importante para vender ahora mismo en el cuarto trimestre es vender en el primer trimestre del año que viene y pensar en plantar semillas. Las operaciones que estás cerrando ahora mismo en el cuarto trimestre, es de esperar que las hayas encontrado en el primer, segundo y tercer trimestre de este año. Una vez más, los ciclos de ventas están por todas partes. He trabajado en entornos en los que, si no cierras el trato en una sola llamada, la probabilidad de que cierres algo se reduce considerablemente.</p><p>También he trabajado en entornos en los que el ciclo de ventas promedio era de seis meses a un año. Tu ciclo de ventas está en todas partes, pero al final del día todo se reduce a entender a tus clientes, entender su ciclo, entender su presupuesto, dónde está y dónde se encuentra. Si hay inversiones adicionales que puedan y quieran hacer ahora mismo, si hay espacio para eso en la creación de esa solución, si es algo que usted quiere reivindicar y mostrarles el valor de por qué deberían presupuestar para ello el año que viene, en su punto de vista, Forster, ahora mismo están pensando en hacer un presupuesto para el año que viene.</p><p>Es posible que se apruebe parte de ese proceso.</p><p>Tengo muchos clientes que estaban haciendo sus presupuestos en septiembre, octubre y noviembre, pero <strong>Sabía eso de ellos</strong>. Estaba teniendo esas conversaciones y entendiendo los cambios que querían hacer en 2018 en ese entonces. Estaba conversando con ellos entonces para que pudieran presupuestar esos cambios. La regla de oro de la venta es entender al cliente. Si entiendes esas cosas y entiendes sus presupuestos y sus ciclos de venta, estarás muy bien en el cuarto trimestre.</p><h3>Una vez más, es fin de año, y esto es relevante durante todo el año, por lo que puede ser difícil, mentalmente, para los vendedores que se quedan atrás. ¿Cómo les ayudas a mantener esa motivación de ventas hasta la fecha límite?</h3><p>Esa es una pregunta increíble. <strong>Lo más importante del proceso de venta es no permitirse interrumpir el proceso.</strong> He visto a la gente desesperarse. Cambiarán su proceso para tratar de conseguir cualquier venta que puedan.</p><p>Si venden algo, obtienen una pequeña venta y lo ven como una victoria. Es posible que hayan conseguido una pequeña venta y, si hubieran invertido más tiempo y recursos, podrían haber conseguido algo muy importante y haber negociado una relación a muy largo plazo, porque han demostrado que una solución es realmente valiosa. Seamos realistas. <strong>Si un cliente no ve el valor a largo plazo de lo que has vendido, irá a otro lugar.</strong> Es posible que lo cancelen.</p><p><strong>Tienes que concentrarte siempre en el largo plazo. Lo que te va a ayudar a largo plazo es el proceso.</strong> Concéntrese y sea consciente del largo plazo, pero concéntrese también en el corto plazo del proceso y la ejecución del proceso que descubrió conducirá al resultado final que desea. Me encanta dar un paso atrás, optimizar la conversación en la que estás y buscar formas en las que realmente puedes influir en ella.</p><p>He visto a tantas personas que investigan horas y horas antes de una sola conversación, solo para ver que nunca llega a buen puerto. El cliente no responde a la llamada o se retrasa o se cancela o va en una dirección diferente. Has pasado gran parte de este tiempo casi en vano. No quieres estar completamente a ciegas ante estas conversaciones, pero sí quieres tener un conocimiento práctico.</p><p>Lo que quieres hacer es tener una conversación. Las ventas tienen que ver con las relaciones, ¿y quieres entender cuál es la situación de los clientes? ¿Cuáles son sus brechas en el proceso? ¿Qué es lo que les funciona? ¿Qué es lo que les hace felices? ¿Qué es lo que les gusta de lo que están haciendo ahora y qué es lo que no les gusta?</p><p>Tal vez haya partes completas de su negocio que puedas abordar con una solución empresarial en la que ni siquiera habían pensado. Tal vez haya productos o servicios adicionales que su solución pueda ofrecerles u ofertas adicionales. Da un paso atrás, respira hondo, deja de pensar tanto en el número y piensa en el proceso.</p><p>Siempre hablo de que no debes obsesionarte con los resultados. <strong>Obsesiónate con el proceso y los resultados siempre estarán ahí. Ha sido la filosofía que he seguido durante toda mi carrera, y nunca me ha decepcionado.</strong></p><h2>Aportar valor después de la venta</h2>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#formar-vendedores-y-vender-el-cambio"><span class="ch-num">01</span> Formar vendedores y vender el cambio</a></li>
+          <li><a href="#construir-relaciones-b2b-con-grandes-organizaciones"><span class="ch-num">02</span> Construir relaciones B2B con grandes …</a></li>
+          <li><a href="#motivaci-n-comercial-y-gesti-n-del-pipeline"><span class="ch-num">03</span> Motivación comercial y gestión del pi…</a></li>
+          <li><a href="#aportar-valor-despu-s-de-la-venta"><span class="ch-num">04</span> Aportar valor después de la venta</a></li>
+        </ul>
+      </aside>
+
+      <main class="prose">
+
+<p>¡2018 está empezando con fuerza, ya que empezamos con esta gran conversación que tuve con Carson Heady! Hablamos sobre el aprecio, la motivación de las ventas y cómo los procesos importan más que los resultados.</p><p><em>Carson es líder de ventas y autor publicado, consulte su serie de libros<a href="https://www.amazon.com/Birth-Salesman-Against-World/dp/1495499332/" rel="external noopener"> Nacimiento de un vendedor</a> así como su contenido sobre <a href="https://www.linkedin.com/in/carsonvheady/" rel="external noopener">LinkedIn</a>!</em></p><h3>Hola Carson, ¡muchas gracias por tomarte el tiempo para hacer esto!</h3><p>Es un placer absoluto. Estoy emocionada por tener la oportunidad de charlar. Me encanta tu contenido. Creo que somos fanáticos el uno del otro.</p><h3>¡Impresionante! ¿Podrías empezar por presentarte a nuestros lectores?</h3><p>Carson Heady. Soy autor, líder de ventas y bloguero y me apasionan las ventas y las relaciones comerciales. He estado en ventas durante toda mi carrera y disfruté escribiendo sobre ello, blogueando sobre ello y teniendo conversaciones al respecto. Paso bastante tiempo en las redes sociales y mantengo conversaciones como esta sobre diferentes aspectos de las ventas y el liderazgo.</p><h3>Cuando miro la descripción de tu trabajo en LinkedIn, parece que tienes muchas responsabilidades. ¿Cómo se las arregla para no sacrificar la calidad por la cantidad?</h3><p>Esa es una gran pregunta. Si me lo hubieras preguntado hace diez años, definitivamente descubrí que estaba ocupado en los roles que estaba desempeñando. Hoy en día es casi un punto álgido. Creo que la pieza clave es estar siempre <strong>dar un paso atrás</strong> y no quedar atrapado en todos los incendios que se producen, realmente para <strong>priorizar</strong> y piense cuáles son las cosas de misión crítica que deben hacerse hoy.</p><p>¿Cómo puedo tener un impacto real en mi negocio hoy en día? ¿Qué necesita respuesta? ¿Cuáles son las cosas de alto nivel?</p><p>Todo gira en torno a la priorización. Realmente puedes priorizar eso de varias maneras.</p><p>Tengo un trabajo diurno. Trabajo para una gran empresa y tengo muchas relaciones muy importantes no solo con los clientes sino también con los socios que representan el meollo de nuestro negocio. Es muy importante que priorice a los clientes y socios por encima de todo. Tengo otros miembros de mi equipo que también están en esa mezcla. En realidad, se trata de gestionar esa dinámica de equipo formada por compañeros, de otras personas con las que trabajo día a día, pero también de otros recursos disponibles.</p><p>Una vez más, es un aluvión constante porque recibo mensajes todo el día de diferentes personas con diferentes niveles de necesidad. Algunos pueden afectar a toda su empresa, y otros pueden ser relativamente menores en comparación con la declaración de misión crítica, pero todos son importantes. La pieza clave de lo que he descubierto es la capacidad de respuesta. Creo que eso es lo que me ha ayudado a tener éxito en ventas y, a lo largo de los años, el liderazgo ha sido siempre la capacidad de respuesta.</p><p>Incluso si no sabes la respuesta, incluso si no la sabes de inmediato, incluso si tienes que recurrir a recursos adicionales, siempre y cuando las personas vean que estás respondiendo y estás activo en cuanto a su solicitud, esto promoverá la relación. Muchas veces los clientes hacen negocios por ese hecho.<strong> Muchas personas me han dicho a lo largo de los años que han hecho negocios conmigo porque respondí y les he dado las respuestas que necesitaban.</strong> Sabían que estaba trabajando en ello. Incluso si no tuviera la respuesta de inmediato, enviaría una actualización diaria.</p><p>Piénsalo, solo se necesitan un par de segundos para enviar una nota rápida a un cliente para hacerle saber que es lo más importante y que estás trabajando en ello. Creo que todo vuelve a la priorización. Claro, hay muchas funciones en mi trabajo. Hay muchas funciones en mi actividad secundaria en las que paso mucho tiempo blogueando o todo lo que puedo. También soy padre y tengo dos hijos y una esposa. Hay muchas cosas en mi vida, y todo se reduce a las prioridades, pero me aseguro de que respondes y estás en sintonía con las necesidades de las personas con las que trabajas.</p><h2 id="formar-vendedores-y-vender-el-cambio">Formar vendedores y vender el cambio</h2>
+<h3>Hablemos de ser un líder de ventas. Veo que parte de su trabajo consiste en capacitar a los vendedores. ¿Cuál es el punto principal que quieres transmitir cuando capacitas a estas personas?</h3><p>Cada uno tiene su forma de aprender y su propia forma de hacer y sus propias cosas que lo motivan y sus propias razones por las que participa en el juego, por así decirlo. Creo que antes de poder entrenar a alguien, es imprescindible entenderlo. Al igual que en tu relación con un cliente potencial, con un cliente o con un socio, es importante entender sus motivaciones porque, en última instancia, es lo que vas a conseguir. Quieres añadir valor a la relación de cualquier forma que puedas. En última instancia, eso es lo que va a traer resultados.</p><p>Cuando estás entrenando a alguien, es muy importante <strong>entender su motivación</strong>. ¿Por qué están ahí? ¿Cuáles son sus puntos fuertes? ¿Cuáles son los componentes en los que han reconocido que quieren mejorar y necesitan mejorar? Muchas veces van a ser muy receptivos a esas áreas de la empresa.</p><p>La otra parte de eso es entender y saber <strong>cómo diagnosticar</strong> del mismo modo que estás diagnosticando a un cliente y sus brechas en el proceso, pero diagnostica a la persona a la que estás capacitando y qué brechas puede tener en su proceso actual. No todo el mundo se va a sentar con todas las herramientas disponibles para convertirse en vendedores exitosos o líderes de ventas. La clave es entender qué aportan, en qué áreas puedes trabajar y cuáles son esas brechas en el proceso. Yo lo llamo cadena alimentaria de ventas.</p><p>Creo <strong>estamos todos conectados</strong> en la estratosfera y el ambiente de ventas, ya sea trabajando con un cliente, trabajando con un socio o capacitando a alguien o administrando a alguien. Todos estamos conectados. Todas esas relaciones requieren comprender a la persona del otro lado, cuáles son sus motivaciones y cuál es la mejor manera de agregarle valor.</p><p>Cuando se entrena a alguien, especialmente desde el punto de vista de las ventas, es fundamental entender lo que aporta y, además, la capacidad de diagnosticar esas brechas. En última instancia, <strong>estás vendiendo cambio</strong>. Al igual que le vendes a un cliente, vendes a un vendedor con cambio. ¿Por qué deberían cambiar? ¿Por qué deberían deshacerse o abandonar las formas cómodas de fracasar?</p><p>Muchos de nosotros hacemos lo que nos parece natural o lo que nos resulta cómodo. Francamente, incluso cuando vemos algo que puede ser un cambio excelente en nuestro proceso de ventas, es posible que lo cambiemos. Se siente un poco incómodo. Si lo estropeamos un par de veces, podemos volver a esa cómoda forma de fallar.</p><p>También necesitamos entender cuáles son sus <strong>objetivo final deseado</strong> es porque, en última instancia, así es como vas a vender el cambio. Las personas cambiarán cuando teman el desfile que se avecina, cuando teman menos el cambio que las consecuencias de no cambiar. Cuando entrenas a alguien, quieres asegurarte de que vea ese camino. Ven lo que quieren. Han delineado sus objetivos, cuáles son sus motivaciones y por qué lo hacen, de modo que puedas guiarlos continuamente para que logren el cambio que los mejorará.</p><p>En última instancia, solo puedes llegar hasta cierto punto. Puedes llevar al caballo al agua. No puedes obligarlos a beber, pero puedes mostrarles por qué deben cambiar en función de lo que hayan indicado que es su objetivo. Es muy fácil acudir a un representante de ventas o a un líder de ventas y decirle que has indicado que estos son tus objetivos.</p><p><strong>Esta es la conversación que tuvimos el mes pasado. </strong>Hablamos sobre por qué deberías hacer este cambio y los posibles beneficios que tendría. Acordamos un plan de acción. Han hecho el cambio. Buen trabajo. Ahora trabajemos en esto o no hiciste el cambio. ¿Por qué es eso?</p><p>¿Dónde nos echamos de menos? Porque obviamente estuvimos de acuerdo en que este era un buen curso de acción. Queríamos evitar la trayectoria en la que todavía estáis. Creo que esas son las partes más importantes de la formación: entender la motivación y asegurarnos de que vendes el cambio de forma adecuada.</p><h2 id="construir-relaciones-b2b-con-grandes-organizaciones">Construir relaciones B2B con grandes organizaciones</h2>
+<h3>Esa fue una respuesta muy completa, ¡gracias! Así que trabajas en Microsoft. Como líder, ¿cómo haces que las personas se sientan importantes en una empresa tan grande?</h3><p>Es curioso porque nunca he estado en una empresa en la que haya estado tan rodeado de pura brillantez. Es fácil hacer que se sientan bien y hacer que se sientan especiales porque definitivamente lo son. Creo que es importante buscar siempre formas de añadir valor, pero asegúrate también de hacerles saber lo mucho que aprecias el valor que ellos aportan. Haz un esfuerzo concertado, aunque solo envíes los correos electrónicos más básicos, dale un toque personal y pregúntales qué tal o cual han sido las cosas que han compartido conmigo.</p><p>Tal vez se fueron de viaje o tuvieron un problema con su hijo. Su hijo estaba enfermo o algo así. Cuando hacen un trabajo ejemplar, encuentro la manera de denunciarlo, ya sea enviando una nota a su jefe o buscando un foro muy público en el que hacerlo.</p><p>Hoy en día con las redes sociales, es muy fácil destacar una gran actuación donde mucha gente puede verla. Puedes escribir recomendaciones para las personas. Puedes hacer diferentes cosas para respaldarlas. Creo que hay muchas maneras diferentes.</p><p>Una vez más, da un paso atrás porque es muy fácil quedar atrapado en el día a día y darte cuenta de lo agradecido que estás o deberías estar por parte del valor que aportan las personas. Hago todo lo que puedo para intentar demostrar cuánto aprecio a todas las personas con las que trabajo, a las personas que aportan valor. Siempre he intentado hacerlo, especialmente como líder de ventas. Creo que es muy importante.</p><p>Es muy fácil quedar atrapado en el día a día y en todos los incendios que se producen constantemente. Por eso creo que es tan importante asegurarse de dedicar tiempo a destacar y reconocer a las personas que están haciendo un gran trabajo. Lo aprecian.</p><h3><strong>Hablemos de las ventas B2B. Me imagino que trabajas con todo tipo de organizaciones, incluidas las bastante grandes. No soy vendedor. Me dedico al marketing, así que me pregunto: ¿cómo puedes ponerte en contacto y construir una relación con este tipo de grandes máquinas?</strong></h3><p>Es una gran pregunta. Tienes que analizar tu propio proceso y tu propia solución, y tienes que ver qué valor aporta, qué posibles problemas empresariales resuelve, qué brechas en el proceso solucionas. Luego encontrarás a tu público objetivo. ¿A quién puedes ayudar en ese negocio?</p><p>Una vez más, estamos en un mundo en el que puedo segmentar por ubicación geográfica, por sector, por tamaño de empresa, por título de la persona de la organización y puedo encontrar a casi cualquier persona. Es algo hermoso. Creo que lo que es importante que los vendedores entiendan es que solo porque tenemos todas estas herramientas mágicas a nuestra disposición, nada reemplaza la relación cara a cara y en persona. De nuevo, ese es tu objetivo final.</p><p>No estás pensando en vender toda tu gama de servicios desde el principio. Lo que estás buscando es <strong>forjar una relación</strong>. Quiere añadir valor, pero, en última instancia, quiere vender una reunión. Quieres ponerte delante de la persona.</p><p>Tienes que alcanzar el objetivo inmediato en lugar de intentar poner el carro delante de los caballos e intentar vender todo lo que tienes. He visto muchas variaciones diferentes de esto, haciendo campañas de divulgación o llamadas en frío, enviando correos electrónicos e intentando enviar toda la información que quieras. Es casi como vomitar toda la información que tienes con la esperanza de que un cliente vea algo que le guste y responda. Ese no es el enfoque correcto. Una vez más, hay que ver si se trata de una empresa pequeña o si se trata de una empresa muy grande. Piensas en el valor potencial, en lo que probablemente sea más intrigante que podrías aportarles, y luego encuentras al público objetivo adecuado.</p><p>Eche una red amplia porque las ventas son una ciencia maravillosa. Tiene mucha probabilidad matemática. Es muy importante que entiendas que es un juego de números. En lugar de apuntar solo a una persona a un cliente, apunta a diez.</p><p>Continúe: creo que tenemos soluciones para diferentes brechas. He visto esto en su industria. Me interesaría conocer su opinión sobre cómo esta posible solución podría adaptarse a su sector. Me interesaría conocer algunos de los puntos débiles que tiene. Acabo de empezar a trabajar en esta industria. Me encantaría entender algunas de las cosas que van bien y cómo ves el paisaje.</p><p>Inicie una conversación. Pide consejo. No sea necesariamente sincero y hable como cualquier otro vendedor que haya fracasado siguiendo los pasos de esa persona en el pasado. Francamente, si hablas como cualquier otro vendedor, te tratarán como a cualquier otro vendedor. Por eso quieres diferenciarte, pero quieres añadir valor.</p><p>A menudo puedo dedicar una cantidad considerable de tiempo, especialmente cuanto más largos son mis ciclos de ventas, en los que no necesariamente hablas con tu cliente. También hay maneras de ser lo más importante. Muchos clientes quieren asimilar las cosas según su horario. Supongamos que les envías un artículo y dices: oye, ¿qué opinas al respecto? Vi esto y pensé en ti.</p><p>Quizás encuentres diferentes formas de enviarles un boletín informativo. Es más pasivo. Pueden responder cuando quieran. Creo que esa es la era en la que estamos. Al mismo tiempo, asegúrese de hacer un seguimiento diligente.</p><p>Al igual que hablamos antes, cuando estás entrenando y cuando lideras, lideras estas conversaciones y los capacitas para que tomen la decisión que quieres que tomen. Hay filosofías muy similares a las de la formación en liderazgo. En última instancia, estás intentando impulsar el cambio en esta situación. Quieres sacar a la luz las brechas que existen en los procesos, por lo que conocerás algunas de esas cosas al dedicarte al departamento de ventas y al trabajar con clientes de su clase y con los sectores en los que se encuentran. Vas a adquirir muchos conocimientos solo en ese sentido.</p><p>Creo que es importante utilizar ese conocimiento, y estás aumentando tus conocimientos, pero también tener una mente muy abierta a lo que este nuevo cliente potencial pueda aportar y a lo que pueda decirte sobre su industria o sus circunstancias. En realidad, no importa a quién te dirijas. De hecho, casi no importa el tamaño de la empresa. Creo que una vez que empiezas a pensar en las ventas de esa manera, es un punto de inflexión.</p><p>En serio, lo único que quieres hacer es ¿cómo puedo añadir valor a este cliente potencial? ¿Cómo puedo conseguir la reunión? ¿Cuáles son las formas más eficaces de hacerlo? Mira su historia.</p><p>Estamos en una era hermosa en la que puedes ver casi todo sobre esta persona con la que quieres hablar a través de las redes sociales. Puedes ver su historia. Puede que hayas ido a la misma escuela. Tal vez estén en los mismos grupos. Hay muchas maneras diferentes en las que puedes establecer una conexión y tener un toque personal.</p><p>Las mejores relaciones de ventas que he establecido fueron aquellas en las que pude establecer un <strong>toque personal</strong>, incluso con personas a las que no les gustan intrínsecamente los vendedores. Me dijeron a la cara que no les gustan los vendedores. Pude hacer contactos personales con ellos y pudimos mantener una buena relación. Entienden lo que tenemos que hacer. Entienden que, al final del día, estamos trabajando para comercializar un producto. Si buscas añadir valor y encuentras los procesos correctos, sigues ese proceso y te basas en el proceso cuando las cosas cambian y eres capaz de adaptarte y escuchar realmente a tu cliente, puedes vender a cualquiera.</p><h2 id="motivaci-n-comercial-y-gesti-n-del-pipeline">Motivación comercial y gestión del pipeline</h2>
+<h3>Excelente respuesta. También me imagino que tienes una gran cantidad de prospectos, muchas ofertas a lo largo del camino. Acabas de decir que tenías ciclos largos. ¿Cómo se evita que las cosas se estropeen a lo largo del oleoducto?</h3><p>Hay muchas herramientas diferentes para hacerlo. Obviamente, mi empresa vende algunas de ellas. Creo que es importante, ya sea que hagas el seguimiento en una hoja de cálculo o en algún tipo de base de datos de CRM, es fundamental visitarla todos los días y ver realmente cómo puedo lograr un mejor impacto en mi negocio hoy en día o cómo puedo influir mejor en cada una de estas ofertas en la actualidad. Revisa cada una de ellas y tenlas en cuenta, y si hay alguna acción que necesites hacer para que avance en el proceso, toma esa acción, incluso si solo se trata de una nota rápida para un cliente para que la tenga en cuenta.</p><p>Evita algunos clichés, como que me estoy registrando o simplemente estoy haciendo un seguimiento. Siempre me gusta decir que quiero asegurarme de cumplir con los plazos que hemos establecido y simplemente averiguar cómo puedo añadirles valor en este momento. ¿Hay algún tipo de soporte adicional que pueda añadir? ¿Hay información adicional?</p><p>Encuentra esas formas adicionales de hacer toques pasivos, ya sea un boletín informativo. El otro día vi un artículo en un sitio web. Supongamos que hago una búsqueda por palabra clave y me envían artículos. El otro día vi algo sobre lo que hablé con un cliente, así que se lo envío. Hay formas de hacer estos toques que motivarán a estos clientes a responder. Se darán cuenta de que le debo una respuesta.</p><p>Las estadísticas de marketing te dirán que hoy en día tienes que llegar a estos clientes de alguna manera, a veces de cinco a ocho veces antes de que tomen una decisión. Muchos de nosotros, como vendedores, nos daremos por vencidos después de uno o dos intentos. Se remonta a <em>Piense y hágase rico</em> de Napoleon Hill. Tradicionalmente nos damos por vencidos justo antes de haber ganado.</p><p>Creo que por eso es importante seguir revisando tu cartera todos los días. En realidad, la gestión de los oleoductos consiste en analizar cada operación y preguntarse cómo puedo influir en ella en la actualidad. Siempre he intentado mantener un oleoducto muy sólido, honesto y saludable. La forma de gestionarlo realmente es gestionarlo hacia arriba o hacia fuera.</p><p>No gano nada con tener ofertas falsas en trámite. Eso no me va a hacer quedar bien ante los líderes a la hora de hacer un pronóstico. Si tengo alguna probabilidad de cerrar algo, es importante que vaya avanzando a lo largo del proceso. Visita tu cartera, visítala a diario, pregúntate cómo puedo influir en estas ofertas en la actualidad y toma medidas.</p><h3>En estos momentos, nos acercamos al final del año, pero esto es relevante durante todo el año, lo que en las ventas B2B puede ser importante tanto porque los vendedores buscan el presupuesto sobrante como porque se están fijando los presupuestos para el año que viene. ¿Cómo te adaptas a eso?</h3><p>Conozca a sus clientes, comprenda sus ciclos, comprenda su año fiscal en comparación con el año calendario. Muchos de ellos se basarán en el año calendario, pero entienden su año fiscal. Tenga esa conversación con ellos. Si conoces bien a un cliente y trabajas con él o si solo estás haciendo prospecciones, solo para poder entender su presupuesto. ¿Hay formas en las que pueda trabajar sin salirme de tu presupuesto?</p><p>¿Hay formas en las que su empresa pueda configurarlo para que, si no puede permitirse comprar nada más este año, esté reclamando el presupuesto del año que viene y pregunte por el presupuesto del año que viene? ¿Qué han presupuestado? ¿Hay formas en las que puedan dejar espacio dentro del presupuesto para algo que usted pueda mostrarles y que, en su opinión, sería valioso?</p><p>Igual de importante para vender ahora mismo en el cuarto trimestre es vender en el primer trimestre del año que viene y pensar en plantar semillas. Las operaciones que estás cerrando ahora mismo en el cuarto trimestre, es de esperar que las hayas encontrado en el primer, segundo y tercer trimestre de este año. Una vez más, los ciclos de ventas están por todas partes. He trabajado en entornos en los que, si no cierras el trato en una sola llamada, la probabilidad de que cierres algo se reduce considerablemente.</p><p>También he trabajado en entornos en los que el ciclo de ventas promedio era de seis meses a un año. Tu ciclo de ventas está en todas partes, pero al final del día todo se reduce a entender a tus clientes, entender su ciclo, entender su presupuesto, dónde está y dónde se encuentra. Si hay inversiones adicionales que puedan y quieran hacer ahora mismo, si hay espacio para eso en la creación de esa solución, si es algo que usted quiere reivindicar y mostrarles el valor de por qué deberían presupuestar para ello el año que viene, en su punto de vista, Forster, ahora mismo están pensando en hacer un presupuesto para el año que viene.</p><p>Es posible que se apruebe parte de ese proceso.</p><p>Tengo muchos clientes que estaban haciendo sus presupuestos en septiembre, octubre y noviembre, pero <strong>Sabía eso de ellos</strong>. Estaba teniendo esas conversaciones y entendiendo los cambios que querían hacer en 2018 en ese entonces. Estaba conversando con ellos entonces para que pudieran presupuestar esos cambios. La regla de oro de la venta es entender al cliente. Si entiendes esas cosas y entiendes sus presupuestos y sus ciclos de venta, estarás muy bien en el cuarto trimestre.</p><h3>Una vez más, es fin de año, y esto es relevante durante todo el año, por lo que puede ser difícil, mentalmente, para los vendedores que se quedan atrás. ¿Cómo les ayudas a mantener esa motivación de ventas hasta la fecha límite?</h3><p>Esa es una pregunta increíble. <strong>Lo más importante del proceso de venta es no permitirse interrumpir el proceso.</strong> He visto a la gente desesperarse. Cambiarán su proceso para tratar de conseguir cualquier venta que puedan.</p><p>Si venden algo, obtienen una pequeña venta y lo ven como una victoria. Es posible que hayan conseguido una pequeña venta y, si hubieran invertido más tiempo y recursos, podrían haber conseguido algo muy importante y haber negociado una relación a muy largo plazo, porque han demostrado que una solución es realmente valiosa. Seamos realistas. <strong>Si un cliente no ve el valor a largo plazo de lo que has vendido, irá a otro lugar.</strong> Es posible que lo cancelen.</p><p><strong>Tienes que concentrarte siempre en el largo plazo. Lo que te va a ayudar a largo plazo es el proceso.</strong> Concéntrese y sea consciente del largo plazo, pero concéntrese también en el corto plazo del proceso y la ejecución del proceso que descubrió conducirá al resultado final que desea. Me encanta dar un paso atrás, optimizar la conversación en la que estás y buscar formas en las que realmente puedes influir en ella.</p><p>He visto a tantas personas que investigan horas y horas antes de una sola conversación, solo para ver que nunca llega a buen puerto. El cliente no responde a la llamada o se retrasa o se cancela o va en una dirección diferente. Has pasado gran parte de este tiempo casi en vano. No quieres estar completamente a ciegas ante estas conversaciones, pero sí quieres tener un conocimiento práctico.</p><p>Lo que quieres hacer es tener una conversación. Las ventas tienen que ver con las relaciones, ¿y quieres entender cuál es la situación de los clientes? ¿Cuáles son sus brechas en el proceso? ¿Qué es lo que les funciona? ¿Qué es lo que les hace felices? ¿Qué es lo que les gusta de lo que están haciendo ahora y qué es lo que no les gusta?</p><p>Tal vez haya partes completas de su negocio que puedas abordar con una solución empresarial en la que ni siquiera habían pensado. Tal vez haya productos o servicios adicionales que su solución pueda ofrecerles u ofertas adicionales. Da un paso atrás, respira hondo, deja de pensar tanto en el número y piensa en el proceso.</p><p>Siempre hablo de que no debes obsesionarte con los resultados. <strong>Obsesiónate con el proceso y los resultados siempre estarán ahí. Ha sido la filosofía que he seguido durante toda mi carrera, y nunca me ha decepcionado.</strong></p><h2 id="aportar-valor-despu-s-de-la-venta">Aportar valor después de la venta</h2>
 <h3>Esa es genial, ¡obsesiónate con el proceso! Hablando del proceso, por lo que he leído en tus artículos y publicaciones de LinkedIn, dices que el proceso no termina una vez que se cierra la venta. ¿Cómo puedes seguir ofreciendo un valor innegable después de la venta?</h3><p>Esa es una gran pregunta. Creo que muchas veces nosotros, como vendedores, fracasamos en la relación. Donde podemos perdernos el panorama general es al no continuar la relación después de la venta. No me malinterpretes. Sé que muchas veces nuestros propios roles pueden llevarnos a algo de eso.</p><p>Evidentemente, tenemos que seguir con la prospección. Tenemos que seguir buscando nuevos negocios para ponerlos en nuestro embudo. Una vez más, al igual que se tarda cinco segundos en enviar un correo electrónico a alguien diciéndole que lo aprecias o simplemente se tarda cinco segundos en reconocer a alguien de tu equipo, se necesitan cinco segundos en enviar una nota rápida a un cliente preguntándole cómo van las cosas y si se beneficiaría de una conversación, si tiene alguna pregunta sobre en qué ha invertido o si hay alguna forma de ayudarlo a optimizar su inversión.</p><p><strong>Los clientes se toman muy en serio su inversión, por lo que tú también deberías hacerlo.</strong> Me gusta decirles a los clientes todo el tiempo que no solo es importante para mí mostrarles las posibles soluciones, sino también <strong>Quiero asegurarme de que estamos optimizando tu inversión</strong>. Estás invirtiendo sustancialmente en nuestro negocio. ¿Cuál es la mejor manera de ayudarlo a asegurarse de que eso funcione para usted? Quizás haya recursos adicionales que pueda aportar. Tal vez haya diferentes preguntas que puedas responder, cosas que puedas abordar.</p><p>Si mantienes esa relación a largo plazo y eres su persona a la que acudir, ellos seguirán comunicándose contigo. A medida que las cosas cambian, ya que cada empresa tiene diferentes ofertas, mientras que las empresas de sus clientes cambian y se adaptan, es posible que tengan necesidades diferentes. Estarás conectado cuando sucedan esas cosas.</p><p>Otra cosa que también defiendo mucho es que he recomendado a la gente que conozco de la competencia porque sabía que no tenía la solución, pero conocía a alguien de la competencia. Sabía que serían capaces de cuidarlos bien. Es un buen ciclo porque han sido recíprocos. Cuando ese competidor dijo que sé que no puedo satisfacer esta necesidad, pero tú sí puedes, así que hacen la misma presentación.</p><p>Busque siempre maneras de agregar valor, ya sea antes o después de la venta. Eso promoverá la relación y la relación generará resultados y dividendos. Eso no siempre está en el dinero. He tenido muy buenas relaciones con los clientes, incluso a nivel personal, donde puedo decir que realmente nos importa lo que ocurre en la vida de la otra persona. Esas son las personas con las que quieres hacer negocios.</p><p><strong>Creo que si sigues fomentando esa relación después de la venta, generará dividendos.</strong> No todos van a darse la vuelta y comprar todo lo que hay bajo el sol, pero es posible que te refieran a alguien que conozcan porque te respetan y el valor que has aportado a su relación. Podría abrir diferentes vías de formas que nunca imaginaste.</p><h3>Hay una cosa de la que aún no hemos hablado. Eres autor. Tienes una serie de libros titulada <a href="https://www.amazon.com/Birth-Salesman-Against-World/dp/1495499332" rel="external noopener"><em>El nacimiento de un vendedor</em></a>. La mayoría de los libros orientados a la venta son puramente de no ficción. ¿Por qué decidiste crear un narrador ficticio?</h3><p>He querido escribir toda mi vida. Cuando estaba en tercer grado, escribía historias de viajes en el tiempo con la gente de mi clase. Escribía historias sobre el espacio exterior de personas de mi clase y de cómo comandaba la tripulación de una nave estelar. He escrito toda mi vida y, en cierto modo, me gusta ser el elemento teatral de la toma ficticia.</p><p>Solía hacerlo en una empresa anterior para escribir un boletín de la división. Todos los temas tenían que ver con las ventas. Nunca tuve la intención de dedicarme a las ventas. Pensé que estaba asumiendo un rol de servicio al cliente. De hecho, fueron ventas muy agresivas.</p><p>Por suerte, me convertí en un buen actor. Subí de rango e hice diferentes roles. Disfruté mucho escribiendo sobre capacitación, ventas y teniendo conversaciones sobre ventas. Escribir sobre muchos temas diferentes fue divertido, pero el deseo de escribir algo de ficción nunca desapareció.</p><p>Si nos fijamos en la actualidad, hay muchos libros de ventas diferentes por ahí. Diré esto, no escribí un libro para ganar dinero. Escribí un libro por la experiencia y por la oportunidad de interactuar con la gente. He podido hablar con personas como tú, con personas como <a href="https://www.gitomer.com/" rel="external noopener">Jeffrey Gitomer</a> y <a href="https://jebblount.com/" rel="external noopener">Jeb Blount</a> en las últimas semanas. Es increíble.</p><p>Estos chicos han escrito libros de ventas que tratan sobre los fundamentos y los procesos y sobre cómo ejecutar mejor. Se ha hecho muchas veces y se ha hecho tantas veces bien. Como siempre estoy buscando formas de diferenciarme en el proceso de ventas y en el liderazgo, me pregunté: ¿cómo puedo diferenciarme? Creé un libro de ventas como autor ficticio. De hecho, mi personaje ficticio escribe un libro de ventas que aparece en una novela sobre sus experiencias y cómo adquirió las experiencias sobre las que escribe. Creé esta historia y partió de ahí.</p><h3>Dijiste que el libro está repleto de consejos que desearías haber recibido cuando estabas empezando. ¿Qué consejo es ese?</h3><p>Creo que hay muchas cosas para las que no estamos necesariamente preparados cuando empezamos nuestras carreras o cuando empezamos en ventas o cuando salimos de la universidad o cuando vamos a la universidad. Hay muchas cosas en los negocios, como jugar a la política. No siempre vas a poder hacer las cosas de la manera que mejor te parezca. Es importante que te asegures de cumplirlas: si trabajas para una organización, te pagan por seguir las directivas de la empresa. Si trabajas para ti mismo, tú estableces esas reglas, pero hay muchos aspectos fundamentales que debes poner sobre la mesa.</p><p>Vas a sentarte a la mesa con una gran idea, pero ¿cómo puedes complementar esa gran idea con un proceso? ¿Cómo te adaptas y cambias cuando las cosas cambian? Creo que eso es mucho. Cuando llegan tormentas inevitables en tu vida y en tu carrera, ¿cómo te adaptas para que no sean catastróficas?</p><p>A todos nos han pasado cosas en la vida y en nuestras carreras que son casi debilitantes. Lo que realmente definirá nuestro éxito es la forma en que nos recuperemos de eso. También hay muchas ocasiones en las que tienes éxito y luego lo pierdes. Entonces, ¿cómo puedes seguir adaptándote, reinventándote y recreándote para añadir valor? Ya sea en la empresa de la que pensabas que te ibas a retirar y no lo hiciste, o si es en una nueva empresa a la que te estás mudando.</p><p><strong>No puedes tener miedo de correr riesgos.</strong> Tiene que ser un riesgo estratégico, pero aprenderás muchas veces haciéndolo. Creo que eso es mucho de lo que hay en este libro.</p><h3>Muchas gracias por hacer esto, fue muy interesante. ¡Gracias por tomarte el tiempo!</h3><p>Forster, fue genial. Pienso muy bien en ti y en el contenido que compartes, así que sigue con tu excelente trabajo.</p><p>Definitivamente disfruté la conversación. Haces grandes preguntas y cosas que invitan a la reflexión. Me apasionan estas cosas, así que espero que se noten. ¡Gracias de nuevo por la oportunidad!</p><h3>¡Es un placer!</h3>
-        </article>
 
-        <div class="cta-box">
-            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
-            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
-        </div>
-
-        <div class="author-bio">
-            <svg width="56" height="56" viewBox="0 0 56 56" style="border-radius:50%;flex-shrink:0;">
-  <rect width="56" height="56" rx="28" fill="#7C3AED"/>
-  <text x="28" y="29" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="20">FP</text>
-</svg>
-            <div>
-                <div class="name">Forster Perelsztejn</div>
-                <div class="role">Redactor en Overloop</div>
-                <div class="role">Especialista en cold email y estrategia de prospección B2B.</div>
-            </div>
-        </div>
-
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">FP</div>
+      <div>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">Contributing Writer at Overloop</div>
+        <div class="author-card__bio">Covering outbound sales and cold email best practices.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

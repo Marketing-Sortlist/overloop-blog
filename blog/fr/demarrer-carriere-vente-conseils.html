@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Démarrer votre carrière dans la vente | Overloop</title>
-    <meta name="description" content="Découvrez comment démarrer votre carrière commerciale avec les conseils de Marcus Cauchi. Astuces pour réussir dans la vente B2B. Découvrez nos conseils po">
-    <link rel="canonical" href="https://overloop.com/fr/blog/demarrer-carriere-vente-conseils">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Démarrer votre carrière dans la vente | Overloop</title>
+  <meta name="description" content="Découvrez comment démarrer votre carrière commerciale avec les conseils de Marcus Cauchi. Astuces pour réussir dans la vente B2B. Découvrez nos conseils po">
+  <link rel="canonical" href="https://overloop.com/fr/blog/demarrer-carriere-vente-conseils">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/kickstart-sales-career-2">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/vertriebskarriere-starten">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/demarrer-carriere-vente-conseils">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/carrera-ventas">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/avviare-carriera-vendite">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/kickstart-sales-career-2">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="Démarrer votre carrière dans la vente">
     <meta property="og:description" content="Découvrez comment démarrer votre carrière commerciale avec les conseils de Marcus Cauchi. Astuces pour réussir dans la vente B2B. Découvrez nos conseils po">
@@ -29,7 +407,6 @@
     <meta name="twitter:title" content="Démarrer votre carrière dans la vente">
     <meta name="twitter:description" content="Découvrez comment démarrer votre carrière commerciale avec les conseils de Marcus Cauchi. Astuces pour réussir dans la vente B2B. Découvrez nos conseils po">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/kickstart-sales-career-2.png">
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -69,186 +445,151 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><div class="breadcrumb-bar">
-    <div class="container">
-        <a href="https://overloop.com">Overloop</a>
-        <span class="sep">/</span>
-        <a href="/fr/blog/">Blog</a>
-        <span class="sep">/</span>
-        <span class="current">Démarrer votre carrière dans la vente</span>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
     </div>
-</div>
+  </nav>
 
-<header class="article-header">
-    <span class="header-badge">Ventes</span>
-    <h1>Démarrer votre carrière dans la vente</h1>
-</header>
-
-<main class="article-body">
-    <div class="container">
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>Démarrer votre carrière dans la vente</h1>
+        <p class="lead">Contrairement à Morgan J. Ingram et Rex Biberston, l'invité de cette semaine n'appartient pas à la génération Y, mais il en sait certainement une ou deux à leur sujet&nbsp;! Marcus Cauchi a eu la g…</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                Par <a href="https://www.linkedin.com/in/nicolasfinet/">Nicolas Finet</a> &middot;
-                Publié le 15 avril 2026 &middot;
-                10 min de lecture
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Dec 18, 2017 &middot; Updated Apr 15, 2026</div>
+          </div>
         </div>
-
-        <article class="article-content">
-<p id="">Contrairement à Morgan J. Ingram et Rex Biberston, l'invité de cette semaine n'appartient pas à la génération Y, mais il en sait certainement une ou deux à leur sujet&nbsp;! Marcus Cauchi a eu la gentillesse de prendre le temps de parler de son travail de coach commercial et de donner des conseils aux nouveaux venus sur la façon de lancer leur carrière dans la vente&nbsp;!</p><p id="">Consultez <a href="https://www.youtube.com/channel/UCvVuFgf3AbNVRzE19Ty5Cog/videos?disable_polymer=1" id=""><strong id="">La chaîne YouTube de Marcus</strong></a> pour des conseils de vente pratiques et efficaces&nbsp;!</p><h3 id="">Pourrais-tu te présenter un peu à nos lecteurs, nous dire ce que tu fais&nbsp;?</h3><p id="">OK. Je m'appelle Marcus Cauchi. Je travaille pour Sandler Training, la plus grande société de vente et de gestion des ventes au monde. Je suis un franchisé basé dans le sud-est de l'Angleterre, je travaille pour eux depuis 14 ans. J'ai travaillé dans 450 secteurs du marché et, en gros, j'enseigne aux gens à faire le moins de travail pour le plus d'argent possible.</p><h3 id="">Vous enseignez donc <h2>La méthode de formation commerciale Sandler</h2>les règles de Sandler. Sur quoi sont-ils articulés&nbsp;? Sur quoi sont-ils basés&nbsp;?</h3><p id="">Sandler est basé sur un bon modèle psychologique, qui est <strong id="">analyse des transactions</strong>, et il s'agit vraiment de comprendre comment les gens achètent et pourquoi ils achètent. Les gens achètent pour <strong id="">leurs raisons</strong>, et non les raisons du vendeur. C'est le travail du vendeur de faire obstacle à la vente et à la décision d'achat du prospect. Malheureusement, la plupart des vendeurs se retrouvent ou se placent au centre de l'attention. La conversation a tendance à être diffusée par le vendeur à un prospect audacieux qui doit subir une sorte de présentation pénible sur les fonctionnalités et les avantages.</p><p id="">Maintenant, les gens n'achètent pas pour ces raisons. Ils achètent spécifiquement parce qu'ils ont <strong id="">problème</strong> qu'ils veulent faire réparer et font venir le vendeur pour le bien de leur santé, à moins qu'ils n'aient un problème de santé, bien sûr. Ce qu'ils essaient de faire, c'est régler un problème, mais la plupart des vendeurs essaient simplement de pédaler. C'est là que le décalage se produit, et c'est là qu'ils concentrent le prospect sur le coût de l'investissement plutôt que sur le rendement. À cause de cela, ils passent beaucoup de temps à ennuyer les prospects, excusez-moi, à faire des consultations gratuites, à faire des recherches, à faire des suivis, tout ce genre de choses.</p><h3 id="">C'est donc l'erreur la plus courante&nbsp;: ils se concentrent sur le produit et l'investissement, et non sur le rendement et la valeur.</h3><p id="">C'est le <strong id="">premier</strong> erreur qu'ils commettent. Le <strong id="">seconde</strong> l'erreur qu'ils commettent est de mettre le client sur un piédestal. Le client n'est jamais supérieur ou inférieur à votre égal. Si vous les mettez sur un piédestal, vous cédez votre pouvoir, et votre travail dans la vente consiste à contrôler la vente. Il ne s'agit pas d'une sorte de chiot qui fait ce qu'on lui dit et se retourne pour que vous puissiez lui chatouiller le ventre. C'est à vous de découvrir la véritable cause du problème, de le diagnostiquer et d'aider le prospect à le voir et à lui donner un aperçu grâce à vos questions.</p><p id="">Encore une fois, la plupart des vendeurs parlent ou font des présentations au lieu d'écouter et de poser des questions. Ils <strong id="">donner leur pouvoir</strong>, puis ils passent leur temps à essayer de convaincre. On ne peut convaincre personne d'acheter quoi que ce soit. Ils doivent découvrir pourquoi ils le veulent pour eux-mêmes, et c'est de là que vient votre crédibilité, à partir des questions que vous posez, et non des informations que vous donnez.</p><h3 id=""><strong id="">Adam Honig de Spiro, CRM a écrit un article sur notre blog sur la façon dont les introvertis peuvent renforcer leur confiance en eux. Comment se passe cette formation avec des introvertis&nbsp;?</strong></h3><p id="">C'est une question intéressante. Si vous avez affaire à un introverti, il vous suffit d'adapter la formation pour qu'il puisse facilement adopter le système et que le système soit fiable. Nous travaillons avec des introvertis, des extravertis, des personnes qui sont très soucieuses des détails, des personnes qui ont une vision d'ensemble, qui suivent un rythme rapide et lent. Cela ne fait aucune différence en ce qui nous concerne. En fin de compte, si vous avez un bon système, vous devez vous l'approprier et contrôler votre propre comportement.</p><p id="">Le prospect doit obtenir le type de personnalité dont il a besoin pour acheter chez vous. En tant que vendeur, vous n'êtes en grande partie pas pertinent. Tu es un <strong id="">véhicule</strong> pour poser des questions et recueillir de bonnes données. Si vous vous placez au centre de l'attention ou si vous vous dites introverti ou extraverti et que vous avez du mal à vendre à une certaine partie de la population, vous vous coupez les jambes. Maintenant, je pense qu'un bon vendeur peut vendre à n'importe quel type de personnalité, et il doit apprendre à adapter sa personnalité pour répondre aux exigences de ce prospect en particulier.</p><h3 id="">J'ai vu sur votre profil LinkedIn que <h2>Recruter de bons commerciaux : les critères clés</h2>95&nbsp;% des problèmes de gestion commencent par un mauvais recrutement. À quoi les recruteurs doivent-ils donc faire attention lorsqu'ils recrutent, et plus particulièrement les vendeurs&nbsp;?</h3><p id=""><strong id="">C'est tellement important. La chose la plus importante que vous recherchez, ce ne sont pas les compétences, l'expérience et les résultats, comme le font la plupart des gens.</strong> Ils veulent vérifier qu'ils ont de l'expérience dans ce secteur, dans la vente dans ce domaine ou dans cette technologie en particulier. La réalité est que vous êtes esclave de vos habitudes. Si quelqu'un a l'habitude de prospecter avant son arrivée, il continuera probablement à le faire lorsqu'il figurera sur votre liste de paie. S'ils ont l'habitude de se poser des questions, d'écouter, s'ils sont prêts à planter leurs pieds, s'ils ont une bonne conception de l'argent, leurs convictions, leurs valeurs, s'ils ont une conception monétaire solide, s'ils pensent qu'ils vendent de la valeur mais qu'ils ne vendent pas leur temps, et qu'ils ne vendent pas une marchandise, ils peuvent facturer leurs meilleurs prix. <strong id="">Ils doivent avoir de bonnes capacités cognitives, c'est-à-dire la capacité d'apprendre, de s'adapter et de changer en fonction de l'environnement actuel ou de la personne qu'ils rencontrent. Ils doivent être capables d'apprendre rapidement sur le sabot. Ils doivent tirer les leçons de leurs échecs, puis adapter les choses à la prochaine conversation qu'ils auront.</strong></p><p id="">Ce sont là de bons indicateurs de réussite, mais la plupart des gens essaient de vendre leur emploi et leur entreprise. Je pense que lors d'un entretien, vous devriez mettre le candidat sous forte pression pour un poste de vente. Lorsqu'ils sont confrontés à un directeur financier, à un PDG ou à un responsable des achats difficile et coriace, ils doivent être capables de se lancer. Ils ont besoin de développer une colonne vertébrale, pas un triangle. L'erreur qu'ils commettent, c'est qu'ils finissent par céder parce qu'ils entrent dans le système de l'acheteur. J'aime mettre les gens sous pression lors des entretiens pour voir comment ils modifient leur comportement entre une situation normale et une situation difficile.</p><h3 id=""><strong id="">À cet égard, quels conseils donneriez-vous aux jeunes diplômés qui souhaitent démarrer une carrière dans la vente&nbsp;?</strong></h3><p id="">Accédez à LinkedIn et trouvez des personnes qui savent vendre et qui ont un bon système. Communiquez avec eux. Devenez vendeur sur les réseaux sociaux. Développez votre réseau. Hubspot a effectué des recherches récentes il y a quelques mois. Environ 72&nbsp;% des personnes atteignent leur cible lorsqu'elles font de la vente sur les réseaux sociaux, et seulement 45&nbsp;% d'entre elles ne le font pas. C'est la première chose à faire.</p><p id="">La deuxième chose à faire est de devenir un apprenant vorace. Je recommande les livres suivants, <a href="https://www.amazon.com/Asking-Questions-Sandler-Antonio-Garrido-ebook/dp/B073ZJS5DW" id=""><em id="">Poser des questions à la manière Sandler</em></a> par Antonio Garrido. Je recommanderais <a href="https://www.amazon.com/Why-People-Buy-Features-Benefits-ebook/dp/B075QJBQSP" id=""><em id="">Pourquoi les gens achètent</em></a> par Greg Nanigian. Je recommanderais <a href="https://www.amazon.com/Cant-Teach-Ride-Bike-Seminar/dp/0967179904" id=""><em id="">Vous ne pouvez pas apprendre à un enfant à faire du vélo à</em> <em id="">un séminaire</em></a> par David Sandler. Je recommanderais également un livre d'un certain Mark Goulston, intitulé <a href="https://www.amazon.com/Just-Listen-Discover-Getting-Absolutely/dp/0814436471" id=""><em id="">Il suffit d'écouter</em></a>, qui n'est pas un livre de vente en soi, mais qui vise à comprendre les gens. J'investirais beaucoup de temps en moi-même. Je passerais au moins une heure par jour à étudier en autonomie. Bien entendu, je suis partisane, mais je n'hésiterais pas à contacter un entraîneur Sandler local pour voir si vous pourriez participer à son programme pour jeunes adultes.</p><p id="">J'obtiendrais leur <strong id="">chefs</strong> pour <strong id="">investir</strong> en eux. Si le processus d'intégration de leur entreprise est essentiellement le suivant&nbsp;: «&nbsp;Félicitations, vous êtes embauché&nbsp;»&nbsp;; ils leur donnent une carte de visite et un téléphone en leur disant de continuer, c'est vraiment mauvais signe. Cela suggère que leur manager est <strong id="">inutile</strong>. Le problème de la plupart des recrutements, c'est que c'est la faute du manager ou du propriétaire, et c'est à cause de la culture qu'ils créent. S'ils veulent vraiment aller de l'avant, ils devraient tenir un journal quotidien de ce qui s'est passé, de ce pour quoi ils sont reconnaissants, des comportements qu'ils se sont engagés à adopter, de la manière dont ils se sont comportés contre ces comportements, des leçons qu'ils ont apprises, des échecs qu'ils ont rencontrés et de la manière dont ils vont s'adapter la prochaine fois. Ce serait un excellent point de départ.</p><p id="">L'autre point et, encore une fois, cela semble égoïste, mais j'ai probablement quelques centaines de vidéos sur ma chaîne YouTube. Abonnez-vous à cela. C'est vraiment un bon point de départ. Je regarderais les vidéos d'un type qui s'appelle <a href="https://www.youtube.com/channel/UCF7yeZmy0n9BCLpX8Jb8d-Q" id="">Paul Lanigan</a>, depuis Dublin. Les siens sont fantastiques, Jody Williamson, ainsi que le podcast Sandler et la chaîne vidéo Sandler. Il y a de bonnes choses là-dedans et c'est facilement accessible. Il est en petits morceaux.</p><p id="">Quoi d'autre&nbsp;? La planification, c'est l'autre point. <strong id="">Ayez un plan</strong>, et assurez-vous de bien planifier et de travailler <strong id="">comportements</strong>, et non des chiffres sur une feuille de calcul. Ce seraient mes premiers conseils.</p><h3 id="">Très bien, merci. C'est très précieux. Puisque nous <h2>Ce qui fait un bon directeur des ventes</h2>parlons de managers, d'après votre expérience, quels sont les traits et les comportements d'un bon directeur des ventes&nbsp;?</h3><p id=""><strong id="">Les bons directeurs des ventes savent qu'ils ont deux fonctions dans la vie&nbsp;: embaucher les meilleurs et en tirer le meilleur parti.</strong> Les bons managers ne portent pas de sac eux-mêmes, ils n'ont donc pas d'objectif personnel. Ils remettent tous leurs comptes. Ils sortent, encadrent, forment, encadrent et aident leurs vendeurs à faire mieux, tout le monde. Ils devraient être sur le terrain avec chacun de leurs vendeurs au moins une fois par mois. Ils devraient avoir une rencontre individuelle avec eux au moins une fois par mois. Ils devraient rencontrer l'équipe ou discuter de leur pipeline avec chaque personne chaque semaine.</p><p id="">Ils sont <strong id="">clair</strong> <strong id="">à propos de ce qui est attendu</strong> dès l'entretien et le processus de sélection tout au long de leur cycle de vie. Qu'y a-t-il de nouveau dans le pipeline&nbsp;? Quels sont les progrès en cours&nbsp;? Qu'est-ce qui ne l'a pas fait&nbsp;? Pourquoi pas&nbsp;? Qu'allez-vous faire cette semaine pour le faire avancer ou le disqualifier&nbsp;? Qu'est-ce que tu as gagné&nbsp;? Qu'est-ce que tu as perdu&nbsp;? Pourquoi l'as-tu perdu&nbsp;? Si vous l'avez perdu à cause d'une mauvaise somme d'argent, l'avez-vous perdu à cause de l'argent parce que vous n'avez pas posé les questions assez tôt, et êtes-vous suffisamment qualifié&nbsp;? Y a-t-il des barrages routiers&nbsp;?</p><p id="">Ils doivent se poser ce genre de questions. Je ne veux pas essayer de faire trébucher le vendeur, mais le vendeur doit savoir qu'il est censé être en mesure de répondre à ces questions. Lorsque le vendeur revient de la réunion et dit que c'était une excellente réunion, la première question du directeur des ventes devrait être pourquoi&nbsp;? S'ils disent que c'est parce qu'ils étaient vraiment motivés et enthousiastes, le vendeur devrait leur donner un regard un peu sale. Alors dis pourquoi&nbsp;? Mes vendeurs n'ont pas pris la peine de recueillir des informations. <strong id="">Vous participez à la vente pour recueillir des informations, pas pour les donner.</strong> S'ils n'ont pas été en mesure d'analyser les difficultés du prospect, son budget, son processus de prise de décision, la composition des personnages, les critères de prise de décision, l'apparence du paysage compact, les délais, alors il n'est pas vraiment un vendeur. Au mieux, ils sont preneurs de commandes, ou s'ils sont vraiment mauvais et complètement nuls, ils sont négociateurs.</p><h3 id="">Disposez-vous d'un technicien de vente&nbsp;? Avez-vous des outils que vous utilisez ou que vous recommandez&nbsp;?</h3><p id="">Je suis très peu technophile. J'utilise LinkedIn comme base de données de contacts. J'y passe quelques heures par jour. J'utilise le contenu comme un moyen d'engager, d'attirer et de devenir un expert en la matière. J'utilise des partenariats de recommandation. Je travaille avec des personnes qui opèrent dans des secteurs non concurrents, mais qui vendent sur le même marché cible que moi. Ensuite, nous passons par un long processus de flirt pour déterminer si nous voulons travailler ensemble, puis nous nous apprenons les uns les autres à nous présenter comme s'il s'agissait de nous-mêmes. Nous avons un processus dans lequel nous donnons des commentaires honnêtes d'adulte à adulte afin de nous améliorer constamment.</p><p id="">Maintenant que je suis dedans depuis assez longtemps, la plupart de mes affaires proviennent de recommandations. Je suis donc bénie de ne pas avoir à appeler quelqu'un à froid autant que je le faisais quand j'ai commencé. InMail et les groupes sont fantastiques. L'autre astuce que j'ai découverte est le parrainage. Le parrainage est un moyen fantastique de rencontrer le genre de personnes que vous souhaitez rencontrer. Nous sponsorisons les prix Women in Business parce que, tout d'abord, c'est une bonne cause. Il n'y a pas assez de femmes d'affaires reconnues pour leur travail, et j'ai trois jeunes filles et je veux qu'elles aient d'excellents modèles féminins. C'est formidable d'entrer dans des organisations à très faible coût et très facilement, et c'est ce que je fais.</p><h3 id="">J'ai reçu des conseils intéressants de votre part. J'ai lu qu'un vendeur ne devrait pas gérer lui-même l'<h2>Gérer les objections de vente correctement</h2>objection. Pouvez-vous donner plus de détails à ce sujet&nbsp;?</h3><p id="">C'est à toi de me le dire. Qui s'y oppose, la vôtre ou celle des prospects&nbsp;?</p><h3 id="">Les perspectives, bien sûr.</h3><p id="">OK. Qui est la personne la mieux qualifiée pour s'en occuper&nbsp;?</p><h3 id="">Le prospect.</h3><p id="">Exactement. Tu vois ce que je viens de te faire&nbsp;?</p><h3 id="">J'ai vu que le problème était de mon côté et je vous ai expliqué ce que c'était.</h3><p id="">Exactement. Qui s'en est occupé&nbsp;?</p><h3 id="">Je l'ai fait.</h3><p id="">Exactement. C'est comme ça que tu devrais procéder.</p><p id="">Si vous avez traité l'objection, vous êtes dans une relation contradictoire avec le prospect. <strong id="">Vous ne justifiez jamais et vous ne défendez jamais.</strong> S'il y a une objection, vous devez allumer le fusible de la bombe avant qu'ils ne le fassent. Si vous avez attendu au moment de choisir, vous avez le contrôle. S'ils vous la lancent soudainement, c'est probablement parce que vous avez créé les conditions nécessaires à l'apparition de cette objection, et c'est de votre faute. C'est l'une des principales choses que nous enseignons dans notre système, à savoir que c'est toujours de votre faute. Les prospects ne s'y opposent jamais à moins que le vendeur ne les y emmène.</p><h3 id="">Très bien, tu as déjà donné des tonnes de bons conseils. J'ai juste une dernière question à poser. Quel est le meilleur conseil que tu aies jamais reçu&nbsp;?</h3><p id=""><strong id="">Ne faites jamais une promesse que vous n'avez pas l'intention de tenir.</strong> Vous apprenez grâce aux promesses que vous tenez, et non à celles que vous faites. Dans tous les domaines de la vie, sans parler des ventes, si vous tenez parole et si vous êtes connu pour tenir parole, les gens peuvent vous faire confiance.</p><h3 id="">Merci beaucoup de l'avoir fait. Je l'apprécie vraiment. Il y a eu une tonne de précieux conseils, et j'ai hâte de les partager avec nos lecteurs.</h3><p id="">Plaisir.</p>
-        </article>
-
-        <div class="cta-box">
-            <h3>Prêt à automatiser votre prospection ?</h3>
-            <p>Overloop AI vous donne accès à une base de 450M+ contacts, la rédaction d'emails par IA, et des séquences multicanal. À partir de 69$/utilisateur/mois.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Essayer Overloop gratuitement</a>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
         </div>
+      </div>
+    </header>
 
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO at Overloop</div>
-                <div class="role">CEO de Sortlist & Overloop. A conçu des systèmes outbound pour plus de 500 entreprises B2B.</div>
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#la-m-thode-de-formation-commerciale-sandler"><span class="ch-num">01</span> La méthode de formation commerciale S…</a></li>
+          <li><a href="#recruter-de-bons-commerciaux-les-crit-res-cl-s"><span class="ch-num">02</span> Recruter de bons commerciaux : les cr…</a></li>
+          <li><a href="#ce-qui-fait-un-bon-directeur-des-ventes"><span class="ch-num">03</span> Ce qui fait un bon directeur des ventes</a></li>
+          <li><a href="#g-rer-les-objections-de-vente-correctement"><span class="ch-num">04</span> Gérer les objections de vente correct…</a></li>
+        </ul>
+      </aside>
 
+      <main class="prose">
+
+<p id="">Contrairement à Morgan J. Ingram et Rex Biberston, l'invité de cette semaine n'appartient pas à la génération Y, mais il en sait certainement une ou deux à leur sujet&nbsp;! Marcus Cauchi a eu la gentillesse de prendre le temps de parler de son travail de coach commercial et de donner des conseils aux nouveaux venus sur la façon de lancer leur carrière dans la vente&nbsp;!</p><p id="">Consultez <a href="https://www.youtube.com/channel/UCvVuFgf3AbNVRzE19Ty5Cog/videos?disable_polymer=1" id=""><strong id="">La chaîne YouTube de Marcus</strong></a> pour des conseils de vente pratiques et efficaces&nbsp;!</p><h3 id="">Pourrais-tu te présenter un peu à nos lecteurs, nous dire ce que tu fais&nbsp;?</h3><p id="">OK. Je m'appelle Marcus Cauchi. Je travaille pour Sandler Training, la plus grande société de vente et de gestion des ventes au monde. Je suis un franchisé basé dans le sud-est de l'Angleterre, je travaille pour eux depuis 14 ans. J'ai travaillé dans 450 secteurs du marché et, en gros, j'enseigne aux gens à faire le moins de travail pour le plus d'argent possible.</p><h3 id="">Vous enseignez donc <h2 id="la-m-thode-de-formation-commerciale-sandler">La méthode de formation commerciale Sandler</h2>les règles de Sandler. Sur quoi sont-ils articulés&nbsp;? Sur quoi sont-ils basés&nbsp;?</h3><p id="">Sandler est basé sur un bon modèle psychologique, qui est <strong id="">analyse des transactions</strong>, et il s'agit vraiment de comprendre comment les gens achètent et pourquoi ils achètent. Les gens achètent pour <strong id="">leurs raisons</strong>, et non les raisons du vendeur. C'est le travail du vendeur de faire obstacle à la vente et à la décision d'achat du prospect. Malheureusement, la plupart des vendeurs se retrouvent ou se placent au centre de l'attention. La conversation a tendance à être diffusée par le vendeur à un prospect audacieux qui doit subir une sorte de présentation pénible sur les fonctionnalités et les avantages.</p><p id="">Maintenant, les gens n'achètent pas pour ces raisons. Ils achètent spécifiquement parce qu'ils ont <strong id="">problème</strong> qu'ils veulent faire réparer et font venir le vendeur pour le bien de leur santé, à moins qu'ils n'aient un problème de santé, bien sûr. Ce qu'ils essaient de faire, c'est régler un problème, mais la plupart des vendeurs essaient simplement de pédaler. C'est là que le décalage se produit, et c'est là qu'ils concentrent le prospect sur le coût de l'investissement plutôt que sur le rendement. À cause de cela, ils passent beaucoup de temps à ennuyer les prospects, excusez-moi, à faire des consultations gratuites, à faire des recherches, à faire des suivis, tout ce genre de choses.</p><h3 id="">C'est donc l'erreur la plus courante&nbsp;: ils se concentrent sur le produit et l'investissement, et non sur le rendement et la valeur.</h3><p id="">C'est le <strong id="">premier</strong> erreur qu'ils commettent. Le <strong id="">seconde</strong> l'erreur qu'ils commettent est de mettre le client sur un piédestal. Le client n'est jamais supérieur ou inférieur à votre égal. Si vous les mettez sur un piédestal, vous cédez votre pouvoir, et votre travail dans la vente consiste à contrôler la vente. Il ne s'agit pas d'une sorte de chiot qui fait ce qu'on lui dit et se retourne pour que vous puissiez lui chatouiller le ventre. C'est à vous de découvrir la véritable cause du problème, de le diagnostiquer et d'aider le prospect à le voir et à lui donner un aperçu grâce à vos questions.</p><p id="">Encore une fois, la plupart des vendeurs parlent ou font des présentations au lieu d'écouter et de poser des questions. Ils <strong id="">donner leur pouvoir</strong>, puis ils passent leur temps à essayer de convaincre. On ne peut convaincre personne d'acheter quoi que ce soit. Ils doivent découvrir pourquoi ils le veulent pour eux-mêmes, et c'est de là que vient votre crédibilité, à partir des questions que vous posez, et non des informations que vous donnez.</p><h3 id=""><strong id="">Adam Honig de Spiro, CRM a écrit un article sur notre blog sur la façon dont les introvertis peuvent renforcer leur confiance en eux. Comment se passe cette formation avec des introvertis&nbsp;?</strong></h3><p id="">C'est une question intéressante. Si vous avez affaire à un introverti, il vous suffit d'adapter la formation pour qu'il puisse facilement adopter le système et que le système soit fiable. Nous travaillons avec des introvertis, des extravertis, des personnes qui sont très soucieuses des détails, des personnes qui ont une vision d'ensemble, qui suivent un rythme rapide et lent. Cela ne fait aucune différence en ce qui nous concerne. En fin de compte, si vous avez un bon système, vous devez vous l'approprier et contrôler votre propre comportement.</p><p id="">Le prospect doit obtenir le type de personnalité dont il a besoin pour acheter chez vous. En tant que vendeur, vous n'êtes en grande partie pas pertinent. Tu es un <strong id="">véhicule</strong> pour poser des questions et recueillir de bonnes données. Si vous vous placez au centre de l'attention ou si vous vous dites introverti ou extraverti et que vous avez du mal à vendre à une certaine partie de la population, vous vous coupez les jambes. Maintenant, je pense qu'un bon vendeur peut vendre à n'importe quel type de personnalité, et il doit apprendre à adapter sa personnalité pour répondre aux exigences de ce prospect en particulier.</p><h3 id="">J'ai vu sur votre profil LinkedIn que <h2 id="recruter-de-bons-commerciaux-les-crit-res-cl-s">Recruter de bons commerciaux : les critères clés</h2>95&nbsp;% des problèmes de gestion commencent par un mauvais recrutement. À quoi les recruteurs doivent-ils donc faire attention lorsqu'ils recrutent, et plus particulièrement les vendeurs&nbsp;?</h3><p id=""><strong id="">C'est tellement important. La chose la plus importante que vous recherchez, ce ne sont pas les compétences, l'expérience et les résultats, comme le font la plupart des gens.</strong> Ils veulent vérifier qu'ils ont de l'expérience dans ce secteur, dans la vente dans ce domaine ou dans cette technologie en particulier. La réalité est que vous êtes esclave de vos habitudes. Si quelqu'un a l'habitude de prospecter avant son arrivée, il continuera probablement à le faire lorsqu'il figurera sur votre liste de paie. S'ils ont l'habitude de se poser des questions, d'écouter, s'ils sont prêts à planter leurs pieds, s'ils ont une bonne conception de l'argent, leurs convictions, leurs valeurs, s'ils ont une conception monétaire solide, s'ils pensent qu'ils vendent de la valeur mais qu'ils ne vendent pas leur temps, et qu'ils ne vendent pas une marchandise, ils peuvent facturer leurs meilleurs prix. <strong id="">Ils doivent avoir de bonnes capacités cognitives, c'est-à-dire la capacité d'apprendre, de s'adapter et de changer en fonction de l'environnement actuel ou de la personne qu'ils rencontrent. Ils doivent être capables d'apprendre rapidement sur le sabot. Ils doivent tirer les leçons de leurs échecs, puis adapter les choses à la prochaine conversation qu'ils auront.</strong></p><p id="">Ce sont là de bons indicateurs de réussite, mais la plupart des gens essaient de vendre leur emploi et leur entreprise. Je pense que lors d'un entretien, vous devriez mettre le candidat sous forte pression pour un poste de vente. Lorsqu'ils sont confrontés à un directeur financier, à un PDG ou à un responsable des achats difficile et coriace, ils doivent être capables de se lancer. Ils ont besoin de développer une colonne vertébrale, pas un triangle. L'erreur qu'ils commettent, c'est qu'ils finissent par céder parce qu'ils entrent dans le système de l'acheteur. J'aime mettre les gens sous pression lors des entretiens pour voir comment ils modifient leur comportement entre une situation normale et une situation difficile.</p><h3 id=""><strong id="">À cet égard, quels conseils donneriez-vous aux jeunes diplômés qui souhaitent démarrer une carrière dans la vente&nbsp;?</strong></h3><p id="">Accédez à LinkedIn et trouvez des personnes qui savent vendre et qui ont un bon système. Communiquez avec eux. Devenez vendeur sur les réseaux sociaux. Développez votre réseau. Hubspot a effectué des recherches récentes il y a quelques mois. Environ 72&nbsp;% des personnes atteignent leur cible lorsqu'elles font de la vente sur les réseaux sociaux, et seulement 45&nbsp;% d'entre elles ne le font pas. C'est la première chose à faire.</p><p id="">La deuxième chose à faire est de devenir un apprenant vorace. Je recommande les livres suivants, <a href="https://www.amazon.com/Asking-Questions-Sandler-Antonio-Garrido-ebook/dp/B073ZJS5DW" id=""><em id="">Poser des questions à la manière Sandler</em></a> par Antonio Garrido. Je recommanderais <a href="https://www.amazon.com/Why-People-Buy-Features-Benefits-ebook/dp/B075QJBQSP" id=""><em id="">Pourquoi les gens achètent</em></a> par Greg Nanigian. Je recommanderais <a href="https://www.amazon.com/Cant-Teach-Ride-Bike-Seminar/dp/0967179904" id=""><em id="">Vous ne pouvez pas apprendre à un enfant à faire du vélo à</em> <em id="">un séminaire</em></a> par David Sandler. Je recommanderais également un livre d'un certain Mark Goulston, intitulé <a href="https://www.amazon.com/Just-Listen-Discover-Getting-Absolutely/dp/0814436471" id=""><em id="">Il suffit d'écouter</em></a>, qui n'est pas un livre de vente en soi, mais qui vise à comprendre les gens. J'investirais beaucoup de temps en moi-même. Je passerais au moins une heure par jour à étudier en autonomie. Bien entendu, je suis partisane, mais je n'hésiterais pas à contacter un entraîneur Sandler local pour voir si vous pourriez participer à son programme pour jeunes adultes.</p><p id="">J'obtiendrais leur <strong id="">chefs</strong> pour <strong id="">investir</strong> en eux. Si le processus d'intégration de leur entreprise est essentiellement le suivant&nbsp;: «&nbsp;Félicitations, vous êtes embauché&nbsp;»&nbsp;; ils leur donnent une carte de visite et un téléphone en leur disant de continuer, c'est vraiment mauvais signe. Cela suggère que leur manager est <strong id="">inutile</strong>. Le problème de la plupart des recrutements, c'est que c'est la faute du manager ou du propriétaire, et c'est à cause de la culture qu'ils créent. S'ils veulent vraiment aller de l'avant, ils devraient tenir un journal quotidien de ce qui s'est passé, de ce pour quoi ils sont reconnaissants, des comportements qu'ils se sont engagés à adopter, de la manière dont ils se sont comportés contre ces comportements, des leçons qu'ils ont apprises, des échecs qu'ils ont rencontrés et de la manière dont ils vont s'adapter la prochaine fois. Ce serait un excellent point de départ.</p><p id="">L'autre point et, encore une fois, cela semble égoïste, mais j'ai probablement quelques centaines de vidéos sur ma chaîne YouTube. Abonnez-vous à cela. C'est vraiment un bon point de départ. Je regarderais les vidéos d'un type qui s'appelle <a href="https://www.youtube.com/channel/UCF7yeZmy0n9BCLpX8Jb8d-Q" id="">Paul Lanigan</a>, depuis Dublin. Les siens sont fantastiques, Jody Williamson, ainsi que le podcast Sandler et la chaîne vidéo Sandler. Il y a de bonnes choses là-dedans et c'est facilement accessible. Il est en petits morceaux.</p><p id="">Quoi d'autre&nbsp;? La planification, c'est l'autre point. <strong id="">Ayez un plan</strong>, et assurez-vous de bien planifier et de travailler <strong id="">comportements</strong>, et non des chiffres sur une feuille de calcul. Ce seraient mes premiers conseils.</p><h3 id="">Très bien, merci. C'est très précieux. Puisque nous <h2 id="ce-qui-fait-un-bon-directeur-des-ventes">Ce qui fait un bon directeur des ventes</h2>parlons de managers, d'après votre expérience, quels sont les traits et les comportements d'un bon directeur des ventes&nbsp;?</h3><p id=""><strong id="">Les bons directeurs des ventes savent qu'ils ont deux fonctions dans la vie&nbsp;: embaucher les meilleurs et en tirer le meilleur parti.</strong> Les bons managers ne portent pas de sac eux-mêmes, ils n'ont donc pas d'objectif personnel. Ils remettent tous leurs comptes. Ils sortent, encadrent, forment, encadrent et aident leurs vendeurs à faire mieux, tout le monde. Ils devraient être sur le terrain avec chacun de leurs vendeurs au moins une fois par mois. Ils devraient avoir une rencontre individuelle avec eux au moins une fois par mois. Ils devraient rencontrer l'équipe ou discuter de leur pipeline avec chaque personne chaque semaine.</p><p id="">Ils sont <strong id="">clair</strong> <strong id="">à propos de ce qui est attendu</strong> dès l'entretien et le processus de sélection tout au long de leur cycle de vie. Qu'y a-t-il de nouveau dans le pipeline&nbsp;? Quels sont les progrès en cours&nbsp;? Qu'est-ce qui ne l'a pas fait&nbsp;? Pourquoi pas&nbsp;? Qu'allez-vous faire cette semaine pour le faire avancer ou le disqualifier&nbsp;? Qu'est-ce que tu as gagné&nbsp;? Qu'est-ce que tu as perdu&nbsp;? Pourquoi l'as-tu perdu&nbsp;? Si vous l'avez perdu à cause d'une mauvaise somme d'argent, l'avez-vous perdu à cause de l'argent parce que vous n'avez pas posé les questions assez tôt, et êtes-vous suffisamment qualifié&nbsp;? Y a-t-il des barrages routiers&nbsp;?</p><p id="">Ils doivent se poser ce genre de questions. Je ne veux pas essayer de faire trébucher le vendeur, mais le vendeur doit savoir qu'il est censé être en mesure de répondre à ces questions. Lorsque le vendeur revient de la réunion et dit que c'était une excellente réunion, la première question du directeur des ventes devrait être pourquoi&nbsp;? S'ils disent que c'est parce qu'ils étaient vraiment motivés et enthousiastes, le vendeur devrait leur donner un regard un peu sale. Alors dis pourquoi&nbsp;? Mes vendeurs n'ont pas pris la peine de recueillir des informations. <strong id="">Vous participez à la vente pour recueillir des informations, pas pour les donner.</strong> S'ils n'ont pas été en mesure d'analyser les difficultés du prospect, son budget, son processus de prise de décision, la composition des personnages, les critères de prise de décision, l'apparence du paysage compact, les délais, alors il n'est pas vraiment un vendeur. Au mieux, ils sont preneurs de commandes, ou s'ils sont vraiment mauvais et complètement nuls, ils sont négociateurs.</p><h3 id="">Disposez-vous d'un technicien de vente&nbsp;? Avez-vous des outils que vous utilisez ou que vous recommandez&nbsp;?</h3><p id="">Je suis très peu technophile. J'utilise LinkedIn comme base de données de contacts. J'y passe quelques heures par jour. J'utilise le contenu comme un moyen d'engager, d'attirer et de devenir un expert en la matière. J'utilise des partenariats de recommandation. Je travaille avec des personnes qui opèrent dans des secteurs non concurrents, mais qui vendent sur le même marché cible que moi. Ensuite, nous passons par un long processus de flirt pour déterminer si nous voulons travailler ensemble, puis nous nous apprenons les uns les autres à nous présenter comme s'il s'agissait de nous-mêmes. Nous avons un processus dans lequel nous donnons des commentaires honnêtes d'adulte à adulte afin de nous améliorer constamment.</p><p id="">Maintenant que je suis dedans depuis assez longtemps, la plupart de mes affaires proviennent de recommandations. Je suis donc bénie de ne pas avoir à appeler quelqu'un à froid autant que je le faisais quand j'ai commencé. InMail et les groupes sont fantastiques. L'autre astuce que j'ai découverte est le parrainage. Le parrainage est un moyen fantastique de rencontrer le genre de personnes que vous souhaitez rencontrer. Nous sponsorisons les prix Women in Business parce que, tout d'abord, c'est une bonne cause. Il n'y a pas assez de femmes d'affaires reconnues pour leur travail, et j'ai trois jeunes filles et je veux qu'elles aient d'excellents modèles féminins. C'est formidable d'entrer dans des organisations à très faible coût et très facilement, et c'est ce que je fais.</p><h3 id="">J'ai reçu des conseils intéressants de votre part. J'ai lu qu'un vendeur ne devrait pas gérer lui-même l'<h2 id="g-rer-les-objections-de-vente-correctement">Gérer les objections de vente correctement</h2>objection. Pouvez-vous donner plus de détails à ce sujet&nbsp;?</h3><p id="">C'est à toi de me le dire. Qui s'y oppose, la vôtre ou celle des prospects&nbsp;?</p><h3 id="">Les perspectives, bien sûr.</h3><p id="">OK. Qui est la personne la mieux qualifiée pour s'en occuper&nbsp;?</p><h3 id="">Le prospect.</h3><p id="">Exactement. Tu vois ce que je viens de te faire&nbsp;?</p><h3 id="">J'ai vu que le problème était de mon côté et je vous ai expliqué ce que c'était.</h3><p id="">Exactement. Qui s'en est occupé&nbsp;?</p><h3 id="">Je l'ai fait.</h3><p id="">Exactement. C'est comme ça que tu devrais procéder.</p><p id="">Si vous avez traité l'objection, vous êtes dans une relation contradictoire avec le prospect. <strong id="">Vous ne justifiez jamais et vous ne défendez jamais.</strong> S'il y a une objection, vous devez allumer le fusible de la bombe avant qu'ils ne le fassent. Si vous avez attendu au moment de choisir, vous avez le contrôle. S'ils vous la lancent soudainement, c'est probablement parce que vous avez créé les conditions nécessaires à l'apparition de cette objection, et c'est de votre faute. C'est l'une des principales choses que nous enseignons dans notre système, à savoir que c'est toujours de votre faute. Les prospects ne s'y opposent jamais à moins que le vendeur ne les y emmène.</p><h3 id="">Très bien, tu as déjà donné des tonnes de bons conseils. J'ai juste une dernière question à poser. Quel est le meilleur conseil que tu aies jamais reçu&nbsp;?</h3><p id=""><strong id="">Ne faites jamais une promesse que vous n'avez pas l'intention de tenir.</strong> Vous apprenez grâce aux promesses que vous tenez, et non à celles que vous faites. Dans tous les domaines de la vie, sans parler des ventes, si vous tenez parole et si vous êtes connu pour tenir parole, les gens peuvent vous faire confiance.</p><h3 id="">Merci beaucoup de l'avoir fait. Je l'apprécie vraiment. Il y a eu une tonne de précieux conseils, et j'ai hâte de les partager avec nos lecteurs.</h3><p id="">Plaisir.</p>
+
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>Plateforme de prospection outbound alimentée par l'IA. Trouvez des prospects, rédigez des emails personnalisés et réservez des rendez-vous en pilote automatique.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Plateforme</h4>
-                <a href="/features">Fonctionnalités</a>
-                <a href="/pricing">Tarifs</a>
-                <a href="https://app.overloop.ai/session/signup">Essai gratuit</a>
-                <a href="/book-demo">Réserver une démo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Ressources</h4>
-                <a href="/fr/blog/">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">Calculateur ROI</a>
-                <a href="/tools/domain-health-checker">Santé domaine</a>
-            </div>
-            <div class="footer-col">
-                <h4>Entreprise</h4>
-                <a href="/about">À propos</a>
-                <a href="/testimonials">Témoignages</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Carrières
-            </div>
-            <div class="footer-col">
-                <h4>Légal</h4>
-                <a href="/terms">CGU</a>
-                <a href="/privacy">Confidentialité</a>
-                <a href="/gdpr">RGPD</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Pères Blancs 4, 1040 Bruxelles, Belgique.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

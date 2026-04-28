@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Herramientas IA en prospección B2B (2025) | Overloop</title>
-    <meta name="description" content="Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.">
-    <link rel="canonical" href="https://overloop.com/es/blog/adopcion-herramientas-ia-ventas-b2b">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herramientas IA en prospección B2B (2025) | Overloop</title>
+  <meta name="description" content="Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.">
+  <link rel="canonical" href="https://overloop.com/es/blog/adopcion-herramientas-ia-ventas-b2b">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/adoption-ia-prospection-b2b-analyse">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/ki-vertriebstools-b2b-outbound">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/adopcion-herramientas-ia-ventas-b2b">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/adozione-strumenti-ai-outbound">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/ai-sales-tool-adoption-in-b2b-outbound-prospecting-2025-industry-review-analysis">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="Herramientas IA en prospección B2B (2025)">
     <meta property="og:description" content="Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="Herramientas IA en prospección B2B (2025)">
     <meta name="twitter:description" content="Tendencias clave y opiniones sobre la adopción de herramientas de ventas IA en prospección B2B 2025. Análisis con expertos.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/adopcion-herramientas-ia-ventas-b2b.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,181 +445,150 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><main class="blog-post">
-    <div class="container">
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
 
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="https://overloop.com">Overloop</a> &rsaquo;
-            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
-            <span>Herramientas IA en prospección B2B (2025)</span>
-        </nav>
-
-        <header class="article-header">
-            <h1>Herramientas IA en prospección B2B (2025)</h1>
-        </header>
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Article
+        </span>
+        <h1>Herramientas IA en prospección B2B (2025)</h1>
+        <p class="lead">La prospección de ventas B2B está experimentando un cambio significativo, impulsado por la rápida adopción de herramientas impulsadas por la inteligencia artificial en las organizaciones de ventas.…</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                <strong>Nicolas Finet</strong>
-                <span>|</span> 14 de octubre de 2025
-                <span>|</span> 6 min de lectura
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Oct 14, 2025 &middot; Updated Apr 17, 2026</div>
+          </div>
         </div>
-
-        <article class="article-content">
-<p>La prospección de ventas B2B está experimentando un cambio significativo, impulsado por la rápida adopción de herramientas impulsadas por la inteligencia artificial en las organizaciones de ventas. La divulgación automatizada y la toma de decisiones basada en datos están reemplazando rápidamente a los métodos manuales que consumen mucho tiempo. En un 2024 Encuesta de Gartner, el 75% de los equipos de ventas B2B informaron que tenían previsto adoptar herramientas de IA para 2025. Esa cifra muestra un claro alejamiento de la prospección tradicional, intensiva en humanos.</p><p>Pocas industrias se han sentido presionadas para modernizarse como las ventas salientes B2B. La recopilación manual de datos de los clientes potenciales, la desconexión de las plataformas de ventas y las campañas genéricas han provocado la pérdida de oportunidades y la lentitud de los esfuerzos de comercialización. Para 2025, los líderes esperan que la automatización y la personalización sean requisitos mínimos para el éxito, no diferenciadores. Este escenario está marcado por la fuerte demanda del mercado de herramientas que identifiquen, enriquezcan y contacten a los clientes potenciales ideales a gran escala. Los productos como Overloop permiten a las organizaciones localizar a los responsables de la toma de decisiones, crear un alcance personalizado y organizar sus mensajes en varios canales, todo ello desde una sola plataforma. Para obtener información más detallada y actualizaciones sobre las últimas tendencias, visita nuestra <a href="https://overloop.com/blog/" target="_blank">Blog</a>.</p><p>En las siguientes secciones se analizarán los factores que frenan los métodos tradicionales y se explicarán la tecnología y las mejores prácticas que impulsan la rápida transformación del mercado a medida que los equipos de ventas B2B se preparan para la realidad de la prospección saliente en 2025.</p><h2>Por qué la prospección B2B tradicional no es suficiente</h2><p>Los métodos tradicionales para la prospección B2B a menudo giran en torno a la investigación manual, las campañas de correo electrónico básicas y un mosaico de herramientas independientes. A medida que el entorno de ventas B2B se vuelve más competitivo, estos enfoques revelan varias deficiencias fundamentales que limitan el crecimiento y la eficiencia.</p><h3>Ineficiencias que obstaculizan la productividad de las ventas</h3><p>La contratación manual de clientes potenciales consume mucho tiempo y recursos. Los profesionales de ventas dedican horas a identificar posibles clientes potenciales, hacer referencias cruzadas de datos de múltiples plataformas y evaluar la intención del comprador. Esto ralentiza la velocidad de divulgación y reduce el tiempo disponible para la venta activa. Con los flujos de trabajo fragmentados, la información importante sobre los clientes potenciales a menudo se pierde o se duplica, lo que genera inconsistencias en los equipos de rápido crecimiento.</p><h3>Fragmentación en múltiples herramientas</h3><p>Las pilas de prospección tradicionales suelen incluir productos separados para la búsqueda de clientes potenciales, la mensajería, la coordinación de calendarios y las actualizaciones de CRM. Esta fragmentación genera problemas que incluyen:</p><ul> <li>Silos de datos donde la información no se sincroniza automáticamente</li> <li>Confusión de los usuarios y curvas de aprendizaje pronunciadas para los nuevos empleados</li> <li>Cuellos de botella en los procesos al cambiar de un sistema a otro</li> <li>Costos más altos debido a la superposición de funciones</li></ul><p>‍</p><p>Las herramientas desconectadas dificultan el análisis y la optimización de las campañas, ya que las métricas suelen estar dispersas o son incompatibles.</p><h3>Falta de personalización y bajas tasas de respuesta</h3><p>Las plantillas de correo electrónico y divulgación creadas sin personalización dan como resultado mensajes genéricos que rara vez llegan a los destinatarios. Los mensajes generalizados son habituales cuando los equipos intentan ampliar el alcance utilizando sistemas anticuados, lo que se traduce en tasas de apertura y respuesta más bajas. Muchos compradores esperan ahora que la comunicación personalizada sea el estándar mínimo de interacción.</p><h3>Creciente demanda de soluciones automatizadas e inteligentes</h3><p>Los equipos de ventas B2B desean plataformas simplificadas y consolidadas que aumenten la producción sin aumentar el esfuerzo manual. La necesidad de automatización y coordinación en el correo electrónico, LinkedIn y el CRM está impulsando la demanda de soluciones integradas. Plataformas como Overloop satisfacen esta necesidad al centralizar la búsqueda de clientes potenciales, la personalización automatizada y la ejecución de campañas en una sola interfaz, lo que elimina muchos problemas que ralentizan las prácticas tradicionales de prospección.</p><h2>Automatización, personalización y eficiencia: impulsando el cambio a las herramientas de ventas basadas en inteligencia artificial</h2><p>La prospección manual obliga a los equipos de ventas a hacer malabares con hojas de cálculo, herramientas de CRM y un mosaico de secuencias de correo electrónico con pocos resultados. Las herramientas de ventas de inteligencia artificial cambian esta situación, ya que utilizan la automatización para liberar horas que antes se perdían en tareas tediosas y transforman la forma en que los equipos obtienen, captan y gestionan los clientes potenciales.</p><h3>Automatización del abastecimiento de clientes potenciales</h3><p>La creación tradicional de listas ralentiza los esfuerzos de salida, ya que se basa en la investigación manual y la entrada repetida de datos. Las plataformas basadas en inteligencia artificial escanean grandes conjuntos de datos B2B, filtran por atributos como el sector, el rol o la ubicación, y verifican automáticamente la precisión de los contactos. Este enfoque ayuda a los equipos a crear rápidamente listas de clientes potenciales actualizadas que se ajusten a sus perfiles de clientes ideales.</p><h3>Personalización a escala</h3><p>Una de las principales razones de las bajas tasas de respuesta en las campañas de divulgación en frío son los mensajes genéricos. La IA aborda este problema mediante la generación de contenido personalizado que incorpora en cada mensaje información, como los puestos de trabajo de los clientes potenciales, las noticias recientes de la empresa o las palabras clave de los perfiles sociales. Como resultado, los equipos de ventas pueden ofrecer un alcance contextualmente relevante que se adapte a cada destinatario. Por ejemplo, Overloop crea correos electrónicos únicos para cada contacto, lo que mejora tanto la participación como la confianza sin necesidad de escribir manualmente. Obtenga más información sobre estos <a href="https://overloop.com/features" target="_blank">Características</a>.</p><h3>Gestión de campañas simplificada</h3><p>Antes de la IA, lanzar una campaña significaba juntar correos electrónicos, seguimientos y mensajes de LinkedIn en múltiples plataformas. Hoy en día, las herramientas de inteligencia artificial reúnen todos los canales en un solo panel. Los equipos establecen sus criterios objetivo y la herramienta coordina la secuenciación, el tiempo y la selección de canales. Los análisis en tiempo real destacan qué pasos funcionan mejor para que los equipos puedan refinar los mensajes y optimizar el rendimiento:</p><ul> <li><strong>Ahorro de tiempo:</strong> Los flujos de trabajo automatizados reemplazan las tareas repetitivas, lo que permite entablar más conversaciones con los clientes potenciales.</li> <li><strong>Consistencia:</strong> La centralización de la mensajería reduce el riesgo de que se omitan pasos o se contacten dos veces con los clientes potenciales.</li> <li><strong>ROI cuantificable:</strong> La IA rastrea los resultados por etapa, lo que ayuda a los equipos a centrar sus esfuerzos en las actividades que generan la mayor respuesta.</li></ul><p>‍</p><p>Estos cambios permiten a las organizaciones de ventas ampliar la prospección, personalizar el alcance a mayor escala y adaptarse más rápidamente a medida que evolucionan los comportamientos de los compradores en los mercados B2B.</p><h2>Conozca Overloop: automatización de ventas basada en inteligencia artificial para la prospección moderna</h2><figure style="max-width:1920px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1920px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68e62802a004bf471deb0657_8o3idng9pixgwuinyp3kog5lfr0j.jpeg" alt="Screenshot of workspace Overloop" width="auto" height="auto" loading="auto"></div></figure><p>Los equipos de ventas B2B que buscan escalar a menudo se enfrentan a barreras debido a la búsqueda manual, las herramientas dispersas y un alcance único para todos. En respuesta a estos desafíos, las plataformas SaaS impulsadas por la inteligencia artificial están redefiniendo la forma en que las organizaciones buscan clientes y se conectan con ellos. Overloop se destaca por ofrecer una suite integrada para la automatización de ventas que aborda estos puntos problemáticos centrándose en la eficiencia y la personalización inteligente.</p><h3>Abastecimiento automatizado de clientes potenciales a escala</h3><p>Overloop utiliza motores impulsados por IA para buscar en una base de datos B2B de más de 450 millones de perfiles profesionales. En lugar de que los equipos de ventas creen listas manualmente, la plataforma relaciona los clientes potenciales relevantes con criterios definidos, filtra por función, sector y geografía, y verifica automáticamente las direcciones de correo electrónico. Este enfoque elimina la búsqueda manual de clientes potenciales, lo que permite a los equipos estandarizar y ampliar su cartera de productos sin sacrificar la calidad de los clientes potenciales.</p><h3>Alcance ultrapersonalizado, no ataques genéricos</h3><p>Mientras que la prospección tradicional suele enviar el mismo mensaje a todos, Overloop genera un alcance personalizado. Su IA analiza los datos de los clientes potenciales y, a continuación, redacta correos electrónicos y mensajes de LinkedIn adaptados al contexto en más de 80 idiomas. El resultado: un aumento en las tasas de respuesta y reuniones gracias a una comunicación relevante y a gran escala, similar a la humana. Al centrarse en la personalización, los equipos evitan las trampas de spam y generan una interacción significativa en las primeras etapas del ciclo de ventas.</p><h3>Campañas multicanal desde una única plataforma</h3><p>Los esfuerzos salientes alcanzan su máximo potencial cuando la coordinación abarca varios canales. Overloop lleva la gestión automatizada de secuencias tanto al correo electrónico como a LinkedIn, guiándose por la IA para optimizar los tiempos de envío y la frecuencia de los mensajes. Los usuarios activan acciones como llamadas, seguimientos de correos electrónicos y enlaces a reuniones desde un panel de control, sincronizando los datos con herramientas de CRM como Salesforce, HubSpot o Pipedrive. Esta organización integral elimina las tareas repetitivas y reduce los flujos de trabajo fragmentados para ofrecer una experiencia de usuario fluida. Explore nuestro <a href="https://overloop.com/success-stories" target="_blank">Historias de éxito</a> para ver cómo los mejores equipos B2B logran resultados reales con Overloop.</p><p>Mediante la habilitación de la IA, Overloop ayuda a los equipos B2B a reemplazar la prospección manual, lenta y propensa a errores por un sistema eficiente y escalable que reduce los costos y maximiza el potencial de conversión.</p><h2>Mejores prácticas emergentes para la adopción de herramientas de ventas de IA</h2><p>Los equipos de ventas B2B que adoptan herramientas de IA obtienen mejores resultados siguiendo enfoques estructurados en lugar de simplemente cambiar de software. Las empresas afirman que el éxito depende de la forma en que los equipos planifiquen la integración, fomenten la aceptación interna y adapten la nueva tecnología a los flujos de trabajo ya establecidos.</p><h3>Alinee la integración con los objetivos empresariales</h3><p>Comience por aclarar lo que debería lograr la prospección saliente automatizada: un mayor volumen de clientes potenciales, más respuestas o ciclos de ventas más cortos. Definir las métricas garantiza la coherencia entre los equipos y ayuda a identificar dónde contribuyen mejor las herramientas de IA como Overloop. Los objetivos clave pueden ser:</p><ul> <li>Reducir el tiempo dedicado a la búsqueda de clientes potenciales</li> <li>Incremento de las tasas medias de apertura o respuesta</li> <li>Reducir el tiempo de respuesta de los clientes potenciales</li></ul><p>‍</p><h3>Fomente la adopción centrándose en la facilidad de uso</h3><p>Muchos profesionales de ventas desconfían de cambiar los hábitos de larga data. Haga hincapié en las plataformas que requieren poca configuración manual y permiten a los usuarios ver los beneficios rápidamente. Por ejemplo, Overloop reduce la complejidad de la incorporación, por lo que los usuarios dedican más tiempo a vender y menos a adaptarse al nuevo software. La formación debe centrarse en funciones prácticas como la configuración automática de campañas, el análisis en tiempo real y la fácil importación de listas. Si quieres verlo en acción, mira nuestro <a href="https://overloop.com/book-demo" target="_blank">Vídeo de demostración de 5 minutos</a>.</p><h3>Personalice los flujos de trabajo para equipos</h3><p>Configure las acciones impulsadas por la IA para que se ajusten a los procesos actuales del equipo en lugar de forzar a los equipos a utilizar rígidos flujos de trabajo con herramientas. Esto incluye:</p><ul><li>Configuración de permisos basados en funciones</li> <li>Automatizar las transferencias entre los SDR y los ejecutivos de cuentas</li> <li>Programación de secuencias multicanal personalizadas alineadas con los objetivos del equipo</li></ul><p>La estrecha integración con las herramientas de CRM, calendario y comunicación existentes acelera la adopción y reduce la sobrecarga operativa.</p><h3>Mida, optimice y adapte</h3><p>La revisión continua de los datos ayuda a identificar lo que funciona. Los mejores equipos auditan regularmente las tasas de entrega de mensajes, las métricas de respuesta y la calidad de los clientes potenciales. Las plataformas de IA facilitan las pruebas A/B, copian o secuencian las reglas y las optimizan para lograr lo que realmente aumenta la participación. La creación de circuitos de retroalimentación, desde la experiencia del usuario hasta el uso de las herramientas o las actualizaciones de los procesos, hace que la adopción pase de la fase de pruebas a un crecimiento continuo de las ventas.</p><h2>Reseñas de herramientas de ventas de IA en 2025: líderes del mercado y opinión de los usuarios</h2><p>A medida que las organizaciones de ventas B2B aceleran la adopción de la IA, los responsables de la toma de decisiones recurren cada vez más a las revisiones y comentarios para obtener información sobre qué herramientas lideran el mercado. En 2025, la opinión de los usuarios de las plataformas verificadas revela la aparición de ganadores claros, cambios en las expectativas de rendimiento y factores de satisfacción comunes que ayudan a las empresas a perfeccionar su oferta de productos salientes.</p><h3>Evolución de las necesidades y expectativas de los usuarios</h3><p>Los equipos de hoy esperan más que una automatización básica. En las revisiones recientes, los líderes de ventas dan prioridad a:</p><ul> <li>Simplicidad en la configuración y el flujo de trabajo</li> <li>Precisión en la obtención y el enriquecimiento de datos de clientes potenciales</li> <li>Personalización que va más allá de la simple combinación de etiquetas</li> <li>Planificación multicanal unificada dentro de un solo sistema</li> <li>Sólida integración con herramientas de calendario y CRM</li></ul><p>‍</p><p>Durante el último año, las plataformas que no evolucionan a menudo se enfrentan a una disminución de las puntuaciones de los usuarios. Las herramientas ocupan los primeros puestos, según G2 y Capterra, incluyen opciones establecidas como Outreach, Apollo y Overloop, todas elegidas por su confiabilidad, profundidad de automatización y calidad de los datos de los clientes potenciales.</p><h3>Tendencias actuales de satisfacción de los usuarios</h3><ul> <li><strong>Tasas de satisfacción más altas</strong> se reportan con plataformas que automatizan cada etapa, desde el abastecimiento hasta la ejecución de secuencias, lo que minimiza las ediciones o importaciones manuales.</li> <li><strong>Personalización impulsada por la IA</strong> destaca por los aumentos en la tasa de respuesta. Los usuarios señalan que la divulgación que hace referencia al contexto de la empresa o a la actividad reciente de los clientes potenciales genera un impulso tangible en la participación.</li> <li>Las soluciones «todo en uno» ahora superan a las acumulaciones fragmentadas de comentarios positivos, especialmente porque los equipos buscan reducir los gastos de tecnología.</li> <li>Los puntos débiles más comunes incluyen la continua frustración por la capacidad de entrega del correo electrónico y las plataformas que no actualizan los registros de los clientes potenciales, aunque las principales herramientas ahora ofrecen funciones integradas de protección y sincronización más sólidas.</li></ul><p>‍</p><p>Las menciones positivas habituales citan a Overloop por combinar una amplia cobertura de bases de datos B2B, una verdadera automatización multicanal y una rápida incorporación. Los profesionales de ventas también destacan las plataformas con equipos de soporte sólidos, integraciones sólidas y funciones confiables de seguimiento de la actividad. A medida que aumentan los requisitos, los usuarios muestran una menor tolerancia a las herramientas con soluciones parciales o flujos de trabajo complejos y aislados.</p><h2>La demanda del mercado y las perspectivas futuras de la IA en las ventas B2B</h2><p>El mercado tecnológico de ventas salientes B2B está experimentando un crecimiento constante a medida que más equipos de ventas adoptan procesos impulsados por la IA. Las previsiones del sector de Gartner y Forrester predicen que el gasto en herramientas de ventas basadas en la inteligencia artificial seguirá aumentando de aquí a 2025, debido a la presión por ampliar la prospección con menos recursos y lograr resultados más cuantificables. Este crecimiento se debe tanto al aumento de las expectativas de personalización como a los cambios generalizados en el comportamiento de los compradores, que ahora esperan una interacción más rápida y adaptada al contexto en varios canales.</p><h3>Crecimiento y demanda previstos del mercado</h3><p>Las investigaciones muestran que las empresas ven un valor directo en la consolidación de los flujos de trabajo de ventas fragmentados en sistemas unificados impulsados por la inteligencia artificial. Las organizaciones de ventas han convertido en una prioridad reducir los procesos manuales, limitar la proliferación de herramientas y respaldar el crecimiento de los procesos. La demanda de funciones de IA integradas incluye:</p><ul> <li>Listas de clientes potenciales automatizadas y precisas procedentes de amplias bases de datos mundiales</li> <li>Herramientas de personalización que generan correos electrónicos únicos y de alto rendimiento en varios idiomas</li> <li>Organización fluida de campañas multicanal con un menor riesgo de spam o problemas de cumplimiento</li></ul><p>‍</p><p>Al invertir en plataformas como Overloop, los equipos de ventas priorizan los resultados, como la mejora de las tasas de respuesta y la reducción del tiempo dedicado a actividades no relacionadas con la venta. Los datos de las encuestas siguen indicando que el aumento de la satisfacción de los clientes y el ROI entregado son los motivos que aceleran la adopción. Consulta los resultados del mundo real en nuestro <a href="https://overloop.com/success-stories/lemons/" target="_blank">estudio de caso sobre limones</a>.</p><h3>Desafíos previstos para 2025</h3><p>A pesar del aumento de la adopción, siguen existiendo varios obstáculos. Los líderes de ventas deberán abordar el escepticismo de la fuerza laboral, integrar las herramientas con complejos conjuntos tecnológicos tradicionales y garantizar el cumplimiento de las cambiantes leyes de privacidad de datos. La calidad de los datos y el mantenimiento de la reputación del remitente también requieren una vigilancia continua, ya que una automatización agresiva puede provocar el filtrado o la creación de listas negras. Obtenga más información sobre nuestro compromiso con el cumplimiento y la privacidad en nuestro <a href="https://overloop.com/gdpr" target="_blank">GDPR</a> sección.</p><h3>Tendencias de desarrollo y preparación</h3><p>De cara al futuro, se espera que los proveedores amplíen sus capacidades de IA. Las mejoras se centrarán en la puntuación predictiva de los clientes potenciales, en una integración más profunda de la CRM y en la mejora de las garantías de entrega de los mensajes. Para prepararse para estas tendencias, las empresas pueden:</p><ul> <li>Audite sus procesos de salida actuales y elimine las tareas redundantes</li> <li>Invierta en formación continua para lograr una rápida adopción de las herramientas de IA</li> <li>Supervise las nuevas normas de privacidad y cumplimiento que afectan a la divulgación saliente</li></ul><p>‍</p><p>A medida que la adopción de la IA redefina las ventas salientes, las empresas que planifiquen estratégicamente y seleccionen herramientas multicanal adaptables estarán mejor posicionadas para seguir teniendo éxito en 2025 y más allá.</p><h2>Conclusión: Transformar el éxito de las ventas salientes con herramientas de ventas de inteligencia artificial</h2><p>Las herramientas de ventas de inteligencia artificial han rediseñado los límites de la prospección B2B saliente, ofreciendo soluciones para los desafíos que han impedido que los equipos de ventas dependan de prácticas manuales y fragmentadas. La mayoría de las organizaciones reconocen ahora que la automatización y la personalización de la comunicación son más que una ventaja competitiva: se ha convertido en algo esencial para llegar a los clientes potenciales adecuados con el mínimo esfuerzo y desperdicio de recursos. Este cambio marca el 2025 como un año de transición en el que las plataformas inteligentes ocupan un lugar central en la planificación de la estrategia de ventas.</p><h3>Estrategias de adaptación para un éxito continuo</h3><p>Para mantener la solidez de los resultados a medida que evolucionan los mercados y los canales de difusión, los equipos de ventas B2B se benefician al adoptar varias medidas claras:</p><ul> <li><strong>Defina objetivos precisos:</strong> Establezca KPI claros para la eficiencia de las campañas, la conversión de clientes potenciales o las tasas de respuesta para guiar las elecciones de tecnología y los ajustes de los procesos.</li> <li><strong>Priorice la integración total:</strong> Elija herramientas que se sincronicen sin problemas con los flujos de trabajo de CRM, comunicación e informes para reducir los pasos manuales y la pérdida de datos.</li> <li><strong>Permita el aprendizaje continuo:</strong> Evalúe los análisis de las campañas, adapte las secuencias y utilice las pruebas A/B integradas para centrarse en los canales y mensajes que generan más interacción.</li> <li><strong>Invierta en la adopción de los usuarios:</strong> Brinde soporte a los equipos con capacitación práctica y plataformas selectas conocidas por su facilidad de uso y configuración mínima, de modo que la adopción parezca orgánica e inmediata.</li> <li><strong>Equilibre la automatización con la autenticidad:</strong> Deje que la IA se encargue de la rutina sin sacrificar el enfoque personalizado que impulsa conversaciones genuinas con los clientes potenciales.</li></ul><p>‍</p><h3>Aprovechar las herramientas de inteligencia artificial como Overloop para obtener un valor duradero</h3><p>Las revisiones del sector y los estudios de casos de transformación del flujo de trabajo demuestran que los equipos B2B que incorporan soluciones avanzadas como Overloop superan constantemente a los que utilizan sistemas manuales fragmentados. La contratación automatizada de clientes potenciales, la mensajería instantánea personalizada y el control unificado de campañas de Overloop permiten a los profesionales de ventas dedicar más horas a vender y menos a gestionar las listas. Sus funciones de entregabilidad integradas, las integraciones de CRM y los flujos de trabajo de mensajería personalizados garantizan que los equipos obtengan mejoras cuantificables con menos problemas operativos.</p><p>Las organizaciones de ventas deben seguir supervisando tanto los comentarios de los usuarios como las funciones emergentes de las plataformas que lideran el espacio saliente de la IA. Mantener la flexibilidad, la capacidad de respuesta a los datos y el apegamiento a prácticas centradas en la eficiencia seguirá siendo crucial a medida que la prospección saliente siga avanzando. Al situar ahora las herramientas de inteligencia artificial eficaces en el centro de las estrategias B2B, los equipos sientan las bases tanto para obtener beneficios inmediatos como para alcanzar el éxito de las ventas a largo plazo hasta 2025 y más allá.</p>
-        </article>
-
-        <div class="cta-box">
-            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
-            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
         </div>
+      </div>
+    </header>
 
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO en Overloop</div>
-                <div class="role">CEO de Sortlist & Overloop. Ha construido sistemas outbound para mas de 500 empresas B2B.</div>
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#por-qu-la-prospecci-n-b2b-tradicional-no-es-suficiente"><span class="ch-num">01</span> Por qué la prospección B2B tradiciona…</a></li>
+          <li><a href="#mejores-pr-cticas-emergentes-para-la-adopci-n-de-herramientas-de-ventas-de-ia"><span class="ch-num">02</span> Mejores prácticas emergentes para la …</a></li>
+          <li><a href="#la-demanda-del-mercado-y-las-perspectivas-futuras-de-la-ia-en-las-ventas-b2b"><span class="ch-num">03</span> La demanda del mercado y las perspect…</a></li>
+        </ul>
+      </aside>
 
+      <main class="prose">
+
+<p>La prospección de ventas B2B está experimentando un cambio significativo, impulsado por la rápida adopción de herramientas impulsadas por la inteligencia artificial en las organizaciones de ventas. La divulgación automatizada y la toma de decisiones basada en datos están reemplazando rápidamente a los métodos manuales que consumen mucho tiempo. En un 2024 Encuesta de Gartner, el 75% de los equipos de ventas B2B informaron que tenían previsto adoptar herramientas de IA para 2025. Esa cifra muestra un claro alejamiento de la prospección tradicional, intensiva en humanos.</p><p>Pocas industrias se han sentido presionadas para modernizarse como las ventas salientes B2B. La recopilación manual de datos de los clientes potenciales, la desconexión de las plataformas de ventas y las campañas genéricas han provocado la pérdida de oportunidades y la lentitud de los esfuerzos de comercialización. Para 2025, los líderes esperan que la automatización y la personalización sean requisitos mínimos para el éxito, no diferenciadores. Este escenario está marcado por la fuerte demanda del mercado de herramientas que identifiquen, enriquezcan y contacten a los clientes potenciales ideales a gran escala. Los productos como Overloop permiten a las organizaciones localizar a los responsables de la toma de decisiones, crear un alcance personalizado y organizar sus mensajes en varios canales, todo ello desde una sola plataforma. Para obtener información más detallada y actualizaciones sobre las últimas tendencias, visita nuestra <a href="https://overloop.com/blog/" target="_blank">Blog</a>.</p><p>En las siguientes secciones se analizarán los factores que frenan los métodos tradicionales y se explicarán la tecnología y las mejores prácticas que impulsan la rápida transformación del mercado a medida que los equipos de ventas B2B se preparan para la realidad de la prospección saliente en 2025.</p><h2 id="por-qu-la-prospecci-n-b2b-tradicional-no-es-suficiente">Por qué la prospección B2B tradicional no es suficiente</h2><p>Los métodos tradicionales para la prospección B2B a menudo giran en torno a la investigación manual, las campañas de correo electrónico básicas y un mosaico de herramientas independientes. A medida que el entorno de ventas B2B se vuelve más competitivo, estos enfoques revelan varias deficiencias fundamentales que limitan el crecimiento y la eficiencia.</p><h3>Ineficiencias que obstaculizan la productividad de las ventas</h3><p>La contratación manual de clientes potenciales consume mucho tiempo y recursos. Los profesionales de ventas dedican horas a identificar posibles clientes potenciales, hacer referencias cruzadas de datos de múltiples plataformas y evaluar la intención del comprador. Esto ralentiza la velocidad de divulgación y reduce el tiempo disponible para la venta activa. Con los flujos de trabajo fragmentados, la información importante sobre los clientes potenciales a menudo se pierde o se duplica, lo que genera inconsistencias en los equipos de rápido crecimiento.</p><h3>Fragmentación en múltiples herramientas</h3><p>Las pilas de prospección tradicionales suelen incluir productos separados para la búsqueda de clientes potenciales, la mensajería, la coordinación de calendarios y las actualizaciones de CRM. Esta fragmentación genera problemas que incluyen:</p><ul> <li>Silos de datos donde la información no se sincroniza automáticamente</li> <li>Confusión de los usuarios y curvas de aprendizaje pronunciadas para los nuevos empleados</li> <li>Cuellos de botella en los procesos al cambiar de un sistema a otro</li> <li>Costos más altos debido a la superposición de funciones</li></ul><p>‍</p><p>Las herramientas desconectadas dificultan el análisis y la optimización de las campañas, ya que las métricas suelen estar dispersas o son incompatibles.</p><h3>Falta de personalización y bajas tasas de respuesta</h3><p>Las plantillas de correo electrónico y divulgación creadas sin personalización dan como resultado mensajes genéricos que rara vez llegan a los destinatarios. Los mensajes generalizados son habituales cuando los equipos intentan ampliar el alcance utilizando sistemas anticuados, lo que se traduce en tasas de apertura y respuesta más bajas. Muchos compradores esperan ahora que la comunicación personalizada sea el estándar mínimo de interacción.</p><h3>Creciente demanda de soluciones automatizadas e inteligentes</h3><p>Los equipos de ventas B2B desean plataformas simplificadas y consolidadas que aumenten la producción sin aumentar el esfuerzo manual. La necesidad de automatización y coordinación en el correo electrónico, LinkedIn y el CRM está impulsando la demanda de soluciones integradas. Plataformas como Overloop satisfacen esta necesidad al centralizar la búsqueda de clientes potenciales, la personalización automatizada y la ejecución de campañas en una sola interfaz, lo que elimina muchos problemas que ralentizan las prácticas tradicionales de prospección.</p><h2 id="automatizaci-n-personalizaci-n-y-eficiencia-impulsando-el-cambio-a-las-herramientas-de-ventas-basadas-en-inteligencia-artificial">Automatización, personalización y eficiencia: impulsando el cambio a las herramientas de ventas basadas en inteligencia artificial</h2><p>La prospección manual obliga a los equipos de ventas a hacer malabares con hojas de cálculo, herramientas de CRM y un mosaico de secuencias de correo electrónico con pocos resultados. Las herramientas de ventas de inteligencia artificial cambian esta situación, ya que utilizan la automatización para liberar horas que antes se perdían en tareas tediosas y transforman la forma en que los equipos obtienen, captan y gestionan los clientes potenciales.</p><h3>Automatización del abastecimiento de clientes potenciales</h3><p>La creación tradicional de listas ralentiza los esfuerzos de salida, ya que se basa en la investigación manual y la entrada repetida de datos. Las plataformas basadas en inteligencia artificial escanean grandes conjuntos de datos B2B, filtran por atributos como el sector, el rol o la ubicación, y verifican automáticamente la precisión de los contactos. Este enfoque ayuda a los equipos a crear rápidamente listas de clientes potenciales actualizadas que se ajusten a sus perfiles de clientes ideales.</p><h3>Personalización a escala</h3><p>Una de las principales razones de las bajas tasas de respuesta en las campañas de divulgación en frío son los mensajes genéricos. La IA aborda este problema mediante la generación de contenido personalizado que incorpora en cada mensaje información, como los puestos de trabajo de los clientes potenciales, las noticias recientes de la empresa o las palabras clave de los perfiles sociales. Como resultado, los equipos de ventas pueden ofrecer un alcance contextualmente relevante que se adapte a cada destinatario. Por ejemplo, Overloop crea correos electrónicos únicos para cada contacto, lo que mejora tanto la participación como la confianza sin necesidad de escribir manualmente. Obtenga más información sobre estos <a href="https://overloop.com/features" target="_blank">Características</a>.</p><h3>Gestión de campañas simplificada</h3><p>Antes de la IA, lanzar una campaña significaba juntar correos electrónicos, seguimientos y mensajes de LinkedIn en múltiples plataformas. Hoy en día, las herramientas de inteligencia artificial reúnen todos los canales en un solo panel. Los equipos establecen sus criterios objetivo y la herramienta coordina la secuenciación, el tiempo y la selección de canales. Los análisis en tiempo real destacan qué pasos funcionan mejor para que los equipos puedan refinar los mensajes y optimizar el rendimiento:</p><ul> <li><strong>Ahorro de tiempo:</strong> Los flujos de trabajo automatizados reemplazan las tareas repetitivas, lo que permite entablar más conversaciones con los clientes potenciales.</li> <li><strong>Consistencia:</strong> La centralización de la mensajería reduce el riesgo de que se omitan pasos o se contacten dos veces con los clientes potenciales.</li> <li><strong>ROI cuantificable:</strong> La IA rastrea los resultados por etapa, lo que ayuda a los equipos a centrar sus esfuerzos en las actividades que generan la mayor respuesta.</li></ul><p>‍</p><p>Estos cambios permiten a las organizaciones de ventas ampliar la prospección, personalizar el alcance a mayor escala y adaptarse más rápidamente a medida que evolucionan los comportamientos de los compradores en los mercados B2B.</p><h2 id="conozca-overloop-automatizaci-n-de-ventas-basada-en-inteligencia-artificial-para-la-prospecci-n-moderna">Conozca Overloop: automatización de ventas basada en inteligencia artificial para la prospección moderna</h2><figure style="max-width:1920px" data-rt-type="image" data-rt-align="fullwidth" data-rt-max-width="1920px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/68e62802a004bf471deb0657_8o3idng9pixgwuinyp3kog5lfr0j.jpeg" alt="Screenshot of workspace Overloop" width="auto" height="auto" loading="auto"></div></figure><p>Los equipos de ventas B2B que buscan escalar a menudo se enfrentan a barreras debido a la búsqueda manual, las herramientas dispersas y un alcance único para todos. En respuesta a estos desafíos, las plataformas SaaS impulsadas por la inteligencia artificial están redefiniendo la forma en que las organizaciones buscan clientes y se conectan con ellos. Overloop se destaca por ofrecer una suite integrada para la automatización de ventas que aborda estos puntos problemáticos centrándose en la eficiencia y la personalización inteligente.</p><h3>Abastecimiento automatizado de clientes potenciales a escala</h3><p>Overloop utiliza motores impulsados por IA para buscar en una base de datos B2B de más de 450 millones de perfiles profesionales. En lugar de que los equipos de ventas creen listas manualmente, la plataforma relaciona los clientes potenciales relevantes con criterios definidos, filtra por función, sector y geografía, y verifica automáticamente las direcciones de correo electrónico. Este enfoque elimina la búsqueda manual de clientes potenciales, lo que permite a los equipos estandarizar y ampliar su cartera de productos sin sacrificar la calidad de los clientes potenciales.</p><h3>Alcance ultrapersonalizado, no ataques genéricos</h3><p>Mientras que la prospección tradicional suele enviar el mismo mensaje a todos, Overloop genera un alcance personalizado. Su IA analiza los datos de los clientes potenciales y, a continuación, redacta correos electrónicos y mensajes de LinkedIn adaptados al contexto en más de 80 idiomas. El resultado: un aumento en las tasas de respuesta y reuniones gracias a una comunicación relevante y a gran escala, similar a la humana. Al centrarse en la personalización, los equipos evitan las trampas de spam y generan una interacción significativa en las primeras etapas del ciclo de ventas.</p><h3>Campañas multicanal desde una única plataforma</h3><p>Los esfuerzos salientes alcanzan su máximo potencial cuando la coordinación abarca varios canales. Overloop lleva la gestión automatizada de secuencias tanto al correo electrónico como a LinkedIn, guiándose por la IA para optimizar los tiempos de envío y la frecuencia de los mensajes. Los usuarios activan acciones como llamadas, seguimientos de correos electrónicos y enlaces a reuniones desde un panel de control, sincronizando los datos con herramientas de CRM como Salesforce, HubSpot o Pipedrive. Esta organización integral elimina las tareas repetitivas y reduce los flujos de trabajo fragmentados para ofrecer una experiencia de usuario fluida. Explore nuestro <a href="https://overloop.com/success-stories" target="_blank">Historias de éxito</a> para ver cómo los mejores equipos B2B logran resultados reales con Overloop.</p><p>Mediante la habilitación de la IA, Overloop ayuda a los equipos B2B a reemplazar la prospección manual, lenta y propensa a errores por un sistema eficiente y escalable que reduce los costos y maximiza el potencial de conversión.</p><h2 id="mejores-pr-cticas-emergentes-para-la-adopci-n-de-herramientas-de-ventas-de-ia">Mejores prácticas emergentes para la adopción de herramientas de ventas de IA</h2><p>Los equipos de ventas B2B que adoptan herramientas de IA obtienen mejores resultados siguiendo enfoques estructurados en lugar de simplemente cambiar de software. Las empresas afirman que el éxito depende de la forma en que los equipos planifiquen la integración, fomenten la aceptación interna y adapten la nueva tecnología a los flujos de trabajo ya establecidos.</p><h3>Alinee la integración con los objetivos empresariales</h3><p>Comience por aclarar lo que debería lograr la prospección saliente automatizada: un mayor volumen de clientes potenciales, más respuestas o ciclos de ventas más cortos. Definir las métricas garantiza la coherencia entre los equipos y ayuda a identificar dónde contribuyen mejor las herramientas de IA como Overloop. Los objetivos clave pueden ser:</p><ul> <li>Reducir el tiempo dedicado a la búsqueda de clientes potenciales</li> <li>Incremento de las tasas medias de apertura o respuesta</li> <li>Reducir el tiempo de respuesta de los clientes potenciales</li></ul><p>‍</p><h3>Fomente la adopción centrándose en la facilidad de uso</h3><p>Muchos profesionales de ventas desconfían de cambiar los hábitos de larga data. Haga hincapié en las plataformas que requieren poca configuración manual y permiten a los usuarios ver los beneficios rápidamente. Por ejemplo, Overloop reduce la complejidad de la incorporación, por lo que los usuarios dedican más tiempo a vender y menos a adaptarse al nuevo software. La formación debe centrarse en funciones prácticas como la configuración automática de campañas, el análisis en tiempo real y la fácil importación de listas. Si quieres verlo en acción, mira nuestro <a href="https://overloop.com/book-demo" target="_blank">Vídeo de demostración de 5 minutos</a>.</p><h3>Personalice los flujos de trabajo para equipos</h3><p>Configure las acciones impulsadas por la IA para que se ajusten a los procesos actuales del equipo en lugar de forzar a los equipos a utilizar rígidos flujos de trabajo con herramientas. Esto incluye:</p><ul><li>Configuración de permisos basados en funciones</li> <li>Automatizar las transferencias entre los SDR y los ejecutivos de cuentas</li> <li>Programación de secuencias multicanal personalizadas alineadas con los objetivos del equipo</li></ul><p>La estrecha integración con las herramientas de CRM, calendario y comunicación existentes acelera la adopción y reduce la sobrecarga operativa.</p><h3>Mida, optimice y adapte</h3><p>La revisión continua de los datos ayuda a identificar lo que funciona. Los mejores equipos auditan regularmente las tasas de entrega de mensajes, las métricas de respuesta y la calidad de los clientes potenciales. Las plataformas de IA facilitan las pruebas A/B, copian o secuencian las reglas y las optimizan para lograr lo que realmente aumenta la participación. La creación de circuitos de retroalimentación, desde la experiencia del usuario hasta el uso de las herramientas o las actualizaciones de los procesos, hace que la adopción pase de la fase de pruebas a un crecimiento continuo de las ventas.</p><h2 id="rese-as-de-herramientas-de-ventas-de-ia-en-2025-l-deres-del-mercado-y-opini-n-de-los-usuarios">Reseñas de herramientas de ventas de IA en 2025: líderes del mercado y opinión de los usuarios</h2><p>A medida que las organizaciones de ventas B2B aceleran la adopción de la IA, los responsables de la toma de decisiones recurren cada vez más a las revisiones y comentarios para obtener información sobre qué herramientas lideran el mercado. En 2025, la opinión de los usuarios de las plataformas verificadas revela la aparición de ganadores claros, cambios en las expectativas de rendimiento y factores de satisfacción comunes que ayudan a las empresas a perfeccionar su oferta de productos salientes.</p><h3>Evolución de las necesidades y expectativas de los usuarios</h3><p>Los equipos de hoy esperan más que una automatización básica. En las revisiones recientes, los líderes de ventas dan prioridad a:</p><ul> <li>Simplicidad en la configuración y el flujo de trabajo</li> <li>Precisión en la obtención y el enriquecimiento de datos de clientes potenciales</li> <li>Personalización que va más allá de la simple combinación de etiquetas</li> <li>Planificación multicanal unificada dentro de un solo sistema</li> <li>Sólida integración con herramientas de calendario y CRM</li></ul><p>‍</p><p>Durante el último año, las plataformas que no evolucionan a menudo se enfrentan a una disminución de las puntuaciones de los usuarios. Las herramientas ocupan los primeros puestos, según G2 y Capterra, incluyen opciones establecidas como Outreach, Apollo y Overloop, todas elegidas por su confiabilidad, profundidad de automatización y calidad de los datos de los clientes potenciales.</p><h3>Tendencias actuales de satisfacción de los usuarios</h3><ul> <li><strong>Tasas de satisfacción más altas</strong> se reportan con plataformas que automatizan cada etapa, desde el abastecimiento hasta la ejecución de secuencias, lo que minimiza las ediciones o importaciones manuales.</li> <li><strong>Personalización impulsada por la IA</strong> destaca por los aumentos en la tasa de respuesta. Los usuarios señalan que la divulgación que hace referencia al contexto de la empresa o a la actividad reciente de los clientes potenciales genera un impulso tangible en la participación.</li> <li>Las soluciones «todo en uno» ahora superan a las acumulaciones fragmentadas de comentarios positivos, especialmente porque los equipos buscan reducir los gastos de tecnología.</li> <li>Los puntos débiles más comunes incluyen la continua frustración por la capacidad de entrega del correo electrónico y las plataformas que no actualizan los registros de los clientes potenciales, aunque las principales herramientas ahora ofrecen funciones integradas de protección y sincronización más sólidas.</li></ul><p>‍</p><p>Las menciones positivas habituales citan a Overloop por combinar una amplia cobertura de bases de datos B2B, una verdadera automatización multicanal y una rápida incorporación. Los profesionales de ventas también destacan las plataformas con equipos de soporte sólidos, integraciones sólidas y funciones confiables de seguimiento de la actividad. A medida que aumentan los requisitos, los usuarios muestran una menor tolerancia a las herramientas con soluciones parciales o flujos de trabajo complejos y aislados.</p><h2 id="la-demanda-del-mercado-y-las-perspectivas-futuras-de-la-ia-en-las-ventas-b2b">La demanda del mercado y las perspectivas futuras de la IA en las ventas B2B</h2><p>El mercado tecnológico de ventas salientes B2B está experimentando un crecimiento constante a medida que más equipos de ventas adoptan procesos impulsados por la IA. Las previsiones del sector de Gartner y Forrester predicen que el gasto en herramientas de ventas basadas en la inteligencia artificial seguirá aumentando de aquí a 2025, debido a la presión por ampliar la prospección con menos recursos y lograr resultados más cuantificables. Este crecimiento se debe tanto al aumento de las expectativas de personalización como a los cambios generalizados en el comportamiento de los compradores, que ahora esperan una interacción más rápida y adaptada al contexto en varios canales.</p><h3>Crecimiento y demanda previstos del mercado</h3><p>Las investigaciones muestran que las empresas ven un valor directo en la consolidación de los flujos de trabajo de ventas fragmentados en sistemas unificados impulsados por la inteligencia artificial. Las organizaciones de ventas han convertido en una prioridad reducir los procesos manuales, limitar la proliferación de herramientas y respaldar el crecimiento de los procesos. La demanda de funciones de IA integradas incluye:</p><ul> <li>Listas de clientes potenciales automatizadas y precisas procedentes de amplias bases de datos mundiales</li> <li>Herramientas de personalización que generan correos electrónicos únicos y de alto rendimiento en varios idiomas</li> <li>Organización fluida de campañas multicanal con un menor riesgo de spam o problemas de cumplimiento</li></ul><p>‍</p><p>Al invertir en plataformas como Overloop, los equipos de ventas priorizan los resultados, como la mejora de las tasas de respuesta y la reducción del tiempo dedicado a actividades no relacionadas con la venta. Los datos de las encuestas siguen indicando que el aumento de la satisfacción de los clientes y el ROI entregado son los motivos que aceleran la adopción. Consulta los resultados del mundo real en nuestro <a href="https://overloop.com/success-stories/lemons/" target="_blank">estudio de caso sobre limones</a>.</p><h3>Desafíos previstos para 2025</h3><p>A pesar del aumento de la adopción, siguen existiendo varios obstáculos. Los líderes de ventas deberán abordar el escepticismo de la fuerza laboral, integrar las herramientas con complejos conjuntos tecnológicos tradicionales y garantizar el cumplimiento de las cambiantes leyes de privacidad de datos. La calidad de los datos y el mantenimiento de la reputación del remitente también requieren una vigilancia continua, ya que una automatización agresiva puede provocar el filtrado o la creación de listas negras. Obtenga más información sobre nuestro compromiso con el cumplimiento y la privacidad en nuestro <a href="https://overloop.com/gdpr" target="_blank">GDPR</a> sección.</p><h3>Tendencias de desarrollo y preparación</h3><p>De cara al futuro, se espera que los proveedores amplíen sus capacidades de IA. Las mejoras se centrarán en la puntuación predictiva de los clientes potenciales, en una integración más profunda de la CRM y en la mejora de las garantías de entrega de los mensajes. Para prepararse para estas tendencias, las empresas pueden:</p><ul> <li>Audite sus procesos de salida actuales y elimine las tareas redundantes</li> <li>Invierta en formación continua para lograr una rápida adopción de las herramientas de IA</li> <li>Supervise las nuevas normas de privacidad y cumplimiento que afectan a la divulgación saliente</li></ul><p>‍</p><p>A medida que la adopción de la IA redefina las ventas salientes, las empresas que planifiquen estratégicamente y seleccionen herramientas multicanal adaptables estarán mejor posicionadas para seguir teniendo éxito en 2025 y más allá.</p><h2 id="conclusi-n-transformar-el-xito-de-las-ventas-salientes-con-herramientas-de-ventas-de-inteligencia-artificial">Conclusión: Transformar el éxito de las ventas salientes con herramientas de ventas de inteligencia artificial</h2><p>Las herramientas de ventas de inteligencia artificial han rediseñado los límites de la prospección B2B saliente, ofreciendo soluciones para los desafíos que han impedido que los equipos de ventas dependan de prácticas manuales y fragmentadas. La mayoría de las organizaciones reconocen ahora que la automatización y la personalización de la comunicación son más que una ventaja competitiva: se ha convertido en algo esencial para llegar a los clientes potenciales adecuados con el mínimo esfuerzo y desperdicio de recursos. Este cambio marca el 2025 como un año de transición en el que las plataformas inteligentes ocupan un lugar central en la planificación de la estrategia de ventas.</p><h3>Estrategias de adaptación para un éxito continuo</h3><p>Para mantener la solidez de los resultados a medida que evolucionan los mercados y los canales de difusión, los equipos de ventas B2B se benefician al adoptar varias medidas claras:</p><ul> <li><strong>Defina objetivos precisos:</strong> Establezca KPI claros para la eficiencia de las campañas, la conversión de clientes potenciales o las tasas de respuesta para guiar las elecciones de tecnología y los ajustes de los procesos.</li> <li><strong>Priorice la integración total:</strong> Elija herramientas que se sincronicen sin problemas con los flujos de trabajo de CRM, comunicación e informes para reducir los pasos manuales y la pérdida de datos.</li> <li><strong>Permita el aprendizaje continuo:</strong> Evalúe los análisis de las campañas, adapte las secuencias y utilice las pruebas A/B integradas para centrarse en los canales y mensajes que generan más interacción.</li> <li><strong>Invierta en la adopción de los usuarios:</strong> Brinde soporte a los equipos con capacitación práctica y plataformas selectas conocidas por su facilidad de uso y configuración mínima, de modo que la adopción parezca orgánica e inmediata.</li> <li><strong>Equilibre la automatización con la autenticidad:</strong> Deje que la IA se encargue de la rutina sin sacrificar el enfoque personalizado que impulsa conversaciones genuinas con los clientes potenciales.</li></ul><p>‍</p><h3>Aprovechar las herramientas de inteligencia artificial como Overloop para obtener un valor duradero</h3><p>Las revisiones del sector y los estudios de casos de transformación del flujo de trabajo demuestran que los equipos B2B que incorporan soluciones avanzadas como Overloop superan constantemente a los que utilizan sistemas manuales fragmentados. La contratación automatizada de clientes potenciales, la mensajería instantánea personalizada y el control unificado de campañas de Overloop permiten a los profesionales de ventas dedicar más horas a vender y menos a gestionar las listas. Sus funciones de entregabilidad integradas, las integraciones de CRM y los flujos de trabajo de mensajería personalizados garantizan que los equipos obtengan mejoras cuantificables con menos problemas operativos.</p><p>Las organizaciones de ventas deben seguir supervisando tanto los comentarios de los usuarios como las funciones emergentes de las plataformas que lideran el espacio saliente de la IA. Mantener la flexibilidad, la capacidad de respuesta a los datos y el apegamiento a prácticas centradas en la eficiencia seguirá siendo crucial a medida que la prospección saliente siga avanzando. Al situar ahora las herramientas de inteligencia artificial eficaces en el centro de las estrategias B2B, los equipos sientan las bases tanto para obtener beneficios inmediatos como para alcanzar el éxito de las ventas a largo plazo hasta 2025 y más allá.</p>
+
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

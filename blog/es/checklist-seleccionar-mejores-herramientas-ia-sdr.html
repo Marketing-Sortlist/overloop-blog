@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checklist: mejores herramientas SDR IA 2025 | Overloop</title>
-    <meta name="description" content="Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.">
-    <link rel="canonical" href="https://overloop.com/es/blog/checklist-seleccionar-mejores-herramientas-ia-sdr">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checklist: mejores herramientas SDR IA 2025 | Overloop</title>
+  <meta name="description" content="Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.">
+  <link rel="canonical" href="https://overloop.com/es/blog/checklist-seleccionar-mejores-herramientas-ia-sdr">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/checklist-outils-sdr-ia">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/ki-sdr-tools-checkliste">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/checklist-seleccionar-mejores-herramientas-ia-sdr">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/strumenti-ai-sdr">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/the-ultimate-checklist-for-selecting-the-best-ai-sdr-tools-in-2025">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="Checklist: mejores herramientas SDR IA 2025">
     <meta property="og:description" content="Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.">
@@ -29,7 +407,7 @@
     <meta name="twitter:title" content="Checklist: mejores herramientas SDR IA 2025">
     <meta name="twitter:description" content="Checklist para elegir las mejores herramientas AI SDR en 2025. Garantice eficiencia, personalización e integración para su equipo.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/checklist-seleccionar-mejores-herramientas-ia-sdr.png">
-<script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -57,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -68,116 +445,68 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><main class="blog-post">
-    <div class="container">
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
+    </div>
+  </nav>
 
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="https://overloop.com">Overloop</a> &rsaquo;
-            <a href="https://overloop.com/es/blog">Blog</a> &rsaquo;
-            <span>Checklist: mejores herramientas SDR IA 2025</span>
-        </nav>
-
-        <header class="article-header">
-            <h1>Checklist: mejores herramientas SDR IA 2025</h1>
-        </header>
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Buyer's Guide
+        </span>
+        <h1>Checklist: mejores herramientas SDR IA 2025</h1>
+        <p class="lead">La elección de la herramienta de SDR de IA adecuada ahora determina el rendimiento de su equipo y el crecimiento de la cartera de proyectos en 2025. A medida que las ventas salientes se basan cada …</p>
         <div class="article-meta">
-            <svg width="44" height="44" viewBox="0 0 44 44" style="border-radius:50%;flex-shrink:0;">
-  <rect width="44" height="44" rx="22" fill="#7C3AED"/>
-  <text x="22" y="23" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="16">VR</text>
-</svg>
-            <div class="meta-info">
-                <strong>Vincenzo Ruggiero</strong>
-                <span>|</span> 31 de mayo de 2025
-                <span>|</span> 10 min de lectura
-            </div>
+          <div class="article-meta__avatar">VR</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Vincenzo Ruggiero</div>
+            <div class="article-meta__dates">May 31, 2025 &middot; Updated Apr 17, 2026</div>
+          </div>
         </div>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
+        </div>
+      </div>
+    </header>
 
-        <article class="article-content">
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#mejores-pr-cticas-de-implementaci-n-de-ai-sdr-para-equipos-b2b"><span class="ch-num">01</span> Mejores prácticas de implementación d…</a></li>
+          <li><a href="#preguntas-frecuentes-sobre-las-herramientas-sdr-de-ia-para-2025"><span class="ch-num">02</span> Preguntas frecuentes sobre las herram…</a></li>
+        </ul>
+      </aside>
+
+      <main class="prose">
+
 <p>La elección de la herramienta de SDR de IA adecuada ahora determina el rendimiento de su equipo y el crecimiento de la cartera de proyectos en 2025. A medida que las ventas salientes se basan cada vez más en los datos, el éxito de un equipo B2B depende de una automatización perfecta y una personalización precisa. Las plataformas eficaces de SDR basadas en la IA ayudan a los equipos de ventas a captar clientes potenciales con mayor rapidez, automatizar la comunicación repetitiva y adaptar la comunicación para cada cliente potencial, todo ello sin dejar de mantener un alto nivel de eficiencia y un bajo nivel de agotamiento.</p><h3>Formas clave en las que las herramientas SDR de IA transforman las ventas B2B</h3><ul>
   <li>
 <strong>Automatice la contratación de clientes potenciales:</strong> La IA encuentra y califica clientes potenciales utilizando amplias bases de datos empresariales, lo que reduce el tiempo de prospección manual.</li>
@@ -187,12 +516,12 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <strong>Gestione campañas multicanal:</strong> Centralice el alcance a través del correo electrónico y LinkedIn para lograr una participación y un seguimiento consistentes de los clientes potenciales.</li>
   <li>
 <strong>Mejore la capacidad de entrega:</strong> Las plataformas modernas supervisan y ajustan las campañas para garantizar que los mensajes lleguen realmente a las bandejas de entrada.</li>
-</ul><p>En el vertiginoso mercado de 2025, utilizar una estrategia eficiente de SDR con IA no solo es útil, sino que también es necesario. La próxima lista de verificación abarca todos los factores que los equipos B2B deben verificar a la hora de elegir las mejores herramientas de SDR basadas en IA para crear canales de ventas sólidos y escalables.</p><h2>Lista de verificación esencial #1: Verifique la precisión de los datos y la calidad de los clientes potenciales</h2><p>Los datos precisos y relevantes forman la base de toda campaña eficaz de SDR con IA. La mala calidad de los datos conduce rápidamente a un desperdicio de alcance, a tasas de respuesta bajas y a la pérdida de oportunidades. Para garantizar que su equipo se dirija constantemente a los clientes potenciales adecuados, céntrese en dos áreas principales: la precisión de los datos y la cualificación de los clientes potenciales.</p><h3>Por qué la calidad de los datos es importante para el éxito del SDR de la IA</h3><p>Los datos de alta calidad evitan que los esfuerzos de divulgación se pierdan en contactos incorrectos, desactualizados o irrelevantes. Los registros limpios y actualizados ayudan a la IA a identificar a los verdaderos responsables de la toma de decisiones y a personalizar la divulgación que genera eco. Con datos incorrectos, sus campañas corren el riesgo de tener problemas de entrega, perder tiempo y dañar la reputación del remitente.</p><h3>Pasos para evaluar la calidad de los datos en las herramientas SDR de IA</h3><ul>
+</ul><p>En el vertiginoso mercado de 2025, utilizar una estrategia eficiente de SDR con IA no solo es útil, sino que también es necesario. La próxima lista de verificación abarca todos los factores que los equipos B2B deben verificar a la hora de elegir las mejores herramientas de SDR basadas en IA para crear canales de ventas sólidos y escalables.</p><h2 id="lista-de-verificaci-n-esencial-1-verifique-la-precisi-n-de-los-datos-y-la-calidad-de-los-clientes-potenciales">Lista de verificación esencial #1: Verifique la precisión de los datos y la calidad de los clientes potenciales</h2><p>Los datos precisos y relevantes forman la base de toda campaña eficaz de SDR con IA. La mala calidad de los datos conduce rápidamente a un desperdicio de alcance, a tasas de respuesta bajas y a la pérdida de oportunidades. Para garantizar que su equipo se dirija constantemente a los clientes potenciales adecuados, céntrese en dos áreas principales: la precisión de los datos y la cualificación de los clientes potenciales.</p><h3>Por qué la calidad de los datos es importante para el éxito del SDR de la IA</h3><p>Los datos de alta calidad evitan que los esfuerzos de divulgación se pierdan en contactos incorrectos, desactualizados o irrelevantes. Los registros limpios y actualizados ayudan a la IA a identificar a los verdaderos responsables de la toma de decisiones y a personalizar la divulgación que genera eco. Con datos incorrectos, sus campañas corren el riesgo de tener problemas de entrega, perder tiempo y dañar la reputación del remitente.</p><h3>Pasos para evaluar la calidad de los datos en las herramientas SDR de IA</h3><ul>
   <li>Compruebe la verificación automática de clientes potenciales: ¿la herramienta confirma los correos electrónicos y actualiza la información de contacto con regularidad?</li>
   <li>Evalúe la fuente: ¿la base de datos es grande, está actualizada y cumple con los estándares de protección de datos? (<a href="https://overloop.com/gdpr" target="_blank">Cumplimiento del RGPD</a>)</li>
   <li>Revise las capacidades de enriquecimiento: ¿puede la herramienta complementar la información básica con los títulos de los puestos, los detalles de la empresa y las señales?</li>
   <li>Higiene de las listas de pruebas: ¿es fácil eliminar los duplicados, identificar los contactos no válidos o segmentar por relevancia?</li>
-</ul><p>Por ejemplo, Overloop utiliza una amplia base de datos B2B y una verificación de correo electrónico integrada para reducir el número de contactos que no se pueden entregar o están desactualizados, lo que mejora al instante la eficiencia de la divulgación.</p><p>Los datos precisos no son negociables en 2025. Dar prioridad a esta base significa que la IA dedicará menos tiempo a los clientes potenciales no cualificados y más tiempo a ayudarlo a iniciar conversaciones reales que hagan avanzar sus negocios.</p><h2>Lista de verificación esencial #2: Evalúe la automatización y la eficiencia del flujo de trabajo</h2><p>A medida que los equipos B2B perfeccionen su enfoque en 2025, la automatización es el motor detrás de las plataformas SDR de IA de alto rendimiento. La herramienta adecuada reduce el esfuerzo manual y mantiene el flujo de trabajo en marcha incluso cuando el equipo se centra en otra cosa. Saber qué funciones de automatización son realmente importantes puede evitar pérdidas de tiempo y flujos de trabajo inconexos.</p><h3>Funciones de automatización imprescindibles en las herramientas AI SDR</h3><ul>
+</ul><p>Por ejemplo, Overloop utiliza una amplia base de datos B2B y una verificación de correo electrónico integrada para reducir el número de contactos que no se pueden entregar o están desactualizados, lo que mejora al instante la eficiencia de la divulgación.</p><p>Los datos precisos no son negociables en 2025. Dar prioridad a esta base significa que la IA dedicará menos tiempo a los clientes potenciales no cualificados y más tiempo a ayudarlo a iniciar conversaciones reales que hagan avanzar sus negocios.</p><h2 id="lista-de-verificaci-n-esencial-2-eval-e-la-automatizaci-n-y-la-eficiencia-del-flujo-de-trabajo">Lista de verificación esencial #2: Evalúe la automatización y la eficiencia del flujo de trabajo</h2><p>A medida que los equipos B2B perfeccionen su enfoque en 2025, la automatización es el motor detrás de las plataformas SDR de IA de alto rendimiento. La herramienta adecuada reduce el esfuerzo manual y mantiene el flujo de trabajo en marcha incluso cuando el equipo se centra en otra cosa. Saber qué funciones de automatización son realmente importantes puede evitar pérdidas de tiempo y flujos de trabajo inconexos.</p><h3>Funciones de automatización imprescindibles en las herramientas AI SDR</h3><ul>
   <li>
 <strong>Secuenciación saliente:</strong> Las herramientas deberían automatizar una serie de correos electrónicos, mensajes de LinkedIn y llamadas, ajustando los pasos en función de la participación del destinatario.</li>
   <li>
@@ -201,13 +530,13 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <strong>Automatización de tareas:</strong> Busque funciones que asignen tareas automáticamente cuando los clientes potenciales alcancen hitos críticos, para que nada pase desapercibido.</li>
   <li>
 <strong>Orquestación multicanal:</strong> El alcance automatizado en las plataformas sociales y de correo electrónico garantiza una presencia constante de la marca sin necesidad de una programación manual.</li>
-</ul><p>Un flujo de trabajo de alta eficiencia significa que tu equipo dedica menos tiempo a acciones repetitivas y más tiempo a cerrar acuerdos. Soluciones de SDR de IA como Overloop <em>combine estas funciones de automatización con una interfaz sencilla</em>, lo que permite a los usuarios configurar campañas que se ejecuten por sí mismos, lo que ahorra horas cada semana. La sólida compatibilidad con el flujo de trabajo también significa que puedes responder a los clientes potenciales con mayor rapidez, inscribir nuevos contactos en secuencias personalizadas y adaptarte a las cambiantes prioridades de las campañas sobre la marcha. En resumen, estas funciones convierten los tediosos procesos manuales en acciones automatizadas y fluidas que se adaptan a tus ambiciones.</p><h2>Lista de verificación esencial #3: Evalúe las capacidades de personalización a escala</h2><p>La personalización va más allá de la simple inserción de nombres: los compradores B2B modernos esperan un alcance que refleje su sector, su función y los desafíos actuales. Las herramientas de SDR basadas en la IA que ofrecen una personalización eficaz a escala obtienen tasas de respuesta y conversión mucho más altas. En 2025, la evaluación de esta capacidad decidirá qué tan bien destaca su proceso de salida en bandejas de entrada abarrotadas.</p><h3>Cómo la personalización de la IA aumenta los resultados</h3><p>La personalización precisa aumenta las tasas de respuesta al mostrar a los clientes potenciales que tu oferta es relevante para su negocio. La IA avanzada aprovecha los datos de los clientes potenciales, como las noticias de la empresa, la financiación reciente o los movimientos laborales, para crear mensajes que parezcan oportunos y escritos a mano. Las plataformas de SDR basadas en IA más competitivas funcionan con listas grandes y ajustan automáticamente el contenido para cada destinatario, de modo que los equipos pueden ampliar el alcance sin sacrificar la relevancia individual.</p><h3>Lista de verificación para las funciones de personalización</h3><ul>
+</ul><p>Un flujo de trabajo de alta eficiencia significa que tu equipo dedica menos tiempo a acciones repetitivas y más tiempo a cerrar acuerdos. Soluciones de SDR de IA como Overloop <em>combine estas funciones de automatización con una interfaz sencilla</em>, lo que permite a los usuarios configurar campañas que se ejecuten por sí mismos, lo que ahorra horas cada semana. La sólida compatibilidad con el flujo de trabajo también significa que puedes responder a los clientes potenciales con mayor rapidez, inscribir nuevos contactos en secuencias personalizadas y adaptarte a las cambiantes prioridades de las campañas sobre la marcha. En resumen, estas funciones convierten los tediosos procesos manuales en acciones automatizadas y fluidas que se adaptan a tus ambiciones.</p><h2 id="lista-de-verificaci-n-esencial-3-eval-e-las-capacidades-de-personalizaci-n-a-escala">Lista de verificación esencial #3: Evalúe las capacidades de personalización a escala</h2><p>La personalización va más allá de la simple inserción de nombres: los compradores B2B modernos esperan un alcance que refleje su sector, su función y los desafíos actuales. Las herramientas de SDR basadas en la IA que ofrecen una personalización eficaz a escala obtienen tasas de respuesta y conversión mucho más altas. En 2025, la evaluación de esta capacidad decidirá qué tan bien destaca su proceso de salida en bandejas de entrada abarrotadas.</p><h3>Cómo la personalización de la IA aumenta los resultados</h3><p>La personalización precisa aumenta las tasas de respuesta al mostrar a los clientes potenciales que tu oferta es relevante para su negocio. La IA avanzada aprovecha los datos de los clientes potenciales, como las noticias de la empresa, la financiación reciente o los movimientos laborales, para crear mensajes que parezcan oportunos y escritos a mano. Las plataformas de SDR basadas en IA más competitivas funcionan con listas grandes y ajustan automáticamente el contenido para cada destinatario, de modo que los equipos pueden ampliar el alcance sin sacrificar la relevancia individual.</p><h3>Lista de verificación para las funciones de personalización</h3><ul>
   <li>Campos de correo electrónico dinámicos: ¿Puede la herramienta insertar datos específicos de la empresa, títulos de trabajo o logros recientes en cada mensaje?</li>
   <li>Generación de mensajes contextuales: ¿Ofrece una escritura basada en inteligencia artificial que ajusta el tono, los apoyos de valor y las llamadas a la acción por cliente potencial?</li>
   <li>Soporte multilingüe: ¿Puede personalizar la divulgación en los idiomas de sus clientes potenciales?</li>
   <li>Flexibilidad de plantillas: ¿Las plantillas prediseñadas son fáciles de personalizar con datos personales o de cuenta?</li>
   <li>Pruebas y análisis: ¿La plataforma rastrea qué tácticas de personalización impulsan la participación?</li>
-</ul><p>Plataformas como Overloop automatizan la escritura de mensajes, incluyen variables dinámicas y admiten más de 80 idiomas. Esta combinación permite a los equipos B2B llegar a cuentas globales con campañas personalizadas y de alto rendimiento, a la vez que ahorran horas de trabajo manual cada semana.</p><h2>Lista de verificación esencial #4: Confirme la capacidad de entrega y el éxito de la divulgación</h2><p>La capacidad de entrega afecta directamente a la cantidad de clientes potenciales que realmente ven su alcance. Incluso las secuencias SDR de IA más inteligentes fallan si los mensajes llegan a las carpetas de spam o son devueltos. Para asegurarte de que tus campañas lleguen a las bandejas de entrada, céntrate en algunas configuraciones técnicas fundamentales y en las mejores prácticas.</p><h3>Factores clave de entregabilidad que hay que comprobar</h3><ul>
+</ul><p>Plataformas como Overloop automatizan la escritura de mensajes, incluyen variables dinámicas y admiten más de 80 idiomas. Esta combinación permite a los equipos B2B llegar a cuentas globales con campañas personalizadas y de alto rendimiento, a la vez que ahorran horas de trabajo manual cada semana.</p><h2 id="lista-de-verificaci-n-esencial-4-confirme-la-capacidad-de-entrega-y-el-xito-de-la-divulgaci-n">Lista de verificación esencial #4: Confirme la capacidad de entrega y el éxito de la divulgación</h2><p>La capacidad de entrega afecta directamente a la cantidad de clientes potenciales que realmente ven su alcance. Incluso las secuencias SDR de IA más inteligentes fallan si los mensajes llegan a las carpetas de spam o son devueltos. Para asegurarte de que tus campañas lleguen a las bandejas de entrada, céntrate en algunas configuraciones técnicas fundamentales y en las mejores prácticas.</p><h3>Factores clave de entregabilidad que hay que comprobar</h3><ul>
   <li>
 <strong>Autenticación de correo:</strong> Confirme que la herramienta es compatible con los protocolos SPF, DKIM y DMARC para validar sus correos electrónicos y reducir los riesgos de spam.</li>
   <li>
@@ -218,7 +547,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <strong>Controles de volumen y personalización:</strong> Evite las descargas generalizadas de gran volumen; las herramientas eficaces personalizan cada mensaje y limitan los envíos diarios para mantenerse fuera del radar del spam.</li>
   <li>
 <strong>Calentamiento y aceleración:</strong> Elige herramientas que aumenten gradualmente el envío desde nuevos dominios o direcciones para generar confianza con los proveedores de correo electrónico.</li>
-</ul><p>Plataformas como Overloop automatizan las comprobaciones de entregabilidad, verifican las direcciones en tiempo real y ajustan el ritmo de las campañas para ayudar a los equipos a evitar los errores más comunes. Las soluciones SDR de IA bien configuradas se combinan <em>personalización con medidas de seguridad técnicas</em>, lo que brinda a su alcance una mayor probabilidad de llegar a clientes potenciales y atraerlos. Al convertir la capacidad de entrega en una de las principales prioridades de la lista de verificación, respaldas tanto los objetivos de ventas inmediatos como la reputación de tus remitentes con respecto al éxito a largo plazo.</p><h2>Lista de verificación esencial #5: Garantice una integración perfecta de CRM y Stack</h2><p>La conexión entre su herramienta SDR de IA y el paquete de ventas existente no es opcional, sino que es necesaria para la eficiencia de las ventas B2B. Si su plataforma basada en inteligencia artificial no sincroniza la actividad, los clientes potenciales y los resultados con su CRM o las herramientas adyacentes, corre el riesgo de quedarse en silos de datos, de introducirlos manualmente y de perder oportunidades. La integración fluida elimina el trabajo duplicado y garantiza que tu equipo actúe siempre basándose en un historial de cuentas preciso.</p><h3>Puntos clave de integración que hay que revisar</h3><ul>
+</ul><p>Plataformas como Overloop automatizan las comprobaciones de entregabilidad, verifican las direcciones en tiempo real y ajustan el ritmo de las campañas para ayudar a los equipos a evitar los errores más comunes. Las soluciones SDR de IA bien configuradas se combinan <em>personalización con medidas de seguridad técnicas</em>, lo que brinda a su alcance una mayor probabilidad de llegar a clientes potenciales y atraerlos. Al convertir la capacidad de entrega en una de las principales prioridades de la lista de verificación, respaldas tanto los objetivos de ventas inmediatos como la reputación de tus remitentes con respecto al éxito a largo plazo.</p><h2 id="lista-de-verificaci-n-esencial-5-garantice-una-integraci-n-perfecta-de-crm-y-stack">Lista de verificación esencial #5: Garantice una integración perfecta de CRM y Stack</h2><p>La conexión entre su herramienta SDR de IA y el paquete de ventas existente no es opcional, sino que es necesaria para la eficiencia de las ventas B2B. Si su plataforma basada en inteligencia artificial no sincroniza la actividad, los clientes potenciales y los resultados con su CRM o las herramientas adyacentes, corre el riesgo de quedarse en silos de datos, de introducirlos manualmente y de perder oportunidades. La integración fluida elimina el trabajo duplicado y garantiza que tu equipo actúe siempre basándose en un historial de cuentas preciso.</p><h3>Puntos clave de integración que hay que revisar</h3><ul>
   <li>
 <strong>Integraciones de CRM nativas:</strong> Confirma la compatibilidad con plataformas como Salesforce, HubSpot y Pipedrive, que agilizan la sincronización de registros, las actualizaciones de clientes potenciales y el seguimiento de las campañas.</li>
   <li>
@@ -227,11 +556,11 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <strong>Compatibilidad con las herramientas de comunicación:</strong> Las integraciones con servicios como Slack o Calendly ayudan a unificar las notificaciones, la programación y la colaboración en equipo en tiempo real.</li>
   <li>
 <strong>Acceso a la API:</strong> Las API abiertas permiten conexiones de flujo de trabajo personalizadas, lo que permite que su pila crezca sin tener que enfrentarse a obstáculos de integración más adelante.</li>
-</ul><p>Las plataformas como Overloop incluyen integraciones directas con las principales aplicaciones de productividad y CRM para que los datos estén actualizados y las campañas funcionen desde un único centro. Este enfoque permite a los equipos B2B supervisar el progreso, evitar contactar con el mismo cliente potencial a través de varios canales y medir el ROI con precisión. <em>Compruebe siempre las revisiones de integración, la frecuencia de actualización y la facilidad de configuración</em>—estos elementos tienen un impacto directo en la productividad diaria y en los resultados de ventas a largo plazo.</p><h2>Lo más destacado es Overloop: impulsar una salida inteligente y escalable en 2025</h2><p>Overloop se destaca entre las herramientas de SDR de IA al centrarse en la automatización confiable, el alcance personalizado y las integraciones fluidas. Para los equipos que quieren modernizar la prospección saliente en 2025, estas funciones abordan los principales desafíos, como la pérdida de tiempo de investigación y la comunicación incoherente entre plataformas. Explore más detalles en nuestro <a href="https://overloop.com/features" target="_blank">desglose detallado de las funciones</a>.</p><h3>Automatización impulsada por IA que ahorra tiempo</h3><p>Al aprovechar la IA para la búsqueda de clientes potenciales y la gestión de campañas, Overloop <em>reduce el esfuerzo manual en cada etapa</em>:</p><ul>
+</ul><p>Las plataformas como Overloop incluyen integraciones directas con las principales aplicaciones de productividad y CRM para que los datos estén actualizados y las campañas funcionen desde un único centro. Este enfoque permite a los equipos B2B supervisar el progreso, evitar contactar con el mismo cliente potencial a través de varios canales y medir el ROI con precisión. <em>Compruebe siempre las revisiones de integración, la frecuencia de actualización y la facilidad de configuración</em>—estos elementos tienen un impacto directo en la productividad diaria y en los resultados de ventas a largo plazo.</p><h2 id="lo-m-s-destacado-es-overloop-impulsar-una-salida-inteligente-y-escalable-en-2025">Lo más destacado es Overloop: impulsar una salida inteligente y escalable en 2025</h2><p>Overloop se destaca entre las herramientas de SDR de IA al centrarse en la automatización confiable, el alcance personalizado y las integraciones fluidas. Para los equipos que quieren modernizar la prospección saliente en 2025, estas funciones abordan los principales desafíos, como la pérdida de tiempo de investigación y la comunicación incoherente entre plataformas. Explore más detalles en nuestro <a href="https://overloop.com/features" target="_blank">desglose detallado de las funciones</a>.</p><h3>Automatización impulsada por IA que ahorra tiempo</h3><p>Al aprovechar la IA para la búsqueda de clientes potenciales y la gestión de campañas, Overloop <em>reduce el esfuerzo manual en cada etapa</em>:</p><ul>
   <li>Extrae clientes potenciales de una base de datos de más de 450 millones de contactos verificados</li>
   <li>Automatiza la inscripción en campañas multicanal de correo electrónico y LinkedIn</li>
   <li>Gestiona los seguimientos y la programación de mensajes en función del comportamiento de los clientes potenciales</li>
-</ul><h3>Personalización que se amplía a nivel mundial</h3><p>La personalización es sencilla con los correos electrónicos generados por IA de Overloop. Cada mensaje puede hacer referencia a los detalles de los clientes potenciales, a la información de la empresa y a aspectos específicos del sector, lo que ayuda a los equipos <em>llegue a audiencias globales con más de 80 opciones de idiomas</em> y contenido relevante para el contexto en cada secuencia.</p><h3>Integración sólida de CRM y Stack</h3><p>Overloop se integra con CRM populares como Salesforce, Pipedrive y HubSpot. Esta conexión sincroniza los contactos, actualiza automáticamente las etapas de las transacciones y <em>mantiene unificados los flujos de trabajo de ventas</em>—reducir el tiempo dedicado a la entrada manual de datos y al cambio de herramientas.</p><p>Al abordar los puntos problemáticos de la salida B2B con una automatización inteligente, una personalización avanzada y una integración profunda, Overloop ayuda a los equipos de ventas a hacer crecer sus procesos y a mejorar las tasas de conversión de una manera sencilla y eficiente.</p><h2>Cómo priorizar las funciones en función de las necesidades y los objetivos del equipo</h2><p>Cada equipo de ventas tiene objetivos, flujos de trabajo y brechas únicos que las herramientas de SDR de IA deben abordar. Antes de comprometerse con una plataforma, compare los puntos débiles de su equipo en materia de prospección y los objetivos de crecimiento con las funciones clave que ofrece cada solución. Este enfoque específico garantiza que inviertas en una automatización que resuelva tus verdaderos desafíos de salida, y no solo tus necesidades genéricas.</p><h3>Asigne las prioridades del equipo a las funciones de AI SDR</h3><ul>
+</ul><h3>Personalización que se amplía a nivel mundial</h3><p>La personalización es sencilla con los correos electrónicos generados por IA de Overloop. Cada mensaje puede hacer referencia a los detalles de los clientes potenciales, a la información de la empresa y a aspectos específicos del sector, lo que ayuda a los equipos <em>llegue a audiencias globales con más de 80 opciones de idiomas</em> y contenido relevante para el contexto en cada secuencia.</p><h3>Integración sólida de CRM y Stack</h3><p>Overloop se integra con CRM populares como Salesforce, Pipedrive y HubSpot. Esta conexión sincroniza los contactos, actualiza automáticamente las etapas de las transacciones y <em>mantiene unificados los flujos de trabajo de ventas</em>—reducir el tiempo dedicado a la entrada manual de datos y al cambio de herramientas.</p><p>Al abordar los puntos problemáticos de la salida B2B con una automatización inteligente, una personalización avanzada y una integración profunda, Overloop ayuda a los equipos de ventas a hacer crecer sus procesos y a mejorar las tasas de conversión de una manera sencilla y eficiente.</p><h2 id="c-mo-priorizar-las-funciones-en-funci-n-de-las-necesidades-y-los-objetivos-del-equipo">Cómo priorizar las funciones en función de las necesidades y los objetivos del equipo</h2><p>Cada equipo de ventas tiene objetivos, flujos de trabajo y brechas únicos que las herramientas de SDR de IA deben abordar. Antes de comprometerse con una plataforma, compare los puntos débiles de su equipo en materia de prospección y los objetivos de crecimiento con las funciones clave que ofrece cada solución. Este enfoque específico garantiza que inviertas en una automatización que resuelva tus verdaderos desafíos de salida, y no solo tus necesidades genéricas.</p><h3>Asigne las prioridades del equipo a las funciones de AI SDR</h3><ul>
   <li>
 <strong>Si tu equipo dedica demasiado tiempo a la búsqueda manual de leads</strong>, priorice las herramientas con amplias bases de datos B2B y creación automática de listas. Overloop, con su base de datos integrada y su sistema de enriquecimiento, elimina directamente esta fricción.</li>
   <li>
@@ -242,7 +571,7 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
 <strong>Para equipos que dependen de los datos de CRM para sincronizar el alcance y las actualizaciones</strong>, asegúrese de que los candidatos ofrezcan integraciones confiables de CRM y herramientas de comunicación con un solo clic.</li>
   <li>
 <strong>Si los problemas de entregabilidad afectan a sus resultados</strong>, seleccione herramientas que proporcionan verificación en tiempo real, protocolos de calentamiento y ritmo de mensajes para proteger la reputación del remitente. Vea el impacto en el mundo real en nuestro <a href="https://overloop.com/success-stories/lemons/" target="_blank">Historia de éxito de Lemons</a>.</li>
-</ul><p><em>Revisa el flujo de trabajo de tu equipo y los resultados de prospección cada trimestre</em>. Si la herramienta AI SDR elegida ya no se ajusta a sus necesidades a medida que escala o cambia los mercados, cambie o añada funciones que se adapten mejor a los nuevos objetivos. Si priorizas las funciones de esta forma, te aseguras de invertir en plataformas que apoyen directamente el crecimiento y den a tu equipo más tiempo para vender, no para solucionar problemas con las herramientas.</p><h2>Mejores prácticas de implementación de AI SDR para equipos B2B</h2><p>La implementación de una nueva herramienta de SDR basada en la IA cierra eficazmente la brecha entre la inversión y los resultados de ventas cuantificables. Los equipos que planifican cada fase de la implementación (adopción, incorporación y seguimiento del ROI) obtienen retornos más rápidos y un rendimiento de salida más uniforme.</p><h3>Describa una implementación paso a paso</h3><ul>
+</ul><p><em>Revisa el flujo de trabajo de tu equipo y los resultados de prospección cada trimestre</em>. Si la herramienta AI SDR elegida ya no se ajusta a sus necesidades a medida que escala o cambia los mercados, cambie o añada funciones que se adapten mejor a los nuevos objetivos. Si priorizas las funciones de esta forma, te aseguras de invertir en plataformas que apoyen directamente el crecimiento y den a tu equipo más tiempo para vender, no para solucionar problemas con las herramientas.</p><h2 id="mejores-pr-cticas-de-implementaci-n-de-ai-sdr-para-equipos-b2b">Mejores prácticas de implementación de AI SDR para equipos B2B</h2><p>La implementación de una nueva herramienta de SDR basada en la IA cierra eficazmente la brecha entre la inversión y los resultados de ventas cuantificables. Los equipos que planifican cada fase de la implementación (adopción, incorporación y seguimiento del ROI) obtienen retornos más rápidos y un rendimiento de salida más uniforme.</p><h3>Describa una implementación paso a paso</h3><ul>
   <li>Designe a un propietario interno para supervisar la configuración de las herramientas y la formación de los usuarios.</li>
   <li>Importe y limpie sus listas de clientes potenciales iniciales; confirme todas las integraciones con las plataformas de comunicación y CRM antes de lanzar campañas en vivo.</li>
   <li>Ponga a prueba la herramienta AI SDR con un grupo central y ajuste los flujos de trabajo para lograr eficiencia antes de la implementación completa.</li>
@@ -250,14 +579,14 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
   <li>Defina los KPI principales, como las tasas de respuesta, las tasas de reserva de reuniones y la progresión de las ofertas vinculadas directamente a las campañas impulsadas por la IA.</li>
   <li>Compare los resultados salientes actuales y, a continuación, establezca objetivos de mejora específicos para los primeros 60 y 120 días después de la implementación.</li>
   <li>Aproveche los análisis integrados para evaluar tanto el desempeño cuantitativo como los comentarios cualitativos del equipo, refinando las secuencias de divulgación con el tiempo.</li>
-</ul><p>La adopción de un enfoque claro y gradual garantiza que su equipo B2B realice una transición segura y que la automatización, la personalización y la integración del stack funcionen en conjunto <em>desde el primer día</em> para impulsar los resultados de los oleoductos.</p><h2>Resumen de la lista de verificación: Conclusiones clave para el éxito de la IA SDR en 2025</h2><p>La revisión de la lista de verificación de IA SDR garantiza que su equipo de ventas invierta en herramientas que resuelvan directamente los desafíos diarios de salida de B2B. Las soluciones más eficaces se combinan <em>datos de clientes potenciales precisos, automatización que ahorra tiempo, personalización avanzada y funciones comprobadas de capacidad de entrega</em>. Cuando todos estos elementos se conectan sin problemas con su oferta de ventas, su alcance se hace más fuerte y menos manual, lo que abre nuevas oportunidades a gran escala.</p><h3>Elementos principales de la lista de verificación para confirmar</h3><ul>
+</ul><p>La adopción de un enfoque claro y gradual garantiza que su equipo B2B realice una transición segura y que la automatización, la personalización y la integración del stack funcionen en conjunto <em>desde el primer día</em> para impulsar los resultados de los oleoductos.</p><h2 id="resumen-de-la-lista-de-verificaci-n-conclusiones-clave-para-el-xito-de-la-ia-sdr-en-2025">Resumen de la lista de verificación: Conclusiones clave para el éxito de la IA SDR en 2025</h2><p>La revisión de la lista de verificación de IA SDR garantiza que su equipo de ventas invierta en herramientas que resuelvan directamente los desafíos diarios de salida de B2B. Las soluciones más eficaces se combinan <em>datos de clientes potenciales precisos, automatización que ahorra tiempo, personalización avanzada y funciones comprobadas de capacidad de entrega</em>. Cuando todos estos elementos se conectan sin problemas con su oferta de ventas, su alcance se hace más fuerte y menos manual, lo que abre nuevas oportunidades a gran escala.</p><h3>Elementos principales de la lista de verificación para confirmar</h3><ul>
   <li>Verifique la fuente, la precisión y la higiene de los datos de los clientes potenciales para cada campaña.</li>
   <li>Evalúe el alcance de la automatización para reducir las tareas repetitivas y automatizar la secuenciación multicanal.</li>
   <li>Compruebe si hay una personalización sólida basada en la IA que ofrece a cada contacto una experiencia personalizada en todas las geografías y funciones.</li>
   <li>Confirme las funciones técnicas que protegen la reputación del remitente y aumentan la capacidad de entrega: autenticación, limpieza de listas y controles de envío.</li>
   <li>Garantice una integración perfecta de CRM y stack para que toda la actividad de ventas se refleje en tiempo real en todas las plataformas.</li>
   <li>Prioriza las funciones en función de los objetivos de crecimiento de tu equipo, el estilo de la campaña y las brechas en los procesos para obtener el máximo ROI.</li>
-</ul><p>Elegir una plataforma SDR de IA como Overloop que se alinee con estos puntos puede <em>aumente su productividad diaria y sus resultados de salida</em>. Usa esta lista de verificación durante la revisión de los proveedores y ajusta el enfoque a medida que tu equipo crece o cambia. Con la combinación adecuada de automatización y personalización, podrá crear un motor de prospección más ágil, eficiente y exitoso para 2025.</p><h2>Preguntas frecuentes sobre las herramientas SDR de IA para 2025</h2><p>Muchos equipos de ventas B2B plantean preguntas similares cuando investigan, evalúan e implementan nuevas plataformas SDR de IA, especialmente cuando pretenden mantenerse competitivos en 2025. La claridad en torno a estos temas puede guiar una mejor selección de productos y aumentar el éxito de la comercialización desde el primer día.</p><h3>¿Qué significa AI SDR y cómo encaja en las ventas?</h3><p>AI SDR son las siglas de Artificial Intelligence Sales Development Representative. Estas plataformas automatizan las principales tareas de prospección: encontrar clientes potenciales, calificar contactos y enviar comunicaciones personalizadas. Esto ayuda a su equipo a llegar a más clientes potenciales y a convertir clientes potenciales con menos esfuerzo manual. Las herramientas de SDR basadas en la IA, como Overloop, son compatibles tanto con los SDR individuales como con equipos de ventas completos, lo que facilita la escalabilidad de las campañas salientes a medida que crece tu cartera.</p><h3>¿Cómo puede un equipo comparar la precisión de los datos en las plataformas SDR de IA?</h3><p>Los datos confiables son esenciales para evitar el desperdicio de la divulgación. Al comparar las herramientas, busque plataformas que:</p><ul>
+</ul><p>Elegir una plataforma SDR de IA como Overloop que se alinee con estos puntos puede <em>aumente su productividad diaria y sus resultados de salida</em>. Usa esta lista de verificación durante la revisión de los proveedores y ajusta el enfoque a medida que tu equipo crece o cambia. Con la combinación adecuada de automatización y personalización, podrá crear un motor de prospección más ágil, eficiente y exitoso para 2025.</p><h2 id="preguntas-frecuentes-sobre-las-herramientas-sdr-de-ia-para-2025">Preguntas frecuentes sobre las herramientas SDR de IA para 2025</h2><p>Muchos equipos de ventas B2B plantean preguntas similares cuando investigan, evalúan e implementan nuevas plataformas SDR de IA, especialmente cuando pretenden mantenerse competitivos en 2025. La claridad en torno a estos temas puede guiar una mejor selección de productos y aumentar el éxito de la comercialización desde el primer día.</p><h3>¿Qué significa AI SDR y cómo encaja en las ventas?</h3><p>AI SDR son las siglas de Artificial Intelligence Sales Development Representative. Estas plataformas automatizan las principales tareas de prospección: encontrar clientes potenciales, calificar contactos y enviar comunicaciones personalizadas. Esto ayuda a su equipo a llegar a más clientes potenciales y a convertir clientes potenciales con menos esfuerzo manual. Las herramientas de SDR basadas en la IA, como Overloop, son compatibles tanto con los SDR individuales como con equipos de ventas completos, lo que facilita la escalabilidad de las campañas salientes a medida que crece tu cartera.</p><h3>¿Cómo puede un equipo comparar la precisión de los datos en las plataformas SDR de IA?</h3><p>Los datos confiables son esenciales para evitar el desperdicio de la divulgación. Al comparar las herramientas, busque plataformas que:</p><ul>
   <li>Actualice continuamente sus bases de datos con los datos empresariales actuales</li>
   <li>Proporcione verificación de correo electrónico y enriquecimiento de contactos integrados</li>
   <li>Comparta las fuentes de sus datos de clientes potenciales y explique la frecuencia de actualización</li>
@@ -271,76 +600,86 @@ document.querySelector('.nav-mobile-toggle').addEventListener('click', function(
   <li>Programación de mensajes para evitar trampas de spam
   </li>
 </ul><p>Overloop incluye la supervisión de la capacidad de entrega y el calentamiento proactivo de los dominios, por lo que los correos electrónicos llegan a las bandejas de entrada (no al correo basura), lo que permite una divulgación fiable incluso cuando las campañas aumentan.</p><h3>¿Es fácil la integración con las herramientas de comunicación y CRM existentes?</h3><p>Comprueba los conectores nativos para los principales CRM (como Salesforce y HubSpot), la sincronización de actividades y el acceso a las API. Las mejores plataformas actualizan automáticamente los registros de contactos y las métricas de las campañas, lo que reduce las entradas duplicadas. Overloop ofrece integraciones directas que mantienen tu flujo de trabajo unificado y eliminan los silos de información en todas partes.</p><h3>¿Cómo son la adopción y la formación de una nueva herramienta SDR de IA?</h3><p>La mayoría de los equipos obtienen los resultados más rápidos si designan a un propietario interno, comienzan con los usuarios piloto e implementan la capacitación sobre las automatizaciones e integraciones principales. Muchos proveedores ofrecen guías de incorporación, tutoriales en vídeo y listas de verificación de mejores prácticas. Overloop ofrece recursos de capacitación específicos para una incorporación eficiente y admite la adopción gradual para reducir las interrupciones y, al mismo tiempo, ayudar a los usuarios a dominar los nuevos flujos de trabajo. Consulta las mejoras reales en materia de incorporación y salida en nuestro <a href="https://overloop.com/success-stories/marker/" target="_blank">Historia de éxito de Marker.io</a>.</p><p>Si tiene necesidades más específicas o quiere ver ejemplos de despliegues exitosos de IA SDR, los recursos de SaaSTR y <a href="https://www.forrester.com/report/the-top-10-ai-use-cases-for-b2b-marketers/RES175628" target="_blank">Forrester</a> ofrecen información sólida e independiente sobre cómo el desarrollo de ventas impulsado por la IA puede dar forma a los equipos B2B preparados para el futuro.</p>
-        </article>
 
-        <div class="cta-box">
-            <h3>&iquest;Listo para automatizar tu prospecci&oacute;n?</h3>
-            <p>Overloop combina una base de datos de 450M+ contactos B2B, redacci&oacute;n IA y secuencias multicanal en una sola plataforma.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Probar Overloop gratis</a>
-        </div>
-
-        <div class="author-bio">
-            <svg width="56" height="56" viewBox="0 0 56 56" style="border-radius:50%;flex-shrink:0;">
-  <rect width="56" height="56" rx="28" fill="#7C3AED"/>
-  <text x="28" y="29" text-anchor="middle" dominant-baseline="central" fill="white" font-family="Inter,sans-serif" font-weight="600" font-size="20">VR</text>
-</svg>
-            <div>
-                <div class="name">Vincenzo Ruggiero</div>
-                <div class="role">Redactor en Overloop</div>
-                <div class="role">Experto en ventas outbound y automatizacion B2B.</div>
-            </div>
-        </div>
-
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">VR</div>
+      <div>
+        <div class="author-card__name">Vincenzo Ruggiero</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">Founded Overloop in 2015. Tests every competitor tool hands-on.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

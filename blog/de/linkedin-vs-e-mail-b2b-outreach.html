@@ -1,24 +1,402 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/overloop.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LinkedIn vs. E-Mail: Was wirkt besser im B2B? | Overloop</title>
-    <meta name="description" content="LinkedIn vs E-Mail im B2B-Vergleich: Stärken, Schwächen und wie Sie beide Kanäle kombinieren für optimale Ergebnisse.">
-    <link rel="canonical" href="https://overloop.com/de/blog/linkedin-vs-e-mail-b2b-outreach">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedIn vs. E-Mail: Was wirkt besser im B2B? | Overloop</title>
+  <meta name="description" content="LinkedIn vs E-Mail im B2B-Vergleich: Stärken, Schwächen und wie Sie beide Kanäle kombinieren für optimale Ergebnisse.">
+  <link rel="canonical" href="https://overloop.com/de/blog/linkedin-vs-e-mail-b2b-outreach">
 
     <link rel="alternate" hreflang="en" href="https://overloop.com/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/linkedin-vs-e-mail-b2b-outreach">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/linkedin-vs-email-prospection-b2b">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/linkedin-vs-email-comparativa-outreach-b2b">
     <link rel="alternate" hreflang="it" href="https://overloop.com/it/blog/linkedin-vs-email-b2b">
-
     <link rel="alternate" hreflang="x-default" href="https://overloop.com/blog/linkedin-vs-email-which-performs-better-for-b2b-outreach">
+
+  <!-- Fonts: Epilogue (sans) + JetBrains Mono + Playfair Display italic (accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============= TOKENS ============= */
+    :root {
+      --color-primary: #6366F1; --color-primary-dark: #4F46E5; --color-primary-light: #818CF8;
+      --color-primary-50: #EEF2FF; --color-primary-100: #E0E7FF;
+      --color-secondary: #A855F7; --color-secondary-dark: #9333EA; --color-secondary-50: #FAF5FF;
+      --gradient-brand: linear-gradient(135deg, #6366F1 0%, #A855F7 100%);
+      --gradient-brand-soft: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(168,85,247,0.08) 100%);
+      --gradient-hero-bg: linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 50%, #FAFAFA 100%);
+      --color-bg: #FAFAFA; --color-surface: #F3F4F6; --color-surface-alt: #F8FAFC;
+      --color-white: #FFFFFF; --color-border: #E5E7EB; --color-border-light: #F3F4F6;
+      --color-text: #1A1A2E; --color-text-body: #374151; --color-text-secondary: #64748B;
+      --color-muted: #94A3B8; --color-dark: #1F2937;
+      --color-success: #10B981; --color-success-dark: #059669; --color-success-50: #ECFDF5;
+      --color-warning: #F59E0B; --color-warning-50: #FFFBEB;
+      --color-danger: #EF4444; --color-danger-50: #FEF2F2;
+      --font-sans: 'Epilogue', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+      --r-sm: 8px; --r: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      --shadow-glow: 0 8px 32px rgba(99, 102, 241, 0.30);
+      --shadow-glow-strong: 0 12px 40px rgba(99, 102, 241, 0.45);
+      --container-max: 1200px; --container-blog: 800px;
+      --page-px: 48px; --page-px-mobile: 16px;
+      --t: 200ms ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font-sans); color: var(--color-text-body); background: var(--color-bg); line-height: 1.7; font-size: 17px; }
+    a { color: var(--color-primary); text-decoration: none; transition: var(--t); }
+    a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+    .gradient-text { background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+
+    .reading-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: var(--gradient-brand); z-index: 1000; transition: width 100ms linear; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 2rem; height: 72px; padding: 0 var(--page-px); background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border-light); }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 1.5rem; margin-right: auto; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+    .nav-links a:hover, .nav-links a.active { color: var(--color-text); text-decoration: none; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-login { font-size: 14px; font-weight: 500; color: var(--color-text-secondary); }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; background: var(--color-primary); color: #fff; border: none; border-radius: var(--r); font-family: var(--font-sans); font-size: 15px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-md); transition: var(--t); }
+    .btn:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-glow); transform: translateY(-1px); color: #fff; }
+    .btn-sm { padding: 8px 18px; font-size: 13px; }
+    .btn-glow { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 40px; background: var(--gradient-brand); color: #fff; border: none; border-radius: var(--r-lg); font-family: var(--font-sans); font-size: 16px; font-weight: 600; text-decoration: none !important; cursor: pointer; box-shadow: var(--shadow-glow); transition: var(--t); }
+    .btn-glow:hover { box-shadow: var(--shadow-glow-strong); transform: translateY(-2px); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); box-shadow: none; }
+    .btn-ghost:hover { background: var(--color-surface); border-color: var(--color-primary); color: var(--color-primary); box-shadow: none; transform: none; }
+
+    /* Article hero */
+    .article-hero { background: var(--gradient-hero-bg); padding: 72px var(--page-px) 64px; position: relative; overflow: hidden; }
+    .article-hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(168,85,247,0.10) 0%, rgba(99,102,241,0) 70%); pointer-events: none; }
+    .article-hero-inner { max-width: var(--container-blog); margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: var(--r-pill); background: rgba(99,102,241,0.10); border: 1px solid rgba(99,102,241,0.20); color: var(--color-primary); font-size: 12px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 20px; }
+    .pill--glass { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); background: rgba(255,255,255,0.7); border-color: rgba(99,102,241,0.15); }
+    .article-hero h1 { font-size: clamp(34px, 5.5vw, 52px); font-weight: 800; color: var(--color-text); line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 20px; }
+    .article-hero h1 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .article-hero .lead { font-size: 19px; line-height: 1.6; color: var(--color-text-secondary); max-width: 660px; margin: 0 auto 32px; }
+    .article-meta { display: inline-flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: var(--r-pill); background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid var(--color-border-light); }
+    .article-meta__avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+    .article-meta__text { text-align: left; line-height: 1.3; }
+    .article-meta__author { font-size: 13px; font-weight: 700; color: var(--color-text); }
+    .article-meta__dates { font-size: 12px; color: var(--color-text-secondary); font-family: var(--font-mono); }
+
+    /* Layout */
+    .article-layout { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px); display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
+    .toc { position: sticky; top: 96px; padding: 8px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .toc__label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; }
+    .toc li { margin-bottom: 2px; }
+    .toc a { display: flex; align-items: center; gap: 8px; padding: 8px 12px; font-size: 13px; font-weight: 500; color: var(--color-text-secondary); border-left: 3px solid transparent; border-radius: 0 6px 6px 0; transition: var(--t); text-decoration: none !important; }
+    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
+    .toc a.active { color: var(--color-primary); background: var(--color-primary-50); border-left-color: var(--color-primary); font-weight: 600; }
+    .toc a .ch-num { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--color-surface); color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .toc a.active .ch-num { background: var(--gradient-brand); color: #fff; }
+    .toc__group { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--color-border-light); }
+
+    /* Prose */
+    .prose { max-width: var(--container-blog); min-width: 0; }
+    .prose > * { margin-bottom: 20px; }
+    .prose h2 { font-size: 32px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.15; margin: 56px 0 20px; scroll-margin-top: 96px; }
+    .prose h3 { font-size: 22px; font-weight: 700; color: var(--color-text); margin: 32px 0 10px; line-height: 1.3; scroll-margin-top: 96px; }
+    .prose p { line-height: 1.75; }
+    .prose ul, .prose ol { padding-left: 24px; margin-bottom: 20px; }
+    .prose ul li, .prose ol li { margin-bottom: 8px; line-height: 1.6; }
+    .prose strong { color: var(--color-text); font-weight: 700; }
+
+    /* Author intro */
+    .author-intro { background: var(--gradient-brand-soft); border: 1px solid var(--color-primary-100); border-radius: var(--r-xl); padding: 28px 32px; margin: 32px 0; }
+    .author-intro__header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-primary-100); }
+    .author-intro__photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 3px solid var(--color-primary-light); flex-shrink: 0; }
+    .author-intro__info { display: flex; flex-direction: column; }
+    .author-intro__info strong { font-size: 17px; font-weight: 700; color: var(--color-text); }
+    .author-intro__info span { font-size: 14px; color: var(--color-muted); margin-top: 2px; }
+    .author-intro__text p { font-size: 16px; line-height: 1.7; color: var(--color-text-secondary); margin: 0 0 12px; }
+    .author-intro__text p:last-child { margin-bottom: 0; }
+
+    /* Callouts */
+    .callout { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 18px 22px; border-radius: var(--r-lg); border-left: 4px solid; margin: 24px 0; }
+    .callout__icon { width: 32px; height: 32px; border-radius: var(--r-sm); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .callout__icon svg { width: 18px; height: 18px; }
+    .callout__body { font-size: 15px; line-height: 1.6; color: var(--color-text-body); }
+    .callout__body strong { color: var(--color-text); }
+    .callout--info { background: var(--color-primary-50); border-left-color: var(--color-primary); }
+    .callout--info .callout__icon { background: var(--color-primary); color: #fff; }
+    .callout--tip { background: var(--color-success-50); border-left-color: var(--color-success); }
+    .callout--tip .callout__icon { background: var(--color-success); color: #fff; }
+    .callout--warn { background: var(--color-warning-50); border-left-color: var(--color-warning); }
+    .callout--warn .callout__icon { background: var(--color-warning); color: #fff; }
+    .callout--fact { background: var(--color-text); border-left-color: var(--color-secondary); color: #fff; }
+    .callout--fact .callout__body { color: rgba(255,255,255,0.9); }
+    .callout--fact .callout__body strong { color: #fff; }
+    .callout--fact .callout__icon { background: rgba(255,255,255,0.15); color: #fff; }
+    .callout--expert { background: linear-gradient(135deg, var(--color-success-50) 0%, #F0FDF8 100%); border-left-color: var(--color-success); gap: 18px; padding: 22px 26px; align-items: start; }
+    .callout--expert .callout__avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-success); box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); flex-shrink: 0; }
+    .callout--expert .callout__author { display: block; font-size: 13px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .callout--expert .callout__author-role { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-success-dark); letter-spacing: 0.03em; margin-bottom: 8px; }
+
+    /* ============ PILLAR-SPECIFIC ============ */
+
+    /* Chapter nav (visual map at top of article) */
+    .chapter-nav {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--r-xl); padding: 28px;
+      margin: 24px 0 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chapter-nav__head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border-light); }
+    .chapter-nav__icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--gradient-brand); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-glow); }
+    .chapter-nav__icon svg { color: #fff; width: 20px; height: 20px; }
+    .chapter-nav__title { font-size: 17px; font-weight: 800; color: var(--color-text); line-height: 1.3; }
+    .chapter-nav__title span { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 2px; }
+    .chapter-nav__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .chapter-nav__item {
+      display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center;
+      padding: 12px 14px; background: var(--color-surface-alt);
+      border: 1px solid transparent; border-radius: var(--r);
+      text-decoration: none !important; color: var(--color-text);
+      transition: var(--t);
+    }
+    .chapter-nav__item:hover { background: var(--color-primary-50); border-color: rgba(99,102,241,0.20); transform: translateX(2px); }
+    .chapter-nav__num { width: 32px; height: 32px; border-radius: 50%; background: var(--gradient-brand); color: #fff; font-family: var(--font-mono); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 3px 10px rgba(99,102,241,0.25); }
+    .chapter-nav__label { font-size: 14px; font-weight: 600; line-height: 1.35; }
+    .chapter-nav__label span { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); font-weight: 400; margin-top: 2px; }
+
+    /* Chapter wrapper */
+    .chapter { margin: 64px 0 40px; }
+    .chapter__kicker { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 10px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; }
+    .chapter__kicker .num { background: var(--gradient-brand); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 10px; }
+    .chapter__h2 { font-size: 34px; font-weight: 800; color: var(--color-text); letter-spacing: -0.015em; line-height: 1.1; margin: 0 0 16px; scroll-margin-top: 96px; }
+
+    /* Sub-TOC per chapter */
+    .sub-toc {
+      background: var(--color-surface-alt);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--r);
+      padding: 18px 22px;
+      margin: 16px 0 28px;
+    }
+    .sub-toc__label { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .sub-toc ol { list-style: none; counter-reset: subtoc; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+    .sub-toc ol li { counter-increment: subtoc; margin: 0 !important; padding: 4px 0 4px 28px; position: relative; font-size: 13.5px; line-height: 1.5; }
+    .sub-toc ol li::before { content: counter(subtoc, decimal-leading-zero); position: absolute; left: 0; top: 4px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); }
+    .sub-toc a { font-weight: 500; color: var(--color-text-body); text-decoration: none; }
+    .sub-toc a:hover { color: var(--color-primary); text-decoration: underline; }
+
+    /* Key takeaways (per-chapter summary) */
+    .key-takeaways {
+      background: linear-gradient(135deg, #ECFDF5 0%, #EEF2FF 100%);
+      border-left: 4px solid var(--color-success);
+      border-radius: var(--r-lg);
+      padding: 22px 26px;
+      margin: 28px 0;
+    }
+    .key-takeaways__label { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-success-dark); margin-bottom: 12px; }
+    .key-takeaways__label svg { width: 14px; height: 14px; }
+    .key-takeaways ul { list-style: none; padding: 0; margin: 0; }
+    .key-takeaways ul li { position: relative; padding: 4px 0 4px 26px; font-size: 15px; line-height: 1.55; color: var(--color-text); margin-bottom: 4px !important; }
+    .key-takeaways ul li::before { content: "✓"; position: absolute; left: 0; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-success); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .key-takeaways ul li strong { color: var(--color-text); }
+
+    /* Related articles per chapter */
+    .chapter-links {
+      margin: 24px 0 32px;
+      padding: 18px 22px;
+      background: var(--color-surface-alt);
+      border-radius: var(--r);
+      border-left: 3px solid var(--color-primary-light);
+    }
+    .chapter-links__label { display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--color-primary); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter-links__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+    .chapter-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 500; color: var(--color-primary); padding: 4px 0; }
+    .chapter-links a svg { width: 12px; height: 12px; flex-shrink: 0; }
+    .chapter-links a:hover { color: var(--color-primary-dark); text-decoration: underline; }
+
+    /* Downloadable PDF / checklist CTA */
+    .downloadable {
+      background: var(--gradient-brand);
+      border-radius: var(--r-xl);
+      padding: 32px 36px;
+      margin: 40px 0;
+      color: #fff;
+      position: relative; overflow: hidden;
+      display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center;
+      box-shadow: var(--shadow-glow);
+    }
+    .downloadable::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(255,255,255,0.18) 0%, transparent 60%); }
+    .downloadable > * { position: relative; }
+    .downloadable__icon { width: 64px; height: 64px; border-radius: var(--r-lg); background: rgba(255,255,255,0.15); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+    .downloadable__icon svg { color: #fff; width: 28px; height: 28px; }
+    .downloadable__body h4 { font-size: 18px; font-weight: 800; color: #fff; margin: 0 0 4px; line-height: 1.3; }
+    .downloadable__body p { font-size: 14px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5; }
+    .downloadable .btn { background: #fff; color: var(--color-primary); white-space: nowrap; }
+    .downloadable .btn:hover { background: #fff; color: var(--color-primary-dark); }
+
+    /* CTA blocks */
+    .cta-inline { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 20px 24px; margin: 28px 0; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.20); border-radius: var(--r-lg); }
+    .cta-inline__body { font-size: 15px; font-weight: 600; color: var(--color-text); line-height: 1.5; }
+    .cta-inline__body span { display: block; font-weight: 500; font-size: 13px; color: var(--color-text-secondary); margin-top: 2px; }
+    .cta-hard { max-width: var(--container-blog); margin: 56px auto; padding: 56px 40px; background: var(--color-text); color: #fff; border-radius: var(--r-xl); text-align: center; position: relative; overflow: hidden; }
+    .cta-hard::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(168,85,247,0.25) 0%, transparent 60%), radial-gradient(ellipse at bottom left, rgba(99,102,241,0.20) 0%, transparent 60%); }
+    .cta-hard > * { position: relative; }
+    .cta-hard h3 { font-size: 30px; font-weight: 800; color: #fff !important; margin: 0 0 12px !important; line-height: 1.2; }
+    .cta-hard h3 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; }
+    .cta-hard p { font-size: 16px; color: rgba(255,255,255,0.95); margin: 0 0 24px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+    /* FAQ */
+    .faq { margin: 24px 0; border-top: 1px solid var(--color-border-light); }
+    .faq details { border-bottom: 1px solid var(--color-border-light); }
+    .faq summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700; color: var(--color-text); display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: var(--t); }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--color-surface); color: var(--color-primary); font-size: 18px; font-weight: 700; line-height: 28px; text-align: center; transition: var(--t); }
+    .faq details[open] summary::after { content: "−"; background: var(--color-primary); color: #fff; }
+    .faq summary:hover { color: var(--color-primary); }
+    .faq details[open] summary { color: var(--color-primary); }
+    .faq__answer { padding: 0 0 20px; font-size: 16px; line-height: 1.7; color: var(--color-text-body); }
+
+    /* Expert panel */
+    .expert-panel { max-width: var(--container-blog); margin: 56px auto; padding: 0 var(--page-px); }
+    .expert-panel__header { text-align: center; margin-bottom: 32px; }
+    .expert-panel__header h3 { font-size: 26px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .expert-panel__header p { font-size: 15px; color: var(--color-text-secondary); max-width: 540px; margin: 0 auto; }
+    .expert-panel__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .expert-bio { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); padding: 28px 24px; text-align: center; transition: var(--t); }
+    .expert-bio:hover { border-color: var(--color-primary); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .expert-bio__photo { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 3px solid transparent; background: linear-gradient(var(--color-white), var(--color-white)) padding-box, var(--gradient-brand) border-box; box-shadow: 0 4px 16px rgba(99, 102, 241, 0.15); display: block; }
+    .expert-bio__name { font-size: 17px; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .expert-bio__role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 14px; }
+    .expert-bio__text { font-size: 13px; line-height: 1.6; color: var(--color-text-body); margin-bottom: 16px; text-align: left; }
+    .expert-bio__linkedin { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--color-primary); text-decoration: none; }
+
+    /* Newsletter + related + footer (reused) */
+    .author-card { max-width: var(--container-blog); margin: 48px auto; padding: 28px 32px; background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-xl); display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; }
+    .author-card__avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gradient-brand); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; box-shadow: var(--shadow-glow); }
+    .author-card__name { font-size: 18px; font-weight: 700; color: var(--color-text); }
+    .author-card__role { font-family: var(--font-mono); font-size: 12px; color: var(--color-primary); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 8px; }
+    .author-card__bio { font-size: 14px; color: var(--color-text-body); line-height: 1.6; }
+    .related { max-width: var(--container-blog); margin: 48px auto; padding: 0 var(--page-px); }
+    .related h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 20px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .related-card { display: block; padding: 20px; background: #fff; border: 1px solid var(--color-border-light); border-radius: var(--r-lg); text-decoration: none !important; transition: var(--t); }
+    .related-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-1px); }
+    .related-card__cat { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+    .related-card__title { font-size: 15px; font-weight: 700; color: var(--color-text); line-height: 1.4; }
+    .newsletter { max-width: var(--container-blog); margin: 48px auto; padding: 40px 32px; background: var(--color-primary-50); border: 1px solid rgba(99,102,241,0.15); border-radius: var(--r-xl); text-align: center; }
+    .newsletter h3 { font-size: 22px; font-weight: 800; color: var(--color-text); margin-bottom: 8px; }
+    .newsletter p { font-size: 14px; color: var(--color-text-secondary); margin-bottom: 20px; }
+    .newsletter form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; }
+    .newsletter input { flex: 1; padding: 14px 18px; border-radius: var(--r); border: 1px solid var(--color-border); background: #fff; font-family: var(--font-sans); font-size: 14px; }
+    .newsletter input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .footer { background: var(--color-text); color: rgba(255,255,255,0.7); padding: 48px var(--page-px) 32px; margin-top: 64px; }
+    .footer-inner { max-width: var(--container-max); margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+    .footer h4 { font-family: var(--font-mono); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; }
+    .footer a { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 2; }
+    .footer a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
+
+    /* Stats grid in hero area */
+    .stats-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+    .stats-strip__item { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--r-lg); padding: 20px 22px; text-align: left; }
+    .stats-strip__num { font-size: 30px; font-weight: 800; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+    .stats-strip__label { font-family: var(--font-mono); font-size: 11px; color: var(--color-text-secondary); letter-spacing: 0.04em; text-transform: uppercase; }
+
+    @media (max-width: 991px) {
+      :root { --page-px: 24px; }
+      .article-layout { grid-template-columns: 1fr; gap: 32px; }
+      .toc { display: none; }
+      .chapter-nav__grid, .sub-toc ol, .chapter-links__grid, .stats-strip { grid-template-columns: 1fr; }
+      .downloadable { grid-template-columns: 1fr; text-align: center; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 639px) {
+      .article-hero { padding: 40px var(--page-px-mobile) 32px; }
+      .article-hero h1 { font-size: 32px; }
+      .chapter__h2 { font-size: 26px; }
+      .nav-links { display: none; }
+      .newsletter form { flex-direction: column; }
+      .related-grid, .expert-panel__grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === Legacy content rendering (post-migration) === */
+    .prose img, .main-wrap img, .data-main img,
+    .prose iframe, .main-wrap iframe, .data-main iframe,
+    .prose video, .main-wrap video, .data-main video {
+      max-width: 100%; height: auto; border-radius: 10px;
+      margin: 24px auto; display: block;
+      box-shadow: var(--shadow-md);
+    }
+    .prose figure, .main-wrap figure, .data-main figure { margin: 24px 0; }
+    .prose figcaption, .main-wrap figcaption, .data-main figcaption {
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-secondary);
+      text-align: center; margin-top: 8px;
+    }
+    .prose blockquote, .main-wrap blockquote, .data-main blockquote {
+      border-left: 4px solid var(--color-primary);
+      padding: 14px 20px; margin: 20px 0;
+      background: var(--color-primary-50); border-radius: 0 12px 12px 0;
+      font-style: italic; color: var(--color-text-body);
+    }
+    .prose code, .main-wrap code, .data-main code {
+      background: var(--color-surface); padding: 2px 6px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 13.5px; color: var(--color-text);
+    }
+    .prose pre, .main-wrap pre, .data-main pre {
+      background: var(--color-text); color: #E5E7EB;
+      padding: 16px 18px; border-radius: var(--r-sm); margin: 16px 0;
+      font-family: var(--font-mono); font-size: 13px; line-height: 1.6;
+      overflow-x: auto;
+    }
+    .prose pre code, .main-wrap pre code, .data-main pre code {
+      background: none; padding: 0; color: inherit;
+    }
+    .prose table, .main-wrap table, .data-main table {
+      width: 100%; border-collapse: separate; border-spacing: 0;
+      margin: 24px 0; border: 1px solid var(--color-border);
+      border-radius: var(--r-lg); overflow: hidden; font-size: 14px;
+    }
+    .prose table thead th, .main-wrap table thead th, .data-main table thead th {
+      background: var(--color-text); color: #fff;
+      padding: 12px 16px; text-align: left;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .prose table tbody td, .main-wrap table tbody td, .data-main table tbody td {
+      padding: 12px 16px; border-bottom: 1px solid var(--color-border-light);
+      vertical-align: middle;
+    }
+    .prose table tbody tr:last-child td, .main-wrap table tbody tr:last-child td, .data-main table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .prose table tbody tr:hover, .main-wrap table tbody tr:hover, .data-main table tbody tr:hover {
+      background: var(--color-primary-50);
+    }
+    .prose hr, .main-wrap hr, .data-main hr {
+      border: none; border-top: 1px solid var(--color-border-light); margin: 32px 0;
+    }
+    .prose a, .main-wrap a, .data-main a { color: var(--color-primary); }
+    .prose a:hover, .main-wrap a:hover, .data-main a:hover { color: var(--color-primary-dark); }
+
+  
+    .ovl-box { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-lg); padding: 24px 28px; margin: 24px 0; }
+    .ovl-box h3 { font-size: 18px; font-weight: 700; color: var(--color-text); margin-bottom: 12px; }
+    .ovl-box ul { padding-left: 20px; }
+    .ovl-box li { margin-bottom: 6px; }
+  </style>
 
     <meta property="og:title" content="LinkedIn vs. E-Mail: Was wirkt besser im B2B?">
     <meta property="og:description" content="LinkedIn vs E-Mail im B2B-Vergleich: Stärken, Schwächen und wie Sie beide Kanäle kombinieren für optimale Ergebnisse.">
@@ -29,7 +407,6 @@
     <meta name="twitter:title" content="LinkedIn vs. E-Mail: Was wirkt besser im B2B?">
     <meta name="twitter:description" content="LinkedIn vs E-Mail im B2B-Vergleich: Stärken, Schwächen und wie Sie beide Kanäle kombinieren für optimale Ergebnisse.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/linkedin-vs-email-which-performs-better-for-b2b-outreach.png">
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -58,7 +435,6 @@
         }
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -69,186 +445,153 @@
         ]
     }
     </script>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-<!-- Overloop Navigation -->
-<nav class="nav">
-    <div class="nav-inner">
-        <a href="https://overloop.com" class="nav-logo">
-            <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop AI" height="28">
-        </a>
-
-        <ul class="nav-links">
-            <li class="nav-dropdown">
-                <a href="https://overloop.com/features" class="nav-dropdown-trigger">Features</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-features-grid">
-                        <li><a href="https://overloop.com/f/linkedin-automation">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                            <div><strong>LinkedIn Automation</strong><span class="dropdown-desc">Automate outreach without risking your account</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/email-verification">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            <div><strong>Email Bulk Verification</strong><span class="dropdown-desc">Verify addresses, improve deliverability</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/b2b-contact-database">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            <div><strong>B2B Contact Database</strong><span class="dropdown-desc">450M+ verified contacts</span></div>
-                        </a></li>
-                        <li><a href="https://overloop.com/f/multi-channel-outreach">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polyline points="22 12 16 12 14 15 10 9 8 12 2 12"/></svg>
-                            <div><strong>Multi-Channel Prospecting</strong><span class="dropdown-desc">Email + LinkedIn in one sequence</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="https://overloop.com/pricing">Pricing</a></li>
-            <li class="nav-dropdown">
-                <a href="/blog" class="nav-dropdown-trigger">Resources</a>
-                <div class="nav-dropdown-menu nav-dropdown-wide">
-                    <ul class="nav-dropdown-content nav-resources-grid">
-                        <li><a href="/blog">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-                            <div><strong>Blog</strong><span class="dropdown-desc">Outbound strategies and guides</span></div>
-                        </a></li>
-                        <li><a href="/versus">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                            <div><strong>Versus</strong><span class="dropdown-desc">Tool-by-tool comparisons</span></div>
-                        </a></li>
-                        <li><a href="/tools/spam-checker">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            <div><strong>Spam Checker</strong><span class="dropdown-desc">Free email analysis tool</span></div>
-                        </a></li>
-                        <li><a href="/tools/roi-calculator">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
-                            <div><strong>ROI Calculator</strong><span class="dropdown-desc">Estimate your outbound ROI</span></div>
-                        </a></li>
-                        <li><a href="/tools/domain-health">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            <div><strong>Domain Health</strong><span class="dropdown-desc">Check SPF, DKIM, DMARC</span></div>
-                        </a></li>
-                        <li><a href="/tools/playbooks">
-                            <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#7C3AED" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            <div><strong>Playbooks</strong><span class="dropdown-desc">Industry-specific strategies</span></div>
-                        </a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-
-        <div class="nav-cta">
-            <a href="https://app.overloop.ai/session/signup" class="btn-ghost">Sign up</a>
-            <a href="https://app.overloop.ai/session/login" class="btn-login">Login</a>
-            <a href="https://overloop.com/book-demo" class="btn-primary"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a demo</a>
-        </div>
-
-        <button class="nav-mobile-toggle" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
+  <nav class="nav">
+    <a href="https://overloop.com" class="nav-logo">
+      <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
+    </a>
+    <div class="nav-links">
+      <a href="https://overloop.com/features">Features</a>
+      <a href="https://overloop.com/pricing">Pricing</a>
+      <a href="https://overloop.com/blog" class="active">Blog</a>
+      <a href="https://overloop.com/tools">Free tools</a>
     </div>
-<script>
-document.querySelector('.nav-mobile-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('nav-open');
-    document.querySelector('.nav-cta').classList.toggle('nav-open');
-});
-</script>
-</nav><div class="breadcrumb-bar">
-    <div class="container">
-        <a href="https://overloop.com">Overloop</a>
-        <span class="sep">/</span>
-        <a href="/de/blog/">Blog</a>
-        <span class="sep">/</span>
-        <span class="current">LinkedIn vs. E-Mail: Was wirkt...</span>
+    <div class="nav-right">
+      <a href="https://app.overloop.ai/session/login" class="nav-login">Login</a>
+      <a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a>
     </div>
-</div>
+  </nav>
 
-<header class="article-header">
-    <span class="header-badge">Vertrieb</span>
-    <h1>LinkedIn vs. E-Mail: Was wirkt besser im B2B?</h1>
-</header>
-
-<main class="article-body">
-    <div class="container">
-
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <span class="pill pill--glass">
+          <i data-lucide="book-open" style="width:12px;height:12px"></i>
+          Comparison
+        </span>
+        <h1>LinkedIn vs. E-Mail: Was wirkt besser im B2B?</h1>
+        <p class="lead">Wenn Sie sich für B2B-Outreach zwischen LinkedIn und E-Mail entscheiden, finden Sie hier die schnelle Antwort: LinkedIn bietet bessere Rücklaufquoten (5-20%) und professionelles Targeting, während …</p>
         <div class="article-meta">
-            <img class="meta-avatar" src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="44" height="44" style="border-radius:50%;object-fit:cover;">
-            <div class="meta-info">
-                Von <a href="https://www.linkedin.com/in/nicolasfinet/">Nicolas Finet</a> &middot;
-                26. Dezember 2024 &middot;
-                10 Min. Lesezeit
-            </div>
+          <div class="article-meta__avatar">NF</div>
+          <div class="article-meta__text">
+            <div class="article-meta__author">Nicolas Finet</div>
+            <div class="article-meta__dates">Dec 26, 2024 &middot; Updated Apr 15, 2026</div>
+          </div>
         </div>
-
-        <article class="article-content">
-<p>Wenn Sie sich für B2B-Outreach zwischen LinkedIn und E-Mail entscheiden, finden Sie hier die schnelle Antwort: <strong>LinkedIn bietet bessere Rücklaufquoten (5-20%) und professionelles Targeting, während E-Mail sich durch Skalierbarkeit und Kosteneffektivität auszeichnet.</strong></p><p>Die besten Ergebnisse werden oft durch die Kombination beider Plattformen erzielt.</p><h3>Die wichtigsten Höhepunkte:</h3><ul><li><strong>LinkedIn</strong>: Höhere Rücklaufquoten, professioneller Kontext, Targeting in Echtzeit, aber höhere Kosten und eingeschränkte Skalierbarkeit.</li><li><strong>E-Mail</strong>: Niedrigere Antwortraten (1-10%), aber skalierbar, kosteneffizient und ideal für detaillierte Kommunikation.</li></ul><h3>Schneller Vergleich:</h3><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8213e_687602354f89b21aafe274ef_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.22.56%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p><strong>Profi-Tipp</strong>: Beginnen Sie mit LinkedIn, um Beziehungen aufzubauen, und senden Sie anschließend personalisierte E-Mails für eine skalierbare Kommunikation. Dieser Mehrkanal-Ansatz kann Ihre Ergebnisse verstärken.</p><h2>Wie LinkedIn und E-Mail bei wichtigen Kennzahlen abschneiden</h2><h3>Antwort- und Öffnungsraten</h3><p>Der professionelle Charakter von LinkedIn führt oft zu besseren Antwortraten, während E-Mails von höheren Öffnungsraten profitieren, aber mit Übersättigung und Spam-Filtern zu kämpfen haben. E-Mails weisen in der Regel Öffnungsraten zwischen <strong>15-25%</strong>, im Vergleich zu LinkedIn <strong>10-20%</strong>. Die Effektivität der beiden Plattformen hängt jedoch stark davon ab, wie gut die Öffentlichkeitsarbeit personalisiert ist.</p><h3>Personalisierung und Skalierung der Reichweite</h3><p>LinkedIn eignet sich hervorragend, um professionelle Daten zu verwenden, um bestimmte Personen anzusprechen, während E-Mails sich durch ihre Fähigkeit auszeichnen, die Reichweite durch Automatisierung zu skalieren. Hier ist ein kurzer Vergleich ihrer Targeting-Funktionen:</p><figure data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82141_68760256bb70047a94faeb9d_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.11%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Die professionellen Echtzeitdaten und die Netzwerksichtbarkeit von LinkedIn ermöglichen ein genaueres Targeting. Andererseits erleichtern es die Automatisierungstools von E-Mails, ein größeres Publikum zu erreichen. Die Effektivität beider Plattformen hängt letztlich davon ab, wie diese Personalisierungsstrategien Leads konvertieren.</p><h3>Leadkonversion und Kapitalrendite</h3><p>LinkedIn ist dafür bekannt, qualitativ hochwertige Leads durch gezielte Interaktionen zu generieren, und E-Mail ist aufgrund seiner Skalierbarkeit eine kostengünstige Option. Eine Studie ergab, dass LinkedIn-Nachrichten eine <strong>19.98% Antwortrate</strong> und ein <strong>48,14% positive Antwortrate</strong> <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. E-Mails erfordern zwar mehr Follow-ups, bieten aber bessere Tools zur Nachverfolgung des ROI.</p><p>So schneiden die beiden Plattformen bei den wichtigsten Leistungskennzahlen ab:</p><figure data-rt-max-width="894px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82138_6876027283ed7610b39d5d74_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.20%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>LinkedIn glänzt, wenn es um qualitativ hochwertige Leads geht, während E-Mail für Follow-ups budgetfreundlicher ist. Zusammen bilden sie eine effektive Kombination für eine ausgewogene Outreach-Strategie <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a><a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><h2>Stärken und Schwächen von LinkedIn und E-Mail</h2><h3>Warum LinkedIn gut funktioniert</h3><p>Der Zugriff von LinkedIn auf Echtzeitdaten erleichtert die Identifizierung von Entscheidungsträgern. 89% der B2B-Vermarkter nutzen sie erfolgreich zur Lead-Generierung <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Die professionelle Atmosphäre trägt dazu bei, durch gegenseitige Kontakte und die Vergangenheit des Engagements Glaubwürdigkeit aufzubauen, bevor mit der Kontaktaufnahme begonnen wird.</p><p>Verbindungsanfragen auf LinkedIn haben eine Akzeptanzrate von 45%, und personalisierte Nachrichten haben eine positive Antwortrate von 39% — weitaus besser als <a href="https://www.linkedin.com/help/linkedin/answer/a543895">In der Post</a>Antwortraten von 18-25% <a href="https://salesbread.com/linkedin-response-rates/">[4]</a>. Der Fokus der Plattform auf professionelle Interaktionen und ihre aktive Nutzerbasis während der Geschäftszeiten machen sie zu einer soliden Wahl für die geschäftliche Kommunikation.</p><p>LinkedIn eignet sich zwar hervorragend für direktes berufliches Engagement, E-Mail zeichnet sich jedoch durch seine Fähigkeit aus, die Öffentlichkeitsarbeit zu skalieren.</p><h3>Warum E-Mail effektiv ist</h3><p>E-Mail ermöglicht eine breite Reichweite zu geringeren Kosten und ist daher ideal für den Versand detaillierter Pitches mit mehreren Call-to-Action (CTAs) <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. Fortschrittliche Tools wie dynamische Vorlagen und Engagement-Tracking erleichtern die effiziente Verwaltung umfangreicher Kampagnen.</p><p>Im Gegensatz zu LinkedIn bieten E-Mail-Plattformen umfassende Automatisierungsfunktionen und eingehende Analysen. Die Antwortraten per E-Mail sind zwar oft niedriger, aber die Erschwinglichkeit und Skalierbarkeit sind für Kampagnen, die ein größeres Publikum ansprechen, große Vorteile <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><h3>Vergleichstabelle Seite an Seite</h3><p>Hier ist ein kurzer Vergleich von LinkedIn und E-Mail, um die wichtigsten Funktionen hervorzuheben:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8214a_687602b1af666e2e36a1dddb_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.34%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Beide Plattformen bieten je nach Ihren Outreach-Zielen einzigartige Vorteile. LinkedIn-Nachrichten können, wenn sie richtig personalisiert sind, eine um 30% höhere Antwortrate als der Durchschnitt erzielen <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Auf der anderen Seite können superpersonalisierte E-Mails die Antwortrate auf bis zu 70% erhöhen <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>. Die Wahl der richtigen Plattform hängt von Ihrer Zielgruppe und Ihren Kampagnenzielen ab.</p><h2>Tipps für eine bessere LinkedIn- und E-Mail-Öffentlichkeitsarbeit</h2><h3>Verbesserung der LinkedIn-Reichweite</h3><p>Ein ausgefeiltes, professionelles LinkedIn-Profil kann Ihre Rücklaufquoten im Vergleich zu unvollständigen Profilen um bis zu 40% erhöhen <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Wenn Sie Verbindungsanfragen senden, machen Sie sie persönlich, indem Sie auf bestimmte Details aus dem Profil des Empfängers oder seiner letzten Aktivität verweisen. Personalisierte Anfragen haben in der Regel eine Akzeptanzrate von 45% <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>.</p><p>Bevor Sie Kontakt aufnehmen, nehmen Sie sich 2-3 Wochen Zeit, um sich mit den Inhalten Ihrer Interessenten zu beschäftigen. Hinterlassen Sie durchdachte Kommentare, teilen Sie wichtige Erkenntnisse und zeigen Sie echtes Interesse. Dieser Ansatz kann die Rücklaufquoten um 30% verbessern <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Wenn du deine Verbindungsanfragen erstellst, halte sie kurz — unter 300 Zeichen. Erwähnen Sie gegenseitige Verbindungen, gemeinsame Interessen oder aktuelle Unternehmensnachrichten. Vermeiden Sie es, direkt zu Verkaufsgesprächen überzugehen. Bei Follow-ups sollten Sie einen Abstand von 5 bis 7 Tagen einplanen und insgesamt 3-4 Nachrichten senden. Jedes Follow-up sollte etwas Neues und Nützliches bieten, anstatt nur „einzuchecken“ <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><h3>Verbesserung der E-Mail-Reichweite</h3><p>Der Erfolg von E-Mail-Outreach hängt von Targeting, Personalisierung und Persistenz ab. Tools wie <a href="https://www.hubspot.com/products/sales">HubSpot</a> kann Ihnen helfen, die Leistung zu verfolgen und zu analysieren, um Ihren Ansatz anhand realer Daten zu verfeinern <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Betreffzeilen, die den Firmennamen des Empfängers enthalten, können die Öffnungsraten erheblich verbessern <a href="https://vwo.com/ab-testing/">[5]</a>. Achten Sie auf Betreffzeilen zwischen 30 und 50 Zeichen, um sicherzustellen, dass sie auf Mobilgeräten gut angezeigt werden.</p><p>Hier ist ein einfaches Framework für eine effektive E-Mail-Kontaktaufnahme:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8213b_687602ef6aa20c545a7b4fee_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.45%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Laut <a href="https://www.bardeen.ai/">Bardeen, KI</a>, personalisierte automatische Follow-ups können die Rücklaufquoten weiter erhöhen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. Jede Folge-E-Mail sollte neue Erkenntnisse oder Vorteile bieten und somit wertvoller sein als die letzte.</p><p><strong>Wichtige Elemente, auf die Sie sich bei der E-Mail-Kontaktaufnahme konzentrieren sollten</strong>:</p><ul><li>Beginnen Sie mit einer Eröffnungszeile, die auf aktuelle Unternehmensnachrichten verweist.</li><li>Heben Sie klare Vorteile hervor, die den Herausforderungen des Interessenten gerecht werden.</li><li>Fügen Sie soziale Beweise von ähnlichen Unternehmen hinzu.</li><li>Beenden Sie mit einem spezifischen Call-to-Action mit geringem Druck.</li></ul><p>Während LinkedIn ideal für den Aufbau beruflicher Beziehungen ist, eignet sich E-Mail hervorragend für die Skalierung der Öffentlichkeitsarbeit. Die Kombination der Stärken beider Plattformen ermöglicht es Vertriebsteams, eine abgerundete Mehrkanalstrategie zu entwickeln, um bessere Ergebnisse zu erzielen.</p><h2>Kombination von LinkedIn und E-Mail für bessere Ergebnisse</h2><p>Die Kombination der Netzwerkfunktionen von LinkedIn mit der großen Reichweite von E-Mails schafft eine effektive B2B-Outreach-Strategie. Durch den Einsatz von LinkedIn zum Aufbau von Beziehungen und E-Mails für skalierbare Kommunikation können Vertriebsteams einen umfassenden Multichannel-Ansatz entwickeln. Eine kluge Taktik besteht darin, sich zuerst auf LinkedIn vertraut zu machen und dann zur E-Mail-Kommunikation überzugehen.</p><h3>Leads auf LinkedIn vor dem E-Mail-Versand aufwärmen</h3><p>Wenn Sie mit LinkedIn-Interaktionen beginnen, bevor Sie E-Mails senden, können Sie die Antwortraten drastisch erhöhen. Hier ist ein Stufenplan, damit es funktioniert:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82135_687602f28afbe4b7b6945441_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.53%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Dieser strukturierte Ansatz wurde von vielen Unternehmen mit großem Erfolg übernommen.</p><h3>Beispiele für Multichannel-Kampagnen</h3><p><strong>Beispiel für die Softwarebranche</strong>: <a href="https://overloop.com/">Overloop-KI</a> richtete sich an IT-Entscheidungsträger, indem zunächst eine Verbindung auf LinkedIn hergestellt, über einen Zeitraum von zwei Wochen interagiert und dann personalisierte E-Mails versendet wurden. Die Ergebnisse waren beeindruckend:</p><ul><li><strong>25% höhere Rücklaufquoten</strong> im Vergleich zu kalten E-Mails</li><li><strong>Steigerung der Tagungsbuchungen um 40%</strong></li><li><strong>Dreimal schnellerer Abschluss des Verkaufszyklus</strong></li></ul><h3>Best Practices für die Integration</h3><p>Der Einsatz von KI-Tools kann dazu beitragen, personalisierte Nachrichten zu optimieren und die Kommunikation plattformübergreifend aufeinander abzustimmen. Studien zeigen, dass synchronisierte Nachrichten über LinkedIn und E-Mail die Engagement-Raten um bis zu 35% verbessern können <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Damit diese Strategie effektiv funktioniert:</p><p>Wenn Sie Kanäle kombinieren, sorgt das Zusammenführen Ihrer Verbindungsanfragen, Follow-ups und E-Mail-Touchpoints in einer Sequenz für konsistente Antworten. Nutze das LinkedIn-Outreach-Plan um den gesamten Ablauf zu strukturieren.</p><ul><li>Platzieren Sie LinkedIn-Interaktionen und E-Mail-Follow-ups, um die Botschaft konsistent zu halten.</li><li>Verweisen Sie in Ihren E-Mails auf bestimmte LinkedIn-Interaktionen, damit sie sich persönlich anfühlen.</li><li>Teilen Sie relevante Erkenntnisse auf LinkedIn, um Ihre Glaubwürdigkeit zu stärken, bevor Sie zu E-Mail-Anfragen übergehen.</li></ul><h2>Fazit: Entscheidung zwischen LinkedIn und E-Mail</h2><p>Wenn es um die Antwortrate geht, erreichen LinkedIn-Nachrichten in der Regel 5-20%, während E-Mails zwischen 1-10% liegen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. LinkedIn gedeiht in einem professionellen Umfeld und bietet bessere Targeting- und Engagement-Möglichkeiten. Andererseits liegt die Stärke von E-Mail in ihrer Skalierbarkeit und der Fähigkeit, detaillierte Kommunikation mühelos abzuwickeln.</p><p>Hier finden Sie eine Kurzanleitung, die Ihnen bei der Auswahl der richtigen Plattform für Ihre Ziele hilft:</p><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8212f_68760309860c5b8d17107385_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.24.02%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Die Kombination beider Plattformen kann Ihre Ergebnisse verbessern. Unternehmen, die LinkedIn für Networking und E-Mail für eine breitere Kommunikation nutzen, erzielen oft bessere Ergebnisse <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p><strong>Faktoren, die bei der Auswahl einer Plattform zu berücksichtigen sind:</strong></p><ul><li><strong>Branchen- und Publikumspräferenzen</strong>: LinkedIn wird in der Technologie- und Digitalbranche häufig bevorzugt, während traditionellere Sektoren eher E-Mails bevorzugen.</li><li><strong>Ressourcen und Ziele</strong>: Verwenden Sie LinkedIn, um Beziehungen aufzubauen und E-Mails zu versenden, um ein größeres Publikum zu erreichen oder detaillierte Informationen auszutauschen.</li></ul><p>Ein ausgewogener Ansatz funktioniert am besten. Die InMail-Funktion von LinkedIn weist Antwortraten von 18-25% auf, wobei Direktnachrichten eine Akzeptanzrate von bis zu 45% erreichen <a href="https://salesbread.com/linkedin-response-rates/">[4]</a>. In der Zwischenzeit ist E-Mail nach wie vor von entscheidender Bedeutung für formelle Vorschläge und Kommunikation, insbesondere in Branchen, in denen E-Mail die Norm ist.</p><p>Um das Beste aus Ihrer Reichweite herauszuholen, experimentieren Sie mit beiden Plattformen, überwachen Sie die Leistung und passen Sie Ihre Strategie auf der Grundlage des Feedbacks Ihrer Zielgruppen an. Ein durchdachter Mehrkanal-Ansatz — LinkedIn für professionelle Kontakte und E-Mail für Skalierung — kann zu besseren Ergebnissen führen. Weitere Informationen zur Plattformleistung finden Sie in den folgenden häufig gestellten Fragen.</p><h2>Häufig gestellte Fragen</h2><p>Hier finden Sie Antworten auf häufig gestellte Fragen, die Vertriebsprofis häufig zur Verwendung von LinkedIn im Vergleich zu E-Mail für die Kontaktaufnahme haben:</p><p><strong>Wie hoch ist die Konversionsrate für kalte Nachrichten auf LinkedIn?</strong></p><p>Kaltakquise auf LinkedIn führt in der Regel zu den folgenden Ergebnissen:</p><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8212c_687603508dc9a5ca84e6c874_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.24.10%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p><strong>Welche Tage eignen sich am besten für LinkedIn-Outreach?</strong></p><p><strong>Donnerstag</strong> ist der herausragende Tag mit einer Rücklaufquote von 20,32%, während <strong>Samstag</strong> hinkt mit nur 2,65% hinterher <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Wenn Sie eine LinkedIn-Öffentlichkeitsarbeit planen, sollten Sie Donnerstage anstreben, um das Engagement zu maximieren.</p><p><strong>Wie beeinflussen Personalisierung und Plattformwahl die Leistung?</strong></p><p>Jede Plattform hat ihre Stärken:</p><ul><li><strong>E-Mail</strong> Die Öffnungsraten liegen zwischen 15 und 25% und sind in der Regel höher als bei LinkedIn von 10 bis 20% <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</li><li>LinkedIn-Nachrichten werden oft besser angesprochen, nachdem sie geöffnet wurden.</li><li>Das Hinzufügen einer persönlichen Note — wie die Erwähnung aktueller Unternehmensnachrichten oder geteilter Kontakte — kann die Ergebnisse auf beiden Plattformen verbessern.</li></ul><p><strong>Wie viele Follow-ups sollte ich senden?</strong></p><p>Auf LinkedIn reichen in der Regel 3-4 Follow-ups aus. Für E-Mail-Kampagnen benötigen Sie möglicherweise mehr Touchpoints, um Ergebnisse zu sehen <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><p><strong>Können KI-Tools die Reichweite verbessern?</strong></p><p>KI kann einen großen Unterschied machen, indem sie:</p><ul><li>Planung von Nachrichten in Zeiten mit hohem Kundeninteresse, wodurch die Öffnungsraten um bis zu 20% gesteigert werden.</li><li>Wir bieten Formulierungsvorschläge an, die auf dem basieren, was in früheren Kampagnen gut funktioniert hat.</li><li>Passen Sie den Ton und den Stil der Nachrichten an, um sie besser an die Präferenzen des Empfängers anzupassen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</li></ul><p>Diese Tipps zeigen, wie die Verfeinerung Ihres Ansatzes — ob auf LinkedIn, E-Mail oder beidem — zu besseren Ergebnissen bei der Kontaktaufnahme führen kann.</p><p>‍</p>
-        </article>
-
-        <div class="cta-box">
-            <h3>Bereit, Ihre Akquise zu automatisieren?</h3>
-            <p>Overloop AI bietet Ihnen eine Datenbank mit über 450 Mio. Kontakten, KI-gestützte E-Mail-Erstellung und Multichannel-Sequenzen. Ab 69$/Nutzer/Monat.</p>
-            <a href="https://app.overloop.ai/session/signup" class="cta-button">Overloop kostenlos testen</a>
+        <div class="tested-banner">
+          <div class="tested-banner__avatars">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
+            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
+            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
+          </div>
+          <i data-lucide="shield-check"></i>
+          Tested by 3 experts &middot; Real campaign data
         </div>
+      </div>
+    </header>
 
-        <div class="author-bio">
-            <img src="/assets/images/nicolas-finet.png" alt="Nicolas Finet" width="56" height="56" loading="lazy">
-            <div>
-                <div class="name">Nicolas Finet</div>
-                <div class="role">CEO bei Overloop</div>
-                <div class="role">CEO von Sortlist & Overloop. Hat Outbound-Systeme für über 500 B2B-Unternehmen aufgebaut.</div>
-            </div>
-        </div>
+    <!-- Content -->
+    <div class="article-layout">
+      <aside class="toc" role="navigation" aria-label="Table of contents">
+        <div class="toc__label">On this page</div>
+        <ul id="toc-list">
+          <li><a href="#wie-linkedin-und-e-mail-bei-wichtigen-kennzahlen-abschneiden"><span class="ch-num">01</span> Wie LinkedIn und E-Mail bei wichtigen…</a></li>
+          <li><a href="#st-rken-und-schw-chen-von-linkedin-und-e-mail"><span class="ch-num">02</span> Stärken und Schwächen von LinkedIn un…</a></li>
+          <li><a href="#tipps-f-r-eine-bessere-linkedin-und-e-mail-ffentlichkeitsarbeit"><span class="ch-num">03</span> Tipps für eine bessere LinkedIn- und …</a></li>
+          <li><a href="#kombination-von-linkedin-und-e-mail-f-r-bessere-ergebnisse"><span class="ch-num">04</span> Kombination von LinkedIn und E-Mail f…</a></li>
+          <li><a href="#fazit-entscheidung-zwischen-linkedin-und-e-mail"><span class="ch-num">05</span> Fazit: Entscheidung zwischen LinkedIn…</a></li>
+          <li><a href="#h-ufig-gestellte-fragen"><span class="ch-num">06</span> Häufig gestellte Fragen</a></li>
+        </ul>
+      </aside>
 
+      <main class="prose">
+
+<p>Wenn Sie sich für B2B-Outreach zwischen LinkedIn und E-Mail entscheiden, finden Sie hier die schnelle Antwort: <strong>LinkedIn bietet bessere Rücklaufquoten (5-20%) und professionelles Targeting, während E-Mail sich durch Skalierbarkeit und Kosteneffektivität auszeichnet.</strong></p><p>Die besten Ergebnisse werden oft durch die Kombination beider Plattformen erzielt.</p><h3>Die wichtigsten Höhepunkte:</h3><ul><li><strong>LinkedIn</strong>: Höhere Rücklaufquoten, professioneller Kontext, Targeting in Echtzeit, aber höhere Kosten und eingeschränkte Skalierbarkeit.</li><li><strong>E-Mail</strong>: Niedrigere Antwortraten (1-10%), aber skalierbar, kosteneffizient und ideal für detaillierte Kommunikation.</li></ul><h3>Schneller Vergleich:</h3><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8213e_687602354f89b21aafe274ef_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.22.56%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p><strong>Profi-Tipp</strong>: Beginnen Sie mit LinkedIn, um Beziehungen aufzubauen, und senden Sie anschließend personalisierte E-Mails für eine skalierbare Kommunikation. Dieser Mehrkanal-Ansatz kann Ihre Ergebnisse verstärken.</p><h2 id="wie-linkedin-und-e-mail-bei-wichtigen-kennzahlen-abschneiden">Wie LinkedIn und E-Mail bei wichtigen Kennzahlen abschneiden</h2><h3>Antwort- und Öffnungsraten</h3><p>Der professionelle Charakter von LinkedIn führt oft zu besseren Antwortraten, während E-Mails von höheren Öffnungsraten profitieren, aber mit Übersättigung und Spam-Filtern zu kämpfen haben. E-Mails weisen in der Regel Öffnungsraten zwischen <strong>15-25%</strong>, im Vergleich zu LinkedIn <strong>10-20%</strong>. Die Effektivität der beiden Plattformen hängt jedoch stark davon ab, wie gut die Öffentlichkeitsarbeit personalisiert ist.</p><h3>Personalisierung und Skalierung der Reichweite</h3><p>LinkedIn eignet sich hervorragend, um professionelle Daten zu verwenden, um bestimmte Personen anzusprechen, während E-Mails sich durch ihre Fähigkeit auszeichnen, die Reichweite durch Automatisierung zu skalieren. Hier ist ein kurzer Vergleich ihrer Targeting-Funktionen:</p><figure data-rt-max-width="895px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82141_68760256bb70047a94faeb9d_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.11%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Die professionellen Echtzeitdaten und die Netzwerksichtbarkeit von LinkedIn ermöglichen ein genaueres Targeting. Andererseits erleichtern es die Automatisierungstools von E-Mails, ein größeres Publikum zu erreichen. Die Effektivität beider Plattformen hängt letztlich davon ab, wie diese Personalisierungsstrategien Leads konvertieren.</p><h3>Leadkonversion und Kapitalrendite</h3><p>LinkedIn ist dafür bekannt, qualitativ hochwertige Leads durch gezielte Interaktionen zu generieren, und E-Mail ist aufgrund seiner Skalierbarkeit eine kostengünstige Option. Eine Studie ergab, dass LinkedIn-Nachrichten eine <strong>19.98% Antwortrate</strong> und ein <strong>48,14% positive Antwortrate</strong> <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. E-Mails erfordern zwar mehr Follow-ups, bieten aber bessere Tools zur Nachverfolgung des ROI.</p><p>So schneiden die beiden Plattformen bei den wichtigsten Leistungskennzahlen ab:</p><figure data-rt-max-width="894px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82138_6876027283ed7610b39d5d74_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.20%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>LinkedIn glänzt, wenn es um qualitativ hochwertige Leads geht, während E-Mail für Follow-ups budgetfreundlicher ist. Zusammen bilden sie eine effektive Kombination für eine ausgewogene Outreach-Strategie <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a><a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><h2 id="st-rken-und-schw-chen-von-linkedin-und-e-mail">Stärken und Schwächen von LinkedIn und E-Mail</h2><h3>Warum LinkedIn gut funktioniert</h3><p>Der Zugriff von LinkedIn auf Echtzeitdaten erleichtert die Identifizierung von Entscheidungsträgern. 89% der B2B-Vermarkter nutzen sie erfolgreich zur Lead-Generierung <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Die professionelle Atmosphäre trägt dazu bei, durch gegenseitige Kontakte und die Vergangenheit des Engagements Glaubwürdigkeit aufzubauen, bevor mit der Kontaktaufnahme begonnen wird.</p><p>Verbindungsanfragen auf LinkedIn haben eine Akzeptanzrate von 45%, und personalisierte Nachrichten haben eine positive Antwortrate von 39% — weitaus besser als <a href="https://www.linkedin.com/help/linkedin/answer/a543895">In der Post</a>Antwortraten von 18-25% <a href="https://salesbread.com/linkedin-response-rates/">[4]</a>. Der Fokus der Plattform auf professionelle Interaktionen und ihre aktive Nutzerbasis während der Geschäftszeiten machen sie zu einer soliden Wahl für die geschäftliche Kommunikation.</p><p>LinkedIn eignet sich zwar hervorragend für direktes berufliches Engagement, E-Mail zeichnet sich jedoch durch seine Fähigkeit aus, die Öffentlichkeitsarbeit zu skalieren.</p><h3>Warum E-Mail effektiv ist</h3><p>E-Mail ermöglicht eine breite Reichweite zu geringeren Kosten und ist daher ideal für den Versand detaillierter Pitches mit mehreren Call-to-Action (CTAs) <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. Fortschrittliche Tools wie dynamische Vorlagen und Engagement-Tracking erleichtern die effiziente Verwaltung umfangreicher Kampagnen.</p><p>Im Gegensatz zu LinkedIn bieten E-Mail-Plattformen umfassende Automatisierungsfunktionen und eingehende Analysen. Die Antwortraten per E-Mail sind zwar oft niedriger, aber die Erschwinglichkeit und Skalierbarkeit sind für Kampagnen, die ein größeres Publikum ansprechen, große Vorteile <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><h3>Vergleichstabelle Seite an Seite</h3><p>Hier ist ein kurzer Vergleich von LinkedIn und E-Mail, um die wichtigsten Funktionen hervorzuheben:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8214a_687602b1af666e2e36a1dddb_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.34%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Beide Plattformen bieten je nach Ihren Outreach-Zielen einzigartige Vorteile. LinkedIn-Nachrichten können, wenn sie richtig personalisiert sind, eine um 30% höhere Antwortrate als der Durchschnitt erzielen <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Auf der anderen Seite können superpersonalisierte E-Mails die Antwortrate auf bis zu 70% erhöhen <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>. Die Wahl der richtigen Plattform hängt von Ihrer Zielgruppe und Ihren Kampagnenzielen ab.</p><h2 id="tipps-f-r-eine-bessere-linkedin-und-e-mail-ffentlichkeitsarbeit">Tipps für eine bessere LinkedIn- und E-Mail-Öffentlichkeitsarbeit</h2><h3>Verbesserung der LinkedIn-Reichweite</h3><p>Ein ausgefeiltes, professionelles LinkedIn-Profil kann Ihre Rücklaufquoten im Vergleich zu unvollständigen Profilen um bis zu 40% erhöhen <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Wenn Sie Verbindungsanfragen senden, machen Sie sie persönlich, indem Sie auf bestimmte Details aus dem Profil des Empfängers oder seiner letzten Aktivität verweisen. Personalisierte Anfragen haben in der Regel eine Akzeptanzrate von 45% <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>.</p><p>Bevor Sie Kontakt aufnehmen, nehmen Sie sich 2-3 Wochen Zeit, um sich mit den Inhalten Ihrer Interessenten zu beschäftigen. Hinterlassen Sie durchdachte Kommentare, teilen Sie wichtige Erkenntnisse und zeigen Sie echtes Interesse. Dieser Ansatz kann die Rücklaufquoten um 30% verbessern <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Wenn du deine Verbindungsanfragen erstellst, halte sie kurz — unter 300 Zeichen. Erwähnen Sie gegenseitige Verbindungen, gemeinsame Interessen oder aktuelle Unternehmensnachrichten. Vermeiden Sie es, direkt zu Verkaufsgesprächen überzugehen. Bei Follow-ups sollten Sie einen Abstand von 5 bis 7 Tagen einplanen und insgesamt 3-4 Nachrichten senden. Jedes Follow-up sollte etwas Neues und Nützliches bieten, anstatt nur „einzuchecken“ <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><h3>Verbesserung der E-Mail-Reichweite</h3><p>Der Erfolg von E-Mail-Outreach hängt von Targeting, Personalisierung und Persistenz ab. Tools wie <a href="https://www.hubspot.com/products/sales">HubSpot</a> kann Ihnen helfen, die Leistung zu verfolgen und zu analysieren, um Ihren Ansatz anhand realer Daten zu verfeinern <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Betreffzeilen, die den Firmennamen des Empfängers enthalten, können die Öffnungsraten erheblich verbessern <a href="https://vwo.com/ab-testing/">[5]</a>. Achten Sie auf Betreffzeilen zwischen 30 und 50 Zeichen, um sicherzustellen, dass sie auf Mobilgeräten gut angezeigt werden.</p><p>Hier ist ein einfaches Framework für eine effektive E-Mail-Kontaktaufnahme:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8213b_687602ef6aa20c545a7b4fee_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.45%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Laut <a href="https://www.bardeen.ai/">Bardeen, KI</a>, personalisierte automatische Follow-ups können die Rücklaufquoten weiter erhöhen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. Jede Folge-E-Mail sollte neue Erkenntnisse oder Vorteile bieten und somit wertvoller sein als die letzte.</p><p><strong>Wichtige Elemente, auf die Sie sich bei der E-Mail-Kontaktaufnahme konzentrieren sollten</strong>:</p><ul><li>Beginnen Sie mit einer Eröffnungszeile, die auf aktuelle Unternehmensnachrichten verweist.</li><li>Heben Sie klare Vorteile hervor, die den Herausforderungen des Interessenten gerecht werden.</li><li>Fügen Sie soziale Beweise von ähnlichen Unternehmen hinzu.</li><li>Beenden Sie mit einem spezifischen Call-to-Action mit geringem Druck.</li></ul><p>Während LinkedIn ideal für den Aufbau beruflicher Beziehungen ist, eignet sich E-Mail hervorragend für die Skalierung der Öffentlichkeitsarbeit. Die Kombination der Stärken beider Plattformen ermöglicht es Vertriebsteams, eine abgerundete Mehrkanalstrategie zu entwickeln, um bessere Ergebnisse zu erzielen.</p><h2 id="kombination-von-linkedin-und-e-mail-f-r-bessere-ergebnisse">Kombination von LinkedIn und E-Mail für bessere Ergebnisse</h2><p>Die Kombination der Netzwerkfunktionen von LinkedIn mit der großen Reichweite von E-Mails schafft eine effektive B2B-Outreach-Strategie. Durch den Einsatz von LinkedIn zum Aufbau von Beziehungen und E-Mails für skalierbare Kommunikation können Vertriebsteams einen umfassenden Multichannel-Ansatz entwickeln. Eine kluge Taktik besteht darin, sich zuerst auf LinkedIn vertraut zu machen und dann zur E-Mail-Kommunikation überzugehen.</p><h3>Leads auf LinkedIn vor dem E-Mail-Versand aufwärmen</h3><p>Wenn Sie mit LinkedIn-Interaktionen beginnen, bevor Sie E-Mails senden, können Sie die Antwortraten drastisch erhöhen. Hier ist ein Stufenplan, damit es funktioniert:</p><figure data-rt-max-width="897px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d82135_687602f28afbe4b7b6945441_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.23.53%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Dieser strukturierte Ansatz wurde von vielen Unternehmen mit großem Erfolg übernommen.</p><h3>Beispiele für Multichannel-Kampagnen</h3><p><strong>Beispiel für die Softwarebranche</strong>: <a href="https://overloop.com/">Overloop-KI</a> richtete sich an IT-Entscheidungsträger, indem zunächst eine Verbindung auf LinkedIn hergestellt, über einen Zeitraum von zwei Wochen interagiert und dann personalisierte E-Mails versendet wurden. Die Ergebnisse waren beeindruckend:</p><ul><li><strong>25% höhere Rücklaufquoten</strong> im Vergleich zu kalten E-Mails</li><li><strong>Steigerung der Tagungsbuchungen um 40%</strong></li><li><strong>Dreimal schnellerer Abschluss des Verkaufszyklus</strong></li></ul><h3>Best Practices für die Integration</h3><p>Der Einsatz von KI-Tools kann dazu beitragen, personalisierte Nachrichten zu optimieren und die Kommunikation plattformübergreifend aufeinander abzustimmen. Studien zeigen, dass synchronisierte Nachrichten über LinkedIn und E-Mail die Engagement-Raten um bis zu 35% verbessern können <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p>Damit diese Strategie effektiv funktioniert:</p><p>Wenn Sie Kanäle kombinieren, sorgt das Zusammenführen Ihrer Verbindungsanfragen, Follow-ups und E-Mail-Touchpoints in einer Sequenz für konsistente Antworten. Nutze das LinkedIn-Outreach-Plan um den gesamten Ablauf zu strukturieren.</p><ul><li>Platzieren Sie LinkedIn-Interaktionen und E-Mail-Follow-ups, um die Botschaft konsistent zu halten.</li><li>Verweisen Sie in Ihren E-Mails auf bestimmte LinkedIn-Interaktionen, damit sie sich persönlich anfühlen.</li><li>Teilen Sie relevante Erkenntnisse auf LinkedIn, um Ihre Glaubwürdigkeit zu stärken, bevor Sie zu E-Mail-Anfragen übergehen.</li></ul><h2 id="fazit-entscheidung-zwischen-linkedin-und-e-mail">Fazit: Entscheidung zwischen LinkedIn und E-Mail</h2><p>Wenn es um die Antwortrate geht, erreichen LinkedIn-Nachrichten in der Regel 5-20%, während E-Mails zwischen 1-10% liegen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>. LinkedIn gedeiht in einem professionellen Umfeld und bietet bessere Targeting- und Engagement-Möglichkeiten. Andererseits liegt die Stärke von E-Mail in ihrer Skalierbarkeit und der Fähigkeit, detaillierte Kommunikation mühelos abzuwickeln.</p><p>Hier finden Sie eine Kurzanleitung, die Ihnen bei der Auswahl der richtigen Plattform für Ihre Ziele hilft:</p><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8212f_68760309860c5b8d17107385_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.24.02%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p>Die Kombination beider Plattformen kann Ihre Ergebnisse verbessern. Unternehmen, die LinkedIn für Networking und E-Mail für eine breitere Kommunikation nutzen, erzielen oft bessere Ergebnisse <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</p><p><strong>Faktoren, die bei der Auswahl einer Plattform zu berücksichtigen sind:</strong></p><ul><li><strong>Branchen- und Publikumspräferenzen</strong>: LinkedIn wird in der Technologie- und Digitalbranche häufig bevorzugt, während traditionellere Sektoren eher E-Mails bevorzugen.</li><li><strong>Ressourcen und Ziele</strong>: Verwenden Sie LinkedIn, um Beziehungen aufzubauen und E-Mails zu versenden, um ein größeres Publikum zu erreichen oder detaillierte Informationen auszutauschen.</li></ul><p>Ein ausgewogener Ansatz funktioniert am besten. Die InMail-Funktion von LinkedIn weist Antwortraten von 18-25% auf, wobei Direktnachrichten eine Akzeptanzrate von bis zu 45% erreichen <a href="https://salesbread.com/linkedin-response-rates/">[4]</a>. In der Zwischenzeit ist E-Mail nach wie vor von entscheidender Bedeutung für formelle Vorschläge und Kommunikation, insbesondere in Branchen, in denen E-Mail die Norm ist.</p><p>Um das Beste aus Ihrer Reichweite herauszuholen, experimentieren Sie mit beiden Plattformen, überwachen Sie die Leistung und passen Sie Ihre Strategie auf der Grundlage des Feedbacks Ihrer Zielgruppen an. Ein durchdachter Mehrkanal-Ansatz — LinkedIn für professionelle Kontakte und E-Mail für Skalierung — kann zu besseren Ergebnissen führen. Weitere Informationen zur Plattformleistung finden Sie in den folgenden häufig gestellten Fragen.</p><h2 id="h-ufig-gestellte-fragen">Häufig gestellte Fragen</h2><p>Hier finden Sie Antworten auf häufig gestellte Fragen, die Vertriebsprofis häufig zur Verwendung von LinkedIn im Vergleich zu E-Mail für die Kontaktaufnahme haben:</p><p><strong>Wie hoch ist die Konversionsrate für kalte Nachrichten auf LinkedIn?</strong></p><p>Kaltakquise auf LinkedIn führt in der Regel zu den folgenden Ergebnissen:</p><figure data-rt-max-width="896px"><div><img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/69a97b9a4bda7c7bf7d8212c_687603508dc9a5ca84e6c874_Captura%2520de%2520pantalla%25202025-07-15%2520a%2520las%25209.24.10%25E2%2580%25AFa.%25E2%2580%25AFm..png" loading="lazy" alt="__wf_reserved_inherit"></div></figure><p><strong>Welche Tage eignen sich am besten für LinkedIn-Outreach?</strong></p><p><strong>Donnerstag</strong> ist der herausragende Tag mit einer Rücklaufquote von 20,32%, während <strong>Samstag</strong> hinkt mit nur 2,65% hinterher <a href="https://salesbread.com/linkedin-outreach-stats/">[2]</a>. Wenn Sie eine LinkedIn-Öffentlichkeitsarbeit planen, sollten Sie Donnerstage anstreben, um das Engagement zu maximieren.</p><p><strong>Wie beeinflussen Personalisierung und Plattformwahl die Leistung?</strong></p><p>Jede Plattform hat ihre Stärken:</p><ul><li><strong>E-Mail</strong> Die Öffnungsraten liegen zwischen 15 und 25% und sind in der Regel höher als bei LinkedIn von 10 bis 20% <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</li><li>LinkedIn-Nachrichten werden oft besser angesprochen, nachdem sie geöffnet wurden.</li><li>Das Hinzufügen einer persönlichen Note — wie die Erwähnung aktueller Unternehmensnachrichten oder geteilter Kontakte — kann die Ergebnisse auf beiden Plattformen verbessern.</li></ul><p><strong>Wie viele Follow-ups sollte ich senden?</strong></p><p>Auf LinkedIn reichen in der Regel 3-4 Follow-ups aus. Für E-Mail-Kampagnen benötigen Sie möglicherweise mehr Touchpoints, um Ergebnisse zu sehen <a href="https://evaboot.com/blog/email-vs-linkedin-message">[3]</a>.</p><p><strong>Können KI-Tools die Reichweite verbessern?</strong></p><p>KI kann einen großen Unterschied machen, indem sie:</p><ul><li>Planung von Nachrichten in Zeiten mit hohem Kundeninteresse, wodurch die Öffnungsraten um bis zu 20% gesteigert werden.</li><li>Wir bieten Formulierungsvorschläge an, die auf dem basieren, was in früheren Kampagnen gut funktioniert hat.</li><li>Passen Sie den Ton und den Stil der Nachrichten an, um sie besser an die Präferenzen des Empfängers anzupassen <a href="https://www.bardeen.ai/answers/is-it-better-to-email-or-message-on-linkedin">[1]</a>.</li></ul><p>Diese Tipps zeigen, wie die Verfeinerung Ihres Ansatzes — ob auf LinkedIn, E-Mail oder beidem — zu besseren Ergebnissen bei der Kontaktaufnahme führen kann.</p><p>‍</p>
+
+      </main>
     </div>
-</main>
 
-<!-- Overloop Footer -->
-<footer class="footer">
+    <section class="author-card">
+      <div class="author-card__avatar">NF</div>
+      <div>
+        <div class="author-card__name">Nicolas Finet</div>
+        <div class="author-card__role">CEO & Co-founder, Sortlist & Overloop</div>
+        <div class="author-card__bio">Co-founded Sortlist in 2014. Designed outbound systems for 500+ B2B companies across Europe.</div>
+      </div>
+    </section>
+
+    <footer class="footer">
     <div class="footer-inner">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69cd287353b6d46f18b30305_Logotype%20-%20Color.png" alt="Overloop" height="24" style="filter: brightness(0) invert(1);">
-                <p>AI-powered outbound sales platform. Find prospects, write personalized emails, and book meetings on autopilot.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Platform</h4>
-                <a href="/features">Features</a>
-                <a href="/pricing">Pricing</a>
-                <a href="https://app.overloop.ai/session/signup">Start Free Trial</a>
-                <a href="/book-demo">Book a Demo</a>
-            </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="/blog">Blog</a>
-                <a href="/playbooks">Playbooks</a>
-                <a href="/tools/spam-checker">Spam Checker</a>
-                <a href="/tools/roi-calculator">ROI Calculator</a>
-                <a href="/tools/domain-health-checker">Domain Health</a>
-            </div>
-            <div class="footer-col">
-                <h4>Company</h4>
-                <a href="/about">About</a>
-                <a href="/testimonials">Testimonials</a>
-                <a href="mailto:hello@overloop.com">Contact</a>
-                Careers
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="/terms">Terms</a>
-                <a href="/privacy">Privacy</a>
-                <a href="/gdpr">GDPR</a>
-            </div>
+      <div class="footer-grid">
+        <div>
+          <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;">
+          <p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform — email, LinkedIn, and phone sequences with real AI personalization.</p>
         </div>
-        <div class="footer-bottom">
-            <span>&copy; 2026 Overloop AI. Rue des Peres Blancs 4, 1040 Brussels, Belgium.</span>
-            <div>
-                LinkedIn
-                <a href="https://www.youtube.com/@overloop-ai">YouTube</a>
-            </div>
+        <div>
+          <h4>Platform</h4>
+          <a href="https://overloop.com/features">Features</a><br>
+          <a href="https://overloop.com/pricing">Pricing</a><br>
+          <a href="https://overloop.com/integrations">Integrations</a>
         </div>
+        <div>
+          <h4>Resources</h4>
+          <a href="https://overloop.com/blog">Blog</a><br>
+          <a href="https://overloop.com/playbooks">Playbooks</a><br>
+          <a href="https://overloop.com/tools">Free tools</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="https://overloop.com/about">About</a><br>
+          <a href="https://overloop.com/careers">Careers</a><br>
+          <a href="https://overloop.com/contact">Contact</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="https://overloop.com/privacy">Privacy</a><br>
+          <a href="https://overloop.com/terms">Terms</a><br>
+          <a href="https://overloop.com/security">Security</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Overloop. All rights reserved.</span>
+        <span style="font-family:var(--font-mono);font-size:12px">Built with ♥ in Brussels</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="/assets/js/blog.js" defer></script>
+    <script>
+    if (window.lucide) lucide.createIcons();
+    (function() {
+      const bar = document.getElementById('reading-progress');
+      function update() {
+        const h = document.documentElement;
+        const pct = h.scrollHeight - h.clientHeight > 0 ? ((h.scrollTop || document.body.scrollTop) / (h.scrollHeight - h.clientHeight)) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+    (function() {
+      const tocLinks = document.querySelectorAll('.toc a');
+      const targets = Array.from(tocLinks).map(a => {
+        const id = a.getAttribute('href').slice(1);
+        return { link: a, section: document.getElementById(id) };
+      }).filter(t => t.section);
+      function onScroll() {
+        const scrollY = window.scrollY + 120;
+        let active = targets[0];
+        for (const t of targets) if (t.section.offsetTop <= scrollY) active = t;
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (active) active.link.classList.add('active');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>
