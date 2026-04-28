@@ -336,15 +336,6 @@ def build_v2_article(filepath, shell):
             <div class="article-meta__dates">{dates_display}</div>
           </div>
         </div>
-        <div class="tested-banner">
-          <div class="tested-banner__avatars">
-            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/686cd1f2480e7dca3a497cbc_vincenzo.avif" alt="Vincenzo Ruggiero">
-            <img src="https://overloop.com/assets/images/nicolas-finet.png" alt="Nicolas Finet">
-            <img src="https://cdn.prod.website-files.com/684167ac317862f3216bcd82/6878e35bb2fbe24081c32dec_nathalie.avif" alt="Nathalie Saikali">
-          </div>
-          <i data-lucide="shield-check"></i>
-          Tested by 3 experts &middot; Real campaign data
-        </div>
       </div>
     </header>
 
