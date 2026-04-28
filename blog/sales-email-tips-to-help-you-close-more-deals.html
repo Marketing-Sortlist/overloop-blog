@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TEMPLATE #10a: Tactical article — Tips -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <meta name="description" content="Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, A/B testing, and personalization strategies.">
   <link rel="canonical" href="https://overloop.com/blog/sales-email-tips-to-help-you-close-more-deals">
 
-  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/sales-email-tips-to-help-you-close-more-deals">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/sales-email-tips-to-help-you-close-more-deals">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/vertriebs-email-tipps-mehr-geschafte">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/conseils-emails-commerciaux-conclure-ventes">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/consejos-correos-ventas">
@@ -237,36 +238,7 @@
     .footer a:hover { color: #fff; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
 
-    /* Layout 2-col (TOC + content) */
-    .article-layout {
-      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
-      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
-    }
-    .toc {
-      position: sticky; top: 96px; padding: 8px 0;
-      max-height: calc(100vh - 120px); overflow-y: auto;
-    }
-    .toc__label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
-    }
-    .toc ul { list-style: none; padding: 0; }
-    .toc li { margin-bottom: 2px; }
-    .toc a {
-      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
-      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
-      transition: var(--t); text-decoration: none !important;
-    }
-    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
-    .toc a.active {
-      color: var(--color-primary); background: var(--color-primary-50);
-      border-left-color: var(--color-primary); font-weight: 600;
-    }
-
     @media (max-width: 991px) {
-      .article-layout { grid-template-columns: 1fr; gap: 32px; }
-      .toc { display: none; }
       :root { --page-px: 24px; }
       .point__body { padding-left: 0; }
       .related-grid { grid-template-columns: 1fr 1fr; }
@@ -344,16 +316,16 @@
 
   </style>
 
-  <meta property="og:title" content="Sales Email Tips to Help You Close More Deals">
+    <meta property="og:title" content="Sales Email Tips to Help You Close More Deals">
     <meta property="og:description" content="Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, A/B testing, and personalization strategies.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/sales-email-tips-to-help-you-close-more-deals.png">
     <meta property="og:url" content="https://overloop.com/blog/sales-email-tips-to-help-you-close-more-deals">
     <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sales Email Tips to Help You Close More Deals">
     <meta name="twitter:description" content="Proven sales email tips to close more deals: master subject lines, introductions, calls to action, follow-ups, A/B testing, and personalization strategies.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/sales-email-tips-to-help-you-close-more-deals.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -391,14 +363,13 @@
         ]
     }
     </script>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-  <!-- Reading progress -->
-  <div class="reading-progress" id="reading-progress"></div>
-
-  <!-- Nav -->
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo">
       <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
@@ -415,15 +386,12 @@
     </div>
   </nav>
 
-  <!-- Article -->
-  <article>
-
-    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
+        <!-- Sub-variant pill: swap "Mistakes" for Tips / Best practices / KPIs / Timing / Pricing / Checklist / Automation / Types / Ideas / Case study / Product review / FAQ -->
         <span class="pill pill--glass">
-          <i data-lucide="zap" style="width:12px;height:12px"></i>
-          Tactical · Tips
+          <i data-lucide="alert-triangle" style="width:12px;height:12px"></i>
+          Tactical · Mistakes to avoid
         </span>
         <h1>Sales Email Tips to Help You Close More Deals</h1>
         <p class="lead">A comprehensive guide to writing sales emails that convert, from crafting subject lines and introductions to follow-up strategies and personalization.</p>
@@ -431,21 +399,19 @@
           <div class="article-meta__avatar">VR</div>
           <div class="article-meta__text">
             <div class="article-meta__author">Vincenzo Ruggiero</div>
-            <div class="article-meta__dates">Published Mar 28, 2022 · Updated Apr 17, 2026</div>
+            <div class="article-meta__dates">Mar 28, 2022 &middot; Updated Apr 17, 2026</div>
           </div>
         </div>
       </div>
     </header>
-    <!-- Content -->
-    <div class="article-layout">
-      <aside class="toc" role="navigation" aria-label="Table of contents">
-        <div class="toc__label">On this page</div>
-        <ul id="toc-list"></ul>
-      </aside>
-      <main class="prose">
+
+    <main class="main-wrap">
+
+
+
 <p>Email has been, for many years, the main tool for prospecting and closing new customers. Companies from any sector (education, technology, services, tourism, etc.), use email as the main tool for managing potential customers. For this reason, today I want to give you, from the experience of Overloop as a <a href="https://overloop.com">sales automation tool</a>, a series of tips to close more deals with your sales emails.</p>
 
-<h2>TL;DR</h2>
+<h2 id="tl-dr">TL;DR</h2>
 <p>Here is a summary of all the tips contained in this article:</p>
 <ul>
 <li>Check your sender's name</li>
@@ -463,10 +429,10 @@
 <li>Focus on the customer, be empathetic</li>
 </ul>
 
-<h2>OK, let's go!</h2>
+<h2 id="ok-let-s-go">OK, let's go!</h2>
 <p>First of all, if you have not yet read <a href="/blog/how-to-write-a-successful-follow-up-email">our post on how to write a successful cold email</a>, I recommend that you take a look at it to get a first general idea of some of the key points of all email. But, beyond that first cold email, today I want to talk about how to optimize an email with a commercial proposal to generate trust in your prospect and transform him into a new client. Interesting, right? Start!</p>
 
-<h2>Structure of a successful sales email</h2>
+<h2 id="structure-of-a-successful-sales-email">Structure of a successful sales email</h2>
 <p>Let's analyze, first of all, some key points that every sales email should meet. So you can take them as a reference when setting up your cold email campaigns and you will have a base on which to work.</p>
 
 <h3>Anatomy of a Successful Sales Email</h3>
@@ -513,7 +479,7 @@
 <li><strong>Look for a clear and simple answer from the prospect</strong>. Always keep this in mind, whether it's the second or fifth follow-up email you send.</li>
 </ul>
 
-<h2>Communication strategies that work for your sales emails</h2>
+<h2 id="communication-strategies-that-work-for-your-sales-emails">Communication strategies that work for your sales emails</h2>
 <p>Once the structure of a sales email has been analyzed step by step, it is time to go one step further. I'm going to talk about some communication strategies that will help you increase the success rate of your emails drastically. Try them!</p>
 
 <ul>
@@ -527,59 +493,30 @@
 </ul>
 
 <p>These are some tips that, without a doubt, will help you boost the success rate of your sales emails. But don't forget the most important thing: test, experiment, and find out which strategies work best for your business. Experience is a degree. Let's get to work!</p>
+    
+    
+    
     </main>
-    </div>
 
-    <!-- End CTA -->
-    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
-      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
-      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
+    <section class="cta-hard">
+      <h3>Fix all 10 mistakes <em>in one click</em></h3>
+      <p>Overloop handles warmup, DKIM validation, randomized sending, unsubscribe tracking, and AI personalization. Fix-in-a-box for cold email deliverability.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
         <i data-lucide="sparkles" style="width:18px;height:18px"></i>
         Try Overloop free
       </a>
     </section>
 
-    <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">VR</div>
+    <section class="author-card">
+      <div class="author-card__avatar">VR</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Vincenzo Ruggiero</div>
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Founder, Overloop</div>
-        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Founded Overloop in 2015. 10+ years building sales automation software. Personally tests every outbound tool on the market.</p>
+        <div class="author-card__name">Vincenzo Ruggiero</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">Founded Overloop in 2015. 10+ years building sales automation. Personally tests every outbound tool.</div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
-      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
-      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
-        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
-      </form>
-    </section>
-
-    <!-- Related -->
-    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <a href="/blog/whats-the-best-email-length-for-sales-outreach" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">The Ideal Cold Email Length in 2025</div>
-        </a>
-        <a href="/blog/best-practices-for-links-in-your-emails" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Best Practices for Links In Your Emails</div>
-        </a>
-        <a href="/blog/9-best-ai-email-outreach-tools" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">10 Best AI Email Outreach Tools</div>
-        </a>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- Footer -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
@@ -598,61 +535,9 @@
     </div>
   </footer>
 
-  <script>
-    // Lucide icons
+    <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      function update() {
-        var h = document.documentElement;
-        var scrollTop = h.scrollTop || document.body.scrollTop;
-        var scrollHeight = h.scrollHeight - h.clientHeight;
-        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = pct + '%';
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  
-
-    // Auto-generate TOC from h2 elements in .prose
-    (function() {
-      var prose = document.querySelector('.prose');
-      var tocList = document.getElementById('toc-list');
-      if (!prose || !tocList) return;
-      var headings = prose.querySelectorAll('h2');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      // Scroll-spy
-      var tocLinks = tocList.querySelectorAll('a');
-      var targets = Array.from(tocLinks).map(function(a) {
-        var id = a.getAttribute('href').slice(1);
-        return { link: a, section: document.getElementById(id) };
-      }).filter(function(t) { return t.section; });
-
-      function onScroll() {
-        var scrollY = window.scrollY + 120;
-        var active = targets[0];
-        for (var j = 0; j < targets.length; j++) {
-          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
-        }
-        tocLinks.forEach(function(a) { a.classList.remove('active'); });
-        if (active) active.link.classList.add('active');
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
   </script>
-
 </body>
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TEMPLATE #8: Statistics & benchmarks -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <meta name="description" content="Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation, personalization, and follow-ups.">
   <link rel="canonical" href="https://overloop.com/blog/increase-reply-rate">
 
-  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/increase-reply-rate">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/increase-reply-rate">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/antwortrate-erhoehen-sales-emails">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/augmenter-taux-reponse-emails">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/tasa-respuesta-correo-ventas">
@@ -167,36 +168,7 @@
     .footer a{font-size:14px;color:rgba(255,255,255,.7);line-height:2}
     .footer a:hover{color:#fff;text-decoration:none}
     .footer-bottom{border-top:1px solid #374151;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;gap:20px}
-    /* Layout 2-col (TOC + content) */
-    .article-layout {
-      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
-      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
-    }
-    .toc {
-      position: sticky; top: 96px; padding: 8px 0;
-      max-height: calc(100vh - 120px); overflow-y: auto;
-    }
-    .toc__label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
-    }
-    .toc ul { list-style: none; padding: 0; }
-    .toc li { margin-bottom: 2px; }
-    .toc a {
-      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
-      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
-      transition: var(--t); text-decoration: none !important;
-    }
-    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
-    .toc a.active {
-      color: var(--color-primary); background: var(--color-primary-50);
-      border-left-color: var(--color-primary); font-weight: 600;
-    }
-
-    @media (max-width:991px){
-      .article-layout { grid-template-columns: 1fr; gap: 32px; }
-      .toc { display: none; }:root{--page-px:24px}.hero-stats{grid-template-columns:1fr 1fr}.yoy{grid-template-columns:1fr}.stat-row{grid-template-columns:auto 1fr}.stat-row__source{grid-column:2}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+    @media (max-width:991px){:root{--page-px:24px}.hero-stats{grid-template-columns:1fr 1fr}.yoy{grid-template-columns:1fr}.stat-row{grid-template-columns:auto 1fr}.stat-row__source{grid-column:2}.related-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr 1fr}}
     @media (max-width:639px){.article-hero{padding:40px var(--page-px-mobile) 28px}.article-hero h1{font-size:28px}.nav-links{display:none}.hero-stats{grid-template-columns:1fr}.quote-stat{padding:28px 24px}.quote-stat__num{font-size:52px}.quote-stat__text{font-size:16px}.newsletter form{flex-direction:column}.related-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
 
     /* === Legacy content rendering (post-migration) === */
@@ -260,16 +232,16 @@
 
   </style>
 
-  <meta property="og:title" content="31% Reply Rate on Sales Emails [Case Study]">
+    <meta property="og:title" content="31% Reply Rate on Sales Emails [Case Study]">
     <meta property="og:description" content="Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation, personalization, and follow-ups.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/increase-reply-rate.png">
     <meta property="og:url" content="https://overloop.com/blog/increase-reply-rate">
     <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="31% Reply Rate on Sales Emails [Case Study]">
     <meta name="twitter:description" content="Real case study: how one sales team achieved a 31% reply rate and 78.57% open rate with smart segmentation, personalization, and follow-ups.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/increase-reply-rate.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -307,48 +279,37 @@
         ]
     }
     </script>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
-
-  <!-- Reading progress -->
-  <div class="reading-progress" id="reading-progress"></div>
-
-  <!-- Nav -->
+<div class="reading-progress" id="reading-progress"></div>
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo"><img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop"></a>
     <div class="nav-links"><a href="https://overloop.com/features">Features</a><a href="https://overloop.com/pricing">Pricing</a><a href="https://overloop.com/blog" class="active">Blog</a><a href="https://overloop.com/tools">Free tools</a></div>
     <div class="nav-right"><a href="https://app.overloop.ai/session/login" class="nav-login">Login</a><a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a></div>
   </nav>
 
-  <!-- Article -->
-  <article>
-
-    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
-        <span class="pill pill--glass">
-          <i data-lucide="bar-chart-3" style="width:12px;height:12px"></i>
-          Data & Stats
-        </span>
+        <span class="pill pill--glass"><i data-lucide="bar-chart-3" style="width:12px;height:12px"></i> Statistics · Updated Apr 2026</span>
         <h1>31% Reply Rate on Sales Emails [Case Study]</h1>
         <p class="lead">A real-world breakdown of how one Overloop customer achieved a 78.57% open rate and 31% reply rate in a single cold email campaign.</p>
         <div class="article-meta">
           <div class="article-meta__avatar">FP</div>
           <div class="article-meta__text">
             <div class="article-meta__author">Forster Perelsztejn</div>
-            <div class="article-meta__dates">Published Aug 16, 2017 · Updated Apr 17, 2026</div>
+            <div class="article-meta__dates">Aug 16, 2017 &middot; Updated Apr 17, 2026</div>
           </div>
         </div>
       </div>
     </header>
-    <!-- Content -->
-    <div class="article-layout">
-      <aside class="toc" role="navigation" aria-label="Table of contents">
-        <div class="toc__label">On this page</div>
-        <ul id="toc-list"></ul>
-      </aside>
-      <main class="prose">
+
+    <main class="main-wrap">
+
+
+
 <p>The perfect email campaign doesn't exist, but you can get pretty damn close to it. And while there's no exact recipe, there are a few ingredients you just have to include if you want to increase your reply rate.</p>
 
 <p>And the good thing is, allergies to those are quite rare.</p>
@@ -371,11 +332,11 @@
 
 <p>Let's break it down!</p>
 
-<h2>Prospect Segmentation</h2>
+<h2 id="prospect-segmentation">Prospect Segmentation</h2>
 
 <p>They didn't want to get in touch with just any tourist office. They decided to narrow it down to a specific region in France <strong>and</strong> to exclude ski resorts since those would require their own specific campaign and content.</p>
 
-<h2>Personalized Emails and Content</h2>
+<h2 id="personalized-emails-and-content">Personalized Emails and Content</h2>
 
 <p>We usually recommend to set up 5 steps... our customer did <strong>9</strong> -- yeah, perseverance! But it didn't get that far since most customers replied within the first 2 emails.</p>
 
@@ -456,7 +417,7 @@
 
 <p>The rest of the campaign consists either in simple follow-ups or in more targeted and free content, highlighting how their product can help the prospect achieve the strategy described in the content.</p>
 
-<h2>Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>As I said before, the recipe is up to you and depends on who you plan on serving it to. But it must always taste of:</p>
 
@@ -471,59 +432,27 @@
 <p>And, depending on your target, a pinch of humor can do wonders!</p>
 
 <p>Want to replicate these results? Check out our complete guide on <a href="/blog/how-to-write-a-successful-cold-email">how to write cold emails that get replies</a>, or see our breakdown of <a href="/blog/best-subject-lines-for-sales-emails">best subject lines for sales emails</a> to boost your open rates even further.</p>
+    
+    
+    
     </main>
-    </div>
 
-    <!-- End CTA -->
-    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
-      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
-      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
-        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
-        Try Overloop free
-      </a>
+    <section class="cta-hard">
+      <h3>Benchmark your own <em>reply rates</em></h3>
+      <p>Overloop's built-in analytics show your reply rate, meeting booked %, and sequence decay — compared to our 47K+ benchmark dataset in real time.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow"><i data-lucide="sparkles" style="width:18px;height:18px"></i> Try Overloop free</a>
     </section>
 
-    <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">FP</div>
+    <section class="author-card">
+      <div class="author-card__avatar">FP</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Forster Perelsztejn</div>
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Marketing Lead, Overloop</div>
-        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Marketing lead at Overloop. Covers cold email best practices, sales tactics, and outbound strategy.</p>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">Marketing Lead, Overloop</div>
+        <div class="author-card__bio">Covers cold email best practices, sales tactics, and outbound strategy.</div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
-      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
-      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
-        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
-      </form>
-    </section>
-
-    <!-- Related -->
-    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <a href="/blog/how-to-write-a-successful-cold-email" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">The 2026 Cold Email Guide</div>
-        </a>
-        <a href="/blog/best-sales-email-template" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">The Best Sales Email Template</div>
-        </a>
-        <a href="/blog/how-to-write-a-successful-follow-up-email" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">How to Write a Successful Follow-Up Email</div>
-        </a>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- Footer -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div><img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;"><p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform.</p></div>
@@ -536,61 +465,9 @@
     </div>
   </footer>
 
-  <script>
-    // Lucide icons
+    <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      function update() {
-        var h = document.documentElement;
-        var scrollTop = h.scrollTop || document.body.scrollTop;
-        var scrollHeight = h.scrollHeight - h.clientHeight;
-        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = pct + '%';
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  
-
-    // Auto-generate TOC from h2 elements in .prose
-    (function() {
-      var prose = document.querySelector('.prose');
-      var tocList = document.getElementById('toc-list');
-      if (!prose || !tocList) return;
-      var headings = prose.querySelectorAll('h2');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      // Scroll-spy
-      var tocLinks = tocList.querySelectorAll('a');
-      var targets = Array.from(tocLinks).map(function(a) {
-        var id = a.getAttribute('href').slice(1);
-        return { link: a, section: document.getElementById(id) };
-      }).filter(function(t) { return t.section; });
-
-      function onScroll() {
-        var scrollY = window.scrollY + 120;
-        var active = targets[0];
-        for (var j = 0; j < targets.length; j++) {
-          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
-        }
-        tocLinks.forEach(function(a) { a.classList.remove('active'); });
-        if (active) active.link.classList.add('active');
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
   </script>
-
 </body>
 </html>

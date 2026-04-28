@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TEMPLATE #9: Strategy / playbook -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <meta name="description" content="Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation, and learn how to fix them.">
   <link rel="canonical" href="https://overloop.com/blog/6-reasons-sales-process-broken">
 
-  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/6-reasons-sales-process-broken">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/6-reasons-sales-process-broken">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/verkaufsprozess-fehler-optimierung">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/raisons-processus-vente-defaillant">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/proceso-ventas-roto-razones">
@@ -200,36 +201,7 @@
     .footer a:hover{color:#fff;text-decoration:none}
     .footer-bottom{border-top:1px solid #374151;padding-top:24px;font-size:13px;display:flex;justify-content:space-between;gap:20px}
 
-    /* Layout 2-col (TOC + content) */
-    .article-layout {
-      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
-      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
-    }
-    .toc {
-      position: sticky; top: 96px; padding: 8px 0;
-      max-height: calc(100vh - 120px); overflow-y: auto;
-    }
-    .toc__label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
-    }
-    .toc ul { list-style: none; padding: 0; }
-    .toc li { margin-bottom: 2px; }
-    .toc a {
-      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
-      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
-      transition: var(--t); text-decoration: none !important;
-    }
-    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
-    .toc a.active {
-      color: var(--color-primary); background: var(--color-primary-50);
-      border-left-color: var(--color-primary); font-weight: 600;
-    }
-
     @media (max-width:991px){
-      .article-layout { grid-template-columns: 1fr; gap: 32px; }
-      .toc { display: none; }
       :root{--page-px:24px}
       .framework-flow{grid-template-columns:1fr 1fr;gap:10px}
       .framework-flow::before{display:none}
@@ -309,16 +281,16 @@
 
   </style>
 
-  <meta property="og:title" content="6 Reasons Why Your Sales Process is Broken">
+    <meta property="og:title" content="6 Reasons Why Your Sales Process is Broken">
     <meta property="og:description" content="Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation, and learn how to fix them.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/6-reasons-sales-process-broken.png">
     <meta property="og:url" content="https://overloop.com/blog/6-reasons-sales-process-broken">
     <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="6 Reasons Why Your Sales Process is Broken">
     <meta name="twitter:description" content="Discover the 6 most common sales process mistakes that limit your ability to sell, from poor design to lack of automation, and learn how to fix them.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/6-reasons-sales-process-broken.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -356,55 +328,44 @@
         ]
     }
     </script>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
-
-  <!-- Reading progress -->
-  <div class="reading-progress" id="reading-progress"></div>
-
-  <!-- Nav -->
+<div class="reading-progress" id="reading-progress"></div>
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo"><img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop"></a>
     <div class="nav-links"><a href="https://overloop.com/features">Features</a><a href="https://overloop.com/pricing">Pricing</a><a href="https://overloop.com/blog" class="active">Blog</a><a href="https://overloop.com/tools">Free tools</a></div>
     <div class="nav-right"><a href="https://app.overloop.ai/session/login" class="nav-login">Login</a><a href="https://app.overloop.ai/session/signup" class="btn btn-sm">Sign up free</a></div>
   </nav>
 
-  <!-- Article -->
-  <article>
-
-    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
-        <span class="pill pill--glass">
-          <i data-lucide="target" style="width:12px;height:12px"></i>
-          Strategy
-        </span>
+        <span class="pill pill--glass"><i data-lucide="git-branch" style="width:12px;height:12px"></i> Strategic framework · 5 stages</span>
         <h1>6 Reasons Why Your Sales Process is Broken</h1>
         <p class="lead">Six common sales process mistakes that may be limiting your ability to sell, from poor design and lack of automation to failing to measure results.</p>
         <div class="article-meta">
           <div class="article-meta__avatar">FP</div>
           <div class="article-meta__text">
             <div class="article-meta__author">Forster Perelsztejn</div>
-            <div class="article-meta__dates">Published Feb 08, 2018 · Updated Apr 17, 2026</div>
+            <div class="article-meta__dates">Feb 08, 2018 &middot; Updated Apr 17, 2026</div>
           </div>
         </div>
       </div>
     </header>
-    <!-- Content -->
-    <div class="article-layout">
-      <aside class="toc" role="navigation" aria-label="Table of contents">
-        <div class="toc__label">On this page</div>
-        <ul id="toc-list"></ul>
-      </aside>
-      <main class="prose">
+
+    <main class="main-wrap">
+
+
+
 <p><em>Guest post by Ben Goldstein</em></p>
 <p>In theory, a sales process should make your sales reps more effective by focusing their efforts on the activities that are most likely to move a deal forward.</p>
 <p><a href="https://hbr.org/2015/01/companies-with-a-formal-sales-process-generate-more-revenue">According to a study</a> conducted by Vantage Point Performance and the Sales Management Association, companies that defined a formal sales process saw <strong>18% greater revenue growth</strong> compared to companies that didn't.</p>
 <p>However, if your process is poorly designed or incorrectly implemented, it can do your team more harm than good.</p>
 <p>Here are six sales process mistakes that may be limiting your ability to sell, without you even realizing it.</p>
 
-<h2>Mistake #1: It didn't come from your sales reps.</h2>
+<h2 id="mistake-1-it-didn-t-come-from-your-sales-reps">Mistake #1: It didn't come from your sales reps.</h2>
 <p>A good sales process can't be created in a vacuum--it has to be a joint effort between the manager and the sellers, or else the end result will be unfamiliar to the team, and will likely be rejected or ignored.</p>
 <p>To ensure that your team will buy into your new sales process from the beginning, spend some time with each rep beforehand to learn <strong>the activities they already perform during the course of a sale</strong>.</p>
 <p>Among other things, you need to understand:</p>
@@ -417,7 +378,7 @@
 <p>The people reaching out to your prospects have learned what works and what doesn't, so it's critical to work with your sales organization to ensure that the process will be effective before you ask them to start following it.</p>
 <p>And whatever you do, don't "borrow" the sales process of another organization and try to use it for your own team. <strong>Templates don't work; your process has to be personal</strong>.</p>
 
-<h2>Mistake #2: It's too detailed or complicated.</h2>
+<h2 id="mistake-2-it-s-too-detailed-or-complicated">Mistake #2: It's too detailed or complicated.</h2>
 <p>The more stages your sales process includes, the harder it will be for your sales team to memorize and internalize it.</p>
 <p><strong>A sales process should contain between three and seven stages</strong>, with each one reflecting a specific <em>goal</em> related to moving the sale forward, such as "Handling Objections," not an individual activity, such as "schedule follow-up call." (Those individual activities are called <strong>steps</strong>, and you can learn more about them in my How to Build a Sales Process guide.)</p>
 <p>According to Jacco van der Kooij, founder of <a href="https://winningbydesign.com/">Winning by Design</a>, one effective way to measure the health of a sales process is to see how well your reps can explain it.</p>
@@ -425,7 +386,7 @@
 <p>If they can't, check in with your team to make sure they aren't suffering from information overload.</p>
 <p>Creating an overly-detailed sales process can also demotivate your team by turning selling into a robotic enterprise with little room for invention. Ideally, your sellers should have the freedom to occasionally find new paths to move a challenging deal from one stage to the next. As Amazon founder and CEO <a href="https://www.forbes.com/sites/johngreathouse/2013/04/30/5-time-tested-success-tips-from-amazon-founder-jeff-bezos/#449fbc47370c">Jeff Bezos put it</a>, be stubborn on the vision and flexible on the detail.</p>
 
-<h2>Mistake #3: It's too vague.</h2>
+<h2 id="mistake-3-it-s-too-vague">Mistake #3: It's too vague.</h2>
 <p>Experienced salespeople will have no trouble understanding sales process stages like "Prospecting," "Qualifying," or "Presenting." These concepts are fundamental to what a sales rep does on a daily basis.</p>
 <p>The problem is, each of your sales reps might have a different interpretation of when each stage is <em>complete</em>. For example, how much qualification is required to move a prospect from Qualifying to Presenting in your sales process? At what point do you officially move a prospect to the Closing stage?</p>
 <p><strong>Failing to clearly define the goal-posts creates a vague sales process that can confuse reps and slow them down.</strong></p>
@@ -433,14 +394,14 @@
 <p>Keep in mind that some sales process stages can't easily be defined in terms of <em>incomplete</em> or <em>complete</em>. "Qualification is not a one-time event that takes place during a discovery call," explains Jacco van der Kooij. "It's something that takes place all the time, during every part of the interaction with a client." Similarly, <a href="https://.capabiliti.co/5-worst-closing-mistakes-sales-process/">closing commitments should be present in every sales process stage</a>, not just at the end.</p>
 <p>In other words, what <em>exactly</em> are you looking for your buyer to do or say before moving them to the next stage? Your sales process won't be ready to use until your team is in agreement.</p>
 
-<h2>Mistake #4: It isn't automated.</h2>
+<h2 id="mistake-4-it-isn-t-automated">Mistake #4: It isn't automated.</h2>
 <p>Having a roadmap of repeatable sales steps is a big advantage for your team, but to get the most out of your sales process, automation is key.</p>
 <p><a href="https://velocify.com//4-characteristics-of-a-high-performing-sales-team/">According to a study from Velocify</a>, high-performing sales organizations are almost <strong>twice as likely</strong> to use an automated sales process than underperforming organizations.</p>
 <p>By automating your sales process in a CRM, your reps will know exactly what to do at any given moment to move a deal forward, and valuable leads won't drift away. But let's be clear: While a CRM will make it easy for your sales team to navigate your sales process, building and understanding that process can't be outsourced to a software program.</p>
 <p>"The biggest mistake to avoid is not doing every piece of your sales process manually first--or at least <em>understanding</em> how to do every piece of the process manually," says <strong>Max Altschuler</strong>, best-selling author of <a href="https://www.hackingsales.com"><em>Hacking Sales</em></a> and CEO of <a href="https://www.saleshacker.com">Sales Hacker Inc</a>.</p>
 <p>"If you just buy technology before understanding your buyer personas, what data and insights you need, and how to reach out and how often, you'll be throwing money away on things that won't be adopted properly," Altschuler says.</p>
 
-<h2>Mistake #5: Nobody is measuring it.</h2>
+<h2 id="mistake-5-nobody-is-measuring-it">Mistake #5: Nobody is measuring it.</h2>
 <p>A sales process isn't simply a playbook for activity. When properly integrated and automated, it can also provide a treasure trove of actionable sales data.</p>
 <p>Measuring the health and impact of your sales process can help you <strong>identify weak spots so you can improve as an organization</strong>. Some metrics that will help you evaluate your sales process include:</p>
 <ul>
@@ -455,7 +416,7 @@
 <p>If you see any of these metrics start to slip in the wrong direction, take the time to identify where your sales process is underperforming so you can improve your strategies in those stages.</p>
 <p>Are your reps waiting too long to reach out to a warm lead? Are your sales presentations turning off interested prospects? Reviewing your conversion rates at each stage and making targeted improvements to the weak spots is a lot more effective than trying to blindly "fix" your sales operations as a whole.</p>
 
-<h2>Mistake #6: It's set in stone.</h2>
+<h2 id="mistake-6-it-s-set-in-stone">Mistake #6: It's set in stone.</h2>
 <p>While regular tweaking and improvement is necessary to the health of your sales process, it's also important to step back a couple times a year and take a broader view.</p>
 <p>Particularly in startup businesses or companies experiencing rapid growth, <strong>the sales process you first implement with might not be appropriate six months later</strong>.</p>
 <p>Some changes that could spur a full redesign of your sales process include:</p>
@@ -468,59 +429,27 @@
 <p>Trying to manage a new sales methodology with an outdated process is unsustainable, so treat your sales process as a living document, and don't be afraid to make significant changes when necessary.</p>
 
 <p><em><strong>Ben Goldstein</strong> is the content marketing manager of <a href="https://www.nutshell.com">Nutshell</a>, an award-winning CRM that helps sales teams close more deals faster. Ben enjoys playing drums, kickboxing, and watching Jeopardy! Please connect with him on <a href="https://www.linkedin.com/in/benjaminjgoldstein/">LinkedIn</a> if you want to talk shop.</em></p>
+    
+    
+    
     </main>
-    </div>
 
-    <!-- End CTA -->
-    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
-      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
-      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
-        <i data-lucide="sparkles" style="width:18px;height:18px"></i>
-        Try Overloop free
-      </a>
+    <section class="cta-hard">
+      <h3>Run all 5 stages <em>in one platform</em></h3>
+      <p>Overloop covers stages 2-5 natively: sourcing, messaging (AI), delivery, and analytics. Stage 1 (ICP definition) stays your call.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow"><i data-lucide="sparkles" style="width:18px;height:18px"></i> Try Overloop free</a>
     </section>
 
-    <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">FP</div>
+    <section class="author-card">
+      <div class="author-card__avatar">FP</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Forster Perelsztejn</div>
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Marketing Lead, Overloop</div>
-        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Marketing lead at Overloop. Covers cold email best practices, sales tactics, and outbound strategy.</p>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">Marketing Lead, Overloop</div>
+        <div class="author-card__bio">Covers cold email best practices, sales tactics, and outbound strategy.</div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
-      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
-      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
-        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
-      </form>
-    </section>
-
-    <!-- Related -->
-    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <a href="/blog/common-sales-automation-mistakes-and-how-to-avoid-them" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Common Sales Automation Mistakes and How to Avoid Them</div>
-        </a>
-        <a href="/blog/inside-sales-outside-sales" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Inside Sales vs Outside Sales</div>
-        </a>
-        <a href="/blog/know-prospect-find" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">How To Know Who To Prospect And Where To Find Them</div>
-        </a>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- Footer -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div><img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop" style="height:24px;filter:brightness(0) invert(1);margin-bottom:12px;"><p style="font-size:13px;line-height:1.6">AI-powered outbound sales platform.</p></div>
@@ -533,61 +462,9 @@
     </div>
   </footer>
 
-  <script>
-    // Lucide icons
+    <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      function update() {
-        var h = document.documentElement;
-        var scrollTop = h.scrollTop || document.body.scrollTop;
-        var scrollHeight = h.scrollHeight - h.clientHeight;
-        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = pct + '%';
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  
-
-    // Auto-generate TOC from h2 elements in .prose
-    (function() {
-      var prose = document.querySelector('.prose');
-      var tocList = document.getElementById('toc-list');
-      if (!prose || !tocList) return;
-      var headings = prose.querySelectorAll('h2');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      // Scroll-spy
-      var tocLinks = tocList.querySelectorAll('a');
-      var targets = Array.from(tocLinks).map(function(a) {
-        var id = a.getAttribute('href').slice(1);
-        return { link: a, section: document.getElementById(id) };
-      }).filter(function(t) { return t.section; });
-
-      function onScroll() {
-        var scrollY = window.scrollY + 120;
-        var active = targets[0];
-        for (var j = 0; j < targets.length; j++) {
-          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
-        }
-        tocLinks.forEach(function(a) { a.classList.remove('active'); });
-        if (active) active.link.classList.add('active');
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
   </script>
-
 </body>
 </html>

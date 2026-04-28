@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TEMPLATE #10b: Tactical article — Best practices -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <meta name="description" content="Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.">
   <link rel="canonical" href="https://overloop.com/blog/best-practices-for-links-in-your-emails">
 
-  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/best-practices-for-links-in-your-emails">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/best-practices-for-links-in-your-emails">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/links-in-e-mails-best-practices">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/bonnes-pratiques-liens-emails">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/enlaces-correos-electronicos">
@@ -237,36 +238,7 @@
     .footer a:hover { color: #fff; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
 
-    /* Layout 2-col (TOC + content) */
-    .article-layout {
-      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
-      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
-    }
-    .toc {
-      position: sticky; top: 96px; padding: 8px 0;
-      max-height: calc(100vh - 120px); overflow-y: auto;
-    }
-    .toc__label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
-    }
-    .toc ul { list-style: none; padding: 0; }
-    .toc li { margin-bottom: 2px; }
-    .toc a {
-      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
-      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
-      transition: var(--t); text-decoration: none !important;
-    }
-    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
-    .toc a.active {
-      color: var(--color-primary); background: var(--color-primary-50);
-      border-left-color: var(--color-primary); font-weight: 600;
-    }
-
     @media (max-width: 991px) {
-      .article-layout { grid-template-columns: 1fr; gap: 32px; }
-      .toc { display: none; }
       :root { --page-px: 24px; }
       .point__body { padding-left: 0; }
       .related-grid { grid-template-columns: 1fr 1fr; }
@@ -344,16 +316,16 @@
 
   </style>
 
-  <meta property="og:title" content="Best Practices for Links In Your Emails">
+    <meta property="og:title" content="Best Practices for Links In Your Emails">
     <meta property="og:description" content="Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/best-practices-for-links-in-your-emails.png">
     <meta property="og:url" content="https://overloop.com/blog/best-practices-for-links-in-your-emails">
     <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Best Practices for Links In Your Emails">
     <meta name="twitter:description" content="Are the links in your emails helping or hurting you? See how savvy sales emails make the best use of links to get the reader to take the next step.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/best-practices-for-links-in-your-emails.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -391,14 +363,13 @@
         ]
     }
     </script>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-  <!-- Reading progress -->
-  <div class="reading-progress" id="reading-progress"></div>
-
-  <!-- Nav -->
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo">
       <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
@@ -415,15 +386,12 @@
     </div>
   </nav>
 
-  <!-- Article -->
-  <article>
-
-    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
+        <!-- Sub-variant pill: swap "Mistakes" for Tips / Best practices / KPIs / Timing / Pricing / Checklist / Automation / Types / Ideas / Case study / Product review / FAQ -->
         <span class="pill pill--glass">
-          <i data-lucide="zap" style="width:12px;height:12px"></i>
-          Tactical · Best practices
+          <i data-lucide="alert-triangle" style="width:12px;height:12px"></i>
+          Tactical · Mistakes to avoid
         </span>
         <h1>Best Practices for Links In Your Emails</h1>
         <p class="lead">Best practices for including links in sales emails without triggering spam filters or losing your prospect&#x27;s trust.</p>
@@ -431,22 +399,20 @@
           <div class="article-meta__avatar">VR</div>
           <div class="article-meta__text">
             <div class="article-meta__author">Vincenzo Ruggiero</div>
-            <div class="article-meta__dates">Published Aug 28, 2020 · Updated Apr 17, 2026</div>
+            <div class="article-meta__dates">Aug 28, 2020 &middot; Updated Apr 17, 2026</div>
           </div>
         </div>
       </div>
     </header>
-    <!-- Content -->
-    <div class="article-layout">
-      <aside class="toc" role="navigation" aria-label="Table of contents">
-        <div class="toc__label">On this page</div>
-        <ul id="toc-list"></ul>
-      </aside>
-      <main class="prose">
+
+    <main class="main-wrap">
+
+
+
 <p>That link that you want the prospect to click? It can get you sent straight to the spam folder. Even when your email gets through to the prospects’s inbox, the links you’ve included may cause them to eye it suspiciously.</p>
 <p>Armed with a handful of best practices, though, you’ll be set up to deliver value and nurture the recipient onto the next step of your sales pipeline.</p>
 <p>Here we’ll answer your most pressing questions about including links in emails.</p>
-<h2>How many links should you include in a sales email?</h2>
+<h2 id="how-many-links-should-you-include-in-a-sales-email">How many links should you include in a sales email?</h2>
 <p>The short answer: None. Or one. It depends.</p>
 <p>If you’re sending cold outreach emails, then we recommend you <a href="/blog/ab-testing-email-drip-campaigns">don’t use any links</a>, especially in early stages. This is because someone who doesn’t know you is unlikely to trust your link. If you hope to make the sale, you need to build trust first.</p>
 <p>But at some point you may want to direct the prospect to a resource or action they can take. Then, using only one link is probably your best bet.</p>
@@ -459,83 +425,54 @@
 <p>One popular study found that clicks from emails declined after including <a href="https://www.campaignmonitor.com/blog/email-marketing/2019/01/less-links-are-better/" rel="external noopener">more than 11 links</a>.</p>
 <p>But before you conclude you need more links, you should know that the emails in the study were HTML campaigns, which often feature ecommerce products or newsletter articles. These are not the kinds of emails we’re talking about here. At Overloop, we’re focused on sales automations to help people close deals.</p>
 <p>Furthermore, including a lot of links in your outreach email can trigger spam filters. And it also gives off a spammy vibe—not what you’re going for, obviously.</p>
-<h2>Should you include the same link twice?</h2>
+<h2 id="should-you-include-the-same-link-twice">Should you include the same link twice?</h2>
 <p>Prolific digital marketing author Neil Patel is a fan of linking to the same place two times in an email. This lets you attract two different types of people to click the link, the thinking goes.</p>
 <p>The anchor text can be different, even when both links go to the same place. In fact, to the reader, it appears as if there are two different links. The reasoning behind this has to do with psychological triggers. One finely worded benefit may persuade one email recipient while phrasing it another way may resonate more with another.</p>
 <p>We say give it a try and check your results. We expect it may vary with the <a href="/blog/whats-the-best-email-length-for-sales-outreach">length of your email</a>.</p>
-<h2>Where should you place your link in an email?</h2>
+<h2 id="where-should-you-place-your-link-in-an-email">Where should you place your link in an email?</h2>
 <p>If you’re using two links that point to the same place, that’s easy. Include one in the first or second paragraph and the other closer to the end. That way, the reader always has a way to take action within their view.</p>
 <p>If you’re going with the one-link rule, your link should be easy to spot rather than placed in a specific position. The typical blue underlined link draws the eye and tells the reader what they’re expected to do. If they need to return to your email, you want them to be able to find the link easily.</p>
 <p>The P.S. at the bottom of your email may be a good spot to include your link, especially if it points to a resource or additional piece of information that they might find useful.</p>
-<h2>Should you use a URL string or anchor text? Or a tiny URL?</h2>
+<h2 id="should-you-use-a-url-string-or-anchor-text-or-a-tiny-url">Should you use a URL string or anchor text? Or a tiny URL?</h2>
 <p>It’s easy to see why you might think that including the complete URL string is a good idea. It’s transparent, because it shows where the link is going. It’s also easy for people to copy and paste if they can’t click to open email links for whatever reason.</p>
 <p>But on the flip side, URL strings look messy. They can be really long. And to many, they’re difficult to understand. All of this adds to the cognitive load you’re placing on your reader.</p>
 <p>Instead, make it simple and use descriptive and engaging link text. Don’t make them guess what they’ll get on the other side of the link.</p>
 <p>Avoid URL shorteners. Spammers have spoiled it for everyone by using them, and now <a href="/blog/10-pro-tips-avoid-spam-folder">the use of a shortened link can trigger spam filters</a>.</p>
-<h2>Use links instead of attaching files</h2>
+<h2 id="use-links-instead-of-attaching-files">Use links instead of attaching files</h2>
 <p>Attaching unsolicited files, especially large ones, can trigger spam filters. Not to mention clog up the recipient’s email if they have mailbox limitations. Now there are many options for linking to documents. Set up your documents in Google Drive or Dropbox and <a href="/blog/5-main-steps-for-an-effective-cold-email-marketing-strategy">send the link instead of attaching a document</a>.</p>
-<h2>Don’t forget the unsubscribe link</h2>
+<h2 id="don-t-forget-the-unsubscribe-link">Don’t forget the unsubscribe link</h2>
 <p>Of course no one wants people to unsubscribe from their emails. But trying to keep them from unsubscribing will only backfire.</p>
 <p>Including your unsubscribe link can actually help you improve deliverability by lowering your chances of being marked as spam. Allowing people to click to unsubscribe also helps with GDPR compliance and saves you time from removing people manually. So don’t forget to include an unsubscribe link in your outreach emails.</p>
-<h2>Customize and track your links</h2>
+<h2 id="customize-and-track-your-links">Customize and track your links</h2>
 <p>Overloop lets you customize the link in each email to prospects even when you’re using a template. This helps you send semi-personalized emails at scale.</p>
 <p>This personalization can come in handy for outreach activities that require you include a link, such as SEO link building outreach. See how Gabka Koščová from Spotibo was able to <a href="/blog/cold-emailing-link-building">streamline efforts in cold email outreach</a> by using customizable templates.</p>
 <p>And if you’re using Overloop to send your sales emails, you can <a href="/blog/email-automation">see when a prospect clicks a link</a>. In fact, you’ll know if they’ve come back to check out your email again, and how many times they click on a link. This data lets you segment your prospects so you can nurture along those who are more engaged, and try a different approach with those who are not responding.</p>
 <p>At the end of the day, that’s what including a link in your email is all about—getting the prospect to take the next step.</p>
 <p>Check out more articles on our blog and sign up to get <a href="/blog/index">productivity tips for outbound sales teams directly in your inbox</a></p>
+    
+    
+    
     </main>
-    </div>
 
-    <!-- End CTA -->
-    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
-      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
-      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
+    <section class="cta-hard">
+      <h3>Fix all 10 mistakes <em>in one click</em></h3>
+      <p>Overloop handles warmup, DKIM validation, randomized sending, unsubscribe tracking, and AI personalization. Fix-in-a-box for cold email deliverability.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
         <i data-lucide="sparkles" style="width:18px;height:18px"></i>
         Try Overloop free
       </a>
     </section>
 
-    <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">VR</div>
+    <section class="author-card">
+      <div class="author-card__avatar">VR</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Vincenzo Ruggiero</div>
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Founder, Overloop</div>
-        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Founded Overloop in 2015. 10+ years building sales automation software. Personally tests every outbound tool on the market.</p>
+        <div class="author-card__name">Vincenzo Ruggiero</div>
+        <div class="author-card__role">CEO, Overloop</div>
+        <div class="author-card__bio">Founded Overloop in 2015. 10+ years building sales automation. Personally tests every outbound tool.</div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
-      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
-      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
-        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
-      </form>
-    </section>
-
-    <!-- Related -->
-    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <a href="/blog/whats-the-best-email-length-for-sales-outreach" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Best Email Length for Sales Outreach</div>
-        </a>
-        <a href="/blog/cold-emailing-link-building" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Cold Emailing for Link Building</div>
-        </a>
-        <a href="/blog/9-best-ai-email-outreach-tools" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">9 Best AI Email Outreach Tools</div>
-        </a>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- Footer -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
@@ -554,61 +491,9 @@
     </div>
   </footer>
 
-  <script>
-    // Lucide icons
+    <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      function update() {
-        var h = document.documentElement;
-        var scrollTop = h.scrollTop || document.body.scrollTop;
-        var scrollHeight = h.scrollHeight - h.clientHeight;
-        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = pct + '%';
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  
-
-    // Auto-generate TOC from h2 elements in .prose
-    (function() {
-      var prose = document.querySelector('.prose');
-      var tocList = document.getElementById('toc-list');
-      if (!prose || !tocList) return;
-      var headings = prose.querySelectorAll('h2');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      // Scroll-spy
-      var tocLinks = tocList.querySelectorAll('a');
-      var targets = Array.from(tocLinks).map(function(a) {
-        var id = a.getAttribute('href').slice(1);
-        return { link: a, section: document.getElementById(id) };
-      }).filter(function(t) { return t.section; });
-
-      function onScroll() {
-        var scrollY = window.scrollY + 120;
-        var active = targets[0];
-        for (var j = 0; j < targets.length; j++) {
-          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
-        }
-        tocLinks.forEach(function(a) { a.classList.remove('active'); });
-        if (active) active.link.classList.add('active');
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
   </script>
-
 </body>
 </html>

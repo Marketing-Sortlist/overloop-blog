@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TEMPLATE #10a: Tactical article — Tips -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,7 +8,7 @@
   <meta name="description" content="Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations, persistence, and customer success.">
   <link rel="canonical" href="https://overloop.com/blog/5-rules-more-successful-salespeople">
 
-  <link rel="alternate" hreflang="en" href="https://overloop.com/blog/5-rules-more-successful-salespeople">
+    <link rel="alternate" hreflang="en" href="https://overloop.com/blog/5-rules-more-successful-salespeople">
     <link rel="alternate" hreflang="de" href="https://overloop.com/de/blog/erfolgsregeln-verkauf-bessere-ergebnisse">
     <link rel="alternate" hreflang="fr" href="https://overloop.com/fr/blog/regles-succes-commercial-vente">
     <link rel="alternate" hreflang="es" href="https://overloop.com/es/blog/reglas-exito-vendedores">
@@ -237,36 +238,7 @@
     .footer a:hover { color: #fff; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #374151; padding-top: 24px; font-size: 13px; display: flex; justify-content: space-between; gap: 20px; }
 
-    /* Layout 2-col (TOC + content) */
-    .article-layout {
-      max-width: var(--container-max); margin: 0 auto; padding: 40px var(--page-px);
-      display: grid; grid-template-columns: 260px 1fr; gap: 56px; align-items: start;
-    }
-    .toc {
-      position: sticky; top: 96px; padding: 8px 0;
-      max-height: calc(100vh - 120px); overflow-y: auto;
-    }
-    .toc__label {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--color-primary); margin-bottom: 12px;
-    }
-    .toc ul { list-style: none; padding: 0; }
-    .toc li { margin-bottom: 2px; }
-    .toc a {
-      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
-      font-size: 13px; font-weight: 500; color: var(--color-text-secondary);
-      border-left: 3px solid transparent; border-radius: 0 6px 6px 0;
-      transition: var(--t); text-decoration: none !important;
-    }
-    .toc a:hover { color: var(--color-text); background: var(--color-surface); }
-    .toc a.active {
-      color: var(--color-primary); background: var(--color-primary-50);
-      border-left-color: var(--color-primary); font-weight: 600;
-    }
-
     @media (max-width: 991px) {
-      .article-layout { grid-template-columns: 1fr; gap: 32px; }
-      .toc { display: none; }
       :root { --page-px: 24px; }
       .point__body { padding-left: 0; }
       .related-grid { grid-template-columns: 1fr 1fr; }
@@ -344,16 +316,16 @@
 
   </style>
 
-  <meta property="og:title" content="5 Rules of Top-Performing Salespeople">
+    <meta property="og:title" content="5 Rules of Top-Performing Salespeople">
     <meta property="og:description" content="Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations, persistence, and customer success.">
     <meta property="og:image" content="https://overloop.com/assets/images/og/5-rules-more-successful-salespeople.png">
     <meta property="og:url" content="https://overloop.com/blog/5-rules-more-successful-salespeople">
     <meta property="og:type" content="article">
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="5 Rules of Top-Performing Salespeople">
     <meta name="twitter:description" content="Discover 5 proven rules from top sales experts that separate high-performing salespeople from the rest. Master negotiations, persistence, and customer success.">
     <meta name="twitter:image" content="https://overloop.com/assets/images/og/5-rules-more-successful-salespeople.png">
-  <script type="application/ld+json">
+    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -391,14 +363,13 @@
         ]
     }
     </script>
+
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
+<div class="reading-progress" id="reading-progress"></div>
 
-  <!-- Reading progress -->
-  <div class="reading-progress" id="reading-progress"></div>
-
-  <!-- Nav -->
   <nav class="nav">
     <a href="https://overloop.com" class="nav-logo">
       <img src="https://cdn.prod.website-files.com/6836b1fcfa0b25a3fed39db6/69d4cb02974de95cb4df5bd0_Logotype%20-%20Black.png" alt="Overloop">
@@ -415,15 +386,12 @@
     </div>
   </nav>
 
-  <!-- Article -->
-  <article>
-
-    <!-- Hero -->
     <header class="article-hero">
       <div class="article-hero-inner">
+        <!-- Sub-variant pill: swap "Mistakes" for Tips / Best practices / KPIs / Timing / Pricing / Checklist / Automation / Types / Ideas / Case study / Product review / FAQ -->
         <span class="pill pill--glass">
-          <i data-lucide="zap" style="width:12px;height:12px"></i>
-          Tactical · Tips
+          <i data-lucide="alert-triangle" style="width:12px;height:12px"></i>
+          Tactical · Mistakes to avoid
         </span>
         <h1>5 Rules of Top-Performing Salespeople</h1>
         <p class="lead">Master the mindset and habits that separate top performers from everyone else in sales.</p>
@@ -431,24 +399,22 @@
           <div class="article-meta__avatar">FP</div>
           <div class="article-meta__text">
             <div class="article-meta__author">Forster Perelsztejn</div>
-            <div class="article-meta__dates">Published Sep 19, 2017 · Updated Apr 17, 2026</div>
+            <div class="article-meta__dates">Sep 19, 2017 &middot; Updated Apr 17, 2026</div>
           </div>
         </div>
       </div>
     </header>
-    <!-- Content -->
-    <div class="article-layout">
-      <aside class="toc" role="navigation" aria-label="Table of contents">
-        <div class="toc__label">On this page</div>
-        <ul id="toc-list"></ul>
-      </aside>
-      <main class="prose">
+
+    <main class="main-wrap">
+
+
+
 <p>Emulate the greats.</p>
 <p>If you see them doing something, and it's working, you should be doing your best to replicate their behaviour, especially when it comes to attitude and mindset.</p>
 <p>Part of the following advice was inspired by none other than sales guru Grant Cardone.</p>
 <p>Ready?</p>
 
-<h2>1. Don't get emotional during negotiations</h2>
+<h2 id="1-don-t-get-emotional-during-negotiations">1. Don't get emotional during negotiations</h2>
 <p>Have you ever seen a salesperson freak out AND close a sale? Yeah, me neither.</p>
 <p>It doesn't mean you need to be cold, as a psychopath would be, but you must remember <strong>not to take things personally</strong>.</p>
 <p>Your best asset, your best quality is your ability to stay calm and relaxed throughout the process. Your prospect is lashing out? As long as you're not personally in danger, let them vent. You're not the reason <strong>they </strong>are losing it. People want to be listened to, it's a natural thing.</p>
@@ -460,7 +426,7 @@
 <p>Role play with your sales reps, teach them to prepare for the unexpected with scenarios…</p>
 </blockquote>
 <p>Practice, practice, practice, and you'll be confident about your job.</p>
-<h2>2. Go beyond selling</h2>
+<h2 id="2-go-beyond-selling">2. Go beyond selling</h2>
 <p>If you think that your job ends at the close, think again.</p>
 <p>At <a href="https://overloop.com">Overloop</a>, sales and customer success, or as Tami McQueen from 31south calls it, "<a href="https://www.linkedin.com/pulse/most-important-commitment-scaling-company-tami-mcqueen" rel="external noopener"><strong>the most important commitment to scaling a company</strong></a>". are considered to be the same thing. Once we convince a customer to work with us, the sales team's work doesn't stop when the payment has been received. We make sure customers set up their account right, make their first prospects and get their first campaigns running.</p>
 <p>To quote <a href="https://www.linkedin.com/pulse/leave-sale-behind-supercharge-growth-integrating-sales-tony-j-hughes" rel="external noopener">Tony J. Hughes</a>:</p>
@@ -468,7 +434,7 @@
 <p>The age of the empowered customer has kicked down those old cubicle walls that previously separated sales and service teams. Customers now expect personalised and unified information from the first person who answers their call, opens their email or reads their social message and it doesn’t matter to them which department they sit in.</p>
 </blockquote>
 <p>Alright, it's common practice in the SaaS industry, but let's take real estate: getting the financing, getting the property appraised, the paperwork completed… that's the work of a salesperson.</p>
-<h2>3. Know the difference between an objection and a complaint</h2>
+<h2 id="3-know-the-difference-between-an-objection-and-a-complaint">3. Know the difference between an objection and a complaint</h2>
 <p>Grant Cardone -yes him again, insists on the importance of differentiating actual objections from mere <a href="http://cardonesolutions.com/the-difference-between-an-objection-and-a-complaint/" rel="external noopener">complaints</a>.</p>
 <p>While an objection is, in fact, preventing the prospect from agreeing to be sold something, complaints are just mentions of "unpleasant" elements about which nothing can be changed, such as the weather.</p>
 <p>I don't talk much about myself but this time I will. Besides my job here Overloop, I also teach drums -mostly to kids. My lessons are expensive, I tend to ask for at least twice my peers are asking. And I ask to be paid for ten lessons in advance. Which regularly results in parents saying "That is… a lot of money."</p>
@@ -478,7 +444,7 @@
 <p>And <strong>if </strong>someday, a parent actually says "No, really, that's too much money", then I'll start handling it as an <a href="/blog/deal-objections">actual objection</a>.</p>
 <p>Until it's been confirmed to be an objection, it's a <strong>complaint</strong>, which only needs to be acknowledged.</p>
 <p><strong>Also</strong>, <strong>Sean</strong> <strong>McPheat</strong> walks you through how to <a href="https://www.linkedin.com/pulse/how-spot-difference-between-objection-excuse-sean-mcpheat/" rel="external noopener"><strong>distinguish an actual objection from a simple excuse</strong></a>.</p>
-<h2>4. Persist</h2>
+<h2 id="4-persist">4. Persist</h2>
 <p>According to <a href="https://www.linkedin.com/pulse/six-reasons-youre-blowing-sales-losing-money-ryan-stewman" rel="external noopener">Ryan Stewman</a>, Hardcore Closer founder: <strong>'The first objection is always a test, and 99 percent of salesmen fail it.'</strong></p>
 <p>Do you read this blog a lot? Then you know of we feel about persistence and follow-up.</p>
 <p>We tell you <a href="/blog/perfect-follow-up-email-campaign">how important it is</a> and <a href="/blog/following-up-surefire-techniques">how to do it (free templates inside)</a>.</p>
@@ -493,70 +459,41 @@
 <p>Worried about seeming "pushy" or "overbearing," some salespeople fail to continue reaching out to potential customers. As a result, they miss out on sales.</p>
 </blockquote>
 <p>She wrote a fantastic piece on the subject of follow-up, <a href="http://conversion-omics.com/persistent-consistent-proactive-selling/" rel="external noopener">check it out</a>!</p>
-<h2>5. The most important sale is to yourself</h2>
+<h2 id="5-the-most-important-sale-is-to-yourself">5. The most important sale is to yourself</h2>
 <p>The only way you're going to have the will and energy to try and sell that product, to persist in acquiring new customers is if you <strong>believe in your product</strong>.</p>
 <p>Believing in your product is an essential part of being a salesperson. You need to be 100% persuaded that what you're selling is <strong>the real deal</strong>, the real value bringer that your prospects deserve. But don't just convince yourself, ask for feedback from customers, ask them to share their success stories with you.</p>
 <p>In this <a href="https://top1.fm/26-car-salesman-john-hinkson-sold-1600-cars-first-3-years/" rel="external noopener">podcast</a>, Scott Ingram interviews genius car salesman John Hinkson. Hinkson makes it a point that you need to <a href="https://top1.fm/clip-believe-youre-selling/" rel="external noopener">believe in what you're selling</a>.</p>
 <p>It's what will help you stay on top at all times or keep your head out of the water when times are tough.</p>
 
-<h2>… it's not just about YOUR competition</h2>
+<h2 id="it-s-not-just-about-your-competition">… it's not just about YOUR competition</h2>
 <p>As <a href="https://www.linkedin.com/pulse/how-beat-your-competition-5-sec-read-mark-s-a-smith" rel="external noopener">Mark S A Smith</a> would say, <strong>the best way to beat your competition is to help your customers beat <em>their</em> competition</strong>.</p>
 <p>That's how you do it.</p>
 <p>Follow these rules, don't take yourself out of the equation, and you'll manage to stay way ahead of the competition.</p>
 <p>Share this with your favourite salesperson!</p>
+    
+    
+    
     </main>
-    </div>
 
-    <!-- End CTA -->
-    <section class="cta-hard" style="text-align:center;padding:56px 48px;background:var(--gradient-brand-soft);border-top:1px solid var(--color-border-light);border-bottom:1px solid var(--color-border-light);">
-      <h3 style="font-size:28px;font-weight:800;color:var(--color-text);margin-bottom:12px;">Ready to automate your outbound <em>with AI?</em></h3>
-      <p style="font-size:17px;color:var(--color-text-secondary);max-width:540px;margin:0 auto 28px;">Overloop combines AI email personalization, LinkedIn automation, and phone steps in one platform. No annual contract required.</p>
-      <a href="https://app.overloop.ai/session/signup" class="btn-glow" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 40px;background:var(--gradient-brand);color:#fff;border:none;border-radius:16px;font-family:var(--font-sans);font-size:16px;font-weight:600;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.30);">
+    <section class="cta-hard">
+      <h3>Fix all 10 mistakes <em>in one click</em></h3>
+      <p>Overloop handles warmup, DKIM validation, randomized sending, unsubscribe tracking, and AI personalization. Fix-in-a-box for cold email deliverability.</p>
+      <a href="https://app.overloop.ai/session/signup" class="btn-glow">
         <i data-lucide="sparkles" style="width:18px;height:18px"></i>
         Try Overloop free
       </a>
     </section>
 
-    <!-- Author -->
-    <section class="author-card" style="display:flex;align-items:flex-start;gap:20px;max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <div style="width:56px;height:56px;border-radius:50%;background:var(--gradient-brand);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0;">FP</div>
+    <section class="author-card">
+      <div class="author-card__avatar">FP</div>
       <div>
-        <div style="font-size:17px;font-weight:700;color:var(--color-text);">Forster Perelsztejn</div>
-        <div style="font-family:var(--font-mono);font-size:12px;color:var(--color-primary);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">Marketing Lead, Overloop</div>
-        <p class="author-card__bio" style="font-size:14px;color:var(--color-text-body);line-height:1.6;margin:0;">Marketing lead at Overloop. Covers cold email best practices, sales tactics, and outbound strategy.</p>
+        <div class="author-card__name">Forster Perelsztejn</div>
+        <div class="author-card__role">Marketing Lead, Overloop</div>
+        <div class="author-card__bio">Covers cold email best practices, sales tactics, and outbound strategy.</div>
       </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter" style="text-align:center;padding:40px 48px;max-width:var(--container-blog);margin:0 auto;">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:8px;">Outbound insights — once a week, no fluff</h3>
-      <p style="font-size:15px;color:var(--color-text-secondary);margin-bottom:20px;">Join 8,400+ B2B operators getting our tested tactics, tools, and templates.</p>
-      <form onsubmit="event.preventDefault();" style="display:flex;gap:10px;justify-content:center;max-width:420px;margin:0 auto;">
-        <input type="email" placeholder="Your work email" required style="flex:1;padding:12px 16px;border:1px solid var(--color-border);border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;">
-        <button type="submit" class="btn" style="padding:12px 24px;background:var(--color-primary,#6366F1);color:#fff;border:none;border-radius:var(--r,12px);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">Subscribe</button>
-      </form>
-    </section>
-
-    <!-- Related -->
-    <section class="related" style="max-width:var(--container-blog);margin:40px auto;padding:0 var(--page-px,48px);">
-      <h3 style="font-size:22px;font-weight:800;color:var(--color-text);margin-bottom:20px;">Related articles</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
-        <a href="/blog/deal-objections" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Should You Take 'No' for an Answer? Handling Deal Objections</div>
-        </a>
-        <a href="/blog/following-up-surefire-techniques" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">Surefire Follow-Up Techniques With Free Templates</div>
-        </a>
-        <a href="/blog/perfect-follow-up-email-campaign" class="related-card" style="display:block;padding:20px;background:var(--color-white,#fff);border:1px solid var(--color-border-light,#F3F4F6);border-radius:var(--r-lg,16px);text-decoration:none;transition:200ms ease;">
-          <div style="font-size:16px;font-weight:600;color:var(--color-text,#1A1A2E);">How to Build the Perfect Follow-Up Email Campaign</div>
-        </a>
-      </div>
-    </section>
-
-  </article>
-
-  <!-- Footer -->
-  <footer class="footer">
+    <footer class="footer">
     <div class="footer-inner">
       <div class="footer-grid">
         <div>
@@ -575,61 +512,9 @@
     </div>
   </footer>
 
-  <script>
-    // Lucide icons
+    <script>
     if (window.lucide) lucide.createIcons();
-
-    // Reading progress
-    (function() {
-      var bar = document.getElementById('reading-progress');
-      function update() {
-        var h = document.documentElement;
-        var scrollTop = h.scrollTop || document.body.scrollTop;
-        var scrollHeight = h.scrollHeight - h.clientHeight;
-        var pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-        bar.style.width = pct + '%';
-      }
-      window.addEventListener('scroll', update, { passive: true });
-      update();
-    })();
-  
-
-    // Auto-generate TOC from h2 elements in .prose
-    (function() {
-      var prose = document.querySelector('.prose');
-      var tocList = document.getElementById('toc-list');
-      if (!prose || !tocList) return;
-      var headings = prose.querySelectorAll('h2');
-      headings.forEach(function(h, i) {
-        if (!h.id) h.id = 'section-' + i;
-        var li = document.createElement('li');
-        var a = document.createElement('a');
-        a.href = '#' + h.id;
-        a.textContent = h.textContent;
-        li.appendChild(a);
-        tocList.appendChild(li);
-      });
-
-      // Scroll-spy
-      var tocLinks = tocList.querySelectorAll('a');
-      var targets = Array.from(tocLinks).map(function(a) {
-        var id = a.getAttribute('href').slice(1);
-        return { link: a, section: document.getElementById(id) };
-      }).filter(function(t) { return t.section; });
-
-      function onScroll() {
-        var scrollY = window.scrollY + 120;
-        var active = targets[0];
-        for (var j = 0; j < targets.length; j++) {
-          if (targets[j].section.offsetTop <= scrollY) active = targets[j];
-        }
-        tocLinks.forEach(function(a) { a.classList.remove('active'); });
-        if (active) active.link.classList.add('active');
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    })();
+    (function(){ const bar = document.getElementById('reading-progress'); function u(){ const h=document.documentElement; const p=h.scrollHeight-h.clientHeight>0?((h.scrollTop||document.body.scrollTop)/(h.scrollHeight-h.clientHeight))*100:0; bar.style.width=p+'%'; } window.addEventListener('scroll',u,{passive:true}); u(); })();
   </script>
-
 </body>
 </html>
